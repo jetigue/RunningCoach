@@ -127,6 +127,25 @@ let colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+
+  'smoke-darkest': 'rgba(0, 0, 0, 0.9)',
+  'smoke-darker': 'rgba(0, 0, 0, 0.75)',
+  'smoke-dark': 'rgba(0, 0, 0, 0.6)',
+  'smoke': 'rgba(0, 0, 0, 0.5)',
+  'smoke-light': 'rgba(0, 0, 0, 0.4)',
+  'smoke-lighter': 'rgba(0, 0, 0, 0.25)',
+  'smoke-lightest': 'rgba(0, 0, 0, 0.1)',
+
+  'primary-darkest': '#000030',
+  'primary-darker': '#000040',
+  'primary-dark': '#000060',
+  'primary': '#000080',
+  'primary-light': '#5c5cad',
+  'primary-lighter': '#9797ca',
+  'primary-lightest': '#E7E5F2',
+
+  'secondary': '#800000',
+  'tertiary': '#008000'
 }
 
 module.exports = {
@@ -492,6 +511,8 @@ module.exports = {
     '10': '2.5rem',
     '12': '3rem',
     '16': '4rem',
+    '18': '4.5rem',
+    '20': '5rem',
     '24': '6rem',
     '32': '8rem',
     '48': '12rem',
