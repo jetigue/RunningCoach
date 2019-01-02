@@ -17,29 +17,34 @@
             </div>
         </div>
         <div>
-            <div class="table-body">
-                @forelse($hosts as $host)
-                    <div class="table-row flex justify-between hover:bg-primary-lightest">
-                        <div class="flex">
-                            <div class="md:text-base text-grey-darker flex-1 md:w-1/2           lg:w-1/3">
-                                {{ $host->name }}
-                            </div>
-                        </div>
-                        <div class="flex pr-4 md:justify-between">
-                            <div class="flex">
-                                <i class="fas fa-angle-double-down text-indigo mr-4"></i>
-                            </div>
-                            <div class="hidden">
-                                <i class="fas fa-edit text-green"></i>
-                            </div>
-                            <div class="hidden">
-                                <i class="fas fa-trash text-maroon"></i>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                    <h3>No Hosts yet.</h3>
-                @endforelse
-            </div>
+            <meet-hosts :data="{{ $hosts }}"></meet-hosts>
+            {{--<div class="table-body">--}}
+                {{--@forelse($hosts as $host)--}}
+                    {{--<div class="table-row flex justify-between hover:bg-primary-lightest">--}}
+                        {{--<div class="flex">--}}
+                            {{--<div class="md:text-base text-grey-darker flex-1 md:w-1/2           lg:w-1/3">--}}
+                                {{--{{ $host->name }}--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<expand-button @clicked="expand=true"></expand-button>--}}
+                        {{--<div v-if="expand" class="flex pr-4 md:justify-between">--}}
+                            {{--<div class="">--}}
+                                {{--<i class="fas fa-edit text-green"></i>--}}
+                            {{--</div>--}}
+                            {{--<div class="">--}}
+                                {{--<i class="fas fa-trash text-maroon"></i>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@empty--}}
+                    {{--<h3>No Hosts yet.</h3>--}}
+                {{--@endforelse--}}
+            {{--</div>--}}
         </div>
 @endsection
+        {{--<script>--}}
+            {{--import MeetHost from "../../../../js/components/properties/meets/MeetHost";--}}
+            {{--export default {--}}
+                {{--components: {MeetHost}--}}
+            {{--}--}}
+        {{--</script>--}}

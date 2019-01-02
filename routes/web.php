@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/hosts', 'Properties\Meets\HostController');
+
+Route::apiResources([
+    'api/hosts' => 'API\Properties\Meets\HostController'
+    ]);

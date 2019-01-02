@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'Running Coach') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/main.js') }}" defer></script>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 

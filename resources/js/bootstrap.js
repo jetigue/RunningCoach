@@ -1,4 +1,9 @@
+import Vue from 'vue';
+import axios from 'axios';
+import Form from './utilities/Form';
+import Errors from './utilities/Errors';
 
+window.Vue = require('vue');
 window._ = require('lodash');
 
 /**
@@ -8,7 +13,6 @@ window._ = require('lodash');
  */
 
 window.axios = require('axios');
-
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -25,19 +29,9 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
+window.Event = new Vue();
 
-// import Echo from 'laravel-echo'
+window.events = new Vue();
 
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
-// });
+window.Form = Form;
+window.Errors = Errors;

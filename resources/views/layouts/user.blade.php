@@ -8,6 +8,7 @@
             <aside class="md:w-1/6 md:border-r border-primary-dark text-right">
                 <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i>
             </aside>
+            <menu-modal></menu-modal>
 
             <main class="md:flex-1 px-2" id="userContent">
                 @yield('content')
@@ -15,5 +16,4 @@
         </div>
     </div>
 </div>
-
 @include('layouts.footer')
