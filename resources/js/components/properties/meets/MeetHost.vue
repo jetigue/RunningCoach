@@ -4,26 +4,28 @@
             <div class="w-full">
                 <form action="api/hosts/id" method="POST" id="editHost" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
-                        <div class="block text-grey-darker text-sm font-bold">
-                            <p>id:</p>
+                        <div class="form-label m-0">
+                            <p>id</p>
                         </div>
                         <div class="w-full text-grey-dark px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                        <label class="form-label" for="form.name">
                             Name
                         </label>
-                        <input class="shadow appearance-none rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                               id="form.name" type="text" v-model="form.name">
+                        <input class="form-input"
+                               id="form.name"
+                               type="text"
+                               v-model="form.name">
                         <span id="nameHelp" class="help bg-red" v-if="form.errors.has('name')"
                               v-text="form.errors.get('name')"></span>
                     </div>
                     <div class="flex items-center justify-end">
-                        <update-button class= "mr-4" :disabled="form.errors.any()"></update-button>
+                        <update-button class= "mr-4" :disabled="form.errors.any()">Update</update-button>
                         <cancel-button @clicked="resetForm"></cancel-button>
                     </div>
                 </form>
@@ -73,6 +75,7 @@
 
                 id: this.data.id,
                 name: this.data.name,
+
                 form: new Form({
                     name: this.data.name,
                 })
@@ -106,12 +109,8 @@
             },
 
             resetForm() {
-                this.form = {
-                    name: this.data.name
-                };
+                this.form.name = this.name
                 this.isExpanded = false;
-
-                location.reload();
             }
         }
     }

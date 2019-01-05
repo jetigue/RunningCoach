@@ -2,6 +2,9 @@ import Vue from 'vue';
 import axios from 'axios';
 import Form from './utilities/Form';
 import Errors from './utilities/Errors';
+import PortalVue from 'portal-vue'
+
+Vue.use(PortalVue);
 
 window.Vue = require('vue');
 window._ = require('lodash');
@@ -12,7 +15,7 @@ window._ = require('lodash');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -30,7 +33,6 @@ if (token) {
 }
 
 window.Event = new Vue();
-
 window.events = new Vue();
 
 window.Form = Form;

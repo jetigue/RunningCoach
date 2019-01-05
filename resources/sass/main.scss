@@ -9,7 +9,6 @@
     text-decoration: none;
   }
 
- @tailwind components;
  /**
   * Here you would add any of your custom component classes; stuff that you'd
   * want loaded *before* the utilities so that the utilities could still
@@ -25,6 +24,7 @@
   * @import "components/buttons";
   * @import "components/forms";
   */
+ @import "components/forms.scss";
  @import "components/tables.scss";
 
  /**

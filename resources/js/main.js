@@ -6,7 +6,7 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('expand-button', require('./components/buttons/ExpandButton').default);
+Vue.component('create-button', require('./components/buttons/CreateButton').default);
 
 Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
 
@@ -14,10 +14,14 @@ Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').d
 new Vue({
     el: '#userContent',
 
-    data: {
+    data() {
+        return {
+    
+        }
     },
 
     methods : {
+ 
         
     }
 });

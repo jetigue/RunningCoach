@@ -511,34 +511,6 @@ a {
   text-decoration: none;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 992px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
-
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still
@@ -554,6 +526,29 @@ a {
  * @import "components/buttons";
  * @import "components/forms";
  */
+
+.form-input {
+  color: #606f7b;
+  width: 100%;
+  line-height: 1.25;
+  padding: .5rem .75rem;
+  margin-bottom: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+}
+
+.form-inputfocus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(52, 144, 220, .5);
+}
+
+.form-label {
+  display: block;
+  color: #000080;
+  font-size: .875rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
 
 .table-container {
   border-bottom: 2px solid #008000;

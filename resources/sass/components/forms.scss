@@ -1,0 +1,22 @@
+.form-input {
+  color: #606f7b;
+  width: 100%;
+  line-height: 1.25;
+  padding: .5rem .75rem;
+  margin-bottom: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  &focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(52,144,220,0.5);
+  }
+}
+
+.form-label {
+  display: block;
+  color: #000080;
+  font-size: .875rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+
+}
