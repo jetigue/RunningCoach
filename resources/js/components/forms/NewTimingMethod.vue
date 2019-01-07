@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/hosts" method="POST" id="newMeetHost"
+    <form action="/api/timing" method="POST" id="newTimingMethod"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -39,7 +39,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/hosts')
+                .post('/api/timing')
 
                 .then(data => {
 
@@ -54,7 +54,7 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Host Added successfully'
+                        title: 'Timing Method Added successfully'
                     });
   
                     this.$emit('created', data)
@@ -75,4 +75,3 @@ export default {
     }
 }
 </script>
-

@@ -1,6 +1,6 @@
 <template>
     <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Meet Hosts</h3>
+        <h3 class="font-light text-2xl pb-1 text-primary">Timing Methods</h3>
         <div class="table-container">
                 <div class="table-header">
                 <div class="flex justify-between">
@@ -9,28 +9,28 @@
                     </div>
                 </div>
                 <div class="flex content-around">
-                    <create-button title="Create Meet Host">
-                        <new-meet-host @created="add"></new-meet-host>
+                    <create-button title="Create Timing Method">
+                        <new-timing-method @created="add"></new-timing-method>
                     </create-button>
                     <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
-            <div v-for="(host, index) in items" :key="host.id">
-                <meet-host :data="host" @deleted="remove(index)"></meet-host>
+            <div v-for="(timing, index) in items" :key="timing.id">
+                <timing-method :data="timing" @deleted="remove(index)"></timing-method>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import MeetHost from './MeetHost';
+    import TimingMethod from './TimingMethod';
     import CreateButton from '../../buttons/CreateButton';
-    import NewMeetHost from '../../forms/NewMeetHost';
+    import NewTimingMethod from '../../forms/NewTimingMethod';
 
     export default {
         props: ['data'],
 
-        components: { MeetHost, CreateButton, NewMeetHost },
+        components: { TimingMethod, CreateButton, NewTimingMethod },
 
         data() {
             return {
@@ -56,7 +56,7 @@
 
                 toast({
                     type: 'success',
-                    title: 'Host Deleted'
+                    title: 'Timing Method Deleted'
                 });
             },
         }

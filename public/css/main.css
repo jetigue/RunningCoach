@@ -532,8 +532,8 @@ a {
   width: 100%;
   line-height: 1.25;
   padding: .5rem .75rem;
-  margin-bottom: .75rem;
   border-radius: .25rem;
+  margin-bottom: .25rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
 }
 
@@ -547,7 +547,15 @@ a {
   color: #000080;
   font-size: .875rem;
   font-weight: 700;
-  margin-bottom: .5rem;
+  margin: .25rem;
+}
+
+.form-help {
+  display: block;
+  color: red;
+  font-weight: 600;
+  font-size: .8rem;
+  margin: .25rem;
 }
 
 .table-container {
@@ -560,15 +568,14 @@ a {
   justify-content: space-between;
   border-top: 2px solid #008000;
   border-bottom: 2px solid #008000;
-  padding: .5rem .25rem .5rem .5rem;
+  padding: .5rem;
 }
 
 .table-row {
   display: flex;
   align-items: center;
-  padding-left: .5rem;
-  height: 2.5rem;
   width: 100%;
+  padding: .5rem;
 }
 
 /**
@@ -4735,6 +4742,10 @@ a {
   padding: 1.5rem;
 }
 
+.p-7 {
+  padding: 1.75rem;
+}
+
 .p-8 {
   padding: 2rem;
 }
@@ -4835,6 +4846,16 @@ a {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .py-8 {
@@ -5027,6 +5048,22 @@ a {
 
 .pl-6 {
   padding-left: 1.5rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
+}
+
+.pr-7 {
+  padding-right: 1.75rem;
+}
+
+.pb-7 {
+  padding-bottom: 1.75rem;
+}
+
+.pl-7 {
+  padding-left: 1.75rem;
 }
 
 .pt-8 {
@@ -11023,6 +11060,10 @@ a {
     padding: 1.5rem;
   }
 
+  .sm\:p-7 {
+    padding: 1.75rem;
+  }
+
   .sm\:p-8 {
     padding: 2rem;
   }
@@ -11123,6 +11164,16 @@ a {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .sm\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 
   .sm\:py-8 {
@@ -11315,6 +11366,22 @@ a {
 
   .sm\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .sm\:pt-7 {
+    padding-top: 1.75rem;
+  }
+
+  .sm\:pr-7 {
+    padding-right: 1.75rem;
+  }
+
+  .sm\:pb-7 {
+    padding-bottom: 1.75rem;
+  }
+
+  .sm\:pl-7 {
+    padding-left: 1.75rem;
   }
 
   .sm\:pt-8 {
@@ -17289,6 +17356,10 @@ a {
     padding: 1.5rem;
   }
 
+  .md\:p-7 {
+    padding: 1.75rem;
+  }
+
   .md\:p-8 {
     padding: 2rem;
   }
@@ -17389,6 +17460,16 @@ a {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .md\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 
   .md\:py-8 {
@@ -17581,6 +17662,22 @@ a {
 
   .md\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .md\:pt-7 {
+    padding-top: 1.75rem;
+  }
+
+  .md\:pr-7 {
+    padding-right: 1.75rem;
+  }
+
+  .md\:pb-7 {
+    padding-bottom: 1.75rem;
+  }
+
+  .md\:pl-7 {
+    padding-left: 1.75rem;
   }
 
   .md\:pt-8 {
@@ -23555,6 +23652,10 @@ a {
     padding: 1.5rem;
   }
 
+  .lg\:p-7 {
+    padding: 1.75rem;
+  }
+
   .lg\:p-8 {
     padding: 2rem;
   }
@@ -23655,6 +23756,16 @@ a {
   .lg\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .lg\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .lg\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 
   .lg\:py-8 {
@@ -23847,6 +23958,22 @@ a {
 
   .lg\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .lg\:pt-7 {
+    padding-top: 1.75rem;
+  }
+
+  .lg\:pr-7 {
+    padding-right: 1.75rem;
+  }
+
+  .lg\:pb-7 {
+    padding-bottom: 1.75rem;
+  }
+
+  .lg\:pl-7 {
+    padding-left: 1.75rem;
   }
 
   .lg\:pt-8 {
@@ -29821,6 +29948,10 @@ a {
     padding: 1.5rem;
   }
 
+  .xl\:p-7 {
+    padding: 1.75rem;
+  }
+
   .xl\:p-8 {
     padding: 2rem;
   }
@@ -29921,6 +30052,16 @@ a {
   .xl\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .xl\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .xl\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 
   .xl\:py-8 {
@@ -30113,6 +30254,22 @@ a {
 
   .xl\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .xl\:pt-7 {
+    padding-top: 1.75rem;
+  }
+
+  .xl\:pr-7 {
+    padding-right: 1.75rem;
+  }
+
+  .xl\:pb-7 {
+    padding-bottom: 1.75rem;
+  }
+
+  .xl\:pl-7 {
+    padding-left: 1.75rem;
   }
 
   .xl\:pt-8 {

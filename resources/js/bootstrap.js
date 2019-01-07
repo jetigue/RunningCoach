@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import axios from 'axios';
+import VueSweetalert2 from 'vue-sweetalert2';
 import Form from './utilities/Form';
 import Errors from './utilities/Errors';
 import PortalVue from 'portal-vue'
 
 Vue.use(PortalVue);
+Vue.use(VueSweetalert2);
 
 window.Vue = require('vue');
 window._ = require('lodash');
@@ -34,6 +36,10 @@ if (token) {
 
 window.Event = new Vue();
 window.events = new Vue();
+
+window.flash = function (message, level = 'success') {
+    window.events.$emit('flash', { message, level});
+};
 
 window.Form = Form;
 window.Errors = Errors;

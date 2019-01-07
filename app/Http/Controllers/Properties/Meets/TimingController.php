@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Properties\Meets;
 
-use App\Models\Properties\Meets\Host;
+use App\Models\Properties\Meets\Timing;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HostController extends Controller
+class TimingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,15 @@ class HostController extends Controller
      */
     public function index()
     {
-        $hosts = Host::all();
+        $timing = Timing::all();
 
         if (request()->expectsJson())
         {
-            return $hosts;
+            return $timing;
         }
 
-        return view('properties.meets.hosts.index', compact('hosts'));
+        return view('properties.meets.timing.index', compact('timing'));
     }
 }
+
+    

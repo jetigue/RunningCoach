@@ -2,9 +2,10 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/hosts/id" method="POST" id="editHost" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <form action="api/timing/id" method="POST" id="editTimingMethod"
+                    @submit.prevent="update"
+                    @keydown="form.errors.clear($event.target.name)"
+                    class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -93,7 +94,7 @@
 
             update() {
                 this.form
-                    .patch('/api/hosts/' + this.data.id)
+                    .patch('/api/timing/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.editing = false;
@@ -120,7 +121,7 @@
             },
 
             destroy() {
-                axios.delete('api/hosts/' + this.data.id);
+                axios.delete('api/timing/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

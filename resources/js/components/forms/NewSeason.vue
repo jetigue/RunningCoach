@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/hosts" method="POST" id="newMeetHost"
+    <form action="/api/seasons" method="POST" id="newMeetSeason"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -14,7 +14,6 @@
                     id="form.name"
                     type="text"
                     v-model="form.name">
-
         </div>
         <div class="text-right">
             <button type="submit"
@@ -39,7 +38,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/hosts')
+                .post('/api/seasons')
 
                 .then(data => {
 
@@ -54,7 +53,7 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Host Added successfully'
+                        title: 'Season Added successfully'
                     });
   
                     this.$emit('created', data)

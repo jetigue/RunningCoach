@@ -8,8 +8,13 @@ require('./bootstrap');
 
 Vue.component('create-button', require('./components/buttons/CreateButton').default);
 
-Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
+/** General Properties */
+Vue.component('seasons', require('./components/properties/general/Seasons').default);
 
+/** Meet Properties */
+Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
+Vue.component('meet-venues', require('./components/properties/meets/MeetVenues').default);
+Vue.component('timing-methods', require('./components/properties/meets/TimingMethods').default);
 
 new Vue({
     el: '#userContent',

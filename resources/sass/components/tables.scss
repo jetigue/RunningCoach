@@ -8,13 +8,13 @@
     justify-content: space-between;
     border-top: 2px solid #008000;
     border-bottom: 2px solid #008000;
-    padding: .5rem .25rem .5rem .5rem;
+    padding: .5rem;
   }
   
   .table-row {
     display: flex;
     align-items: center;
-    padding-left: .5rem;
-    height: 2.5rem;
+    // padding-left: .5rem;
     width: 100%;
+    padding: .5rem;
   }

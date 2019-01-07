@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/hosts" method="POST" id="newMeetHost"
+    <form action="/api/venues" method="POST" id="newMeetVenue"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -14,7 +14,6 @@
                     id="form.name"
                     type="text"
                     v-model="form.name">
-
         </div>
         <div class="text-right">
             <button type="submit"
@@ -54,11 +53,12 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Host Added successfully'
+                        title: 'Venue Added successfully'
                     });
   
-                    this.$emit('created', data)
+                    this.$emit('created', data),
                     this.form.name = ''
+                    this.form.season_id = ''
                 })
 
                 .catch(errors => console.log(errors));
@@ -66,6 +66,7 @@ export default {
 
         resetForm() {
             this.form.name = '',
+            this.form.season_id = '',
             this.form.errors.clear();
         }
     },
@@ -75,4 +76,3 @@ export default {
     }
 }
 </script>
-

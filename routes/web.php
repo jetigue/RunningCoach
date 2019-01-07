@@ -19,8 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/hosts', 'Properties\Meets\HostController');
+Route::get('/hosts', 'Properties\Meets\HostController@index');
+Route::get('/seasons', 'Properties\General\SeasonController@index');
+Route::get('/timing', 'Properties\Meets\TimingController@index');
+Route::get('/venues', 'Properties\Meets\VenueController@index');
 
 Route::apiResources([
-    'api/hosts' => 'API\Properties\Meets\HostController'
+    'api/hosts' => 'API\Properties\Meets\HostController',
+    'api/seasons' => 'API\Properties\General\SeasonController',
+    'api/timing' => 'API\Properties\Meets\TimingController',
+    'api/venues' => 'API\Properties\Meets\VenueController',
     ]);
