@@ -2,7 +2,7 @@
 <div>
     <button type="button"
             class="flex justify-around items-center border border-secondary hover:bg-secondary text-secondary hover:text-white font-bold rounded-full w-18 focus:outline-none"
-            @click="active=true">
+            @click="loadSelects">
         <i class="fas fa-plus"></i>
         <span class="">Add</span>
     </button>
@@ -49,6 +49,11 @@
             close() {
                 Event.$emit('cancel'),
                 this.active = false
+            },
+
+            loadSelects() {
+                this.active = true,
+                Event.$emit('getNames');
             },
         },
 

@@ -27,8 +27,24 @@
                                type="text"
                                v-model="form.name">
                     </div>
+
+                    <div class="mb-4">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.season_id">Season</label>
+                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
+                                v-text="form.errors.get('season_id')">
+                            </span>
+                        </div>
+                        <select class="form-input" name="season_id" v-model="form.season_id" required>
+                            <option v-for="season in seasons" :value="season.id">
+                                {{ season.name }}
+                            </option>
+                        </select>
+                    </div>
+
                     <div class="flex items-center justify-end">
-                        <update-button class="mr-4" :disabled="form.errors.any()">Update
+                        <update-button class="mr-4" :disabled="form.errors.any()">
+                            Update
                         </update-button>
                         <cancel-button @clicked="resetForm"></cancel-button>
                     </div>
@@ -48,7 +64,7 @@
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="editing=true"></edit-button>
+                        <edit-button @clicked="getSeasonNames"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -86,7 +102,10 @@
 
                 form: new Form({
                     name: this.data.name,
-                })
+                    season_id: this.data.season_id
+                }),
+
+                seasons: []
             }
         },
 
@@ -100,8 +119,9 @@
                     .patch('/api/venues/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
-                        this.editing = false;
+                        this.season = this.seasons.find(season => season.id === this.form.season_id).name;
 
+                        this.editing = false;
                         this.isExpanded = false;
 
                         const toast = Vue.swal.mixin({
@@ -131,6 +151,18 @@
             resetForm() {
                 this.form.name = this.name
                 this.isExpanded = false;
+            },
+
+            getSeasonNames() {
+                this.editing = true;
+
+                axios.get('/api/seasons')
+                    .then(response => {
+                        this.seasons = response.data;
+                    })
+                    .catch(errors => {
+                        console.log(errors)
+                    });
             }
         }
     }

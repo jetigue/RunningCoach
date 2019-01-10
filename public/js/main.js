@@ -1838,6 +1838,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     close: function close() {
       Event.$emit('cancel'), this.active = false;
+    },
+    loadSelects: function loadSelects() {
+      this.active = true, Event.$emit('getNames');
     }
   },
   created: function created() {
@@ -2027,10 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
           type: 'success',
           title: 'Host Added successfully'
         });
-
-        _this.$emit('created', data);
-
-        _this.form.name = '';
+        _this.$emit('created', data), _this.form.name = '';
       }).catch(function (errors) {
         return console.log(errors);
       });
@@ -2086,19 +2086,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: new Form({
-        name: ''
-      })
+        name: '',
+        season_id: ''
+      }),
+      seasons: []
     };
   },
   methods: {
     onSubmit: function onSubmit() {
       var _this = this;
 
-      this.form.post('/api/hosts').then(function (data) {
+      this.form.post('/api/venues').then(function (data) {
         Event.$emit('formSubmitted');
         var toast = Vue.swal.mixin({
           toast: true,
@@ -2110,8 +2127,8 @@ __webpack_require__.r(__webpack_exports__);
           type: 'success',
           title: 'Venue Added successfully'
         });
-        _this.$emit('created', data), _this.form.name = '';
-        _this.form.season_id = '';
+        _this.$emit('created', data), _this.resetForm(); // this.form.name = '',
+        // this.form.season_id = ''
       }).catch(function (errors) {
         return console.log(errors);
       });
@@ -2125,6 +2142,13 @@ __webpack_require__.r(__webpack_exports__);
 
     Event.$on('cancel', function () {
       return _this2.resetForm();
+    });
+    Event.$on('getNames', function () {
+      return axios.get('/api/seasons').then(function (response) {
+        _this2.seasons = response.data;
+      }).catch(function (errors) {
+        console.log(errors);
+      });
     });
   }
 });
@@ -2575,6 +2599,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2785,6 +2810,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2807,8 +2848,10 @@ __webpack_require__.r(__webpack_exports__);
       name: this.data.name,
       season: this.data.season.name,
       form: new Form({
-        name: this.data.name
-      })
+        name: this.data.name,
+        season_id: this.data.season_id
+      }),
+      seasons: []
     };
   },
   methods: {
@@ -2820,6 +2863,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.form.patch('/api/venues/' + this.data.id).then(function (data) {
         _this.name = _this.form.name;
+        _this.season = _this.seasons.find(function (season) {
+          return season.id === _this.form.season_id;
+        }).name;
         _this.editing = false;
         _this.isExpanded = false;
         var toast = Vue.swal.mixin({
@@ -2843,6 +2889,16 @@ __webpack_require__.r(__webpack_exports__);
     resetForm: function resetForm() {
       this.form.name = this.name;
       this.isExpanded = false;
+    },
+    getSeasonNames: function getSeasonNames() {
+      var _this2 = this;
+
+      this.editing = true;
+      axios.get('/api/seasons').then(function (response) {
+        _this2.seasons = response.data;
+      }).catch(function (errors) {
+        console.log(errors);
+      });
     }
   }
 });
@@ -22181,11 +22237,7 @@ var render = function() {
           staticClass:
             "flex justify-around items-center border border-secondary hover:bg-secondary text-secondary hover:text-white font-bold rounded-full w-18 focus:outline-none",
           attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              _vm.active = true
-            }
-          }
+          on: { click: _vm.loadSelects }
         },
         [
           _c("i", { staticClass: "fas fa-plus" }),
@@ -22487,7 +22539,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { id: "form.name", type: "text" },
+          attrs: { id: "form.name", type: "text", required: "" },
           domProps: { value: _vm.form.name },
           on: {
             input: function($event) {
@@ -22539,7 +22591,7 @@ var render = function() {
   return _c(
     "form",
     {
-      attrs: { action: "/api/venues", method: "POST", id: "newMeetVenue" },
+      attrs: { action: "/venues", method: "POST", id: "newMeetVenue" },
       on: {
         submit: function($event) {
           $event.preventDefault()
@@ -22589,6 +22641,67 @@ var render = function() {
             }
           }
         })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-4" }, [
+        _c("div", { staticClass: "flex justify-between content-end" }, [
+          _c(
+            "label",
+            { staticClass: "form-label", attrs: { for: "form.season_id" } },
+            [_vm._v("Season")]
+          ),
+          _vm._v(" "),
+          _vm.form.errors.has("season_id")
+            ? _c("span", {
+                staticClass: "form-help",
+                attrs: { id: "seasonHelp" },
+                domProps: {
+                  textContent: _vm._s(_vm.form.errors.get("season_id"))
+                }
+              })
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.season_id,
+                expression: "form.season_id"
+              }
+            ],
+            staticClass: "form-input",
+            attrs: { name: "season_id", required: "" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.form,
+                  "season_id",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              }
+            }
+          },
+          _vm._l(_vm.seasons, function(season) {
+            return _c("option", { domProps: { value: season.id } }, [
+              _vm._v(
+                "\n                " + _vm._s(season.name) + "\n            "
+              )
+            ])
+          }),
+          0
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "text-right" }, [
@@ -23196,20 +23309,20 @@ var render = function() {
             "div",
             {
               staticClass:
-                "flex flex-col border-b border-primary-lightest hover:bg-primary-lightest"
+                "flex flex-col border-b border-blue-lightest hover:bg-blue-lightest"
             },
             [
               _c(
                 "div",
                 {
                   staticClass:
-                    "table-row flex justify-between hover:bg-primary-lightest"
+                    "table-row flex justify-between hover:bg-blue-lightest"
                 },
                 [
-                  _c("div", { staticClass: "flex" }, [
+                  _c("div", { staticClass: "flex md:w-4/5 flex-wrap" }, [
                     _c("div", {
                       staticClass:
-                        "md:text-base text-grey-darker flex-1 md:w-1/2 lg:w-1/3",
+                        "text-grey-darker w-full md:w-1/2 font-semibold md:font-normal",
                       domProps: { textContent: _vm._s(_vm.name) }
                     })
                   ]),
@@ -23220,10 +23333,10 @@ var render = function() {
               ),
               _vm._v(" "),
               _vm.isExpanded
-                ? _c("div", { staticClass: "py-3 px-4" }, [
+                ? _c("div", { staticClass: "py-3 px-2" }, [
                     _c(
                       "div",
-                      { staticClass: "flex justify-start px-2 cursor-pointer" },
+                      { staticClass: "flex justify-start cursor-pointer" },
                       [
                         _c("edit-button", {
                           on: {
@@ -23445,6 +23558,80 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "mb-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "flex justify-between content-end" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-label",
+                          attrs: { for: "form.season_id" }
+                        },
+                        [_vm._v("Season")]
+                      ),
+                      _vm._v(" "),
+                      _vm.form.errors.has("season_id")
+                        ? _c("span", {
+                            staticClass: "form-help",
+                            attrs: { id: "seasonHelp" },
+                            domProps: {
+                              textContent: _vm._s(
+                                _vm.form.errors.get("season_id")
+                              )
+                            }
+                          })
+                        : _vm._e()
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.season_id,
+                          expression: "form.season_id"
+                        }
+                      ],
+                      staticClass: "form-input",
+                      attrs: { name: "season_id", required: "" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "season_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    _vm._l(_vm.seasons, function(season) {
+                      return _c("option", { domProps: { value: season.id } }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(season.name) +
+                            "\n                        "
+                        )
+                      ])
+                    }),
+                    0
+                  )
+                ]),
+                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "flex items-center justify-end" },
@@ -23455,7 +23642,11 @@ var render = function() {
                         staticClass: "mr-4",
                         attrs: { disabled: _vm.form.errors.any() }
                       },
-                      [_vm._v("Update\n                    ")]
+                      [
+                        _vm._v(
+                          "\n                        Update\n                    "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c("cancel-button", { on: { clicked: _vm.resetForm } })
@@ -23506,11 +23697,7 @@ var render = function() {
                       { staticClass: "flex justify-start cursor-pointer" },
                       [
                         _c("edit-button", {
-                          on: {
-                            clicked: function($event) {
-                              _vm.editing = true
-                            }
-                          }
+                          on: { clicked: _vm.getSeasonNames }
                         }),
                         _vm._v(" "),
                         _c("delete-button", { on: { clicked: _vm.destroy } })

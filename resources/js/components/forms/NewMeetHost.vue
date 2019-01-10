@@ -13,9 +13,9 @@
             <input class="form-input"
                     id="form.name"
                     type="text"
-                    v-model="form.name">
-
+                    v-model="form.name" required>
         </div>
+
         <div class="text-right">
             <button type="submit"
                     class="w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded"
@@ -57,7 +57,7 @@ export default {
                         title: 'Host Added successfully'
                     });
   
-                    this.$emit('created', data)
+                    this.$emit('created', data),
                     this.form.name = ''
                 })
 
@@ -72,6 +72,7 @@ export default {
 
     created() {
         Event.$on('cancel', () => this.resetForm());
+
     }
 }
 </script>

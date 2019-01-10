@@ -36,15 +36,16 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-primary-lightest hover:bg-primary-lightest">
-                <div class="table-row flex justify-between hover:bg-primary-lightest">
-                    <div class="flex">
-                        <div class="md:text-base text-grey-darker flex-1 md:w-1/2 lg:w-1/3" v-text="name"></div>
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
+                <div class="table-row flex justify-between hover:bg-blue-lightest">
+                    <div class="flex md:w-4/5 flex-wrap">
+                        <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
+                        </div>
                     </div>
                     <expand-button @toggleRow="toggleRow"></expand-button>
                 </div>
-                <div v-if="isExpanded" class="py-3 px-4">
-                    <div class="flex justify-start px-2 cursor-pointer">
+                <div v-if="isExpanded" class="py-3 px-2">
+                    <div class="flex justify-start cursor-pointer">
                         <edit-button @clicked="editing=true"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>

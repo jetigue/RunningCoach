@@ -35,7 +35,8 @@ class VenueController extends Controller
 
         $venue = Venue::create($venue);
 
-        return response()->json($venue, 201);
+        return $venue->load('season');
+        // ->response()->json($venue, 201);
     }
 
     /**
