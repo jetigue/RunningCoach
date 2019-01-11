@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use App\Models\Properties\Meets\Host;
+use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Venue;
 
@@ -22,6 +23,13 @@ $factory->define(Timing::class, function (Faker $faker) {
 $factory->define(Venue::class, function (Faker $faker) {
     return [
         'name' => $faker->lastName . ' ' . 'Park',
+        'season_id' => $faker->numberBetween($min = 1, $max = 3)
+    ];
+});
+
+$factory->define(Name::class, function (Faker $faker) {
+    return [
+        'name' => $faker->lastName . ' ' . 'Invitational',
         'season_id' => $faker->numberBetween($min = 1, $max = 3)
     ];
 });

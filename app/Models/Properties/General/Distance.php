@@ -2,18 +2,18 @@
 
 namespace App\Models\Properties\General;
 
+use App\Models\Properties\Races\Event;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\Venue;
-use App\Models\Properties\Meets\Name;
 
-class Season extends Model
+
+class Distance extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'seasons';
+    protected $table = 'distances';
 
     /**
      * Fillable fields for a Track Venue
@@ -21,7 +21,8 @@ class Season extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
+        'meters'
     ];
 
     /**
@@ -31,16 +32,11 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/' . $this->id;
+        return '/distances/' . $this->id;
     }
 
-    public function venue()
+    public function event()
     {
-        return $this->hasMany(Venue::class);
-    }
-
-    public function meetName()
-    {
-        return $this->hasMany(Name::class);
+        $this->belongsTo(Event::class);
     }
 }

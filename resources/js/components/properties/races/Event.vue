@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/hosts/id" method="POST" id="editHost" @submit.prevent="update"
+                <form action="api/events/id" method="POST" id="editEvent" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -27,8 +27,25 @@
                                type="text"
                                v-model="form.name" required>
                     </div>
+
+                    <div class="mb-4">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.meters">
+                                Meters
+                            </label>
+                            <span id="metersHelp" class="form-help" v-if="form.errors.has('meters')"
+                                    v-text="form.errors.get('meters')">
+                            </span>
+                        </div>
+                        <input class="form-input"
+                               id="form.meters"
+                               type="text"
+                               v-model="form.meters" required>
+                    </div>
+
                     <div class="flex items-center justify-end">
-                        <update-button class="mr-4" :disabled="form.errors.any()">Update
+                        <update-button class="mr-4" :disabled="form.errors.any()">
+                            Update
                         </update-button>
                         <cancel-button @clicked="resetForm"></cancel-button>
                     </div>
@@ -41,8 +58,10 @@
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
+                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="meters">
+                        </div>
                     </div>
-                    <expand-button @toggleRow="toggleRow"></expand-button>
+                    <expand-button @toggleRow="toggleRow" class=""></expand-button>
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
@@ -80,9 +99,11 @@
 
                 id: this.data.id,
                 name: this.data.name,
+                meters: this.data.meters,
 
                 form: new Form({
                     name: this.data.name,
+                    meters: this.data.meters
                 })
             }
         },
@@ -94,11 +115,12 @@
 
             update() {
                 this.form
-                    .patch('/api/hosts/' + this.data.id)
+                    .patch('/api/events/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
-                        this.editing = false;
+                        this.meters = this.form.meters;
 
+                        this.editing = false;
                         this.isExpanded = false;
 
                         const toast = Vue.swal.mixin({
@@ -110,9 +132,8 @@
 
                         toast({
                             type: 'success',
-                            title: 'Host Updated'
+                            title: 'Event Updated'
                         });
-
                     })
 
                     .catch(errors => {
@@ -121,13 +142,14 @@
             },
 
             destroy() {
-                axios.delete('api/hosts/' + this.data.id);
+                axios.delete('api/events/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
-                this.form.name = this.name
+                this.form.name = this.name,
+                this.form.meters = this.meters,
                 this.isExpanded = false;
             }
         }

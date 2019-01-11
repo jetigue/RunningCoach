@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Models\Properties\General;
+namespace App\Models\Properties\Races;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\Venue;
-use App\Models\Properties\Meets\Name;
 
-class Season extends Model
+class Division extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'seasons';
+    protected $table = 'divisions';
 
     /**
      * Fillable fields for a Track Venue
@@ -31,16 +29,6 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/' . $this->id;
-    }
-
-    public function venue()
-    {
-        return $this->hasMany(Venue::class);
-    }
-
-    public function meetName()
-    {
-        return $this->hasMany(Name::class);
+        return '/divisions/' . $this->id;
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <form action="/venues" method="POST" id="newMeetVenue"
+    <form action="/meet-names" method="POST" id="newMeetName"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -56,7 +56,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/venues')
+                .post('/api/meet-names')
 
                 .then(data => {
 
@@ -71,7 +71,7 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Venue Added successfully'
+                        title: 'Name Added Successfully'
                     });
   
                     this.$emit('created', data),

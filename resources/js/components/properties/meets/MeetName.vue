@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/hosts/id" method="POST" id="editHost" @submit.prevent="update"
+                <form action="api/names/id" method="POST" id="editName" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -25,10 +25,26 @@
                         <input class="form-input"
                                id="form.name"
                                type="text"
-                               v-model="form.name" required>
+                               v-model="form.name">
                     </div>
+
+                    <div class="mb-4">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.season_id">Season</label>
+                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
+                                v-text="form.errors.get('season_id')">
+                            </span>
+                        </div>
+                        <select class="form-input" name="season_id" v-model="form.season_id" required>
+                            <option v-for="season in seasons" :value="season.id">
+                                {{ season.name }}
+                            </option>
+                        </select>
+                    </div>
+
                     <div class="flex items-center justify-end">
-                        <update-button class="mr-4" :disabled="form.errors.any()">Update
+                        <update-button class="mr-4" :disabled="form.errors.any()">
+                            Update
                         </update-button>
                         <cancel-button @clicked="resetForm"></cancel-button>
                     </div>
@@ -41,12 +57,14 @@
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
+                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="season">
+                        </div>
                     </div>
-                    <expand-button @toggleRow="toggleRow"></expand-button>
+                    <expand-button @toggleRow="toggleRow" class=""></expand-button>
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="editing=true"></edit-button>
+                        <edit-button @clicked="getSeasonNames"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -80,10 +98,14 @@
 
                 id: this.data.id,
                 name: this.data.name,
+                season: this.data.season.name,
 
                 form: new Form({
                     name: this.data.name,
-                })
+                    season_id: this.data.season_id
+                }),
+
+                seasons: []
             }
         },
 
@@ -94,11 +116,12 @@
 
             update() {
                 this.form
-                    .patch('/api/hosts/' + this.data.id)
+                    .patch('/api/meet-names/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
-                        this.editing = false;
+                        this.season = this.seasons.find(season => season.id === this.form.season_id).name;
 
+                        this.editing = false;
                         this.isExpanded = false;
 
                         const toast = Vue.swal.mixin({
@@ -110,9 +133,8 @@
 
                         toast({
                             type: 'success',
-                            title: 'Host Updated'
+                            title: 'Name Updated'
                         });
-
                     })
 
                     .catch(errors => {
@@ -121,7 +143,7 @@
             },
 
             destroy() {
-                axios.delete('api/hosts/' + this.data.id);
+                axios.delete('api/meet-names/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
@@ -129,6 +151,18 @@
             resetForm() {
                 this.form.name = this.name
                 this.isExpanded = false;
+            },
+
+            getSeasonNames() {
+                this.editing = true;
+
+                axios.get('/api/seasons')
+                    .then(response => {
+                        this.seasons = response.data;
+                    })
+                    .catch(errors => {
+                        console.log(errors)
+                    });
             }
         }
     }

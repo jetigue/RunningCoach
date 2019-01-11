@@ -5,7 +5,7 @@
     </header>
     <div class="flex flex-col">
         <div class="md:flex md:flex-1">
-            <aside class="md:w-1/6 md:border-r border-primary-dark text-right">
+            <aside class="md:w-1/6 text-right">
                 <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i>
             </aside>
             <menu-modal></menu-modal>

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Properties\General\Season;
+use App\Models\Properties\General\Distance;
 
 class GeneralPropertiesSeeder extends Seeder
 {
@@ -13,5 +14,6 @@ class GeneralPropertiesSeeder extends Seeder
     public function run()
     {
         factory(Season::class, 3)->create();
+        factory(Distance::class, 1)->create();
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVenuesTable extends Migration
+class CreateMeetNamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateVenuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('venues', function (Blueprint $table) {
+        Schema::create('meet_names', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 150);
+            $table->string('name');
             $table->unsignedTinyInteger('season_id');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateVenuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('venues');
+        Schema::dropIfExists('meet_names');
     }
 }
