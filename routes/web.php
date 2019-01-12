@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/athletes', 'AthleteController');
+
 // General Properties
 Route::get('/distances', 'Properties\General\DistanceController@index');
 Route::get('/seasons', 'Properties\General\SeasonController@index');
@@ -35,6 +37,8 @@ Route::get('/events', 'Properties\Races\EventController@index');
 Route::get('/genders', 'Properties\Races\GenderController@index');
 
 Route::apiResources([
+    
+    'api/athletes' => 'API\AthleteController',
 
     // General Properties
     'api/distances' => 'API\Properties\General\DistanceController',

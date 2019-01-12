@@ -36,7 +36,7 @@
                             </span>
                         </div>
                         <select class="form-input" name="season_id" v-model="form.season_id" required>
-                            <option v-for="season in seasons" :value="season.id">
+                            <option v-for="season in seasons" :key="season.id" :value="season.id">
                                 {{ season.name }}
                             </option>
                         </select>
@@ -74,22 +74,8 @@
 </template>
 
 <script>
-    import CancelButton from "../../buttons/CancelButton";
-    import DeleteButton from '../../buttons/DeleteButton';
-    import EditButton from "../../buttons/EditButton";
-    import ExpandButton from '../../buttons/ExpandButton';
-    import UpdateButton from '../../buttons/UpdateButton';
-
     export default {
         props: ['data'],
-
-        components: {
-            'cancel-button': CancelButton,
-            'delete-button': DeleteButton,
-            'edit-button': EditButton,
-            'expand-button': ExpandButton,
-            'update-button': UpdateButton
-        },
 
         data() {
             return {

@@ -24,7 +24,7 @@
                 </span>
             </div>
             <select class="form-input" name="season_id" v-model="form.season_id" required>
-                <option v-for="season in seasons" :value="season.id">
+                <option v-for="season in seasons" :value="season.id" :key="season.id">
                     {{ season.name }}
                 </option>
             </select>

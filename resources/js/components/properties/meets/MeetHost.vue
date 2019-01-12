@@ -56,22 +56,8 @@
 </template>
 
 <script>
-    import CancelButton from "../../buttons/CancelButton";
-    import DeleteButton from '../../buttons/DeleteButton';
-    import EditButton from "../../buttons/EditButton";
-    import ExpandButton from '../../buttons/ExpandButton';
-    import UpdateButton from '../../buttons/UpdateButton';
-
     export default {
         props: ['data'],
-
-        components: {
-            'cancel-button': CancelButton,
-            'delete-button': DeleteButton,
-            'edit-button': EditButton,
-            'expand-button': ExpandButton,
-            'update-button': UpdateButton
-        },
 
         data() {
             return {
