@@ -34,14 +34,16 @@ Vue.component('athletes', require('./components/Athletes').default);
 new Vue({
     el: '#userContent',
 
-    data() {
-        return {
-    
-        }
-    },
+});
 
-    methods : {
- 
-        
-    }
+Vue.component('menu-button', require('./components/buttons/MenuButton').default);
+Vue.component('user-menu', require('./components/menus/UserMenu').default);
+Vue.component('general-properties', require('./components/menus/GeneralProperties').default);
+Vue.component('meet-properties', require('./components/menus/MeetProperties').default);
+Vue.component('race-properties', require('./components/menus/RaceProperties').default);
+
+
+new Vue({
+    el: '#userMenu',
+
 });

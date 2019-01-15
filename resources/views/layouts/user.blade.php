@@ -5,14 +5,26 @@
     </header>
     <div class="flex flex-col">
         <div class="md:flex md:flex-1">
-            <aside class="md:w-1/6 text-right">
-                <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i>
+            <aside class="md:min-h-screen md:w-1/6 md:shadow md:p-2" id="userMenu">
+                <div class="text-right md:hidden">
+                    <menu-button>
+                        <user-menu></user-menu>
+                    </menu-button>
+                    <portal-target name="menu-modal"></portal-target>
+                    <!-- <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i> -->
+                </div>
+                <div class="pl-4 pt-6">
+                    @include('layouts.menu')
+                </div>
+                
             </aside>
-            <menu-modal></menu-modal>
 
-            <main class="md:flex-1 px-2" id="userContent">
+            <main class="md:flex-1 px-2 -mt-6" id="userContent">
                 @yield('content')
             </main>
+
+            <aside class="md:w-1/6">
+            </aside>
         </div>
     </div>
 </div>
