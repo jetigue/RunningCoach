@@ -31,6 +31,8 @@ Vue.component('genders', require('./components/properties/races/Genders').defaul
 
 Vue.component('athletes', require('./components/Athletes').default);
 
+Vue.component('track-meets', require('./components/meets/TrackMeets').default);
+
 new Vue({
     el: '#userContent',
 
@@ -41,7 +43,6 @@ Vue.component('user-menu', require('./components/menus/UserMenu').default);
 Vue.component('general-properties', require('./components/menus/GeneralProperties').default);
 Vue.component('meet-properties', require('./components/menus/MeetProperties').default);
 Vue.component('race-properties', require('./components/menus/RaceProperties').default);
-
 
 new Vue({
     el: '#userMenu',

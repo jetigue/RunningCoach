@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 text-primary" @click="editRecord">
+    <div class="pr-4 text-primary" @click="editRecord">
         <span>Edit</span>
         <i class="fas fa-edit"></i>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Properties\Meets;
 use App\Models\Properties\Meets\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\General\Season;
 
 class NameController extends Controller
 {
@@ -13,10 +14,19 @@ class NameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $names = Name::with('season')->get();
+        if($seasonSlug = request('season')) {
+            $season = Season::where('slug', $seasonSlug)->firstOrFail();
+            
+            $names = Name::where('season_id', $season->id)->with('season')->orderBy('name');
 
+            $names = $names->get();
+
+        } else {
+            $names = Name::with('season')->orderBy('name')->get();
+        }
+        
         if (request()->expectsJson()) {
             return $names;
         }

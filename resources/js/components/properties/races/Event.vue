@@ -58,8 +58,8 @@
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
-                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="meters">
-                        </div>
+                        <!-- <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="meters">
+                        </div> -->
                     </div>
                     <expand-button @toggleRow="toggleRow" class=""></expand-button>
                 </div>

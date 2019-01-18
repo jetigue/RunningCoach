@@ -14,7 +14,7 @@ class CreateHostsTable extends Migration
     public function up()
     {
         Schema::create('hosts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->smallIncrements('id');
             $table->string('name', 100);
             $table->timestamps();
         });

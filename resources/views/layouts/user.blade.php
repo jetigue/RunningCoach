@@ -1,6 +1,6 @@
 @include('layouts.header')
 <div class="min-h-screen md:flex md:flex-col">
-    <header class="text-center p-4 bg-primary text-white md:py-10 lg:py-12">
+    <header class="py-4 pl-2 lg:pl-6 bg-primary text-white md:py-10 lg:py-12">
         <p class="text-3xl md:text-4xl lg:text-5xl font-thin">Running Coach</p>
     </header>
     <div class="flex flex-col">
@@ -13,7 +13,7 @@
                     <portal-target name="menu-modal"></portal-target>
                     <!-- <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i> -->
                 </div>
-                <div class="pl-4 pt-6">
+                <div class=" md:pl-2 lg:pl-4 pt-6">
                     @include('layouts.menu')
                 </div>
                 

@@ -2,9 +2,9 @@
     <div class="w-full border-b border-color-grey-lighter">
         <div class="flex justify-between items-center" 
             @click="toggleMenu">
-            <p class="text-grey-darker mb-1 text-xl">General</p>
+            <p class="text-primary mb-1 text-xl md:text-base lg:text-xl">General</p>
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
-                class="text-grey-dark"></i>
+                class="text-secondary text-sm md:text-xs lg:text-sm"></i>
         </div>
         <menu-item 
             v-show="isExpanded"
@@ -30,11 +30,11 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
-                    id: 1,
-                    label: 'Distances',
-                    url:   '/distances'
-                },
+                // { 
+                //     id: 1,
+                //     label: 'Distances',
+                //     url:   '/distances'
+                // },
                 { 
                     id: 2,
                     label: 'Seasons',

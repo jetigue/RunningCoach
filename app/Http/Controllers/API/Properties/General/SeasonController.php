@@ -13,8 +13,8 @@ class SeasonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(Request $request)
+    {        
         $seasons = Season::all();
 
         return $seasons;

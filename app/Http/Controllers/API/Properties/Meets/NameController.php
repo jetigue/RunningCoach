@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Properties\Meets;
 use App\Models\Properties\Meets\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\General\Season;
 
 class NameController extends Controller
 {
@@ -13,8 +14,13 @@ class NameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        
+        if ($request->exists('outdoor-track')) {
+            return Name::where('season_id', 1)->get();
+        }
+
         $names = Name::all();
 
         return $names;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Properties\Meets;
 use App\Models\Properties\Meets\Venue;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\General\Season;
 
 class VenueController extends Controller
 {
@@ -15,7 +16,16 @@ class VenueController extends Controller
      */
     public function index()
     {
-        $venues = Venue::with('season')->get();
+        if($seasonSlug = request('season')) {
+            $season = Season::where('slug', $seasonSlug)->firstOrFail();
+            
+            $venues = Venue::where('season_id', $season->id)->with('season')->orderBy('name');
+
+            $venues = $venues->get();
+
+        } else {
+            $venues = Venue::with('season')->orderBy('name')->get();
+        }
 
         if (request()->expectsJson())
         {

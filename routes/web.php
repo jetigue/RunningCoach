@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/athletes', 'AthleteController');
+Route::resource('/track-meets', 'Meets\TrackMeetController');
 
 // General Properties
 Route::get('/distances', 'Properties\General\DistanceController@index');
@@ -39,6 +40,8 @@ Route::get('/genders', 'Properties\Races\GenderController@index');
 Route::apiResources([
     
     'api/athletes' => 'API\AthleteController',
+
+    'api/track-meets' => 'API\Meets\TrackMeetController',
 
     // General Properties
     'api/distances' => 'API\Properties\General\DistanceController',

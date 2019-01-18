@@ -5,7 +5,7 @@
     <portal to="menu-modal">
         <div v-show="active" class="fixed pin overflow-auto z-50 bg-smoke flex">
             <div class="relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded">
-                <header class="bg-primary flex justify-between items-center py-5 px-2">
+                <header class="bg-secondary flex justify-between items-center py-5 px-3">
                     <div>
                         <h3 class="font-thin text-2xl text-white">
                             Admin Menu
@@ -15,7 +15,7 @@
                         <i class="fas fa-times text-xl text-white"></i>
                     </button>
                 </header>
-                <section>
+                <section class="p-4">
                     <slot></slot>
                 </section>
             </div>

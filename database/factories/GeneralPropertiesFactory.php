@@ -5,14 +5,16 @@ use App\Models\Properties\General\Season;
 use App\Models\Properties\General\Distance;
 
 $factory->define(Season::class, function (Faker $faker) {
+    $name = $faker
+                ->unique()
+                ->randomElement($array = array(
+                    'Cross Country',
+                    'Outdoor Track',
+                    'Indoor Track'
+                ));
     return [
-        'name' => $faker
-            ->unique()
-            ->randomElement($array = array (
-                'Cross Country',
-                'Outdoor Track',
-                'Indoor Track'
-            )),
+        'name' => $name,
+        'slug' => str_slug($name)
     ];
 });
 

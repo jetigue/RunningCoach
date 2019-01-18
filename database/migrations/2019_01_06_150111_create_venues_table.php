@@ -14,7 +14,7 @@ class CreateVenuesTable extends Migration
     public function up()
     {
         Schema::create('venues', function (Blueprint $table) {
-            $table->increments('id');
+            $table->smallIncrements('id');
             $table->string('name', 150);
             $table->unsignedTinyInteger('season_id');
             $table->timestamps();

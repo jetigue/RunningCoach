@@ -3,10 +3,12 @@ import axios from 'axios';
 import VueSweetalert2 from 'vue-sweetalert2';
 import Form from './utilities/Form';
 import Errors from './utilities/Errors';
-import PortalVue from 'portal-vue'
+import PortalVue from 'portal-vue';
+
 
 Vue.use(PortalVue);
 Vue.use(VueSweetalert2);
+Vue.use(require('vue-moment'));
 
 window.Vue = require('vue');
 window._ = require('lodash');

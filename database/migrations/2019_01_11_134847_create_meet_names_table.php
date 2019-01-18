@@ -14,7 +14,7 @@ class CreateMeetNamesTable extends Migration
     public function up()
     {
         Schema::create('meet_names', function (Blueprint $table) {
-            $table->increments('id');
+            $table->smallIncrements('id');
             $table->string('name');
             $table->unsignedTinyInteger('season_id');
             $table->timestamps();
