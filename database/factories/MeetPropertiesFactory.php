@@ -29,7 +29,7 @@ $factory->define(Venue::class, function (Faker $faker) {
 
 $factory->define(Name::class, function (Faker $faker) {
     return [
-        'name' => $faker->lastName . ' ' . 'Invitational',
+        'name' => $faker->name . ' ' . 'Invitational',
         'season_id' => $faker->numberBetween($min = 1, $max = 3)
     ];
 });

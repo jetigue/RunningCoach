@@ -16,9 +16,13 @@ class NameController extends Controller
      */
     public function index(Request $request)
     {
-        
-        if ($request->exists('outdoor-track')) {
-            return Name::where('season_id', 1)->get();
+
+        if ($seasonSlug = request('season')) {
+            $season = Season::where('slug', $seasonSlug)->firstOrFail();
+
+            $names = Name::where('season_id', $season->id)->with('season')->orderBy('name');
+
+            $names = $names->get();
         }
 
         $names = Name::all();
@@ -66,7 +70,7 @@ class NameController extends Controller
     public function update(Request $request, Name $name)
     {
         request()->validate([
-            'name' => 'required|min:3',
+            'name' => 'required|string|min:3',
             'season_id' => 'required|integer'
         ]);
 

@@ -146,11 +146,10 @@ let colors = {
 
   'secondary': '#800000',
 
-
   'tertiary': '#008000',
   'tertiary-light': '#4ca64c',
   'tertiary-lighter': '#99cc99',
-  'tertiary-lightest': '#e5f2e5'
+  'tertiary-lightest': '#e5f2e5',
 }
 
 module.exports = {

@@ -13,28 +13,22 @@ class SeasonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {        
         $seasons = Season::all();
 
         return $seasons;
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
-        $season = request()->validate([
-            'name' => 'required|string|min:3'
-        ]);
-
-        $season = Season::create($season);
-
-        return response()->json($season, 201);
+        return $this->storeSeason($request);
     }
 
     /**
@@ -49,33 +43,67 @@ class SeasonController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\General\Season  $season
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Season $season
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, Season $season)
     {
-        request()->validate([
-            'name' => 'required|min:3'
-        ]);
-
-        $season->update(request(['name']));
-
-        return response()->json($season, 200);
+        return $this->updateSeason($request, $season);
     }
 
+
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Properties\General\Season  $season
-     * @return \Illuminate\Http\Response
+     * @param Season $season
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     public function destroy(Season $season)
     {
         $season->delete();
 
         return response()->json(null, 204);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function storeSeason(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $this->validate($request, [
+            'name' => 'required|string|min:3',
+        ]);
+
+        $season = new Season;
+
+        $season->name = $request->name;
+        $season->slug = str_slug($request->name);
+
+        $season->save();
+
+        return response()->json($season, 201);
+    }
+
+    /**
+     * @param Request $request
+     * @param Season $season
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function updateSeason(Request $request, Season $season): \Illuminate\Http\JsonResponse
+    {
+        $this->validate($request, [
+            'name' => 'required|string|min:3'
+        ]);
+
+        $season->name = $request->name;
+        $season->slug = str_slug($request->name);
+
+        $season->update(request(['name', 'slug']));
+
+        return response()->json($season, 200);
     }
 }

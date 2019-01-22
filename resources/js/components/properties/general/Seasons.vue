@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="flex content-around">
-                    <create-button title="Create Meet Host">
+                    <create-button title="Create New Season">
                         <new-season @created="add"></new-season>
                     </create-button>
                     <portal-target name="create-modal"></portal-target>

@@ -30,13 +30,8 @@ export default {
             isExpanded: false,
 
             items: [
-                // { 
-                //     id: 1,
-                //     label: 'Distances',
-                //     url:   '/distances'
-                // },
                 { 
-                    id: 2,
+                    id: 1,
                     label: 'Seasons',
                     url: '/seasons'
                 }

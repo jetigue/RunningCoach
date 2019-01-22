@@ -1,36 +1,36 @@
 <template>
-    <div class="md:w-3/4 lg:w-3/4 mx-auto bg-white md:p-4">
-        <h3 class="font-light text-2xl pb-1 text-primary">Meet Hosts</h3>
-        <div class="table-container w-full">
-                <div class="table-header">
+    <div class="pb-8 md:py-8 md:px-12">
+        <h3 class="font-light text-2xl pb-1 text-primary">User Roles</h3>
+        <div class="table-container">
+            <div class="table-header">
                 <div class="flex justify-between">
                     <div class="flex-1">
                         <p class="text-primary font-semibold">Name</p>
                     </div>
                 </div>
                 <div class="flex content-around">
-                    <create-button title="Create Meet Host">
-                        <new-meet-host @created="add"></new-meet-host>
+                    <create-button title="Create New Role">
+                        <new-role @created="add"></new-role>
                     </create-button>
                     <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
-            <div v-for="(host, index) in items" :key="host.id">
-                <meet-host :data="host" @deleted="remove(index)"></meet-host>
+            <div v-for="(role, index) in items" :key="role.id">
+                <user-role :data="role" @deleted="remove(index)"></user-role>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import MeetHost from './MeetHost';
-    import CreateButton from '../../buttons/CreateButton';
-    import NewMeetHost from '../../forms/NewMeetHost';
+    import UserRole from './UserRole';
+    import CreateButton from '../buttons/CreateButton';
+    import NewRole from '../forms/NewRole';
 
     export default {
         props: ['data'],
 
-        components: { MeetHost, CreateButton, NewMeetHost },
+        components: { UserRole, CreateButton, NewRole },
 
         data() {
             return {
@@ -39,8 +39,8 @@
         },
 
         methods: {
-            add(host) {
-                this.items.push(host);
+            add(role) {
+                this.items.push(role);
                 this.$emit('reset');
             },
 
@@ -56,7 +56,7 @@
 
                 toast({
                     type: 'success',
-                    title: 'Host Deleted'
+                    title: 'Role Deleted'
                 });
             },
         }

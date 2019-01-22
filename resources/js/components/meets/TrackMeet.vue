@@ -4,7 +4,7 @@
             <div class="w-full">
                 <form action="api/track-meets/id" method="POST" id="editTrackMeet" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -158,6 +158,12 @@
                 venue: this.data.venue.name,
                 timing: this.data.timing.name,
 
+                meet_name_id: this.data.meet_name_id,
+                season_id: this.data.season_id,
+                host_id: this.data.host_id,
+                venue_id: this.data.venue_id,
+                timing_method_id: this.data.timing_method_id,
+
                 form: new Form({
                     meet_name_id: this.data.meet_name_id,
                     meet_date: this.data.meet_date,
@@ -185,7 +191,7 @@
                     .patch('/api/track-meets/' + this.data.id)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
-                        this.meet_date = this.form.meet_date;
+                        this.meetDate = this.form.meet_date;
                         this.host = this.hosts.find(host => host.id === this.form.host_id).name;
                         this.venue = this.venues.find(venue => venue.id === this.form.venue_id).name;
                         this.timing = this.timings.find(timing => timing.id === this.form.timing_method_id).name;
@@ -220,7 +226,7 @@
 
             resetForm() {
                 this.form.meet_name_id = this.meet_name_id,
-                this.form.meet_date = this.meet_date,
+                this.form.meet_date = this.meetDate,
                 this.form.season_id = this.season_id,
                 this.form.host_id = this.host_id,
                 this.form.venue_id = this.venue_id,
@@ -236,7 +242,7 @@
                 }             
                 
                 function getMeetNames() {
-                    return axios.get('/api/meet-names')
+                    return axios.get('/api/meet-names?season=outdoor-track&season2=indoor-track')
                 }
 
                 function getSeasonNames() {

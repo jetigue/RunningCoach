@@ -2,20 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Properties/Meets/NameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Properties/Meets/NameController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Users/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewMeetVenue.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Distance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Distance.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/GeneralProperties.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/GeneralProperties.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenue.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethod.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Event.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Event.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Gender.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Gender.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +48,80 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+              <folding>
+                <element signature="e#961#991#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sass/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/user.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,28 +145,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/sass/components/tables.scss" />
-        <option value="$PROJECT_DIR$/tailwind.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/ExpandButton.vue" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/HostController.php" />
-        <option value="$PROJECT_DIR$/resources/js/utilities/Errors.js" />
-        <option value="$PROJECT_DIR$/resources/js/utilities/Form.js" />
-        <option value="$PROJECT_DIR$/app/Models/Properties/Meets/Host.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/EditButton.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/buttons/DeleteButton.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/CancelButton.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/main.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/forms/inputs/InputText.vue" />
-        <option value="$PROJECT_DIR$/resources/sass/components/forms.scss" />
         <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/modals/CreateModal.vue" />
-        <option value="$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" />
+        <option value="$PROJECT_DIR$/database/factories/UsersFactory.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UsersSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Models/Users/User.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/Users/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Users/Roles/index.blade.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/SeasonTest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Users/UserRoleController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/users/UserRoles.vue" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_19_124754_create_user_roles_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Properties/General/Season.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Users/UserRoleController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/CancelButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue" />
+        <option value="$PROJECT_DIR$/app/Models/Users/Role.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Users/RoleController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/VenueController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenue.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/users/UserRole.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/forms/NewRole.vue" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/GeneralProperties.vue" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/UserRolesTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/RegisterButton.vue" />
         <option value="$PROJECT_DIR$/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/LoginButton.vue" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" />
+        <option value="$PROJECT_DIR$/config/auth.php" />
+        <option value="$PROJECT_DIR$/tailwind.js" />
+        <option value="$PROJECT_DIR$/resources/sass/components/forms.scss" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/resources/sass/main.scss" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/user.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" />
       </list>
     </option>
   </component>
@@ -85,7 +207,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
@@ -192,19 +314,67 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\database\migrations" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\database\migrations\Users" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\app\Models\Users" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -218,8 +388,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.blade.php">
-    <configuration name="index.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RunningCoach/resources/views/properties/meets/hosts/index.blade.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="PHPUnit.VenuesTest.a_venue_requires_a_season_id">
+    <configuration name="SeasonsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SeasonsTest" file="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SeasonsTest.a_season_requires_a_name" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SeasonsTest" file="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" method="a_season_requires_a_name" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SeasonsTest.a_season_requires_a_slug" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SeasonsTest" file="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" method="a_season_requires_a_slug" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SeasonsTest.a_user_can_create_a_season" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SeasonsTest" file="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" method="a_user_can_create_a_season" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="VenuesTest.a_venue_requires_a_season_id" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\VenuesTest" file="$PROJECT_DIR$/tests/Feature/VenuesTest.php" method="a_venue_requires_a_season_id" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -228,7 +415,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.blade.php" />
+        <item itemvalue="PHPUnit.VenuesTest.a_venue_requires_a_season_id" />
+        <item itemvalue="PHPUnit.SeasonsTest.a_user_can_create_a_season" />
+        <item itemvalue="PHPUnit.SeasonsTest.a_season_requires_a_slug" />
+        <item itemvalue="PHPUnit.SeasonsTest" />
+        <item itemvalue="PHPUnit.SeasonsTest.a_season_requires_a_name" />
       </list>
     </recent_temporary>
   </component>
@@ -248,22 +439,62 @@
       <workItem from="1546624340883" duration="51000" />
       <workItem from="1547214131800" duration="1000" />
       <workItem from="1547321775215" duration="18000" />
+      <workItem from="1547856115677" duration="128000" />
+      <workItem from="1547856263010" duration="7115000" />
+      <workItem from="1547901912600" duration="24431000" />
+      <workItem from="1547950120162" duration="18000" />
+      <workItem from="1547950149830" duration="4105000" />
+      <workItem from="1548010796296" duration="641000" />
+      <workItem from="1548033188447" duration="35379000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SeasonsTest_a_user_can_create_a_season - 2019.01.21 at 09h 59m 06s.xml">
+      <configuration name="SeasonsTest.a_user_can_create_a_season" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_user_can_create_a_season - 2019.01.21 at 09h 59m 42s.xml">
+      <configuration name="SeasonsTest.a_user_can_create_a_season" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_season_requires_a_slug - 2019.01.21 at 10h 00m 42s.xml">
+      <configuration name="SeasonsTest.a_season_requires_a_slug" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_season_requires_a_slug - 2019.01.21 at 10h 00m 47s.xml">
+      <configuration name="SeasonsTest.a_season_requires_a_slug" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_season_requires_a_name - 2019.01.21 at 10h 01m 10s.xml">
+      <configuration name="SeasonsTest.a_season_requires_a_name" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_user_can_create_a_season - 2019.01.21 at 10h 01m 13s.xml">
+      <configuration name="SeasonsTest.a_user_can_create_a_season" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest - 2019.01.21 at 10h 01m 17s.xml">
+      <configuration name="SeasonsTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_season_requires_a_slug - 2019.01.21 at 10h 03m 24s.xml">
+      <configuration name="SeasonsTest.a_season_requires_a_slug" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="SeasonsTest_a_user_can_create_a_season - 2019.01.21 at 10h 09m 11s.xml">
+      <configuration name="SeasonsTest.a_user_can_create_a_season" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="VenuesTest_a_venue_requires_a_season_id - 2019.01.21 at 10h 22m 44s.xml">
+      <configuration name="VenuesTest.a_venue_requires_a_season_id" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46418000" />
+    <option name="totallyTimeSpent" value="118235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26439232" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16791044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32955715" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39958805" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -278,165 +509,396 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16791044" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32955715" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958805" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32955715" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/tables.scss">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="381">
+          <caret line="137" column="42" lean-forward="true" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/HostController.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Properties/Meets/Name.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="336">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#47#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/NameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="76" column="54" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
           <folding>
             <element signature="e#61#98#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Properties/General/Season.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/utilities/Errors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1922">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/utilities/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Properties/Meets/Host.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/DeleteButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Properties/Meets/HostController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/ExpandButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/EditButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" column="54" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/CancelButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/inputs/InputText.vue" />
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="141">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#49#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/modals/CreateModal.vue" />
-    <entry file="file://$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3132">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/user.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/MenuItem.vue">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/GeneralProperties.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/UserMenu.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/users/UserRole.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewRole.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/UserRolesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/general/Season.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/VenuesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/TimingMethodsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+          <folding>
+            <element signature="e#63#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/SeasonsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#33#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/HostsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="13" selection-start-line="13" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/modals/MenuModal.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/RegisterButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/MenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="30" selection-start-line="30" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="285">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewDistance.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1443" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding>
+            <element signature="e#33#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-387">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#33#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1536">
+          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/LoginButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/banner.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tailwind.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="1344">
+          <caret line="146" column="25" lean-forward="true" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewSeason.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Users/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="e#36#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="e#961#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+          <folding>
+            <element signature="e#45#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/properties/meets/hosts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/user.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
         </state>
       </provider>
     </entry>

@@ -1,10 +1,5 @@
 require('./bootstrap');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 // Buttons
 Vue.component('cancel-button', require('./components/buttons/CancelButton').default);
@@ -33,6 +28,9 @@ Vue.component('athletes', require('./components/Athletes').default);
 
 Vue.component('track-meets', require('./components/meets/TrackMeets').default);
 
+// Users
+Vue.component('user-roles', require('./components/users/UserRoles').default);
+
 new Vue({
     el: '#userContent',
 
@@ -46,5 +44,12 @@ Vue.component('race-properties', require('./components/menus/RaceProperties').de
 
 new Vue({
     el: '#userMenu',
+
+});
+
+Vue.component('login-button', require('./components/buttons/LoginButton').default);
+
+new Vue({
+    el: '#banner',
 
 });

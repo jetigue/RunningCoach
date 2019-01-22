@@ -14,25 +14,27 @@ class SeasonsTest extends TestCase
     /** @test */
     public function a_user_can_create_a_season()
     {
+        $name = $this->faker->word;
+
         $attributes = [
-            'name' => $this->faker->word
+            'name' => $name,
+            'slug' => str_slug($name)
         ];
 
-        $this->post('/api/seasons', $attributes);
+        $this->post('/api/seasons', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('seasons', $attributes);
 
         $this->get('/seasons')
-            ->assertSee($attributes['name'])
-            ->assertSuccessful();
+            ->assertSee($attributes['name']);
     }
 
-     /** @test */
-     public function a_season_requires_a_name()
-     {
+    /** @test */
+    public function a_season_requires_a_name()
+    {
         $attributes = factory(Season::class)->raw(['name' => '']);
 
         $this->post('api/seasons', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 
 }

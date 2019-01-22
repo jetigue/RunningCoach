@@ -1,18 +1,14 @@
 <template>
     <div>
-        <button type="button"
-                class="flex justify-around items-center border border-secondary hover:bg-secondary text-secondary hover:text-white font-bold rounded-full w-18 focus:outline-none"
-                @click="loadSelects">
-            <i class="fas fa-plus"></i>
-            <span class="">Add</span>
-        </button>
-        <portal to="create-modal">
+        <i class="fas fa-sign-in-alt md:text-xl lg:text-2xl" @click="active=true"></i>
+
+        <portal to="login-modal">
             <div v-show="active" class="fixed pin overflow-auto z-50 bg-smoke flex">
                 <div class="relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex-col flex p-4">
                     <header class="border-b-2 border-primary flex justify-between">
                         <div>
                             <h3 class="font-thin text-2xl text-tertiary py-2">
-                                {{ title }}
+                                Sign In
                             </h3>
                         </div>
                         <button type="button" aria-label="close" @click="close">
@@ -35,9 +31,7 @@
 
 <script>
     export default {
-        name: "CreateButton",
-
-        props: ['title'],
+        name: "LoginButton",
 
         data() {
             return {
@@ -47,22 +41,12 @@
 
         methods: {
             close() {
-                Event.$emit('cancel'),
-                    this.active = false
-            },
-
-            loadSelects() {
-                this.active = true,
-                    Event.$emit('getNames');
-            },
-        },
-
-        created() {
-            Event.$on('formSubmitted', () => this.close());
+                this.active=false
+            }
         }
     }
 </script>
 
 <style scoped>
 
-</style>
+</style>login

@@ -1,8 +1,6 @@
 @include('layouts.header')
 <div class="min-h-screen md:flex md:flex-col">
-    <header class="py-4 pl-2 lg:pl-6 bg-primary text-white md:py-10 lg:py-12">
-        <p class="text-3xl md:text-4xl lg:text-5xl font-thin">Running Coach</p>
-    </header>
+    @include('layouts.banner')
     <div class="flex flex-col">
         <div class="md:flex md:flex-1">
             <aside class="md:min-h-screen md:w-1/6 md:shadow md:p-2" id="userMenu">
@@ -11,20 +9,16 @@
                         <user-menu></user-menu>
                     </menu-button>
                     <portal-target name="menu-modal"></portal-target>
-                    <!-- <i class="fas fa-bars text-3xl text-tertiary pt-2 pr-4"></i> -->
                 </div>
-                <div class=" md:pl-2 lg:pl-4 pt-6">
+
+                <div class=" md:pl-2 lg:pl-4">
                     @include('layouts.menu')
                 </div>
-                
             </aside>
 
-            <main class="md:flex-1 px-2 -mt-6" id="userContent">
+            <main class="md:flex-1 p-2 md:py-6 lg:py-8" id="userContent">
                 @yield('content')
             </main>
-
-            <aside class="md:w-1/6">
-            </aside>
         </div>
     </div>
 </div>

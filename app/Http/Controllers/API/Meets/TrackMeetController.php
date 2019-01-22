@@ -65,7 +65,7 @@ class TrackMeetController extends Controller
         request()->validate([
             'meet_name_id'      => 'required|integer',
             'meet_date'         => 'required|date',
-            'season_id'         =>  'required|integer',
+            'season_id'         => 'required|integer',
             'host_id'           => 'required|integer',
             'venue_id'          => 'required|integer',
             'timing_method_id'  => 'required|integer',

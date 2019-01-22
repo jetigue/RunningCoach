@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,24 +26,30 @@ Route::get('/divisions', 'Properties\Races\DivisionController@index');
 Route::get('/events', 'Properties\Races\EventController@index');
 Route::get('/genders', 'Properties\Races\GenderController@index');
 
+//Users
+Route::get('/user-roles', 'Users\RoleController@index');
+
 Route::apiResources([
-    
+
     'api/athletes' => 'API\AthleteController',
 
-    'api/track-meets' => 'API\Meets\TrackMeetController',
+    'api/track/meets' => 'API\Meets\TrackMeetController',
 
     // General Properties
-    'api/distances' => 'API\Properties\General\DistanceController',
-    'api/seasons' => 'API\Properties\General\SeasonController',
+    'api/distances'   => 'API\Properties\General\DistanceController',
+    'api/seasons'     => 'API\Properties\General\SeasonController',
 
     // Meet Properties
-    'api/hosts' => 'API\Properties\Meets\HostController',
-    'api/meet-names' => 'API\Properties\Meets\NameController',
-    'api/timing' => 'API\Properties\Meets\TimingController',
-    'api/venues' => 'API\Properties\Meets\VenueController',
+    'api/hosts'       => 'API\Properties\Meets\HostController',
+    'api/names'       => 'API\Properties\Meets\NameController',
+    'api/timing'      => 'API\Properties\Meets\TimingController',
+    'api/venues'      => 'API\Properties\Meets\VenueController',
 
     // Race Properties
-    'api/divisions' => 'API\Properties\Races\DivisionController',
-    'api/events' => 'API\Properties\Races\EventController',
-    'api/genders' => 'API\Properties\Races\GenderController',
+    'api/divisions'   => 'API\Properties\Races\DivisionController',
+    'api/events'      => 'API\Properties\Races\EventController',
+    'api/genders'     => 'API\Properties\Races\GenderController',
+
+    // Users
+    'api/roles'  => 'API\Users\RoleController',
 ]);

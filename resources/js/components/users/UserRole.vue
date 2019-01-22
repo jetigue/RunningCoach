@@ -2,9 +2,10 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/names/id" method="POST" id="editName" @submit.prevent="update"
+                <form action="api/roles/id" method="POST" id="editRole" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                      class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -19,7 +20,7 @@
                                 Name
                             </label>
                             <span id="nameHelp" class="form-help" v-if="form.errors.has('name')"
-                                    v-text="form.errors.get('name')">
+                                  v-text="form.errors.get('name')">
                             </span>
                         </div>
                         <input class="form-input"
@@ -27,21 +28,6 @@
                                type="text"
                                v-model="form.name">
                     </div>
-
-                    <div class="mb-4">
-                        <div class="flex justify-between content-end">
-                            <label class="form-label">Season</label>
-                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
-                                v-text="form.errors.get('season_id')">
-                            </span>
-                        </div>
-                        <select class="form-input" name="season_id" v-model="form.season_id" required>
-                            <option v-for="season in seasons" :key="season.id" :value="season.id">
-                                {{ season.name }}
-                            </option>
-                        </select>
-                    </div>
-
                     <div class="flex items-center justify-end">
                         <update-button class="mr-4" :disabled="form.errors.any()">
                             Update
@@ -52,19 +38,16 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
-                <div class="table-row flex justify-between hover:bg-blue-lightest">
-                    <div class="flex md:w-4/5 flex-wrap">
-                        <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
-                        </div>
-                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="season">
-                        </div>
+            <div class="flex flex-col border-b border-primary-lightest hover:bg-primary-lightest">
+                <div class="table-row flex justify-between hover:bg-primary-lightest">
+                    <div class="flex">
+                        <div class="md:text-base text-grey-darker flex-1 md:w-1/2 lg:w-1/3" v-text="name"></div>
                     </div>
-                    <expand-button @toggleRow="toggleRow" class=""></expand-button>
+                    <expand-button @toggleRow="toggleRow"></expand-button>
                 </div>
-                <div v-if="isExpanded" class="py-3 px-2">
-                    <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="getSeasonNames"></edit-button>
+                <div v-if="isExpanded" class="py-3 px-4">
+                    <div class="flex justify-start px-2 cursor-pointer">
+                        <edit-button @clicked="editing=true"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -84,14 +67,11 @@
 
                 id: this.data.id,
                 name: this.data.name,
-                season: this.data.season.name,
+                slug: this.data.slug,
 
                 form: new Form({
                     name: this.data.name,
-                    season_id: this.data.season_id
-                }),
-
-                seasons: []
+                })
             }
         },
 
@@ -102,25 +82,25 @@
 
             update() {
                 this.form
-                    .patch('/api/names/' + this.data.id)
+                    .patch('/api/roles/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
-                        this.season = this.seasons.find(season => season.id === this.form.season_id).name;
 
                         this.editing = false;
                         this.isExpanded = false;
 
                         const toast = Vue.swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
                         });
 
                         toast({
                             type: 'success',
-                            title: 'Name Updated'
+                            title: 'Role Updated'
                         });
+
                     })
 
                     .catch(errors => {
@@ -129,7 +109,7 @@
             },
 
             destroy() {
-                axios.delete('api/names/' + this.data.id);
+                axios.delete('api/roles/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
@@ -137,18 +117,6 @@
             resetForm() {
                 this.form.name = this.name
                 this.isExpanded = false;
-            },
-
-            getSeasonNames() {
-                this.editing = true;
-
-                axios.get('/api/seasons')
-                    .then(response => {
-                        this.seasons = response.data;
-                    })
-                    .catch(errors => {
-                        console.log(errors)
-                    });
             }
         }
     }

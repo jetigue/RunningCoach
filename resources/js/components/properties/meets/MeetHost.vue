@@ -4,7 +4,7 @@
             <div class="w-full">
                 <form action="api/hosts/id" method="POST" id="editHost" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -39,7 +39,7 @@
             <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
                 <div class="table-row flex justify-between hover:bg-blue-lightest">
                     <div class="flex md:w-4/5 flex-wrap">
-                        <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
+                        <div class="text-grey-darker w-full font-semibold md:font-normal" v-text="name">
                         </div>
                     </div>
                     <expand-button @toggleRow="toggleRow"></expand-button>
@@ -83,21 +83,24 @@
                     .patch('/api/hosts/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
+                        
                         this.editing = false;
-
                         this.isExpanded = false;
 
-                        const toast = Vue.swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
-                        });
+                        if (this.name != this.data.name) {
 
-                        toast({
-                            type: 'success',
-                            title: 'Host Updated'
-                        });
+                            const toast = Vue.swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+
+                            toast({
+                                type: 'success',
+                                title: 'Host Updated'
+                            });
+                        }
 
                     })
 

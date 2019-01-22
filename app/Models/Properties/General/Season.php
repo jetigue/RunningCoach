@@ -21,11 +21,11 @@ class Season extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name', 'slug'
     ];
 
     /**
-     * Get a string path for the host.
+     * Get a string path for the season.
      *
      * @return string
      */
@@ -34,12 +34,12 @@ class Season extends Model
         return '/seasons/' . $this->id;
     }
 
-    public function venue()
+    public function venues()
     {
         return $this->hasMany(Venue::class);
     }
 
-    public function meetName()
+    public function meetNames()
     {
         return $this->hasMany(Name::class);
     }

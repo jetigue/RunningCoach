@@ -22,10 +22,8 @@ class NameController extends Controller
             $names = Name::where('season_id', $season->id)->with('season')->orderBy('name');
 
             $names = $names->get();
-
-        } else {
+        } 
             $names = Name::with('season')->orderBy('name')->get();
-        }
         
         if (request()->expectsJson()) {
             return $names;

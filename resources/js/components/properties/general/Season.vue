@@ -6,6 +6,7 @@
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
+
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
@@ -28,9 +29,10 @@
                                v-model="form.name">
                     </div>
                     <div class="flex items-center justify-end">
-                        <update-button class="mr-4" :disabled="form.errors.any()">Update
+                        <update-button class="mr-4" :disabled="form.errors.any()">
+                            Update
                         </update-button>
-                        <cancel-button @clicked="resetForm"></cancel-button>
+                        <cancel-button @clicked="resetForm" @click.prevent="update"></cancel-button>
                     </div>
                 </form>
             </div>
