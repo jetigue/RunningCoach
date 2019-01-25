@@ -4,7 +4,7 @@ namespace App\Filters;
 
 use App\Models\Properties\General\Season;
 
-class NameFilter extends Filters
+class VenueFilter extends Filters
 {
   /**
    * Registered filters to operate upon.

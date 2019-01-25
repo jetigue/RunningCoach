@@ -16,7 +16,7 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.meet_name_id">Meet Name</label>
+                            <label class="form-label">Meet Name</label>
                             <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
                                 v-text="form.errors.get('meet_name_id')">
                             </span>
@@ -42,21 +42,21 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.host_id">Host</label>
-                            <span id="hostHelp" class="form-help" v-if="form.errors.has('host_id')"
-                                v-text="form.errors.get('host_id')">
+                            <label class="form-label" for="form.season_id">Season</label>
+                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
+                                v-text="form.errors.get('season_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="host_id" v-model="form.host_id" required>
-                            <option v-for="host in hosts" :key="host.id" :value="host.id">
-                                {{ host.name }}
+                        <select class="form-input" name="season_id" v-model="form.season_id" required>
+                            <option v-for="season in seasons" :key="season.id" :value="season.id">
+                                {{ season.name }}
                             </option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.venue_id">Venue</label>
+                            <label class="form-label">Venue</label>
                             <span id="venueHelp" class="form-help" v-if="form.errors.has('venue_id')"
                                 v-text="form.errors.get('venue_id')">
                             </span>
@@ -70,7 +70,21 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.timing_method_id">Timing Method</label>
+                            <label class="form-label">Host</label>
+                            <span id="hostHelp" class="form-help" v-if="form.errors.has('host_id')"
+                                v-text="form.errors.get('host_id')">
+                            </span>
+                        </div>
+                        <select class="form-input" name="host_id" v-model="form.host_id" required>
+                            <option v-for="host in hosts" :key="host.id" :value="host.id">
+                                {{ host.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label">Timing Method</label>
                             <span id="timingHelp" class="form-help" v-if="form.errors.has('timing_method_id')"
                                 v-text="form.errors.get('timing_method_id')">
                             </span>
@@ -92,8 +106,8 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
-                <div class="flex flex-col hover:bg-blue-lightest">
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+                <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
                             <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal">
@@ -106,34 +120,33 @@
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
                     </div>
                     <div v-if="isExpanded" class="px-2">
-                            <div class="flex justify-between flex-wrap pb-4 px-4">
+                            <div class="flex flex-col pb-4 px-4">
 
-                                <p class="text-grey w-full lg:w-1/2 py-1">Season: 
+                                <p class="text-grey w-full py-1">Season: 
                                     <span class="text-tertiary">
                                         {{ season }}
                                     </span>
                                 </p>
-                                <p class="text-grey w-full lg:w-1/2 py-1">Host: 
-                                    <span class="text-tertiary">
-                                        {{ host }}
-                                    </span>
-                                </p>
-                                <p class="text-grey w-full lg:w-1/2 py-1">Venue: 
+                                <p class="text-grey w-full py-1">Venue: 
                                     <span class="text-tertiary">
                                         {{ venue }}
                                     </span>
                                 </p>
-                                <p class="text-grey w-full lg:w-1/2 py-1">Timing: 
+                                <p class="text-grey w-full py-1">Host: 
+                                    <span class="text-tertiary">
+                                        {{ host }}
+                                    </span>
+                                </p>
+                                <p class="text-grey w-full py-1">Timing: 
                                     <span class="text-tertiary">
                                         {{ timing }}
                                     </span>
                                 </p>
                             </div>
-                            <div class="flex justify-end cursor-pointer pb-2">
+                            <div class="flex justify-start cursor-pointer pb-2">
                                 <edit-button @clicked="getNames"></edit-button>
                                 <delete-button @clicked="destroy"></delete-button>
                             </div>
-                    
                     </div>
                 </div>
             </div>
@@ -188,7 +201,7 @@
 
             update() {
                 this.form
-                    .patch('/api/track-meets/' + this.data.id)
+                    .patch('/api/trackMeets/' + this.data.id)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
                         this.meetDate = this.form.meet_date;
@@ -200,17 +213,26 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                        const toast = Vue.swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
-                        });
+                         if (
+                            this.meetName != this.data.meetName ||
+                            this.meetDate != this.data.meetDate ||
+                            this.season != this.data.season.name ||
+                            this.venue != this.data.venue.name ||
+                            this.host != this.data.host.name ||
+                            this.timing != this.data.timing.name)
+                            {
+                                const toast = Vue.swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000
+                                });
 
-                        toast({
-                            type: 'success',
-                            title: 'Track Meet Updated'
-                        });
+                                toast({
+                                    type: 'success',
+                                    title: 'Track Meet Updated'
+                                });
+                            }
                     })
 
                     .catch(errors => {
@@ -219,7 +241,7 @@
             },
 
             destroy() {
-                axios.delete('api/track-meets/' + this.data.id);
+                axios.delete('api/trackMeets/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
@@ -239,14 +261,14 @@
 
                 function getHostNames() {
                     return axios.get('/api/hosts')
-                }             
-                
-                function getMeetNames() {
-                    return axios.get('/api/meet-names?season=outdoor-track&season2=indoor-track')
                 }
 
+                function getMeetNames() {
+                    return axios.get('/api/meetNames?track=1')
+                }
+                
                 function getSeasonNames() {
-                    return axios.get('/api/seasons')
+                    return axios.get('/api/seasons?track=1')
                 }
 
                 function getTimingMethods() {
@@ -254,7 +276,7 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/venues')
+                    return axios.get('/api/venues?track=1')
                 }
 
                 axios.all([
@@ -278,6 +300,6 @@
                         this.venues = venuesResponse.data;
                     }));         
             }
-        },
+        }
     }
 </script>

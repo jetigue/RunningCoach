@@ -38,15 +38,15 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-primary-lightest hover:bg-primary-lightest">
-                <div class="table-row flex justify-between hover:bg-primary-lightest">
+            <div class="flex flex-col border-b border-primary-lightest hover:bg-white">
+                <div class="table-row flex justify-between hover:bg-white">
                     <div class="flex">
                         <div class="md:text-base text-grey-darker flex-1 md:w-1/2 lg:w-1/3" v-text="name"></div>
                     </div>
                     <expand-button @toggleRow="toggleRow"></expand-button>
                 </div>
-                <div v-if="isExpanded" class="py-3 px-4">
-                    <div class="flex justify-start px-2 cursor-pointer">
+                <div v-if="isExpanded" class="py-3 px-2">
+                    <div class="flex justify-start cursor-pointer">
                         <edit-button @clicked="editing=true"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
@@ -89,18 +89,19 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                        const toast = Vue.swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000
-                        });
+                        if (this.name != this.data.name) {
+                            const toast = Vue.swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
 
-                        toast({
-                            type: 'success',
-                            title: 'Role Updated'
-                        });
-
+                            toast({
+                                type: 'success',
+                                title: 'Role Updated'
+                            });
+                        }
                     })
 
                     .catch(errors => {

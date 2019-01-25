@@ -4,6 +4,7 @@ namespace App\Models\Properties\Meets;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\General\Season;
+use App\Filters\VenueFilter;
 
 class Venue extends Model
 {
@@ -34,5 +35,17 @@ class Venue extends Model
     public function season()
     {
         return $this->belongsTo(Season::class, 'season_id');
+    }
+
+    /**
+     * Apply all relevant venue filters.
+     * 
+     * @param Builder $query
+     * @param NameFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, VenueFilter $filters)
+    {
+        return $filters->apply($query);
     }
 }

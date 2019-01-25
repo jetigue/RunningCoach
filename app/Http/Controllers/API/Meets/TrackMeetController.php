@@ -28,7 +28,7 @@ class TrackMeetController extends Controller
      */
     public function store(Request $request)
     {
-        $trackMeet = $request->validate([
+        $trackMeet = request()->validate([
             'meet_name_id'      => 'required|integer',
             'meet_date'         => 'required|date',
             'season_id'         => 'required|integer',
@@ -72,11 +72,12 @@ class TrackMeetController extends Controller
         ]);
 
         $trackMeet->update(request([
-            'track_meet_name_id',
+            'meet_name_id',
             'meet_date',
             'host_id',
             'timing_method_id',
-            'track_venue_id'
+            'venue_id',
+            'season_id'
         ]));
 
         return response()->json($trackMeet, 200);

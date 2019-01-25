@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Properties\Meets;
 use App\Models\Properties\Meets\Venue;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Filters\VenueFilter;
 
 class VenueController extends Controller
 {
@@ -13,9 +14,12 @@ class VenueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(VenueFilter $filters)
     {
-        $venues = Venue::all();
+        $venues = Venue::filter($filters)
+            ->with('season')
+            ->orderBy('name')
+            ->get();
 
         return $venues;
     }

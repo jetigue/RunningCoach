@@ -3,31 +3,25 @@
 namespace App\Http\Controllers\Properties\Meets;
 
 use App\Models\Properties\Meets\Name;
+use App\Filters\NameFilter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Properties\General\Season;
 
+/**
+ * Class NameController
+ * @package App\Http\Controllers\Properties\Meets
+ */
 class NameController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param \App\Filters\NameFilter $filters
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(NameFilter $filters)
     {
-        if($seasonSlug = request('season')) {
-            $season = Season::where('slug', $seasonSlug)->firstOrFail();
-            
-            $names = Name::where('season_id', $season->id)->with('season')->orderBy('name');
-
-            $names = $names->get();
-        } 
-            $names = Name::with('season')->orderBy('name')->get();
-        
-        if (request()->expectsJson()) {
-            return $names;
-        }
+        $names = Name::filter($filters)->with('season')->orderBy('name')->get();
 
         return view('properties.meets.names.index', compact('names'));
     }

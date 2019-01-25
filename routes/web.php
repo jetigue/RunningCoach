@@ -33,7 +33,7 @@ Route::apiResources([
 
     'api/athletes' => 'API\AthleteController',
 
-    'api/track/meets' => 'API\Meets\TrackMeetController',
+    'api/trackMeets' => 'API\Meets\TrackMeetController',
 
     // General Properties
     'api/distances'   => 'API\Properties\General\DistanceController',
@@ -41,7 +41,7 @@ Route::apiResources([
 
     // Meet Properties
     'api/hosts'       => 'API\Properties\Meets\HostController',
-    'api/names'       => 'API\Properties\Meets\NameController',
+    'api/meetNames'       => 'API\Properties\Meets\NameController',
     'api/timing'      => 'API\Properties\Meets\TimingController',
     'api/venues'      => 'API\Properties\Meets\VenueController',
 

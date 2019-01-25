@@ -30,9 +30,9 @@ abstract class Filters
      * 
      * @param Request $request
      */
-    public function _construct(Request $request)
+    public function __construct(Request $request)
     {
-        $this->request=$request;
+        $this->request = $request;
     }
 
     /**
@@ -43,7 +43,7 @@ abstract class Filters
      */
     public function apply($builder)
     {
-        $this->builder=$builder;
+        $this->builder = $builder;
 
         foreach ($this->getFilters() as $filter => $value) {
 

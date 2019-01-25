@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <create-button title="Add an Athlete">
+                        <create-button title="Add a Track Meet">
                             <new-track-meet @created="add"></new-track-meet>
                         </create-button>
                         <portal-target name="create-modal"></portal-target>

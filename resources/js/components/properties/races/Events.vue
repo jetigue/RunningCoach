@@ -7,9 +7,6 @@
                         <div class="md:w-1/2">
                             <p class="text-primary font-semibold">Name</p>
                         </div>
-                        <div class="hidden md:flex md:1/2">
-                            <p class="text-primary font-semibold">Meters</p>
-                        </div>
                     </div>
                     <div class="">
                         <create-button title="Create Meet Venue">

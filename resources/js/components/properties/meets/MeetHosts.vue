@@ -1,5 +1,5 @@
 <template>
-    <div class="md:w-3/4 lg:w-3/4 mx-auto bg-white md:p-4">
+    <div class="pb-8 md:py-8 md:px-12">
         <h3 class="font-light text-2xl pb-1 text-primary">Meet Hosts</h3>
         <div class="table-container w-full">
                 <div class="table-header">

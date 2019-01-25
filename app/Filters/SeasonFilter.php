@@ -4,7 +4,7 @@ namespace App\Filters;
 
 use App\Models\Properties\General\Season;
 
-class NameFilter extends Filters
+class SeasonFilter extends Filters
 {
   /**
    * Registered filters to operate upon.
@@ -23,7 +23,7 @@ class NameFilter extends Filters
   {
     $season = Season::where('slug', $seasonSlug)->firstOrFail();
 
-    return $this->builder->where('season_id', $season->id);
+    return $this->builder->where('id', $season->id);
   }
 
   /**
@@ -34,12 +34,9 @@ class NameFilter extends Filters
    */
   protected function track()
   {
-    $indoor = Season::where('slug', 'indoor-track')->firstOrFail();
-    $outdoor = Season::where('slug', 'outdoor-track')->firstOrFail();
-
     return $this->builder
-      ->where('season_id', $indoor->id)
-      ->orWhere('season_id', $outdoor->id);
+      ->where('slug', 'indoor-track')
+      ->orWhere('slug', 'outdoor-track');
   }
 
 }

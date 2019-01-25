@@ -18,13 +18,13 @@
 
         <div class="mb-4">
             <div class="flex justify-between content-end">
-                <label class="form-label" for="form.season_id">Season</label>
+                <label class="form-label">Season</label>
                 <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
                     v-text="form.errors.get('season_id')">
                 </span>
             </div>
             <select class="form-input" name="season_id" v-model="form.season_id" required>
-                <option v-for="season in seasons" :value="season.id">
+                <option v-for="season in seasons" :key="season.id" :value="season.id">
                     {{ season.name }}
                 </option>
             </select>
@@ -56,7 +56,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/meet-names')
+                .post('/api/meetNames')
 
                 .then(data => {
 
@@ -76,8 +76,6 @@ export default {
   
                     this.$emit('created', data),
                     this.resetForm()
-                    // this.form.name = '',
-                    // this.form.season_id = ''
                 })
 
                 .catch(errors => console.log(errors));

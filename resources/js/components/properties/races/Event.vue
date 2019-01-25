@@ -4,7 +4,7 @@
             <div class="w-full">
                 <form action="api/events/id" method="POST" id="editEvent" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -53,8 +53,8 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
-                <div class="table-row flex justify-between hover:bg-blue-lightest">
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+                <div class="table-row flex justify-between hover:bg-white">
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
@@ -109,17 +109,20 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                        const toast = Vue.swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
-                        });
+                        if (this.name != this.data.name || this.meters != this.data.meters) {
 
-                        toast({
-                            type: 'success',
-                            title: 'Event Updated'
-                        });
+                            const toast = Vue.swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
+                            });
+
+                            toast({
+                                type: 'success',
+                                title: 'Event Updated'
+                            });
+                        }
                     })
 
                     .catch(errors => {

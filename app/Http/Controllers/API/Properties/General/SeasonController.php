@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Properties\General;
 use App\Models\Properties\General\Season;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Filters\SeasonFilter;
 
 class SeasonController extends Controller
 {
@@ -13,9 +14,9 @@ class SeasonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {        
-        $seasons = Season::all();
+    public function index(SeasonFilter $filters)
+    {
+        $seasons = Season::filter($filters)->orderBy('name')->get();
 
         return $seasons;
     }

@@ -5,17 +5,20 @@ namespace App\Http\Controllers\Properties\General;
 use App\Models\Properties\General\Season;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Filters\SeasonFilter;
 
 class SeasonController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param \App\Filters\SeasonFilter $filters
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(SeasonFilter $filters)
     {
-        $seasons = Season::all();
+        // $seasons = Season::all();
+
+        $seasons = Season::filter($filters)->orderBy('name')->get();
 
         if (request()->expectsJson())
         {

@@ -36,8 +36,8 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
-                <div class="table-row flex justify-between hover:bg-blue-lightest">
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+                <div class="table-row flex justify-between hover:bg-white">
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full font-semibold md:font-normal" v-text="name">
                         </div>

@@ -25,7 +25,7 @@
 
         <div class="mb-3">
             <div class="flex justify-between content-end">
-                <label class="form-label" for="form.sex">Sex</label>
+                <label class="form-label">Sex</label>
                 <span id="sexHelp" class="form-help" v-if="form.errors.has('sex')"
                     v-text="form.errors.get('sex')">
                 </span>
@@ -59,7 +59,7 @@
 
         <div class="mb-3">
             <div class="flex justify-between content-end">
-                <label class="form-label" for="form.status">Status</label>
+                <label class="form-label">Status</label>
                 <span id="statusHelp" class="form-help" v-if="form.errors.has('status')"
                     v-text="form.errors.get('status')">
                 </span>
@@ -119,8 +119,6 @@ export default {
   
                     this.$emit('created', data),
                     this.resetForm()
-                    // this.form.name = '',
-                    // this.form.season_id = ''
                 })
 
                 .catch(errors => console.log(errors));
@@ -139,17 +137,6 @@ export default {
 
     created() {
         Event.$on('cancel', () => this.resetForm());
-
-        // Event.$on('getNames', () => 
-
-        //     axios.get('/api/seasons')
-        //         .then(response => {
-        //             this.seasons = response.data;
-        //         })
-        //         .catch(errors => {
-        //             console.log(errors)
-        //         })
-        // );
     }
 }
 </script>

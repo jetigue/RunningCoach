@@ -6,6 +6,7 @@ use App\Models\Properties\Meets\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Properties\General\Season;
+use App\Filters\NameFilter;
 
 class NameController extends Controller
 {
@@ -14,18 +15,10 @@ class NameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(NameFilter $filters)
     {
 
-        if ($seasonSlug = request('season')) {
-            $season = Season::where('slug', $seasonSlug)->firstOrFail();
-
-            $names = Name::where('season_id', $season->id)->with('season')->orderBy('name');
-
-            $names = $names->get();
-        }
-
-        $names = Name::all();
+        $names = Name::filter($filters)->with('season')->orderBy('name')->get();
 
         return $names;
     }

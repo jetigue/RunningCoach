@@ -3,7 +3,9 @@
 namespace App\Models\Properties\Meets;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\Properties\General\Season;
+use App\Filters\NameFilter;
 
 class Name extends Model
 {
@@ -34,5 +36,17 @@ class Name extends Model
     public function season()
     {
         return $this->belongsTo(Season::class, 'season_id');
+    }
+
+    /**
+     * Apply all relevant name filters.
+     * 
+     * @param Builder $query
+     * @param NameFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, NameFilter $filters)
+    {
+        return $filters->apply($query);
     }
 }
