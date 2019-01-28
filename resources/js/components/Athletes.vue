@@ -1,14 +1,16 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Athletes</h3>
+    <div class="flex flex-col">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Athletes</header>
+            <filter-button class="">
+                <status-filter></status-filter>
+            </filter-button>
+        </div>
         <div class="table-container">
                 <div class="table-header">
                     <div class="flex md:w-4/5">
-                        <div class="md:w-1/2">
+                        <div class="">
                             <p class="text-primary font-semibold">Name</p>
-                        </div>
-                        <div class="hidden md:flex md:1/2">
-                            <p class="text-primary font-semibold">Status</p>
                         </div>
                     </div>
                     <div class="">

@@ -577,7 +577,7 @@ a {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: .5rem;
+  padding: .5rem .65rem .5rem .5rem;
 }
 
 .card {
@@ -6796,6 +6796,10 @@ a {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-11 {
+  width: 2.75rem;
 }
 
 .w-12 {
@@ -13108,6 +13112,10 @@ a {
     width: 2.5rem;
   }
 
+  .sm\:w-11 {
+    width: 2.75rem;
+  }
+
   .sm\:w-12 {
     width: 3rem;
   }
@@ -19402,6 +19410,10 @@ a {
 
   .md\:w-10 {
     width: 2.5rem;
+  }
+
+  .md\:w-11 {
+    width: 2.75rem;
   }
 
   .md\:w-12 {
@@ -25700,6 +25712,10 @@ a {
     width: 2.5rem;
   }
 
+  .lg\:w-11 {
+    width: 2.75rem;
+  }
+
   .lg\:w-12 {
     width: 3rem;
   }
@@ -31994,6 +32010,10 @@ a {
 
   .xl\:w-10 {
     width: 2.5rem;
+  }
+
+  .xl\:w-11 {
+    width: 2.75rem;
   }
 
   .xl\:w-12 {

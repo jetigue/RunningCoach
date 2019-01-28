@@ -1,5 +1,13 @@
 @extends('layouts.user')
 
 @section('content')
-    <meet-names :data="{{ $names }}"></meet-names>
+    @component('components.userTables')
+        <meet-names :data="{{ $meetNames }}"></meet-names>
+    @endcomponent
+@endsection
+
+@section('aside')
+    <filters>
+        <season-filter></season-filter>
+    </filters>
 @endsection

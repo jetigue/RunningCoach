@@ -1,18 +1,22 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">
-        <h3 class="font-light text-2xl pb-1 text-primary">Meet Hosts</h3>
-        <div class="table-container w-full">
+    <div class="flex flex-col">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Meet Hosts</header>
+            <filter-button class="hidden">
+
+            </filter-button>
+        </div>
+        <div class="table-container">
                 <div class="table-header">
                 <div class="flex justify-between">
                     <div class="flex-1">
                         <p class="text-primary font-semibold">Name</p>
                     </div>
                 </div>
-                <div class="flex content-around">
+                <div class="flex">
                     <create-button title="Create Meet Host">
                         <new-meet-host @created="add"></new-meet-host>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(host, index) in items" :key="host.id">

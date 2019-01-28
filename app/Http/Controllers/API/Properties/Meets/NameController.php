@@ -5,22 +5,23 @@ namespace App\Http\Controllers\API\Properties\Meets;
 use App\Models\Properties\Meets\Name;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Properties\General\Season;
 use App\Filters\NameFilter;
 
 class NameController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param NameFilter $filters
+     * @return mixed
      */
     public function index(NameFilter $filters)
     {
+        $meetNames = Name::filter($filters)
+            ->with('season')
+            ->orderBy('name')
+            ->get();
 
-        $names = Name::filter($filters)->with('season')->orderBy('name')->get();
-
-        return $names;
+        return $meetNames;
     }
 
     /**
@@ -31,24 +32,24 @@ class NameController extends Controller
      */
     public function store(Request $request)
     {
-        $name = request()->validate([
+        $meetName = request()->validate([
             'name' => 'required|string|min:3',
             'season_id' => 'required|integer'
         ]);
 
-        $name = Name::create($name);
+        $meetName = Name::create($meetName);
 
-        return $name->load('season');
+        return $meetName->load('season');
         // ->response()->json($name, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Properties\Meets\Name  $name
+     * @param  \App\Models\Properties\Meets\Name  $meetName
      * @return \Illuminate\Http\Response
      */
-    public function show(Name $name)
+    public function show(Name $meetName)
     {
         //
     }
@@ -57,30 +58,30 @@ class NameController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\Meets\Name  $name
+     * @param  \App\Models\Properties\Meets\Name  $meetName
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Name $name)
+    public function update(Request $request, Name $meetName)
     {
         request()->validate([
             'name' => 'required|string|min:3',
             'season_id' => 'required|integer'
         ]);
 
-        $name->update(request(['name', 'season_id']));
+        $meetName->update(request(['name', 'season_id']));
 
-        return response()->json($name, 200);
+        return response()->json($meetName, 200);
     }
 
+
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Properties\Meets\Name  $name
-     * @return \Illuminate\Http\Response
+     * @param Name $meetName
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
-    public function destroy(Name $name)
+    public function destroy(Name $meetName)
     {
-        $name->delete();
+        $meetName->delete();
 
         return response()->json(null, 204);
     }

@@ -2,10 +2,11 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/names/id" method="POST" id="editName" @submit.prevent="update"
+                <form action="api/seasons/id" method="POST" id="editSeason" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
+
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
@@ -55,16 +56,16 @@
             <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
                 <div class="table-row flex justify-between hover:bg-white">
                     <div class="flex md:w-4/5 flex-wrap">
-                        <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
+                        <div class="text-grey-darker w-full lg:w-1/2 font-semibold lg:font-normal" v-text="name">
                         </div>
-                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="season">
+                        <div class="text-grey-dark lg:1/2 pl-2 md:pl-4 lg:pl-0 pt-1 flex-1" v-text="season">
                         </div>
                     </div>
-                    <expand-button @toggleRow="toggleRow" class=""></expand-button>
+                    <expand-button @toggleRow="toggleRow"></expand-button>
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="getSeasonNames"></edit-button>
+                        <edit-button @clicked="editing=true"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>

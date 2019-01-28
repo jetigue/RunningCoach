@@ -1,10 +1,7 @@
 <template>
     <div>
-        <button type="button"
-                class="flex justify-around items-center border border-secondary hover:bg-secondary text-secondary hover:text-white font-bold rounded-full w-18 focus:outline-none"
-                @click="loadSelects">
-            <i class="fas fa-plus"></i>
-            <span class="">Add</span>
+        <button type="button" @click="loadSelects">
+            <i class="fas fa-plus text-lg text-primary pt-1"></i>
         </button>
         <portal to="create-modal">
             <div v-show="active" class="fixed pin overflow-auto z-50 bg-smoke flex">

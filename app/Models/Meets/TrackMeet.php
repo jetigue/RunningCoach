@@ -2,7 +2,9 @@
 
 namespace App\Models\Meets;
 
+use App\Filters\TrackMeetFilter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
@@ -70,5 +72,17 @@ class TrackMeet extends Model
     public function timing()
     {
         return $this->belongsTo(Timing::class, 'timing_method_id');
+    }
+
+    /**
+     * Apply all relevant name filters.
+     *
+     * @param Builder $query
+     * @param TrackMeetFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, TrackMeetFilter $filters)
+    {
+        return $filters->apply($query);
     }
 }

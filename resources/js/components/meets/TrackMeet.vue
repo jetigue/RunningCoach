@@ -111,7 +111,7 @@
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
                             <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal">
-                            {{ meetName }}
+                                {{ meetName }}
                             </div>
                             <div class="text-grey-darker py-1 pl-4 lg:p-0">
                                 {{ meetDate | moment("MMMM Do, YYYY") }}
@@ -120,33 +120,33 @@
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
                     </div>
                     <div v-if="isExpanded" class="px-2">
-                            <div class="flex flex-col pb-4 px-4">
+                        <div class="flex flex-col pb-4 px-4">
 
-                                <p class="text-grey w-full py-1">Season: 
-                                    <span class="text-tertiary">
-                                        {{ season }}
-                                    </span>
-                                </p>
-                                <p class="text-grey w-full py-1">Venue: 
-                                    <span class="text-tertiary">
-                                        {{ venue }}
-                                    </span>
-                                </p>
-                                <p class="text-grey w-full py-1">Host: 
-                                    <span class="text-tertiary">
-                                        {{ host }}
-                                    </span>
-                                </p>
-                                <p class="text-grey w-full py-1">Timing: 
-                                    <span class="text-tertiary">
-                                        {{ timing }}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="flex justify-start cursor-pointer pb-2">
-                                <edit-button @clicked="getNames"></edit-button>
-                                <delete-button @clicked="destroy"></delete-button>
-                            </div>
+                            <p class="text-grey w-full py-1">Season:
+                                <span class="text-tertiary">
+                                    {{ season }}
+                                </span>
+                            </p>
+                            <p class="text-grey w-full py-1">Venue:
+                                <span class="text-tertiary">
+                                    {{ venue }}
+                                </span>
+                            </p>
+                            <p class="text-grey w-full py-1">Host:
+                                <span class="text-tertiary">
+                                    {{ host }}
+                                </span>
+                            </p>
+                            <p class="text-grey w-full py-1">Timing:
+                                <span class="text-tertiary">
+                                    {{ timing }}
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex justify-start cursor-pointer pb-2">
+                            <edit-button @clicked="getNames"></edit-button>
+                            <delete-button @clicked="destroy"></delete-button>
+                        </div>
                     </div>
                 </div>
             </div>

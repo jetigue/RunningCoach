@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\AthleteFilter;
 use App\Models\Athlete;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class AthleteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(AthleteFilter $filters)
     {
-        $athletes = Athlete::all();
+        $athletes = Athlete::filter($filters)->orderBy('last_name')->get();
 
         if (request()->expectsJson())
         {

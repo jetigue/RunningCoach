@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers\Properties\Meets;
 
-use App\Models\Properties\Meets\Name;
 use App\Filters\NameFilter;
-use Illuminate\Http\Request;
+use App\Models\Properties\Meets\Name;
 use App\Http\Controllers\Controller;
-use App\Models\Properties\General\Season;
 
-/**
- * Class NameController
- * @package App\Http\Controllers\Properties\Meets
- */
 class NameController extends Controller
 {
     /**
@@ -21,9 +15,12 @@ class NameController extends Controller
      */
     public function index(NameFilter $filters)
     {
-        $names = Name::filter($filters)->with('season')->orderBy('name')->get();
+        $meetNames = Name::filter($filters)
+            ->with('season')
+            ->orderBy('name')
+            ->get();
 
-        return view('properties.meets.names.index', compact('names'));
+        return view('properties.meets.names.index', compact('meetNames'));
     }
 
     /**

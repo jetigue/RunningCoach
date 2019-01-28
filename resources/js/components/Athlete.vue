@@ -39,7 +39,7 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.sex">Sex</label>
+                            <label class="form-label">Sex</label>
                             <span id="sexHelp" class="form-help" v-if="form.errors.has('sex')"
                                 v-text="form.errors.get('sex')">
                             </span>
@@ -80,23 +80,48 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-blue-lightest">
-                <div class="table-row flex justify-between hover:bg-blue-lightest">
-                    <div class="flex md:w-4/5 flex-wrap">
-                        <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name"></div>
-                    <div>
-                        <a v-if="active" class="" @click="inactivate">
-                            <span class="icon is-medium" style="color:green;"> 
-                                <i class="fas fa-check-square"></i>
-                            </span>
-                        </a>
-                        <a v-else class="" @click="activate"> <span class="icon is-medium" style="color:gray;"> <i class="far fa-square"></i> </span> </a> </div> </div> <!-- <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="status"> </div> -->
-                    <expand-button @toggleRow="toggleRow" class=""></expand-button>
-                </div>
-                <div v-if="isExpanded" class="py-3 px-2">
-                    <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="editing=true"></edit-button>
-                        <delete-button @clicked="destroy"></delete-button>
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+                <div class="flex flex-col hover:bg-white">
+                    <div class="flex justify-between p-2 items-center">
+                        <div class="flex md:w-4/5 flex-wrap">
+                            <div class="text-grey-darker w-full lg:w-1/2"
+                                :class="{'font-semibold': active}">
+                                {{ name }}
+                            </div>
+                        </div>
+                        <expand-button @toggleRow="toggleRow" class=""></expand-button>
+                    </div>
+                    <div v-if="isExpanded" class="px-2">
+                        <div class="flex flex-col pb-4 px-4">
+
+                            <p class="text-grey w-full py-1">Sex:
+                                <span class="text-tertiary">
+                                        {{ sex }}
+                                    </span>
+                            </p>
+                            <p class="text-grey w-full py-1">DOB:
+                                <span class="text-tertiary">
+                                        {{ dob | moment("MM.DD.YYYY") }}
+                                    </span>
+                            </p>
+                            <p class="text-grey w-full py-1">Class:
+                                <span class="text-tertiary">
+                                        {{ grad_year }}
+                                    </span>
+                            </p>
+                            <p class="text-grey w-full py-1">Active:
+                                <a v-if="active" class="" @click="inactivate">
+                                <span class="icon is-medium" style="color:green;">
+                                    <i class="fas fa-check-square"></i>
+                                </span>
+                                </a>
+                                <a v-else class="" @click="activate"> <span class="icon is-medium" style="color:gray;"> <i class="far fa-square"></i> </span> </a>
+                            </p>
+                        </div>
+                        <div class="flex justify-start cursor-pointer pb-2">
+                            <edit-button @clicked="editing=true"></edit-button>
+                            <delete-button @clicked="destroy"></delete-button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,7 +142,7 @@
                 first_name: this.data.first_name,
                 name: this.data.last_name + ", " + this.data.first_name,
                 user_id: this.data.user_id,
-                sex: this.data.sex,
+                sex: (this.data.sex === 'm') ? "Male": "Female",
                 dob: this.data.dob,
                 grad_year: this.data.grad_year,
                 team: this.data.team_id,
@@ -211,14 +236,6 @@
         computed: {
             age: function () {
                 return moment().diff(this.data.dob, 'years');
-            },
-
-            gender: function () {
-                if (this.sex === 'm') {
-                    return "Male";
-                }
-
-                return "Female";
             },
 
             isInactive: function () {

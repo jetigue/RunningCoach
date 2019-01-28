@@ -1,8 +1,13 @@
 @extends('layouts.user')
 
 @section('content')
-    <div class="">
+    @component('components.userTables')
         <meet-hosts :data="{{ $hosts }}"></meet-hosts>
-    </div>
+    @endcomponent
+@endsection
 
+@section('aside')
+    <filters>
+
+    </filters>
 @endsection

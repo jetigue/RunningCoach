@@ -1,18 +1,23 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Seasons</h3>
+    <div class="flex flex-col">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Seasons</header>
+            <filter-button class="hidden">
+
+            </filter-button>
+        </div>
+
         <div class="table-container">
-                <div class="table-header">
-                <div class="flex justify-between">
-                    <div class="flex-1">
+            <div class="table-header">
+                <div class="flex w-full md:w-4/5">
+                    <div class="">
                         <p class="text-primary font-semibold">Name</p>
                     </div>
                 </div>
-                <div class="flex content-around">
+                <div class="">
                     <create-button title="Create New Season">
                         <new-season @created="add"></new-season>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(season, index) in items" :key="season.id">

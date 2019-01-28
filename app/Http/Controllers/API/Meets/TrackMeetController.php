@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers\API\Meets;
 
+use App\Filters\TrackMeetFilter;
 use App\Models\Meets\TrackMeet;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TrackMeetController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param TrackMeetFilter $filters
+     * @return mixed
      */
-    public function index()
+    public function index(TrackMeetFilter $filters)
     {
-        $trackMeets = TrackMeet::all();
+        $trackMeets = TrackMeet::filter($filters)
+            ->with('season', 'host', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->get();
 
         return $trackMeets;
     }
@@ -83,11 +87,11 @@ class TrackMeetController extends Controller
         return response()->json($trackMeet, 200);
     }
 
+
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
+     * @param TrackMeet $trackMeet
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     public function destroy(TrackMeet $trackMeet)
     {

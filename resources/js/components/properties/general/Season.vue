@@ -38,10 +38,10 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-primary-lightest hover:bg-white">
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
                 <div class="table-row flex justify-between hover:bg-white">
-                    <div class="flex">
-                        <div class="md:text-base text-grey-darker flex-1 md:w-1/2 lg:w-1/3" v-text="name"></div>
+                    <div class="flex md:w-4/5">
+                        <div class="text-grey-darker w-full md:w-1/2 lg:w-1/3" v-text="name"></div>
                     </div>
                     <expand-button @toggleRow="toggleRow"></expand-button>
                 </div>

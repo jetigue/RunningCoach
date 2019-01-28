@@ -1,23 +1,31 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Meet Venue</h3>
+    <div class="flex flex-col w-full">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Venues</header>
+            <filter-button>
+                <season-filter></season-filter>
+            </filter-button>
+        </div>
+
         <div class="table-container">
-                <div class="table-header">
-                    <div class="flex md:w-4/5">
-                        <div class="md:w-1/2">
-                            <p class="text-primary font-semibold">Name</p>
-                        </div>
-                        <div class="hidden md:flex md:1/2">
-                            <p class="text-primary font-semibold">Season</p>
-                        </div>
+            <div class="table-header">
+                <div class="flex md:w-4/5">
+                    <div class="lg:w-1/2">
+                        <p class="text-primary font-semibold">Name</p>
                     </div>
-                    <div class="">
-                        <create-button title="Create Meet Venue">
-                            <new-meet-venue @created="add"></new-meet-venue>
-                        </create-button>
-                        <portal-target name="create-modal"></portal-target>
+
+                    <div class="hidden lg:flex lg:1/2">
+                        <p class="text-primary font-semibold">Season</p>
                     </div>
                 </div>
+
+                <div class="">
+                    <create-button title="Create Meet Venue">
+                        <new-meet-venue @created="add"></new-meet-venue>
+                    </create-button>
+                </div>
+            </div>
+
             <div v-for="(venue, index) in items" :key="venue.id">
                 <meet-venue :data="venue" @deleted="remove(index)"></meet-venue>
             </div>

@@ -1,5 +1,13 @@
 @extends('layouts.user')
 
 @section('content')
-    <athletes :data="{{ $athletes }}"></athletes>
+    @component('components.userTables')
+        <athletes :data="{{ $athletes }}"></athletes>
+    @endcomponent
+@endsection
+
+@section('aside')
+    <filters>
+        <status-filter></status-filter>
+    </filters>
 @endsection

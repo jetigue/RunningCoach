@@ -1,27 +1,36 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Meet Name</h3>
+    <div class="flex flex-col w-full">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Meet Names</header>
+            <filter-button>
+                <season-filter></season-filter>
+            </filter-button>
+        </div>
+
         <div class="table-container">
-                <div class="table-header">
-                    <div class="flex md:w-4/5">
-                        <div class="md:w-1/2">
-                            <p class="text-primary font-semibold">Name</p>
-                        </div>
-                        <div class="hidden md:flex md:1/2">
-                            <p class="text-primary font-semibold">Season</p>
-                        </div>
+            <div class="table-header">
+                <div class="flex md:w-4/5">
+                    <div class="lg:w-1/2">
+                        <p class="text-primary font-semibold">Name</p>
                     </div>
-                    <div class="">
-                        <create-button title="Create Meet Name">
-                            <new-meet-name @created="add"></new-meet-name>
-                        </create-button>
-                        <portal-target name="create-modal"></portal-target>
+
+                    <div class="hidden lg:flex lg:1/2">
+                        <p class="text-primary font-semibold">Season</p>
                     </div>
                 </div>
-            <div v-for="(name, index) in items" :key="name.id">
-                <meet-name :data="name" @deleted="remove(index)"></meet-name>
+
+                <div class="">
+                    <create-button title="Create Meet Venue">
+                        <new-meet-name @created="add"></new-meet-name>
+                    </create-button>
+                </div>
+            </div>
+
+            <div v-for="(meetName, index) in items" :key="meetName.id">
+                <meet-name :data="meetName" @deleted="remove(index)"></meet-name>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -33,7 +42,7 @@
     export default {
         props: ['data'],
 
-        components: { MeetName, CreateButton, NewMeetName },
+        components: {MeetName, CreateButton, NewMeetName},
 
         data() {
             return {
@@ -42,8 +51,8 @@
         },
 
         methods: {
-            add(name) {
-                this.items.push(name);
+            add(meetName) {
+                this.items.push(meetName);
                 this.$emit('reset');
             },
 
@@ -61,7 +70,7 @@
                     type: 'success',
                     title: 'Name Deleted'
                 });
-            },
+            }
         }
     }
 </script>

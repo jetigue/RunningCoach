@@ -1,5 +1,13 @@
 @extends('layouts.user')
 
 @section('content')
-    <user-roles :data="{{ $roles }}"></user-roles>
+    @component('components.userTables')
+        <user-roles :data="{{ $roles }}"></user-roles>
+    @endcomponent
+@endsection
+
+@section('aside')
+    <filters>
+
+    </filters>
 @endsection

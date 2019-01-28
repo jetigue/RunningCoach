@@ -10,7 +10,8 @@
             v-show="isExpanded"
             v-for="item in items" 
             :key="item.id"
-            class="flex content-start">
+            class="flex content-start"
+            :class="{'text-purple': item.isActive}">
             <a :href="item.url">{{ item.label }}</a>
         </menu-item>
     </div>

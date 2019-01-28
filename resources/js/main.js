@@ -7,7 +7,14 @@ Vue.component('create-button', require('./components/buttons/CreateButton').defa
 Vue.component('delete-button', require('./components/buttons/DeleteButton').default);
 Vue.component('edit-button', require('./components/buttons/EditButton').default);
 Vue.component('expand-button', require('./components/buttons/ExpandButton').default);
+Vue.component('filter-button', require('./components/buttons/FilterButton').default);
 Vue.component('update-button', require('./components/buttons/UpdateButton').default);
+
+// Filters
+Vue.component('filters', require('./components/filters/Filters').default);
+Vue.component('season-filter', require('./components/filters/SeasonFilter').default);
+Vue.component('status-filter', require('./components/filters/StatusFilter').default);
+Vue.component('track-season-filter', require('./components/filters/TrackSeasonFilter').default);
 
 // General Properties
 Vue.component('seasons', require('./components/properties/general/Seasons').default);

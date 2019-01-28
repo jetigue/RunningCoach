@@ -41,7 +41,7 @@ Route::apiResources([
 
     // Meet Properties
     'api/hosts'       => 'API\Properties\Meets\HostController',
-    'api/meetNames'       => 'API\Properties\Meets\NameController',
+    'api/meetNames'   => 'API\Properties\Meets\NameController',
     'api/timing'      => 'API\Properties\Meets\TimingController',
     'api/venues'      => 'API\Properties\Meets\VenueController',
 

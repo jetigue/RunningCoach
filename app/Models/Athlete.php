@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filters\AthleteFilter;
 
 class Athlete extends Model
 {
@@ -37,6 +39,18 @@ class Athlete extends Model
     public function path()
     {
         return '/athletes/' . $this->id;
+    }
+
+    /**
+     * Apply all relevant name filters.
+     *
+     * @param Builder $query
+     * @param AthleteFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, AthleteFilter $filters)
+    {
+        return $filters->apply($query);
     }
 
 }

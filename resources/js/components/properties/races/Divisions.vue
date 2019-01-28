@@ -1,6 +1,11 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Divisions</h3>
+    <div class="flex flex-col">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Divisions</header>
+            <filter-button class="hidden">
+
+            </filter-button>
+        </div>
         <div class="table-container">
                 <div class="table-header">
                 <div class="flex justify-between">

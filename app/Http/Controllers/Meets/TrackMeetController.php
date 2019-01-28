@@ -2,49 +2,27 @@
 
 namespace App\Http\Controllers\Meets;
 
+use App\Filters\TrackMeetFilter;
 use App\Models\Meets\TrackMeet;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TrackMeetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $trackMeets = TrackMeet::with('host', 'venue', 'timing', 'season', 'name')->get();
 
-       if (request()->expectsJson())
-        {
-            return $trackMeets;
-        }
+    /**
+     * @param TrackMeetFilter $filters
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(TrackMeetFilter $filters)
+    {
+        $trackMeets = TrackMeet::filter($filters)
+            ->with('season', 'host', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->get();
 
         return view('meets.track.index', compact('trackMeets'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -57,37 +35,4 @@ class TrackMeetController extends Controller
         return view('meets.track.show', compact('trackMeet'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TrackMeet $trackMeet)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TrackMeet $trackMeet)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TrackMeet $trackMeet)
-    {
-        //
-    }
 }

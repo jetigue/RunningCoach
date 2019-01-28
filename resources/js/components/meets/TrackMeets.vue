@@ -1,26 +1,36 @@
 <template>
-    <div class="pb-8 md:py-8 md:px-12">    
-        <h3 class="font-light text-2xl pb-1 text-primary">Track Meets</h3>
+    <div class="flex flex-col">
+        <div class="flex justify-between items-baseline">
+            <header class="font-light text-2xl pb-1 text-primary">Track Meets</header>
+            <filter-button class="">
+                <track-season-filter></track-season-filter>
+            </filter-button>
+        </div>
         <div class="table-container">
-                <div class="table-header">
-                    <div class="flex md:w-4/5">
-                        <div class="md:w-1/2">
-                            <p class="text-primary font-semibold">Name</p>
-                        </div>
-                        <div class="hidden md:flex md:1/2">
-                            <p class="text-primary font-semibold">Date</p>
-                        </div>
+
+            <div class="table-header">
+                <div class="flex md:w-4/5">
+                    <div class="md:w-1/2">
+                        <p class="text-primary font-semibold">Name</p>
                     </div>
-                    <div class="">
-                        <create-button title="Add a Track Meet">
-                            <new-track-meet @created="add"></new-track-meet>
-                        </create-button>
-                        <portal-target name="create-modal"></portal-target>
+
+                    <div class="hidden lg:flex lg:1/2">
+                        <p class="text-primary font-semibold">Date</p>
                     </div>
                 </div>
+
+                <div class="">
+                    <create-button title="Add a Track Meet">
+                        <new-track-meet @created="add"></new-track-meet>
+                    </create-button>
+                    <portal-target name="create-modal"></portal-target>
+                </div>
+            </div>
+
             <div v-for="(trackMeet, index) in items" :key="trackMeet.id">
                 <track-meet :data="trackMeet" @deleted="remove(index)"></track-meet>
             </div>
+
         </div>
     </div>
 </template>
@@ -38,6 +48,12 @@
         data() {
             return {
                 items: this.data,
+
+                filters: [
+                    {name: 'All Track Seasons', link: '/track-meets?track=1'},
+                    {name: 'Indoor Track', link: '/track-meets?season=indoor-track'},
+                    {name: 'Outdoor Track', link: '/track-meets?season=outdoor-track'}
+                ]
             }
         },
 

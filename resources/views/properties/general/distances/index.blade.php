@@ -1,5 +1,13 @@
 @extends('layouts.user')
 
 @section('content')
-    <distances :data="{{ $distances }}"></distances>
+    @component('components.userTables')
+        <distances :data="{{ $distances }}"></distances>
+    @endcomponent
+@endsection
+
+@section('aside')
+    <filters>
+
+    </filters>
 @endsection

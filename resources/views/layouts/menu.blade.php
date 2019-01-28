@@ -24,5 +24,11 @@
         <a href="/track-meets" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">Track Meets</a>
     </div>
 
+    <div class="my-2">
+        <h2 class="font-thin mb-2 md:text-xl lg:text-3xl text-tertiary">Athletes</h2>
+
+        <a href="/athletes" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">Athletes</a>
+    </div>
+
 </div>
 
