@@ -7,18 +7,20 @@ use App\Models\Properties\Meets\Host;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class HostsTest extends TestCase
+class ManageHostsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
     /** @test */
     public function a_user_can_create_a_host()
     {
+        $name = 'Lambert High School';
+
         $attributes = [
-            'name' => $this->faker->word
+            'name' => $name,
         ];
 
-        $this->post('/api/hosts', $attributes);
+        $this->post('/api/hosts', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('hosts', $attributes);
 

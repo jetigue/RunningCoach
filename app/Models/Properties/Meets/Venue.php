@@ -32,9 +32,12 @@ class Venue extends Model
         return '/venues/' . $this->id;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function season()
     {
-        return $this->belongsTo(Season::class, 'season_id');
+        return $this->belongsTo(Season::class);
     }
 
     /**

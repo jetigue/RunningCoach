@@ -7,7 +7,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class UserRolesTest extends TestCase
+class ManageUserRolesTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
@@ -15,7 +15,7 @@ class UserRolesTest extends TestCase
     public function a_user_can_create_a_user_role()
     {
         $attributes = [
-            'name' => $this->faker->word
+            'name' => 'viewer'
         ];
 
         $this->post('/api/roles', $attributes);

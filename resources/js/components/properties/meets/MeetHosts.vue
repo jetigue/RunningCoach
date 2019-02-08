@@ -27,42 +27,19 @@
 </template>
 
 <script>
+    import Collection from '../../../Collection';
     import MeetHost from './MeetHost';
     import CreateButton from '../../buttons/CreateButton';
     import NewMeetHost from '../../forms/NewMeetHost';
 
-    export default {
+    export default Collection.extend ({
         props: ['data'],
 
         components: { MeetHost, CreateButton, NewMeetHost },
 
         data() {
             return {
-                items: this.data,
             }
         },
-
-        methods: {
-            add(host) {
-                this.items.push(host);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Host Deleted'
-                });
-            },
-        }
-    }
+    });
 </script>

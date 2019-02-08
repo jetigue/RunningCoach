@@ -17,7 +17,6 @@
                     <create-button title="Create Meet Host">
                         <new-division @created="add"></new-division>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(division, index) in items" :key="division.id">
@@ -28,42 +27,21 @@
 </template>
 
 <script>
+    import Collection from '../../../Collection';
     import Division from './Division';
     import CreateButton from '../../buttons/CreateButton';
     import NewDivision from '../../forms/NewDivision';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { Division, CreateButton, NewDivision },
 
         data() {
             return {
-                items: this.data,
+
             }
         },
 
-        methods: {
-            add(division) {
-                this.items.push(division);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Division Deleted'
-                });
-            },
-        }
-    }
+    });
 </script>

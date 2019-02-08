@@ -3,13 +3,14 @@
 namespace App\Models\Meets;
 
 use App\Filters\TrackMeetFilter;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use App\Models\Properties\Meets\Name;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
+use App\Models\Properties\Meets\Venue;
+use App\Models\Results\Track\TeamResult;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class TrackMeet extends Model
 {
@@ -31,8 +32,34 @@ class TrackMeet extends Model
        'season_id',
        'host_id',
        'venue_id',
-       'timing_method_id'
+       'timing_method_id',
+       'slug'
    ];
+
+    public function path()
+    {
+        return '/track-meets/' . $this->slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Save a slug on store and update
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($trackMeet) {
+            $trackMeet->slug = str_slug($trackMeet->name->name . '-' . $trackMeet->meet_date);
+        });
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -74,6 +101,17 @@ class TrackMeet extends Model
         return $this->belongsTo(Timing::class, 'timing_method_id');
     }
 
+    public function teamResults()
+    {
+        return $this->hasMany(TeamResult::class);
+    }
+
+
+    public function addTeamResult($teamResult)
+    {
+        return $this->teamResults()->create($teamResult);
+
+    }
     /**
      * Apply all relevant name filters.
      *

@@ -17,13 +17,31 @@ class Season extends Model
     protected $table = 'seasons';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Season
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'slug'
-    ];
+    protected $fillable = ['name'];
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Save a slug on store and update
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            $model->slug = str_slug($model->name);
+        });
+    }
 
     /**
      * Get a string path for the season.
@@ -32,14 +50,20 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/' . $this->id;
+        return '/seasons/' . $this->slug;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function venues()
     {
-        return $this->hasMany(Venue::class);
+        return $this->hasMany(Venue::class, 'season_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function meetNames()
     {
         return $this->hasMany(Name::class);

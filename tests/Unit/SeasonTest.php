@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Models\Properties\Meets\Venue;
 use Tests\TestCase;
 use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -21,12 +22,12 @@ class SeasonTest extends TestCase
     }
 
     /** @test */
-//    public function it_has_a_path()
-//    {
-//
-//        $this->assertEquals(
-//            '/seasons/' . $this->id, $this->season->path());
-//    }
+    public function it_has_a_path()
+    {
+
+        $this->assertEquals(
+            '/seasons/' . $this->season->slug, $this->season->path());
+    }
 
     /** @test */
     function a_season_has_many_meet_names()

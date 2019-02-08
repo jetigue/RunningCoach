@@ -17,7 +17,6 @@
                     <create-button title="Create Meet Host">
                         <new-gender @created="add"></new-gender>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(gender, index) in items" :key="gender.id">
@@ -28,42 +27,20 @@
 </template>
 
 <script>
+    import Collection from '../../../Collection';
     import Gender from './Gender';
     import CreateButton from '../../buttons/CreateButton';
     import NewGender from '../../forms/NewGender';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { Gender, CreateButton, NewGender },
 
         data() {
             return {
-                items: this.data,
+
             }
-        },
-
-        methods: {
-            add(gender) {
-                this.items.push(gender);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Gender Deleted'
-                });
-            },
         }
-    }
+    });
 </script>

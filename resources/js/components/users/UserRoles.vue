@@ -17,7 +17,6 @@
                     <create-button title="Create New Role">
                         <new-role @created="add"></new-role>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(role, index) in items" :key="role.id">
@@ -28,42 +27,19 @@
 </template>
 
 <script>
+    import Collection from '../../Collection';
     import UserRole from './UserRole';
     import CreateButton from '../buttons/CreateButton';
     import NewRole from '../forms/NewRole';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { UserRole, CreateButton, NewRole },
 
         data() {
             return {
-                items: this.data,
             }
-        },
-
-        methods: {
-            add(role) {
-                this.items.push(role);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Role Deleted'
-                });
-            },
         }
-    }
+    });
 </script>

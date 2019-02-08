@@ -17,7 +17,6 @@
                     <create-button title="Create Timing Method">
                         <new-timing-method @created="add"></new-timing-method>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
             <div v-for="(timing, index) in items" :key="timing.id">
@@ -28,42 +27,19 @@
 </template>
 
 <script>
+    import Collection from '../../../Collection';
     import TimingMethod from './TimingMethod';
     import CreateButton from '../../buttons/CreateButton';
     import NewTimingMethod from '../../forms/NewTimingMethod';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { TimingMethod, CreateButton, NewTimingMethod },
 
         data() {
             return {
-                items: this.data,
             }
         },
-
-        methods: {
-            add(host) {
-                this.items.push(host);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Timing Method Deleted'
-                });
-            },
-        }
-    }
+    });
 </script>

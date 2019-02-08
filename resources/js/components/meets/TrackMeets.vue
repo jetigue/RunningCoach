@@ -23,7 +23,6 @@
                     <create-button title="Add a Track Meet">
                         <new-track-meet @created="add"></new-track-meet>
                     </create-button>
-                    <portal-target name="create-modal"></portal-target>
                 </div>
             </div>
 
@@ -36,18 +35,18 @@
 </template>
 
 <script>
+    import Collection from '../../Collection';
     import TrackMeet from './TrackMeet';
     import CreateButton from '../buttons/CreateButton';
     import NewTrackMeet from '../forms/NewTrackMeet';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { TrackMeet, CreateButton, NewTrackMeet },
 
         data() {
             return {
-                items: this.data,
 
                 filters: [
                     {name: 'All Track Seasons', link: '/track-meets?track=1'},
@@ -55,29 +54,6 @@
                     {name: 'Outdoor Track', link: '/track-meets?season=outdoor-track'}
                 ]
             }
-        },
-
-        methods: {
-            add(trackMeet) {
-                this.items.push(trackMeet);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Track Meet Deleted'
-                });
-            },
         }
-    }
+    });
 </script>

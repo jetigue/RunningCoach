@@ -24,6 +24,8 @@ class CreateAthletesTable extends Migration
             $table->unsignedInteger('team_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

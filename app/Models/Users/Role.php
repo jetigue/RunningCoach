@@ -14,13 +14,22 @@ class Role extends Model
     protected $table = 'user_roles';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a User Role
      *
      * @var array
      */
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 
     public static function boot()
     {
@@ -38,6 +47,14 @@ class Role extends Model
      */
     public function path()
     {
-        return '/user-roles/' . $this->id;
+        return '/user-roles/' . $this->slug;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class, 'user_role_id');
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\Properties\General\Season;
 use App\Filters\NameFilter;
+use App\Models\Meets\TrackMeet;
 
 class Name extends Model
 {
@@ -33,9 +34,19 @@ class Name extends Model
         return '/meet-names/' . $this->id;
     }
 
+    public function apiPath()
+    {
+        return 'api/meetNames/' . $this->id;
+    }
+
     public function season()
     {
         return $this->belongsTo(Season::class, 'season_id');
+    }
+
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class, 'meet_name_id');
     }
 
     /**

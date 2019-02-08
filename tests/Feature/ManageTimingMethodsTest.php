@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Properties\Meets\Timing;
 
-class TimingMethodsTest extends TestCase
+class ManageTimingMethodsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
@@ -15,7 +15,7 @@ class TimingMethodsTest extends TestCase
     public function a_user_can_create_a_timing_method()
     {
         $attributes = [
-            'name' => $this->faker->word
+            'name' => 'FAT'
         ];
 
         $this->post('/api/timing', $attributes);

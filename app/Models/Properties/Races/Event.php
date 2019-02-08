@@ -34,8 +34,4 @@ class Event extends Model
         return '/events/' . $this->id;
     }
 
-    public function distance()
-    {
-        $this->hasMany(Distance::class);
-    }
 }

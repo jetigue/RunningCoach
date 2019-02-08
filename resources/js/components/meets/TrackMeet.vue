@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/track-meets/id" method="POST" id="editTrackMeet" @submit.prevent="update"
+                <form action="api/track-meets/slug" method="POST" id="editTrackMeet" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -42,7 +42,7 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.season_id">Season</label>
+                            <label class="form-label">Season</label>
                             <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
                                 v-text="form.errors.get('season_id')">
                             </span>
@@ -110,8 +110,8 @@
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal">
-                                {{ meetName }}
+                            <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
+                                <a :href="'/track-meets/'+data.slug">{{meetName }}</a>
                             </div>
                             <div class="text-grey-darker py-1 pl-4 lg:p-0">
                                 {{ meetDate | moment("MMMM Do, YYYY") }}
@@ -170,6 +170,7 @@
                 host: this.data.host.name,
                 venue: this.data.venue.name,
                 timing: this.data.timing.name,
+                path: '/track-meets/' +this.id,
 
                 meet_name_id: this.data.meet_name_id,
                 season_id: this.data.season_id,
@@ -184,6 +185,7 @@
                     host_id: this.data.host_id,
                     venue_id: this.data.venue_id,
                     timing_method_id: this.data.timing_method_id
+
                 }),
 
                 names: [],
@@ -201,7 +203,7 @@
 
             update() {
                 this.form
-                    .patch('/api/trackMeets/' + this.data.id)
+                    .patch('/api/trackMeets/' + this.data.slug)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
                         this.meetDate = this.form.meet_date;
@@ -214,7 +216,7 @@
                         this.isExpanded = false;
 
                          if (
-                            this.meetName != this.data.meetName ||
+                            this.meetName != this.data.name.name ||
                             this.meetDate != this.data.meetDate ||
                             this.season != this.data.season.name ||
                             this.venue != this.data.venue.name ||
@@ -241,9 +243,9 @@
             },
 
             destroy() {
-                axios.delete('api/trackMeets/' + this.data.id);
+                axios.delete('api/trackMeets/' + this.data.slug);
 
-                this.$emit('deleted', this.data.id);
+                this.$emit('deleted', this.data.slug);
             },
 
             resetForm() {

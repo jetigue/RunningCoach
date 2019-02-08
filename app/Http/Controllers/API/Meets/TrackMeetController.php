@@ -24,26 +24,15 @@ class TrackMeetController extends Controller
         return $trackMeets;
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return TrackMeetController|TrackMeet
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
-        $trackMeet = request()->validate([
-            'meet_name_id'      => 'required|integer',
-            'meet_date'         => 'required|date',
-            'season_id'         => 'required|integer',
-            'host_id'           => 'required|integer',
-            'venue_id'          => 'required|integer',
-            'timing_method_id'  => 'required|integer',
-        ]);
-
-        $trackMeet = TrackMeet::create($trackMeet);
-
-        return $trackMeet->load('name', 'timing', 'venue', 'host', 'season');
+        return $this->storeMeet($request);
     }
 
     /**
@@ -57,34 +46,18 @@ class TrackMeetController extends Controller
         //
     }
 
+
     /**
-     * Update the specified resource in storage.
+     * Update the Track Meet in the Database
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param TrackMeet $trackMeet
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, TrackMeet $trackMeet)
     {
-        request()->validate([
-            'meet_name_id'      => 'required|integer',
-            'meet_date'         => 'required|date',
-            'season_id'         => 'required|integer',
-            'host_id'           => 'required|integer',
-            'venue_id'          => 'required|integer',
-            'timing_method_id'  => 'required|integer',
-        ]);
-
-        $trackMeet->update(request([
-            'meet_name_id',
-            'meet_date',
-            'host_id',
-            'timing_method_id',
-            'venue_id',
-            'season_id'
-        ]));
-
-        return response()->json($trackMeet, 200);
+        return $this->updateMeet($request, $trackMeet);
     }
 
 
@@ -98,5 +71,55 @@ class TrackMeetController extends Controller
         $trackMeet->delete();
 
         return response()->json(null, 204);
+    }
+
+
+    /**
+     * Store a Track Meet in the Database
+     * @return mixed
+     */
+    protected function storeMeet()
+    {
+        $trackMeet = request()->validate([
+            'meet_name_id'     => 'required|integer',
+            'meet_date'        => 'required|date',
+            'season_id'        => 'required|integer',
+            'host_id'          => 'required|integer',
+            'venue_id'         => 'required|integer',
+            'timing_method_id' => 'required|integer',
+        ]);
+
+        $trackMeet = TrackMeet::create($trackMeet);
+
+        return $trackMeet->load('name', 'timing', 'venue', 'host', 'season');
+    }
+
+    /**
+     * @param Request $request
+     * @param TrackMeet $trackMeet
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function updateMeet(Request $request, TrackMeet $trackMeet): \Illuminate\Http\JsonResponse
+    {
+        $this->validate($request, [
+            'meet_name_id'     => 'required|integer',
+            'meet_date'        => 'required|date',
+            'season_id'        => 'required|integer',
+            'host_id'          => 'required|integer',
+            'venue_id'         => 'required|integer',
+            'timing_method_id' => 'required|integer',
+        ]);
+
+        $trackMeet->update(request([
+            'meet_name_id',
+            'meet_date',
+            'season_id',
+            'host_id',
+            'venue_id',
+            'timing_method_id'
+        ]));
+
+        return response()->json($trackMeet, 200);
     }
 }

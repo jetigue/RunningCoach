@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MeetPropertiesSeeder::class);
         $this->call(RacePropertiesSeeder::class);
         $this->call(AthletesTableSeeder::class);
-        $this->call(TrackMeetsTableSeeder::class);
-//        $this->call(UsersSeeder::class);
+        $this->call(TrackMeetsSeeder::class);
+        $this->call(UsersSeeder::class);
     }
 }

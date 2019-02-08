@@ -34,42 +34,20 @@
 </template>
 
 <script>
+    import Collection from '../../../Collection';
     import MeetVenue from './MeetVenue';
     import CreateButton from '../../buttons/CreateButton';
     import NewMeetVenue from '../../forms/NewMeetVenue';
 
-    export default {
+    export default Collection.extend({
         props: ['data'],
 
         components: { MeetVenue, CreateButton, NewMeetVenue },
 
         data() {
             return {
-                items: this.data,
+
             }
         },
-
-        methods: {
-            add(venue) {
-                this.items.push(venue);
-                this.$emit('reset');
-            },
-
-            remove(index) {
-                this.items.splice(index, 1);
-
-                const toast = Vue.swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: 'Venue Deleted'
-                });
-            },
-        }
-    }
+    });
 </script>

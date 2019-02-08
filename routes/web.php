@@ -26,13 +26,20 @@ Route::get('/divisions', 'Properties\Races\DivisionController@index');
 Route::get('/events', 'Properties\Races\EventController@index');
 Route::get('/genders', 'Properties\Races\GenderController@index');
 
+Route::get('/track-meets/{trackMeet}', 'Results\Track\TeamResultController@index');
+
 //Users
 Route::get('/user-roles', 'Users\RoleController@index');
+
+// Route::post('track-meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController@store');
+// Route::patch('track-meets/{trackMeet}/team-results/{teamResult}', 'API\Results\Track\TeamResultController@update');
+
+Route::resource('track-meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController');
 
 Route::apiResources([
 
     'api/athletes' => 'API\AthleteController',
-
+    // Meets
     'api/trackMeets' => 'API\Meets\TrackMeetController',
 
     // General Properties
@@ -40,10 +47,10 @@ Route::apiResources([
     'api/seasons'     => 'API\Properties\General\SeasonController',
 
     // Meet Properties
-    'api/hosts'       => 'API\Properties\Meets\HostController',
-    'api/meetNames'   => 'API\Properties\Meets\NameController',
-    'api/timing'      => 'API\Properties\Meets\TimingController',
-    'api/venues'      => 'API\Properties\Meets\VenueController',
+    'api/hosts' => 'API\Properties\Meets\HostController',
+    'api/meetNames' => 'API\Properties\Meets\NameController',
+    'api/timing' => 'API\Properties\Meets\TimingController',
+    'api/venues' => 'API\Properties\Meets\VenueController',
 
     // Race Properties
     'api/divisions'   => 'API\Properties\Races\DivisionController',
@@ -52,4 +59,8 @@ Route::apiResources([
 
     // Users
     'api/roles'  => 'API\Users\RoleController',
+
+    // Results
+//    'track-meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController'
+   'track-meets/teamResults' => 'API\Results\Track\TeamResultController'
 ]);

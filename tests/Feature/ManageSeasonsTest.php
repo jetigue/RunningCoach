@@ -7,14 +7,14 @@ use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class SeasonsTest extends TestCase
+class ManageSeasonsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
     /** @test */
     public function a_user_can_create_a_season()
     {
-        $name = $this->faker->word;
+        $name = 'Cross Country';
 
         $attributes = [
             'name' => $name,

@@ -18,6 +18,8 @@ class CreateMeetNamesTable extends Migration
             $table->string('name');
             $table->unsignedTinyInteger('season_id');
             $table->timestamps();
+
+            $table->foreign('season_id')->references('id')->on('seasons');
         });
     }
 
