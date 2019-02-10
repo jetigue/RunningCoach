@@ -5,7 +5,7 @@
         </button>
         <portal to="create-modal">
             <div v-show="active" class="fixed pin overflow-auto z-50 bg-smoke flex">
-                <div class="relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex-col flex p-4">
+                <div class="relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex flex-col p-4">
                     <header class="border-b-2 border-primary flex justify-between">
                         <div>
                             <h3 class="font-thin text-2xl text-tertiary py-2">

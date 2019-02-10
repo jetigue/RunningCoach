@@ -1,32 +1,32 @@
 <template>
-    <form action="/track-meets/team-results" method="POST" id="newTrackTeamResult"
+    <form action="/track-meets/team-results/result" method="POST" id="newTrackResult"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
-                <label class="form-label">Gender</label>
-                <span id="genderHelp" class="form-help" v-if="form.errors.has('gender_id')"
-                      v-text="form.errors.get('gender_id')">
+                <label class="form-label">Athlete</label>
+                <span id="athleteHelp" class="form-help" v-if="form.errors.has('athlete_id')"
+                      v-text="form.errors.get('athlete_id')">
                 </span>
             </div>
-            <select class="form-input" name="gender_id" v-model="form.gender_id" required>
-                <option v-for="gender in genders" :key="gender.id" :value="gender.id">
-                    {{ gender.name }}
+            <select class="form-input" name="athlete_id" v-model="form.athlete_id" required>
+                <option v-for="athlete in athletes" :key="athlete.id" :value="athlete.id">
+                    {{ athlete.last_name }}, {{ athlete.first_name }}
                 </option>
             </select>
         </div>
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
-                <label class="form-label">Division</label>
-                <span id="divisionHelp" class="form-help" v-if="form.errors.has('division_id')"
-                      v-text="form.errors.get('division_id')">
+                <label class="form-label">Event</label>
+                <span id="eventHelp" class="form-help" v-if="form.errors.has('event_id')"
+                      v-text="form.errors.get('event_id')">
                 </span>
             </div>
-            <select class="form-input" name="division_id" v-model="form.division_id" required>
-                <option v-for="division in divisions" :key="division.id" :value="division.id">
-                    {{ division.name }}
+            <select class="form-input" name="event_id" v-model="form.event_id" required>
+                <option v-for="event in events" :key="event.id" :value="event.id">
+                    {{ event.name }}
                 </option>
             </select>
         </div>
@@ -45,18 +45,55 @@
                     v-model="form.place" required>
         </div>
 
-        <div class="mb-2">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.number_teams">Number of Teams</label>
-                <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
-                      v-text="form.errors.get('number_teams')">
-                </span>
+        <div class="flex mb-2 w-full">
+            <div class="flex flex-col flex-grow">
+                <div class="flex justify-between content-end">
+                    <label class="form-label" for="form.minutes">Minutes</label>
+                    <span id="minutesHelp" class="form-help" v-if="form.errors.has('minutes')"
+                          v-text="form.errors.get('minutes')">
+                    </span>
+                </div>
+                <div class="flex">
+                    <input class="form-input"
+                           id="form.minutes"
+                           type="number"
+                           min="0"
+                           max="59"
+                           v-model="form.minutes" required>
+                    <span class="text-grey-darker px-1 text-3xl content-center">:</span>
+                </div>
             </div>
-            <input class="form-input"
-                   id="form.number_teams"
-                   type="number"
-                   min="2"
-                   v-model="form.number_teams" required>
+
+            <div class="flex flex-col flex-grow">
+                <div class="flex justify-between content-end">
+                    <label class="form-label" for="form.seconds">Seconds</label>
+                    <span id="secondsHelp" class="form-help" v-if="form.errors.has('seconds')"
+                          v-text="form.errors.get('seconds')">
+                    </span>
+                </div>
+                <div class="flex">
+                    <input class="form-input"
+                           id="form.seconds"
+                           type="number"
+                           min="0"
+                           max="59"
+                           v-model="form.seconds" required>
+                    <span class="text-grey-darker px-1 text-3xl content-end">.</span>
+                </div>
+
+            </div>
+            <div class="flex flex-col flex-grow">
+                <div class="flex justify-between content-end">
+                    <label class="form-label" for="form.milliseconds">ms</label>
+                </div>
+
+                <input class="form-input"
+                       id="form.milliseconds"
+                       type="number"
+                       min="0"
+                       max="99"
+                       v-model="form.milliseconds" required>
+            </div>
         </div>
 
         <div class="mb-2">
@@ -88,22 +125,24 @@ export default {
     data() {
         return {
             form: new Form({
-                gender_id: '',
-                division_id: '',
+                athlete_id: '',
+                event_id: '',
                 place: '',
-                number_teams: '',
-                points: '',
+                minutes: '',
+                seconds: '',
+                milliseconds: '',
+                points: ''
             }),
 
-            genders: [],
-            divisions: []
+            athletes: [],
+            events: [],
         };
     },
 
     methods: {
         onSubmit() {
             this.form
-                .post(location.pathname + '/team-results')
+                .post(location.pathname + '/results')
 
                 .then(data => {
 
@@ -129,33 +168,35 @@ export default {
         },
 
         resetForm() {
-            this.form.gender_id = '',
-            this.form.division_id = '',
+            this.form.athlete_id = '',
+            this.form.event_id = '',
+            this.form.minutes = '',
+            this.form.seconds = '',
+            this.form.milliseconds ='',
             this.form.place = '',
-            this.form.number_teams = '',
             this.form.points = '',
             this.form.errors.clear();
         },
 
         getAttributes() {
-            function getGenderNames() {
-                return axios.get('/api/genders')
+            function getAthleteNames() {
+                return axios.get('/api/athletes')
             }
 
-            function getDivisionNames() {
-                return axios.get('/api/divisions')
+            function getEventNames() {
+                return axios.get('/api/events')
             }
 
             axios.all([
-                getGenderNames(),
-                getDivisionNames()
+                getAthleteNames(),
+                getEventNames()
             ])
             .then(axios.spread((
-                gendersResponse,
-                divisionsResponse
+                athletesResponse,
+                eventsResponse
             ) => {
-                this.genders = gendersResponse.data;
-                this.divisions = divisionsResponse.data;
+                this.athletes = athletesResponse.data;
+                this.events = eventsResponse.data;
             }))
             .catch(errors => {
                 console.log(errors)

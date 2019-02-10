@@ -3,9 +3,11 @@
 namespace App\Models\Results\Track;
 
 use App\Models\Athlete;
+use App\Filters\TrackResultFilter;
 use App\Models\Results\Track\TeamResult;
 use App\Models\Properties\Races\Event;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Result extends Model
 {
@@ -26,10 +28,25 @@ class Result extends Model
         'athlete_id',
         'event_id',
         'place',
-        'total_seconds',
+        'minutes',
+        'seconds',
         'milliseconds',
         'points'
     ];
+
+    /**
+     * Save total seconds on create and update
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($result) {
+
+            $result->total_seconds = ($result->minutes * 60 + $result->seconds);
+
+        });
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -55,7 +72,23 @@ class Result extends Model
         return $this->belongsTo(Event::class, 'event_id');
     }
 
+    /**
+     * @return string
+     */
     function getMillisecondAttribute() {
         return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    }
+
+
+    /**
+     * Apply all relevant name filters.
+     *
+     * @param Builder $query
+     * @param TrackResultFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, TrackResultFilter $filters)
+    {
+        return $filters->apply($query);
     }
 }

@@ -3,58 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/SeasonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/TrackTeamResultFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/TrackTeamResultFilter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Venue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Users/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Users/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UsersFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UsersFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_31_222515_create_hosts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_06_002314_create_timing_methods_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_06_150111_create_venues_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_06_192202_create_seasons_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_144830_create_events_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_10_145254_create_distances_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_11_134847_create_meet_names_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_11_161551_create_genders_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_11_172024_create_divisions_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_12_003539_create_athletes_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_15_190810_create_track_meets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_19_124754_create_user_roles_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TrackMeetsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TrackMeetsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Athletes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athletes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Distances.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Distances.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetNames.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetNames.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenues.Vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenues.Vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethods.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Divisions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Divisions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Events.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Events.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Genders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Genders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/users/UserRoles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/UserRoles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/HostsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/SeasonsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/TimingMethodsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/UserRolesTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/VenuesTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +49,92 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/ResultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+              <folding>
+                <element signature="e#58#89#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Results/Track/Result.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-795">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+              <folding>
+                <element signature="e#44#67#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="69" selection-start-line="69" selection-end-line="85" selection-end-column="50" />
+              <folding>
+                <element signature="e#58#98#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackResults.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+              <folding>
+                <element signature="e#1830#1872#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackResult.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="47" selection-start-line="47" selection-end-line="96" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="230" column="53" selection-start-line="230" selection-start-column="53" selection-end-line="230" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,10 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/Collection.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/properties/general/Seasons.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHosts.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetNames.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenues.Vue" />
         <option value="$PROJECT_DIR$/resources/js/components/properties/races/Divisions.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethods.vue" />
@@ -142,22 +191,26 @@
         <option value="$PROJECT_DIR$/resources/views/meets/track/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/results/TrackTeamResults.vue" />
         <option value="$PROJECT_DIR$/app/Filters/TrackTeamResultFilter.php" />
-        <option value="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" />
         <option value="$PROJECT_DIR$/resources/js/components/forms/NewTrackTeamResult.vue" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_000007_create_track_team_results_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/TrackMeetsSeeder.php" />
-        <option value="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" />
         <option value="$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php" />
         <option value="$PROJECT_DIR$/app/Models/Results/Track/Result.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" />
+        <option value="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php" />
         <option value="$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php" />
+        <option value="$PROJECT_DIR$/tailwind.js" />
+        <option value="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/ResultController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" />
       </list>
     </option>
   </component>
@@ -288,6 +341,46 @@
               <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
               <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="Results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="Results" type="462c0819:PsiDirectoryNode" />
+              <item name="Track" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
@@ -458,6 +551,9 @@
       <workItem from="1549406490047" duration="12429000" />
       <workItem from="1549497778919" duration="1246000" />
       <workItem from="1549585544640" duration="10233000" />
+      <workItem from="1549665516159" duration="13541000" />
+      <workItem from="1549717228923" duration="67000" />
+      <workItem from="1549735892891" duration="19051000" />
     </task>
     <servers />
   </component>
@@ -494,12 +590,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278010000" />
+    <option name="totallyTimeSpent" value="310669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1359275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -547,27 +644,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/general/Season.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Users/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Users/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -742,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Filters/TrackTeamResultFilter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewTrackTeamResult.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -763,29 +832,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="63" column="3" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="230" column="53" selection-start-line="230" selection-start-column="53" selection-end-line="230" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_events_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/TrackMeetsSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -831,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/TrackMeetFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -845,40 +890,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php">
+    <entry file="file://$PROJECT_DIR$/app/Filters/TrackTeamResultFilter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="95" column="64" lean-forward="true" selection-start-line="95" selection-start-column="64" selection-end-line="95" selection-end-column="64" />
-          <folding>
-            <element signature="e#44#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#58#98#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="501">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Meets/TrackMeet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="92" column="58" lean-forward="true" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
+        <state relative-caret-position="559">
+          <caret line="46" selection-start-line="46" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="e#36#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/TrackMeetFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+          <folding>
+            <element signature="e#44#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="453">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
           <folding>
             <element signature="e#7#45#0#PHP" expanded="true" />
           </folding>
@@ -892,37 +944,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/CreateButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tailwind.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="535" column="18" selection-start-line="535" selection-start-column="18" selection-end-line="535" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+        <state relative-caret-position="528">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackResults.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="672">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding>
-            <element signature="e#1760#1802#0" expanded="true" />
+            <element signature="e#1830#1872#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="230" column="53" selection-start-line="230" selection-start-column="53" selection-end-line="230" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Results/Track/Result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-795">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#44#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="69" selection-start-line="69" selection-end-line="85" selection-end-column="50" />
+          <folding>
+            <element signature="e#58#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/ResultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="e#58#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="47" selection-start-line="47" selection-end-line="96" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/results/TrackResult.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Results/Track/Result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#44#67#0#PHP" expanded="true" />
-          </folding>
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
         </state>
       </provider>
     </entry>

@@ -11,7 +11,7 @@ class TrackTeamResultFilter extends Filters
    * 
    * @var array
    */
-  protected $filters = ['season', 'track'];
+  protected $filters = ['season', 'track', 'event'];
 
   /**
    * Filter the query by a season.
@@ -40,6 +40,19 @@ class TrackTeamResultFilter extends Filters
     return $this->builder
       ->where('season_id', $indoor->id)
       ->orWhere('season_id', $outdoor->id);
+  }
+
+  /**
+   * Filter the query by an event.
+   * 
+   * @param string $eventSlug
+   * @return Builder
+   */
+  protected function event($eventSlug, $teamResult)
+  {
+    $event = Event::where('slug', $eventSlug)->firstOrFail();
+
+    return $this->builder->where('event_id', $event->id);
   }
 
 }

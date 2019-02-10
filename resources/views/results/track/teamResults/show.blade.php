@@ -16,8 +16,15 @@
     </div>
     <div class="py-3">
         <track-results :data="{{ $teamResult->results->load('teamResult', 'athlete', 'event') }}"></track-results>
+        {{--<track-results :data="{{ $teamResult->results->load('teamResult', 'athlete', 'event')->where('event.slug', '3200-meters') }}"></track-results>--}}
     </div>
 </div>
 
 
+@endsection
+
+@section('aside')
+    <filters>
+        <track-event-filter></track-event-filter>
+    </filters>
 @endsection

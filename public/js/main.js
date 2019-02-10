@@ -2517,6 +2517,46 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      items: this.data,
+      filters: [{
+        name: 'All Events',
+        url: '?event=1'
+      }, {
+        name: '1600 Meter',
+        url: '?event=1600-meters'
+      }, {
+        name: '1 Mile',
+        url: '?event=1-mile'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackSeasonFilter.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackSeasonFilter.vue?vue&type=script&lang=js& ***!
@@ -3887,25 +3927,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: new Form({
-        gender_id: '',
-        division_id: '',
+        athlete_id: '',
+        event_id: '',
         place: '',
-        number_teams: '',
+        minutes: '',
+        seconds: '',
+        milliseconds: '',
         points: ''
       }),
-      genders: [],
-      divisions: []
+      athletes: [],
+      events: []
     };
   },
   methods: {
     onSubmit: function onSubmit() {
       var _this = this;
 
-      this.form.post(location.pathname + '/team-results').then(function (data) {
+      this.form.post(location.pathname + '/results').then(function (data) {
         Event.$emit('formSubmitted');
         var toast = Vue.swal.mixin({
           toast: true,
@@ -3923,22 +4002,22 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     resetForm: function resetForm() {
-      this.form.gender_id = '', this.form.division_id = '', this.form.place = '', this.form.number_teams = '', this.form.points = '', this.form.errors.clear();
+      this.form.athlete_id = '', this.form.event_id = '', this.form.minutes = '', this.form.seconds = '', this.form.milliseconds = '', this.form.place = '', this.form.points = '', this.form.errors.clear();
     },
     getAttributes: function getAttributes() {
       var _this2 = this;
 
-      function getGenderNames() {
-        return axios.get('/api/genders');
+      function getAthleteNames() {
+        return axios.get('/api/athletes');
       }
 
-      function getDivisionNames() {
-        return axios.get('/api/divisions');
+      function getEventNames() {
+        return axios.get('/api/events');
       }
 
-      axios.all([getGenderNames(), getDivisionNames()]).then(axios.spread(function (gendersResponse, divisionsResponse) {
-        _this2.genders = gendersResponse.data;
-        _this2.divisions = divisionsResponse.data;
+      axios.all([getAthleteNames(), getEventNames()]).then(axios.spread(function (athletesResponse, eventsResponse) {
+        _this2.athletes = athletesResponse.data;
+        _this2.events = eventsResponse.data;
       })).catch(function (errors) {
         console.log(errors);
       });
@@ -6651,6 +6730,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data'],
   data: function data() {
@@ -6658,42 +6779,47 @@ __webpack_require__.r(__webpack_exports__);
       editing: false,
       isExpanded: false,
       id: this.data.id,
-      athleteName: this.data.athlete.first_name + ' ' + this.data.athlete.last_name,
+      athleteName: this.data.athlete.last_name + ', ' + this.data.athlete.first_name,
       eventName: this.data.event.name,
       milliseconds: this.data.milliseconds,
-      minutes: Math.floor(this.data.total_seconds / 60),
-      seconds: this.data.total_seconds - Math.floor(this.data.total_seconds / 60) * 60,
+      minutes: this.data.minutes,
+      seconds: this.data.seconds,
       place: this.data.place,
       points: this.data.points,
-      // meet_id: this.data.gender_id,
-      // division_id: this.data.division_id,
-      form: new Form({// gender_id: this.data.gender_id,
-        // division_id: this.data.division_id,
-        // place: this.data.place,
-        // number_teams: this.data.number_teams,
-        // points: this.data.points
-      }) //
-      // genders: [],
-      // divisions: [],
-
+      athlete_id: this.data.athlete_id,
+      event_id: this.data.event_id,
+      form: new Form({
+        athlete_id: this.data.athlete_id,
+        event_id: this.data.event_id,
+        minutes: this.data.minutes,
+        seconds: this.data.seconds,
+        milliseconds: this.data.milliseconds,
+        place: this.data.place,
+        points: this.data.points
+      }),
+      athletes: [],
+      events: []
     };
   },
   computed: {
-    total_seconds: {
-      get: function get() {
-        return this.minutes * 60 + this.seconds;
-      },
-      set: function set() {
-        return this.total_seconds = this.minutes * 60 + this.seconds; // this.form.total_seconds = this.form.minutes * 60 + this.form.seconds;
+    place_w_suffix: function ordinal_suffix_of() {
+      var i = this.place;
+      var j = i % 10,
+          k = i % 100;
+
+      if (j == 1 && k != 11) {
+        return i + "st";
       }
-    },
-    duration: function duration() {
-      var minutes = Math.floor(this.total_seconds / 60);
-      var seconds = this.total_seconds - minutes * 60;
-      var dSecs = seconds > 9 ? seconds : '0' + seconds;
-      var milliseconds = this.milliseconds;
-      var ms = milliseconds > 9 ? milliseconds : '0' + milliseconds;
-      return minutes + ":" + dSecs + "." + ms;
+
+      if (j == 2 && k != 12) {
+        return i + "nd";
+      }
+
+      if (j == 3 && k != 13) {
+        return i + "rd";
+      }
+
+      return i + "th";
     }
   },
   methods: {
@@ -6703,20 +6829,21 @@ __webpack_require__.r(__webpack_exports__);
     update: function update() {
       var _this = this;
 
-      this.form.patch(location.pathname + '/team-results/' + this.data.slug).then(function (data) {
-        _this.gender = _this.genders.find(function (gender) {
-          return gender.id === _this.form.gender_id;
+      this.form.patch(location.pathname + '/results/' + this.data.id).then(function (data) {
+        _this.athleteName = _this.athletes.find(function (athlete) {
+          return athlete.id === _this.form.athlete_id;
+        }).last_name + ', ' + _this.athletes.find(function (athlete) {
+          return athlete.id === _this.form.athlete_id;
+        }).first_name;
+        _this.eventName = _this.events.find(function (event) {
+          return event.id === _this.form.event_id;
         }).name;
-        _this.division = _this.divisions.find(function (division) {
-          return division.id === _this.form.division_id;
-        }).name;
-        _this.place = _this.form.place;
-        _this.number_teams = _this.form.number_teams;
+        _this.minutes = _this.form.minutes, _this.seconds = _this.form.seconds, _this.milliseconds = _this.form.milliseconds, _this.place = _this.form.place;
         _this.points = _this.form.points;
         _this.editing = false;
         _this.isExpanded = false;
 
-        if (_this.gender != _this.data.gender.name || _this.division != _this.data.division.name || _this.place != _this.data.place || _this.number_teams != _this.data.number_teams || _this.points != _this.data.points) {
+        if (_this.athlete != _this.data.athlete.name || _this.event != _this.data.event.name || _this.minutes != _this.data.minutes || _this.seconds != _this.data.seconds || _this.milliseconds != _this.data.milliseconds || _this.place != _this.data.place || _this.points != _this.data.points) {
           var toast = Vue.swal.mixin({
             toast: true,
             position: 'top-end',
@@ -6733,28 +6860,28 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     destroy: function destroy() {
-      axios.delete('teamResults/' + this.data.slug);
-      this.$emit('deleted', this.data.slug);
+      axios.delete(location.pathname + '/results/' + this.data.id);
+      this.$emit('deleted', this.data.id);
     },
     resetForm: function resetForm() {
-      this.form.gender_id = this.gender_id, this.form.division_id = this.division_id, this.form.place = this.place, this.form.number_teams = this.number_teams, this.form.points = this.points, this.isExpanded = false;
+      this.form.athlete_id = this.athlete_id, this.form.event_id = this.event_id, this.form.minutes = this.minutes, this.form.seconds = this.seconds, this.form.milliseconds = this.milliseconds, this.form.place = this.place, this.form.points = this.points, this.isExpanded = false;
     },
     getNames: function getNames() {
       var _this2 = this;
 
       this.editing = true;
 
-      function getGenderNames() {
-        return axios.get('/api/genders');
+      function getAthleteNames() {
+        return axios.get('/api/athletes');
       }
 
-      function getDivisionNames() {
-        return axios.get('/api/divisions');
+      function getEventNames() {
+        return axios.get('/api/events');
       }
 
-      axios.all([getGenderNames(), getDivisionNames()]).then(axios.spread(function (gendersResponse, divisionsResponse) {
-        _this2.genders = gendersResponse.data;
-        _this2.divisions = divisionsResponse.data;
+      axios.all([getAthleteNames(), getEventNames()]).then(axios.spread(function (athletesResponse, eventsResponse) {
+        _this2.athletes = athletesResponse.data;
+        _this2.events = eventsResponse.data;
       }));
     }
   }
@@ -6775,8 +6902,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TrackResult__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrackResult */ "./resources/js/components/results/TrackResult.vue");
 /* harmony import */ var _buttons_CreateButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../buttons/CreateButton */ "./resources/js/components/buttons/CreateButton.vue");
 /* harmony import */ var _forms_NewTrackResult__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../forms/NewTrackResult */ "./resources/js/components/forms/NewTrackResult.vue");
-//
-//
 //
 //
 //
@@ -7471,6 +7596,25 @@ exports.push([module.i, "\n", ""]);
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/StatusFilter.vue?vue&type=style&index=0&id=5e4af989&scoped=true&lang=css& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25935,6 +26079,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackSeasonFilter.vue?vue&type=style&index=0&id=06d38f37&scoped=true&lang=css&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackSeasonFilter.vue?vue&type=style&index=0&id=06d38f37&scoped=true&lang=css& ***!
@@ -27255,7 +27429,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex-col flex p-4"
+                  "relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex flex-col p-4"
               },
               [
                 _c(
@@ -27888,6 +28062,50 @@ var render = function() {
     [
       _c("header", { staticClass: "text-lg font-semibold text-secondary" }, [
         _vm._v("Status")
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.filters, function(filter) {
+        return _c(
+          "div",
+          { key: filter.name, staticClass: "text-grey-darker p-1" },
+          [
+            _c("a", { attrs: { href: filter.url } }, [
+              _vm._v(_vm._s(filter.name))
+            ])
+          ]
+        )
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("header", { staticClass: "text-lg font-semibold text-secondary" }, [
+        _vm._v("Events")
       ]),
       _vm._v(" "),
       _vm._l(_vm.filters, function(filter) {
@@ -29831,9 +30049,9 @@ var render = function() {
     "form",
     {
       attrs: {
-        action: "/track-meets/team-results",
+        action: "/track-meets/team-results/result",
         method: "POST",
-        id: "newTrackTeamResult"
+        id: "newTrackResult"
       },
       on: {
         submit: function($event) {
@@ -29848,14 +30066,14 @@ var render = function() {
     [
       _c("div", { staticClass: "mb-2" }, [
         _c("div", { staticClass: "flex justify-between content-end" }, [
-          _c("label", { staticClass: "form-label" }, [_vm._v("Gender")]),
+          _c("label", { staticClass: "form-label" }, [_vm._v("Athlete")]),
           _vm._v(" "),
-          _vm.form.errors.has("gender_id")
+          _vm.form.errors.has("athlete_id")
             ? _c("span", {
                 staticClass: "form-help",
-                attrs: { id: "genderHelp" },
+                attrs: { id: "athleteHelp" },
                 domProps: {
-                  textContent: _vm._s(_vm.form.errors.get("gender_id"))
+                  textContent: _vm._s(_vm.form.errors.get("athlete_id"))
                 }
               })
             : _vm._e()
@@ -29868,12 +30086,12 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.form.gender_id,
-                expression: "form.gender_id"
+                value: _vm.form.athlete_id,
+                expression: "form.athlete_id"
               }
             ],
             staticClass: "form-input",
-            attrs: { name: "gender_id", required: "" },
+            attrs: { name: "athlete_id", required: "" },
             on: {
               change: function($event) {
                 var $$selectedVal = Array.prototype.filter
@@ -29886,19 +30104,23 @@ var render = function() {
                   })
                 _vm.$set(
                   _vm.form,
-                  "gender_id",
+                  "athlete_id",
                   $event.target.multiple ? $$selectedVal : $$selectedVal[0]
                 )
               }
             }
           },
-          _vm._l(_vm.genders, function(gender) {
+          _vm._l(_vm.athletes, function(athlete) {
             return _c(
               "option",
-              { key: gender.id, domProps: { value: gender.id } },
+              { key: athlete.id, domProps: { value: athlete.id } },
               [
                 _vm._v(
-                  "\n                " + _vm._s(gender.name) + "\n            "
+                  "\n                " +
+                    _vm._s(athlete.last_name) +
+                    ", " +
+                    _vm._s(athlete.first_name) +
+                    "\n            "
                 )
               ]
             )
@@ -29909,14 +30131,14 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mb-2" }, [
         _c("div", { staticClass: "flex justify-between content-end" }, [
-          _c("label", { staticClass: "form-label" }, [_vm._v("Division")]),
+          _c("label", { staticClass: "form-label" }, [_vm._v("Event")]),
           _vm._v(" "),
-          _vm.form.errors.has("division_id")
+          _vm.form.errors.has("event_id")
             ? _c("span", {
                 staticClass: "form-help",
-                attrs: { id: "divisionHelp" },
+                attrs: { id: "eventHelp" },
                 domProps: {
-                  textContent: _vm._s(_vm.form.errors.get("division_id"))
+                  textContent: _vm._s(_vm.form.errors.get("event_id"))
                 }
               })
             : _vm._e()
@@ -29929,12 +30151,12 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.form.division_id,
-                expression: "form.division_id"
+                value: _vm.form.event_id,
+                expression: "form.event_id"
               }
             ],
             staticClass: "form-input",
-            attrs: { name: "division_id", required: "" },
+            attrs: { name: "event_id", required: "" },
             on: {
               change: function($event) {
                 var $$selectedVal = Array.prototype.filter
@@ -29947,21 +30169,19 @@ var render = function() {
                   })
                 _vm.$set(
                   _vm.form,
-                  "division_id",
+                  "event_id",
                   $event.target.multiple ? $$selectedVal : $$selectedVal[0]
                 )
               }
             }
           },
-          _vm._l(_vm.divisions, function(division) {
+          _vm._l(_vm.events, function(event) {
             return _c(
               "option",
-              { key: division.id, domProps: { value: division.id } },
+              { key: event.id, domProps: { value: event.id } },
               [
                 _vm._v(
-                  "\n                " +
-                    _vm._s(division.name) +
-                    "\n            "
+                  "\n                " + _vm._s(event.name) + "\n            "
                 )
               ]
             )
@@ -30010,51 +30230,150 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mb-2" }, [
-        _c("div", { staticClass: "flex justify-between content-end" }, [
-          _c(
-            "label",
-            { staticClass: "form-label", attrs: { for: "form.number_teams" } },
-            [_vm._v("Number of Teams")]
-          ),
+      _c("div", { staticClass: "flex mb-2 w-full" }, [
+        _c("div", { staticClass: "flex flex-col flex-grow" }, [
+          _c("div", { staticClass: "flex justify-between content-end" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "form.minutes" } },
+              [_vm._v("Minutes")]
+            ),
+            _vm._v(" "),
+            _vm.form.errors.has("minutes")
+              ? _c("span", {
+                  staticClass: "form-help",
+                  attrs: { id: "minutesHelp" },
+                  domProps: {
+                    textContent: _vm._s(_vm.form.errors.get("minutes"))
+                  }
+                })
+              : _vm._e()
+          ]),
           _vm._v(" "),
-          _vm.form.errors.has("number_teams")
-            ? _c("span", {
-                staticClass: "form-help",
-                attrs: { id: "numberTeamsHelp" },
-                domProps: {
-                  textContent: _vm._s(_vm.form.errors.get("number_teams"))
+          _c("div", { staticClass: "flex" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.minutes,
+                  expression: "form.minutes"
                 }
-              })
-            : _vm._e()
+              ],
+              staticClass: "form-input",
+              attrs: {
+                id: "form.minutes",
+                type: "number",
+                min: "0",
+                max: "59",
+                required: ""
+              },
+              domProps: { value: _vm.form.minutes },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "minutes", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "span",
+              { staticClass: "text-grey-darker px-1 text-3xl content-center" },
+              [_vm._v(":")]
+            )
+          ])
         ]),
         _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.form.number_teams,
-              expression: "form.number_teams"
-            }
-          ],
-          staticClass: "form-input",
-          attrs: {
-            id: "form.number_teams",
-            type: "number",
-            min: "2",
-            required: ""
-          },
-          domProps: { value: _vm.form.number_teams },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+        _c("div", { staticClass: "flex flex-col flex-grow" }, [
+          _c("div", { staticClass: "flex justify-between content-end" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "form.seconds" } },
+              [_vm._v("Seconds")]
+            ),
+            _vm._v(" "),
+            _vm.form.errors.has("seconds")
+              ? _c("span", {
+                  staticClass: "form-help",
+                  attrs: { id: "secondsHelp" },
+                  domProps: {
+                    textContent: _vm._s(_vm.form.errors.get("seconds"))
+                  }
+                })
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.seconds,
+                  expression: "form.seconds"
+                }
+              ],
+              staticClass: "form-input",
+              attrs: {
+                id: "form.seconds",
+                type: "number",
+                min: "0",
+                max: "59",
+                required: ""
+              },
+              domProps: { value: _vm.form.seconds },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "seconds", $event.target.value)
+                }
               }
-              _vm.$set(_vm.form, "number_teams", $event.target.value)
+            }),
+            _vm._v(" "),
+            _c(
+              "span",
+              { staticClass: "text-grey-darker px-1 text-3xl content-end" },
+              [_vm._v(".")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex flex-col flex-grow" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.milliseconds,
+                expression: "form.milliseconds"
+              }
+            ],
+            staticClass: "form-input",
+            attrs: {
+              id: "form.milliseconds",
+              type: "number",
+              min: "0",
+              max: "99",
+              required: ""
+            },
+            domProps: { value: _vm.form.milliseconds },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.form, "milliseconds", $event.target.value)
+              }
             }
-          }
-        })
+          })
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "mb-2" }, [
@@ -30111,7 +30430,20 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex justify-between content-end" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "form.milliseconds" } },
+        [_vm._v("ms")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -34297,16 +34629,16 @@ var render = function() {
   return _c("div", [
     _vm.editing
       ? _c("div", { staticClass: "p-3 border-b border-blue-lighter" }, [
-          _c("div", { staticClass: "w-full" }, [
+          _c("div", { staticClass: "w-full md:w-3/4 lg:w-1/2 mx-auto" }, [
             _c(
               "form",
               {
                 staticClass:
                   "bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4",
                 attrs: {
-                  action: "/team-results/id",
+                  action: "/results",
                   method: "POST",
-                  id: "editTrackTeamResult"
+                  id: "editTrackResult"
                 },
                 on: {
                   submit: function($event) {
@@ -34319,7 +34651,7 @@ var render = function() {
                 }
               },
               [
-                _c("div", { staticClass: "flex items-center mb-3" }, [
+                _c("div", { staticClass: "flex items-center mb-2" }, [
                   _vm._m(0),
                   _vm._v(" "),
                   _c("div", { staticClass: "w-full text-grey-dark px-4" }, [
@@ -34327,7 +34659,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
+                _c("div", { staticClass: "mb-2" }, [
                   _c(
                     "div",
                     { staticClass: "flex justify-between content-end" },
@@ -34402,7 +34734,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
+                _c("div", { staticClass: "mb-2" }, [
                   _c(
                     "div",
                     { staticClass: "flex justify-between content-end" },
@@ -34475,7 +34807,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
+                _c("div", { staticClass: "mb-2" }, [
                   _c(
                     "div",
                     { staticClass: "flex justify-between content-end" },
@@ -34529,7 +34861,181 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mb-3" }, [
+                _c("div", { staticClass: "flex mb-2 w-full" }, [
+                  _c("div", { staticClass: "flex flex-col flex-grow" }, [
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-between content-end" },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-label",
+                            attrs: { for: "form.minutes" }
+                          },
+                          [_vm._v("Minutes")]
+                        ),
+                        _vm._v(" "),
+                        _vm.form.errors.has("minutes")
+                          ? _c("span", {
+                              staticClass: "form-help",
+                              attrs: { id: "minutesHelp" },
+                              domProps: {
+                                textContent: _vm._s(
+                                  _vm.form.errors.get("minutes")
+                                )
+                              }
+                            })
+                          : _vm._e()
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.minutes,
+                            expression: "form.minutes"
+                          }
+                        ],
+                        staticClass: "form-input",
+                        attrs: {
+                          id: "form.minutes",
+                          type: "number",
+                          min: "0",
+                          max: "59",
+                          required: ""
+                        },
+                        domProps: { value: _vm.form.minutes },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "minutes", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "text-grey-darker px-1 text-3xl content-center"
+                        },
+                        [_vm._v(":")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col flex-grow" }, [
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-between content-end" },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-label",
+                            attrs: { for: "form.seconds" }
+                          },
+                          [_vm._v("Seconds")]
+                        ),
+                        _vm._v(" "),
+                        _vm.form.errors.has("seconds")
+                          ? _c("span", {
+                              staticClass: "form-help",
+                              attrs: { id: "secondsHelp" },
+                              domProps: {
+                                textContent: _vm._s(
+                                  _vm.form.errors.get("seconds")
+                                )
+                              }
+                            })
+                          : _vm._e()
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.seconds,
+                            expression: "form.seconds"
+                          }
+                        ],
+                        staticClass: "form-input",
+                        attrs: {
+                          id: "form.seconds",
+                          type: "number",
+                          min: "0",
+                          max: "59",
+                          required: ""
+                        },
+                        domProps: { value: _vm.form.seconds },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "seconds", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "text-grey-darker px-1 text-3xl content-end"
+                        },
+                        [_vm._v(".")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col flex-grow" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.milliseconds,
+                          expression: "form.milliseconds"
+                        }
+                      ],
+                      staticClass: "form-input",
+                      attrs: {
+                        id: "form.milliseconds",
+                        type: "number",
+                        min: "0",
+                        max: "99",
+                        required: ""
+                      },
+                      domProps: { value: _vm.form.milliseconds },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "milliseconds",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-2" }, [
                   _c(
                     "div",
                     { staticClass: "flex justify-between content-end" },
@@ -34620,84 +35126,162 @@ var render = function() {
                 _c("div", { staticClass: "flex p-2 items-center" }, [
                   _c(
                     "div",
-                    { staticClass: "text-grey-darker flex w-3/4 md:w-5/6" },
+                    { staticClass: "text-grey-darker flex flex-wrap w-9/10" },
                     [
-                      _c("div", { staticClass: "w-1/3 md:w-1/4" }, [
-                        _vm._v(
-                          "\n                          " +
-                            _vm._s(_vm.athleteName) +
-                            "\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "md:w-1/4" }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.eventName) +
-                            "\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.duration) +
-                            "\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.place) +
-                            "\n                        "
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "flex flex-1 justify-between md:pl-4" },
-                    [
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _c("expand-button", { on: { toggleRow: _vm.toggleRow } })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _vm.isExpanded
-                  ? _c("div", { staticClass: "px-2" }, [
-                      _c("div", { staticClass: "flex flex-col pb-4 px-4" }, [
-                        _c("p", { staticClass: "text-grey w-full py-1" }, [
-                          _vm._v("Place:\n                            "),
-                          _c("span", { staticClass: "text-tertiary" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-between w-full md:w-2/5 lg:w-1/4"
+                        },
+                        [
+                          _c("div", [
                             _vm._v(
                               "\n                                " +
-                                _vm._s(_vm.place) +
+                                _vm._s(_vm.athleteName) +
+                                "\n                            "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "md:hidden" }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.place_w_suffix) +
                                 "\n                            "
                             )
                           ])
-                        ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "flex w-full md:hidden" }, [
+                        _c(
+                          "div",
+                          { staticClass: "w-1/3 pl-2 text-secondary" },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.minutes)
+                            ),
+                            _c("span", [_vm._v(":")]),
+                            _vm._v(_vm._s(_vm.seconds)),
+                            _c("span", [_vm._v(".")]),
+                            _vm._v(
+                              _vm._s(_vm.milliseconds) +
+                                "\n                            "
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
-                        _c("p", { staticClass: "text-grey w-full py-1" }, [
-                          _vm._v("Points:\n                            "),
-                          _c("span", { staticClass: "text-tertiary" }, [
+                        _c("div", { staticClass: "text-grey" }, [
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(_vm.eventName) +
+                              "\n                            "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "hidden lg:flex lg:w-1/4 text-grey" },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.eventName) +
+                              "\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "hidden md:flex md:w-3/5 lg:w-1/2" },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "md:w-1/3 text-secondary" },
+                            [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(_vm.minutes)
+                              ),
+                              _c("span", [_vm._v(":")]),
+                              _vm._v(_vm._s(_vm.seconds)),
+                              _c("span", [_vm._v(".")]),
+                              _vm._v(
+                                _vm._s(_vm.milliseconds) +
+                                  "\n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "md:w-1/3 " }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.place_w_suffix) +
+                                "\n                            "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "md:w-1/3 " }, [
                             _vm._v(
                               "\n                                " +
                                 _vm._s(_vm.points) +
                                 "\n                            "
                             )
                           ])
-                        ])
-                      ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c(
                         "div",
                         {
-                          staticClass: "flex justify-start cursor-pointer pb-2"
+                          staticClass:
+                            "hidden md:flex lg:hidden pl-2 lg:pl-0 text-grey"
+                        },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.eventName) +
+                              "\n                        "
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-grow justify-end" },
+                    [_c("expand-button", { on: { toggleRow: _vm.toggleRow } })],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.isExpanded
+                  ? _c("div", { staticClass: "px-2" }, [
+                      _c(
+                        "div",
+                        { staticClass: "md:hidden flex flex-col pb-4 px-4" },
+                        [
+                          _c("p", { staticClass: "text-grey w-full py-1" }, [
+                            _vm._v("Points:\n                            "),
+                            _c("span", { staticClass: "text-tertiary" }, [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(_vm.points) +
+                                  "\n                            "
+                              )
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-start cursor-pointer pb-2 lg:pt-2"
                         },
                         [
                           _c("edit-button", { on: { clicked: _vm.getNames } }),
@@ -34727,8 +35311,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "" } }, [
-      _c("i", { staticClass: "far fa-clock text-lg text-secondary" })
+    return _c("div", { staticClass: "flex justify-between content-end" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "form.milliseconds" } },
+        [_vm._v("ms")]
+      )
     ])
   }
 ]
@@ -34762,7 +35350,7 @@ var render = function() {
           _vm._v("\n            Individual Results\n        ")
         ]),
         _vm._v(" "),
-        _c("filter-button", {})
+        _c("filter-button", {}, [_c("track-event-filter")], 1)
       ],
       1
     ),
@@ -34776,10 +35364,8 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex md:justify-between md:flex-1 items-center" },
+            { staticClass: "flex justify-end items-center" },
             [
-              _vm._m(1),
-              _vm._v(" "),
               _c(
                 "create-button",
                 { attrs: { title: "Add a Result" } },
@@ -34818,42 +35404,34 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex md:w-5/6 flex-wrap justify-between" },
-      [
-        _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-          _c("p", { staticClass: "text-primary font-semibold" }, [
-            _vm._v("Athlete")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-          _c("p", { staticClass: "text-primary font-semibold" }, [
-            _vm._v("Event")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-          _c("p", { staticClass: "text-primary font-semibold" }, [
-            _vm._v("Time")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden md:flex md:w-1/4" }, [
-          _c("p", { staticClass: "text-primary font-semibold" }, [
-            _vm._v("Place")
-          ])
+    return _c("div", { staticClass: "flex md:w-9/10 flex-wrap" }, [
+      _c("div", { staticClass: "hidden md:flex md:w-2/5 lg:w-1/4" }, [
+        _c("p", { staticClass: "text-primary font-semibold" }, [
+          _vm._v("Athlete")
         ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hidden md:flex " }, [
-      _c("p", { staticClass: "text-primary font-semibold" }, [_vm._v("Points")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "hidden lg:flex lg:w-1/4" }, [
+        _c("p", { staticClass: "text-primary font-semibold" }, [
+          _vm._v("Event")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "hidden md:flex md:w-1/5 lg:w-1/6" }, [
+        _c("p", { staticClass: "text-primary font-semibold" }, [_vm._v("Time")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "hidden md:flex md:w-1/5 lg:w-1/6" }, [
+        _c("p", { staticClass: "text-primary font-semibold" }, [
+          _vm._v("Place")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "hidden md:flex md:w-1/5 lg:w-1/6" }, [
+        _c("p", { staticClass: "text-primary font-semibold" }, [
+          _vm._v("Points")
+        ])
+      ])
     ])
   }
 ]
@@ -53021,6 +53599,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/filters/TrackEventFilter.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/filters/TrackEventFilter.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true& */ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true&");
+/* harmony import */ var _TrackEventFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrackEventFilter.vue?vue&type=script&lang=js& */ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& */ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TrackEventFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6973c5e6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/filters/TrackEventFilter.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TrackEventFilter.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=style&index=0&id=6973c5e6&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_style_index_0_id_6973c5e6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true& ***!
+  \*********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/filters/TrackEventFilter.vue?vue&type=template&id=6973c5e6&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrackEventFilter_vue_vue_type_template_id_6973c5e6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/filters/TrackSeasonFilter.vue":
 /*!***************************************************************!*\
   !*** ./resources/js/components/filters/TrackSeasonFilter.vue ***!
@@ -56234,7 +56899,9 @@ Vue.component('update-button', __webpack_require__(/*! ./components/buttons/Upda
 Vue.component('filters', __webpack_require__(/*! ./components/filters/Filters */ "./resources/js/components/filters/Filters.vue").default);
 Vue.component('season-filter', __webpack_require__(/*! ./components/filters/SeasonFilter */ "./resources/js/components/filters/SeasonFilter.vue").default);
 Vue.component('status-filter', __webpack_require__(/*! ./components/filters/StatusFilter */ "./resources/js/components/filters/StatusFilter.vue").default);
-Vue.component('track-season-filter', __webpack_require__(/*! ./components/filters/TrackSeasonFilter */ "./resources/js/components/filters/TrackSeasonFilter.vue").default); // General Properties
+Vue.component('track-season-filter', __webpack_require__(/*! ./components/filters/TrackSeasonFilter */ "./resources/js/components/filters/TrackSeasonFilter.vue").default); // Vue.component('track-team-result-filter', require('./components/filters/TrackTeamResultFilter').default);
+
+Vue.component('track-event-filter', __webpack_require__(/*! ./components/filters/TrackEventFilter */ "./resources/js/components/filters/TrackEventFilter.vue").default); // General Properties
 
 Vue.component('seasons', __webpack_require__(/*! ./components/properties/general/Seasons */ "./resources/js/components/properties/general/Seasons.vue").default);
 Vue.component('distances', __webpack_require__(/*! ./components/properties/general/Distances */ "./resources/js/components/properties/general/Distances.vue").default); // Meet Properties

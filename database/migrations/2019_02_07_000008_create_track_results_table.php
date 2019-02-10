@@ -19,6 +19,8 @@ class CreateTrackResultsTable extends Migration
             $table->unsignedInteger('athlete_id');
             $table->unsignedTinyInteger('event_id');
             $table->unsignedSmallInteger('place');
+            $table->unsignedTinyInteger('minutes');
+            $table->unsignedTinyInteger('seconds');
             $table->unsignedInteger('total_seconds');
             $table->unsignedTinyInteger('milliseconds')->nullable();
             $table->unsignedTinyInteger('points')->nullable();

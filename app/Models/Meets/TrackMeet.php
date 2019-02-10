@@ -36,6 +36,9 @@ class TrackMeet extends Model
        'slug'
    ];
 
+    /**
+     * @return string
+     */
     public function path()
     {
         return '/track-meets/' . $this->slug;
@@ -101,17 +104,24 @@ class TrackMeet extends Model
         return $this->belongsTo(Timing::class, 'timing_method_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function teamResults()
     {
         return $this->hasMany(TeamResult::class);
     }
 
 
+    /**
+     * @param $teamResult
+     * @return Model
+     */
     public function addTeamResult($teamResult)
     {
         return $this->teamResults()->create($teamResult);
-
     }
+
     /**
      * Apply all relevant name filters.
      *

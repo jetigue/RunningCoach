@@ -61,7 +61,9 @@ $factory->define(Result::class, function (Faker $faker) {
         'athlete_id' => Athlete::all()->random()->id,
         'event_id' => Event::all()->random()->id,
         'place' => $faker->numberBetween($min = 1, $max = 20),
-        'total_seconds' => $faker->numberBetween($min = 600, $max = 840),
+        'minutes' => $faker->numberBetween($min = 8, $max = 16),
+        'seconds' => $faker->numberBetween($min = 0, $max = 59),
+//        'total_seconds' => $faker->numberBetween($min = 600, $max = 840),
         'milliseconds' => $faker->numberBetween($min = 1, $max = 99),
         'points' => $faker->numberBetween($min = 0, $max = 10),
     ];

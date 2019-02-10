@@ -35,6 +35,7 @@ Route::get('/user-roles', 'Users\RoleController@index');
 // Route::patch('track-meets/{trackMeet}/team-results/{teamResult}', 'API\Results\Track\TeamResultController@update');
 
 Route::resource('track-meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController');
+Route::resource('track-meets/{trackMeet}/team-results/{teamResult}/results', 'API\Results\Track\ResultController');
 
 Route::apiResources([
 

@@ -22,8 +22,19 @@ $factory->define(Division::class, function (Faker $faker) {
 });
 
 $factory->define(Event::class, function (Faker $faker) {
+    $name = $faker
+        ->unique()
+        ->randomElement($array = array(
+            '1 Mile',
+            '1600 Meters',
+            '2 Mile',
+            '3200 Meters'
+        ));
+
     return [
-        'name' => '2 Mile',
-        'meters' => 3218
+        'name' => $name,
+        'meters' => $faker->randomElement($array = array(
+            1609, 1600, 3200, 3218
+        )),
     ];
 });

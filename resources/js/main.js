@@ -15,6 +15,8 @@ Vue.component('filters', require('./components/filters/Filters').default);
 Vue.component('season-filter', require('./components/filters/SeasonFilter').default);
 Vue.component('status-filter', require('./components/filters/StatusFilter').default);
 Vue.component('track-season-filter', require('./components/filters/TrackSeasonFilter').default);
+// Vue.component('track-team-result-filter', require('./components/filters/TrackTeamResultFilter').default);
+Vue.component('track-event-filter', require('./components/filters/TrackEventFilter').default);
 
 // General Properties
 Vue.component('seasons', require('./components/properties/general/Seasons').default);

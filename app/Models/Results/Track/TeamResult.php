@@ -53,16 +53,16 @@ class TeamResult extends Model
         });
     }
 
-    public function setSlugAttribute($value)
-    {
-        $slug = str_slug($value);
-
-        if (static::whereSlug($slug= str_slug($value))->exists()) {
-            $slug = "{$slug}-{$this->id}";
-        }
-
-        $this->attributes['slug'] = $slug;
-    }
+//    public function setSlugAttribute($value)
+//    {
+//        $slug = str_slug($value);
+//
+//        if (static::whereSlug($slug= str_slug($value))->exists()) {
+//            $slug = "{$slug}-{$this->id}";
+//        }
+//
+//        $this->attributes['slug'] = $slug;
+//    }
 
     /**
      * @return string
@@ -104,14 +104,23 @@ class TeamResult extends Model
         return $this->hasMany(Result::class, 'track_team_result_id');
     }
 
-        /**
+    /**
+     * @param $results
+     * @return Model
+     */
+    public function addResults($results)
+    {
+        return $this->results()->create($results);
+    }
+
+    /**
      * Apply all relevant name filters.
      *
      * @param Builder $query
-     * @param TrackMeetFilter $filters
+     * @param TrackTeamResultFilter $filters
      * @return Builder
      */
-    public function scopeFilter($query, TrackMeetFilter $filters)
+    public function scopeFilter($query, TrackTeamResultFilter $filters)
     {
         return $filters->apply($query);
     }

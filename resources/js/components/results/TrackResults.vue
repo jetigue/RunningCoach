@@ -5,34 +5,32 @@
                 Individual Results
             </header>
             <filter-button class="">
-              
+              <track-event-filter></track-event-filter>
             </filter-button>
         </div>
         <div class="table-container">
-
             <div class="table-header">
-                <div class="flex md:w-5/6 flex-wrap justify-between">
-                    <div class="hidden md:flex md:w-1/4">
+                <div class="flex md:w-9/10 flex-wrap">
+                    <div class="hidden md:flex md:w-2/5 lg:w-1/4">
                         <p class="text-primary font-semibold">Athlete</p>
                     </div>
 
-                    <div class="hidden md:flex md:w-1/4">
+                    <div class="hidden lg:flex lg:w-1/4">
                         <p class="text-primary font-semibold">Event</p>
                     </div>
 
-                    <div class="hidden md:flex md:w-1/4">
+                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
                         <p class="text-primary font-semibold">Time</p>
                     </div>
 
-                    <div class="hidden md:flex md:w-1/4">
+                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
                         <p class="text-primary font-semibold">Place</p>
                     </div>
-                </div>
-
-                <div class="flex md:justify-between md:flex-1 items-center">
-                    <div class="hidden md:flex ">
+                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
                         <p class="text-primary font-semibold">Points</p>
                     </div>
+                </div>
+                <div class="flex justify-end items-center">
                     <create-button title="Add a Result">
                         <new-track-result @created="add"></new-track-result>
                     </create-button>
@@ -60,6 +58,6 @@
             return {
                 filters: []
             }
-        },
+        }
     });
 </script>

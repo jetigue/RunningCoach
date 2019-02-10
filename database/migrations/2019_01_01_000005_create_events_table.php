@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->tinyIncrements('id');
             $table->string('name', 50);
             $table->unsignedMediumInteger('meters');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
