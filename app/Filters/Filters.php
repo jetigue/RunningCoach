@@ -13,21 +13,21 @@ abstract class Filters
 
     /**
      * The Eloquent builder.
-     * 
+     *
      * @var \Illuminate\Database\Eloquent\Builder
      */
     protected $builder;
 
     /**
      * Registered filters to operate upon.
-     * 
+     *
      * @var array
      */
     protected $filters = [];
 
     /**
      * Create a new Filters instance.
-     * 
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -37,7 +37,7 @@ abstract class Filters
 
     /**
      * Apply the filters.
-     * 
+     *
      * @param Builder $builder
      * @return Builder
      */
@@ -46,9 +46,7 @@ abstract class Filters
         $this->builder = $builder;
 
         foreach ($this->getFilters() as $filter => $value) {
-
-            if(method_exists($this, $filter)) {
-
+            if (method_exists($this, $filter)) {
                 $this->$filter($value);
             }
         }
@@ -58,7 +56,7 @@ abstract class Filters
 
     /**
      * Fetch all relevant filters from the request.
-     * 
+     *
      * @return array
      */
     public function getFilters()

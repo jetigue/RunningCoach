@@ -28,11 +28,11 @@ class ManageHostsTest extends TestCase
             ->assertSee($attributes['name']);
     }
 
-     /** @test */
-     public function a_host_requires_a_name()
-     {
+    /** @test */
+    public function a_host_requires_a_name()
+    {
         $attributes = factory(Host::class)->raw(['name' => '']);
 
         $this->post('api/hosts', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 }

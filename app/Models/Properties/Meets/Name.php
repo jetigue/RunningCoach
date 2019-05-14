@@ -2,11 +2,11 @@
 
 namespace App\Models\Properties\Meets;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use App\Models\Properties\General\Season;
 use App\Filters\NameFilter;
 use App\Models\Meets\TrackMeet;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Properties\General\Season;
+use Illuminate\Database\Eloquent\Builder;
 
 class Name extends Model
 {
@@ -18,7 +18,7 @@ class Name extends Model
     protected $table = 'meet_names';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
@@ -31,12 +31,12 @@ class Name extends Model
      */
     public function path()
     {
-        return '/meet-names/' . $this->id;
+        return '/meet-names/'.$this->id;
     }
 
     public function apiPath()
     {
-        return 'api/meetNames/' . $this->id;
+        return 'api/meetNames/'.$this->id;
     }
 
     public function season()
@@ -51,7 +51,7 @@ class Name extends Model
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param NameFilter $filters
      * @return Builder

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\Properties\General;
 
-use App\Models\Properties\General\Season;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Filters\SeasonFilter;
+use App\Http\Controllers\Controller;
+use App\Models\Properties\General\Season;
 
 class SeasonController extends Controller
 {
@@ -20,7 +20,6 @@ class SeasonController extends Controller
 
         return $seasons;
     }
-
 
     /**
      * @param Request $request
@@ -54,7 +53,6 @@ class SeasonController extends Controller
         return $this->updateSeason($request, $season);
     }
 
-
     /**
      * @param Season $season
      * @return \Illuminate\Http\JsonResponse
@@ -67,21 +65,19 @@ class SeasonController extends Controller
         return response()->json(null, 204);
     }
 
-
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     protected function storeSeason(): \Illuminate\Http\JsonResponse
     {
         $season = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $season = Season::create($season);
 
         return response()->json($season, 201);
     }
-
 
     /**
      * @param Season $season
@@ -90,7 +86,7 @@ class SeasonController extends Controller
     protected function updateSeason(Season $season): \Illuminate\Http\JsonResponse
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $season->update(request(['name']));

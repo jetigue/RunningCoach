@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Properties\Meets;
 
-use App\Models\Properties\Meets\Venue;
+use App\Filters\VenueFilter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Venue;
 use App\Models\Properties\General\Season;
-use App\Filters\VenueFilter;
 
 class VenueController extends Controller
 {
@@ -22,8 +22,7 @@ class VenueController extends Controller
             ->orderBy('name')
             ->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $venues;
         }
 

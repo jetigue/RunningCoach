@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use Illuminate\Support\Str;
 use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,7 +19,7 @@ class ManageSeasonsTest extends TestCase
 
         $attributes = [
             'name' => $name,
-            'slug' => str_slug($name)
+            'slug' => Str::slug($name),
         ];
 
         $this->post('/api/seasons', $attributes)->assertStatus(201);
@@ -36,5 +37,4 @@ class ManageSeasonsTest extends TestCase
 
         $this->post('api/seasons', $attributes)->assertSessionHasErrors('name');
     }
-
 }

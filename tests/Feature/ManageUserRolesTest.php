@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Models\Users\Role;
 use Tests\TestCase;
+use App\Models\Users\Role;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -15,7 +15,7 @@ class ManageUserRolesTest extends TestCase
     public function a_user_can_create_a_user_role()
     {
         $attributes = [
-            'name' => 'viewer'
+            'name' => 'viewer',
         ];
 
         $this->post('/api/roles', $attributes);

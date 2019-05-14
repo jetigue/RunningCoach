@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Meets\TrackMeet;
-use App\Models\Results\Track\TeamResult;
+use Illuminate\Database\Seeder;
 use App\Models\Results\Track\Result;
+use App\Models\Results\Track\TeamResult;
 
 class TrackMeetsSeeder extends Seeder
 {

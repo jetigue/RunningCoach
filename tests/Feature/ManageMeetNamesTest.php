@@ -15,12 +15,11 @@ class ManageMeetNamesTest extends TestCase
     /** @test */
     public function a_user_can_create_a_meet_name()
     {
-
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meetNames', $attributes);
@@ -32,13 +31,13 @@ class ManageMeetNamesTest extends TestCase
             ->assertSee($attributes['season_id']);
     }
 
-     /** @test */
-     public function a_meet_name_requires_a_name()
-     {
+    /** @test */
+    public function a_meet_name_requires_a_name()
+    {
         $attributes = factory(Name::class)->raw(['name' => '']);
 
         $this->post('api/meetNames', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 
     /** @test */
     public function a_meet_name_requires_a_season_id()

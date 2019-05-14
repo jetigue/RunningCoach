@@ -11,6 +11,6 @@ class AthletesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Models\Athlete', 25)->create();
+        factory(\App\Models\Athlete::class, 25)->create();
     }
 }

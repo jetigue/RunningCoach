@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Properties\Races;
 
-use App\Models\Properties\Races\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Races\Event;
 
 class EventController extends Controller
 {

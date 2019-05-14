@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Event;
 use App\Models\Properties\Races\Gender;
+use App\Models\Properties\Races\Division;
 
 class RacePropertiesSeeder extends Seeder
 {

@@ -13,7 +13,7 @@ class EventTest extends TestCase
 
     protected $event;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -23,9 +23,8 @@ class EventTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/events/' . $this->event->id, $this->event->path());
+            '/events/'.$this->event->id, $this->event->path());
     }
 
     // /** @test */

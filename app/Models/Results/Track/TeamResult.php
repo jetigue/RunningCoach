@@ -2,13 +2,14 @@
 
 namespace App\Models\Results\Track;
 
-use App\Filters\TrackTeamResultFilter;
+use Illuminate\Support\Str;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;
-use App\Models\Properties\Races\Division;
+use App\Filters\TrackTeamResultFilter;
 use App\Models\Properties\Races\Gender;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Properties\Races\Division;
+use Illuminate\Database\Eloquent\Builder;
 
 class TeamResult extends Model
 {
@@ -20,7 +21,7 @@ class TeamResult extends Model
     protected $table = 'track_team_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -30,24 +31,23 @@ class TeamResult extends Model
         'division_id',
         'place',
         'number_teams',
-        'points'
+        'points',
     ];
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($teamResult) {
-
-            $teamResult->slug = str_slug(
-                $teamResult->gender->name . '-' . 
-                $teamResult->division->name . '-' . 
-                $teamResult->track_meet_id . '-' . 
-                $teamResult->place . '-' .
-                $teamResult->number_teams . '-' .
+            $teamResult->slug = Str::slug(
+                $teamResult->gender->name.'-'.
+                $teamResult->division->name.'-'.
+                $teamResult->track_meet_id.'-'.
+                $teamResult->place.'-'.
+                $teamResult->number_teams.'-'.
                 $teamResult->points
             );
         });
@@ -55,9 +55,9 @@ class TeamResult extends Model
 
 //    public function setSlugAttribute($value)
 //    {
-//        $slug = str_slug($value);
+//        $slug = Str::slug($value);
 //
-//        if (static::whereSlug($slug= str_slug($value))->exists()) {
+//        if (static::whereSlug($slug= Str::slug($value))->exists()) {
 //            $slug = "{$slug}-{$this->id}";
 //        }
 //

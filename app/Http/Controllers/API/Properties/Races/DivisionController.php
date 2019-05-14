@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
-use App\Models\Properties\Races\Division;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Races\Division;
 
 class DivisionController extends Controller
 {
@@ -29,7 +29,7 @@ class DivisionController extends Controller
     public function store(Request $request)
     {
         $division = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $division = Division::create($division);
@@ -58,7 +58,7 @@ class DivisionController extends Controller
     public function update(Request $request, Division $division)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $division->update(request(['name']));

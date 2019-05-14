@@ -2,9 +2,10 @@
 
 namespace App\Models\Properties\Races;
 
-use App\Models\Properties\General\Distance;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use App\Filters\EventFilter;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Properties\General\Distance;
 
 class Event extends Model
 {
@@ -16,13 +17,13 @@ class Event extends Model
     protected $table = 'events';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
     protected $fillable = [
         'name',
-        'meters'
+        'meters',
     ];
 
     /**
@@ -32,24 +33,24 @@ class Event extends Model
      */
     public function path()
     {
-        return '/events/' . $this->slug;
+        return '/events/'.$this->slug;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($event) {
-            $event->slug = str_slug($event->name);
+            $event->slug = Str::slug($event->name);
         });
     }
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param EventFilter $filters
      * @return Builder

@@ -14,12 +14,12 @@ class Division extends Model
     protected $table = 'divisions';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -29,6 +29,6 @@ class Division extends Model
      */
     public function path()
     {
-        return '/divisions/' . $this->id;
+        return '/divisions/'.$this->id;
     }
 }

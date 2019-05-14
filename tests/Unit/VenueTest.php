@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use App\Models\Properties\General\Season;
 use Tests\TestCase;
 use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -14,7 +14,7 @@ class VenueTest extends TestCase
 
     protected $venue;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -23,18 +23,16 @@ class VenueTest extends TestCase
         $this->venue = factory(Venue::class)->create(['season_id' => $season->id]);
     }
 
-
     /** @test */
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/venues/' . $this->venue->id, $this->venue->path());
+            '/venues/'.$this->venue->id, $this->venue->path());
     }
 
-     /** @test */
-     function a_venue_belongs_to_a_season()
-     {
-         $this->assertInstanceOf(Season::class, $this->venue->season);
-     }
-
+    /** @test */
+    public function a_venue_belongs_to_a_season()
+    {
+        $this->assertInstanceOf(Season::class, $this->venue->season);
+    }
 }

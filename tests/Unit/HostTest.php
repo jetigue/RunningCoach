@@ -13,19 +13,17 @@ class HostTest extends TestCase
 
     protected $host;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->host = factory(Host::class)->create();
     }
 
-
     /** @test */
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/hosts/' . $this->host->id, $this->host->path());
+            '/hosts/'.$this->host->id, $this->host->path());
     }
-
 }

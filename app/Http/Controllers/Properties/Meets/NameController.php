@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Properties\Meets;
 
 use App\Filters\NameFilter;
-use App\Models\Properties\Meets\Name;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Name;
 
 class NameController extends Controller
 {

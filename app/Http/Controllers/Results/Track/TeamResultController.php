@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Results\Track;
 
-use App\Models\Results\Track\TeamResult;
-use App\Models\Meets\TrackMeet;
 use Illuminate\Http\Request;
+use App\Models\Meets\TrackMeet;
 use App\Http\Controllers\Controller;
+use App\Models\Results\Track\TeamResult;
 
 class TeamResultController extends Controller
 {
@@ -23,7 +23,6 @@ class TeamResultController extends Controller
         }
 
         return view('results.track.team.index', compact('teamResults'));
-
     }
 
     /**

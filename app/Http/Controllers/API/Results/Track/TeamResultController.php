@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\Results\Track;
 
-use App\Models\Results\Track\TeamResult;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Meets\TrackMeet;
+use App\Http\Controllers\Controller;
+use App\Models\Results\Track\TeamResult;
 
 class TeamResultController extends Controller
 {
@@ -23,7 +23,6 @@ class TeamResultController extends Controller
         return $teamResults;
     }
 
-
     public function store(TrackMeet $trackMeet)
     {
         request()->validate([
@@ -34,17 +33,15 @@ class TeamResultController extends Controller
             'points'        => 'nullable|integer',
         ]);
 
-
         $teamResult = $trackMeet->addTeamResult(request([
             'gender_id',
             'division_id',
             'place',
             'number_teams',
-            'points'
+            'points',
         ]));
 
         return $teamResult->load('gender', 'division');
-
     }
 
     /**
@@ -80,12 +77,11 @@ class TeamResultController extends Controller
             'division_id',
             'place',
             'number_teams',
-            'points'
+            'points',
         ]));
 
         return response()->json($teamResult, 200);
     }
-
 
     /**
      * @param TeamResult $teamResult

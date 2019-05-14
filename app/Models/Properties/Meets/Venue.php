@@ -2,9 +2,9 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Filters\VenueFilter;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\General\Season;
-use App\Filters\VenueFilter;
 
 class Venue extends Model
 {
@@ -16,7 +16,7 @@ class Venue extends Model
     protected $table = 'venues';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
@@ -29,7 +29,7 @@ class Venue extends Model
      */
     public function path()
     {
-        return '/venues/' . $this->id;
+        return '/venues/'.$this->id;
     }
 
     /**
@@ -42,7 +42,7 @@ class Venue extends Model
 
     /**
      * Apply all relevant venue filters.
-     * 
+     *
      * @param Builder $query
      * @param NameFilter $filters
      * @return Builder

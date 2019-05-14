@@ -1,18 +1,19 @@
 <?php
 
-use Faker\Generator as Faker;
-use App\Models\Properties\Races\Event;
-use App\Models\Meets\TrackMeet;
-use App\Models\Properties\Meets\Name;
-use App\Models\Properties\General\Season;
-use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Venue;
-use App\Models\Properties\Meets\Timing;
-use App\Models\Results\Track\TeamResult;
-use App\Models\Properties\Races\Division;
-use App\Models\Properties\Races\Gender;
-use App\Models\Results\Track\Result;
 use App\Models\Athlete;
+use Illuminate\Support\Str;
+use Faker\Generator as Faker;
+use App\Models\Meets\TrackMeet;
+use App\Models\Results\Track\Result;
+use App\Models\Properties\Meets\Host;
+use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Races\Event;
+use App\Models\Properties\Meets\Timing;
+use App\Models\Properties\Races\Gender;
+use App\Models\Results\Track\TeamResult;
+use App\Models\Properties\General\Season;
+use App\Models\Properties\Races\Division;
 
 $factory->define(TrackMeet::class, function (Faker $faker) {
     $indoor = Season::where('slug', 'indoor-track')->firstOrfail();
@@ -37,7 +38,7 @@ $factory->define(TrackMeet::class, function (Faker $faker) {
             ->random()
             ->id,
         'timing_method_id' => Timing::all()->random()->id,
-        'slug' => str_slug($name->name) . '-' . $date
+        'slug' => Str::slug($name->name).'-'.$date,
     ];
 });
 

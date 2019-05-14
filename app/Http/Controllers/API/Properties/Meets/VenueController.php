@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\Properties\Meets;
 
-use App\Models\Properties\Meets\Venue;
+use App\Filters\VenueFilter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Filters\VenueFilter;
+use App\Models\Properties\Meets\Venue;
 
 class VenueController extends Controller
 {
@@ -34,7 +34,7 @@ class VenueController extends Controller
     {
         $venue = request()->validate([
             'name' => 'required|string|min:3',
-            'season_id' => 'required|integer'
+            'season_id' => 'required|integer',
         ]);
 
         $venue = Venue::create($venue);
@@ -65,7 +65,7 @@ class VenueController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'season_id' => 'required|integer'
+            'season_id' => 'required|integer',
         ]);
 
         $venue->update(request(['name', 'season_id']));

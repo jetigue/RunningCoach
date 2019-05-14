@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
-use App\Models\Properties\Races\Gender;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Races\Gender;
 
 class GenderController extends Controller
 {
@@ -29,7 +29,7 @@ class GenderController extends Controller
     public function store(Request $request)
     {
         $gender = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $gender = Gender::create($gender);
@@ -58,7 +58,7 @@ class GenderController extends Controller
     public function update(Request $request, Gender $gender)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $gender->update(request(['name']));
