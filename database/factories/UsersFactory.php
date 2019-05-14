@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Str;
 use App\Models\Users\Role;
 use App\Models\Users\User;
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
 $factory->define(Role::class, function (Faker $faker) {

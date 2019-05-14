@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Str;
 use App\Models\Athlete;
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;

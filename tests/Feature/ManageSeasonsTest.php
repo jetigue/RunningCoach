@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Support\Str;
 use Tests\TestCase;
+use Illuminate\Support\Str;
 use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
