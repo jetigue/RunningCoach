@@ -14,7 +14,7 @@ class MeetNameTest extends TestCase
 
     protected $name;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
