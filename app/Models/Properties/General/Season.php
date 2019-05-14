@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\General;
 
+use Illuminate\Support\Str;
 use App\Filters\SeasonFilter;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Venue;
@@ -39,7 +40,7 @@ class Season extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = str_slug($model->name);
+            $model->slug = Str::slug($model->name);
         });
     }
 

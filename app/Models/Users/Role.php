@@ -2,6 +2,7 @@
 
 namespace App\Models\Users;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
@@ -35,7 +36,7 @@ class Role extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = str_slug($model->name);
+            $model->slug = Str::slug($model->name);
         });
     }
 

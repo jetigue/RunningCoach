@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Races;
 
+use Illuminate\Support\Str;
 use App\Filters\EventFilter;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\General\Distance;
@@ -43,7 +44,7 @@ class Event extends Model
         parent::boot();
 
         static::saving(function ($event) {
-            $event->slug = str_slug($event->name);
+            $event->slug = Str::slug($event->name);
         });
     }
 

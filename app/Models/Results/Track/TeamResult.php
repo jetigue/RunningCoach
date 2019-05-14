@@ -2,6 +2,7 @@
 
 namespace App\Models\Results\Track;
 
+use Illuminate\Support\Str;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;
 use App\Filters\TrackTeamResultFilter;
@@ -41,7 +42,7 @@ class TeamResult extends Model
         parent::boot();
 
         static::saving(function ($teamResult) {
-            $teamResult->slug = str_slug(
+            $teamResult->slug = Str::slug(
                 $teamResult->gender->name.'-'.
                 $teamResult->division->name.'-'.
                 $teamResult->track_meet_id.'-'.
@@ -54,9 +55,9 @@ class TeamResult extends Model
 
 //    public function setSlugAttribute($value)
 //    {
-//        $slug = str_slug($value);
+//        $slug = Str::slug($value);
 //
-//        if (static::whereSlug($slug= str_slug($value))->exists()) {
+//        if (static::whereSlug($slug= Str::slug($value))->exists()) {
 //            $slug = "{$slug}-{$this->id}";
 //        }
 //

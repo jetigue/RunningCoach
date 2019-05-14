@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\General\Distance;
@@ -15,7 +16,7 @@ $factory->define(Season::class, function (Faker $faker) {
 
     return [
         'name' => $name,
-        'slug' => str_slug($name),
+        'slug' => Str::slug($name),
     ];
 });
 

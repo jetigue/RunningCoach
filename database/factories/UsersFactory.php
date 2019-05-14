@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use App\Models\Users\Role;
 use App\Models\Users\User;
 use Faker\Generator as Faker;
@@ -16,7 +17,7 @@ $factory->define(Role::class, function (Faker $faker) {
 
     return [
         'name' => $name,
-        'slug' => str_slug($name),
+        'slug' => Str::slug($name),
     ];
 });
 
@@ -30,6 +31,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password'          => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'user_role_id'      => $viewerSlug->id,
-        'remember_token'    => str_random(10),
+        'remember_token'    => Str::random(10),
     ];
 });

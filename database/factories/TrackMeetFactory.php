@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use App\Models\Athlete;
 use Faker\Generator as Faker;
 use App\Models\Meets\TrackMeet;
@@ -37,7 +38,7 @@ $factory->define(TrackMeet::class, function (Faker $faker) {
             ->random()
             ->id,
         'timing_method_id' => Timing::all()->random()->id,
-        'slug' => str_slug($name->name).'-'.$date,
+        'slug' => Str::slug($name->name).'-'.$date,
     ];
 });
 

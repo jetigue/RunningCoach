@@ -2,6 +2,7 @@
 
 namespace App\Models\Meets;
 
+use Illuminate\Support\Str;
 use App\Filters\TrackMeetFilter;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
@@ -60,7 +61,7 @@ class TrackMeet extends Model
         parent::boot();
 
         static::saving(function ($trackMeet) {
-            $trackMeet->slug = str_slug($trackMeet->name->name.'-'.$trackMeet->meet_date);
+            $trackMeet->slug = Str::slug($trackMeet->name->name.'-'.$trackMeet->meet_date);
         });
     }
 
