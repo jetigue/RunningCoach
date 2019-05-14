@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\API\Meets;
 
-use App\Filters\TrackMeetFilter;
-use App\Models\Meets\TrackMeet;
 use Illuminate\Http\Request;
+use App\Models\Meets\TrackMeet;
+use App\Filters\TrackMeetFilter;
 use App\Http\Controllers\Controller;
 
 class TrackMeetController extends Controller
 {
-
     /**
      * @param TrackMeetFilter $filters
      * @return mixed
@@ -23,7 +22,6 @@ class TrackMeetController extends Controller
 
         return $trackMeets;
     }
-
 
     /**
      * @param Request $request
@@ -46,9 +44,8 @@ class TrackMeetController extends Controller
         //
     }
 
-
     /**
-     * Update the Track Meet in the Database
+     * Update the Track Meet in the Database.
      *
      * @param Request $request
      * @param TrackMeet $trackMeet
@@ -59,7 +56,6 @@ class TrackMeetController extends Controller
     {
         return $this->updateMeet($request, $trackMeet);
     }
-
 
     /**
      * @param TrackMeet $trackMeet
@@ -73,9 +69,8 @@ class TrackMeetController extends Controller
         return response()->json(null, 204);
     }
 
-
     /**
-     * Store a Track Meet in the Database
+     * Store a Track Meet in the Database.
      * @return mixed
      */
     protected function storeMeet()
@@ -117,7 +112,7 @@ class TrackMeetController extends Controller
             'season_id',
             'host_id',
             'venue_id',
-            'timing_method_id'
+            'timing_method_id',
         ]));
 
         return response()->json($trackMeet, 200);

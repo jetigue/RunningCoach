@@ -17,8 +17,7 @@ class RoleController extends Controller
     {
         $roles = Role::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $roles;
         }
 

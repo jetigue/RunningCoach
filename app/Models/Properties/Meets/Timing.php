@@ -14,12 +14,12 @@ class Timing extends Model
     protected $table = 'timing_methods';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -29,6 +29,6 @@ class Timing extends Model
      */
     public function path()
     {
-        return '/timing/' . $this->id;
+        return '/timing/'.$this->id;
     }
 }

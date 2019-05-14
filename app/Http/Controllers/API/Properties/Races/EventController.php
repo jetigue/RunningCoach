@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
-use App\Models\Properties\Races\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Races\Event;
 
 class EventController extends Controller
 {
@@ -30,7 +30,7 @@ class EventController extends Controller
     {
         $event = request()->validate([
             'name' => 'required|string|min:3',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $event = Event::create($event);
@@ -60,7 +60,7 @@ class EventController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $event->update(request(['name', 'meters']));

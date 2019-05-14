@@ -4,9 +4,9 @@ namespace App\Models\Results\Track;
 
 use App\Models\Athlete;
 use App\Filters\TrackResultFilter;
-use App\Models\Results\Track\TeamResult;
 use App\Models\Properties\Races\Event;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Builder;
 
 class Result extends Model
@@ -19,7 +19,7 @@ class Result extends Model
     protected $table = 'track_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -31,20 +31,18 @@ class Result extends Model
         'minutes',
         'seconds',
         'milliseconds',
-        'points'
+        'points',
     ];
 
     /**
-     * Save total seconds on create and update
+     * Save total seconds on create and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($result) {
-
             $result->total_seconds = ($result->minutes * 60 + $result->seconds);
-
         });
     }
 
@@ -75,10 +73,10 @@ class Result extends Model
     /**
      * @return string
      */
-    function getMillisecondAttribute() {
-        return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    public function getMillisecondAttribute()
+    {
+        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
     }
-
 
     /**
      * Apply all relevant name filters.

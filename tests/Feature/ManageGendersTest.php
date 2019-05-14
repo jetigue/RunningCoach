@@ -28,11 +28,11 @@ class ManageGendersTest extends TestCase
             ->assertSee($attributes['name']);
     }
 
-     /** @test */
-     public function a_gender_requires_a_name()
-     {
+    /** @test */
+    public function a_gender_requires_a_name()
+    {
         $attributes = factory(Gender::class)->raw(['name' => '']);
 
         $this->post('api/genders', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 }

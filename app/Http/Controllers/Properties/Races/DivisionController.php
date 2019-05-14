@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Properties\Races;
 
-use App\Models\Properties\Races\Division;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Races\Division;
 
 class DivisionController extends Controller
 {

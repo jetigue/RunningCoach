@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Properties\General;
 
-use App\Models\Properties\General\Distance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\General\Distance;
 
 class DistanceController extends Controller
 {

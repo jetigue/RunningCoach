@@ -18,7 +18,7 @@ class ManageSeasonsTest extends TestCase
 
         $attributes = [
             'name' => $name,
-            'slug' => str_slug($name)
+            'slug' => str_slug($name),
         ];
 
         $this->post('/api/seasons', $attributes)->assertStatus(201);
@@ -36,5 +36,4 @@ class ManageSeasonsTest extends TestCase
 
         $this->post('api/seasons', $attributes)->assertSessionHasErrors('name');
     }
-
 }

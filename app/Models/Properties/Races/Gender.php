@@ -14,12 +14,12 @@ class Gender extends Model
     protected $table = 'genders';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -29,6 +29,6 @@ class Gender extends Model
      */
     public function path()
     {
-        return '/genders/' . $this->id;
+        return '/genders/'.$this->id;
     }
 }

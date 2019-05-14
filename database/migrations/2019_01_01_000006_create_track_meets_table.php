@@ -29,7 +29,6 @@ class CreateTrackMeetsTable extends Migration
             $table->foreign('season_id')->references('id')->on('seasons');
             $table->foreign('timing_method_id')->references('id')->on('timing_methods');
             $table->foreign('venue_id')->references('id')->on('venues');
-
         });
     }
 

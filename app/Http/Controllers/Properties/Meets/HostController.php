@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Properties\Meets;
 
-use App\Models\Properties\Meets\Host;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Host;
 
 class HostController extends Controller
 {
@@ -17,8 +17,7 @@ class HostController extends Controller
     {
         $hosts = Host::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $hosts;
         }
 

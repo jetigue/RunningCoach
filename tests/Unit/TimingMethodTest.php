@@ -7,7 +7,7 @@ use App\Models\Properties\Meets\Timing;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class TimingTest extends TestCase
+class TimingMethodTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
@@ -20,12 +20,10 @@ class TimingTest extends TestCase
         $this->timing = factory(Timing::class)->create();
     }
 
-
     /** @test */
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/timing/' . $this->timing->id, $this->timing->path());
+            '/timing/'.$this->timing->id, $this->timing->path());
     }
-
 }

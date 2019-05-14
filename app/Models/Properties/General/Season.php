@@ -2,10 +2,10 @@
 
 namespace App\Models\Properties\General;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\Venue;
-use App\Models\Properties\Meets\Name;
 use App\Filters\SeasonFilter;
+use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\Venue;
+use Illuminate\Database\Eloquent\Model;
 
 class Season extends Model
 {
@@ -17,7 +17,7 @@ class Season extends Model
     protected $table = 'seasons';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -32,7 +32,7 @@ class Season extends Model
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
@@ -50,7 +50,7 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/' . $this->slug;
+        return '/seasons/'.$this->slug;
     }
 
     /**
@@ -71,7 +71,7 @@ class Season extends Model
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param SeasonFilter $filters
      * @return Builder

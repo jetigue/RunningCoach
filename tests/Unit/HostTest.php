@@ -20,12 +20,10 @@ class HostTest extends TestCase
         $this->host = factory(Host::class)->create();
     }
 
-
     /** @test */
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/hosts/' . $this->host->id, $this->host->path());
+            '/hosts/'.$this->host->id, $this->host->path());
     }
-
 }

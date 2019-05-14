@@ -18,7 +18,7 @@ class ManageEventsTest extends TestCase
 
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/events', $attributes)->assertStatus(201);

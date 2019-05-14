@@ -14,12 +14,12 @@ class Host extends Model
     protected $table = 'hosts';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -29,6 +29,6 @@ class Host extends Model
      */
     public function path()
     {
-        return '/hosts/' . $this->id;
+        return '/hosts/'.$this->id;
     }
 }

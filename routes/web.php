@@ -63,5 +63,5 @@ Route::apiResources([
 
     // Results
 //    'track-meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController'
-   'track-meets/teamResults' => 'API\Results\Track\TeamResultController'
+   'track-meets/teamResults' => 'API\Results\Track\TeamResultController',
 ]);

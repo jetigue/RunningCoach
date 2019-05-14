@@ -13,6 +13,5 @@ class UsersSeeder extends Seeder
     {
         factory('App\Models\Users\Role', 4)->create();
         factory('App\Models\Users\User', 25)->create();
-
     }
 }

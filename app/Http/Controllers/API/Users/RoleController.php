@@ -20,7 +20,6 @@ class RoleController extends Controller
         return $roles;
     }
 
-
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -28,8 +27,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-         return $this->storeRole($request);
-
+        return $this->storeRole($request);
     }
 
     /**
@@ -42,7 +40,6 @@ class RoleController extends Controller
     {
         //
     }
-
 
     /**
      * @param Request $request
@@ -73,7 +70,7 @@ class RoleController extends Controller
     protected function storeRole(Request $request): \Illuminate\Http\JsonResponse
     {
         $role = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $role = Role::create($role);
@@ -89,7 +86,7 @@ class RoleController extends Controller
     protected function updateRole(Request $request, Role $role): \Illuminate\Http\JsonResponse
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $role->update(request(['name']));

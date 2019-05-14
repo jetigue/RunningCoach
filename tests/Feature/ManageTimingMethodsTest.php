@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Models\Properties\Meets\Timing;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\Properties\Meets\Timing;
 
 class ManageTimingMethodsTest extends TestCase
 {
@@ -15,7 +15,7 @@ class ManageTimingMethodsTest extends TestCase
     public function a_user_can_create_a_timing_method()
     {
         $attributes = [
-            'name' => 'FAT'
+            'name' => 'FAT',
         ];
 
         $this->post('/api/timing', $attributes);

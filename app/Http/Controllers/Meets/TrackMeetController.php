@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Meets;
 
-use App\Filters\TrackMeetFilter;
 use App\Models\Meets\TrackMeet;
+use App\Filters\TrackMeetFilter;
 use App\Http\Controllers\Controller;
 
 class TrackMeetController extends Controller
 {
-
     /**
      * @param TrackMeetFilter $filters
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -23,7 +22,6 @@ class TrackMeetController extends Controller
         return view('meets.track.index', compact('trackMeets'));
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -34,5 +32,4 @@ class TrackMeetController extends Controller
     {
         return view('meets.track.show', compact('trackMeet'));
     }
-
 }

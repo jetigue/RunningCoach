@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use App\Models\Properties\General\Season;
 use Tests\TestCase;
+use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\Properties\Meets\Venue;
 
 class ManageVenuesTest extends TestCase
 {
@@ -18,8 +18,8 @@ class ManageVenuesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/venues', $attributes);
@@ -47,6 +47,4 @@ class ManageVenuesTest extends TestCase
 
         $this->post('api/venues', $attributes)->assertSessionHasErrors('season_id');
     }
-
-
 }

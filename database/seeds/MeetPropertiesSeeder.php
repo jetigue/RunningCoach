@@ -3,8 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
-use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\Timing;
 
 class MeetPropertiesSeeder extends Seeder
 {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Meets;
 
-use App\Models\Properties\Meets\Timing;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Timing;
 
 class TimingController extends Controller
 {
@@ -29,7 +29,7 @@ class TimingController extends Controller
     public function store(Request $request)
     {
         $timing = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $timing = Timing::create($timing);
@@ -58,7 +58,7 @@ class TimingController extends Controller
     public function update(Request $request, Timing $timing)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $timing->update(request(['name']));

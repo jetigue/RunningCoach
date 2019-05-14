@@ -23,13 +23,12 @@ class UserRoleTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/user-roles/' . $this->role->slug, $this->role->path());
+            '/user-roles/'.$this->role->slug, $this->role->path());
     }
 
     /** @test */
-    function it_has_many_users()
+    public function it_has_many_users()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection', $this->role->users);

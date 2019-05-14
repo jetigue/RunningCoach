@@ -23,9 +23,8 @@ class GenderTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/genders/' . $this->gender->id, $this->gender->path());
+            '/genders/'.$this->gender->id, $this->gender->path());
     }
 
     // /** @test */

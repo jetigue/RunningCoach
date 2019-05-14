@@ -7,21 +7,22 @@ use Faker\Generator as Faker;
 $factory->define(Role::class, function (Faker $faker) {
     $name = $faker
         ->unique()
-        ->randomElement($array = array(
+        ->randomElement($array = [
             'Viewer',
             'Athlete',
             'Coach',
-            'Admin'
-        ));
+            'Admin',
+        ]);
 
     return [
         'name' => $name,
-        'slug' => str_slug($name)
+        'slug' => str_slug($name),
     ];
 });
 
 $factory->define(User::class, function (Faker $faker) {
     $viewerSlug = Role::where('slug', 'viewer')->firstOrFail();
+
     return [
         'first_name'        => $faker->firstName,
         'last_name'         => $faker->lastName,

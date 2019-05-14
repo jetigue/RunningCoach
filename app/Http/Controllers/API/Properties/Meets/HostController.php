@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Meets;
 
-use App\Models\Properties\Meets\Host;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Host;
 
 class HostController extends Controller
 {
@@ -29,7 +29,7 @@ class HostController extends Controller
     public function store(Request $request)
     {
         $host = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $host = Host::create($host);
@@ -58,7 +58,7 @@ class HostController extends Controller
     public function update(Request $request, Host $host)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $host->update(request(['name']));
