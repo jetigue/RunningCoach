@@ -106,7 +106,7 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+            <div class="flex flex-col border-b border-primary-lightest hover:bg-white">
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">

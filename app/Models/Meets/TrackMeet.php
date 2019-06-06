@@ -32,8 +32,7 @@ class TrackMeet extends Model
        'season_id',
        'host_id',
        'venue_id',
-       'timing_method_id',
-       'slug'
+       'timing_method_id'
    ];
 
     /**

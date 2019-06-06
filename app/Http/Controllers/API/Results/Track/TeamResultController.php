@@ -17,7 +17,7 @@ class TeamResultController extends Controller
     public function index($filters)
     {
         $teamResults = TeamResult::filter($filters)
-            ->with('gender', 'division', 'trackMeet')
+            ->with('division', 'trackMeet')
             ->get();
 
         return $teamResults;
@@ -27,7 +27,6 @@ class TeamResultController extends Controller
     public function store(TrackMeet $trackMeet)
     {
         request()->validate([
-            'gender_id'     => 'required|integer',
             'division_id'   => 'required|integer',
             'place'         => 'required|integer|lte:number_teams',
             'number_teams'  => 'required|integer|gte:place',
@@ -36,14 +35,13 @@ class TeamResultController extends Controller
 
 
         $teamResult = $trackMeet->addTeamResult(request([
-            'gender_id',
             'division_id',
             'place',
             'number_teams',
             'points'
         ]));
 
-        return $teamResult->load('gender', 'division');
+        return $teamResult->load('division');
 
     }
 
@@ -55,7 +53,9 @@ class TeamResultController extends Controller
      */
     public function show(TrackMeet $trackMeet, TeamResult $teamResult)
     {
+
         return view('results.track.teamResults.show', compact('teamResult'));
+
     }
 
     /**
@@ -68,7 +68,6 @@ class TeamResultController extends Controller
     public function update(Request $request, TrackMeet $trackMeet, TeamResult $teamResult)
     {
         $this->validate($request, [
-            'gender_id' => 'required|integer',
             'division_id' => 'required|integer',
             'place' => 'required|integer',
             'number_teams' => 'required|integer',
@@ -76,7 +75,6 @@ class TeamResultController extends Controller
         ]);
 
         $teamResult->update(request([
-            'gender_id',
             'division_id',
             'place',
             'number_teams',

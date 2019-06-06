@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\General;
 
+use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\Meets\Venue;
 use App\Models\Properties\Meets\Name;
@@ -67,6 +68,14 @@ class Season extends Model
     public function meetNames()
     {
         return $this->hasMany(Name::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class);
     }
 
     /**

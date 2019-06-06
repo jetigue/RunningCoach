@@ -10,11 +10,7 @@
 
             <div class="table-header">
                 <div class="flex md:w-5/6 flex-wrap justify-between">
-                    <div class="hidden md:flex md:w-1/4">
-                        <p class="text-primary font-semibold">Gender</p>
-                    </div>
-
-                    <div class="hidden md:flex md:w-1/4">
+                    <div class="hidden md:flex md:w-1/2">
                         <p class="text-primary font-semibold">Division</p>
                     </div>
 
@@ -31,13 +27,19 @@
                     <div class="hidden md:flex ">
                         <p class="text-primary font-semibold">Results</p>
                     </div>
-                    <create-button title="Add a Track Meet">
+                    <create-button title="Add a Team Result">
                         <new-track-team-result @created="add"></new-track-team-result>
                     </create-button>
                 </div>
             </div>
-            <div v-for="(teamResult, index) in items" :key="teamResult.id">
-                <track-team-result :data="teamResult" @deleted="remove(index)"></track-team-result>
+            <div v-if="records">
+                <div v-for="(teamResult, index) in items" :key="teamResult.id">
+                    <track-team-result :data="teamResult" @deleted="remove(index)"></track-team-result>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Team Results Posted</p>
             </div>
         </div>
     </div>

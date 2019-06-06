@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
 
 class Host extends Model
@@ -30,5 +31,13 @@ class Host extends Model
     public function path()
     {
         return '/hosts/' . $this->id;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class);
     }
 }

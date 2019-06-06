@@ -19,8 +19,14 @@
                     </create-button>
                 </div>
             </div>
-            <div v-for="(role, index) in items" :key="role.id">
-                <user-role :data="role" @deleted="remove(index)"></user-role>
+            <div v-if="records">
+                <div v-for="(role, index) in items" :key="role.id">
+                    <user-role :data="role" @deleted="remove(index)"></user-role>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No User Roles Posted</p>
             </div>
         </div>
     </div>

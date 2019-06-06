@@ -28,10 +28,12 @@ class GenderTest extends TestCase
             '/genders/' . $this->gender->id, $this->gender->path());
     }
 
-    // /** @test */
-    // function it_has_many_users()
-    // {
-    //     $this->assertInstanceOf(
-    //         'Illuminate\Database\Eloquent\Collection', $this->role->users);
-    // }
+    /** @test */
+    function a_gender_has_many_divisions()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection',
+            $this->gender->divisions
+        );
+    }
 }

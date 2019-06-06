@@ -16,12 +16,12 @@
                         @csrf
 
                         <div class="mb-3">
-                            <div class="flex justify-between content-end">
+                            <div class="flex justify-between items-center">
                                 <label class="form-label" for="email">Email Address</label>
                                 @if ($errors->has('email'))
-                                    <span class="font-semibold text-red" role="alert">
+                                    <span class="font-semibold text-red text-xs" role="alert">
                                             {{ $errors->first('email') }}
-                                        </span>
+                                    </span>
                                 @endif
                             </div>
                             <input class="form-input {{ $errors->has('email') ? ' is-invalid' : '' }}"
@@ -33,10 +33,10 @@
                         </div>
 
                         <div class="mb-4">
-                            <div class="flex justify-between content-end">
+                            <div class="flex justify-between items-center">
                                 <label class="form-label" for="email">Password</label>
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="font-semibold text-red text-xs" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -59,19 +59,25 @@
                                     <input class="" type="checkbox" name="remember"
                                            id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class=" ml-2 lg:ml-4 text-primary" for="remember">
+                                    <label class=" ml-2 text-primary" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="text-right">
-                            @if (Route::has('password.request'))
-                                <a class="text-xs text-blue-light" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
+                        <div class="flex justify-between items-center pt-4">
+                            <div>
+                                <a class="text-sm text-blue pl-3" href="/register">Sign Up!</a>
+                            </div>
+                            <div>
+                                @if (Route::has('password.request'))
+                                    <a class="text-xs text-blue-light" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+
                         </div>
                     </form>
                 </section>

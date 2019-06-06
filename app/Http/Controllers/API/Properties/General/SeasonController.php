@@ -9,6 +9,14 @@ use App\Filters\SeasonFilter;
 
 class SeasonController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('coach')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,15 +51,22 @@ class SeasonController extends Controller
         //
     }
 
+
     /**
-     * @param Request $request
+     * Update a Season
+     *
      * @param Season $season
      * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, Season $season)
+    public function update(Season $season)
     {
-        return $this->updateSeason($request, $season);
+        request()->validate([
+            'name' => 'required|min:3'
+        ]);
+
+        $season->update(request(['name']));
+
+        return response()->json($season, 200);
     }
 
 
@@ -83,18 +98,18 @@ class SeasonController extends Controller
     }
 
 
-    /**
-     * @param Season $season
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function updateSeason(Season $season): \Illuminate\Http\JsonResponse
-    {
-        request()->validate([
-            'name' => 'required|min:3'
-        ]);
-
-        $season->update(request(['name']));
-
-        return response()->json($season, 200);
-    }
+//    /**
+//     * @param Season $season
+//     * @return \Illuminate\Http\JsonResponse
+//     */
+//    protected function updateSeason(Season $season): \Illuminate\Http\JsonResponse
+//    {
+//        request()->validate([
+//            'name' => 'required|min:3'
+//        ]);
+//
+//        $season->update(request(['name']));
+//
+//        return response()->json($season, 200);
+//    }
 }

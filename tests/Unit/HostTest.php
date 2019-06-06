@@ -28,4 +28,11 @@ class HostTest extends TestCase
             '/hosts/' . $this->host->id, $this->host->path());
     }
 
+    /** @test */
+    public function a_host_has_man_track_meets()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection', $this->host->trackMeets);
+    }
+
 }

@@ -12,10 +12,11 @@
         </p>
     </div>
     <div class="flex bg-tertiary text-white text-lg md:text-xl lg:text 2xl p-1 justify-center">
-        {{ $teamResult->gender->name }} {{ $teamResult->division->name }}
+         {{ $teamResult->division->name }}
     </div>
     <div class="py-3">
-        <track-results :data="{{ $teamResult->results->load('teamResult', 'athlete', 'event') }}"></track-results>
+        <track-results
+                :data="{{ $teamResult->results->load('teamResult', 'athlete', 'event') }}"></track-results>
         {{--<track-results :data="{{ $teamResult->results->load('teamResult', 'athlete', 'event')->where('event.slug', '3200-meters') }}"></track-results>--}}
     </div>
 </div>

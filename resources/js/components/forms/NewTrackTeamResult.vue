@@ -3,19 +3,19 @@
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
-        <div class="mb-2">
-            <div class="flex justify-between content-end">
-                <label class="form-label">Gender</label>
-                <span id="genderHelp" class="form-help" v-if="form.errors.has('gender_id')"
-                      v-text="form.errors.get('gender_id')">
-                </span>
-            </div>
-            <select class="form-input" name="gender_id" v-model="form.gender_id" required>
-                <option v-for="gender in genders" :key="gender.id" :value="gender.id">
-                    {{ gender.name }}
-                </option>
-            </select>
-        </div>
+        <!--<div class="mb-2">-->
+            <!--<div class="flex justify-between content-end">-->
+                <!--<label class="form-label">Gender</label>-->
+                <!--<span id="genderHelp" class="form-help" v-if="form.errors.has('gender_id')"-->
+                      <!--v-text="form.errors.get('gender_id')">-->
+                <!--</span>-->
+            <!--</div>-->
+            <!--<select class="form-input" name="gender_id" v-model="form.gender_id" required>-->
+                <!--<option v-for="gender in genders" :key="gender.id" :value="gender.id">-->
+                    <!--{{ gender.name }}-->
+                <!--</option>-->
+            <!--</select>-->
+        <!--</div>-->
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -88,14 +88,12 @@ export default {
     data() {
         return {
             form: new Form({
-                gender_id: '',
                 division_id: '',
                 place: '',
                 number_teams: '',
                 points: '',
             }),
 
-            genders: [],
             divisions: []
         };
     },
@@ -129,7 +127,6 @@ export default {
         },
 
         resetForm() {
-            this.form.gender_id = '',
             this.form.division_id = '',
             this.form.place = '',
             this.form.number_teams = '',
@@ -138,23 +135,23 @@ export default {
         },
 
         getAttributes() {
-            function getGenderNames() {
-                return axios.get('/api/genders')
-            }
+            // function getGenderNames() {
+            //     return axios.get('/api/genders')
+            // }
 
             function getDivisionNames() {
                 return axios.get('/api/divisions')
             }
 
             axios.all([
-                getGenderNames(),
+                // getGenderNames(),
                 getDivisionNames()
             ])
             .then(axios.spread((
-                gendersResponse,
+                // gendersResponse,
                 divisionsResponse
             ) => {
-                this.genders = gendersResponse.data;
+                // this.genders = gendersResponse.data;
                 this.divisions = divisionsResponse.data;
             }))
             .catch(errors => {

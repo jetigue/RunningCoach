@@ -19,8 +19,14 @@
                     </create-button>
                 </div>
             </div>
-            <div v-for="(timing, index) in items" :key="timing.id">
-                <timing-method :data="timing" @deleted="remove(index)"></timing-method>
+            <div v-if="records">
+                <div v-for="(timing, index) in items" :key="timing.id">
+                    <timing-method :data="timing" @deleted="remove(index)"></timing-method>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Timing Methods Posted</p>
             </div>
         </div>
     </div>

@@ -16,20 +16,6 @@
 
                     <div class="mb-3">
                         <div class="flex justify-between content-end">
-                            <label class="form-label">Gender</label>
-                            <span id="genderHelp" class="form-help" v-if="form.errors.has('gender_id')"
-                                  v-text="form.errors.get('gender_id')">
-                            </span>
-                        </div>
-                        <select class="form-input" name="gender_id" v-model="form.gender_id" required>
-                            <option v-for="gender in genders" :key="gender.id" :value="gender.id">
-                                {{ gender.name }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="flex justify-between content-end">
                             <label class="form-label">Division</label>
                             <span id="divisionHelp" class="form-help" v-if="form.errors.has('division_id')"
                                   v-text="form.errors.get('division_id')">
@@ -98,10 +84,7 @@
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex p-2 items-center">
                         <div class="text-grey-darker flex w-3/4 md:w-5/6">
-                            <div class="w-1/3 md:w-1/4">
-                              {{ gender }}
-                            </div>
-                            <div class="md:w-1/4">
+                            <div class="md:w-1/2">
                                 {{ division }}
                             </div>
                             <div class="hidden md:flex md:w-1/4">
@@ -112,7 +95,7 @@
                             </div>
                         </div>
                         <div class="flex flex-1 justify-between md:pl-4">
-                            <a :href="data.track_meet.slug+'/team-results/'+data.slug">
+                            <a :href="url">
                                 <i class="far fa-clock text-lg text-secondary"></i>
                             </a>
                             
@@ -160,24 +143,22 @@
                 isExpanded: false,
 
                 id: this.data.id,
-                gender: this.data.gender.name,
                 division: this.data.division.name,
                 place: this.data.place,
                 number_teams: this.data.number_teams,
                 points: this.data.points,
+                url: location.pathname + '/team-results/' +this.data.id,
 
                 meet_id: this.data.gender_id,
                 division_id: this.data.division_id,
 
                 form: new Form({
-                    gender_id: this.data.gender_id,
                     division_id: this.data.division_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
                     points: this.data.points
                 }),
 
-                genders: [],
                 divisions: [],
             }
         },
@@ -189,9 +170,8 @@
 
             update() {
                 this.form
-                    .patch(location.pathname + '/team-results/' +this.data.slug)
+                    .patch(location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
-                        this.gender = this.genders.find(gender => gender.id === this.form.gender_id).name;
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
@@ -202,7 +182,6 @@
                         this.isExpanded = false;
 
                          if (
-                            this.gender != this.data.gender.name ||
                             this.division != this.data.division.name ||
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
@@ -228,13 +207,12 @@
             },
 
             destroy() {
-                axios.delete('teamResults/' + this.data.slug);
+                axios.delete('teamResults/' + this.data.id);
 
-                this.$emit('deleted', this.data.slug);
+                this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
-                this.form.gender_id = this.gender_id,
                 this.form.division_id = this.division_id,
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
@@ -245,23 +223,16 @@
             getNames() {
                 this.editing = true;
 
-                function getGenderNames() {
-                    return axios.get('/api/genders')
-                }
-
                 function getDivisionNames() {
                     return axios.get('/api/divisions')
                 }
 
                 axios.all([
-                    getGenderNames(),
                     getDivisionNames()
                 ])
                     .then(axios.spread((
-                        gendersResponse,
                         divisionsResponse
                     ) => {
-                        this.genders = gendersResponse.data;
                         this.divisions = divisionsResponse.data;
                     }));         
             }

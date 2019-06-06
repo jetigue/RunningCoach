@@ -65,3 +65,29 @@
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
+
+ .blue-gradient {
+   background-image:
+           radial-gradient(blue, navy);
+ }
+
+ .red-gradient {
+   background-image:
+           radial-gradient(red, darkred);
+ }
+
+ .green-gradient {
+   background-image:
+           radial-gradient(#329932, darkgreen);
+ }
+
+ .purple-gradient {
+   background-image:
+           radial-gradient(purple, indigo);
+ }
+
+ .orange-gradient {
+   background-image:
+           radial-gradient(#fda50f, #fd6a02);
+ }
+

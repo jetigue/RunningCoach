@@ -9,6 +9,10 @@ use App\Filters\NameFilter;
 
 class NameController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('coach')->except('index');
+    }
 
     /**
      * @param NameFilter $filters

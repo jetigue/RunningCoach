@@ -22,13 +22,13 @@ class Role extends Model
         'name'
     ];
 
-    /**
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
+//    /**
+//     * @return string
+//     */
+//    public function getRouteKeyName()
+//    {
+//        return 'slug';
+//    }
 
 
     public static function boot()
@@ -47,7 +47,7 @@ class Role extends Model
      */
     public function path()
     {
-        return '/user-roles/' . $this->slug;
+        return '/user-roles/' . $this->id;
     }
 
     /**

@@ -9,6 +9,11 @@ use App\Filters\VenueFilter;
 
 class VenueController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('coach')->except('index');
+    }
+
     /**
      * Display a listing of the resource.
      *

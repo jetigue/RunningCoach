@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 
 class HostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('coach');
+    }
+
     /**
      * Display a listing of the resource.
      *

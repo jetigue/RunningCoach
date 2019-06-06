@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
+
+    /**
+     * EventController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('coach')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      *

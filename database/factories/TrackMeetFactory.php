@@ -10,45 +10,27 @@ use App\Models\Properties\Meets\Venue;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Results\Track\TeamResult;
 use App\Models\Properties\Races\Division;
-use App\Models\Properties\Races\Gender;
 use App\Models\Results\Track\Result;
 use App\Models\Athlete;
 
 $factory->define(TrackMeet::class, function (Faker $faker) {
-    $indoor = Season::where('slug', 'indoor-track')->firstOrfail();
-    $outdoor = Season::where('slug', 'outdoor-track')->firstOrfail();
-    $name = Name::where('season_id', $indoor->id)
-        ->orWhere('season_id', $outdoor->id)
-        ->get()
-        ->random();
-    $date = $faker->date($format = 'Y-m-d');
-
+    $season = Season::where('name', 'Outdoor Track')->firstOrFail();
     return [
-        'meet_name_id' => $name->id,
-        'meet_date' => $date,
-        'season_id' => Season::where('slug', 'outdoor-track')
-            ->orWhere('slug', 'indoor-track')
-            ->get()->random()
-            ->id,
+        'meet_name_id' => Name::all()->random()->id,
+        'meet_date' => $faker->date($format = 'Y-m-d'),
+        'season_id' => $season->id,
         'host_id' => Host::all()->random()->id,
-        'venue_id' => Venue::where('season_id', $indoor->id)
-            ->orWhere('season_id', $outdoor->id)
-            ->get()
-            ->random()
-            ->id,
-        'timing_method_id' => Timing::all()->random()->id,
-        'slug' => str_slug($name->name) . '-' . $date
+        'venue_id' => Venue::all()->random()->id,
+        'timing_method_id' => Timing::all()->random()->id
     ];
 });
 
 $factory->define(TeamResult::class, function (Faker $faker) {
-    $gender = Gender::all()->random();
     $division = Division::all()->random();
 
     return [
         'track_meet_id' => Name::all()->random()->id,
         'division_id' => $division->id,
-        'gender_id' => $gender->id,
         'place' => $faker->numberBetween($min = 1, $max = 5),
         'number_teams' => $faker->numberBetween($min = 5, $max = 20),
         'points' => $faker->numberBetween($min = 50, $max = 200),

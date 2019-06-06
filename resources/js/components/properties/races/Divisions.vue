@@ -8,19 +8,25 @@
         </div>
         <div class="table-container">
                 <div class="table-header">
-                <div class="flex justify-between">
-                    <div class="flex-1">
-                        <p class="text-primary font-semibold">Name</p>
+                    <div class="flex md:w-4/5">
+                        <div class="md:w-1/2">
+                            <p class="text-primary font-semibold">Name</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <create-button title="Create New Division">
+                            <new-division @created="add"></new-division>
+                        </create-button>
                     </div>
                 </div>
-                <div class="flex content-around">
-                    <create-button title="Create Meet Host">
-                        <new-division @created="add"></new-division>
-                    </create-button>
+            <div v-if="records">
+                <div v-for="(division, index) in items" :key="division.id">
+                    <division :data="division" @deleted="remove(index)"></division>
                 </div>
             </div>
-            <div v-for="(division, index) in items" :key="division.id">
-                <division :data="division" @deleted="remove(index)"></division>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Divisions Posted</p>
             </div>
         </div>
     </div>
@@ -39,7 +45,6 @@
 
         data() {
             return {
-
             }
         },
 

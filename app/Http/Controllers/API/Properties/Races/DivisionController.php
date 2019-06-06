@@ -8,6 +8,13 @@ use App\Http\Controllers\Controller;
 
 class DivisionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin')->except('index');
+        $this->middleware('coach')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,7 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        $divisions = Division::all();
+        $divisions = Division::with('gender', 'level')->get();
 
         return $divisions;
     }
@@ -29,12 +36,14 @@ class DivisionController extends Controller
     public function store(Request $request)
     {
         $division = request()->validate([
-            'name' => 'required|string|min:3'
+            'gender_id' => 'required|integer',
+            'level_id' => 'required|integer',
+            'name' => 'nullable|string',
         ]);
 
         $division = Division::create($division);
 
-        return response()->json($division, 201);
+        return $division->load('gender', 'level');
     }
 
     /**
@@ -58,10 +67,16 @@ class DivisionController extends Controller
     public function update(Request $request, Division $division)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'gender_id' => 'required|integer',
+            'level_id' => 'required|integer',
+            'name' => 'nullable|string',
         ]);
 
-        $division->update(request(['name']));
+        $division->update(request([
+            'gender_id',
+            'level_id',
+            'name'
+        ]));
 
         return response()->json($division, 200);
     }

@@ -2,7 +2,7 @@
 
 namespace App\Models\Properties\Races;
 
-use App\Models\Properties\General\Distance;
+use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Model;
 use App\Filters\EventFilter;
 
@@ -24,6 +24,15 @@ class Event extends Model
         'name',
         'meters'
     ];
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 
     /**
      * Get a string path for the event.
@@ -58,4 +67,10 @@ class Event extends Model
     {
         return $filters->apply($query);
     }
+
+    public function trackResults()
+    {
+        return $this->hasMany(Result::class);
+    }
+
 }

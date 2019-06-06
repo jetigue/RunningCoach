@@ -19,8 +19,14 @@
                         </create-button>
                     </div>
                 </div>
-            <div v-for="(event, index) in items" :key="event.id">
-                <event :data="event" @deleted="remove(index)"></event>
+            <div v-if="records">
+                <div v-for="(event, index) in items" :key="event.id">
+                    <event :data="event" @deleted="remove(index)"></event>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Events Posted</p>
             </div>
         </div>
     </div>

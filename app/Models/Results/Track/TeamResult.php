@@ -4,8 +4,9 @@ namespace App\Models\Results\Track;
 
 use App\Filters\TrackTeamResultFilter;
 use App\Models\Meets\TrackMeet;
-use App\Models\Results\Track\Result;
 use App\Models\Properties\Races\Division;
+use App\Models\Results\Track\Result;
+use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Gender;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -26,7 +27,6 @@ class TeamResult extends Model
      */
     protected $fillable = [
         'track_meet_id',
-        'gender_id',
         'division_id',
         'place',
         'number_teams',
@@ -43,33 +43,19 @@ class TeamResult extends Model
         static::saving(function ($teamResult) {
 
             $teamResult->slug = str_slug(
-                $teamResult->gender->name . '-' . 
-                $teamResult->division->name . '-' . 
-                $teamResult->track_meet_id . '-' . 
-                $teamResult->place . '-' .
-                $teamResult->number_teams . '-' .
-                $teamResult->points
+                $teamResult->division->gender->name . '-' .
+                $teamResult->division->level->name . '-' .
+                $teamResult->division->name
             );
         });
     }
-
-//    public function setSlugAttribute($value)
-//    {
-//        $slug = str_slug($value);
-//
-//        if (static::whereSlug($slug= str_slug($value))->exists()) {
-//            $slug = "{$slug}-{$this->id}";
-//        }
-//
-//        $this->attributes['slug'] = $slug;
-//    }
 
     /**
      * @return string
      */
     public function getRouteKeyName()
     {
-        return 'slug';
+        return 'id';
     }
 
     /**
@@ -78,14 +64,6 @@ class TeamResult extends Model
     public function trackMeet()
     {
         return $this->belongsTo(TrackMeet::class, 'track_meet_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function gender()
-    {
-        return $this->belongsTo(Gender::class, 'gender_id');
     }
 
     /**

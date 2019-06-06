@@ -29,9 +29,10 @@ Vue.component('meet-venues', require('./components/properties/meets/MeetVenues')
 Vue.component('timing-methods', require('./components/properties/meets/TimingMethods').default);
 
 // Race Properties
-Vue.component('divisions', require('./components/properties/races/Divisions').default);
+Vue.component('levels', require('./components/properties/division/Levels').default);
 Vue.component('events', require('./components/properties/races/Events').default);
-Vue.component('genders', require('./components/properties/races/Genders').default);
+Vue.component('genders', require('./components/properties/division/Genders').default);
+Vue.component('divisions', require('./components/properties/races/Divisions').default);
 
 Vue.component('athletes', require('./components/Athletes').default);
 
@@ -42,8 +43,12 @@ Vue.component('track-meets', require('./components/meets/TrackMeets').default);
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);
 Vue.component('track-results', require('./components/results/TrackResults').default);
 
+// Team
+Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
+
 // Users
 Vue.component('user-roles', require('./components/users/UserRoles').default);
+Vue.component('users', require('./components/users/Users').default);
 
 new Vue({
     el: '#userContent',

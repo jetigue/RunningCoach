@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use App\Models\Results\Track\Result;
+use App\Models\Results\Track\TeamResult;
 use Tests\TestCase;
 use App\Models\Properties\Races\Event;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -23,15 +25,16 @@ class EventTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/events/' . $this->event->id, $this->event->path());
+            '/events/' . $this->event->slug, $this->event->path());
     }
 
-    // /** @test */
-    // function it_has_many_users()
-    // {
-    //     $this->assertInstanceOf(
-    //         'Illuminate\Database\Eloquent\Collection', $this->role->users);
-    // }
+    public function an_event_has_many_track_results()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection',
+            $this->event->trackResults
+        );
+    }
+
 }

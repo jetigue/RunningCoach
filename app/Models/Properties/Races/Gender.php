@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Races;
 
+use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Model;
 
 class Gender extends Model
@@ -14,7 +15,7 @@ class Gender extends Model
     protected $table = 'genders';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Gender
      *
      * @var array
      */
@@ -30,5 +31,10 @@ class Gender extends Model
     public function path()
     {
         return '/genders/' . $this->id;
+    }
+
+    public function divisions()
+    {
+        return $this->hasMany(Division::class);
     }
 }

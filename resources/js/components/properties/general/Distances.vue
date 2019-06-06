@@ -18,8 +18,15 @@
                         <portal-target name="create-modal"></portal-target>
                     </div>
                 </div>
-            <div v-for="(distance, index) in items" :key="distance.id">
-                <distance :data="distance" @deleted="remove(index)"></distance>
+
+            <div v-if="records">
+                <div v-for="(distance, index) in items" :key="distance.id">
+                    <distance :data="distance" @deleted="remove(index)"></distance>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Distances Posted</p>
             </div>
         </div>
     </div>

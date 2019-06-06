@@ -36,9 +36,17 @@
                     </create-button>
                 </div>
             </div>
-            <div v-for="(result, index) in items" :key="result.id">
-                <track-result :data="result" @deleted="remove(index)"></track-result>
+            <div v-if="records">
+                <div v-for="(result, index) in items" :key="result.id">
+                    <track-result :data="result" @deleted="remove(index)"></track-result>
+                </div>
             </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Results Posted</p>
+            </div>
+
+
         </div>
     </div>
 </template>

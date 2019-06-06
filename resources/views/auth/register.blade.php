@@ -19,7 +19,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="first_name">First Name</label>
                                     @if ($errors->has('first_name'))
-                                        <span class="font-semibold text-red" role="alert">
+                                        <span class="font-semibold text-red text-xs" role="alert">
                                             {{ $errors->first('first_name') }}
                                         </span>
                                     @endif
@@ -36,7 +36,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="last_name">Last Name</label>
                                     @if ($errors->has('last_name'))
-                                        <span class="font-semibold text-red" role="alert">
+                                        <span class="font-semibold text-red text-xs" role="alert">
                                             {{ $errors->first('last_name') }}
                                         </span>
                                     @endif
@@ -53,7 +53,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="email">Email Address</label>
                                     @if ($errors->has('email'))
-                                        <span class="font-semibold text-red" role="alert">
+                                        <span class="font-semibold text-red text-xs" role="alert">
                                             {{ $errors->first('email') }}
                                         </span>
                                     @endif
@@ -70,7 +70,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="password">Password</label>
                                     @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="font-semibold text-red text-xs" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                     @endif
@@ -93,12 +93,16 @@
                                        required>
                             </div>
 
-                            <div class="text-right">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <a class="text-sm text-blue pl-3" href="/login">Or Sign In!</a>
+                                </div>
                                 <button type="submit"
                                         class="w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded">
                                     Login
                                 </button>
                             </div>
+
 
                         </form>
                     </section>

@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
 
 class Timing extends Model
@@ -30,5 +31,14 @@ class Timing extends Model
     public function path()
     {
         return '/timing/' . $this->id;
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class, 'timing_method_id');
     }
 }

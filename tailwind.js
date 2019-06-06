@@ -136,14 +136,15 @@ let colors = {
   'smoke-lighter': 'rgba(0, 0, 0, 0.25)',
   'smoke-lightest': 'rgba(0, 0, 0, 0.1)',
 
-  'primary-darkest': '#000030',
-  'primary-darker': '#000040',
-  'primary-dark': '#000060',
-  'primary': '#000080',
-  'primary-light': '#5c5cad',
-  'primary-lighter': '#9797ca',
-  'primary-lightest': '#E7E5F2',
+  // 'primary-darkest': '#000030',
+  // 'primary-darker': '#000040',
+  // 'primary-dark': '#000060',
+  // 'primary': '#000080',
+  // 'primary-light': '#5c5cad',
+  // 'primary-lighter': '#9797ca',
+  // 'primary-lightest': '#E7E5F2',
 
+  'primary': '#73000a',
   'secondary': '#800000',
 
   'tertiary': '#008000',

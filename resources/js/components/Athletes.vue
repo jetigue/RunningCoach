@@ -2,10 +2,11 @@
     <div class="flex flex-col">
         <div class="flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Athletes</header>
-            <filter-button class="">
+            <filter-button class="hidden">
                 <status-filter></status-filter>
             </filter-button>
         </div>
+
         <div class="table-container">
                 <div class="table-header">
                     <div class="flex md:w-4/5">
@@ -19,8 +20,14 @@
                         </create-button>
                     </div>
                 </div>
-            <div v-for="(athlete, index) in items" :key="athlete.id">
-                <athlete :data="athlete" @deleted="remove(index)"></athlete>
+            <div v-if="records">
+                <div v-for="(athlete, index) in items" :key="athlete.id">
+                    <athlete :data="athlete" @deleted="remove(index)"></athlete>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Athletes Posted</p>
             </div>
         </div>
     </div>

@@ -9,6 +9,16 @@ use App\Http\Controllers\Controller;
 class GenderController extends Controller
 {
     /**
+     * GenderController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('coach')->only('index');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

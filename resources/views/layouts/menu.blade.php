@@ -1,34 +1,18 @@
 <div class="hidden md:flex md:flex-col">
-    <div class="my-2">
-        <h2 class="font-thin mb-2 md:text-xl lg:text-3xl text-tertiary">Properties</h2>
-        <general-properties class="md:py-2 lg:p-2"></general-properties>
-        <meet-properties class="md:py-2 lg:p-2"></meet-properties>
-        <race-properties class="md:py-2 lg:p-2"></race-properties>
-    </div>
+    <p class="text-tertiary hover:text-blue mb-2"><a href="/dashboard">Dashboard</a></p>
+    @if(Auth::user() && Auth::user()->role->slug === 'admin')
 
-    <div class="my-2">
-        <h2 class="font-thin mb-2 md:text-xl lg:text-3xl text-tertiary">Users</h2>
-        <div class="flex flex-col">
-            <a href="/user-roles" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">User Roles</a>
-            <a href="/users" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">Users</a>
-
-        </div>
-
-    </div>
+        @include('layouts.menus.adminMenu')
+        @include('layouts.menus.coachMenu')
 
 
+    @elseif(Auth::user() && Auth::user()->role->slug === 'coach')
 
-    <div class="my-2">
-        <h2 class="font-thin mb-2 md:text-xl lg:text-3xl text-tertiary">Meets</h2>
+        @include('layouts.menus.coachMenu')
+    {{--<general-properties class="md:py-2 lg:p-2"></general-properties>--}}
+    {{--<meet-properties class="md:py-2 lg:p-2"></meet-properties>--}}
+    {{--<race-properties class="md:py-2 lg:p-2"></race-properties>--}}
 
-        <a href="/track-meets" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">Track Meets</a>
-    </div>
+    @endif
 
-    <div class="my-2">
-        <h2 class="font-thin mb-2 md:text-xl lg:text-3xl text-tertiary">Athletes</h2>
-
-        <a href="/athletes" class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">Athletes</a>
-    </div>
-
-</div>
-
+</div> 

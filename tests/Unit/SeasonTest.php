@@ -24,7 +24,6 @@ class SeasonTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
             '/seasons/' . $this->season->slug, $this->season->path());
     }
@@ -41,5 +40,12 @@ class SeasonTest extends TestCase
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection', $this->season->venues);
+    }
+
+    /** @test */
+    function a_season_has_many_track_meets()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection', $this->season->trackMeets);
     }
 }

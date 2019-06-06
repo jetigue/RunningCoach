@@ -9,7 +9,7 @@
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-grey-dark px-4"> 
+                        <div class="w-full text-grey-dark px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
@@ -204,11 +204,12 @@
                 id: this.data.id,
                 athleteName: this.data.athlete.last_name + ', ' + this.data.athlete.first_name,
                 eventName: this.data.event.name,
-                milliseconds: this.data.milliseconds,
+                milliseconds: (this.data.milliseconds > 9 ? this.data.milliseconds : '0' + this.data.milliseconds),
                 minutes: this.data.minutes,
-                seconds: this.data.seconds,
+                seconds: (this.data.seconds > 9 ? this.data.seconds : '0' + this.data.seconds),
                 place: this.data.place,
                 points: this.data.points,
+
 
                 athlete_id: this.data.athlete_id,
                 event_id: this.data.event_id,
@@ -262,8 +263,8 @@
                             this.athletes.find(athlete => athlete.id === this.form.athlete_id).first_name;
                         this.eventName = this.events.find(event => event.id === this.form.event_id).name;
                         this.minutes = this.form.minutes,
-                        this.seconds = this.form.seconds,
-                        this.milliseconds = this.form.milliseconds,
+                        this.seconds = (this.form.seconds > 9 ? this.form.seconds : '0' + this.form.seconds),
+                        this.milliseconds = (this.form.milliseconds > 9 ? this.form.milliseconds : '0' + this.form.milliseconds),
                         this.place = this.form.place;
                         this.points = this.form.points;
 

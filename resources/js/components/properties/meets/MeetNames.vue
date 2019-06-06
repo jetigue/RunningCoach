@@ -25,9 +25,14 @@
                     </create-button>
                 </div>
             </div>
+            <div v-if="records">
+                <div v-for="(meetName, index) in items" :key="meetName.id">
+                    <meet-name :data="meetName" @deleted="remove(index)"></meet-name>
+                </div>
+            </div>
 
-            <div v-for="(meetName, index) in items" :key="meetName.id">
-                <meet-name :data="meetName" @deleted="remove(index)"></meet-name>
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Meet Names Posted</p>
             </div>
         </div>
 

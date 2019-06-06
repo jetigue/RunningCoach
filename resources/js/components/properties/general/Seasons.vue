@@ -20,8 +20,14 @@
                     </create-button>
                 </div>
             </div>
-            <div v-for="(season, index) in items" :key="season.id">
-                <season :data="season" @deleted="remove(index)"></season>
+            <div v-if="records">
+                <div v-for="(season, index) in items" :key="season.id">
+                    <season :data="season" @deleted="remove(index)"></season>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Seasons Posted</p>
             </div>
         </div>
     </div>

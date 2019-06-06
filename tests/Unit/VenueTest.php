@@ -23,7 +23,6 @@ class VenueTest extends TestCase
         $this->venue = factory(Venue::class)->create(['season_id' => $season->id]);
     }
 
-
     /** @test */
     public function it_has_a_path()
     {
@@ -36,5 +35,12 @@ class VenueTest extends TestCase
      {
          $this->assertInstanceOf(Season::class, $this->venue->season);
      }
+
+    /** @test */
+    function a_venue_has_many_track_meets()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection', $this->venue->trackMeets);
+    }
 
 }

@@ -26,8 +26,14 @@
                 </div>
             </div>
 
-            <div v-for="(trackMeet, index) in items" :key="trackMeet.id">
-                <track-meet :data="trackMeet" @deleted="remove(index)"></track-meet>
+            <div v-if="records">
+                <div v-for="(trackMeet, index) in items" :key="trackMeet.id">
+                    <track-meet :data="trackMeet" @deleted="remove(index)"></track-meet>
+                </div>
+            </div>
+
+            <div v-else class="flex flex-col text-center">
+                <p class="text-2xl text-tertiary p-4">No Meets Posted</p>
             </div>
 
         </div>

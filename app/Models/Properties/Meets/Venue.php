@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\General\Season;
 use App\Filters\VenueFilter;
@@ -38,6 +39,14 @@ class Venue extends Model
     public function season()
     {
         return $this->belongsTo(Season::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class);
     }
 
     /**

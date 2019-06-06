@@ -30,7 +30,7 @@
 
 
     <div class="py-3">
-             <track-team-results :data="{{ $trackMeet->teamResults->load('trackMeet', 'gender', 'division') }}"></track-team-results>
+             <track-team-results :data="{{ $trackMeet->teamResults->load('trackMeet', 'division') }}"></track-team-results>
     </div>
 
 </div>

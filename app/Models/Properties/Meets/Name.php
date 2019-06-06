@@ -39,11 +39,17 @@ class Name extends Model
         return 'api/meetNames/' . $this->id;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function season()
     {
         return $this->belongsTo(Season::class, 'season_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function trackMeets()
     {
         return $this->hasMany(TrackMeet::class, 'meet_name_id');
