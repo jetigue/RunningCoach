@@ -14,8 +14,6 @@ class ManageDayTimesTest extends TestCase
     /** @test */
     public function an_admin_can_create_a_day_time()
     {
-        $this->withoutExceptionHandling();
-
         $this->signInAdmin();
 
         $attributes = [
@@ -134,5 +132,101 @@ class ManageDayTimesTest extends TestCase
     public function a_guest_cannot_view_day_times()
     {
         $this->get('/dayTimes')->assertRedirect('/');
+    }
+
+    /** @test */
+    public function an_admin_can_update_a_day_time()
+    {
+        $this->signInAdmin();
+
+        $dayTime = factory(DayTime::class)->create([
+            'name' => 'Morning',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/dayTimes/' . $dayTime->id, [
+            'name' => 'Afternoon',
+            'description' => 'New Description'
+        ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('day_times', [
+            'name' => 'Afternoon',
+            'description' =>'New Description'
+        ]);
+    }
+
+    /** @test */
+    public function a_coach_cannot_update_a_day_time()
+    {
+        $this->signInCoach();
+
+        $dayTime = factory(DayTime::class)->create([
+            'name' => 'Morning',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/dayTimes/' . $dayTime->id, [
+            'name' => 'Afternoon',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('day_times', ['name' => 'Morning']);
+    }
+
+    /** @test */
+    public function an_athlete_cannot_update_a_day_time()
+    {
+        $this->signInAthlete();
+
+        $dayTime = factory(DayTime::class)->create([
+            'name' => 'Morning',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/dayTimes/' . $dayTime->id, [
+            'name' => 'Afternoon',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('day_times', ['name' => 'Morning']);
+    }
+
+    /** @test */
+    public function a_viewer_cannot_update_a_day_time()
+    {
+        $this->signInViewer();
+
+        $dayTime = factory(DayTime::class)->create([
+            'name' => 'Morning',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/dayTimes/' . $dayTime->id, [
+            'name' => 'Afternoon',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('day_times', ['name' => 'Morning']);
+    }
+
+    /** @test */
+    public function a_guest_cannot_update_a_day_time()
+    {
+        $dayTime = factory(DayTime::class)->create([
+            'name' => 'Morning',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/dayTimes/' . $dayTime->id, [
+            'name' => 'Afternoon',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('day_times', ['name' => 'Morning']);
     }
 }

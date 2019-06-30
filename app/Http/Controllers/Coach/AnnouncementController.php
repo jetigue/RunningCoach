@@ -13,6 +13,7 @@ class AnnouncementController extends Controller
     {
         $this->middleware('coach');
     }
+
     /**
      * Display a listing of the resource.
      *

@@ -133,4 +133,100 @@ class ManageRunEffortsTest extends TestCase
     {
         $this->get('/runEfforts')->assertRedirect('/');
     }
+
+    /** @test */
+    public function an_admin_can_update_a_run_effort()
+    {
+        $this->signInAdmin();
+
+        $runEffort = factory(RunEffort::class)->create([
+            'name' => 'Easy',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runEfforts/' . $runEffort->id, [
+            'name' => 'Hard',
+            'description' => 'New Description'
+        ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('run_efforts', [
+            'name' => 'Hard',
+            'description' =>'New Description'
+        ]);
+    }
+
+    /** @test */
+    public function a_coach_cannot_update_a_run_effort()
+    {
+        $this->signInCoach();
+
+        $runEffort = factory(RunEffort::class)->create([
+            'name' => 'Easy',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runEfforts/' . $runEffort->id, [
+            'name' => 'Hard',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_efforts', ['name' => 'Easy']);
+    }
+
+    /** @test */
+    public function an_athlete_cannot_update_a_run_effort()
+    {
+        $this->signInAthlete();
+
+        $runEffort = factory(RunEffort::class)->create([
+            'name' => 'Easy',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runEfforts/' . $runEffort->id, [
+            'name' => 'Hard',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_efforts', ['name' => 'Easy']);
+    }
+
+    /** @test */
+    public function a_viewer_cannot_update_a_run_effort()
+    {
+        $this->signInViewer();
+
+        $runEffort = factory(RunEffort::class)->create([
+            'name' => 'Easy',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runEfforts/' . $runEffort->id, [
+            'name' => 'Hard',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_efforts', ['name' => 'Easy']);
+    }
+
+    /** @test */
+    public function a_guest_cannot_update_a_run_effort()
+    {
+        $runEffort = factory(RunEffort::class)->create([
+            'name' => 'Easy',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runEfforts/' . $runEffort->id, [
+            'name' => 'Hard',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_efforts', ['name' => 'Easy']);
+    }
 }

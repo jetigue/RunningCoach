@@ -4,7 +4,7 @@
             <div class="w-full">
                 <form action="api/announcements/id" method="POST" id="editAnnouncement" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -169,20 +169,23 @@
                                         {{ end_date | moment("MM.DD.YYYY") }}
                                     </span>
                             </p>
-<hr>
-                            <p class="text-blue w-full py-1">
-                                <a :href="link_1">{{ link_text_1}}</a>
-                            </p>
+                            <div v-if="link_1 != null">
+                                <p class="text-blue w-full py-1">
+                                    <a :href="link_1">{{ link_text_1}}</a>
+                                </p>
+                            </div>
 
-<hr>
-                            <p class="text-blue w-full py-1">
-                                <a :href="link_2">{{ link_text_2}}</a>
-                            </p>
-                            <hr>
-                            <p class="text-blue w-full py-1">
-                                <a :href="link_3">{{ link_text_3}}</a>
-                            </p>
+                            <div v-if="link_2 != null">
+                                <p class="text-blue w-full py-1">
+                                    <a :href="link_2">{{ link_text_2}}</a>
+                                </p>
+                            </div>
 
+                            <div v-if="link_3 != null">
+                                <p class="text-blue w-full py-1">
+                                    <a :href="link_3">{{ link_text_3}}</a>
+                                </p>
+                            </div>
                         </div>
                         <div class="flex justify-start cursor-pointer pb-2">
                             <edit-button @clicked="editing=true"></edit-button>

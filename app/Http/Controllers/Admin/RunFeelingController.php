@@ -21,7 +21,7 @@ class RunFeelingController extends Controller
             return $runFeelings;
         }
 
-        return view('runningLog.runFeelings.index', compact('runFeelings'));
+        return view('properties.runningLog.runFeelings.index', compact('runFeelings'));
     }
 
     /**

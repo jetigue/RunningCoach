@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\API\RunningLog;
+namespace App\Http\Controllers\API\Properties\RunningLog;
 
-use App\Models\Runninglog\RunFeeling;
+use App\Models\Runninglog\RunType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class RunFeelingController extends Controller
+class RunTypeController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -21,9 +23,9 @@ class RunFeelingController extends Controller
      */
     public function index()
     {
-        $runFeelings = RunFeeling::all();
+        $runTypes = RunType::all();
 
-        return $runFeelings;
+        return $runTypes;
     }
 
     /**
@@ -44,23 +46,23 @@ class RunFeelingController extends Controller
      */
     public function store(Request $request)
     {
-        $runFeeling = request()->validate([
+        $runType = request()->validate([
             'name'        => 'required|string',
             'description' => 'required|string',
         ]);
 
-        $runFeeling = RunFeeling::create($runFeeling);
+        $runType = RunType::create($runType);
 
-        return response()->json($runFeeling, 201);
+        return response()->json($runType, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
+     * @param  \App\Models\Runninglog\RunType  $runType
      * @return \Illuminate\Http\Response
      */
-    public function show(RunFeeling $runFeeling)
+    public function show(RunType $runType)
     {
         //
     }
@@ -68,10 +70,10 @@ class RunFeelingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
+     * @param  \App\Models\Runninglog\RunType  $runType
      * @return \Illuminate\Http\Response
      */
-    public function edit(RunFeeling $runFeeling)
+    public function edit(RunType $runType)
     {
         //
     }
@@ -80,22 +82,31 @@ class RunFeelingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
+     * @param  \App\Models\Runninglog\RunType  $runType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RunFeeling $runFeeling)
+    public function update(Request $request, RunType $runType)
     {
-        //
+        request()->validate([
+            'name' => 'required|min:3',
+            'description' => 'required|min:5'
+        ]);
+
+        $runType->update(request(['name', 'description']));
+
+        return response()->json($runType, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
+     * @param  \App\Models\Runninglog\RunType  $runType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RunFeeling $runFeeling)
+    public function destroy(RunType $runType)
     {
-        //
+        $runType->delete();
+
+        return response()->json(null, 204);
     }
 }

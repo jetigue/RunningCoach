@@ -149,7 +149,7 @@
                 points: this.data.points,
                 url: location.pathname + '/team-results/' +this.data.id,
 
-                meet_id: this.data.gender_id,
+                meet_id: this.data.meet_id,
                 division_id: this.data.division_id,
 
                 form: new Form({

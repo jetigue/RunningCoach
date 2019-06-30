@@ -21,7 +21,7 @@ class RunTypeController extends Controller
             return $runTypes;
         }
 
-        return view('runningLog.runTypes.index', compact('runTypes'));
+        return view('properties.runningLog.runTypes.index', compact('runTypes'));
     }
 
     /**

@@ -1,5 +1,4 @@
 <div class="hidden md:flex md:flex-col">
-    <p class="text-tertiary hover:text-blue mb-2"><a href="/dashboard">Dashboard</a></p>
     @if(Auth::user() && Auth::user()->role->slug === 'admin')
 
         @include('layouts.menus.adminMenu')

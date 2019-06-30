@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TrackMeetsSeeder::class);
         $this->call(UsersSeeder::class);
         $this->call(TeamAdministrationSeeder::class);
+        $this->call(RunningLogSeeder::class);
     }
 }

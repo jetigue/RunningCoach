@@ -133,4 +133,100 @@ class ManageRunTypesTest extends TestCase
     {
         $this->get('/runTypes')->assertRedirect('/');
     }
+
+    /** @test */
+    public function an_admin_can_update_a_run_type()
+    {
+        $this->signInAdmin();
+
+        $runType = factory(RunType::class)->create([
+            'name' => 'Fartlek',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runTypes/' . $runType->id, [
+            'name' => 'Long Run',
+            'description' => 'New Description'
+        ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('run_types', [
+            'name' => 'Long Run',
+            'description' =>'New Description'
+        ]);
+    }
+
+    /** @test */
+    public function a_coach_cannot_update_a_run_type()
+    {
+        $this->signInCoach();
+
+        $runType = factory(RunType::class)->create([
+            'name' => 'Fartlek',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runTypes/' . $runType->id, [
+            'name' => 'Long Run',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_types', ['name' => 'Fartlek']);
+    }
+
+    /** @test */
+    public function an_athlete_cannot_update_a_run_type()
+    {
+        $this->signInAthlete();
+
+        $runType = factory(RunType::class)->create([
+            'name' => 'Fartlek',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runTypes/' . $runType->id, [
+            'name' => 'Long Run',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_types', ['name' => 'Fartlek']);
+    }
+
+    /** @test */
+    public function a_viewer_cannot_update_a_run_type()
+    {
+        $this->signInViewer();
+
+        $runType = factory(RunType::class)->create([
+            'name' => 'Fartlek',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runTypes/' . $runType->id, [
+            'name' => 'Long Run',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_types', ['name' => 'Fartlek']);
+    }
+
+    /** @test */
+    public function a_guest_cannot_update_a_run_type()
+    {
+        $runType = factory(RunType::class)->create([
+            'name' => 'Fartlek',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runTypes/' . $runType->id, [
+            'name' => 'Long Run',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_types', ['name' => 'Fartlek']);
+    }
 }

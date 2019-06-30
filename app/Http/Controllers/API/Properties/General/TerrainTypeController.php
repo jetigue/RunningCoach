@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 
 class TerrainTypeController extends Controller
 {
+
+    /**
+     * GenderController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('auth')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -79,7 +90,14 @@ class TerrainTypeController extends Controller
      */
     public function update(Request $request, TerrainType $terrainType)
     {
-        //
+        request()->validate([
+            'name' => 'required|min:3',
+            'description' => 'required|min:5'
+        ]);
+
+        $terrainType->update(request(['name', 'description']));
+
+        return response()->json($terrainType, 200);
     }
 
     /**
@@ -90,6 +108,8 @@ class TerrainTypeController extends Controller
      */
     public function destroy(TerrainType $terrainType)
     {
-        //
+        $terrainType->delete();
+
+        return response()->json(null, 204);
     }
 }

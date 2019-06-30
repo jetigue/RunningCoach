@@ -21,7 +21,7 @@ class RunEffortController extends Controller
             return $runEfforts;
         }
 
-        return view('runningLog.runEfforts.index', compact('runEfforts'));
+        return view('properties.runningLog.runEfforts.index', compact('runEfforts'));
     }
 
     /**

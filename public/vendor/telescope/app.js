@@ -6131,7 +6131,7 @@ exports.default = function (instance, Constructor) {
           return DATA_KEY;
         }
       }, {
-        key: "Event",
+        key: "TeamEvent.php",
         get: function get() {
           return Event;
         }
@@ -6328,7 +6328,7 @@ exports.default = function (instance, Constructor) {
           return DATA_KEY;
         }
       }, {
-        key: "Event",
+        key: "TeamEvent.php",
         get: function get() {
           return Event;
         }
@@ -51902,7 +51902,7 @@ var render = function() {
           return [
             _c("tr", [
               _c("td", { staticClass: "table-fit font-weight-bold" }, [
-                _vm._v("Event")
+                _vm._v("TeamEvent.php")
               ]),
               _vm._v(" "),
               _c("td", [

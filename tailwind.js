@@ -151,6 +151,8 @@ let colors = {
   'tertiary-light': '#4ca64c',
   'tertiary-lighter': '#99cc99',
   'tertiary-lightest': '#e5f2e5',
+
+  'navy-blue': '#000080'
 }
 
 module.exports = {
@@ -571,6 +573,7 @@ module.exports = {
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',
+    '40': '10rem',
     '48': '12rem',
     '64': '16rem',
     'full': '100%',

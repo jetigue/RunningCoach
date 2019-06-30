@@ -1,16 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\API\RunningLog;
+namespace App\Http\Controllers\API\Properties\RunningLog;
 
-use App\Models\Runninglog\RunEffort;
+use App\Models\Runninglog\RunFeeling;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class RunEffortController extends Controller
+class RunFeelingController extends Controller
 {
+
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('admin')->except('index');
+
+        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -20,9 +23,9 @@ class RunEffortController extends Controller
      */
     public function index()
     {
-        $runEfforts = RunEffort::all();
+        $runFeelings = RunFeeling::all();
 
-        return $runEfforts;
+        return $runFeelings;
     }
 
     /**
@@ -43,23 +46,23 @@ class RunEffortController extends Controller
      */
     public function store(Request $request)
     {
-        $runEffort = request()->validate([
+        $runFeeling = request()->validate([
             'name'        => 'required|string',
             'description' => 'required|string',
         ]);
 
-        $runEffort = RunEffort::create($runEffort);
+        $runFeeling = RunFeeling::create($runFeeling);
 
-        return response()->json($runEffort, 201);
+        return response()->json($runFeeling, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Runninglog\RunEffort  $runEffort
+     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
      * @return \Illuminate\Http\Response
      */
-    public function show(RunEffort $runEffort)
+    public function show(RunFeeling $runFeeling)
     {
         //
     }
@@ -67,10 +70,10 @@ class RunEffortController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Runninglog\RunEffort  $runEffort
+     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
      * @return \Illuminate\Http\Response
      */
-    public function edit(RunEffort $runEffort)
+    public function edit(RunFeeling $runFeeling)
     {
         //
     }
@@ -79,22 +82,31 @@ class RunEffortController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Runninglog\RunEffort  $runEffort
+     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RunEffort $runEffort)
+    public function update(Request $request, RunFeeling $runFeeling)
     {
-        //
+        request()->validate([
+            'name' => 'required|min:3',
+            'description' => 'required|min:5'
+        ]);
+
+        $runFeeling->update(request(['name', 'description']));
+
+        return response()->json($runFeeling, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Runninglog\RunEffort  $runEffort
+     * @param  \App\Models\Runninglog\RunFeeling  $runFeeling
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RunEffort $runEffort)
+    public function destroy(RunFeeling $runFeeling)
     {
-        //
+        $runFeeling->delete();
+
+        return response()->json(null, 204);
     }
 }

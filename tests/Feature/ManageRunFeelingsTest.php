@@ -135,4 +135,100 @@ class ManageRunFeelingsTest extends TestCase
     {
         $this->get('/runFeelings')->assertRedirect('/');
     }
+
+    /** @test */
+    public function an_admin_can_update_a_run_feeling()
+    {
+        $this->signInAdmin();
+
+        $runFeeling = factory(RunFeeling::class)->create([
+            'name' => 'Good',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runFeelings/' . $runFeeling->id, [
+            'name' => 'Great',
+            'description' => 'New Description'
+        ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('run_feelings', [
+            'name' => 'Great',
+            'description' =>'New Description'
+        ]);
+    }
+
+    /** @test */
+    public function a_coach_cannot_update_a_run_feeling()
+    {
+        $this->signInCoach();
+
+        $runFeeling = factory(RunFeeling::class)->create([
+            'name' => 'Good',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runFeelings/' . $runFeeling->id, [
+            'name' => 'Great',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_feelings', ['name' => 'Good']);
+    }
+
+    /** @test */
+    public function an_athlete_cannot_update_a_run_feeling()
+    {
+        $this->signInAthlete();
+
+        $runFeeling = factory(RunFeeling::class)->create([
+            'name' => 'Good',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runFeelings/' . $runFeeling->id, [
+            'name' => 'Great',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_feelings', ['name' => 'Good']);
+    }
+
+    /** @test */
+    public function a_viewer_cannot_update_a_run_feeling()
+    {
+        $this->signInViewer();
+
+        $runFeeling = factory(RunFeeling::class)->create([
+            'name' => 'Good',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runFeelings/' . $runFeeling->id, [
+            'name' => 'Great',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_feelings', ['name' => 'Good']);
+    }
+
+    /** @test */
+    public function a_guest_cannot_update_a_run_feeling()
+    {
+        $runType = factory(RunFeeling::class)->create([
+            'name' => 'Good',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/runFeelings/' . $runType->id, [
+            'name' => 'Great',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('run_feelings', ['name' => 'Good']);
+    }
 }

@@ -10,7 +10,7 @@ class EventController extends Controller
 {
 
     /**
-     * EventController constructor.
+     * TeamEventController constructor.
      */
     public function __construct()
     {

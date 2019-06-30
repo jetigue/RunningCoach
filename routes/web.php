@@ -1,10 +1,12 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
+
+Route::get('/', 'PageController@welcome')->name('welcome');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,6 +25,8 @@ Route::resource('track-meets/{trackMeet}/team-results/{teamResult}/results', 'AP
 Route::apiResources([
 
     'api/athletes' => 'API\AthleteController',
+
+    'api/runningLogs' => 'API\RunningLog\RunningLogController',
     // Meets
     'api/trackMeets' => 'API\Meets\TrackMeetController',
 
@@ -44,11 +48,10 @@ Route::apiResources([
     'api/genders'     => 'API\Properties\Races\GenderController',
     'api/divisions' => 'API\Properties\Races\DivisionController',
 
-    // Running Log
-    'api/runEfforts' => 'API\RunningLog\RunEffortController',
-    'api/runFeelings' => 'API\RunningLog\RunFeelingController',
-    'api/runTypes' => 'API\RunningLog\RunTypeController',
-
+    // Running Log Properties
+    'api/runEfforts' => 'API\Properties\RunningLog\RunEffortController',
+    'api/runFeelings' => 'API\Properties\RunningLog\RunFeelingController',
+    'api/runTypes' => 'API\Properties\RunningLog\RunTypeController',
 
     // Users
     'api/roles'  => 'API\Users\RoleController',
@@ -56,6 +59,7 @@ Route::apiResources([
 
     // Team Administration
     'api/announcements' => 'API\Team\AnnouncementController',
+    'api/teamEvents' => 'API\Team\TeamEventController',
 
     // Results
 //    'track-meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController'
@@ -74,7 +78,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('users', 'Admin\UserController@index');
     Route::get('dayTimes', 'Admin\DayTimeController@index');
     Route::get('runEfforts', 'Admin\RunEffortController@index');
-    Route::get('runFeelings', 'Admin\RunEffortController@index');
+    Route::get('runFeelings', 'Admin\RunFeelingController@index');
     Route::get('runTypes', 'Admin\RunTypeController@index');
     Route::get('terrainTypes', 'Admin\TerrainTypeController@index');
 });
@@ -85,4 +89,7 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('meet-names', 'Coach\MeetNameController@index');
     Route::get('venues', 'Coach\VenueController@index');
     Route::get('announcements', 'Coach\AnnouncementController@index');
+    Route::get('teamEvents', 'Coach\TeamEventController@index');
 });
+
+Route::resource('/runningLogs', 'User\RunningLogController');

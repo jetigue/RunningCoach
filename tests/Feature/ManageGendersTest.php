@@ -69,9 +69,9 @@ class ManageGendersTest extends TestCase
      {
          $this->signInAdmin();
 
-        $attributes = factory(Gender::class)->raw(['name' => '']);
+         $attributes = factory(Gender::class)->raw(['name' => '']);
 
-        $this->post('api/genders', $attributes)->assertSessionHasErrors('name');
+         $this->post('api/genders', $attributes)->assertSessionHasErrors('name');
      }
 
      /** @test */
@@ -135,7 +135,7 @@ class ManageGendersTest extends TestCase
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
         $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
-            ->assertRedirect('/');;
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('genders', ['name' => 'Girls']);
     }

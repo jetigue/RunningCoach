@@ -133,4 +133,100 @@ class ManageTerrainTypesTest extends TestCase
     {
         $this->get('/terrainTypes')->assertRedirect('/');
     }
+
+    /** @test */
+    public function an_admin_can_update_a_terrain_type()
+    {
+        $this->signInAdmin();
+
+        $terrainType = factory(TerrainType::class)->create([
+            'name' => 'Asphalt',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/terrainTypes/' . $terrainType->id, [
+            'name' => 'Grass',
+            'description' => 'New Description'
+        ])
+            ->assertStatus(200);
+
+        $this->assertDatabaseHas('terrain_types', [
+            'name' => 'Grass',
+            'description' =>'New Description'
+        ]);
+    }
+
+    /** @test */
+    public function a_coach_cannot_update_a_terrain_type()
+    {
+        $this->signInCoach();
+
+        $terrainType = factory(TerrainType::class)->create([
+            'name' => 'Asphalt',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/terrainTypes/' . $terrainType->id, [
+            'name' => 'Grass',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('terrain_types', ['name' => 'Asphalt']);
+    }
+
+    /** @test */
+    public function an_athlete_cannot_update_a_terrain_type()
+    {
+        $this->signInAthlete();
+
+        $terrainType = factory(TerrainType::class)->create([
+            'name' => 'Asphalt',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/terrainTypes/' . $terrainType->id, [
+            'name' => 'Grass',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('terrain_types', ['name' => 'Asphalt']);
+    }
+
+    /** @test */
+    public function a_viewer_cannot_update_a_terrain_type()
+    {
+        $this->signInViewer();
+
+        $terrainType = factory(TerrainType::class)->create([
+            'name' => 'Asphalt',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/terrainTypes/' . $terrainType->id, [
+            'name' => 'Grass',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('terrain_types', ['name' => 'Asphalt']);
+    }
+
+    /** @test */
+    public function a_guest_cannot_update_a_terrain_type()
+    {
+        $terrainType = factory(TerrainType::class)->create([
+            'name' => 'Asphalt',
+            'description' => 'Original Description'
+        ]);
+
+        $this->patch('api/terrainTypes/' . $terrainType->id, [
+            'name' => 'Grass',
+            'description' => 'New Description'
+        ])
+            ->assertRedirect('/');
+
+        $this->assertDatabaseHas('terrain_types', ['name' => 'Asphalt']);
+    }
 }

@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 
 class RunningLogController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,9 @@ class RunningLogController extends Controller
      */
     public function index()
     {
-        //
+        $runningLogs = RunningLog::all();
+
+        return $runningLogs;
     }
 
     /**
@@ -36,7 +44,25 @@ class RunningLogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $runningLog = request()->validate([
+            'run_date'          => 'date|required',
+            'day_time_id'       => 'integer|required',
+            'distance'          => 'numeric|required',
+            'milliseconds'      => 'integer|nullable',
+            'terrain_type_id'   => 'integer|required',
+            'run_type_id'       => 'integer|required',
+            'run_effort_id'     => 'integer|required',
+            'run_feeling_id'    => 'integer|required',
+            'notes'             => 'nullable'
+        ]);
+
+        $runningLog = RunningLog::create($runningLog + [
+            'user_id' => auth()->id(),
+            'total_seconds' => request('hours') * 3600 + request('minutes') * 60 + request('seconds')
+            ])
+            ->load('dayTime', 'runEffort', 'runFeeling','runType', 'terrainType');
+
+        return response()->json($runningLog, 201);
     }
 
     /**
@@ -70,7 +96,36 @@ class RunningLogController extends Controller
      */
     public function update(Request $request, RunningLog $runningLog)
     {
-        //
+        $this->validate($request, [
+            'run_date'          => 'date|required',
+            'day_time_id'       => 'integer|required',
+            'distance'          => 'numeric|required',
+            'hours'             => 'integer',
+            'minutes'           => 'integer|max:59',
+            'seconds'           => 'integer|max:59',
+            'milliseconds'      => 'integer|nullable',
+            'terrain_type_id'   => 'integer|required',
+            'run_type_id'       => 'integer|required',
+            'run_effort_id'     => 'integer|required',
+            'run_feeling_id'    => 'integer|required',
+            'notes'             => 'nullable',
+        ]);
+
+        $runningLog->update(request([
+            'run_date',
+            'distance',
+            'milliseconds',
+            'day_time_id',
+            'terrain_type_id',
+            'run_type_id',
+            'run_effort_id',
+            'run_feeling_id',
+            'notes'
+        ]) + ['total_seconds' =>
+                    request('hours') * 3600 + request('minutes') * 60 + request('seconds')
+            ]);
+
+        return response()->json($runningLog, 200);
     }
 
     /**

@@ -19,8 +19,10 @@ Vue.component('track-season-filter', require('./components/filters/TrackSeasonFi
 Vue.component('track-event-filter', require('./components/filters/TrackEventFilter').default);
 
 // General Properties
-Vue.component('seasons', require('./components/properties/general/Seasons').default);
+Vue.component('day-times', require('./components/properties/general/DayTimes').default);
 Vue.component('distances', require('./components/properties/general/Distances').default);
+Vue.component('seasons', require('./components/properties/general/Seasons').default);
+Vue.component('terrain-types', require('./components/properties/general/TerrainTypes').default);
 
 // Meet Properties
 Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
@@ -34,6 +36,13 @@ Vue.component('events', require('./components/properties/races/Events').default)
 Vue.component('genders', require('./components/properties/division/Genders').default);
 Vue.component('divisions', require('./components/properties/races/Divisions').default);
 
+// Running Log Properties
+Vue.component('run-efforts', require('./components/properties/runningLog/RunEfforts').default);
+Vue.component('run-feelings', require('./components/properties/runningLog/RunFeelings').default);
+Vue.component('run-types', require('./components/properties/runningLog/RunTypes').default);
+
+Vue.component('running-logs', require('./components/runningLog/runningLogs').default);
+
 Vue.component('athletes', require('./components/Athletes').default);
 
 // Meets
@@ -45,6 +54,7 @@ Vue.component('track-results', require('./components/results/TrackResults').defa
 
 // Team
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
+Vue.component('team-events', require('./components/team/TeamEvents').default);
 
 // Users
 Vue.component('user-roles', require('./components/users/UserRoles').default);
@@ -67,8 +77,16 @@ new Vue({
 });
 
 Vue.component('login-button', require('./components/buttons/LoginButton').default);
+Vue.component('user-dropdown', require('./components/buttons/UserDropdown').default);
 
 new Vue({
     el: '#banner',
 
 });
+
+Vue.component('announcements', require('./components/pages/Announcements').default);
+Vue.component('events', require('./components/pages/Events').default);
+
+new Vue({
+    el: '#mainContent',
+})
