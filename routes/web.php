@@ -13,8 +13,8 @@ Route::get('/girls-roster', 'PageController@girlsRoster');
 Route::get('/booster-club', 'PageController@boosterClub');
 Route::get('/sponsors', 'PageController@sponsors');
 Route::get('/team-camp', 'PageController@teamCamp');
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/longhorn-5k', 'PageController@longhorn5k');
+Route::get('/river-run', 'PageController@riverRun');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

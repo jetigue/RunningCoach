@@ -14,13 +14,13 @@
                 <div class="flex w-full h-full justify-center text-xs lg:text-sm">
                     <div class="river-run flex md:w-1/3 lg:w-1/5 h-full items-end justify-center uppercase py-4">
                         <a class="button"
-                           href="/lambert-river-run">
+                           href="/river-run">
                             Lambert River Run
                         </a>
                     </div>
                     <div class="longhorn-5k flex md:w-1/3 lg:w-1/5 h-full items-end justify-center uppercase py-4">
                         <a class="button"
-                           href="/longhorn5k">
+                           href="/longhorn-5k">
                             Longhorn 5k
                         </a>
 
