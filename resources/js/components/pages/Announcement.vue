@@ -1,5 +1,5 @@
 <template>
-    <div class=" flex flex-col p-3">
+    <div class="flex flex-col p-3">
         <div class="flex justify-between flex-wrap items-baseline">
             <div class="text-lg font-semibold text-primary">
                 {{ title }}

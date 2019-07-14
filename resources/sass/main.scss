@@ -1,4 +1,18 @@
- @tailwind preflight;
+:root {
+  --color-primary: #73000A;
+  --color-secondary: #7F7F7F;
+}
+
+@tailwind base;
+
+a:hover {
+  @apply underline;
+}
+
+
+@tailwind components;
+
+@tailwind utilities;
 
  html {
     font-size: 16px;
@@ -7,10 +21,7 @@
 
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+
 
  /**
   * Here you would add any of your custom component classes; stuff that you'd
@@ -41,31 +52,7 @@
    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
  }
 
- /**
-  * This injects all of Tailwind's utility classes, generated based on your
-  * config file.
-  *
-  * If using `postcss-import`, use this import instead:
-  *
-  * @import "tailwindcss/utilities";
-  */
-  
- @tailwind utilities;
- 
- /**
-  * Here you would add any custom utilities you need that don't come out of the
-  * box with Tailwind.
-  *
-  * Example :
-  *
-  * .bg-pattern-graph-paper { ... }
-  * .skew-45 { ... }
-  *
-  * Or if using a preprocessor or `postcss-import`:
-  *
-  * @import "utilities/background-patterns";
-  * @import "utilities/skew-transforms";
-  */
+
 
  .blue-gradient {
    background-image:
@@ -118,29 +105,99 @@
    background: #adadad;
  }
 
-.crimson-checks {
-  background-color: rgb(115, 0, 10);
-  background-image: linear-gradient(rgba(115,0,10,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(115,0,10,1)), linear-gradient(45deg, #73000a 25%, transparent 25%, transparent 75%, #73000a 75%, #73000a), linear-gradient(45deg, #73000a 25%, transparent 25%, transparent 75%, #73000a 75%, #73000a), linear-gradient(to bottom, rgb(8, 8, 8), rgb(115, 0, 10));
-  background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
-  background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+.carbon-fiber {
+  background:
+          linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+          linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+          linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+          linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+          linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+          linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
 }
 
- .black-checks {
-   background-color: rgb(128, 128, 128);
-   background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 33%, rgba(0,0,0,0) 100%, rgba(0,0,0,1)), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(128, 128, 128));
-   background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
-   background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+.crimson-carbon-fiber {
+  background:
+          linear-gradient(27deg, #4c0007 5px, transparent 5px) 0 5px,
+          linear-gradient(207deg, #4c0007 5px, transparent 5px) 10px 0px,
+          linear-gradient(27deg, #73000a 5px, transparent 5px) 0px 10px,
+          linear-gradient(207deg, #73000a 5px, transparent 5px) 10px 5px,
+          linear-gradient(90deg, #5f0008 10px, transparent 10px),
+          linear-gradient(#5f0008 25%, #5f0008 25%, #5f0008 50%, transparent 50%, transparent 75%, #73000a 75%, #73000a);
+  background-color: #4c0007;
+  background-size: 20px 20px;
+}
+
+ .mobile-banner {
+   background-image: url('/images/LonghornLogo.svg') ;
+   background-size: 100px 80px;
+   background-position: center;
+   background-repeat: no-repeat;
  }
 
- .red-checks {
-   background-color: rgb(115, 0, 10);
-   background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%, rgba(0,0,0,1)), linear-gradient(45deg, #73000a 25%, transparent 25%, transparent 75%, #73000a 75%, #73000a), linear-gradient(45deg, #73000a 25%, transparent 25%, transparent 75%, #73000a 75%, #73000a), linear-gradient(to bottom, rgb(8, 8, 8), rgb(115, 0, 10));
-   background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
-   background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+.booster-club {
+  background-image: url('/images/BoosterClub.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ .boys-roster {
+   background-image: url('/images/BoysRoster.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
  }
 
+.coaches {
+  background-image: url('/images/Coaches.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.girls-roster {
+  background-image: url('/images/GirlsRoster.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.longhorn-5k {
+  background-image: url('/images/Longhorn5k.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.river-run {
+  background-image: url('/images/RiverRun.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sponsors {
+  background-image: url('/images/sponsors/SFAnimalShelterLogo.png');
+  background-size: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-camp {
+  background-image: url('/images/TeamCamp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.boys-state-2018 {
+    background-image: url('/images/2018BoysStateTeam.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 
 

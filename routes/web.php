@@ -7,6 +7,12 @@
 Auth::routes();
 
 Route::get('/', 'PageController@welcome')->name('welcome');
+Route::get('/coaches', 'PageController@coaches');
+Route::get('/boys-roster', 'PageController@boysRoster');
+Route::get('/girls-roster', 'PageController@girlsRoster');
+Route::get('/booster-club', 'PageController@boosterClub');
+Route::get('/sponsors', 'PageController@sponsors');
+Route::get('/team-camp', 'PageController@teamCamp');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

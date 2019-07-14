@@ -1,4 +1,4 @@
-                <footer class="crimson-checks text-white p-3">
+                <footer class="crimson-carbon-fiber text-white p-3">
                     Copyright 2018
                 </footer>
                 </div>

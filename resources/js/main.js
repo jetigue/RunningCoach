@@ -76,8 +76,13 @@ new Vue({
 
 });
 
+Vue.component('main-menu-button', require('./components/buttons/MainMenuButton').default);
+Vue.component('events-dropdown', require('./components/dropdowns/EventsDropdown').default);
+Vue.component('forms-dropdown', require('./components/dropdowns/FormsDropdown').default);
+Vue.component('team-dropdown', require('./components/dropdowns/TeamDropdown').default);
+Vue.component('menu-button', require('./components/buttons/MenuButton').default);
 Vue.component('login-button', require('./components/buttons/LoginButton').default);
-Vue.component('user-dropdown', require('./components/buttons/UserDropdown').default);
+Vue.component('dropdown', require('./components/buttons/Dropdown').default);
 
 new Vue({
     el: '#banner',

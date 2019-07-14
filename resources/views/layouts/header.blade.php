@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container mx-auto" id="siteContent">
+    <div class="mx-auto" id="siteContent">

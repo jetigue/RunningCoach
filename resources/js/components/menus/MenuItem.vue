@@ -1,6 +1,6 @@
 <template>
     <div>
-        <li class="list-reset py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base text-primary-light">
+        <li class="py-1 pl-4 md:pl-2 lg:pl-4 md:text-sm lg:text-base">
             <slot></slot>
         </li>
     </div>
