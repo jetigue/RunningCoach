@@ -95,7 +95,7 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('meet-names', 'Coach\MeetNameController@index');
     Route::get('venues', 'Coach\VenueController@index');
     Route::get('announcements', 'Coach\AnnouncementController@index');
-    Route::get('teamEvents', 'Coach\TeamEventController@index');
+    Route::get('team-events', 'Coach\TeamEventController@index');
 });
 
-Route::resource('/runningLogs', 'User\RunningLogController');
+Route::resource('/running-log', 'User\RunningLogController');

@@ -1,10 +1,13 @@
 <template>
-    <div class="mb-4">
+    <div class="py-2">
         <div class="flex flex-col">
             <div class="flex justify-start">
-                <div class="flex flex-col justify-center items-center bg-primary rounded shadow w-10 h-10">
-                    <div class="text-grey font-light text-xs">{{ event_date | moment("MMM")}}</div>
-                    <div class="text-white font-semibold text-lg">{{ event_date | moment('D')}}</div>
+                <div class="flex-none bg-primary rounded-full shadow-2xl w-10 h-10 leading-none">
+                    <div class="flex flex-col justify-center items-center h-full w-full">
+                        <div class="text-gray-200 font-light text-xs">{{ event_date | moment("MMM")}}</div>
+                        <div class="text-white font-semibold text-lg">{{ event_date | moment('D')}}</div>
+                    </div>
+
                 </div>
 
                 <div class="flex-col text-xs font-bold text-primary ml-2">
@@ -12,18 +15,18 @@
                         {{ name }}
                     </div>
                     <div class="leading-tight">
-                        <div class=" pl-2 text-smoke-darker">{{ location }}</div>
-                        <div class=" pl-2 text-smoke-darker">{{ event_time }}</div>
+                        <div class=" pl-2 text-smoke-800">{{ location }}</div>
+                        <div class=" pl-2 text-smoke-800">{{ event_time }}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-xs text-grey-darker py-1">
+            <div class="text-xs text-gray-900 py-1">
                 {{ details }}
             </div>
 
             <div v-if="link != null" class="text-xs font-semibold">
-                <p><a class="text-blue" :href="link">{{ link_text }}</a></p>
+                <p><a class="text-blue-600 hover:text-blue-800 hover:underline" :href="link">{{ link_text }}</a></p>
             </div>
         </div>
 

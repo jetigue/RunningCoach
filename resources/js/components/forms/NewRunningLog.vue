@@ -185,10 +185,10 @@
                       v-model="form.notes">
             </textarea>
         </div>
-        
-        <div class="text-right">
+
+        <div class="text-right pt-2">
             <button type="submit"
-                    class="w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded"
+                    class="submit-button"
                     :disabled="form.errors.any()">
                     Create
             </button>
@@ -243,7 +243,7 @@ export default {
                         type: 'success',
                         title: 'Run Successfully Logged'
                     });
-  
+
                     this.$emit('created', data),
                     this.resetForm()
                 })

@@ -1,4 +1,4 @@
-<div class="hidden md:flex md:flex-col">
+<div class="hidden md:flex md:flex-col min-h-full">
     @if(Auth::user() && Auth::user()->role->slug === 'admin')
 
         @include('layouts.menus.adminMenu')
@@ -14,4 +14,4 @@
 
     @endif
 
-</div> 
+</div>

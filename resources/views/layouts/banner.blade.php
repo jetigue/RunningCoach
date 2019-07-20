@@ -1,10 +1,10 @@
 <header class="w-full crimson-carbon-fiber h-24 md:h-32 lg:h-40" id="banner">
 
     <div class="flex flex-col">
-        <div class="flex justify-between items-start md:justify-end">
-            <div class="md:hidden">
+        <div class="flex justify-between items-start lg:justify-end">
+            <div class="lg:hidden">
                 <main-menu-button></main-menu-button>
-                <portal-target name="main-menu">
+                    <portal-target name="main-menu">
                 </portal-target>
             </div>
             <div class="flex justify-end pt-2 pr-2 lg:pr-4">
@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="flex justify-center md:justify-start items-start">
+        <div class="flex justify-center lg:justify-start items-start">
             <div class="md:px-6 lg:px-12 leading-tight">
                 <p class="text-xl md:text-3xl lg:text-4xl font-medium text-white">
                     <a href="/">Longhorn Distance</a>

@@ -1,4 +1,4 @@
-<div class="hidden md:flex md:w-1/2 lg:w-1/3 mx-auto justify-between lg:text-lg md:pt-3 lg:pt-6">
+<div class="hidden lg:flex lg:w-1/3 mx-auto justify-between lg:text-lg md:pt-3 lg:pt-6">
     <team-dropdown></team-dropdown>
     <events-dropdown></events-dropdown>
     <forms-dropdown></forms-dropdown>

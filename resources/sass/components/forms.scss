@@ -14,7 +14,7 @@
 
 .form-label {
   display: block;
-  color: #000080;
+  color: #800000;
   font-size: .875rem;
   font-weight: 700;
   margin: .25rem;
@@ -26,5 +26,18 @@
   font-weight: 600;
   font-size: .8rem;
   margin: .25rem;
+}
 
+.submit-button {
+  background: #008000;
+  color: #fff;
+  border-radius: .25rem;
+  width: 5rem;
+  font-size: .875rem;
+  padding: 0.4rem;
+}
+
+.submit-button:hover {
+  font-weight: 700;
+  background: #00b300;
 }

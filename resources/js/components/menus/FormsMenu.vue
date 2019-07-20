@@ -1,11 +1,11 @@
 <template>
     <div class="">
         <div class="flex justify-between items-center" @click="toggleMenu">
-            <p class="flex text-white mb-1 text-2xl md:text-base lg:text-xl">Forms</p>
+            <p class="flex text-white text-2xl">Forms</p>
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
-                class="text-secondary text-sm md:text-xs lg:text-sm"></i>
+                class="text-white text-sm"></i>
         </div>
-        <ul v-show="isExpanded">
+        <ul v-show="isExpanded" class="px-2">
             <information-menu></information-menu>
             <longhorn5k-menu></longhorn5k-menu>
             <physical-forms-menu></physical-forms-menu>

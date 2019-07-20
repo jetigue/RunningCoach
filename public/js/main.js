@@ -2423,8 +2423,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -7104,6 +7102,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -32251,29 +32252,27 @@ var render = function() {
                 expression: "active"
               }
             ],
-            staticClass: "fixed pin overflow-auto z-50 bg-smoke flex"
+            staticClass: "fixed inset-0 overflow-auto z-50 bg-smoke-600 flex"
           },
           [
             _c(
               "div",
               {
                 staticClass:
-                  "relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex flex-col p-4"
+                  "relative bg-white w-full md:w-1/2 lg:w-1/3 max-w-md h-full md:h-auto m-auto md:rounded flex flex-col p-4"
               },
               [
                 _c(
                   "header",
                   {
                     staticClass:
-                      "border-b-2 border-primary flex justify-between"
+                      "border-b-2 border-primary flex justify-between items-center"
                   },
                   [
                     _c("div", [
                       _c(
-                        "h3",
-                        {
-                          staticClass: "font-thin text-2xl text-tertiary py-2"
-                        },
+                        "p",
+                        { staticClass: "font-thin text-2xl text-black" },
                         [
                           _vm._v(
                             "\n                            " +
@@ -32292,8 +32291,7 @@ var render = function() {
                       },
                       [
                         _c("i", {
-                          staticClass:
-                            "fas fa-times text-2xl text-grey-darker pt-3"
+                          staticClass: "fas fa-times text-xl text-gray-700"
                         })
                       ]
                     )
@@ -32302,7 +32300,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "section",
-                  { staticClass: "my-3 p-4 bg-blue-lightest rounded-lg" },
+                  { staticClass: "my-3 p-4 bg-gray-200 rounded-lg" },
                   [_vm._t("default")],
                   2
                 ),
@@ -32314,7 +32312,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "py-2 text-grey-darker text-sm",
+                        staticClass: "py-2 text-gray-800 text-sm",
                         attrs: { type: "button" },
                         on: { click: _vm.close }
                       },
@@ -32770,66 +32768,76 @@ var render = function() {
                 expression: "active"
               }
             ],
-            staticClass:
-              "fixed inset-0 overflow-auto z-50 crimson-carbon-fiber flex"
+            staticClass: "fixed inset-0 overflow-auto z-50 bg-smoke-600 flex"
           },
           [
-            _c("div", { staticClass: "flex flex-col w-full" }, [
-              _c("div", {}, [
-                _c(
-                  "header",
-                  { staticClass: "flex items-start justify-between" },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass:
-                          "text-4xl font-hairline text-white pl-3 pt-1"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Main Menu\n                        "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flex p-4" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex flex-col crimson-carbon-fiber w-full md:w-1/2 md:mx-auto h-auto"
+              },
+              [
+                _c("div", { staticClass: "flex p-4 justify-between" }, [
+                  _c("div", { staticClass: "text-white" }, [
+                    _c("a", { attrs: { href: "/" } }, [_vm._v("Home")])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      attrs: { type: "button", "aria-label": "close" },
+                      on: { click: _vm.close }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fas fa-times text-xl text-white"
+                      })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-full mx-auto" }, [
+                  _c(
+                    "header",
+                    { staticClass: "flex items-start justify-between" },
+                    [
                       _c(
-                        "button",
+                        "p",
                         {
-                          attrs: { type: "button", "aria-label": "close" },
-                          on: { click: _vm.close }
+                          staticClass:
+                            "text-3xl font-hairline text-white pl-6 pt-1"
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-times text-xl text-white"
-                          })
+                          _vm._v(
+                            "\n                            Main Menu\n                        "
+                          )
                         ]
                       )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex flex-col items-start text-white mt-4" },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "flex flex-col w-3/4 mx-auto" },
-                      [
-                        _c("our-team-menu", { staticClass: "py-2" }),
-                        _vm._v(" "),
-                        _c("our-events-menu", { staticClass: "py-2" }),
-                        _vm._v(" "),
-                        _c("forms-menu", { staticClass: "py-2" })
-                      ],
-                      1
-                    )
-                  ]
-                )
-              ])
-            ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-col items-start text-white" },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex flex-col w-3/4 mx-auto" },
+                        [
+                          _c("our-team-menu", { staticClass: "py-2" }),
+                          _vm._v(" "),
+                          _c("our-events-menu", { staticClass: "py-2" }),
+                          _vm._v(" "),
+                          _c("forms-menu", { staticClass: "py-2" })
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
           ]
         )
       ])
@@ -34089,12 +34097,11 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34222,12 +34229,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34353,12 +34359,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34566,12 +34571,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34697,12 +34701,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34788,12 +34791,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34879,12 +34881,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -34970,12 +34971,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35122,12 +35122,11 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35278,12 +35277,11 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35369,12 +35367,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35502,12 +35499,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35635,12 +35631,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -35768,12 +35763,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -36459,12 +36453,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -36566,12 +36559,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -37106,12 +37098,11 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -37447,12 +37438,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -37580,12 +37570,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -37671,12 +37660,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -38076,15 +38064,14 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
-          [_vm._v("\n            Create\n        ")]
+          [_vm._v("\n                Create\n        ")]
         )
       ])
     ]
@@ -38483,12 +38470,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -38741,12 +38727,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "text-right pt-2" }, [
         _c(
           "button",
           {
-            staticClass:
-              "w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded",
+            staticClass: "submit-button",
             attrs: { type: "submit", disabled: _vm.form.errors.any() }
           },
           [_vm._v("\n                Create\n        ")]
@@ -39513,16 +39498,10 @@ var render = function() {
         on: { click: _vm.toggleMenu }
       },
       [
-        _c(
-          "p",
-          {
-            staticClass: "flex text-white mb-1 text-2xl md:text-base lg:text-xl"
-          },
-          [_vm._v("Forms")]
-        ),
+        _c("p", { staticClass: "flex text-white text-2xl" }, [_vm._v("Forms")]),
         _vm._v(" "),
         _c("i", {
-          staticClass: "text-secondary text-sm md:text-xs lg:text-sm",
+          staticClass: "text-white text-sm",
           class: {
             "fas fa-plus": !_vm.isExpanded,
             "fas fa-minus": _vm.isExpanded
@@ -39541,7 +39520,8 @@ var render = function() {
             value: _vm.isExpanded,
             expression: "isExpanded"
           }
-        ]
+        ],
+        staticClass: "px-2"
       },
       [
         _c("information-menu"),
@@ -39768,16 +39748,12 @@ var render = function() {
         on: { click: _vm.toggleMenu }
       },
       [
-        _c(
-          "p",
-          {
-            staticClass: "flex text-white mb-1 text-2xl md:text-base lg:text-xl"
-          },
-          [_vm._v("Our Events")]
-        ),
+        _c("p", { staticClass: "flex text-white text-2xl" }, [
+          _vm._v("Our Events")
+        ]),
         _vm._v(" "),
         _c("i", {
-          staticClass: "text-secondary text-sm md:text-xs lg:text-sm",
+          staticClass: "text-white text-sm lg:text-sm",
           class: {
             "fas fa-plus": !_vm.isExpanded,
             "fas fa-minus": _vm.isExpanded
@@ -39788,6 +39764,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
+      { staticClass: "px-2" },
       _vm._l(_vm.items, function(item) {
         return _c(
           "menu-item",
@@ -39840,16 +39817,12 @@ var render = function() {
         on: { click: _vm.toggleMenu }
       },
       [
-        _c(
-          "p",
-          {
-            staticClass: "flex text-white mb-1 text-2xl md:text-base lg:text-xl"
-          },
-          [_vm._v("Our Team")]
-        ),
+        _c("p", { staticClass: "flex text-white text-2xl" }, [
+          _vm._v("Our Team")
+        ]),
         _vm._v(" "),
         _c("i", {
-          staticClass: "text-secondary text-sm md:text-xs lg:text-sm",
+          staticClass: "text-white text-sm lg:text-sm",
           class: {
             "fas fa-plus": !_vm.isExpanded,
             "fas fa-minus": _vm.isExpanded
@@ -39860,6 +39833,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
+      { staticClass: "px-2" },
       _vm._l(_vm.items, function(item) {
         return _c(
           "menu-item",
@@ -40447,7 +40421,7 @@ var render = function() {
           _vm._v("\n            " + _vm._s(_vm.title) + "\n        ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "text-xs font-semibold text-smoke-light" }, [
+        _c("div", { staticClass: "text-xs font-semibold text-smoke-400" }, [
           _vm._v(
             "\n            Published " +
               _vm._s(_vm._f("moment")(_vm.created_at, "from", "now")) +
@@ -40468,7 +40442,8 @@ var render = function() {
               _c(
                 "a",
                 {
-                  staticClass: "text-blue text-sm font-semibold",
+                  staticClass:
+                    "text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold",
                   attrs: { href: _vm.link_1 }
                 },
                 [_vm._v(_vm._s(_vm.link_text_1))]
@@ -40483,7 +40458,8 @@ var render = function() {
               _c(
                 "a",
                 {
-                  staticClass: "text-blue text-sm font-semibold",
+                  staticClass:
+                    "text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold",
                   attrs: { href: _vm.link_1 }
                 },
                 [_vm._v(_vm._s(_vm.link_text_1))]
@@ -40498,7 +40474,8 @@ var render = function() {
               _c(
                 "a",
                 {
-                  staticClass: "text-blue text-sm font-semibold",
+                  staticClass:
+                    "text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold",
                   attrs: { href: _vm.link_1 }
                 },
                 [_vm._v(_vm._s(_vm.link_text_1))]
@@ -40593,23 +40570,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mb-4" }, [
+  return _c("div", { staticClass: "py-2" }, [
     _c("div", { staticClass: "flex flex-col" }, [
       _c("div", { staticClass: "flex justify-start" }, [
         _c(
           "div",
           {
             staticClass:
-              "flex flex-col justify-center items-center bg-primary rounded shadow w-10 h-10"
+              "flex-none bg-primary rounded-full shadow-2xl w-10 h-10 leading-none"
           },
           [
-            _c("div", { staticClass: "text-grey font-light text-xs" }, [
-              _vm._v(_vm._s(_vm._f("moment")(_vm.event_date, "MMM")))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "text-white font-semibold text-lg" }, [
-              _vm._v(_vm._s(_vm._f("moment")(_vm.event_date, "D")))
-            ])
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex flex-col justify-center items-center h-full w-full"
+              },
+              [
+                _c("div", { staticClass: "text-gray-200 font-light text-xs" }, [
+                  _vm._v(_vm._s(_vm._f("moment")(_vm.event_date, "MMM")))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "text-white font-semibold text-lg" }, [
+                  _vm._v(_vm._s(_vm._f("moment")(_vm.event_date, "D")))
+                ])
+              ]
+            )
           ]
         ),
         _vm._v(" "),
@@ -40626,11 +40612,11 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "leading-tight" }, [
-              _c("div", { staticClass: " pl-2 text-smoke-darker" }, [
+              _c("div", { staticClass: " pl-2 text-smoke-800" }, [
                 _vm._v(_vm._s(_vm.location))
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: " pl-2 text-smoke-darker" }, [
+              _c("div", { staticClass: " pl-2 text-smoke-800" }, [
                 _vm._v(_vm._s(_vm.event_time))
               ])
             ])
@@ -40638,16 +40624,22 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-xs text-grey-darker py-1" }, [
+      _c("div", { staticClass: "text-xs text-gray-900 py-1" }, [
         _vm._v("\n            " + _vm._s(_vm.details) + "\n        ")
       ]),
       _vm._v(" "),
       _vm.link != null
         ? _c("div", { staticClass: "text-xs font-semibold" }, [
             _c("p", [
-              _c("a", { staticClass: "text-blue", attrs: { href: _vm.link } }, [
-                _vm._v(_vm._s(_vm.link_text))
-              ])
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "text-blue-600 hover:text-blue-800 hover:underline",
+                  attrs: { href: _vm.link }
+                },
+                [_vm._v(_vm._s(_vm.link_text))]
+              )
             ])
           ])
         : _vm._e()

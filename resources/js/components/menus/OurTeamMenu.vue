@@ -1,11 +1,11 @@
 <template>
     <div class="">
         <div class="flex justify-between items-center" @click="toggleMenu">
-            <p class="flex text-white mb-1 text-2xl md:text-base lg:text-xl">Our Team</p>
+            <p class="flex text-white text-2xl">Our Team</p>
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
-                class="text-secondary text-sm md:text-xs lg:text-sm"></i>
+                class="text-white text-sm lg:text-sm"></i>
         </div>
-        <ul>
+        <ul class="px-2">
             <menu-item
                     v-show="isExpanded"
                     v-for="item in items"
@@ -32,7 +32,7 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
                     label: 'Coaches',
                     url: '/coaches'
@@ -55,7 +55,7 @@ export default {
                     url: '/sponsors'
                 },
 
-            ] 
+            ]
         }
     },
 
