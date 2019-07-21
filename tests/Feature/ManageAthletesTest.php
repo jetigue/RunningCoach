@@ -174,8 +174,7 @@ class ManageAthletesTest extends TestCase
          $this->signInAdmin();
 
          $this->get('/athletes')
-             ->assertSee('name')
-             ->assertSee('status');
+             ->assertSee('name');
      }
 
     /** @test */
@@ -184,8 +183,7 @@ class ManageAthletesTest extends TestCase
         $this->signInCoach();
 
         $this->get('/athletes')
-            ->assertSee('name')
-            ->assertSee('status');
+            ->assertSee('name');
     }
 
     /** @test */

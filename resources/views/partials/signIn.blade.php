@@ -12,7 +12,7 @@
         </template>
 
         <template v-slot:default>
-            <a class="block hover:bg-smoke-200 px-4" href="/dashboard">My Dashboard</a>
+            {{-- <a class="block hover:bg-smoke-200 px-4" href="/dashboard">My Dashboard</a> --}}
             <hr>
             <a class="block hover:bg-smoke-200 px-4" href="{{ route('logout') }}"
                onclick="event.preventDefault();

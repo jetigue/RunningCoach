@@ -1,11 +1,12 @@
 .form-input {
-  color: #606f7b;
+  color: #555;
   width: 100%;
-  line-height: 1.25;
+  line-height: 1.5;
   padding: .5rem .75rem;
   border-radius: .25rem;
   margin-bottom: .25rem;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  background: #fff;
   &focus {
     outline: 0;
     box-shadow: 0 0 0 3px rgba(52,144,220,0.5);

@@ -206,16 +206,14 @@
         <div v-else class="table-body">
             <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
                 <div class="flex flex-col hover:bg-white">
-                    <div class="flex p-1 items-center">
-                        <div class="text-grey-darker flex flex-wrap w-9/10">
-                            <div class="flex justify-between w-full md:w-2/5 lg:w-1/4">
-                                <div class="text-xs font-light">
-                                    {{ run_date | moment("MMM DD, YYYY") }}
-                                </div>
+                    <div class="flex p-1 items-center justify-between">
+                        <div class="text-gray-700 flex-wrap w-11/12">
+                            <div class="w-full text-xs font-light">
+                                {{ run_date | moment("MMM DD, YYYY") }}
                             </div>
                             <div class="flex w-full pl-2 pt-1 text-primary">
-                                <div class="w-1/3">
-                                    {{ distance }} <span class="text-xs text-grey-darker">miles</span>
+                                <div class="w-1/3 ">
+                                    {{ distance }} <span class="text-xs text-gray-700">miles</span>
                                 </div>
                                 <div class="w-1/3">
                                     {{duration}}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
@@ -225,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-grow justify-end">
+                        <div class="flex flex-grow justify-end pr-1">
                             <expand-button @toggleRow="toggleRow" class=""></expand-button>
                         </div>
                     </div>

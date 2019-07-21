@@ -8,9 +8,10 @@
     @elseif(Auth::user() && Auth::user()->role->slug === 'coach')
 
         @include('layouts.menus.coachMenu')
-    {{--<general-properties class="md:py-2 lg:p-2"></general-properties>--}}
-    {{--<meet-properties class="md:py-2 lg:p-2"></meet-properties>--}}
-    {{--<race-properties class="md:py-2 lg:p-2"></race-properties>--}}
+
+    @elseif(Auth::user() && Auth::user()->role->slug === 'athlete')
+
+        @include('layouts.menus.athleteMenu')
 
     @endif
 

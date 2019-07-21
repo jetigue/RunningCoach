@@ -5,7 +5,7 @@
                 Calendar
             </p>
         </div>
-        <div class="primary-line my-2"></div>
+        <div class="primary-line mb-2"></div>
         <div class="my-2" v-for="(teamEvent, index) in items" :key="teamEvent.id">
             <event :data="teamEvent" @deleted="remove(index)"></event>
         </div>

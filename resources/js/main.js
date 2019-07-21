@@ -1,5 +1,8 @@
 require('./bootstrap');
 
+import BarGraph from './components/graphs/BarGraph';
+import PieChart from './components//graphs/PieChart';
+
 
 // Buttons
 Vue.component('cancel-button', require('./components/buttons/CancelButton').default);
@@ -63,6 +66,7 @@ Vue.component('users', require('./components/users/Users').default);
 new Vue({
     el: '#userContent',
 
+    components: { BarGraph, PieChart }
 });
 
 Vue.component('menu-button', require('./components/buttons/MenuButton').default);
@@ -94,4 +98,5 @@ Vue.component('events', require('./components/pages/Events').default);
 
 new Vue({
     el: '#mainContent',
+
 })

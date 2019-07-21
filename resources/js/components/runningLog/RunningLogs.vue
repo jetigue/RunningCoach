@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col">
         <div class="flex justify-between items-baseline">
-            <header class="font-light text-2xl pb-1 text-primary">RunningLogs</header>
+            <header class="font-light text-2xl pb-1 text-primary">My Runs</header>
             <filter-button class="hidden">
 
             </filter-button>
@@ -9,21 +9,22 @@
 
         <div class="table-container">
             <div class="table-header">
-                <div class="flex w-9/10 pl-2">
+                <div class="flex w-11/12 pl-1">
                     <div class="w-1/3">
                         <p class="text-primary font-semibold">Distance</p>
                     </div>
                     <div class="w-1/3">
-                        <p class="text-primary font-semibold">Time</p>
+                        <p class="text-primary font-semibold">Duration</p>
                     </div>
                     <div class="w-1/3">
                         <p class="text-primary font-semibold">Pace</p>
                     </div>
                 </div>
-                <div class="">
+                <div class="flex tooltip">
                     <create-button title="Log a New Run">
                         <new-running-log @created="add"></new-running-log>
                     </create-button>
+                    <span class="tooltiptext">Log a Run</span>
                 </div>
             </div>
             <div v-if="records">

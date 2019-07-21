@@ -5,7 +5,7 @@
     <div class="container bg-white mx-auto" id="mainContent">
         <div class="flex">
             @auth
-                <div class="min-h-full hidden lg:flex lg:w-1/6 lg:pl-4 shadow px-2 pt-8">
+                <div class="min-h-full hidden lg:flex lg:w-1/6 border-gray-200 border-r-2 pt-8 justify-center">
                     @include('layouts.menu')
                 </div>
 

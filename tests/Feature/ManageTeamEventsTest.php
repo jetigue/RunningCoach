@@ -28,7 +28,7 @@ class ManageTeamEventsTest extends TestCase
 
         $this->assertDatabaseHas('team_events', $attributes);
 
-        $this->get('/teamEvents')
+        $this->get('/team-events')
             ->assertSee($attributes['name'])
             ->assertSee($attributes['event_date']);
     }
@@ -50,7 +50,7 @@ class ManageTeamEventsTest extends TestCase
 
         $this->assertDatabaseHas('team_events', $attributes);
 
-        $this->get('/teamEvents')
+        $this->get('/team-events')
             ->assertSee($attributes['name'])
             ->assertSee($attributes['event_date']);
     }
@@ -172,7 +172,7 @@ class ManageTeamEventsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $this->get('/teamEvents')->assertRedirect('/');
+        $this->get('/team-events')->assertRedirect('/');
     }
 
     /** @test */
@@ -180,13 +180,13 @@ class ManageTeamEventsTest extends TestCase
     {
         $this->signInViewer();
 
-        $this->get('/teamEvents')->assertRedirect('/');
+        $this->get('/team-events')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_team_events()
     {
-        $this->get('/teamEvents')->assertRedirect('/');
+        $this->get('/team-events')->assertRedirect('/');
     }
 
     /** @test */

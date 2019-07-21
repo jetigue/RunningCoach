@@ -486,6 +486,12 @@ textarea::-webkit-input-placeholder {
   opacity: 0.5;
 }
 
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: inherit;
@@ -5663,7 +5669,7 @@ a:hover {
 html {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
-  background: #f8f8ff;
+  background: #fff;
 }
 
 /**
@@ -5683,13 +5689,14 @@ html {
  */
 
 .form-input {
-  color: #606f7b;
+  color: #555;
   width: 100%;
-  line-height: 1.25;
+  line-height: 1.5;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
   margin-bottom: 0.25rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 .form-inputfocus {
@@ -5745,6 +5752,41 @@ html {
   align-items: center;
   width: 100%;
   padding: 0.5rem 0.65rem 0.5rem 0.5rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .card {

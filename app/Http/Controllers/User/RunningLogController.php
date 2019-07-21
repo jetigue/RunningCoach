@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\RunningLog\RunningLog;
+use App\Repositories\RunningLogs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,14 +20,31 @@ class RunningLogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(RunningLogs $runningLogs)
     {
+        $weeklySummerMileage = $runningLogs->weeklySummerMileage();
+        $mileageLastWeek = $runningLogs->mileageLastWeek();
+        $totalMileage = $runningLogs->totalMileage();
+        $totalSummerMileage = $runningLogs->totalSummerMileage();
+        $totalMileageThisWeek = $runningLogs->totalMileageThisWeek();
+        $totalMileageThisMonth = $runningLogs->totalMileageThisMonth();
+        $totalMileageThisYear = $runningLogs->totalMileageThisYear();
+
         $runningLogs = RunningLog::with('dayTime', 'terrainType', 'runType', 'runEffort', 'runFeeling')
                 ->where('user_id', auth()->id())
                 ->orderBy('run_date', 'desc')
                 ->get();
 
-        return view('runningLog.index', compact('runningLogs'));
+        return view('runningLog.index', compact(
+            'runningLogs',
+            'weeklySummerMileage',
+            'mileageLastWeek',
+            'totalMileage',
+            'totalSummerMileage',
+            'totalMileageThisWeek',
+            'totalMileageThisMonth',
+            'totalMileageThisYear',
+            ));
     }
 
     /**

@@ -15,12 +15,12 @@
 
         <div class=" w-full md:w-1/2 lg:w-full p-2 md:px-2 ">
             <div
-                class="flex flex-col bg-white rounded p-4 border-2 border-crimson-400">
+                class="flex flex-col bg-white rounded p-4 bg-blue-100">
                 <header>
                     <p class="lg:text-3xl md:text-2xl text-lg font-thin">
                         Join The Team!
                     </p>
-                    <div class="primary-line my-1"></div>
+                    <div class="primary-line mb-1"></div>
                 </header>
                 <section>
                     <p>
@@ -47,7 +47,7 @@
                     <p class="lg:text-3xl md:text-2xl text-lg font-thin">
                         Longorn 5k
                     </p>
-                    <div class="primary-line my-1"></div>
+                    <div class="primary-line mb-1"></div>
                 </header>
                 <section>
                     <p>

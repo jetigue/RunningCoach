@@ -4,7 +4,7 @@
             <p class="lg:text-3xl md:text-2xl text-lg font-thin">
                 Team Announcements
             </p>
-            <div class="primary-line my-2"></div>
+            <div class="primary-line mb-2"></div>
         </div>
 
         <div v-for="(announcement, index) in items" :key="announcement.id">

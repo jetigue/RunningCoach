@@ -33,7 +33,16 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="w-full mx-auto">
+                        <header class="flex items-start justify-between">
+                            <p class="text-3xl font-hairline text-white pl-6 pt-1">
+                                Running Log
+                            </p>
+                        </header>
+                        <div class="flex w-3/4 mx-auto py-2 text-white">
+                            <a href="/running-log">My Running Log</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </portal>

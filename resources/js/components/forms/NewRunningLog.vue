@@ -3,7 +3,7 @@
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.run_date">Date</label>
                 <span id="run_dateHelp" class="form-help" v-if="form.errors.has('run_date')"
@@ -16,7 +16,7 @@
                    v-model="form.run_date">
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.distance">Distance (miles)</label>
                 <span id="distanceHelp" class="form-help" v-if="form.errors.has('distance')"
@@ -31,9 +31,7 @@
                    v-model="form.distance">
         </div>
 
-
-
-        <div class="flex mb-2 w-full">
+        <div class="flex mb-1 w-full">
             <div class="flex flex-col w-1/4">
                 <div class="flex justify-between content-end">
                     <label class="form-label text-xs" for="form.hours">Hours</label>
@@ -103,7 +101,7 @@
             </div>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Time of Day</label>
                 <span id="dayTimeHelp" class="form-help" v-if="form.errors.has('day_time_id')"
@@ -117,7 +115,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Terrain</label>
                 <span id="terrainTypeHelp" class="form-help" v-if="form.errors.has('terrain_type_id')"
@@ -131,7 +129,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Run Type</label>
                 <span id="runTypeHelp" class="form-help" v-if="form.errors.has('run_type_id')"
@@ -145,7 +143,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Effort</label>
                 <span id="runEffortHelp" class="form-help" v-if="form.errors.has('run_effort_id')"
@@ -159,7 +157,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">How did you feel?</label>
                 <span id="runFeelingHelp" class="form-help" v-if="form.errors.has('run_feeling_id')"
@@ -173,7 +171,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.notes">Notes (optional)</label>
                 <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
