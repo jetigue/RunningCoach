@@ -82,11 +82,11 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('timing', 'Admin\TimingController@index');
     Route::get('user-roles', 'Admin\UserRoleController@index');
     Route::get('users', 'Admin\UserController@index');
-    Route::get('dayTimes', 'Admin\DayTimeController@index');
-    Route::get('runEfforts', 'Admin\RunEffortController@index');
-    Route::get('runFeelings', 'Admin\RunFeelingController@index');
-    Route::get('runTypes', 'Admin\RunTypeController@index');
-    Route::get('terrainTypes', 'Admin\TerrainTypeController@index');
+    Route::get('day-times', 'Admin\DayTimeController@index');
+    Route::get('run-efforts', 'Admin\RunEffortController@index');
+    Route::get('run-feelings', 'Admin\RunFeelingController@index');
+    Route::get('run-types', 'Admin\RunTypeController@index');
+    Route::get('terrain-types', 'Admin\TerrainTypeController@index');
 });
 
 Route::group(['middleware' => 'coach'], function () {

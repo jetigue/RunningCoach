@@ -12,8 +12,8 @@
     <div class="py-1">
         <p class="text-primary text-lg md:text-base lg:text-lg">General Properties</p>
         <div class="flex flex-col pl-2">
-            <a class="text-tertiary hover:text-blue py-1" href="/dayTimes">Day Times</a>
-            <a class="text-tertiary hover:text-blue py-1" href="/terrainTypes">Terrain Types</a>
+            <a class="text-tertiary hover:text-blue py-1" href="/day-times">Day Times</a>
+            <a class="text-tertiary hover:text-blue py-1" href="/terrain-types">Terrain Types</a>
         </div>
     </div>
     <div class="py-1">
@@ -27,9 +27,9 @@
     <div class="py-1">
         <p class="text-primary text-lg md:text-base lg:text-lg">Running Log</p>
         <div class="flex flex-col pl-2">
-            <a class="text-tertiary hover:text-blue py-1" href="/runEfforts">Run Efforts</a>
-            <a class="text-tertiary hover:text-blue py-1" href="/runFeelings">Run Feelings</a>
-            <a class="text-tertiary hover:text-blue py-1" href="/runTypes">Run Types</a>
+            <a class="text-tertiary hover:text-blue py-1" href="/run-efforts">Run Efforts</a>
+            <a class="text-tertiary hover:text-blue py-1" href="/run-feelings">Run Feelings</a>
+            <a class="text-tertiary hover:text-blue py-1" href="/run-types">Run Types</a>
         </div>
     </div>
     <div class="py-1">
