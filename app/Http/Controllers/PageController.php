@@ -16,7 +16,7 @@ class PageController extends Controller
      */
     public function welcome()
     {
-        $announcements = Announcement::all();
+        $announcements = Announcement::latest()->get();
 
         $teamEvents = TeamEvent::orderBy('event_date', 'asc')->get();
 

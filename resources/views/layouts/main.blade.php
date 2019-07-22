@@ -1,5 +1,5 @@
 @include('layouts.header')
-<div class="min-h-screen md:flex md:flex-col ">
+<div class="min-h-screen md:flex md:flex-col">
     @include('layouts.banner')
 
     <div class="container bg-white mx-auto" id="mainContent">
