@@ -82862,7 +82862,7 @@ var render = function() {
       { staticClass: "flex justify-between items-baseline" },
       [
         _c("header", { staticClass: "font-light text-2xl pb-1 text-primary" }, [
-          _vm._v("User Roles")
+          _vm._v("User roles")
         ]),
         _vm._v(" "),
         _c("filter-button", { staticClass: "hidden" })
@@ -82913,7 +82913,7 @@ var render = function() {
           )
         : _c("div", { staticClass: "flex flex-col text-center" }, [
             _c("p", { staticClass: "text-2xl text-tertiary p-4" }, [
-              _vm._v("No User Roles Posted")
+              _vm._v("No User roles Posted")
             ])
           ])
     ])
