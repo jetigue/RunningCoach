@@ -13,10 +13,10 @@ class PageController extends Controller
      * Display the Welcome page
      *
      * @return void
-     */
+     */npm run development
     public function welcome()
     {
-        $announcements = Announcement::orderBy('created_at', 'desc')->get();
+        $announcements = Announcement::latest()->get();
 
         $teamEvents = TeamEvent::orderBy('event_date', 'asc')->get();
 
