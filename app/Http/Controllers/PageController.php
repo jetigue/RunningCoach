@@ -18,7 +18,7 @@ class PageController extends Controller
     {
         $announcements = Announcement::all();
 
-        $teamEvents = TeamEvent::orderBy('event_date', 'desc')->get();
+        $teamEvents = TeamEvent::orderBy('event_date', 'asc')->get();
 
         return view('welcome', compact('announcements', 'teamEvents'));
     }
