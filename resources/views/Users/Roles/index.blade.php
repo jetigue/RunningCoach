@@ -6,8 +6,8 @@
     @endcomponent
 @endsection
 
-@section('aside')
+{{-- @section('aside')
     <filters>
 
     </filters>
-@endsection
+@endsection --}}
