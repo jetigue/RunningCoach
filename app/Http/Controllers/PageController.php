@@ -13,7 +13,7 @@ class PageController extends Controller
      * Display the Welcome page
      *
      * @return void
-     */npm run development
+     */
     public function welcome()
     {
         $announcements = Announcement::latest()->get();
