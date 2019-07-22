@@ -2,6 +2,10 @@
 
 namespace App\Models\RunningLog;
 
+use App\Models\RunningLog\RunFeeling;
+use App\Models\RunningLog\RunType;
+use App\Models\RunningLog\RunEffort;
+use App\Models\Users\User;
 use App\Models\Properties\General\DayTime;
 use App\Models\Properties\General\TerrainType;
 use Illuminate\Database\Eloquent\Model;
@@ -72,7 +76,7 @@ class RunningLog extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function RunEffort()
+    public function runEffort()
     {
         return $this->belongsTo(RunEffort::class, 'run_effort_id');
     }
