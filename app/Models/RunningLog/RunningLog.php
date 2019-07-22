@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Runninglog;
+namespace App\Models\RunningLog;
 
 use App\Models\Properties\General\DayTime;
 use App\Models\Properties\General\TerrainType;
