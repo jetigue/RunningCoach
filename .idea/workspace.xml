@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/database/seeds/RunningLogSeeder.php" line="18" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-    </list>
+    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -575,7 +573,7 @@
       <workItem from="1563712766625" duration="6763000" />
       <workItem from="1563799584241" duration="121000" />
       <workItem from="1563800055043" duration="49000" />
-      <workItem from="1563800114605" duration="5514000" />
+      <workItem from="1563800114605" duration="5767000" />
     </task>
     <servers />
   </component>
@@ -612,7 +610,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="882873000" />
+    <option name="totallyTimeSpent" value="883126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
