@@ -59,7 +59,7 @@ Route::apiResources([
     'api/runFeelings' => 'API\Properties\RunningLog\RunFeelingController',
     'api/runTypes' => 'API\Properties\RunningLog\RunTypeController',
 
-    // Users
+    // users
     'api/roles'  => 'API\Users\RoleController',
     'api/users'  => 'API\Users\UserController',
 

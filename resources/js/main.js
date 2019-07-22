@@ -59,7 +59,7 @@ Vue.component('track-results', require('./components/results/TrackResults').defa
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
 Vue.component('team-events', require('./components/team/TeamEvents').default);
 
-// Users
+// users
 Vue.component('user-roles', require('./components/users/UserRoles').default);
 Vue.component('users', require('./components/users/Users').default);
 
