@@ -40,7 +40,6 @@ class AthleteController extends Controller
             'dob'        => 'nullable|date',
             'grad_year'  => 'required|integer',
             'status'     => 'required',
-            'team_id'    => 'nullable|integer',
             'user_id'    => 'nullable|integer',
         ]);
 
@@ -76,7 +75,6 @@ class AthleteController extends Controller
             'dob'           => 'nullable|date',
             'grad_year'     => 'integer',
             'status'        => '',
-            'team_id'       => 'nullable|integer',
             'user_id'       => 'nullable|integer',
         ]);
 
@@ -87,7 +85,6 @@ class AthleteController extends Controller
             'dob',
             'grad_year',
             'status',
-            'team_id',
             'user_id',
         ]));
 

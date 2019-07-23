@@ -27,7 +27,6 @@ class Athlete extends Model
         'grad_year',
         'status',
         'dob',
-        'team_id',
         'user_id'
         ];
 

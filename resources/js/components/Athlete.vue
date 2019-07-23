@@ -145,7 +145,6 @@
                 sex: (this.data.sex === 'm') ? "Male": "Female",
                 dob: this.data.dob,
                 grad_year: this.data.grad_year,
-                team: this.data.team_id,
                 status: this.data.status,
 
                 active: this.data.status === 'a',
@@ -156,7 +155,6 @@
                     sex: this.data.sex,
                     dob: this.data.dob,
                     grad_year: this.data.grad_year,
-                    team_id: this.data.team_id,
                     user_id: this.data.user_id
                 }),
             }
@@ -193,7 +191,6 @@
                         this.grad_year = this.form.grad_year;
                         this.dob = this.form.dob;
                         this.name = this.form.last_name + ", " + this.form.first_name;
-                        this.team_id = this.form.team_id;
                         this.user_id = this.form.user_id;
 
                         this.editing = false;

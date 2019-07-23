@@ -1863,7 +1863,6 @@ __webpack_require__.r(__webpack_exports__);
       sex: this.data.sex === 'm' ? "Male" : "Female",
       dob: this.data.dob,
       grad_year: this.data.grad_year,
-      team: this.data.team_id,
       status: this.data.status,
       active: this.data.status === 'a',
       form: new Form({
@@ -1872,7 +1871,6 @@ __webpack_require__.r(__webpack_exports__);
         sex: this.data.sex,
         dob: this.data.dob,
         grad_year: this.data.grad_year,
-        team_id: this.data.team_id,
         user_id: this.data.user_id
       })
     };
@@ -1903,7 +1901,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.grad_year = _this.form.grad_year;
         _this.dob = _this.form.dob;
         _this.name = _this.form.last_name + ", " + _this.form.first_name;
-        _this.team_id = _this.form.team_id;
         _this.user_id = _this.form.user_id;
         _this.editing = false;
         _this.isExpanded = false;
@@ -78074,7 +78071,7 @@ var render = function() {
           [
             _c(
               "create-button",
-              { attrs: { title: "Create New Run Type" } },
+              { attrs: { title: "Add New Run Type" } },
               [_c("new-run-type", { on: { created: _vm.add } })],
               1
             )

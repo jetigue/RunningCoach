@@ -21,7 +21,6 @@ class CreateAthletesTable extends Migration
             $table->date('dob')->nullable();
             $table->unsignedSmallInteger('grad_year');
             $table->char('status', 1);
-            $table->unsignedInteger('team_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
 
