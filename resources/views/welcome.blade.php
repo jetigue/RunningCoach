@@ -65,7 +65,7 @@
                             Online Registration
                         </a>
                         <a class="text-blue-600 hover:underline"
-                           href="/forms/longhorn5k/LonghornRegistration2019.pdf">
+                           href="/forms/longhorn5k/Longhorn5kRegistration2019.pdf">
                             Registration Form
                         </a>
                     </div>
