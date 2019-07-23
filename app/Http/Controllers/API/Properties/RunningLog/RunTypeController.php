@@ -47,8 +47,8 @@ class RunTypeController extends Controller
     public function store(Request $request)
     {
         $runType = request()->validate([
-            'name'        => 'required|string',
-            'description' => 'required|string',
+            'name'        => 'required|string|min:3',
+            'description' => 'required|string|min:5',
         ]);
 
         $runType = RunType::create($runType);
@@ -88,8 +88,8 @@ class RunTypeController extends Controller
     public function update(Request $request, RunType $runType)
     {
         request()->validate([
-            'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'name' => 'required|string|min:3',
+            'description' => 'required|string|min:5'
         ]);
 
         $runType->update(request(['name', 'description']));

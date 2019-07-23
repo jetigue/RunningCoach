@@ -4292,6 +4292,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -69651,7 +69652,7 @@ var render = function() {
           _c(
             "label",
             { staticClass: "form-label", attrs: { for: "form.details" } },
-            [_vm._v("Details")]
+            [_vm._v("Details (optional)")]
           ),
           _vm._v(" "),
           _vm.form.errors.has("details")
@@ -69675,7 +69676,7 @@ var render = function() {
             }
           ],
           staticClass: "form-input",
-          attrs: { id: "form.details", type: "text", required: "" },
+          attrs: { id: "form.details", type: "text" },
           domProps: { value: _vm.form.details },
           on: {
             input: function($event) {
@@ -77784,7 +77785,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", {}, [
     _vm.editing
-      ? _c("div", { staticClass: "p-3 border-b border-blue-lighter" }, [
+      ? _c("div", { staticClass: "p-3 border-b border-blue-100" }, [
           _c("div", { staticClass: "w-full" }, [
             _c(
               "form",
@@ -77961,7 +77962,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "flex flex-col border-b border-blue-lightest hover:bg-white"
+                "flex flex-col border-b border-blue-100 hover:bg-white"
             },
             [
               _c(
@@ -78073,7 +78074,7 @@ var render = function() {
           [
             _c(
               "create-button",
-              { attrs: { title: "Create New Run Effort" } },
+              { attrs: { title: "Create New Run Type" } },
               [_c("new-run-type", { on: { created: _vm.add } })],
               1
             )

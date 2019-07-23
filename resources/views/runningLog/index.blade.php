@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex flex-col w-full px-2 md:px-4">
+<div class="flex flex-col w-full">
     <div class="flex justify-between items-center">
         <div class="text-3xl text-primary font-thin mb-2">
             Running Log

@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
+        <div v-if="editing" class="p-3 border-b border-blue-100">
             <div class="w-full">
                 <form action="api/runTypes/id" method="POST" id="editDayTime" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+            <div class="flex flex-col border-b border-blue-100 hover:bg-white">
                 <div class="table-row flex justify-between hover:bg-white">
                     <div class="flex md:w-4/5">
                         <div class="text-grey-darker w-full md:w-1/2 lg:w-1/3" v-text="name"></div>
@@ -111,7 +111,7 @@
                     .then(data => {
                         this.name = this.form.name;
                         this.description = this.form.description;
-                        
+
                         this.editing = false;
                         this.isExpanded = false;
 

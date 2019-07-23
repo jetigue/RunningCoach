@@ -19,7 +19,7 @@ class CreateTeamEventsTable extends Migration
             $table->date('event_date');
             $table->string('event_time');
             $table->string('location');
-            $table->string('details');
+            $table->string('details')->nullable();
             $table->string('link')->nullable();
             $table->string('link_text')->nullable();
             $table->timestamps();
