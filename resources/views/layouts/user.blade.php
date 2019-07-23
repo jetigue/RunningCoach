@@ -8,7 +8,7 @@
                 {{-- <div class="text-right md:hidden">
                     <menu-button>
                         <user-menu></user-menu>
-                    </menu-button> 
+                    </menu-button>
                     <portal-target name="menu-modal"></portal-target>
                 </div> --}}
                 <div class="flex py-4 justify-center">

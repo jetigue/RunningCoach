@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <create-button title="Create New Run Type">
+                    <create-button title="Add New Run Type">
                         <new-run-type @created="add"></new-run-type>
                     </create-button>
                 </div>
