@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Runninglog\RunFeeling;
+use App\Models\RunningLog\RunFeeling;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
