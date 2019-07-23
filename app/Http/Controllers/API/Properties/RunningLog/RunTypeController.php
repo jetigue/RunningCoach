@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API\Properties\RunningLog;
 
-use App\Models\Runninglog\RunType;
+use App\Models\RunningLog\RunType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
