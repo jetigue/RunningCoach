@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API\Properties\RunningLog;
 
-use App\Models\Runninglog\RunFeeling;
+use App\Models\RunningLog\RunFeeling;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

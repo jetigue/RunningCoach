@@ -45,12 +45,12 @@
 
         <div class="mb-3">
             <div class="flex justify-between content-end">
-                <label class="form-label" for="form.details">Details</label>
+                <label class="form-label" for="form.details">Details (optional)</label>
                 <span id="detailsHelp" class="form-help" v-if="form.errors.has('details')"
                       v-text="form.errors.get('details')">
                 </span>
             </div>
-            <input class="form-input" id="form.details" type="text" v-model="form.details" required>
+            <input class="form-input" id="form.details" type="text" v-model="form.details">
         </div>
 
         <div class="mb-3">

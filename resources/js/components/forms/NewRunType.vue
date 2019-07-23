@@ -26,7 +26,8 @@
             <textarea class="form-input"
                    id="form.description"
                    type="textarea"
-                      v-model="form.description"></textarea>
+                      v-model="form.description">
+            </textarea>
         </div>
 
         <div class="text-right pt-2">

@@ -8,7 +8,7 @@
                 {{-- <div class="text-right md:hidden">
                     <menu-button>
                         <user-menu></user-menu>
-                    </menu-button>
+                    </menu-button> 
                     <portal-target name="menu-modal"></portal-target>
                 </div> --}}
                 <div class="flex py-4 justify-center">
@@ -17,7 +17,7 @@
             </aside>
 
             <div class="flex w-full h-full md:w-4/5 lg:w-5/6 p-2" id="userContent">
-                <main class="flex w-full">
+                <main class="flex w-full p-4 lg:p-6 ">
                     @yield('content')
                 </main>
 
