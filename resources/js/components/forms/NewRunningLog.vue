@@ -267,23 +267,23 @@ export default {
 
         getAttributes() {
             function getDayTimesNames() {
-                return axios.get('/api/dayTimes')
+                return axios.get('api/dayTimes')
             }
 
             function getTerrainTypeNames() {
-                return axios.get('/api/terrainTypes')
+                return axios.get('api/terrainTypes')
             }
 
             function getRunTypeNames() {
-                return axios.get('/api/runTypes')
+                return axios.get('api/runTypes')
             }
 
             function getRunEffortNames() {
-                return axios.get('/api/runEfforts')
+                return axios.get('api/runEfforts')
             }
 
             function getRunFeelingNames() {
-                return axios.get('/api/runFeelings')
+                return axios.get('api/runFeelings')
             }
 
             axios.all([
