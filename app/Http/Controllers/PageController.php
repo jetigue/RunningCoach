@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Team\Announcement;
 use App\Models\Team\TeamEvent;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class PageController extends Controller
     {
         $announcements = Announcement::latest()->get();
 
-        $teamEvents = TeamEvent::orderBy('event_date', 'asc')->get();
+        $teamEvents = TeamEvent::whereDate('event_date', '>=', Carbon::today())->orderBy('event_date', 'asc')->get();
 
         return view('welcome', compact('announcements', 'teamEvents'));
     }

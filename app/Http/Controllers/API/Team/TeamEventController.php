@@ -48,7 +48,7 @@ class TeamEventController extends Controller
             'event_date'    => 'required|date',
             'event_time'    => 'required|string',
             'location'      => 'required|string',
-            'details'       => 'required|string',
+            'details'       => 'string|nullable',
             'link'          => 'active_url|nullable',
             'link_text'     => 'string|nullable',
         ]);
@@ -94,7 +94,7 @@ class TeamEventController extends Controller
             'event_date'    => 'required|date',
             'event_time'    => 'required|string',
             'location'      => 'required|string',
-            'details'       => 'required|string',
+            'details'       => 'string|nullable',
             'link'          => 'active_url|nullable',
             'link_text'     => 'string|nullable',
         ]);
