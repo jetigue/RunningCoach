@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Athletes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athletes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,47 +53,41 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Athletes.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="268" column="41" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
+            <state relative-caret-position="592">
+              <caret line="60" selection-start-line="60" selection-end-line="80" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunEffortController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="e#66#102#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="592">
+              <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunTypeController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/paginator.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#66#100#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="1364">
+              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/RunningLog/RunningLog.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+            <state relative-caret-position="-62">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
-                <element signature="e#41#78#0#PHP" expanded="true" />
+                <element signature="e#45#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="403">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#55#92#0#PHP" expanded="true" />
               </folding>
@@ -94,10 +106,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/RunningLogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="33" column="47" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="47" />
+              <folding>
+                <element signature="e#45#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="623">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -133,16 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tailwind.js" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/signIn.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/main.scss" />
-        <option value="$PROJECT_DIR$/resources/views/partials/mainMenu.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/Dropdown.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/MenuButton.vue" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/menus/MenuItem.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/menus/OurTeamMenu.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/menus/OurEventsMenu.vue" />
@@ -160,11 +174,8 @@
         <option value="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" />
         <option value="$PROJECT_DIR$/resources/views/components/infoCard.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ManageAthletesTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php" />
-        <option value="$PROJECT_DIR$/resources/js/main.js" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/users/roles/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/app/Models/RunningLog/RunEffort.php" />
@@ -174,15 +185,28 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunTypeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunFeelingController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/user.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunTypes.vue" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_000004_create_athletes_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" />
         <option value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
         <option value="$PROJECT_DIR$/app/Models/Athlete.php" />
         <option value="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunEffortController.php" />
+        <option value="$PROJECT_DIR$/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/user.blade.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/paginator.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/Athletes.vue" />
+        <option value="$PROJECT_DIR$/resources/views/athletes/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" />
       </list>
     </option>
@@ -332,20 +356,28 @@
             <path>
               <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
               <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
               <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
               <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="longhorn5k" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -400,37 +432,38 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.UserController.php">
-    <configuration name="ManageAthletesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageAthletesTest" file="$PROJECT_DIR$/tests/Feature/ManageAthletesTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.ManageTeamEventsTest.a_team_event_requires_details">
+    <configuration name="ManageDayTimesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageDayTimesTest" file="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageAthletesTest.an_admin_can_view_athletes" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageAthletesTest" file="$PROJECT_DIR$/tests/Feature/ManageAthletesTest.php" method="an_admin_can_view_athletes" scope="Method" />
+    <configuration name="ManageRunEffortsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageRunEffortsTest" file="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageRunningLogTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageRunningLogTest" file="$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php" scope="Class" />
+    <configuration name="ManageRunFeelingsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageRunFeelingsTest" file="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageRunningLogTest" file="$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php" method="an_authorized_user_can_log_a_run" scope="Method" />
+    <configuration name="ManageRunTypesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageRunTypesTest" file="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ManageTeamEventsTest.a_team_event_requires_details" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTeamEventsTest" file="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" method="a_team_event_requires_details" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="UserController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.UserController.php" />
-        <item itemvalue="PHPUnit.ManageRunningLogTest.an_authorized_user_can_log_a_run" />
-        <item itemvalue="PHPUnit.ManageRunningLogTest" />
-        <item itemvalue="PHPUnit.ManageAthletesTest" />
-        <item itemvalue="PHPUnit.ManageAthletesTest.an_admin_can_view_athletes" />
+        <item itemvalue="PHPUnit.ManageTeamEventsTest.a_team_event_requires_details" />
+        <item itemvalue="PHPUnit.ManageDayTimesTest" />
+        <item itemvalue="PHPUnit.ManageRunFeelingsTest" />
+        <item itemvalue="PHPUnit.ManageRunEffortsTest" />
+        <item itemvalue="PHPUnit.ManageRunTypesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -579,49 +612,50 @@
       <workItem from="1563800114605" duration="9592000" />
       <workItem from="1563916249621" duration="996000" />
       <workItem from="1563929253600" duration="1511000" />
+      <workItem from="1564082485489" duration="13489000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 26m 00s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunTypesTest - 2019.07.25 at 17h 34m 43s.xml">
+      <configuration name="ManageRunTypesTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 26m 53s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunEffortsTest - 2019.07.25 at 17h 35m 01s.xml">
+      <configuration name="ManageRunEffortsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 29m 03s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunEffortsTest - 2019.07.25 at 17h 35m 30s.xml">
+      <configuration name="ManageRunEffortsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 31m 03s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunEffortsTest - 2019.07.25 at 17h 35m 45s.xml">
+      <configuration name="ManageRunEffortsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 31m 40s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunFeelingsTest - 2019.07.25 at 17h 36m 00s.xml">
+      <configuration name="ManageRunFeelingsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 31m 52s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunFeelingsTest - 2019.07.25 at 17h 36m 21s.xml">
+      <configuration name="ManageRunFeelingsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 32m 26s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageRunFeelingsTest - 2019.07.25 at 17h 36m 36s.xml">
+      <configuration name="ManageRunFeelingsTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 34m 27s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageDayTimesTest - 2019.07.25 at 17h 37m 37s.xml">
+      <configuration name="ManageDayTimesTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 34m 45s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageDayTimesTest - 2019.07.25 at 17h 38m 06s.xml">
+      <configuration name="ManageDayTimesTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ManageRunningLogTest_an_authorized_user_can_log_a_run - 2019.07.21 at 11h 35m 04s.xml">
-      <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ManageTeamEventsTest_a_team_event_requires_details - 2019.07.25 at 17h 41m 06s.xml">
+      <configuration name="ManageTeamEventsTest.a_team_event_requires_details" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="892208000" />
+    <option name="totallyTimeSpent" value="905697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49813664" visible="true" weight="0.18336888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49813664" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="1" sideWeight="0.50186336" side_tool="true" weight="0.1562724" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -640,7 +674,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3296322" />
-      <window_info anchor="right" id="Run" order="4" weight="0.48400852" />
+      <window_info anchor="right" id="Run" order="4" weight="0.4099147" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49813664" visible="true" weight="0.26599148" />
@@ -674,106 +708,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/infoCard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Coach/DivisionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Coach/TeamEventController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4440">
-          <caret line="174" column="32" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
-          <caret line="182" column="32" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
-          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.editorconfig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.example">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageAthletesTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="54" column="68" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="43" selection-start-line="43" selection-start-column="2" selection-end-line="45" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/users/UserRoles.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="3" column="53" lean-forward="true" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#46#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Users/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -836,16 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/RunningLogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#45#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RunTypeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1085">
@@ -884,24 +808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/user.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -917,13 +827,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/AthleteFactory.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_000004_create_athletes_table.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -961,31 +864,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Athlete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="8308">
           <caret line="268" column="41" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunEffortController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="279">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
             <element signature="e#66#102#0#PHP" expanded="true" />
           </folding>
@@ -994,8 +883,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunTypeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="217">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
             <element signature="e#66#100#0#PHP" expanded="true" />
           </folding>
@@ -1004,18 +893,178 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/RunningLog/RunningLog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="2077">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="e#41#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/user.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3348">
+          <caret line="111" column="34" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3844">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4030">
+          <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4092">
+          <caret line="135" column="33" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1271">
+          <caret line="43" selection-start-line="43" selection-start-column="2" selection-end-line="45" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Athlete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/filters/SeasonFilter.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/paginator.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Coach/AthleteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#25#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/runningLog/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1175" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/athletes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#45#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Athletes.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="60" selection-start-line="60" selection-end-line="80" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/RunningLogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="47" />
+          <folding>
+            <element signature="e#45#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="403">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#55#92#0#PHP" expanded="true" />
           </folding>

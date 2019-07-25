@@ -109,7 +109,7 @@ class ManageRunEffortsTest extends TestCase
     {
         $this->signInCoach();
 
-        $this->get('/runEfforts')->assertRedirect('/');
+        $this->get('/run-efforts')->assertRedirect('/');
     }
 
     /** @test */
@@ -117,7 +117,7 @@ class ManageRunEffortsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $this->get('/runEfforts')->assertRedirect('/');
+        $this->get('/run-efforts')->assertRedirect('/');
     }
 
     /** @test */
@@ -125,13 +125,13 @@ class ManageRunEffortsTest extends TestCase
     {
         $this->signInViewer();
 
-        $this->get('/runEfforts')->assertRedirect('/');
+        $this->get('/run-efforts')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_run_types()
     {
-        $this->get('/runEfforts')->assertRedirect('/');
+        $this->get('/run-efforts')->assertRedirect('/');
     }
 
     /** @test */

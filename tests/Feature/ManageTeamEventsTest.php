@@ -142,16 +142,6 @@ class ManageTeamEventsTest extends TestCase
     }
 
     /** @test */
-    public function a_team_event_requires_details()
-    {
-        $this->signInAdmin();
-
-        $attributes = factory(TeamEvent::class)->raw(['details' => '']);
-
-        $this->post('api/teamEvents', $attributes)->assertSessionHasErrors('details');
-    }
-
-    /** @test */
     public function an_admin_can_view_team_events()
     {
         $this->signInAdmin();

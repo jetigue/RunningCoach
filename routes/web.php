@@ -32,7 +32,7 @@ Route::apiResources([
 
     'api/athletes' => 'API\AthleteController',
 
-    'api/runningLogs' => 'API\RunningLog\RunningLogController',
+    'api/running-log' => 'API\RunningLog\RunningLogController',
     // Meets
     'api/trackMeets' => 'API\Meets\TrackMeetController',
 

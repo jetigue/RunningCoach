@@ -111,7 +111,7 @@ class ManageRunFeelingsTest extends TestCase
     {
         $this->signInCoach();
 
-        $this->get('/runFeelings')->assertRedirect('/');
+        $this->get('/run-feelings')->assertRedirect('/');
     }
 
     /** @test */
@@ -119,7 +119,7 @@ class ManageRunFeelingsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $this->get('/runFeelings')->assertRedirect('/');
+        $this->get('/run-feelings')->assertRedirect('/');
     }
 
     /** @test */
@@ -127,13 +127,13 @@ class ManageRunFeelingsTest extends TestCase
     {
         $this->signInViewer();
 
-        $this->get('/runFeelings')->assertRedirect('/');
+        $this->get('/run-feelings')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_run_feelings()
     {
-        $this->get('/runFeelings')->assertRedirect('/');
+        $this->get('/run-feelings')->assertRedirect('/');
     }
 
     /** @test */

@@ -3,7 +3,7 @@
         <header class="text-lg font-semibold text-secondary">Status</header>
 
         <div v-for="filter in filters" :key="filter.name"
-             class="text-grey-darker p-1">
+             class="text-gray-700 p-1">
             <a :href="filter.url">{{ filter.name }}</a>
         </div>
     </div>

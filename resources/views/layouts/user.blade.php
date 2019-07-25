@@ -1,7 +1,7 @@
 @include('layouts.header')
 <div class="min-h-screen md:flex md:flex-col w-full">
     @include('layouts.banner')
-    <div class="container mx-auto bg-gray-100">
+    <div class="container mx-auto">
         <div class="md:flex">
             <aside class="md:min-h-screen md:w-1/5 lg:w-1/6 border-gray-200 border-r-2"
                    id="userMenu">

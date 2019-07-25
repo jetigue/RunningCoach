@@ -51,6 +51,9 @@ Vue.component('athletes', require('./components/Athletes').default);
 // Meets
 Vue.component('track-meets', require('./components/meets/TrackMeets').default);
 
+// Paginator
+Vue.component('paginator', require('./components/Paginator').default);
+
 // Results
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);
 Vue.component('track-results', require('./components/results/TrackResults').default);

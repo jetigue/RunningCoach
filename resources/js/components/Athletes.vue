@@ -29,6 +29,11 @@
             <div v-else class="flex flex-col text-center">
                 <p class="text-2xl text-tertiary p-4">No Athletes Posted</p>
             </div>
+
+        </div>
+
+        <div v-if="records">
+            <paginator :dataSet="dataSet" @changed="fetch"></paginator>
         </div>
     </div>
 </template>
@@ -40,14 +45,40 @@
     import NewAthlete from './forms/NewAthlete';
 
     export default Collection.extend({
-        props: ['data'],
 
         components: { Athlete, CreateButton, NewAthlete },
 
         data() {
             return {
+                dataSet: false,
             }
         },
+
+        created() {
+            this.fetch();
+        },
+
+        methods: {
+            fetch(page) {
+                axios.get(this.url(page))
+                    .then(this.refresh);
+            },
+
+            url(page) {
+                if (! page) {
+                    let query = location.search.match(/page=(\d+)/);
+
+                    page = query ? query[1] : 1;
+                }
+
+                return `api${location.pathname}?page=` + page;
+            },
+
+            refresh({data}) {
+                this.dataSet = data;
+                this.items = data.data;
+            }
+        }
 
 
     });

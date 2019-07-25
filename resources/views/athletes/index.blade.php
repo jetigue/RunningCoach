@@ -1,13 +1,10 @@
 @extends('layouts.user')
 
 @section('content')
-    @component('components.userTables')
-        <athletes :data="{{ $athletes }}"></athletes>
-    @endcomponent
+    <div class="flex flex-wrap w-full">
+        @component('components.userTables')
+            <athletes :data="{{ $athletes }}"></athletes>
+        @endcomponent
+    </div>
 @endsection
 
-@section('aside')
-    <filters>
-        <status-filter></status-filter>
-    </filters>
-@endsection

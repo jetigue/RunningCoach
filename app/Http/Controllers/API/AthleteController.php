@@ -8,21 +8,25 @@ use App\Http\Controllers\Controller;
 
 class AthleteController extends Controller
 {
+
+    /**
+     * AthleteController constructor.
+     */
     public function __construct()
     {
         $this->middleware('coach');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $athletes = Athlete::all();
 
-        return $athletes;
+    /**
+     * @param Athlete $athletes
+     * @return mixed
+     */
+    public function index(Athlete $athletes)
+    {
+        return $athletes
+            ->orderBy('last_name', 'asc')
+            ->paginate(20);
     }
 
     /**

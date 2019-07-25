@@ -109,7 +109,7 @@ class ManageDayTimesTest extends TestCase
     {
         $this->signInCoach();
 
-        $this->get('/dayTimes')->assertRedirect('/');
+        $this->get('/day-times')->assertRedirect('/');
     }
 
     /** @test */
@@ -117,7 +117,7 @@ class ManageDayTimesTest extends TestCase
     {
         $this->signInAthlete();
 
-        $this->get('/dayTimes')->assertRedirect('/');
+        $this->get('/day-times')->assertRedirect('/');
     }
 
     /** @test */
@@ -125,13 +125,13 @@ class ManageDayTimesTest extends TestCase
     {
         $this->signInViewer();
 
-        $this->get('/dayTimes')->assertRedirect('/');
+        $this->get('/day-times')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_day_times()
     {
-        $this->get('/dayTimes')->assertRedirect('/');
+        $this->get('/day-times')->assertRedirect('/');
     }
 
     /** @test */

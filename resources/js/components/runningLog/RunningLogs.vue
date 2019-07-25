@@ -37,6 +37,10 @@
                 <p class="text-2xl text-tertiary p-4">No Logs Posted</p>
             </div>
         </div>
+
+        <div v-if="records">
+            <paginator :dataSet="dataSet" @changed="fetch"></paginator>
+        </div>
     </div>
 </template>
 
@@ -53,7 +57,33 @@
 
         data() {
             return {
+                dataSet: false,
+            }
+        },
 
+        created() {
+            this.fetch();
+        },
+
+        methods: {
+            fetch(page) {
+                axios.get(this.url(page))
+                    .then(this.refresh);
+            },
+
+            url(page) {
+                if (! page) {
+                    let query = location.search.match(/page=(\d+)/);
+
+                    page = query ? query[1] : 1;
+                }
+
+                return `api${location.pathname}?page=` + page;
+            },
+
+            refresh({data}) {
+                this.dataSet = data;
+                this.items = data.data;
             }
         }
     });

@@ -19,11 +19,13 @@ class RunningLogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(RunningLog $runningLog)
     {
-        $runningLogs = RunningLog::all();
-
-        return $runningLogs;
+        return $runningLog
+            ->orderBy('run_date', 'desc')
+            ->with('runType', 'runEffort', 'runFeeling', 'terrainType', 'dayTime')
+            ->where('user_id', auth()->id())
+            ->paginate(10);
     }
 
     /**

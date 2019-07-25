@@ -109,7 +109,7 @@ class ManageTerrainTypesTest extends TestCase
     {
         $this->signInCoach();
 
-        $this->get('/terrainTypes')->assertRedirect('/');
+        $this->get('/terrain-types')->assertRedirect('/');
     }
 
     /** @test */
@@ -117,7 +117,7 @@ class ManageTerrainTypesTest extends TestCase
     {
         $this->signInAthlete();
 
-        $this->get('/terrainTypes')->assertRedirect('/');
+        $this->get('/terrain-types')->assertRedirect('/');
     }
 
     /** @test */
@@ -125,13 +125,13 @@ class ManageTerrainTypesTest extends TestCase
     {
         $this->signInViewer();
 
-        $this->get('/terrainTypes')->assertRedirect('/');
+        $this->get('/terrain-types')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_terrain_types()
     {
-        $this->get('/terrainTypes')->assertRedirect('/');
+        $this->get('/terrain-types')->assertRedirect('/');
     }
 
     /** @test */
