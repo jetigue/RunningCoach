@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="flex justify-between items-center" @click="toggleMenu">
-            <p class="flex text-white text-2xl">Our Events</p>
+            <p class="flex text-white text-2xl">Users</p>
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
                 class="text-white text-sm lg:text-sm"></i>
         </div>
@@ -20,10 +20,10 @@
 
 <script>
 
-import MenuItem from './MenuItem';
+import MenuItem from '../MenuItem';
 
 export default {
-    name: "OurEventsMenu",
+    name: "UsersMenu",
 
     components: { MenuItem },
 
@@ -34,17 +34,13 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: 'Longhorn 5k',
-                    url: '/longhorn-5k'
+                    label: 'Users',
+                    url: '/users'
                 },
                 {
                     id: 2,
-                    label: 'Lambert River Run',
-                    url: '/river-run'
-                },                {
-                    id: 3,
-                    label: 'Team Camp',
-                    url: '/team-camp'
+                    label: 'User Roles',
+                    url: '/user-roles'
                 },
 
             ]

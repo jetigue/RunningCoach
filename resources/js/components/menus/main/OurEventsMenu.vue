@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="flex justify-between items-center" @click="toggleMenu">
-            <p class="flex text-white text-2xl">Our Team</p>
+            <p class="flex text-white text-2xl">Our Events</p>
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
                 class="text-white text-sm lg:text-sm"></i>
         </div>
@@ -20,10 +20,10 @@
 
 <script>
 
-import MenuItem from './MenuItem';
+import MenuItem from '../MenuItem';
 
 export default {
-    name: "OurTeamMenu",
+    name: "OurEventsMenu",
 
     components: { MenuItem },
 
@@ -34,25 +34,17 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: 'Coaches',
-                    url: '/coaches'
+                    label: 'Longhorn 5k',
+                    url: '/longhorn-5k'
                 },
                 {
                     id: 2,
-                    label: 'Boys\' Roster',
-                    url: '/boys-roster'
+                    label: 'Lambert River Run',
+                    url: '/river-run'
                 },                {
                     id: 3,
-                    label: 'Girls\' Roster',
-                    url: '/boys-roster'
-                },                {
-                    id: 4,
-                    label: 'Booster Club',
-                    url: '/booster-club'
-                },                {
-                    id: 5,
-                    label: 'Sponsors',
-                    url: '/sponsors'
+                    label: 'Team Camp',
+                    url: '/team-camp'
                 },
 
             ]

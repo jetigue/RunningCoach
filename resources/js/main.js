@@ -72,7 +72,6 @@ new Vue({
     components: { BarGraph, PieChart }
 });
 
-Vue.component('menu-button', require('./components/buttons/MenuButton').default);
 Vue.component('user-menu', require('./components/menus/UserMenu').default);
 Vue.component('general-properties', require('./components/menus/GeneralProperties').default);
 Vue.component('meet-properties', require('./components/menus/MeetProperties').default);
@@ -83,11 +82,15 @@ new Vue({
 
 });
 
-Vue.component('main-menu-button', require('./components/buttons/MainMenuButton').default);
+Vue.component('admin-menu-button', require('./components/buttons/menus/AdminMenuButton').default);
+Vue.component('athlete-menu-button', require('./components/buttons/menus/AthleteMenuButton').default);
+Vue.component('coach-menu-button', require('./components/buttons/menus/CoachMenuButton').default);
+Vue.component('main-menu-button', require('./components/buttons/menus/MainMenuButton').default);
+Vue.component('user-menu-button', require('./components/buttons/menus/UserMenuButton').default);
+
 Vue.component('events-dropdown', require('./components/dropdowns/EventsDropdown').default);
 Vue.component('forms-dropdown', require('./components/dropdowns/FormsDropdown').default);
 Vue.component('team-dropdown', require('./components/dropdowns/TeamDropdown').default);
-Vue.component('menu-button', require('./components/buttons/MenuButton').default);
 Vue.component('login-button', require('./components/buttons/LoginButton').default);
 Vue.component('dropdown', require('./components/buttons/Dropdown').default);
 

@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/buttons/menus/MainMenuButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Athletes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athletes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/buttons/MainMenuButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/buttons/MenuButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/FormsMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/main/FormsMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/OurEventsMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/main/OurEventsMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/OurTeamMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/main/OurTeamMenu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,74 +46,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/Athletes.vue">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/banner.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="60" selection-start-line="60" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="961">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/AthleteMenuButton.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+            <state relative-caret-position="186">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/paginator.vue">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/menus/AdminMenu.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1364">
-              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-62">
-              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+            <state relative-caret-position="310">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#45#68#0#PHP" expanded="true" />
+                <element signature="e#446#480#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/menus/runningLog/RunningLogMenu.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="403">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <element signature="e#55#92#0#PHP" expanded="true" />
-              </folding>
+              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/RunningLogController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/menus/CoachMenu.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="47" />
+            <state relative-caret-position="341">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#45#82#0#PHP" expanded="true" />
+                <element signature="e#496#530#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -157,19 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/menus/MenuItem.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/OurTeamMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/OurEventsMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/PhysicalFormsMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/SchedulesMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/SpiritWearMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/Longhorn5kMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/SponsorsMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/FormsMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/menus/forms/InformationMenu.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/buttons/MainMenuButton.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/dropdowns/FormsDropdown.vue" />
-        <option value="$PROJECT_DIR$/tailwind.config.js" />
         <option value="$PROJECT_DIR$/resources/js/components/dropdowns/TeamDropdown.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" />
         <option value="$PROJECT_DIR$/resources/views/components/infoCard.blade.php" />
@@ -192,7 +150,6 @@
         <option value="$PROJECT_DIR$/app/Models/Athlete.php" />
         <option value="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunEffortController.php" />
-        <option value="$PROJECT_DIR$/resources/js/main.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/user.blade.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" />
@@ -208,6 +165,20 @@
         <option value="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogs.vue" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/coach/AdministrationMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/runningLog/RunningLogMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/MainMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/main/FormsMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/MainMenuButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/admin/UserMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/AdminMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/AdminMenuButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/menus/CoachMenu.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/CoachMenuButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/UserMenuButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/AthleteMenuButton.vue" />
+        <option value="$PROJECT_DIR$/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" />
       </list>
     </option>
   </component>
@@ -377,7 +348,42 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
+              <item name="buttons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="buttons" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RunningCoach" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RunningCoach" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+              <item name="runningLog" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -390,7 +396,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/menus/forms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/buttons/menus" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -405,19 +411,19 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\forms" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\dropdowns" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\public\svg" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\runningLog" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\buttons\menus" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\main" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\layouts" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\public\images" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\app\Http\Controllers\API\Properties\RunningLog" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\properties" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\runningLog\runTypes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\buttons\menus" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\admin" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\runningLog" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\coach" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -612,7 +618,7 @@
       <workItem from="1563800114605" duration="9592000" />
       <workItem from="1563916249621" duration="996000" />
       <workItem from="1563929253600" duration="1511000" />
-      <workItem from="1564082485489" duration="13489000" />
+      <workItem from="1564082485489" duration="23754000" />
     </task>
     <servers />
   </component>
@@ -649,7 +655,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="905697000" />
+    <option name="totallyTimeSpent" value="915962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -708,133 +714,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Users/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_203259_create_running_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserRoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/roles/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RunningLog/RunType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-          <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RunningLog/RunEffort.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RunTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1085">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/Properties/RunningLog/RunFeelingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="e#66#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RunFeelingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RunningLog/RunFeeling.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/properties/runningLog/RunTypes.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/AthleteFactory.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_000004_create_athletes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3345" />
@@ -998,16 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#25#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/runningLog/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1175" />
@@ -1017,16 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="e#45#68#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,10 +903,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="682">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#55#92#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,13 +923,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RunningLog/RunningLogController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#45#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/main/OurTeamMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="63" column="46" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/UserMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#393#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/MenuItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/main/OurEventsMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/coach/AdministrationMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/MenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/admin/UserMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/main/FormsMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/MainMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#539#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/MainMenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/runningLog/RunningLogMenu.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/CoachMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#55#92#0#PHP" expanded="true" />
+            <element signature="e#496#530#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/UserMenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="e#1073#1117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/CoachMenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="e#1137#1181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/menus/AdminMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#446#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/AdminMenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/buttons/menus/AthleteMenuButton.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+          <folding>
+            <element signature="e#25#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/banner.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
         </state>
       </provider>
     </entry>
