@@ -82,11 +82,11 @@ new Vue({
 
 });
 
-Vue.component('admin-menu-button', require('./components/buttons/menus/AdminMenuButton').default);
-Vue.component('athlete-menu-button', require('./components/buttons/menus/AthleteMenuButton').default);
-Vue.component('coach-menu-button', require('./components/buttons/menus/CoachMenuButton').default);
-Vue.component('main-menu-button', require('./components/buttons/menus/MainMenuButton').default);
-Vue.component('user-menu-button', require('./components/buttons/menus/UserMenuButton').default);
+// Vue.component('admin-menu-button', require('./components/buttons/menus/AdminMenuButton').default);
+// Vue.component('athlete-menu-button', require('./components/buttons/menus/AthleteMenuButton').default);
+// Vue.component('coach-menu-button', require('./components/buttons/menus/CoachMenuButton').default);
+// Vue.component('main-menu-button', require('./components/buttons/menus/MainMenuButton').default);
+// Vue.component('user-menu-button', require('./components/buttons/menus/UserMenuButton').default);
 
 Vue.component('events-dropdown', require('./components/dropdowns/EventsDropdown').default);
 Vue.component('forms-dropdown', require('./components/dropdowns/FormsDropdown').default);
