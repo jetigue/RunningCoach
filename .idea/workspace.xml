@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/database/seeds/RunningLogSeeder.php" line="18" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="" />
+    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="82" column="3" lean-forward="true" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+            <state relative-caret-position="716">
+              <caret line="107" column="3" selection-start-line="107" selection-start-column="3" selection-end-line="107" selection-end-column="3" />
               <folding>
                 <element signature="e#25#77#0" expanded="true" />
               </folding>
@@ -124,10 +126,10 @@
         <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/CoachMenuButton.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/UserMenuButton.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/buttons/menus/AthleteMenuButton.vue" />
-        <option value="$PROJECT_DIR$/resources/js/main.js" />
         <option value="$PROJECT_DIR$/resources/js/components/menus/coach/AthleteMenu.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/menus/CoachMenu.vue" />
         <option value="$PROJECT_DIR$/resources/views/layouts/banner.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/main.js" />
       </list>
     </option>
   </component>
@@ -246,7 +248,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -576,7 +578,7 @@
       <workItem from="1563800114605" duration="9592000" />
       <workItem from="1563916249621" duration="996000" />
       <workItem from="1563929253600" duration="1511000" />
-      <workItem from="1564082485489" duration="25427000" />
+      <workItem from="1564082485489" duration="25943000" />
     </task>
     <servers />
   </component>
@@ -613,7 +615,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="917635000" />
+    <option name="totallyTimeSpent" value="918151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1042,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="82" column="3" lean-forward="true" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+        <state relative-caret-position="716">
+          <caret line="107" column="3" selection-start-line="107" selection-start-column="3" selection-end-line="107" selection-end-column="3" />
           <folding>
             <element signature="e#25#77#0" expanded="true" />
           </folding>

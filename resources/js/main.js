@@ -105,4 +105,4 @@ Vue.component('events', require('./components/pages/Events').default);
 new Vue({
     el: '#mainContent',
 
-})
+});
