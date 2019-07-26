@@ -25,7 +25,7 @@
 
                     <user-menu-button></user-menu-button>
 
-                    <portal-target name="athlete-menu"></portal-target>
+                    <portal-target name="user-menu"></portal-target>
 
                 @else
                     <main-menu-button></main-menu-button>
