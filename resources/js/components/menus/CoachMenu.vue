@@ -7,6 +7,7 @@
         </div>
         <ul v-show="isExpanded" class="pl-4">
             <administration-menu></administration-menu>
+            <athlete-menu class="py-2"></athlete-menu>
             <running-log-menu></running-log-menu>
         </ul>
 
@@ -16,14 +17,14 @@
 <script>
 
 import MenuItem from './MenuItem';
-import UserMenu from './admin/UserMenu';
 import AdministrationMenu from "./coach/AdministrationMenu";
 import RunningLogMenu from "./runningLog/RunningLogMenu";
+import AthleteMenu from "./coach/AthleteMenu";
 
 export default {
     name: "CoachMenu",
 
-    components: {RunningLogMenu, AdministrationMenu, UserMenu, MenuItem },
+    components: {AthleteMenu, RunningLogMenu, AdministrationMenu, MenuItem },
 
     data() {
         return {
