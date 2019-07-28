@@ -224,7 +224,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/runningLogs')
+                .post('/api/running-log')
 
                 .then(data => {
 

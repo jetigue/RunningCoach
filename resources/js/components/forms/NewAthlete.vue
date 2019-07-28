@@ -3,7 +3,7 @@
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.first_name">First Name</label>
                 <span id="first_nameHelp" class="form-help" v-if="form.errors.has('first_name')"
@@ -13,7 +13,7 @@
             <input class="form-input" id="form.first_name" type="text" v-model="form.first_name" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.last_name">Last Name</label>
                 <span id="last_nameHelp" class="form-help" v-if="form.errors.has('last_name')"
@@ -23,7 +23,7 @@
             <input class="form-input" id="form.last_name" type="text" v-model="form.last_name" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Sex</label>
                 <span id="sexHelp" class="form-help" v-if="form.errors.has('sex')"
@@ -37,7 +37,7 @@
             </select>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.dob">Date of Birth</label>
                 <span id="dobHelp" class="form-help" v-if="form.errors.has('dob')"
@@ -47,7 +47,7 @@
             <input class="form-input" id="form.dob" type="date" v-model="form.dob">
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.grad_year">Graduation Year</label>
                 <span id="grad_yearHelp" class="form-help" v-if="form.errors.has('grad_year')"
@@ -57,7 +57,7 @@
             <input class="form-input" id="form.grad_year" type="number" min="2009" max="2025" v-model="form.grad_year" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Status</label>
                 <span id="statusHelp" class="form-help" v-if="form.errors.has('status')"

@@ -42,6 +42,11 @@ export default {
                     label: 'Team Events',
                     url: '/team-events'
                 },
+                {
+                    id: 3,
+                    label: 'Physicals',
+                    url: '/physicals'
+                },
 
             ]
         }

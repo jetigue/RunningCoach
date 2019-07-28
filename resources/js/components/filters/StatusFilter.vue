@@ -17,7 +17,7 @@
                 items: this.data,
 
                 filters: [
-                    {name: 'All Athletes', url: '?'},
+                    {name: 'All Physicals', url: '?'},
                     {name: 'Active', url: '?active=1'},
                     {name: 'Inactive', url: '?inactive=1'},
                 ]

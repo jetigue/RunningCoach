@@ -84,10 +84,14 @@
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-grey-darker w-full lg:w-1/2"
+                            <div class="text-smoke-800 w-full md:w-1/2"
                                 :class="{'font-semibold': active}">
                                 {{ name }}
                             </div>
+                            <div v-if="active" class="w-full pl-4 md:pl-0 md:w-1/2 lg:w-1/3">
+                                <physical-status v-if="displayPhysicals" :data="data"></physical-status>
+                            </div>
+
                         </div>
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
                     </div>
@@ -96,7 +100,7 @@
 
                             <p class="text-grey w-full py-1">Sex:
                                 <span class="text-tertiary">
-                                        {{ sex }}
+                                        {{ sexName }}
                                     </span>
                             </p>
                             <p class="text-grey w-full py-1">DOB:
@@ -111,11 +115,16 @@
                             </p>
                             <p class="text-grey w-full py-1">Active:
                                 <a v-if="active" class="" @click="inactivate">
-                                <span class="icon is-medium" style="color:green;">
-                                    <i class="fas fa-check-square"></i>
-                                </span>
+                                    <span class="icon is-medium" style="color:green;">
+                                        <i class="fas fa-check-square"></i>
+                                    </span>
                                 </a>
-                                <a v-else class="" @click="activate"> <span class="icon is-medium" style="color:gray;"> <i class="far fa-square"></i> </span> </a>
+                                <a v-else
+                                   @click="activate">
+                                    <span class="" style="color:gray;">
+                                        <i class="far fa-square"></i>
+                                    </span>
+                                </a>
                             </p>
                         </div>
                         <div class="flex justify-start cursor-pointer pb-2">
@@ -130,8 +139,10 @@
 </template>
 
 <script>
+    import PhysicalStatus from "./physicals/PhysicalStatus";
     export default {
-        props: ['data'],
+        components: {PhysicalStatus},
+        props: ['data', 'displayPhysicals'],
 
         data() {
             return {
@@ -140,12 +151,16 @@
 
                 id: this.data.id,
                 first_name: this.data.first_name,
+                last_name: this.data.last_name,
                 name: this.data.last_name + ", " + this.data.first_name,
                 user_id: this.data.user_id,
-                sex: (this.data.sex === 'm') ? "Male": "Female",
+                sex: this.data.sex,
+                sexName: (this.data.sex === 'm') ? "Male": "Female",
                 dob: this.data.dob,
                 grad_year: this.data.grad_year,
                 status: this.data.status,
+
+                physicals: false,
 
                 active: this.data.status === 'a',
 
@@ -160,7 +175,9 @@
             }
         },
 
+
         methods: {
+
             toggleRow() {
                 this.isExpanded = !this.isExpanded
             },
@@ -239,7 +256,39 @@
                 if (this.status === 'i') {
                     return true;
                 }
-            }
+            },
+
+            physicalStatus() {
+
+                let forms =[
+                    this.confirmedConsentForm,
+                    this.confirmedConcussionForm,
+                    this.confirmedEvaluationForm
+                ];
+
+                if  (forms.every(Boolean) && (this.restrictions === null)) {
+
+                    this.statusColor = '#00b300';
+                    this.allClear = true;
+
+                    return "Cleared"
+
+                } else if  (forms.every(Boolean) && (this.restrictions !== null)) {
+
+                    this.statusColor = '#fd6a02';
+                    this.restrict = true;
+
+                    return "Cleared with Restrictions"
+
+
+                } else {
+                    this.statusColor = '#cc0000';
+
+                    return "Not Cleared"
+                }
+            },
+
+
         }
     }
 </script>

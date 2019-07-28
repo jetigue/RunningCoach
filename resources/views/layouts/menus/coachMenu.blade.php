@@ -11,6 +11,7 @@
         <div class="flex flex-col pl-2">
             <a class="text-gray-700 hover:text-gray-900" href="/announcements">Announcements</a>
             <a class="text-gray-700 hover:text-gray-900" href="/team-events">Events</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/physicals">Physicals</a>
         </div>
     </div>
     <div class="py-1">

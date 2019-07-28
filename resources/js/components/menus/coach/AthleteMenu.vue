@@ -34,7 +34,7 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: 'Athletes',
+                    label: 'Physicals',
                     url: '/athletes'
                 },
 

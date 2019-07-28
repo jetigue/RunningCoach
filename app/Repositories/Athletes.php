@@ -228,4 +228,16 @@ class Athletes
 
         return $seniors;
     }
+
+    public function requiresPhysical()
+    {
+        $beginRequire = Carbon::now()->year - 1;
+        $endRequire = Carbon::now()->year + 4;
+
+        $requires = Athlete::whereBetween('grad_year', [$beginRequire, $endRequire])
+            ->orderBy('last_name', 'asc')
+            ->get();
+
+        return $requires;
+    }
 }

@@ -6,6 +6,8 @@
 .env
 .phpunit.result.cache
 .idea
+.idea/workspace.xml
+.idea/tasks.xml
 Homestead.json
 Homestead.yaml
 npm-debug.log

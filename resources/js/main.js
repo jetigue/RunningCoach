@@ -54,6 +54,9 @@ Vue.component('track-meets', require('./components/meets/TrackMeets').default);
 // Paginator
 Vue.component('paginator', require('./components/Paginator').default);
 
+// Physicals
+Vue.component('physicals', require('./components/physicals/Physicals').default);
+
 // Results
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);
 Vue.component('track-results', require('./components/results/TrackResults').default);
@@ -61,6 +64,7 @@ Vue.component('track-results', require('./components/results/TrackResults').defa
 // Team
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
 Vue.component('team-events', require('./components/team/TeamEvents').default);
+
 
 // users
 Vue.component('user-roles', require('./components/users/UserRoles').default);

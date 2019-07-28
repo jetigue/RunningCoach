@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
-            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
+            <div class="w-full md:w-3/4 mx-auto">
                 <form action="/runningLogs" method="POST" id="editRunningLog" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-2">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -354,7 +354,7 @@
 
             update() {
                 this.form
-                    .patch('api/runningLogs' + '/' + this.data.id)
+                    .patch('api/running-log' + '/' + this.data.id)
                     .then(data => {
                         this.runType = this.runTypes.find(runType => runType.id === this.form.run_type_id).name;
                         this.terrainType = this.terrainTypes.find(terrainType => terrainType.id === this.form.terrain_type_id).name;

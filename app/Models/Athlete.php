@@ -41,6 +41,19 @@ class Athlete extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function physicals()
+    {
+        return $this->hasMany(Physical::class);
+    }
+
+    public function latestPhysical()
+    {
+        return $this->hasOne(Physical::class)->latest();
+    }
+
+    /**
      * Apply all relevant name filters.
      *
      * @param Builder $query
