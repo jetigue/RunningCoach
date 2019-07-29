@@ -389,7 +389,12 @@
       <workItem from="1564153510415" duration="49000" />
       <workItem from="1564153785494" duration="145000" />
       <workItem from="1564153961191" duration="83471000" />
+<<<<<<< HEAD
       <workItem from="1564326644334" duration="24503000" />
+=======
+      <workItem from="1564326644334" duration="23483000" />
+      <workItem from="1564360986969" duration="266000" />
+>>>>>>> staging
     </task>
     <servers />
   </component>
@@ -419,7 +424,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/physicals/Physicals.vue</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
