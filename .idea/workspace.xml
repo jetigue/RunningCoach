@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Athlete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Athlete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Athletes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Athletes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AthletesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AthletesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Athlete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athlete.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Athletes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athletes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/buttons/UpdateButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/StatusFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/coach/AdministrationMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/coach/AdministrationMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/coach/AthleteMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/coach/AthleteMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/athletes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +391,7 @@
       <workItem from="1564153510415" duration="49000" />
       <workItem from="1564153785494" duration="145000" />
       <workItem from="1564153961191" duration="83471000" />
-      <workItem from="1564326644334" duration="23483000" />
+      <workItem from="1564326644334" duration="24083000" />
     </task>
     <servers />
   </component>
