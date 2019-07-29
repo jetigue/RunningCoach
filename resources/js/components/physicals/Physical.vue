@@ -81,7 +81,6 @@
                             <div class="text-gray-900 w-full md:w-1/2 lg:w-1/3">
                                 {{ athleteName }}
                             </div>
-<!--                            <physical-status :data="data"></physical-status>-->
                             <div class="font-semibold w-full pl-4 md:pl-0 md:w-1/2 lg:w-1/3"
                                  :style="{color: statusColor}">
                                 {{ status }}

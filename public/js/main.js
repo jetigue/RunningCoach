@@ -8258,7 +8258,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data'],
@@ -70168,7 +70167,7 @@ var render = function() {
   return _c(
     "form",
     {
-      attrs: { action: "/runningLogs", method: "POST", id: "newRunningLog" },
+      attrs: { action: "/running-log", method: "POST", id: "newRunningLog" },
       on: {
         submit: function($event) {
           $event.preventDefault()
@@ -75667,11 +75666,11 @@ var render = function() {
                           { key: athlete.id, domProps: { value: athlete.id } },
                           [
                             _vm._v(
-                              "\n                                " +
+                              "\n                            " +
                                 _vm._s(athlete.last_name) +
                                 ", " +
                                 _vm._s(athlete.first_name) +
-                                "\n                            "
+                                "\n                        "
                             )
                           ]
                         )
@@ -75744,7 +75743,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Restrictions (If any)\n                            "
+                              "\n                            Restrictions (If any)\n                        "
                             )
                           ]
                         ),
@@ -75853,7 +75852,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                            Update\n                        "
+                            "\n                        Update\n                    "
                           )
                         ]
                       ),
@@ -75888,9 +75887,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                " +
+                            "\n                            " +
                               _vm._s(_vm.athleteName) +
-                              "\n                            "
+                              "\n                        "
                           )
                         ]
                       ),
@@ -75904,9 +75903,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                " +
+                            "\n                            " +
                               _vm._s(_vm.status) +
-                              "\n                                "
+                              "\n                            "
                           ),
                           _vm.allClear
                             ? _c("span", [
@@ -75930,9 +75929,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                " +
+                            "\n                            " +
                               _vm._s(_vm.expiration) +
-                              "\n\n                                "
+                              "\n\n                            "
                           ),
                           _c("span", [
                             _vm._v(
@@ -76081,47 +76080,43 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("p", { staticClass: "text-gray-600 w-full py-1" }, [
-                          _vm._v(
-                            "Exam Date:\n                                "
-                          ),
+                          _vm._v("Exam Date:\n                            "),
                           _c("span", { staticClass: "text-gray-900" }, [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                " +
                                 _vm._s(
                                   _vm._f("moment")(_vm.exam_date, "MM.DD.YYYY")
                                 ) +
-                                "\n                                "
+                                "\n                            "
                             )
                           ])
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "text-gray-600 w-full py-1" }, [
-                          _vm._v(
-                            "Restrictions:\n                                "
-                          ),
+                          _vm._v("Restrictions:\n                            "),
                           _vm.restrictions !== null
                             ? _c("span", { staticClass: "text-gray-900" }, [
                                 _vm._v(
-                                  "\n                                    " +
+                                  "\n                                " +
                                     _vm._s(_vm.restrictions) +
-                                    "\n                                "
+                                    "\n                            "
                                 )
                               ])
                             : _c("span", { staticClass: "text-gray-500" }, [
                                 _vm._v(
-                                  "\n                                    None\n                                "
+                                  "\n                                None\n                            "
                                 )
                               ])
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "text-gray-600 w-full py-1" }, [
-                          _vm._v("Notes:\n                                "),
+                          _vm._v("Notes:\n                            "),
                           _vm.notes !== null
                             ? _c("span", { staticClass: "text-gray-900" }, [
                                 _vm._v(
-                                  "\n                                    " +
+                                  "\n                                " +
                                     _vm._s(_vm.notes) +
-                                    "\n                                "
+                                    "\n                            "
                                 )
                               ])
                             : _c("span", { staticClass: "text-gray-500" }, [

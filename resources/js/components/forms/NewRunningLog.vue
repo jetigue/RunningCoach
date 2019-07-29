@@ -1,5 +1,5 @@
 <template>
-    <form action="/runningLogs" method="POST" id="newRunningLog"
+    <form action="/running-log" method="POST" id="newRunningLog"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
