@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/coach/AthleteMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/coach/AthleteMenu.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -391,7 +392,7 @@
       <workItem from="1564153510415" duration="49000" />
       <workItem from="1564153785494" duration="145000" />
       <workItem from="1564153961191" duration="83471000" />
-      <workItem from="1564326644334" duration="24083000" />
+      <workItem from="1564326644334" duration="24328000" />
     </task>
     <servers />
   </component>
