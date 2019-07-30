@@ -44,7 +44,7 @@ export default {
                 },                {
                     id: 3,
                     label: 'Girls\' Roster',
-                    url: '/boys-roster'
+                    url: '/girls-roster'
                 },                {
                     id: 4,
                     label: 'Booster Club',
