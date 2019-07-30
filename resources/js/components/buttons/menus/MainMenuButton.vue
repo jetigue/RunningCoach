@@ -10,14 +10,8 @@
 
                 <div class="flex flex-col text-white crimson-carbon-fiber w-full md:w-1/2 md:mx-auto h-auto">
 
-                    <div class="flex p-4 justify-between">
-                        <div class="text-white">
-                            <a href="/">Home</a>
-                        </div>
-                        <button type="button" aria-label="close" @click="close">
-                            <i class="fas fa-times text-xl text-white"></i>
-                        </button>
-                    </div>
+                    <menu-header @closeMenu="close"></menu-header>
+
                     <div class="px-8 py-4">
                         <main-menu></main-menu>
                     </div>
@@ -29,11 +23,12 @@
 
 <script>
     import MainMenu from '../../menus/MainMenu';
+    import MenuHeader from "./MenuHeader";
 
     export default {
         name: "MainMenuButton",
 
-        components: { MainMenu },
+        components: {MenuHeader, MainMenu },
 
         data() {
             return {

@@ -10,14 +10,8 @@
 
                 <div class="flex flex-col text-white crimson-carbon-fiber w-full md:w-1/2 md:mx-auto h-auto">
 
-                    <div class="flex p-4 justify-between">
-                        <div class="text-white">
-                            <a href="/">Home</a>
-                        </div>
-                        <button type="button" aria-label="close" @click="close">
-                            <i class="fas fa-times text-xl text-white"></i>
-                        </button>
-                    </div>
+                    <menu-header @closeMenu="close"></menu-header>
+
                     <div class="px-8 py-2">
                         <main-menu></main-menu>
                         <coach-menu class="py-2"></coach-menu>
@@ -33,11 +27,12 @@
     import MainMenu from '../../menus/MainMenu';
     import CoachMenu from '../../menus/CoachMenu';
     import RunningLogMenu from "../../menus/runningLog/RunningLogMenu";
+    import MenuHeader from "./MenuHeader";
 
     export default {
         name: "CoachMenuButton",
 
-        components: {RunningLogMenu, CoachMenu, MainMenu },
+        components: {MenuHeader, RunningLogMenu, CoachMenu, MainMenu },
 
         data() {
             return {
