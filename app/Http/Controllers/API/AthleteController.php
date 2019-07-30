@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Filters\AthleteFilter;
 use App\Models\Athlete;
-use App\Models\Physical;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,11 +21,16 @@ class AthleteController extends Controller
 
     /**
      * @param Athlete $athletes
+     * @param AthleteFilter $filters
      * @return mixed
      */
-    public function index(Athlete $athletes, Physical $physicals)
+    public function index(Athlete $athletes)
     {
-        return $athletes->with('latestPhysical')->orderBy('last_name', 'asc')->paginate(20);
+        return $athletes
+            ->with('latestPhysical')
+            ->where('status', 'a')
+            ->orderBy('last_name', 'asc')
+            ->paginate(20);
     }
 
     /**

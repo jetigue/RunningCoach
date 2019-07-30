@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Physical;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filters\AthleteFilter;
