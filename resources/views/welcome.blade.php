@@ -28,7 +28,7 @@
                     </p>
                     <p class="py-2">To sign up, please complete the form linked below.</p>
                     <a class="text-center text-blue-600"
-                       ref="https://drive.google.com/open?id=1XHsEDKWmUlzOehJ2Lvx0g6HimmbbD92BnRK4ibCFEB8">
+                       href="https://drive.google.com/open?id=1XHsEDKWmUlzOehJ2Lvx0g6HimmbbD92BnRK4ibCFEB8">
                         2019 Sign-Up Form
                     </a>
                 </section>
