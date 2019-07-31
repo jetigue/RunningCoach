@@ -139,7 +139,8 @@
 </template>
 
 <script>
-    import PhysicalStatus from "./physicals/PhysicalStatus";
+    import PhysicalStatus from './physicals/PhysicalStatus';
+
     export default {
         components: {PhysicalStatus},
         props: ['data', 'displayPhysicals'],
@@ -174,7 +175,6 @@
                 }),
             }
         },
-
 
         methods: {
 
@@ -287,8 +287,6 @@
                     return "Not Cleared"
                 }
             },
-
-
         }
     }
 </script>

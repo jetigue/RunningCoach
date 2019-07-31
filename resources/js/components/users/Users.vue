@@ -2,9 +2,6 @@
     <div class="flex flex-col">
         <div class="flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Users</header>
-            <filter-button class="hidden">
-
-            </filter-button>
         </div>
         <div class="table-container">
             <div class="table-header">
@@ -24,6 +21,10 @@
                 <p class="text-2xl text-tertiary p-4">No Users in the Database</p>
             </div>
         </div>
+
+        <div v-if="records">
+            <paginator :dataSet="dataSet" @changed="fetch"></paginator>
+        </div>
     </div>
 </template>
 
@@ -32,13 +33,39 @@
     import User from './User';
 
     export default Collection.extend({
-        props: ['data'],
+        // props: ['data'],
 
         components: { User },
 
         data() {
             return {
+                dataSet: false,
             }
+        },
+
+        created() {
+            this.fetch();
+        },
+
+        methods: {
+            fetch(page) {
+                axios.get(this.url(page)).then(this.refresh);
+            },
+
+            url(page) {
+                if (! page) {
+                    let query = location.search.match(/page=(\d+)/);
+
+                    page = query ? query[1] : 1;
+                }
+
+                return `api${location.pathname}?page=${page}`;
+            },
+
+            refresh({data}) {
+                this.dataSet = data;
+                this.items = data.data;
+            },
         }
     });
 </script>

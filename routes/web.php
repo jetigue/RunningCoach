@@ -63,7 +63,7 @@ Route::apiResources([
     'api/runTypes' => 'API\Properties\RunningLog\RunTypeController',
 
     // users
-    'api/roles'  => 'API\Users\RoleController',
+    'api/user-roles'  => 'API\Users\RoleController',
     'api/users'  => 'API\Users\UserController',
 
     // Team Administration

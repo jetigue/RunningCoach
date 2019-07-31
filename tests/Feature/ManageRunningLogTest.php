@@ -37,7 +37,7 @@ class ManageRunningLogTest extends TestCase
             'run_feeling_id'  => $this->faker->numberBetween($min = 1, $max = 5)
         ];
 //dd($attributes);
-        $this->post('/api/runningLogs', $attributes)->assertStatus(201);
+        $this->post('/api/running-log', $attributes)->assertStatus(201);
 
 //        $this->assertDatabaseHas('running_logs', $attributes);
 

@@ -38,7 +38,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/roles')
+                .post('/api/user-roles')
 
                 .then(data => {
 

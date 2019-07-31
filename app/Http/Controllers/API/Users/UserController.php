@@ -16,11 +16,14 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function index()
+    public function index(User $users)
     {
-        //
+        $users = User::with('role')->orderBy('last_name', 'asc')->paginate(20);
+
+        return $users;
+
     }
 
     /**

@@ -126,6 +126,7 @@
                 email: this.data.email,
                 userRole: this.data.role.name,
                 userName: this.data.last_name + ', ' + this.data.first_name,
+                user_name_id: this.data.user_name_id,
 
                 form: new Form({
                     first_name: this.data.first_name,
@@ -185,26 +186,21 @@
             resetForm() {
                 this.form.first_name = this.first_name,
                 this.form.last_name = this.last_name,
-                    this.form.email = this.email,
-                    this.form.user_role_id = this.user_role_id,
+                this.form.email = this.email,
+                this.form.user_role_id = this.user_role_id,
                 this.isExpanded = false;
             },
 
             getNames() {
                 this.editing = true;
 
-                function getUserRoleNames() {
-                    return axios.get('/api/roles')
-                }
-
-                axios.all([
-                    getUserRoleNames()
-                ])
-                    .then(axios.spread((
-                        rolesResponse,
-                    ) => {
-                        this.roles = rolesResponse.data;
-                    }));
+                axios.get('/api/user-roles')
+                    .then(response => {
+                        this.roles = response.data;
+                    })
+                    .catch(errors => {
+                        console.log(errors)
+                    })
             }
         }
     }
