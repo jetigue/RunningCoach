@@ -32,7 +32,7 @@
 
                         <div class="flex justify-between items-center py-2 w-full">
                             <div>
-                                <button type="submit" class="bg-green-600 text-white hover:bg-green-700 p-2 rounded">
+                                <button type="submit" class="bg-crimson-600 text-white hover:bg-crimson-700 p-2 rounded">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

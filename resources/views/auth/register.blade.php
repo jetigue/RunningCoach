@@ -98,7 +98,7 @@
                                     <a class="text-sm text-blue-700 pl-3" href="/login">Or Sign In!</a>
                                 </div>
                                 <button type="submit"
-                                        class="w-20 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded">
+                                        class="w-20 py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-sm font-bold rounded">
                                     Login
                                 </button>
                             </div>

@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="">
-                            <button type="submit" class="w-20 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded">
+                            <button type="submit" class="w-20 py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-sm font-bold rounded">
                                 {{ __('Reset Password') }}
                             </button>
                         </div>
