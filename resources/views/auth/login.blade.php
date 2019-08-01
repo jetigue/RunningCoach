@@ -6,12 +6,12 @@
             <div class="relative bg-white w-full max-w-md h-full md:h-auto m-auto md:rounded flex-col flex p-2">
                 <header class="border-b-2 border-primary flex">
                     <div>
-                        <h3 class="font-thin text-2xl text-tertiary py-2">
+                        <h3 class="font-thin text-2xl text-smoke-800 py-2">
                             Sign In
                         </h3>
                     </div>
                 </header>
-                <section class="my-3 p-4 bg-blue-lightest rounded-lg">
+                <section class="my-3 p-4 bg-gray-100 rounded-lg">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -19,7 +19,7 @@
                             <div class="flex justify-between items-center">
                                 <label class="form-label" for="email">Email Address</label>
                                 @if ($errors->has('email'))
-                                    <span class="font-semibold text-red text-xs" role="alert">
+                                    <span class="font-semibold text-red-700 text-xs" role="alert">
                                             {{ $errors->first('email') }}
                                     </span>
                                 @endif
@@ -36,7 +36,7 @@
                             <div class="flex justify-between items-center">
                                 <label class="form-label" for="email">Password</label>
                                 @if ($errors->has('password'))
-                                    <span class="font-semibold text-red text-xs" role="alert">
+                                    <span class="font-semibold text-red-700 text-xs" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -52,7 +52,7 @@
                         <div class="mb-3">
                             <div class="flex justify-between items-center">
                                 <button type="submit"
-                                        class="w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded">
+                                        class="w-20 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded">
                                     Login
                                 </button>
                                 <div class="flex items-center">
@@ -68,11 +68,11 @@
 
                         <div class="flex justify-between items-center pt-4">
                             <div>
-                                <a class="text-sm text-blue pl-3" href="/register">Sign Up!</a>
+                                <a class="text-sm text-blue-700 pl-3" href="/register">Sign Up!</a>
                             </div>
                             <div>
                                 @if (Route::has('password.request'))
-                                    <a class="text-xs text-blue-light" href="{{ route('password.request') }}">
+                                    <a class="text-xs text-blue-700" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

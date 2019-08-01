@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.main')
 
 @section('content')
         <div class="md:w-1/2 lg:w-1/3 md:mt-8 lg:mt-10 mx-auto">
@@ -11,7 +11,7 @@
                             </h3>
                         </div>
                     </header>
-                    <section class="my-3 p-4 bg-blue-lightest rounded-lg">
+                    <section class="my-3 p-4 bg-gray-100 rounded-lg">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
@@ -19,7 +19,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="first_name">First Name</label>
                                     @if ($errors->has('first_name'))
-                                        <span class="font-semibold text-red text-xs" role="alert">
+                                        <span class="font-semibold text-red-700 text-xs" role="alert">
                                             {{ $errors->first('first_name') }}
                                         </span>
                                     @endif
@@ -36,7 +36,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="last_name">Last Name</label>
                                     @if ($errors->has('last_name'))
-                                        <span class="font-semibold text-red text-xs" role="alert">
+                                        <span class="font-semibold text-red-700 text-xs" role="alert">
                                             {{ $errors->first('last_name') }}
                                         </span>
                                     @endif
@@ -53,7 +53,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="email">Email Address</label>
                                     @if ($errors->has('email'))
-                                        <span class="font-semibold text-red text-xs" role="alert">
+                                        <span class="font-semibold text-red-700 text-xs" role="alert">
                                             {{ $errors->first('email') }}
                                         </span>
                                     @endif
@@ -70,7 +70,7 @@
                                 <div class="flex justify-between content-end">
                                     <label class="form-label" for="password">Password</label>
                                     @if ($errors->has('password'))
-                                        <span class="font-semibold text-red text-xs" role="alert">
+                                        <span class="font-semibold text-red-700 text-xs" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                     @endif
@@ -95,10 +95,10 @@
 
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <a class="text-sm text-blue pl-3" href="/login">Or Sign In!</a>
+                                    <a class="text-sm text-blue-700 pl-3" href="/login">Or Sign In!</a>
                                 </div>
                                 <button type="submit"
-                                        class="w-20 py-2 bg-white border-b-2 border-tertiary hover:bg-green-lightest text-tertiary text-sm font-bold rounded">
+                                        class="w-20 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded">
                                     Login
                                 </button>
                             </div>

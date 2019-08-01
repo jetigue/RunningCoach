@@ -15,7 +15,7 @@
                             <i class="fas fa-times text-2xl text-grey-darker pt-3"></i>
                         </button>
                     </header>
-                    <section class="my-3 p-4 bg-blue-lightest rounded-lg">
+                    <section class="my-3 p-4 bg-gray-100 rounded-lg">
                         <slot></slot>
                     </section>
                     <footer class="border-t-2 border-primary flex justify-end">

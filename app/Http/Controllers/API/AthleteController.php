@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Filters\AthleteFilter;
+use App\Mail\AthleteAdded;
 use App\Models\Athlete;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class AthleteController extends Controller
 {
