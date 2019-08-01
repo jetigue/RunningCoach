@@ -60,10 +60,13 @@
                                    required>
                         </div>
 
-                        <div class="">
-                            <button type="submit" class="w-20 py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-sm font-bold rounded">
+                        <div class="flex justify-between items-center w-full">
+                            <button type="submit" class="py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-sm font-bold rounded">
                                 {{ __('Reset Password') }}
                             </button>
+                            <div>
+                                <a class="text-sm text-blue-700 pl-3" href="/login">Cancel</a>
+                            </div>
                         </div>
                     </form>
                 </section>
