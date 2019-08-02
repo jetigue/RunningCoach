@@ -10,8 +10,14 @@
             </div>
         </div>
 
-        <div class="text-smoke-darkest leading-normal">
+        <div class="text-smoke-800 pt-1">
             {{ body }}
+        </div>
+        <div v-if="body_2 != null" class="text-smoke-800 py-1">
+            {{ body_2 }}
+        </div>
+        <div v-if="body_3 != null" class="text-smoke-800 pt-1">
+            {{ body_3 }}
         </div>
         <div class="flex justify-start flex-wrap">
             <div v-if="link_1 != null" class="py-1 pr-2">
@@ -37,6 +43,8 @@
             return {
                 title: this.data.title,
                 body: this.data.body,
+                body_2: this.data.body_2,
+                body_3: this.data.body_3,
                 link_1: this.data.link_1,
                 link_text_1: this.data.link_text_1,
                 link_2: this.data.link_2,

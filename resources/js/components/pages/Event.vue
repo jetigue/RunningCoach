@@ -1,31 +1,28 @@
 <template>
     <div class="py-2">
         <div class="flex flex-col">
-            <div class="flex justify-start">
+            <div class="flex justify-start items-center">
                 <div class="flex-none bg-primary rounded-full shadow-2xl w-10 h-10 leading-none">
                     <div class="flex flex-col justify-center items-center h-full w-full">
                         <div class="text-gray-200 font-light text-xs">{{ event_date | moment("MMM")}}</div>
                         <div class="text-white font-semibold text-lg">{{ event_date | moment('D')}}</div>
                     </div>
-
                 </div>
-
-                <div class="flex-col text-xs font-bold text-primary ml-2">
-                    <div>
-                        {{ name }}
-                    </div>
-                    <div class="leading-tight">
-                        <div class=" pl-2 text-smoke-800">{{ location }}</div>
-                        <div class=" pl-2 text-smoke-800">{{ event_time }}</div>
-                    </div>
+                <div class="text-primary font-bold ml-2 leading-tight">
+                    {{ name }}
                 </div>
             </div>
 
-            <div class="text-xs text-gray-900 py-1">
+            <div class="flex flex-col leading-snug text-sm text-smoke-600 font-semibold py-1">
+                <div class="">{{ location }}</div>
+                <div class="">{{ event_time }}</div>
+            </div>
+
+            <div class="text-xs text-smoke-900">
                 {{ details }}
             </div>
 
-            <div v-if="link != null" class="text-xs font-semibold">
+            <div v-if="link != null" class="text-xs font-semibold py-1">
                 <p><a class="text-blue-600 hover:text-blue-800 hover:underline" :href="link">{{ link_text }}</a></p>
             </div>
         </div>

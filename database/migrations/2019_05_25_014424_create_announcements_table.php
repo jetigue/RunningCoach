@@ -19,6 +19,8 @@ class CreateAnnouncementsTable extends Migration
             $table->date('end_date');
             $table->string('title');
             $table->text('body');
+            $table->text('body_2')->nullable();
+            $table->text('body_3')->nullable();
             $table->string('link_1')->nullable();
             $table->string('link_text_1')->nullable();
             $table->string('link_2')->nullable();

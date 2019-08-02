@@ -3,7 +3,7 @@
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.title">Title</label>
                 <span id="titleHelp" class="form-help" v-if="form.errors.has('title')"
@@ -13,17 +13,7 @@
             <input class="form-input" id="form.title" type="text" v-model="form.title" required>
         </div>
 
-        <div class="mb-3">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.body">Body</label>
-                <span id="bodyHelp" class="form-help" v-if="form.errors.has('body')"
-                    v-text="form.errors.get('body')">
-                </span>
-            </div>
-            <textarea class="form-input" id="form.body" v-model="form.body" required></textarea>
-        </div>
-
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.body">Beginning Date</label>
                 <span id="begin_dateHelp" class="form-help" v-if="form.errors.has('begin_date')"
@@ -33,7 +23,7 @@
             <input class="form-input" id="form.begin_date" type="date" v-model="form.begin_date" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.body">Ending Date</label>
                 <span id="end_dateHelp" class="form-help" v-if="form.errors.has('end_date')"
@@ -43,7 +33,49 @@
             <input class="form-input" id="form.end_date" type="date" v-model="form.end_date" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.body">Body</label>
+                <span id="bodyHelp" class="form-help" v-if="form.errors.has('body')"
+                      v-text="form.errors.get('body')">
+                </span>
+            </div>
+            <textarea class="form-input" id="form.body" v-model="form.body" required></textarea>
+
+            <div v-if="no2ndBody" @click="addBody" class="text-left p-2  text-sm cursor-pointer">
+                <p class="text-blue-700 font-semibold"> + Add Another Paragraph</p>
+            </div>
+        </div>
+
+        <div v-if="add2ndBody">
+            <div class="mb-2">
+                <div class="flex justify-between content-end">
+                    <label class="form-label" for="form.body_2">2nd Paragraph (optional)</label>
+                    <span id="body_2Help" class="form-help" v-if="form.errors.has('body_2')"
+                          v-text="form.errors.get('body_2')">
+                </span>
+                </div>
+                <textarea class="form-input" id="form.body_2" v-model="form.body_2"></textarea>
+            </div>
+
+            <div v-if="no3rdBody" @click="addAnotherBody" class="text-left p-2  text-sm cursor-pointer">
+                <p class="text-blue-700 font-semibold"> + Add Another Paragraph</p>
+            </div>
+        </div>
+
+        <div v-if="add3rdBody">
+            <div class="mb-2">
+                <div class="flex justify-between content-end">
+                    <label class="form-label" for="form.body_3">3rd Paragraph (optional)</label>
+                    <span id="body_3Help" class="form-help" v-if="form.errors.has('body_3')"
+                          v-text="form.errors.get('body_3')">
+                </span>
+                </div>
+                <textarea class="form-input" id="form.body_3" v-model="form.body_3"></textarea>
+            </div>
+        </div>
+
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.link_1">
                     Link (optional)
@@ -56,7 +88,7 @@
             <input class="form-input" id="form.link_1" type="text" v-model="form.link_1">
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.link_text_1">
                     Link Text (optional)
@@ -69,11 +101,11 @@
         </div>
 
         <div v-if="no2ndLink" @click="addLink" class="text-left p-2  text-sm cursor-pointer">
-            <p class="text-navy-blue font-semibold"> + Add Another Link</p>
+            <p class="text-blue-700 font-semibold"> + Add Another Link</p>
         </div>
 
         <div v-if="add2ndLink">
-            <div class="mb-3">
+            <div class="mb-2">
                 <div class="flex justify-between content-end">
                     <label class="form-label" for="form.link_2">
                         Link #2 (optional)
@@ -86,7 +118,7 @@
                 <input class="form-input" id="form.link_2" type="text" v-model="form.link_2">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-2">
                 <div class="flex justify-between content-end">
                     <label class="form-label" for="form.link_text_2">
                         Link Text #2 (optional)
@@ -99,12 +131,12 @@
             </div>
 
             <div v-if="no3rdLink" @click="addAnotherLink" class="text-left p-2  text-sm cursor-pointer">
-                <p class="text-navy-blue font-semibold"> + Add Another Link</p>
+                <p class="text-blue-700 font-semibold"> + Add Another Link</p>
             </div>
         </div>
 
         <div v-show="add3rdLink">
-            <div class="mb-3">
+            <div class="mb-2">
                 <div class="flex justify-between content-end">
                     <label class="form-label" for="form.link_3">
                         Link #3 (optional)
@@ -117,7 +149,7 @@
                 <input class="form-input" id="form.link_3" type="text" v-model="form.link_3">
             </div>
 
-            <div class="mb-3">
+            <div class="mb-2">
                 <div class="flex justify-between content-end">
                     <label class="form-label" for="form.link_text_3">
                         Link Text #3 (optional)
@@ -147,6 +179,8 @@ export default {
             form: new Form({
                 title: '',
                 body: '',
+                body_2: '',
+                body_3: '',
                 begin_date: '',
                 end_date: '',
                 link_1: '',
@@ -156,6 +190,12 @@ export default {
                 link_3: '',
                 link_text_3: '',
             }),
+
+            add2ndBody: false,
+            add3rdBody: false,
+
+            no2ndBody: true,
+            no3rdBody: true,
 
             add2ndLink: false,
             add3rdLink: false,
@@ -175,6 +215,16 @@ export default {
         addAnotherLink() {
             this.add3rdLink = true,
             this.no3rdLink = false
+        },
+
+        addBody() {
+            this.add2ndBody = true,
+                this.no2ndBody = false
+        },
+
+        addAnotherBody() {
+            this.add3rdBody = true,
+            this.no3rdBody = false
         },
 
         onSubmit() {
@@ -206,9 +256,11 @@ export default {
 
         resetForm() {
             this.form.title = '',
-            this.form.body = '',
             this.form.begin_date = '',
             this.form.end_date = '',
+            this.form.body = '',
+            this.form.body_2 = '',
+            this.form.body_3 = '',
             this.form.link_1 = '',
             this.form.link_text_1 = '',
             this.form.link_2 = '',

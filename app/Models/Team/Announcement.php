@@ -21,6 +21,8 @@ class Announcement extends Model
     protected $fillable = [
         'title',
         'body',
+        'body_2',
+        'body_3',
         'begin_date',
         'end_date',
         'link_1',

@@ -48,6 +48,8 @@ class AnnouncementController extends Controller
         $announcement = request()->validate([
             'title'         => 'required|string',
             'body'          => 'required|string',
+            'body_2'        => 'string|nullable',
+            'body_3'        => 'string|nullable',
             'begin_date'    => 'required|date',
             'end_date'      => 'required|date',
             'link_1'        => 'active_url|nullable',
@@ -97,6 +99,8 @@ class AnnouncementController extends Controller
         request()->validate([
             'title'         => 'string',
             'body'          => 'string',
+            'body_2'        => 'string|nullable',
+            'body_3'        => 'string|nullable',
             'begin_date'    => 'date',
             'end_date'      => 'date',
             'link_1'        => 'active_url|nullable',
@@ -110,6 +114,8 @@ class AnnouncementController extends Controller
         $announcement->update(request([
             'title',
             'body',
+            'body_2',
+            'body_3',
             'begin_date',
             'end_date',
             'link_1',

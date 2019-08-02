@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="w-full md:w-1/2 lg:w-1/3 p-2 md:px-2 mx-auto h-screen">
+<div class="w-full p-2 md:px-2 mx-auto h-full">
     <div
         class="flex flex-col bg-white rounded p-4">
         <header>
@@ -11,8 +11,66 @@
             </p>
             <div class="primary-line my-1"></div>
         </header>
-        <section class="w-full">
-            <p class="text-xl py-2">Coming Soon!</p>
+        <section class="w-full h-full">
+            <div class="flex flex-col">
+                <div class="text-center py-2">
+                    <p class="text-2xl">Thank You, Sponsors!</p>
+                </div>
+                <div class="flex flex-wrap justify-around items-end">
+
+                    <div class="flex flex-col items-center content-center w-2/3 md:w-1/3 lg:w-1/12 py-2 lg:order-1 order-4">
+                        <figure class="">
+                            <a href="http://www.theblackdiamondgrill.com/">
+                                <img src="{{url('images/sponsors/Black_Diamond_Final_tiny.jpg')}}"
+                                     alt="Black Diamond Grill">
+                            </a>
+                        </figure>
+                        <p class="">Bronze</p>
+                    </div>
+
+                    <div class="flex flex-col items-center content-center w-4/5 md:w-2/5 lg:w-1/5 mx-auto order-2 py-2">
+                        <figure class="">
+                            <a href="https://clarityvg.com/">
+                                <img src="{{url('images/sponsors/ClarityVision.png')}}"
+                                     alt="Clarity Vision"
+                                     width="250">
+                            </a>
+                        </figure>
+                        <p class="">Silver</p>
+                    </div>
+
+                    <div class="flex flex-col items-center content-center order-1 lg:order-3 w-full lg:w-1/4 mx-auto py-2">
+                        <figure class="">
+                            <a href="http://sfanimalhospital.com/">
+                                <img src="{{url('images/sponsors/SFAnimalShelterLogo.png')}}"
+                                     alt="South Forsyth Animal Hospital"
+                                     width="300">
+                            </a>
+                        </figure>
+                        <p class="">Platinum Level</p>
+                    </div>
+
+                    <div class="flex flex-col items-center content-center w-4/5 md:w-2/5 lg:w-1/5 lg:order-4 mx-auto order-3 py-2">
+                        <figure class="">
+                            <a href="https://myrosatis.com/cumming/">
+                                <img src="{{url('images/sponsors/rosati.png')}}"
+                                     alt="Clarity Vision">
+                            </a>
+                        </figure>
+                        <p class="">Silver</p>
+                    </div>
+
+                    <div class="flex flex-col items-center content-center w-2/3 md:w-1/3 lg:w-1/12 order-5 py-2">
+                        <figure class="">
+                            <a href="https://www.masterpiecesmilesbraces.com/">
+                                <img src="{{url('images/sponsors/Glenn_Lewis_Orthodontics.jpg')}}"
+                                     alt="Masterpiece Smiles">
+                            </a>
+                        </figure>
+                        <p class="">Bronze</p>
+                    </div>
+
+                </div>
 
         </section>
     </div>

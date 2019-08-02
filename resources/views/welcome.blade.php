@@ -37,7 +37,7 @@
 
         <div class="hidden md:block md:w-1/2 lg:w-full p-2 md:px-2">
             <div class="bg-white rounded md:h-full lg:h-64 justify-center p-2">
-                <div class="boys-state-2018 h-full"></div>
+                <div class="boathouse-jacket h-full"></div>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                         Awards to be given include Overall Male/Female and Masters Male/Female, and Age group awards. T-shirts are guaranteed to all runners registering by August 2nd.
                     </p>
                     <div class="flex flex-wrap justify-around">
-                        <a class="text-blue-600"
+                        <a class="text-blue-200"
                            href="https://runsignup.com/Race/GA/Suwanee/Longhorn5K">
                             Online Registration
                         </a>
