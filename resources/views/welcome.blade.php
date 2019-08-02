@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap content-start w-full lg:w-2/5 md:order-3">
+    <div class="flex flex-wrap content-start w-full lg:w-2/5">
 
         <div class=" w-full md:w-1/2 lg:w-full p-2 md:px-2 ">
             <div
