@@ -32,7 +32,7 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
                     label: 'Spirit Wear Flyer',
                     url: '/forms/spiritwear/SpiritWearFlyer2019.pdf'
@@ -40,11 +40,11 @@ export default {
                 {
                     id: 2,
                     label: 'Spirit Wear Order form',
-                    url: '/forms/spiritwear/SpiritWearOrderForm2019.pdf'
+                    url: '/forms/spiritwear/OrderForm2019.pdf'
                 },
 
 
-            ] 
+            ]
         }
     },
 

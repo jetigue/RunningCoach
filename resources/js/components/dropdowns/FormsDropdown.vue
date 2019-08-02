@@ -56,7 +56,7 @@
                         <a class="text-sm" href="/forms/spiritwear/SpiritWearFlyer2019.pdf">
                             Spirit Wear Flyer
                         </a>
-                        <a class="text-sm" href="/forms/spiritwear/SpiritWearOrderForm2019.pdf">
+                        <a class="text-sm" href="/forms/spiritwear/OrderForm2019.pdf">
                             Spirit Wear Order Form
                         </a>
                     </div>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex flex-row flex-wrap">
 
-    <div class="w-full md:w-2/3 lg:w-2/5 md:order-1">
+    <div class="w-full md:w-2/3 lg:w-2/5 md:order-first">
         <div class="p-2">
             <main class="">
                 <announcements :data="{{ $announcements }}"></announcements>
@@ -11,34 +11,44 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap content-start w-full lg:w-2/5">
-
-        <div class=" w-full md:w-1/2 lg:w-full p-2 md:px-2 ">
-            <div
-                class="flex flex-col bg-white rounded p-4 bg-blue-100">
-                <header>
-                    <p class="lg:text-3xl md:text-2xl text-lg font-thin">
-                        Join The Team!
-                    </p>
-                    <div class="primary-line mb-1"></div>
-                </header>
-                <section>
-                    <p>
-                        We would love for you to join one of the best cross country programs in the southeast!
-                    </p>
-                    <p class="py-2">To sign up, please complete the form linked below.</p>
-                    <a class="text-center text-blue-600"
-                       href="https://drive.google.com/open?id=1XHsEDKWmUlzOehJ2Lvx0g6HimmbbD92BnRK4ibCFEB8">
-                        2019 Sign-Up Form
-                    </a>
-                </section>
+    <div class="flex flex-wrap content-start w-full lg:w-2/5 md:order-3">
+        <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-1/2 lg:w-full p-2 md:px-2 ">
+                <div class="flex flex-col bg-white rounded p-4">
+                    <header>
+                        <p class="lg:text-3xl md:text-2xl text-lg font-thin">
+                            Spirit Wear!
+                        </p>
+                        <div class="primary-line mb-1"></div>
+                    </header>
+                    <section>
+                        <p>
+                            The last day to order spirit wear items is Friday, August 9th at the pasta dinner! Links for the spirit flyer and order form are found below.
+                        </p>
+                        <p class="py-2">We need a minimum of 6 orders per gender to place an order for the Boathouse Jackets.</p>
+                        <div class="flex flex-wrap justify-between">
+                            <p><a class="text-center text-blue-600"
+                                  href="/forms/spiritwear/SpiritWearFlyer2019.pdf">
+                                    Spirit Wear Flyer
+                                </a>
+                            </p>
+                            <p><a class="text-center text-blue-600"
+                                  href="/forms/spiritwear/OrderForm2019.pdf">
+                                    Order form
+                                </a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </div>
 
-        <div class="hidden md:block md:w-1/2 lg:w-full p-2 md:px-2">
-            <div class="bg-white rounded md:h-full lg:h-64 justify-center p-2">
-                <div class="boys-state-2018 h-full"></div>
+            <div class="w-full md:w-1/2 lg:w-full p-2 md:px-2">
+                <div class=" md:h-full lg:h-48 p-2">
+                    <img src="/images/spirit_wear/BoathouseJacket.jpg" alt="Boathouse Jacket">
+                </div>
             </div>
+
+
         </div>
 
         <div class="w-full p-2 md:px-2">
@@ -69,13 +79,12 @@
                             Registration Form
                         </a>
                     </div>
-
                 </section>
             </div>
         </div>
     </div>
 
-    <div class="w-full h-full md:w-1/3 lg:w-1/5 md:order-2 lg:order-last">
+    <div class="w-full md:w-1/3 lg:w-1/5 md:order-2 lg:order-last">
         <div class="p-2 md:pl-0 lg:px-2">
             <aside class="">
                 <events :data="{{ $teamEvents }}"></events>
