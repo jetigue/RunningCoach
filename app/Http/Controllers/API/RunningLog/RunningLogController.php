@@ -25,7 +25,7 @@ class RunningLogController extends Controller
             ->orderBy('run_date', 'desc')
             ->with('runType', 'runEffort', 'runFeeling', 'terrainType', 'dayTime')
             ->where('user_id', auth()->id())
-            ->paginate(10);
+            ->paginate(25);
     }
 
     /**

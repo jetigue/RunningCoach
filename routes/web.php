@@ -36,6 +36,9 @@ Route::apiResources([
     'api/physicals-athletes' => 'API\Physicals\AthletePhysicalController',
 
     'api/running-log' => 'API\RunningLog\RunningLogController',
+    'api/team-log' => 'API\RunningLog\TeamLogController',
+    'api/summer-running' => 'API\RunningLog\SummerRunningController',
+
     // Meets
     'api/trackMeets' => 'API\Meets\TrackMeetController',
 
@@ -100,6 +103,11 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('announcements', 'Coach\AnnouncementController@index');
     Route::get('team-events', 'Coach\TeamEventController@index');
     Route::get('physicals', 'Coach\PhysicalController@index');
+});
+
+Route::group(['middleware' => 'user'], function () {
+    Route::get('team-log', 'User\TeamLogController@index');
+    Route::get('summer-running', 'User\SummerRunningController@index');
 });
 
 Route::resource('/running-log', 'User\RunningLogController');

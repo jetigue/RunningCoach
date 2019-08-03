@@ -4,7 +4,6 @@
         @include('layouts.menus.adminMenu')
         @include('layouts.menus.coachMenu')
 
-
     @elseif(Auth::user() && Auth::user()->role->slug === 'coach')
 
         @include('layouts.menus.coachMenu')

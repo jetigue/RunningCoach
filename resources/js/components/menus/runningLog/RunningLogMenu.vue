@@ -37,6 +37,16 @@ export default {
                     label: 'My Running Log',
                     url: '/running-log'
                 },
+                {
+                    id: 2,
+                    label: 'Team Running Log',
+                    url: '/team-log'
+                },
+                {
+                    id: 3,
+                    label: 'Summer Running',
+                    url: '/summer-running'
+                },
             ]
         }
     },

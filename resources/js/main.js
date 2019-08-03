@@ -45,6 +45,8 @@ Vue.component('run-feelings', require('./components/properties/runningLog/RunFee
 Vue.component('run-types', require('./components/properties/runningLog/RunTypes').default);
 
 Vue.component('running-logs', require('./components/runningLog/runningLogs').default);
+Vue.component('team-logs', require('./components/runningLog/teamLogs').default);
+Vue.component('summer-runners', require('./components/runningLog/summerRunners').default);
 
 Vue.component('athletes', require('./components/Athletes').default);
 

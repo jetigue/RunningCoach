@@ -2,6 +2,7 @@
 
 use App\Models\Properties\General\DayTime;
 use App\Models\Properties\General\TerrainType;
+use App\Models\RunningLog\RunningLog;
 use App\Models\RunningLog\RunType;
 use App\Models\Runninglog\RunEffort;
 use App\Models\Runninglog\RunFeeling;
@@ -21,6 +22,7 @@ class RunningLogSeeder extends Seeder
         factory(RunType::class, 4)->create();
         factory(RunEffort::class, 4)->create();
         factory(RunFeeling::class, 4)->create();
+        factory(RunningLog::class, 100)->create();
 
     }
 }

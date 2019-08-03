@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
+        <div v-if="editing" class="p-3 border-b border-gray-100">
             <div class="w-full md:w-3/4 mx-auto">
                 <form action="/runningLogs" method="POST" id="editRunningLog" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
@@ -204,8 +204,8 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
-                <div class="flex flex-col hover:bg-white">
+            <div class="flex flex-col border-b border-gray-100">
+                <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex p-1 items-center justify-between">
                         <div class="text-gray-700 flex-wrap w-11/12">
                             <div class="w-full text-xs font-light">
@@ -229,29 +229,34 @@
                     </div>
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-2 px-4 leading-normal">
-                            <p class="text-grey-darker text-sm">Time of Day:
-                                <span class="text-tertiary font-semibold">
+                            <p class="text-smoke-700 text-sm">Time of Day:
+                                <span class="text-smoke-800 font-semibold">
                                     {{ dayTime }}
                                 </span>
                             </p>
-                            <p class="text-grey-darker text-sm">Run Type:
-                                <span class="text-tertiary font-semibold">
+                            <p class="text-smoke-700 text-sm">Run Type:
+                                <span class="text-smoke-800 font-semibold">
                                     {{ runType }}
                                 </span>
                             </p>
-                            <p class="text-grey-darker text-sm">Terrain Type:
-                                <span class="text-tertiary font-semibold">
+                            <p class="text-smoke-700 text-sm">Terrain Type:
+                                <span class="text-smoke-800 font-semibold">
                                     {{ terrainType }}
                                 </span>
                             </p>
-                            <p class="text-grey-darker text-sm">Your Effort:
-                                <span class="text-tertiary font-semibold">
+                            <p class="text-smoke-700 text-sm">Your Effort:
+                                <span class="text-smoke-800 font-semibold">
                                     {{ runEffort }}
                                 </span>
                             </p>
-                            <p class="text-grey-darker text-sm">How You Felt:
-                                <span class="text-tertiary font-semibold">
+                            <p class="text-smoke-700 text-sm">How You Felt:
+                                <span class="text-smoke-800 font-semibold">
                                     {{ runFeeling }}
+                                </span>
+                            </p>
+                            <p class="text-smoke-700 text-sm">Notes:
+                                <span class="text-smoke-800 font-semibold">
+                                    {{ notes }}
                                 </span>
                             </p>
                         </div>
@@ -286,6 +291,7 @@
                 terrainType: this.data.terrain_type.name,
                 runEffort: this.data.run_effort.name,
                 runFeeling: this.data.run_feeling.name,
+                notes: this.data.notes,
 
 
                 form: new Form({
@@ -299,7 +305,8 @@
                     run_type_id: this.data.run_type_id,
                     terrain_type_id: this.data.terrain_type_id,
                     run_effort_id: this.data.run_effort_id,
-                    run_feeling_id: this.data.run_feeling_id
+                    run_feeling_id: this.data.run_feeling_id,
+                    notes: this.data.notes
 
                 }),
 
@@ -368,6 +375,7 @@
                         this.milliseconds = this.form.milliseconds;
                         this.distance = this.form.distance;
                         this.totalSeconds = this.form.hours * 3600 + this.form.minutes * 60 + this.form.seconds;
+                        this.notes = this.form.notes;
 
                         this.editing = false;
                         this.isExpanded = false;
@@ -383,7 +391,9 @@
                              this.seconds != this.data.seconds ||
                              this.milliseconds != this.data.milliseconds ||
                              this.distance != this.data.distance ||
-                             this.run_date != this.data.run_date)
+                             this.run_date != this.data.run_date ||
+                             this.notes != this.data.notes
+                         )
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,
@@ -424,7 +434,7 @@
                 this.form.minutes = ~~((this.data.total_seconds % 3600) / 60),
                 this.form.seconds = ~~(this.data.total_seconds % 60),
                 this.form.milliseconds = this.data.milliseconds,
-
+                this.form.notes = this.data.notes
 
                 this.isExpanded = false;
             },
