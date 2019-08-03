@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex flex-row flex-wrap">
 
-    <div class="w-full md:w-2/3 lg:w-2/5 md:order-first">
+    <div class="w-full md:w-full lg:w-2/5 md:order-first">
         <div class="p-2">
             <main class="">
                 <announcements :data="{{ $announcements }}"></announcements>
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    <div class="w-full md:w-1/3 lg:w-1/5 md:order-2 lg:order-last">
+    <div class="w-full md:w-1/3 lg:w-1/5 md:order-last">
         <div class="p-2 md:pl-0 lg:px-2">
             <aside class="">
                 <events :data="{{ $teamEvents }}"></events>

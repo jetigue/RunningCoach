@@ -13,6 +13,10 @@
 
         @include('layouts.menus.athleteMenu')
 
+    @elseif(Auth::user() && Auth::user()->role->slug === 'viewer')
+
+        @include('layouts.menus.userMenu')
+
     @endif
 
 </div>

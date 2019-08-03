@@ -1,7 +1,7 @@
 <div class="my-2">
     <header class="font-thin md:text-xl lg:text-3xl text-secondary">Admin Menu</header>
 
-    <p class="text-tertiary hover:text-blue mb-2 pl-2"><a href="/dashboard">Dashboard</a></p>
+{{--    <p class="text-tertiary hover:text-blue mb-2 pl-2"><a href="/dashboard">Dashboard</a></p>--}}
     <div class="py-2">
         <p class="text-primary text-lg md:text-base lg:text-lg">Division Properties</p>
         <div class="flex flex-col pl-2">
