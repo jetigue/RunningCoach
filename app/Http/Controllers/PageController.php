@@ -17,7 +17,7 @@ class PageController extends Controller
      */
     public function welcome()
     {
-        $announcements = Announcement::latest()->get();
+        $announcements = Announcement::whereDate('end_date', '>=', Carbon::today())->orderBy('updated_at', 'desc')->get();
 
         $teamEvents = TeamEvent::whereDate('event_date', '>=', Carbon::today())->orderBy('event_date', 'asc')->get();
 

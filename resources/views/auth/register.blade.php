@@ -99,7 +99,7 @@
                                 </div>
                                 <button type="submit"
                                         class="w-20 py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-sm font-bold rounded">
-                                    Login
+                                    Sign Up
                                 </button>
                             </div>
 

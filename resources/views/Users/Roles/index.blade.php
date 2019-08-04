@@ -5,9 +5,3 @@
         <user-roles :data="{{ $roles }}"></user-roles>
     @endcomponent
 @endsection
-
-{{-- @section('aside')
-    <filters>
-
-    </filters>
-@endsection --}}

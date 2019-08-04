@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Users;
 
 use App\Models\Users\Role;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,20 +17,18 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Role $roles
+     * @return Role
      */
-    public function index()
+    public function index(Role $roles)
     {
-        $roles = Role::all();
-
         return $roles;
     }
 
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -38,21 +37,9 @@ class RoleController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Users\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Role $role)
-    {
-        //
-    }
-
-
-    /**
      * @param Request $request
      * @param Role $role
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function update(Request $request, Role $role)
     {
@@ -61,7 +48,7 @@ class RoleController extends Controller
 
     /**
      * @param Role $role
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      * @throws \Exception
      */
     public function destroy(Role $role)
@@ -73,9 +60,9 @@ class RoleController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    protected function storeRole(Request $request): \Illuminate\Http\JsonResponse
+    protected function storeRole(Request $request): JsonResponse
     {
         $role = request()->validate([
             'name' => 'required|string|min:3'
@@ -89,9 +76,9 @@ class RoleController extends Controller
     /**
      * @param Request $request
      * @param Role $role
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    protected function updateRole(Request $request, Role $role): \Illuminate\Http\JsonResponse
+    protected function updateRole(Request $request, Role $role): JsonResponse
     {
         request()->validate([
             'name' => 'required|min:3'

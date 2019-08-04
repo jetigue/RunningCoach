@@ -39,7 +39,7 @@ export default {
                 },
                 {
                     id: 2,
-                    label: 'User Roles',
+                    label: 'User roles',
                     url: '/user-roles'
                 },
 

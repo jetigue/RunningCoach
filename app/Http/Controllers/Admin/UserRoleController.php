@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Users\Role;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class UserRoleController extends Controller
 {
@@ -12,11 +12,11 @@ class UserRoleController extends Controller
     {
         $this->middleware('admin');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -27,17 +27,6 @@ class UserRoleController extends Controller
             return $roles;
         }
 
-        return view('users.roles.index', compact('roles'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Users\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Role $role)
-    {
-        //
+        return view('user.roles.index', compact('roles'));
     }
 }
