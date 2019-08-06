@@ -34,6 +34,7 @@ Route::apiResources([
 
     'api/physicals' => 'API\Physicals\PhysicalController',
     'api/physicals-athletes' => 'API\Physicals\AthletePhysicalController',
+    'api/physicals/{physical}/physical-form' =>'API\Physicals\PhysicalFormController',
 
     'api/running-log' => 'API\RunningLog\RunningLogController',
     'api/team-log' => 'API\RunningLog\TeamLogController',

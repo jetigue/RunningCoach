@@ -25,7 +25,8 @@ class Physical extends Model
         'evaluation_form',
         'exam_date',
         'restrictions',
-        'notes'
+        'notes',
+        'form_path'
     ];
 
 
@@ -35,5 +36,13 @@ class Physical extends Model
     public function athlete()
     {
         return $this->belongsTo(Athlete::class, 'athlete_id');
+    }
+
+    public function getFormPathAttribute($physical)
+    {
+//        return asset($physical ?: '');
+
+        return asset($physical);
+
     }
 }

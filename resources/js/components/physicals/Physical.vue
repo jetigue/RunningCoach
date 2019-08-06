@@ -102,7 +102,7 @@
 
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
-
+                            <div class="flex justify-between">
                             <div class=" flex flex-col w-full md:w-1/2 lg:w-1/4">
                                 <p class="text-gray-600 w-full">Forms</p>
 
@@ -136,7 +136,10 @@
                                 </div>
 
                             </div>
-
+<!--                                <div class="bg-blue-100 w-full md:w-1/2 lg:w-1/4">-->
+<!--                                    <physical-form :data="data"></physical-form>-->
+<!--                                </div>-->
+                            </div>
                             <p class="text-gray-600 w-full py-1">Exam Date:
                                 <span class="text-gray-900">
                                     {{ exam_date| moment("MM.DD.YYYY") }}
@@ -174,10 +177,11 @@
 
 <script>
     import PhysicalStatus from "./PhysicalStatus";
+    import PhysicalForm from "../forms/PhysicalForm";
     export default {
         props: ['data'],
 
-        components: { PhysicalStatus },
+        components: { PhysicalForm, PhysicalStatus },
 
         data() {
             return {
