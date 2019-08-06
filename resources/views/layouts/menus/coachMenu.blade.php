@@ -16,7 +16,8 @@
     <div class="py-1">
         <p class="text-primary text-xl md:text-base lg:text-xl">Athletes</p>
         <div class="flex flex-col pl-2">
-            <a class="text-gray-700 hover:text-gray-900" href="/athletes">Athletes</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/active-athletes">Active Athletes</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/athletes">All Athletes</a>
         </div>
     </div>
         <div class="py-1">
