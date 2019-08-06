@@ -30,7 +30,6 @@ class AthleteController extends Controller
     {
         return $athletes
             ->with('latestPhysical')
-            ->where('status', 'a')
             ->orderBy('last_name', 'asc')
             ->paginate(20);
     }

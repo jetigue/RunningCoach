@@ -31,6 +31,17 @@ class AthleteController extends Controller
         return view('athletes.index', compact('athletes'));
     }
 
+    public function active()
+    {
+        $athletes = Athlete::where('status', 'a')->orderBy('last_name')->get();
+
+        if (request()->expectsJson())
+        {
+            return $athletes;
+        }
+
+        return view('athletes.active', compact('athletes'));
+    }
     /**
      * Display the specified resource.
      *

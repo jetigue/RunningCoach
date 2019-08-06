@@ -31,6 +31,7 @@ Route::resource('track-meets/{trackMeet}/team-results/{teamResult}/results', 'AP
 Route::apiResources([
 
     'api/athletes' => 'API\AthleteController',
+    'api/active-athletes' => 'API\ActiveAthleteController',
 
     'api/physicals' => 'API\Physicals\PhysicalController',
     'api/physicals-athletes' => 'API\Physicals\AthletePhysicalController',
@@ -98,6 +99,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 Route::group(['middleware' => 'coach'], function () {
     Route::get('athletes', 'Coach\AthleteController@index');
+    Route::get('active-athletes', 'Coach\AthleteController@active');
     Route::get('hosts', 'Coach\HostController@index');
     Route::get('meet-names', 'Coach\MeetNameController@index');
     Route::get('venues', 'Coach\VenueController@index');
