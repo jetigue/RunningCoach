@@ -34,7 +34,12 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: 'Athletes',
+                    label: 'Active Athletes',
+                    url: '/active-athletes'
+                },
+                {
+                    id: 2,
+                    label: 'All Athletes',
                     url: '/athletes'
                 },
 
