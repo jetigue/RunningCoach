@@ -99,13 +99,14 @@ Route::group(['middleware' => 'admin'], function () {
 
 Route::group(['middleware' => 'coach'], function () {
     Route::get('athletes', 'Coach\AthleteController@index');
-    Route::get('active-athletes', 'Coach\AthleteController@active');
+    Route::get('active-athletes', 'Coach\AthleteController@index');
     Route::get('hosts', 'Coach\HostController@index');
     Route::get('meet-names', 'Coach\MeetNameController@index');
     Route::get('venues', 'Coach\VenueController@index');
     Route::get('announcements', 'Coach\AnnouncementController@index');
     Route::get('team-events', 'Coach\TeamEventController@index');
     Route::get('physicals', 'Coach\PhysicalController@index');
+    Route::get('physicals/{physical}', 'Coach\PhysicalController@show');
 });
 
 Route::group(['middleware' => 'user'], function () {

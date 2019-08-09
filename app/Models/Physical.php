@@ -37,12 +37,4 @@ class Physical extends Model
     {
         return $this->belongsTo(Athlete::class, 'athlete_id');
     }
-
-    public function getFormPathAttribute($physical)
-    {
-//        return asset($physical ?: '');
-
-        return asset($physical);
-
-    }
 }

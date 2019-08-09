@@ -11,14 +11,14 @@ class PhysicalFormController extends Controller
 {
 
     /**
-     * AthleteController constructor.
+     * PhysicalFormController constructor.
      */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function store(Physical $physical)
+    public function store(Physical $physical, Request $request)
     {
         request()->validate([
             'physical-form' => 'required|file'

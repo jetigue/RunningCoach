@@ -72,16 +72,15 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-100 hover:bg-white">
-                <div class="flex flex-col hover:bg-white">
-
+            <div class="flex flex-col border-b border-gray-100 hover:bg-gray-100">
+                <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex justify-between p-2 items-center">
-                        <div class="flex md:w-4/5 flex-wrap">
-
+                        <div class="flex md:w-11/12 flex-wrap">
                             <div class="text-gray-900 w-full md:w-1/2 lg:w-1/3">
                                 {{ athleteName }}
                             </div>
-                            <div class="font-semibold w-full pl-4 md:pl-0 md:w-1/2 lg:w-1/3"
+
+                            <div class="font-semibold w-full pl-4 md:pl-0 md:w-1/2 lg:w-1/4 text-sm"
                                  :style="{color: statusColor}">
                                 {{ status }}
                                 <span v-if="allClear"><i class="fas fa-check"></i> </span>
@@ -89,90 +88,111 @@
                                 <span v-else><i class="fas fa-times"></i></span>
                             </div>
 
-                            <div class="w-full md:w-1/2 pl-4 lg:w-1/3 lg:pl-0"
+                            <div class="w-full md:w-1/2 pl-4 lg:w-1/5 lg:pl-0 py-1 text-sm"
                                  :style="{color: expirationColor}">
                                 {{ expiration }}
 
                                 <span>{{ exam_date | moment("add", "1 year") | moment("from", "now") }}</span>
+                            </div>
 
+                            <div class="w-full md:w-1/2 lg:w-1/5 pl-4 md:pl-0 lg:text-center py-1">
+                                <div v-if="hasForm" class="green">
+                                    <a :href="url"><i class="text-xl far fa-file-pdf"></i><span class="text-xs">
+                                        Download Physical</span></a>
+                                </div>
+                                <div v-else class="red">
+                                    <i class="text-xl far fa-file-pdf"></i><span class="text-xs">
+                                        No Physical on File </span>
+                                </div>
                             </div>
                         </div>
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
                     </div>
 
-                    <div v-if="isExpanded" class="px-2">
+                    <div v-if="isExpanded" class="px-2 bg-gray-100">
                         <div class="flex flex-col pb-4 px-4">
-                            <div class="flex justify-between">
-                            <div class=" flex flex-col w-full md:w-1/2 lg:w-1/4">
-                                <p class="text-gray-600 w-full">Forms</p>
+                            <p class="text-gray-600">Forms</p>
 
-                                <div class="flex justify-between items-center">
-                                    <p class="px-4 py-1">Consent Form:</p>
-                                    <span v-if="confirmedConsentForm" @click="unConfirmConsent">
-                                        <i class="green far fa-check-square text-xl"></i>
-                                    </span>
-                                    <span v-else @click="confirmConsent">
-                                        <i class="red far fa-square text-xl"></i>
-                                    </span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <p class="px-4 py-1">Concussion Form:</p>
-                                    <span v-if="confirmedConcussionForm" @click="unConfirmConcussion">
-                                        <i class="green far fa-check-square text-xl"></i>
-                                    </span>
-                                    <span v-else @click="confirmConcussion">
-                                        <i class="red far fa-square text-xl"></i>
-                                    </span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <p class="px-4 py-1">Evaluation Form:</p>
-                                    <a v-if="confirmedEvaluationForm"
-                                       @click="unConfirmEvaluation">
-                                        <i class="green far fa-check-square text-xl"></i>
-                                    </a>
-                                    <span v-else @click="confirmEvaluation">
-                                        <i class="red far fa-square text-xl"></i>
-                                    </span>
-                                </div>
+                            <div class="flex flex-wrap w-full items-center">
 
+                                <div class="flex flex-col w-full justify-between md:w-2/5">
+
+                                    <div class="flex justify-between items-center">
+                                        <p class="px-4 py-1">Consent Form:</p>
+                                            <span v-if="confirmedConsentForm" @click="unConfirmConsent">
+                                        <i class="green far fa-check-square text-xl"></i>
+                                        </span>
+                                        <span v-else @click="confirmConsent">
+                                            <i class="red far fa-square text-xl"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="flex justify-between items-center">
+                                        <p class="px-4 py-1">Concussion Form:</p>
+                                        <span v-if="confirmedConcussionForm" @click="unConfirmConcussion">
+                                            <i class="green far fa-check-square text-xl"></i>
+                                        </span>
+                                        <span v-else @click="confirmConcussion">
+                                            <i class="red far fa-square text-xl"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="flex justify-between items-center">
+                                        <p class="px-4 py-1">Evaluation Form:</p>
+                                        <a v-if="confirmedEvaluationForm"
+                                           @click="unConfirmEvaluation">
+                                            <i class="green far fa-check-square text-xl"></i>
+                                        </a>
+                                        <span v-else @click="confirmEvaluation">
+                                            <i class="red far fa-square text-xl"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="flex justify-between items-center">
+                                        <p class="px-4 py-1">Form Uploaded:</p>
+                                        <a v-if="hasForm">
+                                            <i class="green far fa-check-square text-xl"></i>
+                                        </a>
+                                        <span v-else>
+                                        <i class="red far fa-square text-xl"></i>
+                                    </span>
+                                    </div>
+
+                                    </div>
+                                        <div class="w-full py-2 md:w-2/5 rounded ml-4 md:ml-8">
+                                            <physical-form :data="data" @formUploaded="resetPage"></physical-form>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 w-full">Exam Date:
+                                        <span class="text-gray-900">
+                                            {{ exam_date| moment("MM.DD.YYYY") }}
+                                        </span>
+                                    </p>
+
+                                    <p class="text-gray-600 w-full py-1">Restrictions:
+                                        <span v-if="restrictions !== null" class="text-gray-900">
+                                            {{ restrictions }}
+                                        </span>
+                                        <span v-else class="text-gray-500">
+                                            None
+                                        </span>
+                                    </p>
+                                    <p class="text-gray-600 w-full py-1">Notes:
+                                        <span v-if="notes !== null" class="text-gray-900">
+                                            {{ notes }}
+                                        </span>
+                                        <span v-else class="text-gray-500">None</span>
+                                    </p>
+                                    <div class="flex justify-start cursor-pointer pb-2 py-1">
+                                        <edit-button @clicked="getNames"></edit-button>
+                                        <delete-button @clicked="destroy"></delete-button>
+                                    </div>
+                                </div>
                             </div>
-<!--                                <div class="bg-blue-100 w-full md:w-1/2 lg:w-1/4">-->
-<!--                                    <physical-form :data="data"></physical-form>-->
-<!--                                </div>-->
-                            </div>
-                            <p class="text-gray-600 w-full py-1">Exam Date:
-                                <span class="text-gray-900">
-                                    {{ exam_date| moment("MM.DD.YYYY") }}
-                                </span>
-                            </p>
-
-                            <p class="text-gray-600 w-full py-1">Restrictions:
-                                <span v-if="restrictions !== null" class="text-gray-900">
-                                    {{ restrictions }}
-                                </span>
-                                <span v-else class="text-gray-500">
-                                    None
-                                </span>
-                            </p>
-
-                            <p class="text-gray-600 w-full py-1">Notes:
-                                <span v-if="notes !== null" class="text-gray-900">
-                                    {{ notes }}
-                                </span>
-                                <span v-else class="text-gray-500">None</span>
-
-                            </p>
-
-                        </div>
-                        <div class="flex justify-start cursor-pointer pb-2">
-                            <edit-button @clicked="getNames"></edit-button>
-                            <delete-button @clicked="destroy"></delete-button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -199,6 +219,8 @@
                 restrictions: this.data.restrictions,
                 notes: this.data.notes,
                 athlete_id: this.data.athlete_id,
+                form_path: this.data.form_path,
+                url: location.pathname +'/'+this.data.id,
 
                 confirmedConsentForm: this.data.consent_form === 1,
                 confirmedConcussionForm: this.data.concussion_form === 1,
@@ -223,6 +245,25 @@
         },
 
         computed: {
+
+            hasForm() {
+                if (this.data.form_path === null) {
+                    return false;
+                }
+                else {
+                    let formPath = this.data.form_path;
+                    let length = formPath.length;
+
+                    if (length > 25) {
+
+                        return true;
+
+                    } else {
+
+                        return false;
+                    }
+                }
+            },
 
             status() {
                 let forms =[
@@ -255,14 +296,22 @@
 
             expiration() {
                 let examination_date = new Date(this.exam_date);
+                let end_season = new Date(2019, 10, 5)
 
-                examination_date.setFullYear(examination_date.getFullYear(), examination_date.getMonth() + 12);
+                let expiration_date =
+                    examination_date.setFullYear(examination_date.getFullYear(), examination_date.getMonth() + 12);
 
                 let today = new Date();
 
-                if (examination_date > today) {
+                if  (expiration_date > today && expiration_date > end_season) {
 
                     this.expirationColor = '#00b300';
+
+                    return "Expires"
+
+                } else if (expiration_date > today && expiration_date < end_season) {
+
+                    this.expirationColor = '#fd6a02';
 
                     return "Expires"
 
@@ -282,6 +331,10 @@
         methods: {
             toggleRow() {
                 this.isExpanded = !this.isExpanded
+            },
+
+            resetPage() {
+                this.$forceUpdate();
             },
 
             confirmConsent() {
@@ -405,9 +458,5 @@
 
     .red {
         color: #cc0000;
-    }
-
-    .orange {
-        color: #fd6a02;
     }
 </style>
