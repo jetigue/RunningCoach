@@ -58,17 +58,7 @@
                             title: 'Form Uploaded Successfully'
                         });
                     })
-                        let toast = Vue.swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000
-                        });
-
-                        toast({
-                            type: 'success',
-                            title: 'Form Uploaded Successfully'
-                        });
+                    .catch(errors => console.log(errors))
 
                         const toasty = Vue.swal.mixin({
                             toast: true,
@@ -80,8 +70,7 @@
                         toasty({
                             type: 'error',
                             title: 'Form Must be a pdf and not exceed 1000kb.'
-                })
-                    .catch(errors => console.log(errors));
+                });
             }
         }
     }
