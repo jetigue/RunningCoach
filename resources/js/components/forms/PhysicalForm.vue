@@ -3,7 +3,7 @@
         <div class="upload-btn-wrapper">
             <button class="btn">Upload Physical</button>
             <form method="POST" enctype="multipart/form-data">
-                <input type="file" class="py-4" name="physical-form" accept=".pdf, .jpg, .png" @change="onChange">
+                <input type="file" class="py-4" name="physical-form" accept=".pdf" @change="onChange">
             </form>
         </div>
     </div>
@@ -18,7 +18,6 @@
         data() {
             return {
                 physicalForm: this.data.form_path,
-
             }
         },
 
@@ -46,8 +45,20 @@
 
                 axios.post(`/api/physicals/${this.data.id}/physical-form`, data)
                     .then(() => {
-
+                        this.$emit('formUploaded')
                         const toast = Vue.swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3500
+                        });
+
+                        toast({
+                            type: 'success',
+                            title: 'Form Uploaded Successfully'
+                        });
+                    })
+                        let toast = Vue.swal.mixin({
                             toast: true,
                             position: 'top-end',
                             showConfirmButton: false,
@@ -58,8 +69,19 @@
                             type: 'success',
                             title: 'Form Uploaded Successfully'
                         });
-                    })
-                    this.$emit('formUploaded');
+
+                        const toasty = Vue.swal.mixin({
+                            toast: true,
+                            position: 'center',
+                            showConfirmButton: true,
+                            confirmButtonColor: '#73000a'
+                        });
+
+                        toasty({
+                            type: 'error',
+                            title: 'Form Must be a pdf and not exceed 1000kb.'
+                })
+                    .catch(errors => console.log(errors));
             }
         }
     }

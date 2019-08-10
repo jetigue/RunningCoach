@@ -95,14 +95,9 @@
                                 <span>{{ exam_date | moment("add", "1 year") | moment("from", "now") }}</span>
                             </div>
 
-                            <div class="w-full md:w-1/2 lg:w-1/5 pl-4 md:pl-0 lg:text-center py-1">
-                                <div v-if="hasForm" class="green">
-                                    <a :href="url"><i class="text-xl far fa-file-pdf"></i><span class="text-xs">
-                                        Download Physical</span></a>
-                                </div>
-                                <div v-else class="red">
-                                    <i class="text-xl far fa-file-pdf"></i><span class="text-xs">
-                                        No Physical on File </span>
+                            <div class="w-full md:w-1/2 lg:w-1/5 pl-4 md:pl-0 lg:text-center pt-1">
+                                <div v-if="physicalUploaded" class="green">
+                                    <a :href="url" class="text-xl fas fa-file-download"></a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +145,7 @@
 
                                     <div class="flex justify-between items-center">
                                         <p class="px-4 py-1">Form Uploaded:</p>
-                                        <a v-if="hasForm">
+                                        <a v-if="physicalUploaded">
                                             <i class="green far fa-check-square text-xl"></i>
                                         </a>
                                         <span v-else>
@@ -159,8 +154,8 @@
                                     </div>
 
                                     </div>
-                                        <div class="w-full py-2 md:w-2/5 rounded ml-4 md:ml-8">
-                                            <physical-form :data="data" @formUploaded="resetPage"></physical-form>
+                                    <div class="w-full py-2 md:w-2/5 rounded ml-4 md:ml-8">
+                                       <physical-form :data="data" @formUploaded="resetPage"></physical-form>
                                         </div>
                                     </div>
                                     <p class="text-gray-600 w-full">Exam Date:
@@ -226,6 +221,8 @@
                 confirmedConcussionForm: this.data.concussion_form === 1,
                 confirmedEvaluationForm: this.data.evaluation_form === 1,
 
+                physicalUploaded: this.data.form_path != null,
+
                 statusColor: '',
                 expirationColor: '',
 
@@ -245,25 +242,6 @@
         },
 
         computed: {
-
-            hasForm() {
-                if (this.data.form_path === null) {
-                    return false;
-                }
-                else {
-                    let formPath = this.data.form_path;
-                    let length = formPath.length;
-
-                    if (length > 25) {
-
-                        return true;
-
-                    } else {
-
-                        return false;
-                    }
-                }
-            },
 
             status() {
                 let forms =[
@@ -334,7 +312,8 @@
             },
 
             resetPage() {
-                this.$forceUpdate();
+                this.physicalUploaded = true;
+                this.$emit('formChange');
             },
 
             confirmConsent() {

@@ -45,9 +45,9 @@
         components: { Physical, CreateButton, NewPhysical },
 
         data() {
-            return {
+            return {}
+        },
 
-            }
-        }
+        methods: {}
     });
 </script>

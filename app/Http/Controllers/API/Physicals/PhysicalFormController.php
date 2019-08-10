@@ -21,7 +21,7 @@ class PhysicalFormController extends Controller
     public function store(Physical $physical, Request $request)
     {
         request()->validate([
-            'physical-form' => 'required|file'
+            'physical-form' => 'required|file|max:1000'
         ]);
 
         $physical->update([
