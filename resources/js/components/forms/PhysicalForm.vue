@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import {AxiosError as error} from "axios";
+
     export default {
         name: "PhysicalForm",
 
@@ -58,8 +60,7 @@
                             title: 'Form Uploaded Successfully'
                         });
                     })
-                    .catch(errors => console.log(errors))
-
+                    .catch((errors) => {
                         const toasty = Vue.swal.mixin({
                             toast: true,
                             position: 'center',
@@ -69,8 +70,10 @@
 
                         toasty({
                             type: 'error',
-                            title: 'Form Must be a pdf and not exceed 1000kb.'
-                });
+                            title: 'Form Must be a pdf and not exceed 10 MB.'
+                        });
+                        console.log(errors);
+                    })
             }
         }
     }
