@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use App\Models\Athlete;
 use App\Models\Physical;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -36,4 +38,39 @@ class ManagePhysicalsTest extends TestCase
             ->assertSee($attributes['athlete_id'])
             ->assertSee($attributes['exam_date']);
     }
+
+    /** @test */
+    public function only_a_user_can_upload_a_physical()
+    {
+        $this->withExceptionhandling();
+
+        $this->json('POST', '/api/physicals/{physical}/physical-form')
+            ->assertStatus(401);
+    }
+
+    /** @test */
+    public function a_valid_physical_form_must_be_provided()
+    {
+        $this->withExceptionhandling()->signInCoach();
+
+        $this->json('POST', '/api/physicals/{physical}/physical-form', [
+            'physical-form' => 'not-a-file'
+        ])->assertStatus(422);
+    }
+
+    /** @test */
+    public function a_coach_can_upload_a_physical_form()
+    {
+        $this->withoutExceptionhandling();
+        $this->signInCoach();
+
+        Storage::fake('public');
+
+        $this->json('POST', 'api/physicals/{physical}/physical-form', [
+            'physical-form' => $file = UploadedFile::fake()->create('physical-form.pdf')
+        ]);
+
+        Storage::disk('public')->assertExists('physicals/' . $file->hashName());
+    }
+
 }

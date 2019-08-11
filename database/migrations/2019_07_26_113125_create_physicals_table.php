@@ -22,6 +22,7 @@ class CreatePhysicalsTable extends Migration
             $table->date('exam_date');
             $table->string('restrictions')->nullable();
             $table->text('notes')->nullable();
+            $table->string('form_path')->nullable();
             $table->timestamps();
 
             $table->foreign('athlete_id')->references('id')

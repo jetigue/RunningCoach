@@ -14,9 +14,6 @@
                     </span>
                 </a>
             </p>
-<!--            <filter-button class="hidden">-->
-<!--                <status-filter></status-filter>-->
-<!--            </filter-button>-->
         </div>
 
         <div class="table-container">
@@ -65,7 +62,7 @@
         data() {
             return {
                 dataSet: false,
-
+                items: [],
                 displayPhysicals: '',
 
             }
@@ -93,6 +90,8 @@
             refresh({data}) {
                 this.dataSet = data;
                 this.items = data.data;
+
+                window.scrollTo(0,0);
             },
 
             showPhysicals() {

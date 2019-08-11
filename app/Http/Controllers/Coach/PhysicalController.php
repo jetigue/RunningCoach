@@ -6,6 +6,7 @@ use App\Models\Physical;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PhysicalController extends Controller
 {
@@ -64,7 +65,7 @@ class PhysicalController extends Controller
      */
     public function show(Physical $physical)
     {
-        //
+        return Storage::disk('public')->download($physical->form_path);
     }
 
     /**
@@ -75,7 +76,7 @@ class PhysicalController extends Controller
      */
     public function edit(Physical $physical)
     {
-        //
+
     }
 
     /**

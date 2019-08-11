@@ -1,5 +1,5 @@
 <template>
-    <form action="/physicals" method="POST" id="newPhysical"
+    <form action="/physicals" method="POST" id="newPhysical" enctype="multipart/form-data"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -41,7 +41,7 @@
                     v-model="form.restrictions">
         </div>
 
-        <div class="mb-1">
+        <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.notes">Notes (optional)</label>
                 <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
@@ -72,7 +72,8 @@ export default {
                 athlete_id: '',
                 exam_date: '',
                 restrictions: '',
-                notes: ''
+                form_path: '',
+                notes: '',
             }),
 
             athletes: [],

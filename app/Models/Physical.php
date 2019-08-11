@@ -25,7 +25,8 @@ class Physical extends Model
         'evaluation_form',
         'exam_date',
         'restrictions',
-        'notes'
+        'notes',
+        'form_path'
     ];
 
 
