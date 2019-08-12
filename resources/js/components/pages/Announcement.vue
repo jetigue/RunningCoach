@@ -24,10 +24,10 @@
                 <p><a class="text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold" :href="link_1">{{ link_text_1 }}</a></p>
             </div>
             <div v-if="link_2 != null" class="py-1 pl-2">
-                <p><a class="text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold" :href="link_1">{{ link_text_1 }}</a></p>
+                <p><a class="text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold" :href="link_2">{{ link_text_2 }}</a></p>
             </div>
             <div v-if="link_3 != null" class="py-1 pl-2">
-                <p><a class="text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold" :href="link_1">{{ link_text_1 }}</a></p>
+                <p><a class="text-blue-600 hover:text-blue-700 hover:underline text-sm font-semibold" :href="link_3">{{ link_text_3 }}</a></p>
             </div>
         </div>
 
