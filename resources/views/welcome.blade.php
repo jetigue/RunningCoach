@@ -61,22 +61,12 @@
                 </header>
                 <section>
                     <p>
-                        Join us for the 11th Annual Longhorn 5K with proceeds benefiting the Longhorn Cross Country team! This year's race will be held along the banks of the Chattahoochee River at Chattahoochee Pointe Park.
-                    </p>
-                    <p class="py-2">
-                        Packet Pickup will be held on Friday August 9th from 11:00 am - 3:00 pm at North Georgia Running Co. in Cumming, GA, and at race day registration which will begin at 7:00am.
-                    </p>
-                    <p class="py-2">
-                        Awards to be given include Overall Male/Female and Masters Male/Female, and Age group awards. T-shirts are guaranteed to all runners registering by August 2nd.
+                        <span class="text-xl font-semibold">Thank You</span> to everyone who came out and supported our program by participating in the Longhorn 5k!
                     </p>
                     <div class="flex flex-wrap justify-around">
                         <a class="text-blue-600"
-                           href="https://runsignup.com/Race/GA/Suwanee/Longhorn5K">
-                            Online Registration
-                        </a>
-                        <a class="text-blue-600 hover:underline"
-                           href="/forms/longhorn5k/Longhorn5kRegistration2019.pdf">
-                            Registration Form
+                           href="https://runsignup.com/Race/Results/47756/#resultSetId-165993;perpage:5000">
+                            Longhorn 5k Results
                         </a>
                     </div>
                 </section>

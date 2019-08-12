@@ -10,19 +10,13 @@
     <div class="flex flex-wrap py-2 justify-between items-center">
         <div class="flex w-full lg:w-7/12">
             <div class="flex flex-col leading-normal">
-                <p class="">
-                    Join us for the 11th Annual Longhorn 5K with proceeds benefiting the Longhorn Cross Country team! This year's race will be held along the banks of the Chattahoochee River at Chattahoochee Pointe Park.</p>
-                    <p class="py-2">Packet Pickup will be held on Friday August 9th from 11:00 am - 3:00 pm at North Georgia Running Co. in Cumming, GA, and at race day registration which will begin at 7:00am.</p>
-                    <p class="py-2">Awards to be given include Overall Male/Female and Masters Male/Female, and Age group awards. T-shirts are guaranteed to all runners registering by August 2nd.
+                <p>
+                    <span class="text-xl font-semibold">Thank You</span> to everyone who came out and supported our program by participating in the Longhorn 5k!
                 </p>
-                <div class="flex flex-wrap justify-around py-2">
-                    <a class="text-blue-600 hover:underline w-full md:w-1/2 text-center"
-                        href="https://runsignup.com/Race/GA/Suwanee/Longhorn5K">
-                        Online Registration
-                    </a>
-                    <a class="text-blue-600 hover:underline w-full md:w-1/2 text-center"
-                        href="/forms/longhorn5k/LonghornRegistration2019.pdf">
-                        Registration Form
+                <div class="flex flex-wrap justify-around">
+                    <a class="text-blue-600"
+                       href="https://runsignup.com/Race/Results/47756/#resultSetId-165993;perpage:5000">
+                        Longhorn 5k Results
                     </a>
                 </div>
             </div>
@@ -40,6 +34,10 @@
     <div class="flex flex-col w-full lg:w-1/2 py-2">
         <p class="text-primary text-xl text-left">Past Results</p>
         <a class="text-blue-600 hover:underline"
+           href="https://runsignup.com/Race/Results/47756/#resultSetId-165993;perpage:5000">
+            2019 Longhorn 5k Results
+        </a>
+        <a class="text-blue-600 hover:underline"
            href="https://runsignup.com/Race/Results/47756/#resultSetId-126278">
            2018 Longhorn 5k Results
         </a>
@@ -47,7 +45,6 @@
            href="http://www.coolrunning.com/results/17/ga/Aug12_9thAnn_set1.shtml">
            2017 Longhorn 5k Results
         </a>
-
     </div>
 </div>
 
