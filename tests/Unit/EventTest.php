@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
 use Tests\TestCase;
-use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\TrackEvent;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -19,7 +19,7 @@ class EventTest extends TestCase
     {
         parent::setUp();
 
-        $this->event = factory(Event::class)->create();
+        $this->event = factory(TrackEvent::class)->create();
     }
 
     /** @test */

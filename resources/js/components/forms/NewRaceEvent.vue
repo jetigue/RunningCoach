@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/events" method="POST" id="newEvent"
+    <form action="/api/events" method="POST" id="newRaceEvent"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -68,13 +68,11 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Event Added Successfully'
+                        title: 'Race Event Added Successfully'
                     });
 
                     this.$emit('created', data),
                     this.resetForm()
-                    // this.form.name = '',
-                    // this.form.season_id = ''
                 })
 
                 .catch(errors => console.log(errors));

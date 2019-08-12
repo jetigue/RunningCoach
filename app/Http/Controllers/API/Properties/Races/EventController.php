@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\API\Properties\Races;
 
 use App\Models\Properties\Races\Event;
+use Exception;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class EventController extends Controller
 {
@@ -22,7 +25,7 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Event[]|Collection
      */
     public function index()
     {
@@ -34,13 +37,13 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
         $event = request()->validate([
-            'name' => 'required|string|min:3',
+            'name' => 'required|string|min:2',
             'meters' => 'required|integer'
         ]);
 
@@ -50,27 +53,16 @@ class EventController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Properties\Races\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\Races\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Event $event
+     * @return Response
      */
     public function update(Request $request, Event $event)
     {
         request()->validate([
-            'name' => 'required|min:3',
+            'name' => 'required|min:2',
             'meters' => 'required|integer'
         ]);
 
@@ -82,8 +74,9 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Properties\Races\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param Event $event
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Event $event)
     {

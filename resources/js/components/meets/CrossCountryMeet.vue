@@ -2,19 +2,19 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/track-meets/slug" method="POST" id="editTrackMeet" @submit.prevent="update"
+                <form action="api/cross-country-meets/id" method="POST" id="editCrossCountryMeet" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-grey-dark px-4">
+                        <div class="w-full text-smoke-800 px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Meet Name</label>
                             <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
@@ -28,7 +28,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.meet_date">
                                 Date
@@ -40,21 +40,7 @@
                         <input class="form-input" id="form.meet_date" type="date" v-model="form.meet_date">
                     </div>
 
-                    <div class="mb-3">
-                        <div class="flex justify-between content-end">
-                            <label class="form-label">Season</label>
-                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
-                                v-text="form.errors.get('season_id')">
-                            </span>
-                        </div>
-                        <select class="form-input" name="season_id" v-model="form.season_id" required>
-                            <option v-for="season in seasons" :key="season.id" :value="season.id">
-                                {{ season.name }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Venue</label>
                             <span id="venueHelp" class="form-help" v-if="form.errors.has('venue_id')"
@@ -68,7 +54,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Host</label>
                             <span id="hostHelp" class="form-help" v-if="form.errors.has('host_id')"
@@ -82,7 +68,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Timing Method</label>
                             <span id="timingHelp" class="form-help" v-if="form.errors.has('timing_method_id')"
@@ -110,10 +96,10 @@
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
-                                <a :href="'/track-meets/'+this.data.slug">{{meetName }}</a>
+                            <div class="text-gray-700 w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
+                                <a :href="'/cross-country-meets/'+this.data.slug">{{meetName }}</a>
                             </div>
-                            <div class="text-grey-darker py-1 pl-4 lg:p-0">
+                            <div class="text-gray-700 py-1 pl-4 lg:p-0">
                                 {{ meetDate | moment("MMMM Do, YYYY") }}
                             </div>
                         </div>
@@ -121,12 +107,6 @@
                     </div>
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
-
-                            <p class="text-grey w-full py-1">Season:
-                                <span class="text-tertiary">
-                                    {{ season }}
-                                </span>
-                            </p>
                             <p class="text-grey w-full py-1">Venue:
                                 <span class="text-tertiary">
                                     {{ venue }}
@@ -166,14 +146,12 @@
                 id: this.data.id,
                 meetName: this.data.name.name,
                 meetDate: this.data.meet_date,
-                season: this.data.season.name,
                 host: this.data.host.name,
                 venue: this.data.venue.name,
                 timing: this.data.timing.name,
-                path: '/track-meets/' +this.id,
+                path: '/cross-country-meets/' +this.id,
 
                 meet_name_id: this.data.meet_name_id,
-                season_id: this.data.season_id,
                 host_id: this.data.host_id,
                 venue_id: this.data.venue_id,
                 timing_method_id: this.data.timing_method_id,
@@ -181,7 +159,6 @@
                 form: new Form({
                     meet_name_id: this.data.meet_name_id,
                     meet_date: this.data.meet_date,
-                    season_id: this.data.season_id,
                     host_id: this.data.host_id,
                     venue_id: this.data.venue_id,
                     timing_method_id: this.data.timing_method_id
@@ -192,7 +169,6 @@
                 hosts: [],
                 venues: [],
                 timings: [],
-                seasons: []
             }
         },
 
@@ -203,14 +179,13 @@
 
             update() {
                 this.form
-                    .patch('/api/trackMeets/' + this.data.slug)
+                    .patch('/api/cross-country-meets/' + this.data.slug)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
                         this.meetDate = this.form.meet_date;
                         this.host = this.hosts.find(host => host.id === this.form.host_id).name;
                         this.venue = this.venues.find(venue => venue.id === this.form.venue_id).name;
                         this.timing = this.timings.find(timing => timing.id === this.form.timing_method_id).name;
-                        this.season = this.seasons.find(season => season.id === this.form.season_id).name
 
                         this.editing = false;
                         this.isExpanded = false;
@@ -218,7 +193,6 @@
                          if (
                             this.meetName != this.data.name.name ||
                             this.meetDate != this.data.meetDate ||
-                            this.season != this.data.season.name ||
                             this.venue != this.data.venue.name ||
                             this.host != this.data.host.name ||
                             this.timing != this.data.timing.name)
@@ -232,7 +206,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'Track Meet Updated'
+                                    title: 'Cross Country Meet Updated'
                                 });
                             }
                     })
@@ -243,15 +217,14 @@
             },
 
             destroy() {
-                axios.delete('api/trackMeets/' + this.data.slug);
+                axios.delete('api/cross-country-meets/' + this.data.slug);
 
-                this.$emit('deleted', this.data.slug);
+                this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
                 this.form.meet_name_id = this.meet_name_id,
                 this.form.meet_date = this.meetDate,
-                this.form.season_id = this.season_id,
                 this.form.host_id = this.host_id,
                 this.form.venue_id = this.venue_id,
                 this.form.timing_method_id = this.timing_method_id,
@@ -266,11 +239,7 @@
                 }
 
                 function getMeetNames() {
-                    return axios.get('/api/meetNames?track=1')
-                }
-
-                function getSeasonNames() {
-                    return axios.get('/api/seasons?track=1')
+                    return axios.get('/api/meetNames?season=cross-country')
                 }
 
                 function getTimingMethods() {
@@ -278,26 +247,23 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/venues?track=1')
+                    return axios.get('/api/venues?season=cross-country')
                 }
 
                 axios.all([
                     getHostNames(),
                     getMeetNames(),
-                    getSeasonNames(),
                     getTimingMethods(),
                     getVenueNames(),
                 ])
                     .then(axios.spread((
                         hostsResponse,
                         namesResponse,
-                        seasonsResponse,
                         timingsResponse,
                         venuesResponse
                     ) => {
                         this.hosts = hostsResponse.data;
                         this.names = namesResponse.data;
-                        this.seasons = seasonsResponse.data;
                         this.timings = timingsResponse.data;
                         this.venues = venuesResponse.data;
                     }));

@@ -45,13 +45,14 @@ $factory->define(Event::class, function (Faker $faker) {
             '1 Mile',
             '1600 Meters',
             '2 Mile',
-            '3200 Meters'
+            '3200 Meters',
+            '5k'
         ));
 
     return [
         'name' => $name,
         'meters' => $faker->randomElement($array = array(
-            1609, 1600, 3200, 3218
+            1609, 1600, 3200, 3218, 5000
         )),
     ];
 });

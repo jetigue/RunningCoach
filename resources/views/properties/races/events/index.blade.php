@@ -2,7 +2,7 @@
 
 @section('content')
     @component('components.userTables')
-        <events :data="{{ $events }}"></events>
+        <race-events :data="{{ $events }}"></race-events>
     @endcomponent
 @endsection
 

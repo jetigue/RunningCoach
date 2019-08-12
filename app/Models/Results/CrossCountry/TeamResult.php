@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Models\Results\Track;
+namespace App\Models\Results\CrossCountry;
 
-use App\Filters\TrackTeamResultFilter;
-use App\Models\Meets\TrackMeet;
+use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Races\Division;
-use App\Models\Results\Track\Result;
-use App\Models\Properties\Races\Level;
-use App\Models\Properties\Races\Gender;
-use Illuminate\Database\Eloquent\Builder;
+use App\Models\Properties\Races\Event;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TeamResult extends Model
 {
@@ -18,7 +16,7 @@ class TeamResult extends Model
      *
      * @var string
      */
-    protected $table = 'track_team_results';
+    protected $table = 'cross_country_team_results';
 
     /**
      * Fillable fields for a Season
@@ -26,8 +24,9 @@ class TeamResult extends Model
      * @var array
      */
     protected $fillable = [
-        'track_meet_id',
+        'cross_country_meet_id',
         'division_id',
+        'event_id',
         'place',
         'number_teams',
         'points'
@@ -58,15 +57,15 @@ class TeamResult extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function trackMeet()
+    public function crossCountryMeet()
     {
-        return $this->belongsTo(TrackMeet::class, 'track_meet_id');
+        return $this->belongsTo(CrossCountryMeet::class, 'cross_country_meet_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function division()
     {
@@ -74,11 +73,19 @@ class TeamResult extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return BelongsTo
+     */
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_id');
+    }
+
+    /**
+     * @return HasMany
      */
     public function results()
     {
-        return $this->hasMany(Result::class, 'track_team_result_id');
+        return $this->hasMany(Result::class, 'cross_country_team_result_id');
     }
 
     /**
@@ -94,10 +101,10 @@ class TeamResult extends Model
      * Apply all relevant name filters.
      *
      * @param Builder $query
-     * @param TrackTeamResultFilter $filters
+     * @param CrossCountryTeamResultFilter $filters
      * @return Builder
      */
-    public function scopeFilter($query, TrackTeamResultFilter $filters)
+    public function scopeFilter($query, CrossCountryTeamResultFilter $filters)
     {
         return $filters->apply($query);
     }

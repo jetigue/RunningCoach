@@ -186,7 +186,7 @@ class ManageTeamEventsTest extends TestCase
 
         $originalTeamEvent = [
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -194,7 +194,7 @@ class ManageTeamEventsTest extends TestCase
         ];
 
         $revisedTeamEvent = [
-            'name' => 'Revised Event Name',
+            'name' => 'Revised TrackEvent Name',
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
@@ -216,7 +216,7 @@ class ManageTeamEventsTest extends TestCase
 
         $originalTeamEvent = [
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -224,7 +224,7 @@ class ManageTeamEventsTest extends TestCase
         ];
 
         $revisedTeamEvent = [
-            'name' => 'Revised Event Name',
+            'name' => 'Revised TrackEvent Name',
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
@@ -246,7 +246,7 @@ class ManageTeamEventsTest extends TestCase
 
         factory(TeamEvent::class)->create([
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -254,7 +254,7 @@ class ManageTeamEventsTest extends TestCase
         ]);
 
         $revisedTeamEvent = [
-            'name' => 'Revised Event Name',
+            'name' => 'Revised TrackEvent Name',
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
@@ -266,7 +266,7 @@ class ManageTeamEventsTest extends TestCase
 
         $this->assertDatabaseHas('team_events', [
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -281,7 +281,7 @@ class ManageTeamEventsTest extends TestCase
 
         factory(TeamEvent::class)->create([
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -289,7 +289,7 @@ class ManageTeamEventsTest extends TestCase
         ]);
 
         $revisedTeamEvent = [
-            'name' => 'Revised Event Name',
+            'name' => 'Revised TrackEvent Name',
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
@@ -301,7 +301,7 @@ class ManageTeamEventsTest extends TestCase
 
         $this->assertDatabaseHas('team_events', [
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -314,7 +314,7 @@ class ManageTeamEventsTest extends TestCase
     {
         factory(TeamEvent::class)->create([
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
@@ -322,7 +322,7 @@ class ManageTeamEventsTest extends TestCase
         ]);
 
         $revisedTeamEvent = [
-            'name' => 'Revised Event Name',
+            'name' => 'Revised TrackEvent Name',
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
@@ -334,7 +334,7 @@ class ManageTeamEventsTest extends TestCase
 
         $this->assertDatabaseHas('team_events', [
             'id' => 1,
-            'name' => 'Original Event Name',
+            'name' => 'Original TrackEvent Name',
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',

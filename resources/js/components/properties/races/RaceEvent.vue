@@ -1,15 +1,15 @@
 <template>
     <div class="">
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
+        <div v-if="editing" class="p-3 border-b border-gray-100">
             <div class="w-full">
                 <form action="api/events/id" method="POST" id="editEvent" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-grey-dark px-4">
+                        <div class="w-full text-smoke-800 px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
@@ -53,13 +53,11 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
-                <div class="table-row flex justify-between hover:bg-white">
+            <div class="flex flex-col border-b border-gary-100 hover:bg-gray-100">
+                <div class="table-row flex justify-between hover:gray-100">
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
-                        <!-- <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="meters">
-                        </div> -->
                     </div>
                     <expand-button @toggleRow="toggleRow" class=""></expand-button>
                 </div>
@@ -101,7 +99,7 @@
 
             update() {
                 this.form
-                    .patch('/api/events/' + this.data.id)
+                    .patch('/api/events/' + this.data.slug)
                     .then(data => {
                         this.name = this.form.name;
                         this.meters = this.form.meters;
@@ -120,7 +118,7 @@
 
                             toast({
                                 type: 'success',
-                                title: 'Event Updated'
+                                title: 'Race Event Updated'
                             });
                         }
                     })
@@ -131,9 +129,9 @@
             },
 
             destroy() {
-                axios.delete('api/events/' + this.data.id);
+                axios.delete('/api/events/' + this.data.slug);
 
-                this.$emit('deleted', this.data.id);
+                this.$emit('deleted', this.data.slug);
             },
 
             resetForm() {

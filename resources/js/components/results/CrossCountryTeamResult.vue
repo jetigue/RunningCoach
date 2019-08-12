@@ -2,19 +2,23 @@
     <div>
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="/team-results/id" method="POST" id="editTrackTeamResult" @submit.prevent="update"
+                <form action="/cross-country-meets/team-results/id"
+                      method="POST"
+                      id="editCrossCountryTeamResult"
+                      @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div class="flex items-center mb-3">
+                      class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+                    <div class="flex items-center mb-1">
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-grey-dark px-4">
+                        <div class="w-full text-smoke-700 px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Division</label>
                             <span id="divisionHelp" class="form-help" v-if="form.errors.has('division_id')"
@@ -28,7 +32,21 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label">Event</label>
+                            <span id="eventsHelp" class="form-help" v-if="form.errors.has('event_id')"
+                                  v-text="form.errors.get('event_id')">
+                            </span>
+                        </div>
+                        <select class="form-input" name="event_id" v-model="form.event_id" required>
+                            <option v-for="event in events" :key="event.id" :value="event.id">
+                                {{ event.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.place">Place</label>
                             <span id="placeHelp" class="form-help" v-if="form.errors.has('place')"
@@ -42,7 +60,7 @@
                                v-model="form.place" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.number_teams">Number of Teams</label>
                             <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
@@ -56,7 +74,7 @@
                                v-model="form.number_teams" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.points">Points</label>
                             <span id="pointsHelp" class="form-help" v-if="form.errors.has('points')"
@@ -80,25 +98,29 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-gray-100">
+            <div class="flex flex-col border-b border-gray-100 hover:bg-gray-100">
                 <div class="flex flex-col hover:bg-gray-100">
-                    <div class="flex p-2 items-center">
-                        <div class="text-grey-darker flex w-3/4 md:w-5/6">
-                            <div class="md:w-1/2">
+                    <div class="flex justify-between p-2 items-center">
+                        <div class="text-gray-700 flex w-11/12">
+                            <div class="w-5/6 md:w-1/3">
                                 {{ division }}
                             </div>
-                            <div class="hidden md:flex md:w-1/4">
+                            <div class="hidden md:flex md:w-1/6 text-center">
+                                {{ event }}
+                            </div>
+                            <div class="hidden md:flex md:w-1/6">
                                 {{ place }}/{{ number_teams }}
                             </div>
-                            <div class="hidden md:flex md:w-1/4">
+                            <div class="hidden md:flex md:w-1/6">
                                 {{ points }}
                             </div>
+                            <div class="w-1/6 text-center">
+                                <a :href="url" class="text-blue-700">
+                                    Results
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex flex-1 justify-between md:pl-4">
-                            <a :href="url">
-                                <i class="text-gray-800 text-lg fas fa-user-clock"></i>
-                            </a>
-
+                        <div>
                             <expand-button @toggleRow="toggleRow" class=""></expand-button>
                         </div>
                     </div>
@@ -144,6 +166,7 @@
 
                 id: this.data.id,
                 division: this.data.division.name,
+                event: this.data.event.name,
                 place: this.data.place,
                 number_teams: this.data.number_teams,
                 points: this.data.points,
@@ -154,12 +177,14 @@
 
                 form: new Form({
                     division_id: this.data.division_id,
+                    event_id: this.data.event_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
                     points: this.data.points
                 }),
 
                 divisions: [],
+                events: []
             }
         },
 
@@ -170,9 +195,10 @@
 
             update() {
                 this.form
-                    .patch(location.pathname + '/team-results/' +this.data.id)
+                    .patch('/api'+location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
+                        this.event = this.events.find(event => event.id === this.form.event_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
                         this.points = this.form.points;
@@ -183,6 +209,7 @@
 
                          if (
                             this.division != this.data.division.name ||
+                            this.event != this.data.event.name ||
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
                             this.points != this.data.points)
@@ -196,7 +223,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'Track Results Updated'
+                                    title: 'Team Result Updated'
                                 });
                             }
                     })
@@ -207,13 +234,14 @@
             },
 
             destroy() {
-                axios.delete('teamResults/' + this.data.id);
+                axios.delete('/api'+location.pathname + '/team-results/' +this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
                 this.form.division_id = this.division_id,
+                this.form.event_id = this.event_id,
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
                 this.form.points = this.points,
@@ -227,14 +255,24 @@
                     return axios.get('/api/divisions')
                 }
 
+                function getEventNames() {
+                    return axios.get('/api/events')
+                }
+
                 axios.all([
-                    getDivisionNames()
+                    getDivisionNames(),
+                    getEventNames()
                 ])
                     .then(axios.spread((
-                        divisionsResponse
+                        divisionsResponse,
+                        eventsResponse
                     ) => {
                         this.divisions = divisionsResponse.data;
-                    }));
+                        this.events = eventsResponse.data;
+                    }))
+                    .catch(errors => {
+                        console.log(errors)
+                    });
             }
         }
     }

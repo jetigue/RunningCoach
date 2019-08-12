@@ -1,10 +1,7 @@
 <template>
     <div class="flex flex-col">
         <div class="flex justify-between items-baseline">
-            <header class="font-light text-2xl pb-1 text-primary">Events</header>
-            <filter-button class="hidden">
-
-            </filter-button>
+            <header class="font-light text-2xl pb-1 text-primary">Race Events</header>
         </div>
         <div class="table-container">
                 <div class="table-header">
@@ -14,14 +11,14 @@
                         </div>
                     </div>
                     <div class="">
-                        <create-button title="Create Meet Venue">
-                            <new-event @created="add"></new-event>
+                        <create-button title="Create New Track Event">
+                            <new-race-event @created="add"></new-race-event>
                         </create-button>
                     </div>
                 </div>
             <div v-if="records">
                 <div v-for="(event, index) in items" :key="event.id">
-                    <event :data="event" @deleted="remove(index)"></event>
+                    <race-event :data="event" @deleted="remove(index)"></race-event>
                 </div>
             </div>
 
@@ -34,14 +31,14 @@
 
 <script>
     import Collection from '../../../Collection';
-    import Event from './Event';
+    import RaceEvent from './RaceEvent';
     import CreateButton from '../../buttons/CreateButton';
-    import NewEvent from '../../forms/NewEvent';
+    import NewRaceEvent from '../../forms/NewRaceEvent';
 
     export default Collection.extend({
         props: ['data'],
 
-        components: { Event, CreateButton, NewEvent },
+        components: { RaceEvent, CreateButton, NewRaceEvent },
 
         data() {
             return {

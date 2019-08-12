@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Models\Results\CrossCountry;
+
+use App\Models\Athlete;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Result extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'cross_country_results';
+
+    /**
+     * Fillable fields for a Season
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'cross_country_meet_result_id',
+        'athlete_id',
+        'place',
+        'total_seconds',
+        'milliseconds',
+        'points'
+    ];
+
+    /**
+     * Save total seconds on create and update
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($result) {
+
+            $result->total_seconds = ($result->minutes * 60 + $result->seconds);
+
+        });
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function teamResult()
+    {
+        return $this->belongsTo(TeamResult::class, 'cross_country_team_result_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function athlete()
+    {
+        return $this->belongsTo(Athlete::class, 'athlete_id');
+    }
+
+    /**
+     * @return string
+     */
+    function getMillisecondAttribute() {
+        return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    }
+
+
+//    /**
+//     * Apply all relevant name filters.
+//     *
+//     * @param Builder $query
+//     * @param CrossCountryResultFilter $filters
+//     * @return Builder
+//     */
+//    public function scopeFilter($query, CrossCountryResultFilter $filters)
+//    {
+//        return $filters->apply($query);
+//    }
+}

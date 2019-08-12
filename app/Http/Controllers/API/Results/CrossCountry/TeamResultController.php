@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\API\Results\Track;
+namespace App\Http\Controllers\API\Results\CrossCountry;
 
-use App\Models\Results\Track\TeamResult;
+use App\Models\Meets\CrossCountryMeet;
+use App\Models\Results\CrossCountry\TeamResult;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Meets\TrackMeet;
 use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class TeamResultController extends Controller
 {
@@ -15,62 +17,68 @@ class TeamResultController extends Controller
      *
      * @return Response
      */
-    public function index($filters)
+    public function index()
     {
-        $teamResults = TeamResult::filter($filters)
-            ->with('division', 'trackMeet')
-            ->get();
+        $teamResults = TeamResult::with('division', 'crossCountryMeet')->get();
 
         return $teamResults;
     }
 
-
-    public function store(TrackMeet $trackMeet)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @param CrossCountryMeet $crossCountryMeet
+     * @return Model
+     */
+    public function store(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         request()->validate([
             'division_id'   => 'required|integer',
+            'event_id'      => 'required|integer',
             'place'         => 'required|integer|lte:number_teams',
             'number_teams'  => 'required|integer|gte:place',
             'points'        => 'nullable|integer',
         ]);
 
-
-        $teamResult = $trackMeet->addTeamResult(request([
+        $teamResult = $crossCountryMeet->addTeamResult(request([
             'division_id',
+            'event_id',
             'place',
             'number_teams',
             'points'
         ]));
 
-        return $teamResult->load('division');
-
+        return $teamResult->load('division', 'event');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param TrackMeet $trackMeet
+     * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @return Response
      */
-    public function show(TrackMeet $trackMeet, TeamResult $teamResult)
+    public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
 
-        return view('results.track.teamResults.show', compact('teamResult'));
+        return view('results.crossCountry.teamResults.show', compact('teamResult'));
 
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param TeamResult $teamResult
      * @return Response
+     * @throws ValidationException
      */
-    public function update(Request $request, TrackMeet $trackMeet, TeamResult $teamResult)
+    public function update(Request $request, CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         $this->validate($request, [
             'division_id' => 'required|integer',
+            'event_id' => 'required|integer',
             'place' => 'required|integer',
             'number_teams' => 'required|integer',
             'points' => 'nullable|integer',
@@ -78,6 +86,7 @@ class TeamResultController extends Controller
 
         $teamResult->update(request([
             'division_id',
+            'event_id',
             'place',
             'number_teams',
             'points'
@@ -86,13 +95,14 @@ class TeamResultController extends Controller
         return response()->json($teamResult, 200);
     }
 
-
     /**
+     * Remove the specified resource from storage.
+     *
      * @param TeamResult $teamResult
-     * @return \Illuminate\Http\JsonResponse
+     * @return Response
      * @throws \Exception
      */
-    public function destroy(TeamResult $teamResult)
+    public function destroy(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         $teamResult->delete();
 
