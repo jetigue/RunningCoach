@@ -44,10 +44,9 @@
 
             <div class="w-full md:w-1/2 lg:w-full p-2 md:px-2">
                 <div class=" md:h-full lg:h-48 p-2">
-                    <img src="/images/spirit_wear/BoathouseJacket.jpg" alt="Boathouse Jacket">
+                    <img src="/images/yourpie.jpg" alt="YourPie benefit Night">
                 </div>
             </div>
-
 
         </div>
 
