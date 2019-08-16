@@ -10,6 +10,8 @@ use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Gender;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TeamResult extends Model
 {
@@ -44,7 +46,7 @@ class TeamResult extends Model
 
             $teamResult->slug = str_slug(
                 $teamResult->division->gender->name . '-' .
-                $teamResult->division->level->name . '-'
+                $teamResult->division->level->name
             );
         });
     }
@@ -58,7 +60,7 @@ class TeamResult extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function trackMeet()
     {
@@ -66,7 +68,7 @@ class TeamResult extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function division()
     {
@@ -74,7 +76,7 @@ class TeamResult extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function results()
     {

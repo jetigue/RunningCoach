@@ -5,8 +5,10 @@ namespace App\Http\Controllers\API\Results\Track;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\ValidationException;
 
 class ResultController extends Controller
 {
@@ -22,8 +24,8 @@ class ResultController extends Controller
 
 
     /**
-     * @param \App\Models\Meets\TrackMeet  $trackMeet
-     * @param \App\Models\Results\Track\TeamResult  $teamResult
+     * @param TrackMeet $trackMeet
+     * @param TeamResult $teamResult
      * @return mixed
      */
     public function store(TrackMeet $trackMeet, TeamResult $teamResult)
@@ -38,8 +40,6 @@ class ResultController extends Controller
             'milliseconds'  => 'integer',
             'points'        => 'nullable|integer',
         ]);
-
-
 
         $result = $teamResult->addResults(request([
             'athlete_id',
@@ -71,8 +71,8 @@ class ResultController extends Controller
      * @param TrackMeet $trackMeet
      * @param TeamResult $teamResult
      * @param Result $result
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return JsonResponse
+     * @throws ValidationException
      */
     public function update(Request $request, TrackMeet $trackMeet, TeamResult $teamResult, Result $result)
     {
@@ -104,7 +104,7 @@ class ResultController extends Controller
      * @param TrackMeet $trackMeet
      * @param TeamResult $teamResult
      * @param Result $result
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      * @throws \Exception
      */
     public function destroy(TrackMeet $trackMeet, TeamResult $teamResult, Result $result)

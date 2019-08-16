@@ -5,15 +5,18 @@ namespace App\Http\Controllers\API\Results\CrossCountry;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class ResultController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -23,8 +26,9 @@ class ResultController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Database\Eloquent\Model
+     * @param CrossCountryMeet $crossCountryMeet
+     * @param TeamResult $teamResult
+     * @return Model
      */
     public function store(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
@@ -33,18 +37,17 @@ class ResultController extends Controller
             'place'         => 'required|integer',
             'minutes'       => 'required|integer',
             'seconds'       => 'required|integer',
-            'milliseconds'  => 'integer',
+            'milliseconds'  => 'integer|nullable',
             'points'        => 'nullable|integer',
         ]);
 
-        $result = $teamResult->create(request([
+        $result = $teamResult->addResults(request([
             'athlete_id',
             'place',
-//            'minutes',
-//            'seconds',
             'milliseconds',
-            'points'
-        ]));
+            'points',
+            'total_seconds' => request('minutes') * 60 + request('seconds')
+            ]));
 
         return $result->load('athlete');
     }
@@ -52,8 +55,8 @@ class ResultController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Results\CrossCountry\Result  $result
-     * @return \Illuminate\Http\Response
+     * @param Result $result
+     * @return Response
      */
     public function show(Result $result)
     {
@@ -63,23 +66,47 @@ class ResultController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Results\CrossCountry\Result  $result
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param CrossCountryMeet $crossCountryMeet
+     * @param TeamResult $teamResult
+     * @param Result $result
+     * @return Response
+     * @throws ValidationException
      */
-    public function update(Request $request, Result $result)
+    public function update(Request $request, CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $result)
     {
-        //
+        $this->validate($request, [
+            'athlete_id'    => 'required|integer',
+            'minutes'       => 'integer|max:59',
+            'seconds'       => 'integer|max:59',
+            'milliseconds'  => 'integer|nullable',
+            'place'         => 'required|integer',
+            'points'        => 'nullable|integer',
+        ]);
+
+        $result->update(request([
+            'athlete_id',
+            'milliseconds',
+            'place',
+            'points'
+        ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds'),]);
+
+        return response()->json($result, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Results\CrossCountry\Result  $result
-     * @return \Illuminate\Http\Response
+     * @param CrossCountryMeet $crossCountryMeet
+     * @param TeamResult $teamResult
+     * @param Result $result
+     * @return Response
+     * @throws \Exception
      */
-    public function destroy(Result $result)
+    public function destroy(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $result)
     {
-        //
+        $result->delete();
+
+        return response()->json(null, 204);
     }
 }

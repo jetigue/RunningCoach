@@ -64,6 +64,7 @@ Vue.component('physicals', require('./components/physicals/Physicals').default);
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);
 Vue.component('cross-country-team-results', require('./components/results/CrossCountryTeamResults').default);
 Vue.component('track-results', require('./components/results/TrackResults').default);
+Vue.component('cross-country-results', require('./components/results/CrossCountryResults').default);
 
 // Team
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);

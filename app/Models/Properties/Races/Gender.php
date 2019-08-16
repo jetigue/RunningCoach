@@ -4,6 +4,7 @@ namespace App\Models\Properties\Races;
 
 use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Gender extends Model
 {
@@ -33,6 +34,9 @@ class Gender extends Model
         return '/genders/' . $this->id;
     }
 
+    /**
+     * @return HasMany
+     */
     public function divisions()
     {
         return $this->hasMany(Division::class);

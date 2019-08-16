@@ -25,6 +25,7 @@ Route::get('/track-meets/{trackMeet}', 'Results\Track\TeamResultController@index
 
 Route::resource('track-meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController');
 Route::resource('track-meets/{trackMeet}/team-results/{teamResult}/results', 'API\Results\Track\ResultController');
+
 Route::resource('cross-country-meets/{crossCountryMeet}/team-results', 'API\Results\CrossCountry\TeamResultController');
 Route::resource('cross-country-meets/{crossCountryMeet}/team-results/{teamResult}/results',
     'API\Results\CrossCountry\ResultController');
@@ -79,7 +80,7 @@ Route::apiResources([
 
     // Results
 //    'track-meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController'
-//    'cross-country-meets/teamResults' => 'API\Results\CrossCountry\TeamResultController',
+//    '/api/cross-country-meets/{crossCountryMeet}/team-results' => 'API\Results\CrossCountry\TeamResultController',
 //    'track-meets/teamResults' => 'API\Results\Track\TeamResultController'
 ]);
 

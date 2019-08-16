@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
-            <div class="w-full">
+        <div v-if="editing" class="p-3 border-b border-gray-100">
+            <div class="w-full md:w-1/2 mx-auto">
                 <form action="/cross-country-meets/team-results/id"
                       method="POST"
                       id="editCrossCountryTeamResult"
@@ -13,7 +13,7 @@
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-smoke-700 px-4">
+                        <div class="w-full text-gray-700 px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
@@ -98,18 +98,18 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-gray-100 hover:bg-gray-100">
+            <div class="flex flex-col border-b border-gray-200 hover:bg-gray-100">
                 <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex justify-between p-2 items-center">
-                        <div class="text-gray-700 flex w-11/12">
-                            <div class="w-5/6 md:w-1/3">
+                        <div class="text-black flex w-11/12">
+                            <div class="w-7/12 md:w-1/3">
                                 {{ division }}
                             </div>
                             <div class="hidden md:flex md:w-1/6 text-center">
                                 {{ event }}
                             </div>
                             <div class="hidden md:flex md:w-1/6">
-                                {{ place }}/{{ number_teams }}
+                                {{ place_w_suffix }}
                             </div>
                             <div class="hidden md:flex md:w-1/6">
                                 {{ points }}
@@ -127,24 +127,24 @@
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
 
-                            <p class="text-grey w-full py-1">Place:
-                                <span class="text-tertiary">
-                                    {{ place }}
+                            <p class="text-gray-600 w-full py-1">Place:
+                                <span class="text-gray-800">
+                                    {{ place_w_suffix }}
                                 </span>
                             </p>
-                            <p class="text-grey w-full py-1">Number of Teams:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Number of Teams:
+                                <span class="text-gray-800">
                                     {{ number_teams }}
                                 </span>
                             </p>
-                            <p class="text-grey w-full py-1">Points:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Points:
+                                <span class="text-gray-800">
                                     {{ points }}
                                 </span>
                             </p>
 
                         </div>
-                        <div class="flex justify-start cursor-pointer pb-2">
+                        <div v-if="isCoach" class="flex justify-start cursor-pointer pb-2">
                             <edit-button @clicked="getNames"></edit-button>
                             <delete-button @clicked="destroy"></delete-button>
                         </div>
@@ -156,7 +156,9 @@
 </template>
 
 <script>
+    import {authMixin}from '../../mixins/authMixin';
     export default {
+        mixins: [authMixin],
         props: ['data'],
 
         data() {
@@ -188,6 +190,26 @@
             }
         },
 
+        computed: {
+            place_w_suffix: function ordinal_suffix_of() {
+                let i = this.place;
+
+                let j = i % 10,
+                    k = i % 100;
+                if (j == 1 && k != 11) {
+                    return i + "st";
+                }
+                if (j == 2 && k != 12) {
+                    return i + "nd";
+                }
+                if (j == 3 && k != 13) {
+                    return i + "rd";
+                }
+                return i + "th";
+
+            }
+        },
+
         methods: {
             toggleRow() {
                 this.isExpanded = !this.isExpanded
@@ -195,7 +217,7 @@
 
             update() {
                 this.form
-                    .patch('/api'+location.pathname + '/team-results/' +this.data.id)
+                    .patch(location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
                         this.event = this.events.find(event => event.id === this.form.event_id).name;

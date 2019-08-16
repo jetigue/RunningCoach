@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script charset="utf-8">
+        window.App = {!! json_encode([
+            'isCoach' => Auth::check() && Auth::user()->role->slug === 'coach',
+            'isAdmin' => Auth::check() && Auth::user()->role->slug === 'admin',
+        ]) !!};
+    </script>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

@@ -1,13 +1,13 @@
 <template>
     <div class="flex flex-col">
         <div class="flex justify-between items-baseline">
-            <header class="font-light text-2xl pb-1 text-primary">Team Results</header>
+            <header class="text-gray-800 font-light text-2xl lg:text-3xl mb-3">Team Results</header>
         </div>
         <div class="table-container">
             <div class="table-header">
                 <div class="flex justify-between w-full">
                     <div class="flex md:w-11/12 flex-wrap">
-                        <div class="hidden md:flex md:w-1/3">
+                        <div class="w-1/3">
                             <p class="text-primary font-semibold">Division</p>
                         </div>
                         <div class="hidden md:flex md:w-1/6">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div class="text-right">
+                    <div v-if="isCoach" class="text-right">
                         <create-button title="Add a Team Result">
                             <new-cross-country-team-result @created="add"></new-cross-country-team-result>
                         </create-button>
@@ -43,12 +43,14 @@
 </template>
 
 <script>
+    import {authMixin}from '../../mixins/authMixin';
     import Collection from '../../Collection';
     import CrossCountryTeamResult from './CrossCountryTeamResult';
     import CreateButton from '../buttons/CreateButton';
     import NewCrossCountryTeamResult from '../forms/NewCrossCountryTeamresult';
 
     export default Collection.extend({
+        mixins: [authMixin],
         props: ['data'],
 
         components: { CrossCountryTeamResult, CreateButton, NewCrossCountryTeamResult },
@@ -57,6 +59,6 @@
             return {
                 filters: []
             }
-        },
+        }
     });
 </script>

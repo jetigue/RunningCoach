@@ -6222,9 +6222,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 2px solid #000000;
   border-bottom: 2px solid #000000;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .table-row {

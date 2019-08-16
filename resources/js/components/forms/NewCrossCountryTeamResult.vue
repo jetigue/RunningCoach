@@ -103,7 +103,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api'+ location.pathname + '/team-results')
+                .post(location.pathname + '/team-results')
 
                 .then(data => {
 

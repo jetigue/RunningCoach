@@ -28,7 +28,6 @@ class CrossCountryMeet extends Model
     protected $fillable = [
         'meet_name_id',
         'meet_date',
-        'season_id',
         'host_id',
         'venue_id',
         'timing_method_id'

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API\Results\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\TeamResult;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,7 @@ class TeamResultController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return TeamResult[]|Builder[]|Collection
      */
     public function index()
     {

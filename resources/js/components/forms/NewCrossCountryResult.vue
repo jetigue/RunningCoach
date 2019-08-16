@@ -78,7 +78,7 @@
                        type="number"
                        min="0"
                        max="99"
-                       v-model="form.milliseconds" required>
+                       v-model="form.milliseconds">
             </div>
         </div>
 
@@ -93,7 +93,7 @@
                    id="form.points"
                    type="number"
                    min="0"
-                   v-model="form.points" required>
+                   v-model="form.points">
         </div>
 
         <div class="text-right pt-2">
@@ -163,7 +163,7 @@ export default {
 
         getAttributes() {
             function getAthleteNames() {
-                return axios.get('/api/athletes')
+                return axios.get('/api/physicals-athletes')
             }
 
             axios.all([

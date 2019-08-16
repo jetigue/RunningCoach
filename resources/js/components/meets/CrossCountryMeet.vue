@@ -95,35 +95,38 @@
             <div class="flex flex-col border-b border-primary-lightest hover:bg-white">
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
-                        <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-gray-700 w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
+                        <div class="flex md:w-11/12 flex-wrap items-center">
+                            <div class="text-black w-full md:w-1/2 lg:w-2/5 font-semibold md:font-normal hover:text-blue-700">
                                 <a :href="'/cross-country-meets/'+this.data.slug">{{meetName }}</a>
                             </div>
-                            <div class="text-gray-700 py-1 pl-4 lg:p-0">
-                                {{ meetDate | moment("MMMM Do, YYYY") }}
+                            <div class="w-1/2 md:w-1/4 text-gray-700 py-1 pl-2 lg:p-0">
+                                {{ meetDate | moment("M.DD.YYYY") }}
+                            </div>
+                            <div class="w-1/2 md:w-1/4 text-blue-700 font-medium">
+                                <a :href="'/cross-country-meets/'+this.data.slug">Results</a>
                             </div>
                         </div>
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
                     </div>
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
-                            <p class="text-grey w-full py-1">Venue:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Venue:
+                                <span class="text-black">
                                     {{ venue }}
                                 </span>
                             </p>
-                            <p class="text-grey w-full py-1">Host:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Host:
+                                <span class="text-black">
                                     {{ host }}
                                 </span>
                             </p>
-                            <p class="text-grey w-full py-1">Timing:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Timing:
+                                <span class="text-black">
                                     {{ timing }}
                                 </span>
                             </p>
                         </div>
-                        <div class="flex justify-start cursor-pointer pb-2">
+                        <div v-if="isCoach" class="flex justify-start cursor-pointer pb-2">
                             <edit-button @clicked="getNames"></edit-button>
                             <delete-button @clicked="destroy"></delete-button>
                         </div>
@@ -135,7 +138,10 @@
 </template>
 
 <script>
+    import {authMixin} from "../../mixins/authMixin";
+
     export default {
+        mixins: [authMixin],
         props: ['data'],
 
         data() {

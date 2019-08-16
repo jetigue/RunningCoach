@@ -3,6 +3,7 @@
 namespace App\Models\Results\CrossCountry;
 
 use App\Models\Athlete;
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -32,16 +33,16 @@ class Result extends Model
     /**
      * Save total seconds on create and update
      */
-    public static function boot()
-    {
-        parent::boot();
-
-        static::saving(function ($result) {
-
-            $result->total_seconds = ($result->minutes * 60 + $result->seconds);
-
-        });
-    }
+//    public static function boot()
+//    {
+//        parent::boot();
+//
+//        static::saving(function ($result) {
+//
+//            $result->total_seconds = $result->minutes * 60 + $result->seconds;
+//
+//        });
+//    }
 
     /**
      * @return BelongsTo

@@ -43,7 +43,7 @@ class TeamResult extends Model
 
             $teamResult->slug = str_slug(
                 $teamResult->division->gender->name . '-' .
-                $teamResult->division->level->name . '-'
+                $teamResult->division->level->name
             );
         });
     }
@@ -94,7 +94,7 @@ class TeamResult extends Model
      */
     public function addResults($results)
     {
-        return $this->results()->create($results);
+        return $this->results()->create($results + ['total_seconds' => request('minutes') * 60 + request('seconds')]);
     }
 
     /**

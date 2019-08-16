@@ -180,7 +180,7 @@ export default {
 
         getAttributes() {
             function getAthleteNames() {
-                return axios.get('/api/athletes')
+                return axios.get('/api/physicals-athletes')
             }
 
             function getEventNames() {
