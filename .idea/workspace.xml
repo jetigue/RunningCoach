@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Athletes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Athletes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/CrossCountryResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/CrossCountryResult.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -404,7 +404,8 @@
       <workItem from="1564360986969" duration="266000" />
       <workItem from="1566071228818" duration="21799000" />
       <workItem from="1566137671041" duration="1837000" />
-      <workItem from="1566148694940" duration="1352000" />
+      <workItem from="1566148694940" duration="1693000" />
+      <workItem from="1566160207299" duration="28000" />
     </task>
     <servers />
   </component>
