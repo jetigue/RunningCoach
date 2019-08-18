@@ -3,26 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/RaceTitle.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/MainMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/MainMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/CrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/CrossCountryTeamResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/athleteMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/athleteMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/mainMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/mainMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -421,7 +403,7 @@
       <workItem from="1564326644334" duration="24503000" />
       <workItem from="1564326644334" duration="23483000" />
       <workItem from="1564360986969" duration="266000" />
-      <workItem from="1566071228818" duration="20122000" />
+      <workItem from="1566071228818" duration="21127000" />
     </task>
     <servers />
   </component>
