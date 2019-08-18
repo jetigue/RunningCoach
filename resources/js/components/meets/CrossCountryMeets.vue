@@ -17,7 +17,7 @@
                 </div>
 
                 <div v-if="isCoach" class="">
-                    <create-button title="Add a Track Meet">
+                    <create-button title="Add a Cross Country Meet">
                         <new-cross-country-meet @created="add"></new-cross-country-meet>
                     </create-button>
                 </div>

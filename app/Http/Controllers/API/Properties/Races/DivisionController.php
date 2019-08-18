@@ -69,13 +69,13 @@ class DivisionController extends Controller
         request()->validate([
             'gender_id' => 'required|integer',
             'level_id' => 'required|integer',
-            'name' => 'nullable|string',
+//            'name' => 'nullable|string',
         ]);
 
         $division->update(request([
             'gender_id',
             'level_id',
-            'name'
+//            'name'
         ]));
 
         return response()->json($division, 200);

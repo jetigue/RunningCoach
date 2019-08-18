@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/DivisionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/DivisionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDivision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDivision.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -403,7 +408,8 @@
       <workItem from="1564326644334" duration="24503000" />
       <workItem from="1564326644334" duration="23483000" />
       <workItem from="1564360986969" duration="266000" />
-      <workItem from="1566071228818" duration="21127000" />
+      <workItem from="1566071228818" duration="21799000" />
+      <workItem from="1566137671041" duration="1182000" />
     </task>
     <servers />
   </component>
