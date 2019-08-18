@@ -8,6 +8,7 @@ use App\Models\Results\Track\TeamResult;
 use App\Models\Properties\Races\Event;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Result extends Model
 {
@@ -49,7 +50,7 @@ class Result extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function teamResult()
     {
@@ -57,7 +58,7 @@ class Result extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function athlete()
     {
@@ -65,7 +66,7 @@ class Result extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function event()
     {

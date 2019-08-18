@@ -19,11 +19,11 @@ class TeamResultController extends Controller
         $teamResults = TeamResult::with('division')->get();
 
         if (request()->expectsJson()) {
+
             return $teamResults;
         }
 
         return view('results.track.team.index', compact('teamResults'));
-
     }
 
     /**
@@ -37,14 +37,4 @@ class TeamResultController extends Controller
         return view('results.track.teamResults.show', compact('teamResult'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Results\Team\TrackResult  $trackResult
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TrackResult $trackResult)
-    {
-        //
-    }
 }

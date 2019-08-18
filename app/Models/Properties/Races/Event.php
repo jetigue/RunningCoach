@@ -58,7 +58,7 @@ class Event extends Model
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param EventFilter $filters
      * @return Builder

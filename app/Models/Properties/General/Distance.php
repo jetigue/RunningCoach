@@ -2,7 +2,7 @@
 
 namespace App\Models\Properties\General;
 
-use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\TrackEvent;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -37,6 +37,6 @@ class Distance extends Model
 
     public function event()
     {
-        $this->belongsTo(Event::class);
+        $this->belongsTo(TrackEvent::class);
     }
 }

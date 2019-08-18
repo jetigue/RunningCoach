@@ -1,9 +1,5 @@
 <?php
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Auth::routes();
 
 Route::get('/', 'PageController@welcome')->name('welcome');
@@ -15,6 +11,8 @@ Route::get('/sponsors', 'PageController@sponsors');
 Route::get('/team-camp', 'PageController@teamCamp');
 Route::get('/longhorn-5k', 'PageController@longhorn5k');
 Route::get('/river-run', 'PageController@riverRun');
+Route::get('/cross-country-meets', 'Meets\CrossCountryMeetController@index');
+Route::get('/cross-country-meets/{crossCountryMeet}', 'Meets\CrossCountryMeetController@show');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
@@ -27,6 +25,10 @@ Route::get('/track-meets/{trackMeet}', 'Results\Track\TeamResultController@index
 
 Route::resource('track-meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController');
 Route::resource('track-meets/{trackMeet}/team-results/{teamResult}/results', 'API\Results\Track\ResultController');
+
+Route::resource('cross-country-meets/{crossCountryMeet}/team-results', 'API\Results\CrossCountry\TeamResultController');
+Route::resource('cross-country-meets/{crossCountryMeet}/team-results/{teamResult}/results',
+    'API\Results\CrossCountry\ResultController');
 
 Route::apiResources([
 
@@ -43,6 +45,7 @@ Route::apiResources([
 
     // Meets
     'api/trackMeets' => 'API\Meets\TrackMeetController',
+    'api/cross-country-meets' => 'API\Meets\CrossCountryMeetController',
 
     // General Properties
     'api/dayTimes' => 'API\Properties\General\DayTimeController',
@@ -57,10 +60,11 @@ Route::apiResources([
     'api/venues' => 'API\Properties\Meets\VenueController',
 
      // Race Properties
-    'api/levels'   => 'API\Properties\Races\LevelController',
+    'api/levels'      => 'API\Properties\Races\LevelController',
     'api/events'      => 'API\Properties\Races\EventController',
     'api/genders'     => 'API\Properties\Races\GenderController',
-    'api/divisions' => 'API\Properties\Races\DivisionController',
+    'api/divisions'   => 'API\Properties\Races\DivisionController',
+    'api/titles'   => 'API\Properties\Races\TitleController',
 
     // Running Log Properties
     'api/runEfforts' => 'API\Properties\RunningLog\RunEffortController',
@@ -77,7 +81,8 @@ Route::apiResources([
 
     // Results
 //    'track-meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController'
-   'track-meets/teamResults' => 'API\Results\Track\TeamResultController'
+//    '/api/cross-country-meets/{crossCountryMeet}/team-results' => 'API\Results\CrossCountry\TeamResultController',
+//    'track-meets/teamResults' => 'API\Results\Track\TeamResultController'
 ]);
 
 Route::group(['middleware' => 'admin'], function () {
@@ -91,6 +96,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('user-roles', 'Admin\UserRoleController@index');
     Route::get('users', 'Admin\UserController@index');
     Route::get('day-times', 'Admin\DayTimeController@index');
+    Route::get('race-titles', 'Admin\TitleController@index');
     Route::get('run-efforts', 'Admin\RunEffortController@index');
     Route::get('run-feelings', 'Admin\RunFeelingController@index');
     Route::get('run-types', 'Admin\RunTypeController@index');

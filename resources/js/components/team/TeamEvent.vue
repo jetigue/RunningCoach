@@ -214,7 +214,7 @@
 
                         toast({
                             type: 'success',
-                            title: 'Event Updated'
+                            title: 'TrackEvent Updated'
                         });
                     })
 

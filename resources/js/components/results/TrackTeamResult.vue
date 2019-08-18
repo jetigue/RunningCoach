@@ -80,8 +80,8 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
-                <div class="flex flex-col hover:bg-white">
+            <div class="flex flex-col border-b border-blue-lightest hover:bg-gray-100">
+                <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex p-2 items-center">
                         <div class="text-grey-darker flex w-3/4 md:w-5/6">
                             <div class="md:w-1/2">
@@ -96,9 +96,9 @@
                         </div>
                         <div class="flex flex-1 justify-between md:pl-4">
                             <a :href="url">
-                                <i class="far fa-clock text-lg text-secondary"></i>
+                                <i class="text-gray-800 text-lg fas fa-user-clock"></i>
                             </a>
-                            
+
                             <expand-button @toggleRow="toggleRow" class=""></expand-button>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
                         divisionsResponse
                     ) => {
                         this.divisions = divisionsResponse.data;
-                    }));         
+                    }));
             }
         }
     }

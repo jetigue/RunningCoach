@@ -2,9 +2,11 @@
 
 namespace App\Models\Properties\Races;
 
+use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class RaceTitle extends Model
+class Title extends Model
 {
     /**
      * The table associated with the model.
@@ -19,4 +21,12 @@ class RaceTitle extends Model
      * @var array
      */
     protected $fillable = ['name'];
+
+    /**
+     * @return HasMany
+     */
+    public function crossCountryTeamResults()
+    {
+        return $this->hasMany(TeamResult::class);
+    }
 }

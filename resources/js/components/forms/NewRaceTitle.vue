@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/events" method="POST" id="newEvent"
+    <form action="/api/race-titles" method="POST" id="newRaceTitle"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -14,19 +14,6 @@
                     id="form.name"
                     type="text"
                     v-model="form.name" required>
-        </div>
-
-        <div class="mb-4">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.meters">Meters</label>
-                <span id="metersHelp" class="form-help" v-if="form.errors.has('meters')"
-                    v-text="form.errors.get('meters')">
-                </span>
-            </div>
-            <input class="form-input"
-                    id="form.meters"
-                    type="number"
-                    v-model="form.meters" required>
         </div>
 
         <div class="text-right pt-2">
@@ -44,16 +31,15 @@ export default {
     data() {
         return {
             form: new Form({
-                name: '',
-                meters: ''
+                name: ''
             })
-        };
+        }
     },
 
     methods: {
         onSubmit() {
             this.form
-                .post('/api/events')
+                .post('/api/titles')
 
                 .then(data => {
 
@@ -68,13 +54,11 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Event Added Successfully'
+                        title: 'Title Added Successfully'
                     });
 
                     this.$emit('created', data),
-                    this.resetForm()
-                    // this.form.name = '',
-                    // this.form.season_id = ''
+                    this.form.name = ''
                 })
 
                 .catch(errors => console.log(errors));
@@ -82,13 +66,13 @@ export default {
 
         resetForm() {
             this.form.name = '',
-            this.form.meters = '',
             this.form.errors.clear();
         }
     },
 
     created() {
         Event.$on('cancel', () => this.resetForm());
+
     }
 }
 </script>

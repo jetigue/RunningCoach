@@ -1,6 +1,6 @@
 <template>
     <div class="flex cursor-pointer" @click="clicked">
-        <i class="fas fa-angle-double-down text-smoke-800 text-xl"
+        <i class="fas fa-angle-double-down text-smoke-700 text-xl"
            :class="{'fas fa-angle-double-up text-tertiary-lighter': isExpanded }">
         </i>
     </div>

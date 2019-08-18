@@ -2,8 +2,9 @@
 
 namespace App\Models\Properties\Races;
 
-use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Division extends Model
 {
@@ -26,7 +27,7 @@ class Division extends Model
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function gender()
     {
@@ -35,7 +36,7 @@ class Division extends Model
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function level()
     {
@@ -43,11 +44,19 @@ class Division extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function trackTeamResults()
     {
-        return $this->hasMany(TeamResult::class);
+        return $this->hasMany(\App\Models\Results\Track\TeamResult::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function crossCountryTeamResults()
+    {
+        return $this->hasMany(\App\Models\Results\CrossCountry\TeamResult::class);
     }
 
     /**

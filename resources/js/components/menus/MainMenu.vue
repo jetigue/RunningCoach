@@ -7,6 +7,7 @@
         </div>
         <ul v-show="isExpanded" class="pl-4">
             <our-team-menu></our-team-menu>
+            <our-results-menu></our-results-menu>
             <our-events-menu></our-events-menu>
             <forms-menu></forms-menu>
         </ul>
@@ -17,6 +18,7 @@
 <script>
 
 import MenuItem from './MenuItem';
+import OurResultsMenu from './main/OurResultsMenu';
 import OurTeamMenu from './main/OurTeamMenu';
 import OurEventsMenu from './main/OurEventsMenu';
 import FormsMenu from './main/FormsMenu';
@@ -27,6 +29,7 @@ export default {
 
     components: {
         FormsMenu,
+        OurResultsMenu,
         OurEventsMenu,
         OurTeamMenu,
         MenuItem,

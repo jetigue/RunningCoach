@@ -11,6 +11,8 @@ use App\Models\Properties\Meets\Venue;
 use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TrackMeet extends Model
 {
@@ -64,7 +66,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function name()
     {
@@ -72,7 +74,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function season()
     {
@@ -80,7 +82,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function host()
     {
@@ -88,7 +90,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function venue()
     {
@@ -96,7 +98,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function timing()
     {
@@ -104,7 +106,7 @@ class TrackMeet extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function teamResults()
     {

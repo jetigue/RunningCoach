@@ -6,13 +6,14 @@ use App\Models\Results\Track\TeamResult;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Meets\TrackMeet;
+use Illuminate\Http\Response;
 
 class TeamResultController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index($filters)
     {
@@ -48,8 +49,9 @@ class TeamResultController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Results\Track\TeamResult  $teamResult
-     * @return \Illuminate\Http\Response
+     * @param TrackMeet $trackMeet
+     * @param TeamResult $teamResult
+     * @return Response
      */
     public function show(TrackMeet $trackMeet, TeamResult $teamResult)
     {
@@ -62,8 +64,8 @@ class TeamResultController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Results\Track\TeamResult  $teamResult
-     * @return \Illuminate\Http\Response
+     * @param TeamResult $teamResult
+     * @return Response
      */
     public function update(Request $request, TrackMeet $trackMeet, TeamResult $teamResult)
     {
