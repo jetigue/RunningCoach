@@ -68,7 +68,7 @@ class Division extends Model
 
         static::saving(function ($division) {
 
-            $division->name = $division->gender->name . ' ' . $division->level->name;
+            $division->name = $division->level->name . ' ' . $division->gender->name;
 
         });
     }
