@@ -117,7 +117,7 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Team Event Added successfully'
+                        title: 'Team TrackEvent Added successfully'
                     });
 
                     this.$emit('created', data),

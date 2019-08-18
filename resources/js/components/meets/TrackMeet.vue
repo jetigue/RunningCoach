@@ -4,7 +4,7 @@
             <div class="w-full">
                 <form action="api/track-meets/slug" method="POST" id="editTrackMeet" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -111,7 +111,7 @@
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
                             <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
-                                <a :href="'/track-meets/'+data.slug">{{meetName }}</a>
+                                <a :href="'/track-meets/'+this.data.slug">{{meetName }}</a>
                             </div>
                             <div class="text-grey-darker py-1 pl-4 lg:p-0">
                                 {{ meetDate | moment("MMMM Do, YYYY") }}
@@ -268,7 +268,7 @@
                 function getMeetNames() {
                     return axios.get('/api/meetNames?track=1')
                 }
-                
+
                 function getSeasonNames() {
                     return axios.get('/api/seasons?track=1')
                 }
@@ -300,7 +300,7 @@
                         this.seasons = seasonsResponse.data;
                         this.timings = timingsResponse.data;
                         this.venues = venuesResponse.data;
-                    }));         
+                    }));
             }
         }
     }

@@ -111,11 +111,11 @@
                         this.level = this.levels.find(level => level.id === this.form.level_id).name
                         this.name = this.gender + ' ' + this.level;
 
-  
+
                         this.editing = false;
                         this.isExpanded = false;
 
-                        if (this.gender_id != this.data.gender_id || 
+                        if (this.gender_id != this.data.gender_id ||
                             this.level_id != this.data.level_id ||
                             this.name != this.data.name) {
 
@@ -147,7 +147,6 @@
             resetForm() {
                 this.form.gender_id = this.gender_id,
                 this.form.level_id = this.level_id,
-                this.form.name = this.name,
                 this.isExpanded = false;
             },
 
@@ -172,7 +171,7 @@
                     ) => {
                         this.genders = gendersResponse.data;
                         this.levels = levelsResponse.data;
-                    }));         
+                    }));
             }
         }
     }

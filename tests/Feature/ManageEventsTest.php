@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\TrackEvent;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Throwable;
@@ -93,7 +93,7 @@ class ManageEventsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $attributes = factory(Event::class)->raw(['name' => '']);
+        $attributes = factory(TrackEvent::class)->raw(['name' => '']);
 
         $this->post('api/events', $attributes)->assertSessionHasErrors('name');
     }
@@ -103,7 +103,7 @@ class ManageEventsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $attributes = factory(Event::class)->raw(['meters' => '']);
+        $attributes = factory(TrackEvent::class)->raw(['meters' => '']);
 
         $this->post('api/events', $attributes)->assertSessionHasErrors('meters');
     }
@@ -152,19 +152,19 @@ class ManageEventsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $event = factory(Event::class)->create([
-            'name' => 'Original Event',
+        $event = factory(TrackEvent::class)->create([
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
 
         $this->patch('api/events/' . $event->slug, [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => 1000
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('events', [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => 1000
         ]);
     }
@@ -174,19 +174,19 @@ class ManageEventsTest extends TestCase
     {
         $this->signInCoach();
 
-        $event = factory(Event::class)->create([
-            'name' => 'Original Event',
+        $event = factory(TrackEvent::class)->create([
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
 
         $this->patch('api/events/' . $event->slug, [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => '1000'
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('events', [
-            'name' => 'Original Event',
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
     }
@@ -196,19 +196,19 @@ class ManageEventsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $event = factory(Event::class)->create([
-            'name' => 'Original Event',
+        $event = factory(TrackEvent::class)->create([
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
 
         $this->patch('api/events/' . $event->slug, [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => '1000'
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('events', [
-            'name' => 'Original Event',
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
     }
@@ -218,19 +218,19 @@ class ManageEventsTest extends TestCase
     {
         $this->signInViewer();
 
-        $event = factory(Event::class)->create([
-            'name' => 'Original Event',
+        $event = factory(TrackEvent::class)->create([
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
 
         $this->patch('api/events/' . $event->slug, [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => '1000'
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('events', [
-            'name' => 'Original Event',
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
     }
@@ -238,19 +238,19 @@ class ManageEventsTest extends TestCase
     /** @test */
     public function a_guest_cannot_update_a_season()
     {
-        $event = factory(Event::class)->create([
-            'name' => 'Original Event',
+        $event = factory(TrackEvent::class)->create([
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
 
         $this->patch('api/events/' . $event->slug, [
-            'name' => 'Changed Event',
+            'name' => 'Changed TrackEvent',
             'meters' => '1000'
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('events', [
-            'name' => 'Original Event',
+            'name' => 'Original TrackEvent',
             'meters' => 800
         ]);
     }

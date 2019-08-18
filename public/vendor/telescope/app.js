@@ -13493,7 +13493,7 @@ jQuery.event = {
 
 	dispatch: function( nativeEvent ) {
 
-		// Make a writable jQuery.Event from the native event object
+		// Make a writable jQuery.TrackEvent from the native event object
 		var event = jQuery.event.fix( nativeEvent );
 
 		var i, j, ret, matched, handleObj, handlerQueue,
@@ -13501,7 +13501,7 @@ jQuery.event = {
 			handlers = ( dataPriv.get( this, "events" ) || {} )[ event.type ] || [],
 			special = jQuery.event.special[ event.type ] || {};
 
-		// Use the fix-ed jQuery.Event rather than the (read-only) native event
+		// Use the fix-ed jQuery.TrackEvent rather than the (read-only) native event
 		args[ 0 ] = event;
 
 		for ( i = 1; i < arguments.length; i++ ) {
@@ -13717,7 +13717,7 @@ jQuery.Event = function( src, props ) {
 		return new jQuery.Event( src, props );
 	}
 
-	// Event object
+	// TrackEvent object
 	if ( src && src.type ) {
 		this.originalEvent = src;
 		this.type = src.type;
@@ -13742,7 +13742,7 @@ jQuery.Event = function( src, props ) {
 		this.currentTarget = src.currentTarget;
 		this.relatedTarget = src.relatedTarget;
 
-	// Event type
+	// TrackEvent type
 	} else {
 		this.type = src;
 	}
@@ -13759,7 +13759,7 @@ jQuery.Event = function( src, props ) {
 	this[ jQuery.expando ] = true;
 };
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+// jQuery.TrackEvent is based on DOM3 Events as specified by the ECMAScript Language Binding
 // https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	constructor: jQuery.Event,
@@ -13908,7 +13908,7 @@ jQuery.fn.extend( {
 		var handleObj, type;
 		if ( types && types.preventDefault && types.handleObj ) {
 
-			// ( event )  dispatched jQuery.Event
+			// ( event )  dispatched jQuery.TrackEvent
 			handleObj = types.handleObj;
 			jQuery( types.delegateTarget ).off(
 				handleObj.namespace ?
@@ -16541,7 +16541,7 @@ jQuery.extend( jQuery.event, {
 		}
 		ontype = type.indexOf( ":" ) < 0 && "on" + type;
 
-		// Caller can pass in a jQuery.Event object, Object, or just an event type string
+		// Caller can pass in a jQuery.TrackEvent object, Object, or just an event type string
 		event = event[ jQuery.expando ] ?
 			event :
 			new jQuery.Event( type, typeof event === "object" && event );
@@ -51891,7 +51891,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("preview-screen", {
     attrs: {
-      title: "Event Details",
+      title: "TrackEvent Details",
       resource: "events",
       id: _vm.$route.params.id
     },
@@ -51950,7 +51950,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Event Data")]
+                    [_vm._v("TrackEvent Data")]
                   )
                 ]),
                 _vm._v(" "),
@@ -60463,7 +60463,7 @@ function eventsMixin (Vue) {
       var lowerCaseEvent = event.toLowerCase();
       if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
         tip(
-          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
+          "TrackEvent \"" + lowerCaseEvent + "\" is emitted in component " +
           (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
           "Note that HTML attributes are case-insensitive and you cannot use " +
           "v-on to listen to camelCase events when using in-DOM templates. " +

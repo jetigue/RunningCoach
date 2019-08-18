@@ -32,19 +32,6 @@
             </select>
         </div>
 
-        <div class="mb-4">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.name">Name (optional)</label>
-                <span id="nameHelp" class="form-help" v-if="form.errors.has('name')"
-                    v-text="form.errors.get('name')">
-                </span>
-            </div>
-            <input class="form-input"
-                    id="form.name"
-                    type="text"
-                    v-model="form.name">
-        </div>
-
         <div class="text-right pt-2">
             <button type="submit"
                     class="submit-button"
@@ -60,7 +47,6 @@ export default {
     data() {
         return {
             form: new Form({
-                name: '',
                 gender_id: '',
                 level_id: ''
             }),
@@ -99,9 +85,9 @@ export default {
         },
 
         resetForm() {
-            this.form.name = '',
+
             this.form.gender_id = '',
-                this.form.level_id = '',
+            this.form.level_id = '',
             this.form.errors.clear();
         }
     },
