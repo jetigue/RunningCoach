@@ -109,7 +109,7 @@
                     .then(data => {
                         this.gender = this.genders.find(gender => gender.id === this.form.gender_id).name
                         this.level = this.levels.find(level => level.id === this.form.level_id).name
-                        this.name = this.gender + ' ' + this.level;
+                        this.name = this.level + ' ' + this.gender;
 
 
                         this.editing = false;
