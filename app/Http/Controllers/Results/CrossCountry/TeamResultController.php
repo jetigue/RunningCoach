@@ -19,7 +19,7 @@ class TeamResultController extends Controller
      */
     public function index()
     {
-        $teamResults = TeamResult::with('division', 'event')->get();
+        $teamResults = TeamResult::with('division', 'event', 'raceTitle')->get();
 
         if (request()->expectsJson()) {
 

@@ -38,6 +38,7 @@ Vue.component('levels', require('./components/properties/division/Levels').defau
 Vue.component('race-events', require('./components/properties/races/RaceEvents').default);
 Vue.component('genders', require('./components/properties/division/Genders').default);
 Vue.component('divisions', require('./components/properties/races/Divisions').default);
+Vue.component('race-titles', require('./components/properties/races/RaceTitles').default);
 
 // Running Log Properties
 Vue.component('run-efforts', require('./components/properties/runningLog/RunEfforts').default);
@@ -99,6 +100,7 @@ Vue.component('user-menu-button', require('./components/buttons/menus/UserMenuBu
 
 Vue.component('events-dropdown', require('./components/dropdowns/EventsDropdown').default);
 Vue.component('forms-dropdown', require('./components/dropdowns/FormsDropdown').default);
+Vue.component('results-dropdown', require('./components/dropdowns/ResultsDropdown').default);
 Vue.component('team-dropdown', require('./components/dropdowns/TeamDropdown').default);
 Vue.component('login-button', require('./components/buttons/LoginButton').default);
 Vue.component('dropdown', require('./components/buttons/Dropdown').default);

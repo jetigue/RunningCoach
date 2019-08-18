@@ -34,7 +34,8 @@
     </div>
 
     <div class="py-3">
-        <cross-country-team-results :data="{{ $crossCountryMeet->teamResults->load('crossCountryMeet', 'division', 'event') }}">
+        <cross-country-team-results
+            :data="{{ $crossCountryMeet->teamResults->load('crossCountryMeet', 'division', 'event', 'title') }}">
         </cross-country-team-results>
     </div>
 

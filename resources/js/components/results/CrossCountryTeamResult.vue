@@ -34,6 +34,20 @@
 
                     <div class="mb-1">
                         <div class="flex justify-between content-end">
+                            <label class="form-label">Race Title (optional)</label>
+                            <span id="titleHelp" class="form-help" v-if="form.errors.has('race_title_id')"
+                                  v-text="form.errors.get('race_title_id')">
+                            </span>
+                        </div>
+                        <select class="form-input" name="race_title_id" v-model="form.race_title_id" required>
+                            <option v-for="title in titles" :key="title.id" :value="title.id">
+                                {{ title.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
                             <label class="form-label">Event</label>
                             <span id="eventsHelp" class="form-help" v-if="form.errors.has('event_id')"
                                   v-text="form.errors.get('event_id')">
@@ -102,7 +116,10 @@
                 <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex justify-between p-2 items-center">
                         <div class="text-black flex w-11/12">
-                            <div class="w-7/12 md:w-1/3">
+                            <div v-if="hasTitle" class="w-7/12 md:w-1/3">
+                                {{ division }} <span class="text-sm text-gray-500"> {{ this.data.title.name }}</span>
+                            </div>
+                            <div v-else class="w-7/12 md:w-1/3">
                                 {{ division }}
                             </div>
                             <div class="hidden md:flex md:w-1/6 text-center">
@@ -168,6 +185,7 @@
 
                 id: this.data.id,
                 division: this.data.division.name,
+                // title: this.data.title.name,
                 event: this.data.event.name,
                 place: this.data.place,
                 number_teams: this.data.number_teams,
@@ -176,9 +194,11 @@
 
                 meet_id: this.data.meet_id,
                 division_id: this.data.division_id,
+                race_title_id: this.data.race_title_id,
 
                 form: new Form({
                     division_id: this.data.division_id,
+                    race_title_id: this.data.race_title_id,
                     event_id: this.data.event_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
@@ -186,7 +206,8 @@
                 }),
 
                 divisions: [],
-                events: []
+                events: [],
+                titles: []
             }
         },
 
@@ -206,7 +227,10 @@
                     return i + "rd";
                 }
                 return i + "th";
+            },
 
+            hasTitle() {
+                return this.data.title
             }
         },
 
@@ -220,6 +244,7 @@
                     .patch(location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
+                        this.title = this.titles.find(title => title.id === this.form.race_title_id).name;
                         this.event = this.events.find(event => event.id === this.form.event_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
@@ -231,6 +256,7 @@
 
                          if (
                             this.division != this.data.division.name ||
+                            this.title != this.data.title.name ||
                             this.event != this.data.event.name ||
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
@@ -256,13 +282,14 @@
             },
 
             destroy() {
-                axios.delete('/api'+location.pathname + '/team-results/' +this.data.id);
+                axios.delete(location.pathname + '/team-results/' +this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
                 this.form.division_id = this.division_id,
+                this.form.race_title_id = this.race_title_id,
                 this.form.event_id = this.event_id,
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
@@ -281,16 +308,23 @@
                     return axios.get('/api/events')
                 }
 
+                function getRaceTitleNames() {
+                    return axios.get('/api/titles')
+                }
+
                 axios.all([
                     getDivisionNames(),
-                    getEventNames()
+                    getEventNames(),
+                    getRaceTitleNames(),
                 ])
                     .then(axios.spread((
                         divisionsResponse,
-                        eventsResponse
+                        eventsResponse,
+                        titlesResponse
                     ) => {
                         this.divisions = divisionsResponse.data;
                         this.events = eventsResponse.data;
+                        this.titles = titlesResponse.data;
                     }))
                     .catch(errors => {
                         console.log(errors)

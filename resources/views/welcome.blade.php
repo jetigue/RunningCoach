@@ -21,7 +21,7 @@
                         </p>
                         <div class="primary-line mb-1"></div>
                     </header>
-                    <section>
+                    <section class="text-gray-800">
 
                     </section>
                 </div>

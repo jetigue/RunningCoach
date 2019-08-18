@@ -5,6 +5,7 @@ namespace App\Models\Results\CrossCountry;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\Title;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -26,6 +27,7 @@ class TeamResult extends Model
     protected $fillable = [
         'cross_country_meet_id',
         'division_id',
+        'race_title_id',
         'event_id',
         'place',
         'number_teams',
@@ -70,6 +72,15 @@ class TeamResult extends Model
     public function division()
     {
         return $this->belongsTo(Division::class, 'division_id');
+    }
+
+
+    /**
+     * @return BelongsTo
+     */
+    public function title()
+    {
+        return $this->belongsTo(Title::class, 'race_title_id');
     }
 
     /**

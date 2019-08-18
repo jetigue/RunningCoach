@@ -64,6 +64,7 @@ Route::apiResources([
     'api/events'      => 'API\Properties\Races\EventController',
     'api/genders'     => 'API\Properties\Races\GenderController',
     'api/divisions'   => 'API\Properties\Races\DivisionController',
+    'api/titles'   => 'API\Properties\Races\TitleController',
 
     // Running Log Properties
     'api/runEfforts' => 'API\Properties\RunningLog\RunEffortController',
@@ -95,6 +96,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('user-roles', 'Admin\UserRoleController@index');
     Route::get('users', 'Admin\UserController@index');
     Route::get('day-times', 'Admin\DayTimeController@index');
+    Route::get('race-titles', 'Admin\TitleController@index');
     Route::get('run-efforts', 'Admin\RunEffortController@index');
     Route::get('run-feelings', 'Admin\RunFeelingController@index');
     Route::get('run-types', 'Admin\RunTypeController@index');

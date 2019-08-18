@@ -19,6 +19,20 @@
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
+                <label class="form-label">Race Title (optional)</label>
+                <span id="titleHelp" class="form-help" v-if="form.errors.has('race_title_id')"
+                      v-text="form.errors.get('race_title_id')">
+                </span>
+            </div>
+            <select class="form-input" name="race_title_id" v-model="form.race_title_id">
+                <option v-for="title in titles" :key="title.id" :value="title.id">
+                    {{ title.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
                 <label class="form-label">Event</label>
                 <span id="eventHelp" class="form-help" v-if="form.errors.has('event_id')"
                       v-text="form.errors.get('event_id')">
@@ -89,6 +103,7 @@ export default {
         return {
             form: new Form({
                 division_id: '',
+                race_title_id: '',
                 event_id: '',
                 place: '',
                 number_teams: '',
@@ -96,6 +111,7 @@ export default {
             }),
 
             divisions: [],
+            titles: [],
             events: []
         };
     },
@@ -130,6 +146,7 @@ export default {
 
         resetForm() {
             this.form.division_id = '',
+            this.form.race_title_id = '',
             this.form.event_id = '',
             this.form.place = '',
             this.form.number_teams = '',
@@ -146,16 +163,23 @@ export default {
                 return axios.get('/api/divisions')
             }
 
+            function getRaceTitleNames() {
+                return axios.get('/api/titles')
+            }
+
             axios.all([
                 getEventNames(),
-                getDivisionNames()
+                getDivisionNames(),
+                getRaceTitleNames()
             ])
             .then(axios.spread((
                 eventsResponse,
-                divisionsResponse
+                divisionsResponse,
+                titlesResponse
             ) => {
                 this.events = eventsResponse.data;
                 this.divisions = divisionsResponse.data;
+                this.titles = titlesResponse.data;
             }))
             .catch(errors => {
                 console.log(errors)

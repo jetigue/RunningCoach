@@ -21,7 +21,7 @@ class TeamResultController extends Controller
      */
     public function index()
     {
-        $teamResults = TeamResult::with('division', 'crossCountryMeet')->get();
+        $teamResults = TeamResult::with('division', 'crossCountryMeet', 'title')->get();
 
         return $teamResults;
     }
@@ -37,6 +37,7 @@ class TeamResultController extends Controller
     {
         request()->validate([
             'division_id'   => 'required|integer',
+            'race_title_id' => 'integer|nullable',
             'event_id'      => 'required|integer',
             'place'         => 'required|integer|lte:number_teams',
             'number_teams'  => 'required|integer|gte:place',
@@ -45,13 +46,14 @@ class TeamResultController extends Controller
 
         $teamResult = $crossCountryMeet->addTeamResult(request([
             'division_id',
+            'race_title_id',
             'event_id',
             'place',
             'number_teams',
             'points'
         ]));
 
-        return $teamResult->load('division', 'event');
+        return $teamResult->load('division', 'event', 'title');
     }
 
     /**
@@ -80,6 +82,7 @@ class TeamResultController extends Controller
     {
         $this->validate($request, [
             'division_id' => 'required|integer',
+            'race_title_id' => 'integer|nullable',
             'event_id' => 'required|integer',
             'place' => 'required|integer',
             'number_teams' => 'required|integer',
@@ -88,6 +91,7 @@ class TeamResultController extends Controller
 
         $teamResult->update(request([
             'division_id',
+            'race_title_id',
             'event_id',
             'place',
             'number_teams',

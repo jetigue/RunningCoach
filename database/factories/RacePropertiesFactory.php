@@ -5,7 +5,7 @@ use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Event;
 use App\Models\Properties\Races\Gender;
-use App\Models\Properties\Races\RaceTitle;
+use App\Models\Properties\Races\Title;
 
 $factory->define(Gender::class, function (Faker $faker) {
     return [
@@ -23,7 +23,7 @@ $factory->define(Level::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(RaceTitle::class, function (Faker $faker) {
+$factory->define(Title::class, function (Faker $faker) {
     return [
         'name' => $faker
             ->unique()
