@@ -3,7 +3,6 @@ require('./bootstrap');
 import BarGraph from './components/graphs/BarGraph';
 import PieChart from './components//graphs/PieChart';
 
-
 // Buttons
 Vue.component('cancel-button', require('./components/buttons/CancelButton').default);
 Vue.component('create-button', require('./components/buttons/CreateButton').default);
