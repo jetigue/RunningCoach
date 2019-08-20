@@ -56,21 +56,7 @@
                     id="form.place"
                     type="number"
                     min="1"
-                    v-model="form.place" required>
-        </div>
-
-        <div class="mb-2">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.number_teams">Number of Teams</label>
-                <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
-                      v-text="form.errors.get('number_teams')">
-                </span>
-            </div>
-            <input class="form-input"
-                   id="form.number_teams"
-                   type="number"
-                   min="2"
-                   v-model="form.number_teams" required>
+                    v-model="form.place">
         </div>
 
         <div class="mb-2">
@@ -84,8 +70,37 @@
                    id="form.points"
                    type="number"
                    min="0"
-                   v-model="form.points" required>
+                   v-model="form.points">
         </div>
+
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.number_teams">Number of Teams</label>
+                <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
+                      v-text="form.errors.get('number_teams')">
+                </span>
+            </div>
+            <input class="form-input"
+                   id="form.number_teams"
+                   type="number"
+                   min="2"
+                   v-model="form.number_teams">
+        </div>
+
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.number_runners">Number of Runners</label>
+                <span id="numberRunnersHelp" class="form-help" v-if="form.errors.has('number_runners')"
+                      v-text="form.errors.get('number_runners')">
+                </span>
+            </div>
+            <input class="form-input"
+                   id="form.number_runners"
+                   type="number"
+                   min="2"
+                   v-model="form.number_runners" required>
+        </div>
+
 
         <div class="text-right pt-2">
             <button type="submit"
@@ -107,6 +122,7 @@ export default {
                 event_id: '',
                 place: '',
                 number_teams: '',
+                number_runners: '',
                 points: '',
             }),
 
@@ -150,6 +166,7 @@ export default {
             this.form.event_id = '',
             this.form.place = '',
             this.form.number_teams = '',
+            this.form.number_runners = '',
             this.form.points = '',
             this.form.errors.clear();
         },

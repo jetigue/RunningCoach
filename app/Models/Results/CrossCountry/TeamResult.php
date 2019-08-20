@@ -31,6 +31,7 @@ class TeamResult extends Model
         'event_id',
         'place',
         'number_teams',
+        'number_runners',
         'points'
     ];
 
@@ -108,6 +109,26 @@ class TeamResult extends Model
         return $this->results()->create($results + ['total_seconds' => request('minutes') * 60 + request('seconds')]);
     }
 
+    public function getPlaceWithSuffixAttribute() {
+            $value = $this->attributes['place'];
+
+            if ($value != null) {
+                if (!in_array(($value % 100), array(11, 12, 13)))
+                {
+                    switch ($value % 10)
+                    {
+                        // Handle 1st, 2nd, 3rd
+                        case 1:
+                            return $value . 'st';
+                        case 2:
+                            return $value . 'nd';
+                        case 3:
+                            return $value . 'rd';
+                    }
+                }
+                return $value . 'th';
+            }
+    }
     /**
      * Apply all relevant name filters.
      *

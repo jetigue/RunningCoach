@@ -28,10 +28,11 @@ class TeamResultController extends Controller
     public function store(TrackMeet $trackMeet)
     {
         request()->validate([
-            'division_id'   => 'required|integer',
-            'place'         => 'required|integer|lte:number_teams',
-            'number_teams'  => 'required|integer|gte:place',
-            'points'        => 'nullable|integer',
+            'division_id'       => 'required|integer',
+            'place'             => 'integer|lte:number_teams',
+            'number_teams'      => 'required|integer|gte:place',
+            'number_runners'    => 'nullable|integer|min:1',
+            'points'            => 'nullable|integer',
         ]);
 
 

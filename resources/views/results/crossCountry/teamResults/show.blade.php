@@ -33,9 +33,27 @@
             </div>
         </div>
     </div>
+    <div class="flex flex-wrap w-full justify-between py-4">
+        <div class="text-gray-800 text-xl md:text-2xl lg:text-3xl py-1 w-full md:w-full">
+            {{ $teamResult->division->name }} Results
+        </div>
 
-    <div class="text-gray-800 font-light text-2xl lg:text-3xl py-3">
-        {{ $teamResult->division->name }} Results
+        <div class="w-1/2 md:w-1/3 text-center">
+            @if ($teamResult->place !== null)
+            {{ $teamResult->placeWithSuffix }}
+            <span class="text-gray-600">
+                out of
+            </span>
+            @endif
+             {{ $teamResult->number_teams }}
+            <span class="text-gray-600">
+                Teams
+            </span>
+        </div>
+
+        <div class="w-1/2 md:w-1/3 text-center">
+            {{ $teamResult->number_runners }} <span class="text-gray-600">Total Runners</span>
+        </div>
     </div>
     <div class="">
         <cross-country-results :data="{{ $teamResult->results->load('teamResult', 'athlete') }}">

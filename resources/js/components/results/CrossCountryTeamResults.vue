@@ -7,17 +7,14 @@
             <div class="table-header">
                 <div class="flex justify-between w-full">
                     <div class="flex md:w-11/12 flex-wrap">
-                        <div class="w-1/3">
+                        <div class="w-full md:w-2/3 lg:w-2/5">
                             <p class="text-primary font-semibold">Division</p>
                         </div>
-                        <div class="hidden md:flex md:w-1/6">
-                            <p class="text-primary font-semibold">Event</p>
-                        </div>
-                        <div class="hidden md:flex md:w-1/6">
+                        <div class="hidden md:block md:w-1/6 lg:w-1/5 pl-2 md:text-center md:pl-0">
                             <p class="text-primary font-semibold">Place</p>
                         </div>
 
-                        <div class="hidden md:flex md:w-1/6">
+                        <div class="hidden lg:block lg:w-1/5 text-center">
                             <p class="text-primary font-semibold">Points</p>
                         </div>
                     </div>

@@ -9,7 +9,6 @@ use Illuminate\Http\Response;
 
 class TitleController extends Controller
 {
-
     /**
      * TitleController constructor.
      */
@@ -26,7 +25,7 @@ class TitleController extends Controller
      */
     public function index()
     {
-        $titles = Title::all();
+        $titles = Title::orderBy('name', 'asc')->get();
 
         return $titles;
     }

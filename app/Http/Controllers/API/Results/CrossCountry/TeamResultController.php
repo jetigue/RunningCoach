@@ -36,12 +36,13 @@ class TeamResultController extends Controller
     public function store(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         request()->validate([
-            'division_id'   => 'required|integer',
-            'race_title_id' => 'integer|nullable',
-            'event_id'      => 'required|integer',
-            'place'         => 'required|integer|lte:number_teams',
-            'number_teams'  => 'required|integer|gte:place',
-            'points'        => 'nullable|integer',
+            'division_id'       => 'required|integer',
+            'race_title_id'     => 'integer|nullable',
+            'event_id'          => 'required|integer',
+            'place'             => 'nullable|integer',
+            'number_teams'      => 'required|integer',
+            'number_runners'    => 'required|integer',
+            'points'            => 'nullable|integer',
         ]);
 
         $teamResult = $crossCountryMeet->addTeamResult(request([
@@ -50,6 +51,7 @@ class TeamResultController extends Controller
             'event_id',
             'place',
             'number_teams',
+            'number_runners',
             'points'
         ]));
 
@@ -81,12 +83,13 @@ class TeamResultController extends Controller
     public function update(Request $request, CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         $this->validate($request, [
-            'division_id' => 'required|integer',
-            'race_title_id' => 'integer|nullable',
-            'event_id' => 'required|integer',
-            'place' => 'required|integer',
-            'number_teams' => 'required|integer',
-            'points' => 'nullable|integer',
+            'division_id'       => 'required|integer',
+            'race_title_id'     => 'integer|nullable',
+            'event_id'          => 'required|integer',
+            'place'             => 'integer|nullable',
+            'number_teams'      => 'required|integer',
+            'number_runners'    => 'required|integer',
+            'points'            => 'integer|nullable',
         ]);
 
         $teamResult->update(request([
@@ -95,6 +98,7 @@ class TeamResultController extends Controller
             'event_id',
             'place',
             'number_teams',
+            'number_runners',
             'points'
         ]));
 

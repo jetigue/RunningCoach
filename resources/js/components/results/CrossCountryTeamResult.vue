@@ -39,7 +39,8 @@
                                   v-text="form.errors.get('race_title_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="race_title_id" v-model="form.race_title_id" required>
+                        <select class="form-input" name="race_title_id" v-model="form.race_title_id">
+                            <option value="">None</option>
                             <option v-for="title in titles" :key="title.id" :value="title.id">
                                 {{ title.name }}
                             </option>
@@ -71,21 +72,7 @@
                                id="form.place"
                                type="number"
                                min="1"
-                               v-model="form.place" required>
-                    </div>
-
-                    <div class="mb-1">
-                        <div class="flex justify-between content-end">
-                            <label class="form-label" for="form.number_teams">Number of Teams</label>
-                            <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
-                                  v-text="form.errors.get('number_teams')">
-                            </span>
-                        </div>
-                        <input class="form-input"
-                               id="form.number_teams"
-                               type="number"
-                               min="2"
-                               v-model="form.number_teams" required>
+                               v-model="form.place">
                     </div>
 
                     <div class="mb-1">
@@ -99,7 +86,35 @@
                                id="form.points"
                                type="number"
                                min="0"
-                               v-model="form.points" required>
+                               v-model="form.points">
+                    </div>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.number_teams">Number of Teams</label>
+                            <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
+                                  v-text="form.errors.get('number_teams')">
+                            </span>
+                        </div>
+                        <input class="form-input"
+                               id="form.number_teams"
+                               type="number"
+                               min="0"
+                               v-model="form.number_teams">
+                    </div>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.number_runners">Number of Runners</label>
+                            <span id="numberRunnersHelp" class="form-help" v-if="form.errors.has('number_runners')"
+                                  v-text="form.errors.get('number_runners')">
+                            </span>
+                        </div>
+                        <input class="form-input"
+                               id="form.number_runners"
+                               type="number"
+                               min="0"
+                               v-model="form.number_runners" required>
                     </div>
 
                     <div class="flex items-center justify-end">
@@ -115,23 +130,20 @@
             <div class="flex flex-col border-b border-gray-200 hover:bg-gray-100">
                 <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex justify-between p-2 items-center">
-                        <div class="text-black flex w-11/12">
-                            <div v-if="hasTitle" class="w-7/12 md:w-1/3">
+                        <div class="flex flex-wrap text-black w-11/12">
+                            <div v-if="hasTitle" class="w-full md:w-2/3 lg:w-2/5">
                                 {{ division }} <span class="text-sm text-gray-500"> {{ this.data.title.name }}</span>
                             </div>
-                            <div v-else class="w-7/12 md:w-1/3">
+                            <div v-else class="w-full md:w-2/3 lg:w-2/5">
                                 {{ division }}
                             </div>
-                            <div class="hidden md:flex md:w-1/6 text-center">
-                                {{ event }}
-                            </div>
-                            <div class="hidden md:flex md:w-1/6">
+                            <div class="w-1/2 md:w-1/6 lg:w-1/5 pl-2 md:text-center md:pl-0">
                                 {{ place_w_suffix }}
                             </div>
-                            <div class="hidden md:flex md:w-1/6">
+                            <div class="hidden lg:block lg:w-1/5 text-center">
                                 {{ points }}
                             </div>
-                            <div class="w-1/6 text-center">
+                            <div class="w-1/2 md:w-1/6  lg:w-1/5 text-center">
                                 <a :href="url" class="text-blue-700">
                                     Results
                                 </a>
@@ -143,10 +155,19 @@
                     </div>
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
-
+                            <p class="text-gray-600 w-full py-1">Event:
+                                <span class="text-gray-800">
+                                    {{ event }}
+                                </span>
+                            </p>
                             <p class="text-gray-600 w-full py-1">Place:
                                 <span class="text-gray-800">
                                     {{ place_w_suffix }}
+                                </span>
+                            </p>
+                            <p class="text-gray-600 w-full py-1">Points:
+                                <span class="text-gray-800">
+                                    {{ points }}
                                 </span>
                             </p>
                             <p class="text-gray-600 w-full py-1">Number of Teams:
@@ -154,9 +175,9 @@
                                     {{ number_teams }}
                                 </span>
                             </p>
-                            <p class="text-gray-600 w-full py-1">Points:
+                            <p class="text-gray-600 w-full py-1">Number of Runners:
                                 <span class="text-gray-800">
-                                    {{ points }}
+                                    {{ number_runners }}
                                 </span>
                             </p>
 
@@ -185,15 +206,16 @@
 
                 id: this.data.id,
                 division: this.data.division.name,
-                // title: this.data.title.name,
                 event: this.data.event.name,
                 place: this.data.place,
                 number_teams: this.data.number_teams,
+                number_runners: this.data.number_runners,
                 points: this.data.points,
                 url: location.pathname + '/team-results/' +this.data.id,
 
                 meet_id: this.data.meet_id,
                 division_id: this.data.division_id,
+                event_id: this.data.event_id,
                 race_title_id: this.data.race_title_id,
 
                 form: new Form({
@@ -202,6 +224,7 @@
                     event_id: this.data.event_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
+                    number_runners: this.data.number_runners,
                     points: this.data.points
                 }),
 
@@ -213,20 +236,24 @@
 
         computed: {
             place_w_suffix: function ordinal_suffix_of() {
-                let i = this.place;
+                if (this.place != null) {
+                    let i = this.place;
 
-                let j = i % 10,
-                    k = i % 100;
-                if (j == 1 && k != 11) {
-                    return i + "st";
+                    let j = i % 10,
+                        k = i % 100;
+                    if (j == 1 && k != 11) {
+                        return i + "st";
+                    }
+                    if (j == 2 && k != 12) {
+                        return i + "nd";
+                    }
+                    if (j == 3 && k != 13) {
+                        return i + "rd";
+                    }
+                    return i + "th";
                 }
-                if (j == 2 && k != 12) {
-                    return i + "nd";
-                }
-                if (j == 3 && k != 13) {
-                    return i + "rd";
-                }
-                return i + "th";
+
+                return "NA";
             },
 
             hasTitle() {
@@ -244,22 +271,22 @@
                     .patch(location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
-                        this.title = this.titles.find(title => title.id === this.form.race_title_id).name;
+                        // this.title = this.titles.find(title => title.id === this.form.race_title_id).name;
                         this.event = this.events.find(event => event.id === this.form.event_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
+                        this.number_runners = this.form.number_runners;
                         this.points = this.form.points;
-
 
                         this.editing = false;
                         this.isExpanded = false;
 
                          if (
                             this.division != this.data.division.name ||
-                            this.title != this.data.title.name ||
                             this.event != this.data.event.name ||
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
+                            this.number_runners != this.data.number_runners ||
                             this.points != this.data.points)
                             {
                                 const toast = Vue.swal.mixin({
@@ -293,6 +320,7 @@
                 this.form.event_id = this.event_id,
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
+                this.form.number_runners = this.number_runners,
                 this.form.points = this.points,
                 this.isExpanded = false;
             },
