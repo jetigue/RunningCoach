@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Races;
 
+use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -56,7 +57,7 @@ class Division extends Model
      */
     public function crossCountryTeamResults()
     {
-        return $this->hasMany(\App\Models\Results\CrossCountry\TeamResult::class);
+        return $this->hasMany(TeamResult::class);
     }
 
     /**

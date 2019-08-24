@@ -11,8 +11,11 @@ Route::get('/sponsors', 'PageController@sponsors');
 Route::get('/team-camp', 'PageController@teamCamp');
 Route::get('/longhorn-5k', 'PageController@longhorn5k');
 Route::get('/river-run', 'PageController@riverRun');
+
 Route::get('/cross-country-meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country-meets/{crossCountryMeet}', 'Meets\CrossCountryMeetController@show');
+
+Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

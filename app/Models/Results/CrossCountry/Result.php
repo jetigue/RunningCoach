@@ -45,6 +45,39 @@ class Result extends Model
 //    }
 
     /**
+     * @return string
+     */
+    public function getPlaceWithSuffixAttribute() {
+        $value = $this->attributes['place'];
+
+        if ($value != null) {
+            if (!in_array(($value % 100), array(11, 12, 13)))
+            {
+                switch ($value % 10)
+                {
+                    // Handle 1st, 2nd, 3rd
+                    case 1:
+                        return $value . 'st';
+                    case 2:
+                        return $value . 'nd';
+                    case 3:
+                        return $value . 'rd';
+                }
+            }
+            return $value . 'th';
+        }
+    }
+
+    /**
+     * @return false|string
+     */
+    public function getTimeAttribute() {
+        $seconds = $this->attributes['total_seconds'];
+
+                return gmdate("i:s", $seconds);
+    }
+
+    /**
      * @return BelongsTo
      */
     public function teamResult()

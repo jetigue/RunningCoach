@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\Properties\General\Season;
 use App\Filters\NameFilter;
+use App\Models\Meets\CrossCountryMeet;
 use App\Models\Meets\TrackMeet;
 
 class Name extends Model
@@ -53,6 +54,14 @@ class Name extends Model
     public function trackMeets()
     {
         return $this->hasMany(TrackMeet::class, 'meet_name_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function crossCountryMeets()
+    {
+        return $this->hasMany(CrossCountryMeet::class, 'meet_name_id');
     }
 
     /**

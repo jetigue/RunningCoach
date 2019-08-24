@@ -6,6 +6,7 @@ use App\Models\Physical;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filters\AthleteFilter;
+use App\Models\Results\CrossCountry\Result;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Athlete extends Model
@@ -43,6 +44,21 @@ class Athlete extends Model
     }
 
     /**
+     * Save a slug on store and update
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($athlete) {
+
+            $athlete->slug = str_slug(
+                $athlete->first_name . '-' . $athlete->last_name . '-' . $athlete->grad_year
+            );
+        });
+    }
+
+    /**
      * @return HasMany
      */
     public function physicals()
@@ -53,6 +69,11 @@ class Athlete extends Model
     public function latestPhysical()
     {
         return $this->hasOne(Physical::class)->latest();
+    }
+
+    public function crossResults()
+    {
+        return $this->hasMany(Result::class)->latest();
     }
 
     /**

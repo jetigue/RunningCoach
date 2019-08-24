@@ -123,7 +123,9 @@
                         <div class="text-black flex flex-wrap w-11/12">
 
                             <div class="w-3/4 md:w-2/5 lg:w-2/5">
-                                {{ athleteName }}
+                                <a :href="url">
+                                    {{ athleteName }}
+                                </a>
                             </div>
 
                             <div class="w-1/4 md:flex md:w-1/5 lg:w-1/5">
@@ -179,6 +181,7 @@
                 milliseconds: this.data.milliseconds,
                 place: this.data.place,
                 points: this.data.points,
+                url: '/athletes/' + this.data.athlete.id,
 
                 athlete_id: this.data.athlete_id,
 

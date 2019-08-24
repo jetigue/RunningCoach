@@ -86,7 +86,10 @@
                         <div class="flex md:w-4/5 flex-wrap">
                             <div class="text-smoke-800 w-full md:w-1/2"
                                 :class="{'font-semibold': active}">
-                                {{ name }}
+                                <a :href="url">
+                                    {{ name }}
+                                </a>
+
                             </div>
                             <div v-if="active" class="w-full pl-4 md:pl-0 md:w-1/2 lg:w-1/3">
                                 <physical-status v-if="displayPhysicals" :data="data"></physical-status>
@@ -160,6 +163,7 @@
                 dob: this.data.dob,
                 grad_year: this.data.grad_year,
                 status: this.data.status,
+                url: '/athletes/'+this.data.id,
 
                 physicals: false,
 

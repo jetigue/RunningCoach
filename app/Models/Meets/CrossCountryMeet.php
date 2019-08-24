@@ -2,14 +2,17 @@
 
 namespace App\Models\Meets;
 
+use App\Models\Results\CrossCountry\Result;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Races\Division;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class CrossCountryMeet extends Model
 {
@@ -99,6 +102,14 @@ class CrossCountryMeet extends Model
     public function teamResults()
     {
         return $this->hasMany(TeamResult::class);
+    }
+
+    /**
+     * @return HasManyThrough
+     */
+    public function results()
+    {
+        return $this->hasManyThrough(Result::class, TeamResult::class, 'cross_country_meet_id', 'cross_country_team_result_id', 'id', 'id');
     }
 
 

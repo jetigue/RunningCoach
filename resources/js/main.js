@@ -65,6 +65,11 @@ Vue.component('track-team-results', require('./components/results/TrackTeamResul
 Vue.component('cross-country-team-results', require('./components/results/CrossCountryTeamResults').default);
 Vue.component('track-results', require('./components/results/TrackResults').default);
 Vue.component('cross-country-results', require('./components/results/CrossCountryResults').default);
+Vue.component('athlete-cross-results', require('./components/results/AthleteCrossResults').default);
+
+// Tabs
+Vue.component('tabs', require('./components/tabs/Tabs').default);
+Vue.component('tab', require('./components/tabs/Tab').default);
 
 // Team
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);

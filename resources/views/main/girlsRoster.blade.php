@@ -19,7 +19,7 @@
                     @slot('title') Seniors @endslot
                     @foreach($seniors as $senior)
                         <li class="text-gray-700 font-semibold py-1">
-                            <a href="#">
+                            <a href="/athletes/{{$senior->id}}>
                                 {{$senior->last_name}}, {{$senior->first_name}}
                             </a>
                         </li>
@@ -30,7 +30,7 @@
                     @slot('title') Juniors @endslot
                     @foreach($juniors as $junior)
                         <li class="text-gray-700 font-semibold py-1">
-                            <a href="#">
+                            <a href="/athletes/{{$junior->id}}">
                                 {{$junior->last_name}}, {{$junior->first_name}}
                             </a>
                         </li>
@@ -41,7 +41,7 @@
                     @slot('title') Sophomores @endslot
                     @foreach($sophomores as $sophomore)
                         <li class="text-gray-700 font-semibold py-1">
-                            <a href="#">
+                            <a href="/athletes/{{$sophomore->id}}">
                                 {{$sophomore->last_name}}, {{$sophomore->first_name}}
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                     @slot('title') Freshmen @endslot
                     @foreach($freshmen as $freshman)
                         <li class="text-gray-700 font-semibold py-1">
-                            <a href="#">
+                            <a href="/athletes/{{$freshman->id}}">
                                 {{$freshman->last_name}}, {{$freshman->first_name}}
                             </a>
                         </li>
