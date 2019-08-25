@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="">
-        <cross-country-results :data="{{ $teamResult->results->load('teamResult', 'athlete') }}">
+        <cross-country-results :data="{{ $results }}">
         </cross-country-results>
     </div>
 

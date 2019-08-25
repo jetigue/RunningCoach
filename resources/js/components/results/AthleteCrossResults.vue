@@ -43,7 +43,7 @@
 
     export default Collection.extend({
         mixins: [authMixin],
-        props: ['data'],
+        props: ['data', 'results'],
 
         components: { AthleteCrossResult },
 

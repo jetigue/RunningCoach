@@ -51,16 +51,16 @@
                 isExpanded: false,
 
                 id: this.data.id,
-                meet_date: this.data.meet_date,
-                meet_name: this.data.name.name,
-                level: this.data.team_results[0].division.level.name,
-                event: this.data.team_results[0].event.name,
-                ms: (this.data.results[0].milliseconds > 9 ? this.data.results[0].milliseconds : '0' + this.data.results[0].milliseconds),
-                milliseconds: this.data.results[0].milliseconds,
-                place: this.data.results[0].place,
-                total_seconds: this.data.results[0].total_seconds,
+                meet_date: this.data.date,
+                meet_name: this.data.name,
+                level: this.data.level,
+                event: this.data.event,
+                ms: (this.data.milliseconds > 9 ? this.data.milliseconds : '0' + this.data.milliseconds),
+                milliseconds: this.data.milliseconds,
+                place: this.data.place,
+                total_seconds: this.data.total_seconds,
                 meetUrl: '/cross-country-meets/'+this.data.slug,
-                teamResultId: this.data.team_results[0].id
+                teamResultId: this.data.teamResultId
             }
         },
 

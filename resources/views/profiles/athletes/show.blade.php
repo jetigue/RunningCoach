@@ -14,33 +14,10 @@
         <section class="my-10">
             <tabs class="">
                 <tab title="Cross Country Results" active>
-                    <athlete-cross-results :data="{{ $results }}"></athlete-cross-results>
-
-{{--                            @foreach($crossResults as $crossResult)--}}
-
-{{--                                <div class="flex py-2 border-b border-gray-300 hover:bg-gray-100 px-2">--}}
-{{--                                    <div class="w-1/6">--}}
-{{--                                        {{ \Carbon\Carbon::parse($crossResult->meet_date)->format('M d, Y') }}--}}
-{{--                                    </div>--}}
-{{--                                    <div class="w-1/3">--}}
-{{--                                        <a href="/cross-country-meets/{{ $crossResult->meetSlug}}">--}}
-{{--                                            {{ $crossResult->name }}--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="w-1/6">--}}
-{{--                                        <a href="/cross-country-meets/{{ $crossResult->meetSlug}}/team-results/{{ $crossResult->cross_country_team_result_id }}">--}}
-{{--                                            {{ $crossResult->name }}--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
+                    <athlete-cross-results :data="{{ $crossResults }}"></athlete-cross-results>
                 </tab>
                 <tab title="Training Paces">
-                    <p>These are the training paces</p>
+                    <p>Coming Soon</p>
                 </tab>
             </tabs>
         </section>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Results\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\TeamResult;
+use App\Models\Results\CrossCountry\Result;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -67,8 +68,10 @@ class TeamResultController extends Controller
      */
     public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
+        $results = Result::where('cross_country_team_result_id', $teamResult->id)->orderBy('place')
+            ->with('teamResult', 'athlete')->get();
 
-        return view('results.crossCountry.teamResults.show', compact('teamResult'));
+        return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
 
     }
 

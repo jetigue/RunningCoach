@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Results\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
+use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -30,16 +31,17 @@ class TeamResultController extends Controller
     }
 
 
-
     /**
      * Display the specified resource.
      *
+     * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @return Response
      */
-    public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
+    public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $results)
     {
-        return view('results.crossCountry.teamResults.show', compact('teamResult'));
+
+        return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
     }
 
     /**
