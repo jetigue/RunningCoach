@@ -19,7 +19,7 @@
                     @slot('title') Seniors @endslot
                     @foreach($seniors as $senior)
                         <li class="text-gray-700 font-semibold py-1">
-                            <a href="/athletes/{{$senior->id}}>
+                            <a href="/athletes/{{$senior->id}}">
                                 {{$senior->last_name}}, {{$senior->first_name}}
                             </a>
                         </li>

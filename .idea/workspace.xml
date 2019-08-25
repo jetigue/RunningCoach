@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResults.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResults.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/girlsRoster.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/girlsRoster.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -423,7 +417,7 @@
       <workItem from="1566505241975" duration="12299000" />
       <workItem from="1566592547739" duration="19000" />
       <workItem from="1566592595200" duration="13062000" />
-      <workItem from="1566691107151" duration="12763000" />
+      <workItem from="1566691107151" duration="13729000" />
     </task>
     <servers />
   </component>
