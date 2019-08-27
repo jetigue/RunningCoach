@@ -14,12 +14,12 @@ class AthleteProfileController extends Controller
     public function show(Athlete $athlete, TeamResult $teamResults,Result $results)
     {
 
-        $crossMeets = CrossCountryMeet::whereHas('results', function ($query) use ($athlete) {
-             $query->where('athlete_id', $athlete->id);
-        })
-            ->orderBy('meet_date', 'desc')
-            ->with('name', 'teamResults.event', 'teamResults.division.level', 'results')
-            ->get();
+//        $crossMeets = CrossCountryMeet::whereHas('results', function ($query) use ($athlete) {
+//             $query->where('athlete_id', $athlete->id);
+//        })
+//            ->orderBy('meet_date', 'desc')
+//            ->with('name', 'teamResults.event', 'teamResults.division.level', 'results')
+//            ->get();
 
         $crossResults = Result::where('athlete_id', $athlete->id)
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
@@ -40,6 +40,17 @@ class AthleteProfileController extends Controller
             ->orderBy('date', 'desc')
             ->get();
 
-        return view('profiles.athletes.show', compact('athlete', 'crossResults'));
+        $fiveKResults= Result::where('athlete_id', $athlete->id)
+            ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
+            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->where('events.name', '5k')
+            ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
+            ->where('cross_country_meets.meet_date', '>=', '2019-08-01')
+            ->select('cross_country_results.total_seconds', 'events.meters')
+            ->get();
+
+        $seasonBest5k = $fiveKResults->min('total_seconds');
+
+        return view('profiles.athletes.show', compact('athlete', 'crossResults', 'seasonBest5k'));
     }
 }

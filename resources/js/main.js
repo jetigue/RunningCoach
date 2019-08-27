@@ -67,6 +67,7 @@ Vue.component('track-results', require('./components/results/TrackResults').defa
 Vue.component('cross-country-results', require('./components/results/CrossCountryResults').default);
 Vue.component('athlete-cross-results', require('./components/results/AthleteCrossResults').default);
 
+
 // Tabs
 Vue.component('tabs', require('./components/tabs/Tabs').default);
 Vue.component('tab', require('./components/tabs/Tab').default);
@@ -75,6 +76,8 @@ Vue.component('tab', require('./components/tabs/Tab').default);
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
 Vue.component('team-events', require('./components/team/TeamEvents').default);
 
+// Training
+Vue.component('athlete-training-paces', require('./components/training/AthleteTrainingPaces').default);
 
 // users
 Vue.component('user-roles', require('./components/users/UserRoles').default);

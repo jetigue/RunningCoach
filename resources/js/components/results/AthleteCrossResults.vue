@@ -43,22 +43,13 @@
 
     export default Collection.extend({
         mixins: [authMixin],
-        props: ['data', 'results'],
+        props: ['data'],
 
         components: { AthleteCrossResult },
 
         data() {
             return {
             }
-        },
-
-        computed: {
-            sortedItems: function() {
-                this.items.sort( (a, b) => {
-                    return new Date(a.this.meet_date) - new Date(b.this.meet_date);
-                });
-                return this.items;
-            },
         }
     });
 </script>
