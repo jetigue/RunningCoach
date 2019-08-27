@@ -17,7 +17,11 @@
                     <athlete-cross-results :data="{{ $crossResults }}"></athlete-cross-results>
                 </tab>
                 <tab title="Training Paces">
-                    <athlete-training-paces :data="{{ $seasonBest5k }}"></athlete-training-paces>
+                    @if($seasonBest5k)
+                        <athlete-training-paces :data="{{ $seasonBest5k }}"></athlete-training-paces>
+                    @else
+                        <p>No 5k Results To Base Training Paces on This Season</p>
+                    @endif
                 </tab>
             </tabs>
         </section>
