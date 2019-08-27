@@ -26,9 +26,10 @@ class AthletePhysicalController extends Controller
      */
     public function index(Athletes $athletes)
     {
-        $requires = $athletes->requiresPhysical()->get();
-
-         return $requires;
+//        $requires = $athletes->requiresPhysical()->get();
+//
+//         return $requires;
+        return $athletes->all();
     }
 
     /**

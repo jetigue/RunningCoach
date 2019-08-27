@@ -17,7 +17,7 @@
                     <athlete-cross-results :data="{{ $crossResults }}"></athlete-cross-results>
                 </tab>
                 <tab title="Training Paces">
-                    <p>Coming Soon</p>
+                    <athlete-training-paces :data="{{ $seasonBest5k }}"></athlete-training-paces>
                 </tab>
             </tabs>
         </section>

@@ -32,6 +32,10 @@ class AthleteController extends Controller
             ->with('latestPhysical')
             ->orderBy('last_name', 'asc')
             ->paginate(20);
+
+        $allAthletes = Athlete::orderBy('last_name', 'asc');
+
+        return $allAthletes;
     }
 
     /**

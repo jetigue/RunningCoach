@@ -6226,6 +6226,13 @@ html {
   padding: 0.25rem 0.5rem;
 }
 
+.table-header-no-border {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+}
+
 .table-row {
   display: flex;
   align-items: center;

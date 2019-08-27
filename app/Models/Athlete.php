@@ -76,6 +76,14 @@ class Athlete extends Model
         return $this->hasMany(Result::class)->latest();
     }
 
+    public function getLowestAttribute ()
+    {
+        $fastest5k = $this->crossResults()->filter(function ($item) {
+            return !is_null($item->total_seconds);
+        });
+
+        return $fastest5k->min('total_seconds');
+    }
     /**
      * Apply all relevant name filters.
      *
