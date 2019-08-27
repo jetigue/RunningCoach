@@ -12,7 +12,7 @@
             </div>
             <div class="w-full md:w-1/2 py-1 md:flex flex-wrap md:justify-end">
                 <p>Average Speed:</p>
-                <p>~<span class="font-semibold text-primary"> {{ avgVelocity }}</span> meters a minute</p>
+                <p>&#8773;<span class="font-semibold text-primary"> {{ avgVelocity }}</span> meters a minute</p>
             </div>
         </section>
         <div class="primary-line my-2"></div>
