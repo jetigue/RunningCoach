@@ -21,7 +21,7 @@ class CreateCrossCountryResultsTable extends Migration
             $table->unsignedSmallInteger('place');
             $table->unsignedInteger('total_seconds');
             $table->unsignedTinyInteger('milliseconds')->nullable();
-            $table->unsignedTinyInteger('points')->nullable();
+            $table->unsignedSmallInteger('points')->nullable();
 
             $table->foreign('cross_country_team_result_id')
                 ->references('id')
