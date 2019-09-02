@@ -65,7 +65,7 @@
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="editing=true"></edit-button>
+                        <edit-button @clicked="getNames"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                 this.isExpanded = false;
             },
 
-            getSeasonNames() {
+            getNames() {
                 this.editing = true;
 
                 axios.get('/api/seasons')
