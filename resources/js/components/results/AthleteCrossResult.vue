@@ -49,7 +49,6 @@
             return {
                 editing: false,
                 isExpanded: false,
-
                 id: this.data.id,
                 meet_date: this.data.date,
                 meet_name: this.data.name,
@@ -59,13 +58,13 @@
                 milliseconds: this.data.milliseconds,
                 place: this.data.place,
                 total_seconds: this.data.total_seconds,
-                meetUrl: '/cross-country-meets/'+this.data.slug,
+                meetUrl: '/cross-country-meets/' + this.data.slug,
                 teamResultId: this.data.teamResultId
+
             }
         },
 
         computed: {
-
             duration: function () {
                 let time = this.total_seconds;
 

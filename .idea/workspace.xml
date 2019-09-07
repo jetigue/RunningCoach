@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
+
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/girlsRoster.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/girlsRoster.blade.php" afterDir="false" />
-=======
+
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" afterDir="false" />
->>>>>>> feature-athleteResults
+
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -66,6 +66,7 @@ Vue.component('cross-country-team-results', require('./components/results/CrossC
 Vue.component('track-results', require('./components/results/TrackResults').default);
 Vue.component('cross-country-results', require('./components/results/CrossCountryResults').default);
 Vue.component('athlete-cross-results', require('./components/results/AthleteCrossResults').default);
+Vue.component('senior-cross-results', require('./components/results/SeniorCrossResults').default);
 
 
 // Tabs
