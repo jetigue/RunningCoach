@@ -117,6 +117,19 @@
                                v-model="form.number_runners" required>
                     </div>
 
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.notes">Notes (optional)</label>
+                            <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
+                                  v-text="form.errors.get('notes')">
+                            </span>
+                        </div>
+                        <textarea class="form-input"
+                                  id="form.notes"
+                                  v-model="form.notes">
+                        </textarea>
+                    </div>
+
                     <div class="flex items-center justify-end">
                         <update-button class="mr-4" :disabled="form.errors.any()">
                             Update
@@ -180,6 +193,11 @@
                                     {{ number_runners }}
                                 </span>
                             </p>
+                            <p class="text-gray-600 w-full py-1">Notes:
+                                <span class="text-gray-800">
+                                    {{ notes }}
+                                </span>
+                            </p>
 
                         </div>
                         <div v-if="isCoach" class="flex justify-start cursor-pointer pb-2">
@@ -211,6 +229,7 @@
                 number_teams: this.data.number_teams,
                 number_runners: this.data.number_runners,
                 points: this.data.points,
+                notes: this.data.notes,
                 url: location.pathname + '/team-results/' +this.data.id,
 
                 meet_id: this.data.meet_id,
@@ -225,6 +244,7 @@
                     place: this.data.place,
                     number_teams: this.data.number_teams,
                     number_runners: this.data.number_runners,
+                    notes: this.data.notes,
                     points: this.data.points
                 }),
 
@@ -277,6 +297,7 @@
                         this.number_teams = this.form.number_teams;
                         this.number_runners = this.form.number_runners;
                         this.points = this.form.points;
+                        this.notes = this.form.notes;
 
                         this.editing = false;
                         this.isExpanded = false;
@@ -287,7 +308,8 @@
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
                             this.number_runners != this.data.number_runners ||
-                            this.points != this.data.points)
+                            this.points != this.data.points ||
+                            this.notes != this.data.notes)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,
@@ -322,6 +344,7 @@
                 this.form.number_teams = this.number_teams,
                 this.form.number_runners = this.number_runners,
                 this.form.points = this.points,
+                this.form.notes = this.notes
                 this.isExpanded = false;
             },
 

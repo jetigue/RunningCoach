@@ -36,6 +36,7 @@ class TeamResultController extends Controller
      *
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
+     * @param Result $results
      * @return Response
      */
     public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $results)

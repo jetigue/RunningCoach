@@ -32,7 +32,8 @@ class TeamResult extends Model
         'place',
         'number_teams',
         'number_runners',
-        'points'
+        'points',
+        'notes'
     ];
 
     /**

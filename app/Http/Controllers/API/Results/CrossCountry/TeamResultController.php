@@ -44,6 +44,7 @@ class TeamResultController extends Controller
             'number_teams'      => 'required|integer',
             'number_runners'    => 'required|integer',
             'points'            => 'nullable|integer',
+            'notes'             => 'nullable|string'
         ]);
 
         $teamResult = $crossCountryMeet->addTeamResult(request([
@@ -53,7 +54,8 @@ class TeamResultController extends Controller
             'place',
             'number_teams',
             'number_runners',
-            'points'
+            'points',
+            'notes'
         ]));
 
         return $teamResult->load('division', 'event', 'title');
@@ -79,6 +81,7 @@ class TeamResultController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
+     * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @return Response
      * @throws ValidationException
@@ -93,6 +96,7 @@ class TeamResultController extends Controller
             'number_teams'      => 'required|integer',
             'number_runners'    => 'required|integer',
             'points'            => 'integer|nullable',
+            'notes'             => 'nullable|string'
         ]);
 
         $teamResult->update(request([
@@ -102,7 +106,8 @@ class TeamResultController extends Controller
             'place',
             'number_teams',
             'number_runners',
-            'points'
+            'points',
+            'notes'
         ]));
 
         return response()->json($teamResult, 200);
@@ -111,6 +116,7 @@ class TeamResultController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @return Response
      * @throws \Exception

@@ -101,6 +101,18 @@
                    v-model="form.number_runners" required>
         </div>
 
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.notes">Notes (optional)</label>
+                <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
+                      v-text="form.errors.get('notes')">
+                </span>
+            </div>
+            <textarea class="form-input"
+                      id="form.notes"
+                      v-model="form.notes">
+            </textarea>
+        </div>
 
         <div class="text-right pt-2">
             <button type="submit"
@@ -124,6 +136,7 @@ export default {
                 number_teams: '',
                 number_runners: '',
                 points: '',
+                notes: ''
             }),
 
             divisions: [],
@@ -168,6 +181,7 @@ export default {
             this.form.number_teams = '',
             this.form.number_runners = '',
             this.form.points = '',
+            this.form.notes = '',
             this.form.errors.clear();
         },
 

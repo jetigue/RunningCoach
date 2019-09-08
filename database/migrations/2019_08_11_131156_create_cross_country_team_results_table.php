@@ -23,6 +23,7 @@ class CreateCrossCountryTeamResultsTable extends Migration
             $table->unsignedSmallInteger('points')->nullable();
             $table->unsignedSmallInteger('number_teams');
             $table->unsignedSmallInteger('number_runners');
+            $table->text('notes')->nullable();
             $table->string('slug');
             $table->timestamps();
 
