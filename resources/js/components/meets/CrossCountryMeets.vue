@@ -1,11 +1,10 @@
 <template>
     <div class="flex flex-col">
-        <div class="flex justify-between items-baseline">
-            <header class="font-light text-2xl lg:text-4xl pb-1 text-primary">Cross Country Meets</header>
+        <div class="text-xl text-gray-600 italic">
+            <slot></slot>
         </div>
-        <div class="table-container">
-
-            <div class="table-header">
+        <div class="table-container-no-border border-b-2 border-gray-400">
+            <div class="table-header-no-border border-b-2 border-gray-400">
                 <div class="flex md:w-11/12">
                     <div class="md:w-2/5">
                         <p class="text-primary font-semibold">Name</p>

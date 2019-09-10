@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Meets;
 
 use App\Models\Meets\CrossCountryMeet;
 use App\Http\Controllers\Controller;
+use App\Repositories\CrossCountryMeets;
 use Illuminate\Http\Response;
 
 class CrossCountryMeetController extends Controller
@@ -13,13 +14,33 @@ class CrossCountryMeetController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(CrossCountryMeets $meets)
     {
-        $crossCountryMeets = CrossCountryMeet::with('host', 'venue', 'timing', 'name')
-            ->orderBy('meet_date', 'desc')
-            ->get();
+        $crossCountryMeets2019 = $meets->crossCountryMeets2019();
+        $crossCountryMeets2018 = $meets->crossCountryMeets2018();
+        $crossCountryMeets2017 = $meets->crossCountryMeets2017();
+        $crossCountryMeets2016 = $meets->crossCountryMeets2016();
+        $crossCountryMeets2015 = $meets->crossCountryMeets2015();
+        $crossCountryMeets2014 = $meets->crossCountryMeets2014();
+        $crossCountryMeets2013 = $meets->crossCountryMeets2013();
+        $crossCountryMeets2012 = $meets->crossCountryMeets2012();
+        $crossCountryMeets2011 = $meets->crossCountryMeets2011();
+        $crossCountryMeets2010 = $meets->crossCountryMeets2010();
+        $crossCountryMeets2009 = $meets->crossCountryMeets2009();
 
-        return view('meets.crossCountry.index', compact('crossCountryMeets'));
+        return view('meets.crossCountry.index', compact(
+            'crossCountryMeets2019',
+            'crossCountryMeets2018',
+            'crossCountryMeets2017',
+            'crossCountryMeets2016',
+            'crossCountryMeets2015',
+            'crossCountryMeets2014',
+            'crossCountryMeets2013',
+            'crossCountryMeets2012',
+            'crossCountryMeets2011',
+            'crossCountryMeets2010',
+            'crossCountryMeets2009'
+        ));
     }
 
     /**

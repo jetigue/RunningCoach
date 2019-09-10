@@ -27,6 +27,6 @@ class UserRoleController extends Controller
             return $roles;
         }
 
-        return view('user.roles.index', compact('roles'));
+        return view('users.roles.index', compact('roles'));
     }
 }

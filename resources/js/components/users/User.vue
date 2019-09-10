@@ -187,7 +187,7 @@
                 this.form.first_name = this.first_name,
                 this.form.last_name = this.last_name,
                 this.form.email = this.email,
-                this.form.user_role_id = this.user_role_id,
+                this.form.user_role_id = this.data.user_role_id,
                 this.isExpanded = false;
             },
 

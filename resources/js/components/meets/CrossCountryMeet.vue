@@ -100,7 +100,7 @@
                                 <a :href="'/cross-country-meets/'+this.data.slug">{{meetName }}</a>
                             </div>
                             <div class="w-1/2 md:w-1/4 text-gray-700 py-1 pl-2 lg:p-0">
-                                {{ meetDate | moment("M.DD.YYYY") }}
+                                {{ meetDate | moment("MMMM Do") }}
                             </div>
                             <div class="w-1/2 md:w-1/4 text-blue-700 font-medium">
                                 <a :href="'/cross-country-meets/'+this.data.slug">Results</a>
