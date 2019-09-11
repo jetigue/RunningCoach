@@ -94,5 +94,12 @@ class CrossCountryMeets
             ->get();
     }
 
+    public function crossCountryMeets()
+    {
+        return $crossCountryMeets2009 = CrossCountryMeet::with('host', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->get();
+    }
+
 
 }

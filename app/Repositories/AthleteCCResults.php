@@ -272,4 +272,27 @@ class AthleteCCResults
             ->orderBy('date', 'desc')
             ->get();
     }
+
+    public function crossResults(Athlete $athlete)
+    {
+        return $crossResults = Result::where('athlete_id', $athlete->id)
+            ->join('athletes', 'cross_country_results.athlete_id', '=', 'athletes.id')
+            ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
+            ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
+            ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
+            ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
+            ->join('levels', 'divisions.level_id', '=', 'levels.id')
+            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->select(
+                'cross_country_results.*',
+                'cross_country_meets.meet_date as date',
+                'cross_country_meets.slug as slug',
+                'cross_country_team_results.id as teamResultId',
+                'meet_names.name',
+                'levels.name as level',
+                'events.name as event'
+            )
+            ->orderBy('date', 'desc')
+            ->get();
+    }
 }

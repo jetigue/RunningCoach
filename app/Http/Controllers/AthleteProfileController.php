@@ -23,6 +23,7 @@ class AthleteProfileController extends Controller
         $crossResults2010 = $crossResults->crossResults2010($athlete);
         $crossResults2009 = $crossResults->crossResults2009($athlete);
 
+
         $fiveKResults= Result::where('athlete_id', $athlete->id)
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
             ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')

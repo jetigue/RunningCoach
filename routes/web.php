@@ -15,6 +15,9 @@ Route::get('/river-run', 'PageController@riverRun');
 Route::get('/cross-country-meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country-meets/{crossCountryMeet}', 'Meets\CrossCountryMeetController@show');
 
+Route::get('/cross-country-venues', 'CrossCountryVenueController@index');
+Route::get('/cross-country-venues/{crossCountryVenue}', 'CrossCountryVenueController@show');
+
 Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
