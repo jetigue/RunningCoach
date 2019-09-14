@@ -4,21 +4,21 @@
     <div class="flex flex-col hover:bg-white">
         <div class="flex flex-col hover:bg-white">
             <div class="flex flex-col p-2 items-center">
-                <div class="flex flex-wrap w-full">
+                <div class="flex flex-wrap w-full" :class="{'font-semibold': current}">
                     <div class="w-full md:w-7/12 lg:w-1/4 hover:text-blue-700 order-1 lg:order-none">
                         <a :href="'/athletes/'+this.data.athlete_id">{{ athlete }}</a>
                     </div>
                     <div class="w-5/6 md:w-1/4 lg:w-1/6 order-3 md:order-2 lg:order-none pl-2 md:pl-0">
                         {{duration}}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
                     </div>
-                    <div class="hidden lg:block lg:w-1/3">
+                    <div class="hidden lg:block lg:w-1/3 lg:text-sm">
                         {{ meet }}
                     </div>
-                    <div class="hidden lg:block lg:w-1/6">
+                    <div class="hidden lg:block lg:w-1/6 lg:text-sm">
                         {{ meetDate | moment("M.DD.YY") }}
                     </div>
 
-                    <div class="hidden lg:block lg:w-1/12 text-center">
+                    <div class="hidden lg:block lg:w-1/12 lg:text-sm text-center">
                         {{ place_w_suffix }}
                     </div>
 
@@ -75,13 +75,23 @@
 
         methods: {
 
-        toggleRow() {
-            this.isExpanded = !this.isExpanded
-        }
+            toggleRow() { this.isExpanded = !this.isExpanded }
 
         },
 
         computed: {
+            current: function() {
+                let d = new Date();
+                let n = d.getFullYear();
+                let x = this.meetDate;
+                let y = new Date(x);
+                let z = y.getFullYear();
+
+                if(n === z) {
+                    return true;
+                }
+            },
+
             duration: function () {
                 let time = this.total_seconds;
 

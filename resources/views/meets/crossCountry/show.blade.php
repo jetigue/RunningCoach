@@ -12,7 +12,7 @@
         <p class="text-primary text-2xl md:text-3xl lg:text-4xl font-thin text-center py-2">
             {{ $crossCountryMeet->name->name }}
         </p>
-        <div class="px-4 py-2 bg-gray-200 rounded shadow">
+        <div class="px-4 py-2 border-b border-t border-gray-400">
             <div class="flex flex-wrap justify-between py-1">
                 <p class="text-black text-sm md:text-lg lg:text-xl md:pl-0">
                     {{date('F j, Y', strtotime( $crossCountryMeet->meet_date))}}
@@ -23,11 +23,20 @@
             </div>
 
             <div class="flex flex-wrap text-gray-700 text-xs md:text-sm justify-between py-1">
-                <div class="">
+                <div class="flex flex-col">
                     <p>Host: <span class="text-black">{{ $crossCountryMeet->host->name }}</span>
-                </div>
-                <div class="">
                     <p class="">Timing: <span class="text-black">{{ $crossCountryMeet->timing->name }}</span>
+                </div>
+                <div class="flex flex-col p-0">
+
+                    <a  class="text-sm text-blue-700"
+                        href="/cross-country-venues/{{ $crossCountryMeet->venue->id }}/boys-records">
+                        Boys Records
+                    </a>
+                    <a  class="text-sm text-blue-700"
+                        href="/cross-country-venues/{{ $crossCountryMeet->venue->id }}/girls-records">
+                        Girls Records
+                    </a>
                 </div>
             </div>
         </div>
