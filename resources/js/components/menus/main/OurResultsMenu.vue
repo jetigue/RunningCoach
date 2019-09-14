@@ -34,8 +34,13 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: 'Cross Country',
+                    label: 'Cross Country Meets',
                     url: '/cross-country-meets'
+                },
+                {
+                    id: 2,
+                    label: 'Cross Country Venues',
+                    url: '/cross-country-venues'
                 },
             ]
         }

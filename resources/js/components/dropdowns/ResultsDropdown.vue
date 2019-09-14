@@ -16,10 +16,19 @@
                     <div class="boys-state-2018 flex w-1/5 h-full items-end justify-center uppercase py-4">
                         <a class="button"
                            href="/cross-country-meets">
-                            Cross country
+                            Cross country Meets
+                        </a>
+                    </div>
+
+                    <div class="girls-trophy flex w-1/5 h-full items-end justify-center uppercase py-4">
+                        <a class="button"
+                           href="/cross-country-venues">
+                            Cross country Venue Records
                         </a>
                     </div>
                 </div>
+
+
 
             </div>
         </portal>

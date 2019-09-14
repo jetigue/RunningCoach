@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CrossCountryMeets.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CrossCountryMeets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/main/OurResultsMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/main/OurResultsMenu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -179,7 +178,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/training" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -195,19 +194,19 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\training" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\mixins" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\properties\races" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\properties\races\titles" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\records\crossCountry\venues\boys" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\physicals" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\buttons\menus" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\main" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\layouts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\public\images" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\records\crossCountry\venues" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\training" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\mixins" />
+      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,7 +426,10 @@
       <workItem from="1566691107151" duration="13729000" />
       <workItem from="1566691107151" duration="12763000" />
       <workItem from="1566857178168" duration="8690000" />
-      <workItem from="1568158531523" duration="6055000" />
+      <workItem from="1568158531523" duration="6655000" />
+      <workItem from="1568243385958" duration="9332000" />
+      <workItem from="1568331184732" duration="8966000" />
+      <workItem from="1568412676165" duration="7019000" />
     </task>
     <servers />
   </component>

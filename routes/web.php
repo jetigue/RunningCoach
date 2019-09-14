@@ -16,7 +16,9 @@ Route::get('/cross-country-meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country-meets/{crossCountryMeet}', 'Meets\CrossCountryMeetController@show');
 
 Route::get('/cross-country-venues', 'CrossCountryVenueController@index');
-Route::get('/cross-country-venues/{crossCountryVenue}', 'CrossCountryVenueController@show');
+
+Route::get('/cross-country-venues/{venue}/boys-records', 'CrossCountryVenueController@showBoysRecords');
+Route::get('/cross-country-venues/{venue}/girls-records', 'CrossCountryVenueController@showGirlsRecords');
 
 Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 
