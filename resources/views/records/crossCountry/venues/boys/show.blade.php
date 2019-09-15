@@ -29,21 +29,21 @@
             <tab title="Fastest 50 All-Time" active>
                 <venue-records :data="{{ $fastestBoys }}"></venue-records>
             </tab>
-            <tab title="Fastest 50 Seniors">
-                <venue-records :data="{{ $fastestSeniorBoys }}"></venue-records>
-            </tab>
+{{--            <tab title="Fastest 50 Seniors">--}}
+{{--                <venue-records :data="{{ $fastestSeniorBoys }}"></venue-records>--}}
+{{--            </tab>--}}
 
-            <tab title="Fastest 50 Juniors">
-                <venue-records :data="{{ $fastestJuniorBoys }}"></venue-records>
-            </tab>
+{{--            <tab title="Fastest 50 Juniors">--}}
+{{--                <venue-records :data="{{ $fastestJuniorBoys }}"></venue-records>--}}
+{{--            </tab>--}}
 
-            <tab title="Fastest 50 Sophomores">
-                <venue-records :data="{{ $fastestSophomoreBoys }}"></venue-records>
-            </tab>
+{{--            <tab title="Fastest 50 Sophomores">--}}
+{{--                <venue-records :data="{{ $fastestSophomoreBoys }}"></venue-records>--}}
+{{--            </tab>--}}
 
-            <tab title="Fastest 50 Freshmen">
-                <venue-records :data="{{ $fastestFreshmenBoys }}"></venue-records>
-            </tab>
+{{--            <tab title="Fastest 50 Freshmen">--}}
+{{--                <venue-records :data="{{ $fastestFreshmenBoys }}"></venue-records>--}}
+{{--            </tab>--}}
         </tabs>
     </section>
 </div>
