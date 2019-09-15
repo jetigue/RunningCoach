@@ -28,7 +28,6 @@
                     <p class="">Timing: <span class="text-black">{{ $crossCountryMeet->timing->name }}</span>
                 </div>
                 <div class="flex flex-col p-0">
-
                     <a  class="text-sm text-blue-700"
                         href="/cross-country-venues/{{ $crossCountryMeet->venue->id }}/boys-records">
                         Boys Records

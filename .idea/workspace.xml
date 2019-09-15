@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/records/VenueRecord.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/records/VenueRecord.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -427,6 +429,7 @@
       <workItem from="1568331184732" duration="8966000" />
       <workItem from="1568412676165" duration="7634000" />
       <workItem from="1568490204799" duration="8753000" />
+      <workItem from="1568579926254" duration="7521000" />
     </task>
     <servers />
   </component>
