@@ -7,7 +7,7 @@
         <cross-country-meets :data="{{ $crossCountryMeets2018 }}" class="py-4">2018</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2017 }}" class="py-4">2017</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2016 }}" class="py-4">2016</cross-country-meets>
-        <cross-country-meets :data="{{ $crossCountryMeets2015 }}" class="py-4">2014</cross-country-meets>
+        <cross-country-meets :data="{{ $crossCountryMeets2015 }}" class="py-4">2015</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2014 }}" class="py-4">2014</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2013 }}" class="py-4">2013</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2012 }}" class="py-4">2012</cross-country-meets>

@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -425,7 +425,10 @@
       <workItem from="1568331184732" duration="8966000" />
       <workItem from="1568412676165" duration="7634000" />
       <workItem from="1568490204799" duration="8753000" />
-      <workItem from="1568579926254" duration="8224000" />
+      <workItem from="1568579926254" duration="8670000" />
+      <workItem from="1569082342314" duration="18000" />
+      <workItem from="1569082373280" duration="210000" />
+      <workItem from="1571357291681" duration="115000" />
     </task>
     <servers />
   </component>
