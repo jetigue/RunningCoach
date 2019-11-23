@@ -9,27 +9,19 @@
             <div v-show="active"
                  @mouseover="active = true"
                  @mouseout="active = false"
-                 class="absolute w-full z-10 h-48 bg-white">
+                 class="absolute w-full z-10 bg-white h-64 max-h-100 border-b-2 border-gray-200">
 
-                <div class="flex w-full h-full justify-center text-xs lg:text-sm">
-                    <div class="river-run flex md:w-1/3 lg:w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/river-run">
-                            Lambert River Run
-                        </a>
+                <div class="flex flex-wrap h-full lg:w-3/4 mx-auto md:p-2">
+                    <div class="w-1/4"></div>
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Our Events</p>
+                        <a class="pl-2" href="/longhorn-5k">Longhorn 5k</a>
+                        <a class="pl-2" href="/team-camp">Team Camp</a>
                     </div>
-                    <div class="longhorn-5k flex md:w-1/3 lg:w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/longhorn-5k">
-                            Longhorn 5k
-                        </a>
+                    <div class="flex flex-col w-1/4 p-2">
 
                     </div>
-                    <div class="team-camp flex md:w-1/3 lg:w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/team-camp">
-                            Team Camp
-                        </a>
+                    <div class="our-events-menu flex w-1/4 h-full justify-center uppercase py-4">
                     </div>
                 </div>
 

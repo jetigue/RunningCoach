@@ -9,7 +9,7 @@
             <div v-show="active"
                  @mouseover="active = true"
                  @mouseout="active = false"
-                 class="absolute w-full z-10 bg-white h-48 max-h-100">
+                 class="absolute w-full z-10 bg-white h-56 max-h-100 border-b-2 border-gray-200">
 
 
                 <div class="flex flex-col flex-wrap h-full lg:w-3/4 mx-auto md:p-2">

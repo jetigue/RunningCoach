@@ -9,42 +9,29 @@
             <div v-show="active"
                  @mouseover="active = true"
                  @mouseout="active = false"
-                 class="absolute w-full z-10 bg-white" style="height: 200px">
+                 class="absolute w-full z-10 bg-white h-64 max-h-100 shadow">
 
-
-                <div class="flex w-full h-full md:text-xs lg:text-sm">
-                    <div class="coaches flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/coaches">
-                            Our Coaches
-                        </a>
+                <div class="flex flex-wrap h-full lg:w-3/4 mx-auto md:p-2">
+                    <div class="our-team-menu flex w-1/4 h-full justify-center uppercase py-4">
                     </div>
-                    <div class="boys-roster flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/boys-roster">
-                            Boys' Roster
-                        </a>
-
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Coaches</p>
+                        <a class="pl-2" href="#">Coach Tigue</a>
+                        <a class="pl-2" href="#">Coach Leonard</a>
+                        <a class="pl-2" href="#">Coach McCormick</a>
+                        <a class="pl-2" href="#">Coach Shroyer</a>
+                        <a class="pl-2" href="#">Coach Langley</a>
                     </div>
-                    <div class="girls-roster flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/girls-roster">
-                            Girls' Roster
-                        </a>
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Rosters</p>
+                        <a class="pl-2" href="/boys-roster">Boys' Roster</a>
+                        <a class="pl-2" href="/girls-roster">Girls' Roster</a>
                     </div>
-                    <div class="booster-club flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/booster-club">
-                            Booster Club
-                        </a>
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Our Supporters</p>
+                        <a class="pl-2" href="/booster-club">Booster Club</a>
+                        <a class="pl-2" href="/sponsors">Sponsors</a>
                     </div>
-                    <div class="sponsors flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/sponsors">
-                            Our Sponsors
-                        </a>
-                    </div>
-
                 </div>
 
 

@@ -9,22 +9,22 @@
             <div v-show="active"
                  @mouseover="active = true"
                  @mouseout="active = false"
-                 class="absolute w-full z-10 bg-white" style="height: 200px">
+                 class="absolute w-full z-10 bg-white h-64 max-h-100 border-b-2 border-gray-200">
 
 
-                <div class="flex w-full h-full justify-center text-xs lg:text-sm">
-                    <div class="boys-state-2018 flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/cross-country-meets">
-                            Cross country Meets
-                        </a>
+                <div class="flex flex-wrap h-full lg:w-3/4 mx-auto md:p-2">
+                    <div class="w-1/4"></div>
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Cross Country</p>
+                        <a class="pl-2" href="/cross-country-meets">Meet Results</a>
+                        <a class="pl-2" href="/cross-country-venues">Venue Records</a>
                     </div>
-
-                    <div class="girls-trophy flex w-1/5 h-full items-end justify-center uppercase py-4">
-                        <a class="button"
-                           href="/cross-country-venues">
-                            Cross country Venue Records
-                        </a>
+                    <div class="flex flex-col w-1/4 p-2">
+                        <p class="text-xl text-primary font-semibold">Track</p>
+                        <a class="pl-2" href="#">Meet Results (coming soon)</a>
+                        <a class="pl-2" href="#">School Records (coming soon)</a>
+                    </div>
+                    <div class="our-results-menu flex w-1/4 h-full justify-center uppercase py-4">
                     </div>
                 </div>
 

@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/RunningCoach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RunningCoach.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/AthleteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AthleteFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/FormsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/FormsDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/TeamDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/TeamDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +171,9 @@
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1OYTy3CUD6N0lqqdbiIYTuCjFzX" />
@@ -172,7 +185,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -215,25 +228,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ManageRunningLogTest.an_authorized_user_can_log_a_run">
-    <configuration name="ManagePhysicalsTest.a_coach_can_create_a_meet_name" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManagePhysicalsTest" file="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" method="a_coach_can_create_a_meet_name" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.Feature">
+    <configuration name="CoachDashboardTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CoachDashboardTest" file="$PROJECT_DIR$/tests/Feature/CoachDashboardTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ManagePhysicalsTest.a_coach_can_enter_a_physical" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManagePhysicalsTest" file="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" method="a_coach_can_enter_a_physical" scope="Method" />
+    <configuration name="EventTest.it_has_a_path" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\EventTest" file="$PROJECT_DIR$/tests/Unit/EventTest.php" method="it_has_a_path" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageRunningLogTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageRunningLogTest" file="$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php" scope="Class" />
+    <configuration name="Feature" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/tests/Feature" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageRunningLogTest.an_authorized_user_can_log_a_run" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageRunningLogTest" file="$PROJECT_DIR$/tests/Feature/ManageRunningLogTest.php" method="an_authorized_user_can_log_a_run" scope="Method" />
+    <configuration name="HostTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\HostTest" file="$PROJECT_DIR$/tests/Unit/HostTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageTeamEventsTest.a_team_event_requires_details" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageTeamEventsTest" file="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" method="a_team_event_requires_details" scope="Method" />
+    <configuration name="UserRoleTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\UserRoleTest" file="$PROJECT_DIR$/tests/Unit/UserRoleTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -242,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ManageRunningLogTest.an_authorized_user_can_log_a_run" />
-        <item itemvalue="PHPUnit.ManageRunningLogTest" />
-        <item itemvalue="PHPUnit.ManagePhysicalsTest.a_coach_can_enter_a_physical" />
-        <item itemvalue="PHPUnit.ManagePhysicalsTest.a_coach_can_create_a_meet_name" />
-        <item itemvalue="PHPUnit.ManageTeamEventsTest.a_team_event_requires_details" />
+        <item itemvalue="PHPUnit.Feature" />
+        <item itemvalue="PHPUnit.CoachDashboardTest" />
+        <item itemvalue="PHPUnit.EventTest.it_has_a_path" />
+        <item itemvalue="PHPUnit.UserRoleTest" />
+        <item itemvalue="PHPUnit.HostTest" />
       </list>
     </recent_temporary>
   </component>
@@ -429,6 +442,11 @@
       <workItem from="1569082342314" duration="18000" />
       <workItem from="1569082373280" duration="210000" />
       <workItem from="1571357291681" duration="115000" />
+      <workItem from="1574354842989" duration="166000" />
+      <workItem from="1574355148686" duration="1971000" />
+      <workItem from="1574378556170" duration="3912000" />
+      <workItem from="1574382623431" duration="829000" />
+      <workItem from="1574535234778" duration="2376000" />
     </task>
     <servers />
   </component>
