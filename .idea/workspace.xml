@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/RunningCoach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RunningCoach.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/AthleteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AthleteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/FormsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/FormsDropdown.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/TeamDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/TeamDropdown.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -446,7 +438,8 @@
       <workItem from="1574355148686" duration="1971000" />
       <workItem from="1574378556170" duration="3912000" />
       <workItem from="1574382623431" duration="829000" />
-      <workItem from="1574535234778" duration="2376000" />
+      <workItem from="1574535234778" duration="2878000" />
+      <workItem from="1574622165094" duration="549000" />
     </task>
     <servers />
   </component>

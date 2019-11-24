@@ -6361,7 +6361,7 @@ html {
 
 .our-results-menu {
   background-image: url("/images/Reilly.jpg");
-  background-size: 55%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
