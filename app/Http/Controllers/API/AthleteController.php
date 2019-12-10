@@ -31,7 +31,7 @@ class AthleteController extends Controller
         return $athletes
             ->with('latestPhysical')
             ->orderBy('last_name', 'asc')
-            ->paginate(20);
+            ->paginate(50;
 
         $allAthletes = Athlete::orderBy('last_name', 'asc');
 

@@ -11,6 +11,7 @@ class CrossCountryMeetSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory('App\Models\Meets\CrossCountryMeet', 50)->create();
+        factory('App\Models\Results\CrossCountry\TeamResult', 100)->create();
     }
 }

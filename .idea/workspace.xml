@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/RunningCoach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RunningCoach.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/EventsDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dropdowns/ResultsDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CrossCountryMeetSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CrossCountryMeetSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,8 +171,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
@@ -189,7 +194,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
   </component>
   <component name="RecentsManager">
@@ -207,18 +212,6 @@
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\mixins" />
       <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="PHPUnit.Feature">
     <configuration name="CoachDashboardTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -254,6 +247,18 @@
         <item itemvalue="PHPUnit.HostTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -439,7 +444,12 @@
       <workItem from="1574378556170" duration="3912000" />
       <workItem from="1574382623431" duration="829000" />
       <workItem from="1574535234778" duration="2878000" />
-      <workItem from="1574622165094" duration="549000" />
+      <workItem from="1574622165094" duration="1394000" />
+      <workItem from="1574980257546" duration="21000" />
+      <workItem from="1574980292470" duration="447000" />
+      <workItem from="1575329978798" duration="185000" />
+      <workItem from="1575330185814" duration="6903000" />
+      <workItem from="1575936523294" duration="240000" />
     </task>
     <servers />
   </component>
@@ -463,6 +473,24 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/RunningCoach" />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="450" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575330158312">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="450" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1575330158312" />
+    <state x="278" y="55" key="SettingsEditor" timestamp="1575331284930">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="278" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575331284930" />
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1575936577595">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575936577595" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575936740909">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575936740909" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
