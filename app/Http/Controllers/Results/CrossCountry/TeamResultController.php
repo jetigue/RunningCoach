@@ -5,22 +5,29 @@ namespace App\Http\Controllers\Results\CrossCountry;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class TeamResultController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return TeamResult[]|Builder[]|Collection
+     * @return Factory|View
      */
     public function index()
     {
-        $teamResults = TeamResult::with('division', 'event', 'raceTitle')->orderBy('meet_date', 'desc')->get();
+
+        $teamResults = TeamResult::with('division', 'event', 'raceTitle')
+            ->orderBy('meet_date', 'desc')
+            ->get();
+
+
 
         if (request()->expectsJson()) {
 
@@ -37,11 +44,10 @@ class TeamResultController extends Controller
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @param Result $results
-     * @return Response
+     * @return Factory|View
      */
     public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $results)
     {
-
         return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
     }
 

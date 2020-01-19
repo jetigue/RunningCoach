@@ -17,8 +17,8 @@ class RacePropertiesSeeder extends Seeder
     public function run()
     {
         factory(Level::class, 3)->create();
-        factory(Event::class, 4)->create();
-        factory(Gender::class, 3)->create();
+        factory(Event::class, 2)->create();
+        factory(Gender::class, 2)->create();
         factory(Title::class, 3)->create();
         factory(Division::class, 3)->create();
     }

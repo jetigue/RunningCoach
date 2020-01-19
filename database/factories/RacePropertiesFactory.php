@@ -11,7 +11,7 @@ $factory->define(Gender::class, function (Faker $faker) {
     return [
         'name' => $faker
             ->unique()
-            ->randomElement($array = array('Boys', 'Girls', 'Mixed'))
+            ->randomElement($array = array('Boys', 'Girls'))
     ];
 });
 
@@ -42,17 +42,14 @@ $factory->define(Event::class, function (Faker $faker) {
     $name = $faker
         ->unique()
         ->randomElement($array = array(
-            '1 Mile',
-            '1600 Meters',
-            '2 Mile',
-            '3200 Meters',
+            '3 miles',
             '5k'
         ));
 
     return [
         'name' => $name,
         'meters' => $faker->randomElement($array = array(
-            1609, 1600, 3200, 3218, 5000
+            4800, 5000
         )),
     ];
 });

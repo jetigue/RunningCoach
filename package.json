@@ -11,21 +11,21 @@
     },
     "devDependencies": {
         "axios": "^0.18.1",
-        "cross-env": "^5.1",
-        "laravel-mix": "^4.1.2",
+        "cross-env": "^5.2.1",
+        "laravel-mix": "^4.1.4",
         "lodash": "^4.17.15",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.22.9",
-        "sass-loader": "^7.1.0",
-        "tailwindcss": "^1.0.5",
-        "vue": "^2.6.10",
-        "vue-template-compiler": "^2.6.10"
+        "sass": "^1.25.0",
+        "sass-loader": "^7.3.1",
+        "tailwindcss": "^1.1.4",
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "chart.js": "^2.8.0",
+        "chart.js": "^2.9.3",
         "moment": "^2.24.0",
         "portal-vue": "^1.5.1",
-        "vue-moment": "^4.0.0",
+        "vue-moment": "^4.1.0",
         "vue-sweetalert2": "^1.6.4"
     }
 }
