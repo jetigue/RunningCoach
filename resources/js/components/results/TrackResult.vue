@@ -289,7 +289,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'Track Results Updated'
+                                    title: 'TimeTrial Results Updated'
                                 });
                             }
                     })
@@ -337,7 +337,7 @@
                     ) => {
                         this.athletes = athletesResponse.data;
                         this.events = eventsResponse.data;
-                    }));         
+                    }));
             }
         }
     }

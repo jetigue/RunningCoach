@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Properties\General;
 
 use App\Models\Properties\General\DayTime;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,13 +23,11 @@ class DayTimeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return DayTime[]|Collection
      */
     public function index()
     {
-        $dayTimes = DayTime::all();
-
-        return $dayTimes;
+        return DayTime::all();
     }
 
     /**

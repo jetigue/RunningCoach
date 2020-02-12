@@ -184,7 +184,7 @@ export default {
             }
 
             function getEventNames() {
-                return axios.get('/api/events')
+                return axios.get('/api/track/events')
             }
 
             axios.all([

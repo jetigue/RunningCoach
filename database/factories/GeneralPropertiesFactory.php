@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Properties\General\TrackSurface;
 use Faker\Generator as Faker;
 use App\Models\Properties\General\DayTime;
 use App\Models\Properties\General\Season;
@@ -42,6 +43,13 @@ $factory->define(TerrainType::class, function (Faker $faker) {
 });
 
 $factory->define(DayTime::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true)
+    ];
+});
+
+$factory->define(TrackSurface::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
         'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true)

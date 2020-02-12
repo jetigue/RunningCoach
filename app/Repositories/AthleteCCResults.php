@@ -18,7 +18,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -26,7 +26,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2019')
             ->orderBy('date', 'desc')
@@ -42,7 +42,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -50,7 +50,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2018')
             ->orderBy('date', 'desc')
@@ -66,7 +66,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -74,7 +74,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2017')
             ->orderBy('date', 'desc')
@@ -90,7 +90,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -98,7 +98,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2016')
             ->orderBy('date', 'desc')
@@ -114,7 +114,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -122,7 +122,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2015')
             ->orderBy('date', 'desc')
@@ -138,7 +138,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -146,7 +146,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2014')
             ->orderBy('date', 'desc')
@@ -162,7 +162,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -170,7 +170,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2013')
             ->orderBy('date', 'desc')
@@ -186,7 +186,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -194,7 +194,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2012')
             ->orderBy('date', 'desc')
@@ -210,7 +210,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -218,7 +218,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2011')
             ->orderBy('date', 'desc')
@@ -234,7 +234,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -242,7 +242,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2010')
             ->orderBy('date', 'desc')
@@ -258,7 +258,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -266,7 +266,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->whereYear('cross_country_meets.meet_date', '2009')
             ->orderBy('date', 'desc')
@@ -282,7 +282,7 @@ class AthleteCCResults
             ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
-            ->join('events', 'cross_country_team_results.event_id', '=', 'events.id')
+            ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->select(
                 'cross_country_results.*',
                 'cross_country_meets.meet_date as date',
@@ -290,7 +290,7 @@ class AthleteCCResults
                 'cross_country_team_results.id as teamResultId',
                 'meet_names.name',
                 'levels.name as level',
-                'events.name as event'
+                'cross_country_events.name as event'
             )
             ->orderBy('date', 'desc')
             ->get();

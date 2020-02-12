@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/seasons/id" method="POST" id="editSeason" @submit.prevent="update"
+                <form action="api/meet-names/id" method="POST" id="editSeason" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -104,7 +104,7 @@
 
             update() {
                 this.form
-                    .patch('/api/meetNames/' + this.data.id)
+                    .patch('/api/meet-names/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.season = this.seasons.find(season => season.id === this.form.season_id).name;
@@ -134,7 +134,7 @@
             },
 
             destroy() {
-                axios.delete('api/meetNames/' + this.data.id);
+                axios.delete('api/meet-names' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

@@ -6,6 +6,7 @@ use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -70,7 +71,7 @@ class ResultController extends Controller
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @param Result $result
-     * @return Response
+     * @return JsonResponse
      * @throws ValidationException
      */
     public function update(Request $request, CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $result)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Meets;
 use App\Models\Meets\CrossCountryMeet;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -62,7 +63,7 @@ class CrossCountryMeetController extends Controller
      *
      * @param Request $request
      * @param CrossCountryMeet $crossCountryMeet
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, CrossCountryMeet $crossCountryMeet)
     {

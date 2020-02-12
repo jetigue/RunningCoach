@@ -24,7 +24,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ];
 
-        $this->post('/api/meetNames', $attributes);
+        $this->post('/api/meet-names', $attributes);
 
         $this->assertDatabaseHas('meet_names', $attributes);
 
@@ -45,7 +45,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ];
 
-        $this->post('/api/meetNames', $attributes);
+        $this->post('/api/meet-names', $attributes);
 
         $this->assertDatabaseHas('meet_names', $attributes);
 
@@ -61,7 +61,7 @@ class ManageMeetNamesTest extends TestCase
 
         $attributes = factory(Name::class)->raw(['name' => '']);
 
-        $this->post('api/meetNames', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/meet-names', $attributes)->assertSessionHasErrors('name');
      }
 
     /** @test */
@@ -71,7 +71,7 @@ class ManageMeetNamesTest extends TestCase
 
         $attributes = factory(Name::class)->raw(['season_id' => '']);
 
-        $this->post('api/meetNames', $attributes)->assertSessionHasErrors('season_id');
+        $this->post('api/meet-names', $attributes)->assertSessionHasErrors('season_id');
     }
 
     /** @test */
@@ -86,7 +86,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ];
 
-        $this->post('/api/meetNames', $attributes)->assertRedirect('/');
+        $this->post('/api/meet-names', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -101,7 +101,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ];
 
-        $this->post('/api/meetNames', $attributes)->assertRedirect('/');
+        $this->post('/api/meet-names', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -114,7 +114,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ];
 
-        $this->post('/api/meetNames', $attributes)->assertRedirect('/');
+        $this->post('/api/meet-names', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -167,7 +167,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ]);
 
-        $this->patch('api/meetNames/' . $name->id, [
+        $this->patch('api/meet-names/' . $name->id, [
             'name' => 'New Meet Name',
             'season_id' => $season->id
         ])
@@ -190,7 +190,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ]);
 
-        $this->patch('api/meetNames/' . $name->id, [
+        $this->patch('api/meet-names/' . $name->id, [
             'name' => 'New Meet Name',
             'season_id' => $season->id
         ])
@@ -213,7 +213,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ]);
 
-        $this->patch('api/meetNames/' . $name->id, [
+        $this->patch('api/meet-names/' . $name->id, [
             'name' => 'New Meet Name',
             'season_id' => $season->id
         ])
@@ -234,7 +234,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ]);
 
-        $this->patch('api/meetNames/' . $name->id, [
+        $this->patch('api/meet-names/' . $name->id, [
             'name' => 'New Meet Name',
             'season_id' => $season->id
         ])
@@ -253,7 +253,7 @@ class ManageMeetNamesTest extends TestCase
             'season_id' => $season->id
         ]);
 
-        $this->patch('api/meetNames/' . $name->id, [
+        $this->patch('api/meet-names/' . $name->id, [
             'name' => 'New Meet Name',
             'season_id' => $season->id
         ])

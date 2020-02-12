@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/terrainTypes/id" method="POST" id="editDayTime" @submit.prevent="update"
+                <form action="api/terrain-types/id" method="POST" id="editDayTime" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -107,11 +107,11 @@
 
             update() {
                 this.form
-                    .patch('/api/terrainTypes/' + this.data.id)
+                    .patch('/api/terrain-types/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.description = this.form.description;
-                        
+
                         this.editing = false;
                         this.isExpanded = false;
 
@@ -140,7 +140,7 @@
             },
 
             destroy() {
-                axios.delete('api/terrainTypes/' + this.data.id);
+                axios.delete('api/terrain-types/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

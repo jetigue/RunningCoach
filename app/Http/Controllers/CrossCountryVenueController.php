@@ -18,7 +18,7 @@ class CrossCountryVenueController extends Controller
     /**
      * List all of the cross country venues
      *
-     * @return void
+     * @return Factory|View
      */
     public function index()
     {

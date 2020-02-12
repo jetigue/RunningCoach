@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use Tests\TestCase;
 use App\Models\Properties\General\Season;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -36,10 +36,10 @@ class SeasonTest extends TestCase
     }
 
     /** @test */
-    function a_season_has_many_venues()
+    function a_season_has_many_cross_country_venues()
     {
         $this->assertInstanceOf(
-            'Illuminate\Database\Eloquent\Collection', $this->season->venues);
+            'Illuminate\Database\Eloquent\Collection', $this->season->crossCountryVenues);
     }
 
     /** @test */

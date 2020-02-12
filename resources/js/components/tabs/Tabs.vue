@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <ul class="flex flex-col md:flex-row border-b border-gray-400 text-gray-700" role="tablist">
+        <ul class="flex flex-col md:flex-row border-b border-gray-400 text-gray-700" role="tabList">
             <li
                 v-for="(tab, index) in tabs"
                 class="px-4 py-2 bg-white"

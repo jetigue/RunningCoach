@@ -4,7 +4,7 @@ namespace App\Models\Results\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Races\Division;
-use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\CrossCountry\Event;
 use App\Models\Properties\Races\Title;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,7 +28,7 @@ class TeamResult extends Model
         'cross_country_meet_id',
         'division_id',
         'race_title_id',
-        'event_id',
+        'cross_country_event_id',
         'place',
         'number_teams',
         'number_runners',
@@ -90,7 +90,7 @@ class TeamResult extends Model
      */
     public function event()
     {
-        return $this->belongsTo(Event::class, 'event_id');
+        return $this->belongsTo(Event::class, 'cross_country_event_id');
     }
 
     /**

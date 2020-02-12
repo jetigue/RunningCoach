@@ -196,7 +196,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'Track Results Updated'
+                                    title: 'TimeTrial Results Updated'
                                 });
                             }
                     })

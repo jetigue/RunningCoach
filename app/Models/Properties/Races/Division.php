@@ -17,7 +17,7 @@ class Division extends Model
     protected $table = 'divisions';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */

@@ -3,15 +3,18 @@
 namespace App\Http\Controllers\API\Physicals;
 
 use App\Models\Physical;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class PhysicalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function index()
     {
@@ -21,8 +24,8 @@ class PhysicalController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -44,8 +47,8 @@ class PhysicalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Physical  $physical
-     * @return \Illuminate\Http\Response
+     * @param Physical $physical
+     * @return Response
      */
     public function show(Physical $physical)
     {
@@ -55,9 +58,9 @@ class PhysicalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Physical  $physical
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Physical $physical
+     * @return JsonResponse
      */
     public function update(Request $request, Physical $physical)
     {
@@ -87,8 +90,9 @@ class PhysicalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Physical  $physical
-     * @return \Illuminate\Http\Response
+     * @param Physical $physical
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(Physical $physical)
     {

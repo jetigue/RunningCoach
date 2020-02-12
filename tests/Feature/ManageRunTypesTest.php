@@ -21,7 +21,7 @@ class ManageRunTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runTypes', $attributes)->assertStatus(201);
+        $this->post('/api/run-types', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('run_types', $attributes);
     }
@@ -36,7 +36,7 @@ class ManageRunTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/run-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ManageRunTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/run-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -62,7 +62,7 @@ class ManageRunTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/run-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -73,7 +73,7 @@ class ManageRunTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/run-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -83,7 +83,7 @@ class ManageRunTypesTest extends TestCase
 
         $attributes = factory(RunType::class)->raw(['name' => '']);
 
-        $this->post('api/runTypes', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/run-types', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -93,7 +93,7 @@ class ManageRunTypesTest extends TestCase
 
         $attributes = factory(RunType::class)->raw(['description' => '']);
 
-        $this->post('api/runTypes', $attributes)->assertSessionHasErrors('description');
+        $this->post('api/run-types', $attributes)->assertSessionHasErrors('description');
     }
 
     /** @test */
@@ -144,7 +144,7 @@ class ManageRunTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runTypes/' . $runType->id, [
+        $this->patch('api/run-types/' . $runType->id, [
             'name' => 'Long Run',
             'description' => 'New Description'
         ])
@@ -166,7 +166,7 @@ class ManageRunTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runTypes/' . $runType->id, [
+        $this->patch('api/run-types/' . $runType->id, [
             'name' => 'Long Run',
             'description' => 'New Description'
         ])
@@ -185,7 +185,7 @@ class ManageRunTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runTypes/' . $runType->id, [
+        $this->patch('api/run-types/' . $runType->id, [
             'name' => 'Long Run',
             'description' => 'New Description'
         ])
@@ -204,7 +204,7 @@ class ManageRunTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runTypes/' . $runType->id, [
+        $this->patch('api/run-types/' . $runType->id, [
             'name' => 'Long Run',
             'description' => 'New Description'
         ])
@@ -221,7 +221,7 @@ class ManageRunTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runTypes/' . $runType->id, [
+        $this->patch('api/run-types/' . $runType->id, [
             'name' => 'Long Run',
             'description' => 'New Description'
         ])

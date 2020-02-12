@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\API\Properties\General;
 
 use App\Models\Properties\General\TerrainType;
+use Exception;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class TerrainTypeController extends Controller
 {
@@ -22,19 +26,17 @@ class TerrainTypeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return TerrainType[]|Collection
      */
     public function index()
     {
-        $terrainTypes = TerrainType::all();
-
-        return $terrainTypes;
+        return TerrainType::all();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -45,7 +47,7 @@ class TerrainTypeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -62,8 +64,8 @@ class TerrainTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
+     * @param TerrainType $terrainType
+     * @return Response
      */
     public function show(TerrainType $terrainType)
     {
@@ -73,8 +75,8 @@ class TerrainTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
+     * @param TerrainType $terrainType
+     * @return Response
      */
     public function edit(TerrainType $terrainType)
     {
@@ -85,8 +87,8 @@ class TerrainTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
+     * @param TerrainType $terrainType
+     * @return Response
      */
     public function update(Request $request, TerrainType $terrainType)
     {
@@ -103,8 +105,9 @@ class TerrainTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
+     * @param TerrainType $terrainType
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(TerrainType $terrainType)
     {

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Races\Division;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -24,7 +24,7 @@ class CrossCountryMeet extends Model
     protected $table = 'cross_country_meets';
 
     /**
-     * Fillable fields for a Track Meet.
+     * Fillable fields for a TimeTrial Meet.
      *
      * @var array
      */
@@ -32,7 +32,7 @@ class CrossCountryMeet extends Model
         'meet_name_id',
         'meet_date',
         'host_id',
-        'venue_id',
+        'cross_country_venue_id',
         'timing_method_id'
     ];
 
@@ -41,7 +41,7 @@ class CrossCountryMeet extends Model
      */
     public function path()
     {
-        return '/cross-country-meets/' . $this->slug;
+        return '/cross-country/meets/' . $this->slug;
     }
 
     /**
@@ -85,7 +85,7 @@ class CrossCountryMeet extends Model
      */
     public function venue()
     {
-        return $this->belongsTo(Venue::class, 'venue_id');
+        return $this->belongsTo(Venue::class, 'cross_country_venue_id');
     }
 
     /**

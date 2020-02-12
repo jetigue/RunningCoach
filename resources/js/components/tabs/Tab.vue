@@ -1,5 +1,5 @@
 <template>
-    <div role="tabpanel" v-show="isActive"
+    <div role="tabPanel" v-show="isActive"
          class="px-2 md:px-4 md:border md:border-gray-400 md:border-t-0 min-h-screen py-6">
         <slot></slot>
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <form action="/cross-country-meets/team-results" method="POST" id="newCrossCountryTeamResult"
+    <form action="/cross-country/meets/team-results" method="POST" id="newCrossCountryTeamResult"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -187,7 +187,7 @@ export default {
 
         getAttributes() {
             function getEventNames() {
-                return axios.get('/api/events')
+                return axios.get('/api/cross-country/events')
             }
 
             function getDivisionNames() {

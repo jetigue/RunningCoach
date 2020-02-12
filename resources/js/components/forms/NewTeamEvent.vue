@@ -1,5 +1,5 @@
 <template>
-    <form action="/api/teamEvents" method="POST" id="newTeamEvent"
+    <form action="/api/team-events" method="POST" id="newTeamEvent"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -102,7 +102,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/teamEvents')
+                .post('/api/team-events')
 
                 .then(data => {
 

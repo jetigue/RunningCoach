@@ -17,10 +17,8 @@ class CreateTrackResultsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('track_team_result_id');
             $table->unsignedInteger('athlete_id');
-            $table->unsignedTinyInteger('event_id');
+            $table->unsignedTinyInteger('track_event_id');
             $table->unsignedSmallInteger('place');
-            $table->unsignedTinyInteger('minutes');
-            $table->unsignedTinyInteger('seconds');
             $table->unsignedInteger('total_seconds');
             $table->unsignedTinyInteger('milliseconds')->nullable();
             $table->unsignedTinyInteger('points')->nullable();
@@ -28,18 +26,15 @@ class CreateTrackResultsTable extends Migration
 
             $table->foreign('track_team_result_id')
                 ->references('id')
-                ->on('track_team_results')
-                ->onDelete('cascade');
+                ->on('track_team_results');
 
-            $table->foreign('event_id')
+            $table->foreign('track_event_id')
                 ->references('id')
-                ->on('events')
-                ->onDelete('cascade');
+                ->on('track_events');
 
             $table->foreign('athlete_id')
                 ->references('id')
-                ->on('athletes')
-                ->onDelete('cascade');
+                ->on('athletes');
         });
     }
 

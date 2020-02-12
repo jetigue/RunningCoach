@@ -108,7 +108,7 @@
         methods: {
             onSubmit() {
                 this.form
-                    .post('/api/cross-country-meets')
+                    .post('/api/cross-country/meets')
 
                     .then(data => {
 
@@ -144,7 +144,7 @@
 
             getAttributes() {
                 function getMeetNames() {
-                    return axios.get('/api/meetNames?season=cross-country')
+                    return axios.get('/api/meet-names?season=cross-country')
                 }
 
                 function getHostNames() {
@@ -152,7 +152,7 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/venues?season=cross-country')
+                    return axios.get('/api/cross-country/venues')
                 }
 
                 function getTimingMethods() {

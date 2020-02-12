@@ -30,8 +30,8 @@ class TeamResultController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
      * @param CrossCountryMeet $crossCountryMeet
+     * @param TeamResult $teamResult
      * @return Model
      */
     public function store(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)

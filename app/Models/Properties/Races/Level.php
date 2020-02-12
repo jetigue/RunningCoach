@@ -14,7 +14,7 @@ class Level extends Model
     protected $table = 'levels';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */

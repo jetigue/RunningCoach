@@ -232,7 +232,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'Track Meet Updated'
+                                    title: 'TimeTrial Meet Updated'
                                 });
                             }
                     })

@@ -19,7 +19,7 @@ class Name extends Model
     protected $table = 'meet_names';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */
@@ -66,7 +66,7 @@ class Name extends Model
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param NameFilter $filters
      * @return Builder

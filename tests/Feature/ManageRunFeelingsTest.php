@@ -23,7 +23,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runFeelings', $attributes)->assertStatus(201);
+        $this->post('/api/run-feelings', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('run_feelings', $attributes);
     }
@@ -38,7 +38,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runFeelings', $attributes)->assertRedirect('/');
+        $this->post('/api/run-feelings', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -51,7 +51,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runFeelings', $attributes)->assertRedirect('/');
+        $this->post('/api/run-feelings', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -64,7 +64,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runFeelings', $attributes)->assertRedirect('/');
+        $this->post('/api/run-feelings', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -75,7 +75,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runFeelings', $attributes)->assertRedirect('/');
+        $this->post('/api/run-feelings', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -85,7 +85,7 @@ class ManageRunFeelingsTest extends TestCase
 
         $attributes = factory(RunFeeling::class)->raw(['name' => '']);
 
-        $this->post('api/runFeelings', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/run-feelings', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -95,7 +95,7 @@ class ManageRunFeelingsTest extends TestCase
 
         $attributes = factory(RunFeeling::class)->raw(['description' => '']);
 
-        $this->post('api/runFeelings', $attributes)->assertSessionHasErrors('description');
+        $this->post('api/run-feelings', $attributes)->assertSessionHasErrors('description');
     }
 
     /** @test */
@@ -103,7 +103,7 @@ class ManageRunFeelingsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get('/runFeelings')->assertSee('name');
+        $this->get('/run-feelings')->assertSee('name');
     }
 
     /** @test */
@@ -146,7 +146,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runFeelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/' . $runFeeling->id, [
             'name' => 'Great',
             'description' => 'New Description'
         ])
@@ -168,7 +168,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runFeelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/' . $runFeeling->id, [
             'name' => 'Great',
             'description' => 'New Description'
         ])
@@ -187,7 +187,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runFeelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/' . $runFeeling->id, [
             'name' => 'Great',
             'description' => 'New Description'
         ])
@@ -206,7 +206,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runFeelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/' . $runFeeling->id, [
             'name' => 'Great',
             'description' => 'New Description'
         ])
@@ -223,7 +223,7 @@ class ManageRunFeelingsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runFeelings/' . $runType->id, [
+        $this->patch('api/run-feelings/' . $runType->id, [
             'name' => 'Great',
             'description' => 'New Description'
         ])

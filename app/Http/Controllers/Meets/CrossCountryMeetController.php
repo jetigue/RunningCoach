@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Meets;
 use App\Models\Meets\CrossCountryMeet;
 use App\Http\Controllers\Controller;
 use App\Repositories\CrossCountryMeets;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class CrossCountryMeetController extends Controller
 {
@@ -49,7 +51,7 @@ class CrossCountryMeetController extends Controller
      * Display the specified resource.
      *
      * @param CrossCountryMeet $crossCountryMeet
-     * @return Response
+     * @return Factory|View
      */
     public function show(CrossCountryMeet $crossCountryMeet)
     {

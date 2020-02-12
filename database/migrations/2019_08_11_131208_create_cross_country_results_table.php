@@ -22,6 +22,7 @@ class CreateCrossCountryResultsTable extends Migration
             $table->unsignedInteger('total_seconds');
             $table->unsignedTinyInteger('milliseconds')->nullable();
             $table->unsignedSmallInteger('points')->nullable();
+            $table->timestamps();
 
             $table->foreign('cross_country_team_result_id')
                 ->references('id')
@@ -30,9 +31,8 @@ class CreateCrossCountryResultsTable extends Migration
 
             $table->foreign('athlete_id')
                 ->references('id')
-                ->on('athletes')
-                ->onDelete('cascade');
-            $table->timestamps();
+                ->on('athletes');
+
         });
     }
 

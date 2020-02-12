@@ -56,7 +56,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/meetNames')
+                .post('/api/meet-names')
 
                 .then(data => {
 

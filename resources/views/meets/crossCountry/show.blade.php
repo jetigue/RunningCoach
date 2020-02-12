@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex flex-col w-full md:px-4 lg:px-8">
     <div class="flex -mt-8 md:m-0 text-gray-700 text-xl md:justify-end">
-        <a class="flex items-center" href="/cross-country-meets">
+        <a class="flex items-center" href="/cross-country/meets">
             <i class="text-2xl far fa-arrow-alt-circle-left"></i>
             <span class="text-sm pl-2">Go Back</span>
         </a>

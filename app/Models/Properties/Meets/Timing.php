@@ -15,7 +15,7 @@ class Timing extends Model
     protected $table = 'timing_methods';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */

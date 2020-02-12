@@ -21,7 +21,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/terrainTypes', $attributes)->assertStatus(201);
+        $this->post('/api/terrain-types', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('terrain_types', $attributes);
     }
@@ -36,7 +36,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/terrainTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/terrain-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/terrainTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/terrain-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -62,7 +62,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/terrainTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/terrain-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -73,7 +73,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/terrainTypes', $attributes)->assertRedirect('/');
+        $this->post('/api/terrain-types', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -83,7 +83,7 @@ class ManageTerrainTypesTest extends TestCase
 
         $attributes = factory(TerrainType::class)->raw(['name' => '']);
 
-        $this->post('api/terrainTypes', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/terrain-types', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -93,7 +93,7 @@ class ManageTerrainTypesTest extends TestCase
 
         $attributes = factory(TerrainType::class)->raw(['description' => '']);
 
-        $this->post('api/terrainTypes', $attributes)->assertSessionHasErrors('description');
+        $this->post('api/terrain-types', $attributes)->assertSessionHasErrors('description');
     }
 
     /** @test */
@@ -101,7 +101,7 @@ class ManageTerrainTypesTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get('/terrainTypes')->assertSee('name');
+        $this->get('/terrain-types')->assertSee('name');
     }
 
     /** @test */
@@ -144,7 +144,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/terrainTypes/' . $terrainType->id, [
+        $this->patch('api/terrain-types/' . $terrainType->id, [
             'name' => 'Grass',
             'description' => 'New Description'
         ])
@@ -166,7 +166,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/terrainTypes/' . $terrainType->id, [
+        $this->patch('api/terrain-types/' . $terrainType->id, [
             'name' => 'Grass',
             'description' => 'New Description'
         ])
@@ -185,7 +185,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/terrainTypes/' . $terrainType->id, [
+        $this->patch('api/terrain-types/' . $terrainType->id, [
             'name' => 'Grass',
             'description' => 'New Description'
         ])
@@ -204,7 +204,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/terrainTypes/' . $terrainType->id, [
+        $this->patch('api/terrain-types/' . $terrainType->id, [
             'name' => 'Grass',
             'description' => 'New Description'
         ])
@@ -221,7 +221,7 @@ class ManageTerrainTypesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/terrainTypes/' . $terrainType->id, [
+        $this->patch('api/terrain-types/' . $terrainType->id, [
             'name' => 'Grass',
             'description' => 'New Description'
         ])

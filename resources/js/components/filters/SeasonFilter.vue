@@ -19,8 +19,8 @@
                 filters: [
                     {name: 'All Seasons', url: '?'},
                     {name: 'Cross Country', url: '?season=cross-country'},
-                    {name: 'Indoor Track', url: '?season=indoor-track'},
-                    {name: 'Outdoor Track', url: '?season=outdoor-track'}
+                    {name: 'Indoor TimeTrial', url: '?season=indoor-track'},
+                    {name: 'Outdoor TimeTrial', url: '?season=outdoor-track'}
                 ]
             }
         }

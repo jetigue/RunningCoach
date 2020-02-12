@@ -1,5 +1,5 @@
 <template>
-    <form action="/dayTimes" method="POST" id="newdayTime"
+    <form action="/day-times" method="POST" id="newdayTime"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -53,7 +53,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/dayTimes')
+                .post('/api/day-times')
 
                 .then(data => {
 

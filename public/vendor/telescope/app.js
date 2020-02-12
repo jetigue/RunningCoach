@@ -10860,7 +10860,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 					}
 				}
 
-				// Track unmatched elements for set filters
+				// TimeTrial unmatched elements for set filters
 				if ( bySet ) {
 					// They will have gone through all possible matchers
 					if ( (elem = !matcher && elem) ) {

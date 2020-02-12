@@ -3,6 +3,117 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/AthletePhysicalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/AthletePhysicalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/PhysicalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/PhysicalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/DayTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/DayTimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/TerrainTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/TerrainTypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/VenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/CrossCountryEventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/TitleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/TitleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CrossCountryEventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Coach/VenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Meets/CrossCountryMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/CrossCountryMeet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Physical.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Physical.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Distance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Distance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Host.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Host.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Timing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Timing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Division.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/Division.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/CrossCountry/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Level.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/Level.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/GeneralPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GeneralPropertiesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TeamAdministrationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TeamAdministrationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_venues_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131055_create_cross_country_meets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131055_create_cross_country_meets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131208_create_cross_country_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131208_create_cross_country_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/GeneralPropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/GeneralPropertiesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/MeetPropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MeetPropertiesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/SeasonFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/SeasonFilter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/TrackSeasonFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/TrackSeasonFilter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRaceEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/RaceProperties.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/RaceProperties.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenues.Vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/RaceEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/RaceEvents.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvents.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tabs/Tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tabs/Tab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/properties/meets/venues/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties/meets/venues/crossCountry/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/properties/races/events/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties/races/crossCountry/events/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTrackEventsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageMeetNamesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageMeetNamesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageVenuesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/EventTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TrackEventTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/TrackMeetTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TrackMeetTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/VenueTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +288,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/results" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -189,44 +300,44 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\records\crossCountry\venues\boys" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\physicals" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\buttons\menus" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\menus\main" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\public\images" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\views\records\crossCountry\venues" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\training" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\mixins" />
-      <recent name="X:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\results" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\partials" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\timeTrials\track\races" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\timeTrials" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\timeTrials\track" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Models\TimeTrials\Track" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Http\Controllers\TimeTrials" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\properties\meets\venues\crossCountry" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Models\Properties\Meets" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.Feature">
-    <configuration name="CoachDashboardTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\CoachDashboardTest" file="$PROJECT_DIR$/tests/Feature/CoachDashboardTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race">
+    <configuration name="ManageTrackTimeTrialRacesTest.a_coach_can_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_coach_can_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="EventTest.it_has_a_path" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\EventTest" file="$PROJECT_DIR$/tests/Unit/EventTest.php" method="it_has_a_path" scope="Method" />
+    <configuration name="ManageTrackTimeTrialRacesTest.a_guest_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_guest_cannot_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="Feature" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/tests/Feature" />
+    <configuration name="ManageTrackTimeTrialRacesTest.a_viewer_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_viewer_cannot_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="HostTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\HostTest" file="$PROJECT_DIR$/tests/Unit/HostTest.php" scope="Class" />
+    <configuration name="ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="an_admin_can_update_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UserRoleTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\UserRoleTest" file="$PROJECT_DIR$/tests/Unit/UserRoleTest.php" scope="Class" />
+    <configuration name="ManageTrackTimeTrialRacesTest.an_athlete_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="an_athlete_cannot_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -235,11 +346,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.Feature" />
-        <item itemvalue="PHPUnit.CoachDashboardTest" />
-        <item itemvalue="PHPUnit.EventTest.it_has_a_path" />
-        <item itemvalue="PHPUnit.UserRoleTest" />
-        <item itemvalue="PHPUnit.HostTest" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_guest_cannot_create_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_viewer_cannot_create_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.an_athlete_cannot_create_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_coach_can_create_a_time_trial_race" />
       </list>
     </recent_temporary>
   </component>
@@ -448,6 +559,27 @@
       <workItem from="1576686012073" duration="1322000" />
       <workItem from="1578355297792" duration="2144000" />
       <workItem from="1579446600782" duration="612000" />
+      <workItem from="1579794141799" duration="800000" />
+      <workItem from="1579794962014" duration="1114000" />
+      <workItem from="1579911377442" duration="6925000" />
+      <workItem from="1580054854276" duration="7802000" />
+      <workItem from="1580226322461" duration="7807000" />
+      <workItem from="1580257413194" duration="2261000" />
+      <workItem from="1580338364135" duration="7794000" />
+      <workItem from="1580390540114" duration="18202000" />
+      <workItem from="1580672568631" duration="11883000" />
+      <workItem from="1580825287598" duration="12194000" />
+      <workItem from="1580862748102" duration="5627000" />
+      <workItem from="1580868417145" duration="1577000" />
+      <workItem from="1580920125494" duration="6883000" />
+      <workItem from="1580949527912" duration="19829000" />
+      <workItem from="1581033109119" duration="2487000" />
+      <workItem from="1581088708350" duration="3387000" />
+      <workItem from="1581099952063" duration="2040000" />
+      <workItem from="1581121039327" duration="31419000" />
+      <workItem from="1581382513259" duration="3667000" />
+      <workItem from="1581438879624" duration="4020000" />
+      <workItem from="1581463474680" duration="4540000" />
     </task>
     <servers />
   </component>
@@ -473,26 +605,104 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="362" y="73" key="#Notifications" timestamp="1580921345758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="362" y="73" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1580921345758" />
+    <state x="94" y="94" width="1349" height="637" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580227756316">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="94" y="94" width="1349" height="637" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1580227756316" />
+    <state x="455" y="114" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1581465782060">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="455" y="114" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581465782060" />
+    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1580233890347">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580060717034" />
+    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1580233890347" />
     <state x="450" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575330158312">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="450" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1575330158312" />
+    <state x="451" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581130691448">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="451" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581130691448" />
+    <state x="451" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1581100004610" />
+    <state x="500" y="161" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581281381189">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="500" y="161" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581281381189" />
+    <state x="512" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1581128935980">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="512" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581128935980" />
+    <state x="550" y="155" key="FileChooserDialogImpl" timestamp="1581282955585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="550" y="155" key="FileChooserDialogImpl/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581282955585" />
+    <state x="550" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581100377414" />
+    <state width="1537" height="243" key="GridCell.Tab.0.bottom" timestamp="1581205047968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="249" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581183641677" />
+    <state width="1537" height="243" key="GridCell.Tab.0.center" timestamp="1581205047968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="243" key="GridCell.Tab.0.center/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="249" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
+    <state width="1537" height="243" key="GridCell.Tab.0.left" timestamp="1581205047968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="243" key="GridCell.Tab.0.left/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="249" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
+    <state width="1537" height="243" key="GridCell.Tab.0.right" timestamp="1581205047968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="243" key="GridCell.Tab.0.right/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="249" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
     <state x="605" y="332" key="NewPhpFileDialog" timestamp="1575937810312">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="605" y="332" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1575937810312" />
-    <state x="278" y="55" key="SettingsEditor" timestamp="1575941842464">
+    <state x="278" y="55" key="SettingsEditor" timestamp="1580347796919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="278" y="55" key="SettingsEditor/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347796919" />
     <state x="278" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575941842464" />
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1579794144168">
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581463474377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579794144168" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1576686990904">
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581463474377" />
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581438885976" />
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-1" timestamp="1580344783433">
+      <screen x="1158" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-1/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580344783433" />
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-2" timestamp="1580346746867">
+      <screen x="1158" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-2/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580346746867" />
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-3" timestamp="1580347158732">
+      <screen x="1158" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-3/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347158732" />
+    <state x="650" y="153" width="486" height="215" maximized="true" key="dock-window-4" timestamp="1580347197460">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1576686990904" />
+    <state x="650" y="153" width="486" height="215" maximized="true" key="dock-window-4/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347197460" />
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-5" timestamp="1580347452775">
+      <screen x="1158" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-5/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347452775" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581467137851">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581467137851" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581440409566" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

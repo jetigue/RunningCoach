@@ -1,5 +1,5 @@
 <template>
-    <form action="/runFeelings" method="POST" id="newRunFeeling"
+    <form action="/run-feelings" method="POST" id="newRunFeeling"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -53,7 +53,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/runFeelings')
+                .post('/api/run-feelings')
 
                 .then(data => {
 

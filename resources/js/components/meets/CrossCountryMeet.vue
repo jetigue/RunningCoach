@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/cross-country-meets/id" method="POST" id="editCrossCountryMeet" @submit.prevent="update"
+                <form action="api/cross-country/meets/id" method="POST" id="editCrossCountryMeet" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -97,13 +97,13 @@
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-11/12 flex-wrap items-center">
                             <div class="text-black w-full md:w-1/2 lg:w-2/5 font-semibold md:font-normal hover:text-blue-700">
-                                <a :href="'/cross-country-meets/'+this.data.slug">{{meetName }}</a>
+                                <a :href="'/cross-country/meets/'+this.data.slug">{{meetName }}</a>
                             </div>
                             <div class="w-1/2 md:w-1/4 text-gray-700 py-1 pl-2 lg:p-0">
                                 {{ meetDate | moment("MMMM Do") }}
                             </div>
                             <div class="w-1/2 md:w-1/4 text-blue-700 font-medium">
-                                <a :href="'/cross-country-meets/'+this.data.slug">Results</a>
+                                <a :href="'/cross-country/meets/'+this.data.slug">Results</a>
                             </div>
                         </div>
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
@@ -155,7 +155,7 @@
                 host: this.data.host.name,
                 venue: this.data.venue.name,
                 timing: this.data.timing.name,
-                path: '/cross-country-meets/' +this.id,
+                path: '/cross-country/meets/' +this.id,
 
                 meet_name_id: this.data.meet_name_id,
                 host_id: this.data.host_id,

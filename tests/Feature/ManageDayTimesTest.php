@@ -21,7 +21,7 @@ class ManageDayTimesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/dayTimes', $attributes)->assertStatus(201);
+        $this->post('/api/day-times', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('day_times', $attributes);
     }
@@ -36,7 +36,7 @@ class ManageDayTimesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/dayTimes', $attributes)->assertRedirect('/');
+        $this->post('/api/day-times', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ManageDayTimesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/dayTimes', $attributes)->assertRedirect('/');
+        $this->post('/api/day-times', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -62,7 +62,7 @@ class ManageDayTimesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/dayTimes', $attributes)->assertRedirect('/');
+        $this->post('/api/day-times', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -73,7 +73,7 @@ class ManageDayTimesTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/dayTimes', $attributes)->assertRedirect('/');
+        $this->post('/api/day-times', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -83,7 +83,7 @@ class ManageDayTimesTest extends TestCase
 
         $attributes = factory(DayTime::class)->raw(['name' => '']);
 
-        $this->post('api/dayTimes', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/day-times', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -93,7 +93,7 @@ class ManageDayTimesTest extends TestCase
 
         $attributes = factory(DayTime::class)->raw(['description' => '']);
 
-        $this->post('api/dayTimes', $attributes)->assertSessionHasErrors('description');
+        $this->post('api/day-times', $attributes)->assertSessionHasErrors('description');
     }
 
     /** @test */
@@ -101,7 +101,7 @@ class ManageDayTimesTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get('/dayTimes')->assertSee('name');
+        $this->get('/day-times')->assertSee('name');
     }
 
     /** @test */
@@ -144,7 +144,7 @@ class ManageDayTimesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/dayTimes/' . $dayTime->id, [
+        $this->patch('api/day-times/' . $dayTime->id, [
             'name' => 'Afternoon',
             'description' => 'New Description'
         ])
@@ -166,7 +166,7 @@ class ManageDayTimesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/dayTimes/' . $dayTime->id, [
+        $this->patch('api/day-times/' . $dayTime->id, [
             'name' => 'Afternoon',
             'description' => 'New Description'
         ])
@@ -185,7 +185,7 @@ class ManageDayTimesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/dayTimes/' . $dayTime->id, [
+        $this->patch('api/day-times/' . $dayTime->id, [
             'name' => 'Afternoon',
             'description' => 'New Description'
         ])
@@ -204,7 +204,7 @@ class ManageDayTimesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/dayTimes/' . $dayTime->id, [
+        $this->patch('api/day-times/' . $dayTime->id, [
             'name' => 'Afternoon',
             'description' => 'New Description'
         ])
@@ -221,7 +221,7 @@ class ManageDayTimesTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/dayTimes/' . $dayTime->id, [
+        $this->patch('api/day-times/' . $dayTime->id, [
             'name' => 'Afternoon',
             'description' => 'New Description'
         ])

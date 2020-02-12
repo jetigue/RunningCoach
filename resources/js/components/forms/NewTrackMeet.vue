@@ -1,5 +1,5 @@
 <template>
-    <form action="/trackMeets" method="POST" id="newTrackMeet"
+    <form action="/track/meets" method="POST" id="newTrackMeet"
           @submit.prevent="onSubmit"
           @keydown="form.errors.clear($event.target.name)">
 
@@ -51,8 +51,8 @@
         <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Venue</label>
-                <span id="venueHelp" class="form-help" v-if="form.errors.has('venue_id')"
-                      v-text="form.errors.get('venue_id')">
+                <span id="venueHelp" class="form-help" v-if="form.errors.has('track_venue_id')"
+                      v-text="form.errors.get('track_venue_id')">
                             </span>
             </div>
             <select class="form-input" name="venue_id" v-model="form.venue_id" required>
@@ -108,7 +108,7 @@
                     meet_name_id: '',
                     host_id: '',
                     meet_date: '',
-                    venue_id: '',
+                    track_venue_id: '',
                     season_id: '',
                     timing_method_id: ''
                 }),
@@ -124,7 +124,7 @@
         methods: {
             onSubmit() {
                 this.form
-                    .post('/api/trackMeets')
+                    .post('/api/track/meets')
 
                     .then(data => {
 
@@ -153,7 +153,7 @@
                     this.form.meet_name_id = '',
                     this.form.meet_date = '',
                     this.form.season_id = '',
-                    this.form.venue_id = '',
+                    this.form.track_venue_id = '',
                     this.form.host_id = '',
                     this.form.timing_method_id = '',
                     this.form.errors.clear();
@@ -161,7 +161,7 @@
 
             getAttributes() {
                 function getMeetNames() {
-                    return axios.get('/api/meetNames?track=1')
+                    return axios.get('/api/meet-names?track=1')
                 }
 
                 function getHostNames() {
@@ -169,7 +169,7 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/venues?track=1')
+                    return axios.get('/api/track/venues?track=1')
                 }
 
                 function getTimingMethods() {

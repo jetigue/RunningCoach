@@ -55,9 +55,9 @@
             return {
 
                 filters: [
-                    {name: 'All Track Seasons', link: '/track-meets?track=1'},
-                    {name: 'Indoor Track', link: '/track-meets?season=indoor-track'},
-                    {name: 'Outdoor Track', link: '/track-meets?season=outdoor-track'}
+                    {name: 'All TimeTrial Seasons', link: '/track-meets?track=1'},
+                    {name: 'Indoor TimeTrial', link: '/track-meets?season=indoor-track'},
+                    {name: 'Outdoor TimeTrial', link: '/track-meets?season=outdoor-track'}
                 ]
             }
         }

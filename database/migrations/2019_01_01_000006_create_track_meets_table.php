@@ -18,7 +18,7 @@ class CreateTrackMeetsTable extends Migration
             $table->unsignedSmallInteger('meet_name_id');
             $table->date('meet_date');
             $table->unsignedTinyInteger('season_id');
-            $table->unsignedSmallInteger('venue_id');
+            $table->unsignedSmallInteger('track_venue_id');
             $table->unsignedSmallInteger('host_id');
             $table->unsignedTinyInteger('timing_method_id');
             $table->string('slug')->unique();
@@ -28,7 +28,7 @@ class CreateTrackMeetsTable extends Migration
             $table->foreign('meet_name_id')->references('id')->on('meet_names');
             $table->foreign('season_id')->references('id')->on('seasons');
             $table->foreign('timing_method_id')->references('id')->on('timing_methods');
-            $table->foreign('venue_id')->references('id')->on('venues');
+            $table->foreign('track_venue_id')->references('id')->on('track_venues');
 
         });
     }

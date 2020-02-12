@@ -7,7 +7,7 @@ use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\Track\Venue;
 use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -24,7 +24,7 @@ class TrackMeet extends Model
    protected $table = 'track_meets';
 
    /**
-    * Fillable fields for a Track Meet.
+    * Fillable fields for a TimeTrial Meet.
     *
     * @var array
     */
@@ -33,7 +33,7 @@ class TrackMeet extends Model
        'meet_date',
        'season_id',
        'host_id',
-       'venue_id',
+       'track_venue_id',
        'timing_method_id'
    ];
 
@@ -94,7 +94,7 @@ class TrackMeet extends Model
      */
     public function venue()
     {
-        return $this->belongsTo(Venue::class, 'venue_id');
+        return $this->belongsTo(Venue::class, 'track_venue_id');
     }
 
     /**

@@ -48,7 +48,7 @@ class TrackMeetController extends Controller
 
 
     /**
-     * Update the Track Meet in the Database
+     * Update the TimeTrial Meet in the Database
      *
      * @param Request $request
      * @param TrackMeet $trackMeet
@@ -75,7 +75,7 @@ class TrackMeetController extends Controller
 
 
     /**
-     * Store a Track Meet in the Database
+     * Store a TimeTrial Meet in the Database
      * @return mixed
      */
     protected function storeMeet()

@@ -35,7 +35,7 @@ class AthleteController extends Controller
 
         $allAthletes = Athlete::orderBy('last_name', 'asc');
 
-        return $allAthletes;
+        return $athletes;
     }
 
     /**

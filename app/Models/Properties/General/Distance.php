@@ -16,7 +16,7 @@ class Distance extends Model
     protected $table = 'distances';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */

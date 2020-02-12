@@ -107,11 +107,11 @@
 
             update() {
                 this.form
-                    .patch('/api/dayTimes/' + this.data.id)
+                    .patch('/api/day-times/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.description = this.form.description;
-                        
+
                         this.editing = false;
                         this.isExpanded = false;
 
@@ -140,7 +140,7 @@
             },
 
             destroy() {
-                axios.delete('api/dayTimes/' + this.data.id);
+                axios.delete('api/day-times/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

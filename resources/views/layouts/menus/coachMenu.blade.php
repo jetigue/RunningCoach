@@ -23,7 +23,8 @@
     <div class="py-1">
         <p class="text-primary text-xl md:text-base lg:text-xl">Results</p>
         <div class="flex flex-col pl-2">
-            <a class="text-gray-700 hover:text-gray-900" href="/cross-country-meets">Cross Country</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/cross-country/meets">Cross Country</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/track/meets">Track</a>
         </div>
     </div>
     <div class="py-1">
@@ -34,19 +35,20 @@
             <a class="text-gray-700 hover:text-gray-900" href="/summer-running">Summer Running</a>
         </div>
     </div>
-{{--    <div class="py-1">--}}
-{{--        <p class="text-primary text-xl md:text-base lg:text-xl">Meet Properties</p>--}}
-{{--        <div class="flex flex-col pl-2">--}}
-{{--            <a class="text-gray-700 hover:text-gray-900 py-1" href="/divisions">Meet Divisions</a>--}}
-{{--            <a class="text-gray-700 hover:text-gray-900" href="/hosts">Meet Hosts</a>--}}
-{{--            <a class="text-gray-700 hover:text-gray-900" href="/meet-names">Meet Names</a>--}}
-{{--            <a class="text-gray-700 hover:text-gray-900" href="/venues">Meet Venues</a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="py-1">--}}
-{{--        <p class="text-primary text-xl md:text-base lg:text-xl">Track</p>--}}
-{{--        <div class="flex flex-col pl-2">--}}
-{{--            <a class="text-gray-700 hover:text-gray-900" href="/track-meets">Track Meets</a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div class="py-1">
+        <p class="text-primary text-xl md:text-base lg:text-xl">Meet Properties</p>
+        <div class="flex flex-col pl-2">
+            <a class="text-gray-700 hover:text-gray-900" href="/divisions">Meet Divisions</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/hosts">Meet Hosts</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/meet-names">Meet Names</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/cross-country/venues">XC Venues</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/track/venues">Track Venues</a>
+        </div>
+    </div>
+    <div class="py-1">
+        <p class="text-primary text-xl md:text-base lg:text-xl">Time Trials</p>
+        <div class="flex flex-col pl-2">
+            <a class="text-gray-700 hover:text-gray-900" href="/track/time-trials">Track</a>
+        </div>
+    </div>
 </div>

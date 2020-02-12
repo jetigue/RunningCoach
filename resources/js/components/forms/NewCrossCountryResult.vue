@@ -1,5 +1,5 @@
 <template>
-    <form action="/cross-country-meets/team-results/result" method="POST" id="newCrossCountryResult"
+    <form action="/cross-country/meets/team-results/result" method="POST" id="newCrossCountryResult"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 

@@ -16,6 +16,9 @@
             <tab title="Cross Country Results">
                 @include('partials.athleteCCResults')
             </tab>
+            <tab title="Track Results" active>
+                @include('partials.athleteTrackResults')
+            </tab>
             <tab title="Training Paces">
                 @if($seasonBest5k)
                 <athlete-training-paces :data="{{ $seasonBest5k }}"></athlete-training-paces>
@@ -23,6 +26,7 @@
                 <p>No 5k Results To Base Training Paces on This Season</p>
                 @endif
             </tab>
+
         </tabs>
     </section>
 </div>

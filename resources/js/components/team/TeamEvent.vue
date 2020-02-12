@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/teamEvents/id" method="POST" id="editTeamEvent" @submit.prevent="update"
+                <form action="api/team-events/id" method="POST" id="editTeamEvent" @submit.prevent="update"
                       @keydown="form.errors.clear($event.target.name)"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -192,7 +192,7 @@
 
             update() {
                 this.form
-                    .patch('/api/teamEvents/' + this.data.id)
+                    .patch('/api/team-events/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.details = this.form.details;
@@ -224,7 +224,7 @@
             },
 
             destroy() {
-                axios.delete('api/teamEvents/' + this.data.id);
+                axios.delete('api/team-events/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

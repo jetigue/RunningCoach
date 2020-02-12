@@ -24,7 +24,7 @@ class ManageTeamEventsTest extends TestCase
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
-        $this->post('/api/teamEvents', $attributes);
+        $this->post('/api/team-events', $attributes);
 
         $this->assertDatabaseHas('team_events', $attributes);
 
@@ -46,7 +46,7 @@ class ManageTeamEventsTest extends TestCase
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
-        $this->post('/api/teamEvents', $attributes);
+        $this->post('/api/team-events', $attributes);
 
         $this->assertDatabaseHas('team_events', $attributes);
 
@@ -68,7 +68,7 @@ class ManageTeamEventsTest extends TestCase
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
-        $this->post('/api/teamEvents', $attributes)->assertRedirect('/');
+        $this->post('/api/team-events', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -84,7 +84,7 @@ class ManageTeamEventsTest extends TestCase
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
-        $this->post('/api/teamEvents', $attributes)->assertRedirect('/');
+        $this->post('/api/team-events', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -98,7 +98,7 @@ class ManageTeamEventsTest extends TestCase
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
-        $this->post('/api/teamEvents', $attributes)->assertRedirect('/');
+        $this->post('/api/team-events', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -108,7 +108,7 @@ class ManageTeamEventsTest extends TestCase
 
         $attributes = factory(TeamEvent::class)->raw(['name' => '']);
 
-        $this->post('api/teamEvents', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/team-events', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -118,7 +118,7 @@ class ManageTeamEventsTest extends TestCase
 
         $attributes = factory(TeamEvent::class)->raw(['event_date' => '']);
 
-        $this->post('api/teamEvents', $attributes)->assertSessionHasErrors('event_date');
+        $this->post('api/team-events', $attributes)->assertSessionHasErrors('event_date');
     }
 
     /** @test */
@@ -128,7 +128,7 @@ class ManageTeamEventsTest extends TestCase
 
         $attributes = factory(TeamEvent::class)->raw(['event_time' => '']);
 
-        $this->post('api/teamEvents', $attributes)->assertSessionHasErrors('event_time');
+        $this->post('api/team-events', $attributes)->assertSessionHasErrors('event_time');
     }
 
     /** @test */
@@ -138,7 +138,7 @@ class ManageTeamEventsTest extends TestCase
 
         $attributes = factory(TeamEvent::class)->raw(['location' => '']);
 
-        $this->post('api/teamEvents', $attributes)->assertSessionHasErrors('location');
+        $this->post('api/team-events', $attributes)->assertSessionHasErrors('location');
     }
 
     /** @test */
@@ -146,7 +146,7 @@ class ManageTeamEventsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get('/teamEvents')->assertSee('name');
+        $this->get('/team-events')->assertSee('name');
     }
 
     /** @test */
@@ -154,7 +154,7 @@ class ManageTeamEventsTest extends TestCase
     {
         $this->signInCoach();
 
-        $this->get('/teamEvents')->assertSee('name');
+        $this->get('/team-events')->assertSee('name');
     }
 
     /** @test */
@@ -201,9 +201,9 @@ class ManageTeamEventsTest extends TestCase
             'details' => 'Revised Details'
         ];
 
-        $this->post('/api/teamEvents', $originalTeamEvent);
+        $this->post('/api/team-events', $originalTeamEvent);
 
-        $this->patch('api/teamEvents/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
             ->assertStatus(200);
 
         $this->assertDatabaseHas('team_events', $revisedTeamEvent);
@@ -231,9 +231,9 @@ class ManageTeamEventsTest extends TestCase
             'details' => 'Revised Details'
         ];
 
-        $this->post('/api/teamEvents', $originalTeamEvent);
+        $this->post('/api/team-events', $originalTeamEvent);
 
-        $this->patch('api/teamEvents/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
             ->assertStatus(200);
 
         $this->assertDatabaseHas('team_events', $revisedTeamEvent);
@@ -261,7 +261,7 @@ class ManageTeamEventsTest extends TestCase
             'details' => 'Revised Details'
         ];
 
-        $this->patch('api/teamEvents/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [
@@ -296,7 +296,7 @@ class ManageTeamEventsTest extends TestCase
             'details' => 'Revised Details'
         ];
 
-        $this->patch('api/teamEvents/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [
@@ -329,7 +329,7 @@ class ManageTeamEventsTest extends TestCase
             'details' => 'Revised Details'
         ];
 
-        $this->patch('api/teamEvents/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [

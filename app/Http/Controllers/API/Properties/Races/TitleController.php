@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Properties\Races;
 
 use App\Models\Properties\Races\Title;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -80,8 +82,8 @@ class TitleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Title $title
-     * @return Response
-     * @throws \Exception
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(Title $title)
     {

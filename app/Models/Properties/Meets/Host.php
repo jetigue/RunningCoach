@@ -4,6 +4,7 @@ namespace App\Models\Properties\Meets;
 
 use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Host extends Model
 {
@@ -15,7 +16,7 @@ class Host extends Model
     protected $table = 'hosts';
 
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a TimeTrial Venue
      *
      * @var array
      */
@@ -34,7 +35,7 @@ class Host extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function trackMeets()
     {

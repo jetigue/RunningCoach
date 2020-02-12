@@ -58,7 +58,7 @@
                 milliseconds: this.data.milliseconds,
                 place: this.data.place,
                 total_seconds: this.data.total_seconds,
-                meetUrl: '/cross-country-meets/' + this.data.slug,
+                meetUrl: '/cross-country/meets/' + this.data.slug,
                 teamResultId: this.data.teamResultId
 
             }

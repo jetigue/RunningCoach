@@ -21,7 +21,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runEfforts', $attributes)->assertStatus(201);
+        $this->post('/api/run-efforts', $attributes)->assertStatus(201);
 
         $this->assertDatabaseHas('run_efforts', $attributes);
     }
@@ -36,7 +36,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runEfforts', $attributes)->assertRedirect('/');
+        $this->post('/api/run-efforts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runEfforts', $attributes)->assertRedirect('/');
+        $this->post('/api/run-efforts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -62,7 +62,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runEfforts', $attributes)->assertRedirect('/');
+        $this->post('/api/run-efforts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -73,7 +73,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         ];
 
-        $this->post('/api/runEfforts', $attributes)->assertRedirect('/');
+        $this->post('/api/run-efforts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -83,7 +83,7 @@ class ManageRunEffortsTest extends TestCase
 
         $attributes = factory(RunEffort::class)->raw(['name' => '']);
 
-        $this->post('api/runEfforts', $attributes)->assertSessionHasErrors('name');
+        $this->post('api/run-efforts', $attributes)->assertSessionHasErrors('name');
     }
 
     /** @test */
@@ -93,7 +93,7 @@ class ManageRunEffortsTest extends TestCase
 
         $attributes = factory(RunEffort::class)->raw(['description' => '']);
 
-        $this->post('api/runEfforts', $attributes)->assertSessionHasErrors('description');
+        $this->post('api/run-efforts', $attributes)->assertSessionHasErrors('description');
     }
 
     /** @test */
@@ -101,7 +101,7 @@ class ManageRunEffortsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $this->get('/runEfforts')->assertSee('name');
+        $this->get('/run-efforts')->assertSee('name');
     }
 
     /** @test */
@@ -144,7 +144,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runEfforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/' . $runEffort->id, [
             'name' => 'Hard',
             'description' => 'New Description'
         ])
@@ -166,7 +166,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runEfforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/' . $runEffort->id, [
             'name' => 'Hard',
             'description' => 'New Description'
         ])
@@ -185,7 +185,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runEfforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/' . $runEffort->id, [
             'name' => 'Hard',
             'description' => 'New Description'
         ])
@@ -204,7 +204,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runEfforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/' . $runEffort->id, [
             'name' => 'Hard',
             'description' => 'New Description'
         ])
@@ -221,7 +221,7 @@ class ManageRunEffortsTest extends TestCase
             'description' => 'Original Description'
         ]);
 
-        $this->patch('api/runEfforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/' . $runEffort->id, [
             'name' => 'Hard',
             'description' => 'New Description'
         ])

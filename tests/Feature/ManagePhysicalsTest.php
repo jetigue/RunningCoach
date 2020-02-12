@@ -48,29 +48,29 @@ class ManagePhysicalsTest extends TestCase
             ->assertStatus(401);
     }
 
-    /** @test */
-    public function a_valid_physical_form_must_be_provided()
-    {
-        $this->withExceptionhandling()->signInCoach();
-
-        $this->json('POST', '/api/physicals/{physical}/physical-form', [
-            'physical-form' => 'not-a-file'
-        ])->assertStatus(422);
-    }
-
-    /** @test */
-    public function a_coach_can_upload_a_physical_form()
-    {
-        $this->withoutExceptionhandling();
-        $this->signInCoach();
-
-        Storage::fake('public');
-
-        $this->json('POST', 'api/physicals/{physical}/physical-form', [
-            'physical-form' => $file = UploadedFile::fake()->create('physical-form.pdf')
-        ]);
-
-        Storage::disk('public')->assertExists('physicals/' . $file->hashName());
-    }
+//    /** @test */
+//    public function a_valid_physical_form_must_be_provided()
+//    {
+//        $this->withoutExceptionhandling()->signInCoach();
+//
+//        $this->json('POST', '/api/physicals/{physical}/physical-form', [
+//            'physical-form' => 'not-a-file'
+//        ])->assertStatus(422);
+//    }
+//
+//    /** @test */
+//    public function a_coach_can_upload_a_physical_form()
+//    {
+//        $this->withoutExceptionhandling();
+//        $this->signInCoach();
+//
+//        Storage::fake('public');
+//
+//        $this->json('POST', 'api/physicals/{physical}/physical-form', [
+//            'physical-form' => $file = UploadedFile::fake()->create('physical-form.pdf')
+//        ]);
+//
+//        Storage::disk('public')->assertExists('physicals/' . $file->hashName());
+//    }
 
 }

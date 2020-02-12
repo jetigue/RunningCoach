@@ -4,9 +4,10 @@ namespace App\Models\Properties\General;
 
 use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Name;
 use App\Filters\SeasonFilter;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Season extends Model
 {
@@ -55,15 +56,15 @@ class Season extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function venues()
+    public function crossCountryVenues()
     {
         return $this->hasMany(Venue::class, 'season_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function meetNames()
     {
@@ -71,7 +72,7 @@ class Season extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function trackMeets()
     {
@@ -80,7 +81,7 @@ class Season extends Model
 
     /**
      * Apply all relevant name filters.
-     * 
+     *
      * @param Builder $query
      * @param SeasonFilter $filters
      * @return Builder

@@ -1,5 +1,5 @@
 <template>
-    <form action="/terrainTypes" method="POST" id="newTerrainType"
+    <form action="/terrain-types" method="POST" id="newTerrainType"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -53,7 +53,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/terrainTypes')
+                .post('/api/terrain-types')
 
                 .then(data => {
 

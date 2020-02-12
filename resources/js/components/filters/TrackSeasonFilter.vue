@@ -18,8 +18,8 @@
 
                 filters: [
                     {name: 'All Seasons', url: '?track=1'},
-                    {name: 'Indoor Track', url: '?season=indoor-track'},
-                    {name: 'Outdoor Track', url: '?season=outdoor-track'}
+                    {name: 'Indoor TimeTrial', url: '?season=indoor-track'},
+                    {name: 'Outdoor TimeTrial', url: '?season=outdoor-track'}
                 ]
             }
         }

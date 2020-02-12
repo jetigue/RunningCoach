@@ -18,7 +18,7 @@ class CreateCrossCountryTeamResultsTable extends Migration
             $table->unsignedInteger('cross_country_meet_id');
             $table->unsignedSmallInteger('division_id');
             $table->unsignedTinyInteger('race_title_id')->nullable();
-            $table->unsignedTinyInteger('event_id');
+            $table->unsignedTinyInteger('cross_country_event_id');
             $table->unsignedSmallInteger('place')->nullable();
             $table->unsignedSmallInteger('points')->nullable();
             $table->unsignedSmallInteger('number_teams');
@@ -36,9 +36,9 @@ class CreateCrossCountryTeamResultsTable extends Migration
                 ->references('id')
                 ->on('divisions');
 
-            $table->foreign('event_id')
+            $table->foreign('cross_country_event_id')
                 ->references('id')
-                ->on('events');
+                ->on('cross_country_events');
 
             $table->foreign('race_title_id')
                 ->references('id')

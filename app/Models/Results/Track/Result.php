@@ -5,7 +5,7 @@ namespace App\Models\Results\Track;
 use App\Models\Athlete;
 use App\Filters\TrackResultFilter;
 use App\Models\Results\Track\TeamResult;
-use App\Models\Properties\Races\Event;
+use App\Models\Properties\Races\Track\Event;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,27 +27,26 @@ class Result extends Model
     protected $fillable = [
         'track_meet_result_id',
         'athlete_id',
-        'event_id',
+        'track_event_id',
         'place',
-        'minutes',
-        'seconds',
+        'total_seconds',
         'milliseconds',
         'points'
     ];
 
-    /**
-     * Save total seconds on create and update
-     */
-    public static function boot()
-    {
-        parent::boot();
-
-        static::saving(function ($result) {
-
-            $result->total_seconds = ($result->minutes * 60 + $result->seconds);
-
-        });
-    }
+//    /**
+//     * Save total seconds on create and update
+//     */
+//    public static function boot()
+//    {
+//        parent::boot();
+//
+//        static::saving(function ($result) {
+//
+//            $result->total_seconds = ($result->minutes * 60 + $result->seconds);
+//
+//        });
+//    }
 
     /**
      * @return BelongsTo
@@ -70,7 +69,7 @@ class Result extends Model
      */
     public function event()
     {
-        return $this->belongsTo(Event::class, 'event_id');
+        return $this->belongsTo(Event::class, 'track_event_id');
     }
 
     /**

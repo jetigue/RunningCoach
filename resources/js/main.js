@@ -25,19 +25,22 @@ Vue.component('day-times', require('./components/properties/general/DayTimes').d
 Vue.component('distances', require('./components/properties/general/Distances').default);
 Vue.component('seasons', require('./components/properties/general/Seasons').default);
 Vue.component('terrain-types', require('./components/properties/general/TerrainTypes').default);
+Vue.component('track-surfaces', require('./components/properties/general/TrackSurfaces').default);
 
 // Meet Properties
 Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
 Vue.component('meet-names', require('./components/properties/meets/MeetNames').default);
-Vue.component('meet-venues', require('./components/properties/meets/MeetVenues').default);
+Vue.component('cross-country-venues', require('./components/properties/meets/CrossCountryVenues.vue').default);
+Vue.component('track-venues', require('./components/properties/meets/TrackVenues.vue').default);
 Vue.component('timing-methods', require('./components/properties/meets/TimingMethods').default);
 
 // Race Properties
 Vue.component('levels', require('./components/properties/division/Levels').default);
-Vue.component('race-events', require('./components/properties/races/RaceEvents').default);
+Vue.component('cross-country-events', require('./components/properties/races/CrossCountryEvents').default);
 Vue.component('genders', require('./components/properties/division/Genders').default);
 Vue.component('divisions', require('./components/properties/races/Divisions').default);
 Vue.component('race-titles', require('./components/properties/races/RaceTitles').default);
+Vue.component('track-events', require('./components/properties/races/TrackEvents').default);
 
 // Running Log Properties
 Vue.component('run-efforts', require('./components/properties/runningLog/RunEfforts').default);
@@ -63,6 +66,7 @@ Vue.component('physicals', require('./components/physicals/Physicals').default);
 
 //Records
 Vue.component('venue-records', require('./components/records/VenueRecords').default);
+
 // Results
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);
 Vue.component('cross-country-team-results', require('./components/results/CrossCountryTeamResults').default);
@@ -79,6 +83,11 @@ Vue.component('tab', require('./components/tabs/Tab').default);
 // Team
 Vue.component('team-announcements', require('./components/team/TeamAnnouncements').default);
 Vue.component('team-events', require('./components/team/TeamEvents').default);
+
+// Time Trials
+Vue.component('track-time-trials', require('./components/timeTrials/TrackTimeTrials').default);
+Vue.component('track-time-trial-races', require('./components/timeTrials/TrackTimeTrialRaces').default);
+Vue.component('track-time-trial-race-results', require('./components/timeTrials/TrackTimeTrialRaceResults').default);
 
 // Training
 Vue.component('athlete-training-paces', require('./components/training/AthleteTrainingPaces').default);
