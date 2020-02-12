@@ -1,120 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AthleteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/AthletePhysicalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/AthletePhysicalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/PhysicalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Physicals/PhysicalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/DayTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/DayTimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/TerrainTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/General/TerrainTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/VenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/CrossCountryEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/TitleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Races/TitleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CrossCountryEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AthleteProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Coach/VenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Meets/CrossCountryMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/CrossCountryMeet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Physical.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Physical.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Distance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Distance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Host.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Host.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Timing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Timing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Division.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/Division.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/CrossCountry/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Races/Level.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Races/Level.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/CrossCountry/TeamResult.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AthleteCCResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CrossCountryMeetFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/GeneralPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/GeneralPropertiesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RacePropertiesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TeamAdministrationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TeamAdministrationFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_events_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_venues_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131055_create_cross_country_meets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131055_create_cross_country_meets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131156_create_cross_country_team_results_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_11_131208_create_cross_country_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_11_131208_create_cross_country_results_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/GeneralPropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/GeneralPropertiesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MeetPropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MeetPropertiesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RacePropertiesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/telescope/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/telescope/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/SeasonFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/SeasonFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/filters/TrackSeasonFilter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/filters/TrackSeasonFilter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRaceEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryEvent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/menus/RaceProperties.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/menus/RaceProperties.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetVenues.Vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/RaceEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/RaceEvents.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvents.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/AthleteCrossResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tabs/Tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tabs/Tab.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tabs/Tabs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/adminMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/coachMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menus/userMenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/properties/meets/venues/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties/meets/venues/crossCountry/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/properties/races/events/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/properties/races/crossCountry/events/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageDayTimesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTrackEventsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageMeetNamesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageMeetNamesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManagePhysicalsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunEffortsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunFeelingsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageRunTypesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTeamEventsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTerrainTypesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageVenuesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/EventTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TrackEventTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/TrackMeetTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TrackMeetTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/VenueTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" afterDir="false" />
-    </list>
+    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -579,7 +466,7 @@
       <workItem from="1581121039327" duration="31419000" />
       <workItem from="1581382513259" duration="3667000" />
       <workItem from="1581438879624" duration="4020000" />
-      <workItem from="1581463474680" duration="4540000" />
+      <workItem from="1581463474680" duration="4792000" />
     </task>
     <servers />
   </component>
