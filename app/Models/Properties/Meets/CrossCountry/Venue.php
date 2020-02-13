@@ -4,9 +4,6 @@ namespace App\Models\Properties\Meets\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\General\Season;
-use App\Filters\VenueFilter;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Venue extends Model
@@ -23,7 +20,7 @@ class Venue extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'season_id'];
+    protected $fillable = ['name'];
 
     /**
      * Get a string path for the venue.
@@ -32,15 +29,7 @@ class Venue extends Model
      */
     public function path()
     {
-        return '/cross-country-venues/' . $this->id;
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function season()
-    {
-        return $this->belongsTo(Season::class);
+        return '/cross-country/venues/' . $this->id;
     }
 
     /**
@@ -49,17 +38,5 @@ class Venue extends Model
     public function crossCountryMeets()
     {
         return $this->hasMany(CrossCountryMeet::class, 'cross_country_venue_id');
-    }
-
-    /**
-     * Apply all relevant venue filters.
-     *
-     * @param Builder $query
-     * @param NameFilter $filters
-     * @return Builder
-     */
-    public function scopeFilter($query, VenueFilter $filters)
-    {
-        return $filters->apply($query);
     }
 }

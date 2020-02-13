@@ -25,10 +25,7 @@ class CrossCountryVenueController extends Controller
      */
     public function index(VenueFilter $filters)
     {
-        return Venue::filter($filters)
-            ->with('season')
-            ->orderBy('name')
-            ->get();
+        return Venue::all()->orderBy('name')->get();
     }
 
     /**
@@ -41,13 +38,12 @@ class CrossCountryVenueController extends Controller
     {
         $venue = request()->validate([
             'name' => 'required|string|min:3',
-            'season_id' => 'required|integer'
         ]);
 
         $venue = Venue::create($venue);
 
-        return $venue->load('season');
-        // ->response()->json($venue, 201);
+        return $venue;
+
     }
 
     /**
@@ -66,16 +62,15 @@ class CrossCountryVenueController extends Controller
      *
      * @param Request $request
      * @param Venue $venue
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, Venue $venue)
     {
         request()->validate([
-            'name' => 'required|min:3',
-            'season_id' => 'required|integer'
+            'name' => 'required|min:3'
         ]);
 
-        $venue->update(request(['name', 'season_id']));
+        $venue->update(request(['name']));
 
         return response()->json($venue, 200);
     }

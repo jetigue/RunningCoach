@@ -28,20 +28,6 @@
                                v-model="form.name">
                     </div>
 
-                    <div class="mb-4">
-                        <div class="flex justify-between content-end">
-                            <label class="form-label">Season</label>
-                            <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
-                                v-text="form.errors.get('season_id')">
-                            </span>
-                        </div>
-                        <select class="form-input" name="season_id" v-model="form.season_id" required>
-                            <option v-for="season in seasons" :key="season.id" :value="season.id">
-                                {{ season.name }}
-                            </option>
-                        </select>
-                    </div>
-
                     <div class="flex items-center justify-end">
                         <update-button class="mr-4" :disabled="form.errors.any()">
                             Update
@@ -57,14 +43,12 @@
                     <div class="flex md:w-4/5 flex-wrap">
                         <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                         </div>
-                        <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1" v-text="season">
-                        </div>
                     </div>
                     <expand-button @toggleRow="toggleRow" class=""></expand-button>
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-                        <edit-button @clicked="getSeasonNames"></edit-button>
+                        <edit-button @clicked=""></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -84,14 +68,11 @@
 
                 id: this.data.id,
                 name: this.data.name,
-                season: this.data.season.name,
 
                 form: new Form({
                     name: this.data.name,
-                    season_id: this.data.season_id
                 }),
 
-                seasons: []
             }
         },
 
@@ -110,7 +91,7 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                         if (this.name != this.data.name || this.season != this.data.season.name) {
+                         if (this.name != this.data.name) {
 
                             const toast = Vue.swal.mixin({
                             toast: true,
@@ -140,18 +121,6 @@
             resetForm() {
                 this.form.name = this.name
                 this.isExpanded = false;
-            },
-
-            getSeasonNames() {
-                this.editing = true;
-
-                axios.get('/api/seasons')
-                    .then(response => {
-                        this.seasons = response.data;
-                    })
-                    .catch(errors => {
-                        console.log(errors)
-                    });
             }
         }
     }

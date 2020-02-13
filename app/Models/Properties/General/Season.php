@@ -55,13 +55,6 @@ class Season extends Model
         return '/seasons/' . $this->slug;
     }
 
-    /**
-     * @return HasMany
-     */
-    public function crossCountryVenues()
-    {
-        return $this->hasMany(Venue::class, 'season_id');
-    }
 
     /**
      * @return HasMany
