@@ -58,14 +58,6 @@ class Season extends Model
     /**
      * @return HasMany
      */
-    public function crossCountryVenues()
-    {
-        return $this->hasMany(Venue::class, 'season_id');
-    }
-
-    /**
-     * @return HasMany
-     */
     public function meetNames()
     {
         return $this->hasMany(Name::class);

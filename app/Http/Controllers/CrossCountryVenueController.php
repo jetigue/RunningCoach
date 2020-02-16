@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Athlete;
-use App\Models\Properties\General\Season;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Results\CrossCountry\Result;
 use App\Repositories\CCVenueRecords;
 use Carbon\Carbon;
@@ -22,9 +21,7 @@ class CrossCountryVenueController extends Controller
      */
     public function index()
     {
-        $season = Season::where('slug', 'cross-country')->firstOrFail();
-
-        $venues = Venue::where('season_id', $season->id)->orderBy('name', 'asc')->get();
+        $venues = Venue::orderBy('name', 'asc')->get();
 
         return view('venues.crossCountry.index', compact('venues'));
     }

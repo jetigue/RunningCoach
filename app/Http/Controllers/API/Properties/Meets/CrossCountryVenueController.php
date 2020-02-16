@@ -7,7 +7,6 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Filters\VenueFilter;
 use Illuminate\Http\Response;
 
 class CrossCountryVenueController extends Controller
@@ -20,34 +19,28 @@ class CrossCountryVenueController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param VenueFilter $filters
      * @return Response
      */
-    public function index(VenueFilter $filters)
+    public function index()
     {
-        return Venue::filter($filters)
-            ->with('season')
-            ->orderBy('name')
-            ->get();
+        return Venue::orderBy('name')->get();
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
         $venue = request()->validate([
-            'name' => 'required|string|min:3',
-            'season_id' => 'required|integer'
+            'name' => 'required|string|min:3'
         ]);
 
         $venue = Venue::create($venue);
 
-        return $venue->load('season');
-        // ->response()->json($venue, 201);
+        return response()->json($venue, 201);
     }
 
     /**
@@ -66,16 +59,15 @@ class CrossCountryVenueController extends Controller
      *
      * @param Request $request
      * @param Venue $venue
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, Venue $venue)
     {
         request()->validate([
-            'name' => 'required|min:3',
-            'season_id' => 'required|integer'
+            'name' => 'required|min:3'
         ]);
 
-        $venue->update(request(['name', 'season_id']));
+        $venue->update(request(['name']));
 
         return response()->json($venue, 200);
     }

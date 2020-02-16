@@ -3,7 +3,6 @@
         <div class="flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Cross Country Venues</header>
             <filter-button>
-                <season-filter></season-filter>
             </filter-button>
         </div>
 
@@ -12,10 +11,6 @@
                 <div class="flex md:w-4/5">
                     <div class="lg:w-1/2">
                         <p class="text-primary font-semibold">Name</p>
-                    </div>
-
-                    <div class="hidden lg:flex lg:1/2">
-                        <p class="text-primary font-semibold">Season</p>
                     </div>
                 </div>
 

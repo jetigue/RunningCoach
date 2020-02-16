@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="" />
+    <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/TrackVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/TrackVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/TrackMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/girls/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/girls/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,24 +233,24 @@
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race">
+    <configuration name="ManageTrackTimeTrialRacesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="ManageTrackTimeTrialRacesTest.a_coach_can_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_coach_can_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageTrackTimeTrialRacesTest.a_guest_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_guest_cannot_create_a_time_trial_race" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ManageTrackTimeTrialRacesTest.a_viewer_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="a_viewer_cannot_create_a_time_trial_race" scope="Method" />
+    <configuration name="ManageTrackTimeTrialRacesTest.an_admin_can_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="an_admin_can_create_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="an_admin_can_update_a_time_trial_race" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ManageTrackTimeTrialRacesTest.an_athlete_cannot_create_a_time_trial_race" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ManageTrackTimeTrialRacesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" method="an_athlete_cannot_create_a_time_trial_race" scope="Method" />
+    <configuration name="ManageTrackTimeTrialsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ManageTrackTimeTrialsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -234,10 +260,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race" />
-        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_guest_cannot_create_a_time_trial_race" />
-        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_viewer_cannot_create_a_time_trial_race" />
-        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.an_athlete_cannot_create_a_time_trial_race" />
         <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.a_coach_can_create_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_create_a_time_trial_race" />
+        <item itemvalue="PHPUnit.ManageTrackTimeTrialsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -467,6 +493,7 @@
       <workItem from="1581382513259" duration="3667000" />
       <workItem from="1581438879624" duration="4020000" />
       <workItem from="1581463474680" duration="4792000" />
+      <workItem from="1581786000819" duration="5339000" />
     </task>
     <servers />
   </component>
@@ -531,25 +558,25 @@
     </state>
     <state x="550" y="155" key="FileChooserDialogImpl/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581282955585" />
     <state x="550" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581100377414" />
-    <state width="1537" height="243" key="GridCell.Tab.0.bottom" timestamp="1581205047968">
+    <state width="1537" height="373" key="GridCell.Tab.0.bottom" timestamp="1581815292733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="373" key="GridCell.Tab.0.bottom/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581815292733" />
     <state width="1537" height="249" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581183641677" />
-    <state width="1537" height="243" key="GridCell.Tab.0.center" timestamp="1581205047968">
+    <state width="1537" height="373" key="GridCell.Tab.0.center" timestamp="1581815292733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.center/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="373" key="GridCell.Tab.0.center/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581815292733" />
     <state width="1537" height="249" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
-    <state width="1537" height="243" key="GridCell.Tab.0.left" timestamp="1581205047968">
+    <state width="1537" height="373" key="GridCell.Tab.0.left" timestamp="1581815292733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.left/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="373" key="GridCell.Tab.0.left/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581815292733" />
     <state width="1537" height="249" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
-    <state width="1537" height="243" key="GridCell.Tab.0.right" timestamp="1581205047968">
+    <state width="1537" height="373" key="GridCell.Tab.0.right" timestamp="1581815292733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="243" key="GridCell.Tab.0.right/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581205047968" />
+    <state width="1537" height="373" key="GridCell.Tab.0.right/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581815292733" />
     <state width="1537" height="249" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581183641676" />
     <state x="605" y="332" key="NewPhpFileDialog" timestamp="1575937810312">
       <screen x="0" y="0" width="1536" height="824" />
@@ -560,10 +587,10 @@
     </state>
     <state x="278" y="55" key="SettingsEditor/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347796919" />
     <state x="278" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575941842464" />
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581463474377">
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581786123524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581463474377" />
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581786123524" />
     <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581438885976" />
     <state x="2112" y="-1080" width="972" height="1046" key="dock-window-1" timestamp="1580344783433">
       <screen x="1158" y="-1080" width="1920" height="1040" />
@@ -585,10 +612,10 @@
       <screen x="1158" y="-1080" width="1920" height="1040" />
     </state>
     <state x="2112" y="-1080" width="972" height="1046" key="dock-window-5/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347452775" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581467137851">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581816768303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581467137851" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581816768303" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581440409566" />
   </component>
   <component name="XDebuggerManager">

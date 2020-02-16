@@ -46,7 +46,7 @@ class TrackVenueController extends Controller
 
         $venue = Venue::create($venue);
 
-        return $venue;
+        return $venue->load('surface');
     }
 
     /**

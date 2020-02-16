@@ -23,7 +23,6 @@ $factory->define(Timing::class, function (Faker $faker) {
 $factory->define(Venue::class, function (Faker $faker) {
     return [
         'name' => $faker->lastName . ' ' . 'Park',
-        'season_id' => $faker->numberBetween($min = 1, $max = 3)
     ];
 });
 

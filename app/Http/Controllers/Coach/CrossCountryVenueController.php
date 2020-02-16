@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Coach;
 
 use App\Models\Properties\Meets\CrossCountry\Venue;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Properties\General\Season;
-use App\Filters\VenueFilter;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class CrossCountryVenueController extends Controller
 {
@@ -20,14 +20,11 @@ class CrossCountryVenueController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function index(VenueFilter $filters)
+    public function index()
     {
-        $venues = Venue::filter($filters)
-            ->with('season')
-            ->orderBy('name')
-            ->get();
+        $venues = Venue::orderBy('name')->get();
 
         if (request()->expectsJson())
         {

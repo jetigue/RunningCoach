@@ -30,11 +30,11 @@
                 </div>
                 <div class="flex flex-col p-0">
                     <a  class="text-sm text-blue-700"
-                        href="/cross-country-venues/{{ $teamResult->crossCountryMeet->venue->id }}/boys-records">
+                        href="/cross-country/venues/{{ $teamResult->crossCountryMeet->venue->id }}/boys-records">
                         Boys Records
                     </a>
                     <a  class="text-sm text-blue-700"
-                        href="/cross-country-venues/{{ $teamResult->crossCountryMeet->venue->id }}/girls-records">
+                        href="/cross-country/venues/{{ $teamResult->crossCountryMeet->venue->id }}/girls-records">
                         Girls Records
                     </a>
                 </div>

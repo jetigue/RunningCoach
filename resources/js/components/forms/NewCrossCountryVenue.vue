@@ -1,5 +1,5 @@
 <template>
-    <form action="/crossCountry/venues" method="POST" id="newCrossCountryVenue"
+    <form action="/cross-country/venues" method="POST" id="newCrossCountryVenue"
         @submit.prevent="onSubmit"
         @keydown="form.errors.clear($event.target.name)">
 
@@ -14,20 +14,6 @@
                     id="form.name"
                     type="text"
                     v-model="form.name" required>
-        </div>
-
-        <div class="mb-4">
-            <div class="flex justify-between content-end">
-                <label class="form-label">Season</label>
-                <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
-                    v-text="form.errors.get('season_id')">
-                </span>
-            </div>
-            <select class="form-input" name="season_id" v-model="form.season_id" required>
-                <option v-for="season in seasons" :value="season.id" :key="season.id">
-                    {{ season.name }}
-                </option>
-            </select>
         </div>
 
         <div class="text-right pt-2">
@@ -45,18 +31,16 @@ export default {
     data() {
         return {
             form: new Form({
-                name: '',
-                season_id: ''
+                name: ''
             }),
 
-            seasons: []
         };
     },
 
     methods: {
         onSubmit() {
             this.form
-                .post('/api/CrossCountry/venues')
+                .post('/api/cross-country/venues')
 
                 .then(data => {
 
@@ -76,8 +60,6 @@ export default {
 
                     this.$emit('created', data),
                     this.resetForm()
-                    // this.form.name = '',
-                    // this.form.season_id = ''
                 })
 
                 .catch(errors => console.log(errors));
@@ -85,7 +67,6 @@ export default {
 
         resetForm() {
             this.form.name = '',
-            this.form.season_id = '',
             this.form.errors.clear();
         }
     },
@@ -93,16 +74,16 @@ export default {
     created() {
         Event.$on('cancel', () => this.resetForm());
 
-        Event.$on('getNames', () =>
-
-            axios.get('/api/seasons')
-                .then(response => {
-                    this.seasons = response.data;
-                })
-                .catch(errors => {
-                    console.log(errors)
-                })
-        );
+        // Event.$on('getNames', () =>
+        //
+        //     axios.get('/api/seasons')
+        //         .then(response => {
+        //             this.seasons = response.data;
+        //         })
+        //         .catch(errors => {
+        //             console.log(errors)
+        //         })
+        // );
     }
 }
 </script>
