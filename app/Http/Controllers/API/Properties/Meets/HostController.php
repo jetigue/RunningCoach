@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\API\Properties\Meets;
 
 use App\Models\Properties\Meets\Host;
+use Exception;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,20 +20,18 @@ class HostController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Host[]|Collection
      */
     public function index()
     {
-        $hosts = Host::all();
-
-        return $hosts;
+        return Host::all();
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -46,7 +47,7 @@ class HostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Properties\Meets\Host  $host
+     * @param Host $host
      * @return \Illuminate\Http\Response
      */
     public function show(Host $host)
@@ -57,9 +58,9 @@ class HostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\Meets\Host  $host
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Host $host
+     * @return JsonResponse
      */
     public function update(Request $request, Host $host)
     {
@@ -75,8 +76,9 @@ class HostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Properties\Meets\Host  $host
-     * @return \Illuminate\Http\Response
+     * @param Host $host
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(Host $host)
     {

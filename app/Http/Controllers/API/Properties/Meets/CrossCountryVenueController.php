@@ -23,11 +23,8 @@ class CrossCountryVenueController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         return Venue::all()->orderBy('name')->get();
-=======
-        return Venue::orderBy('name')->get();
->>>>>>> feature-timeTrials
+
     }
 
     /**
@@ -39,21 +36,15 @@ class CrossCountryVenueController extends Controller
     public function store(Request $request)
     {
         $venue = request()->validate([
-<<<<<<< HEAD
+
             'name' => 'required|string|min:3',
-=======
-            'name' => 'required|string|min:3'
->>>>>>> feature-timeTrials
+
         ]);
 
         $venue = Venue::create($venue);
 
-<<<<<<< HEAD
-        return $venue;
-
-=======
         return response()->json($venue, 201);
->>>>>>> feature-timeTrials
+
     }
 
     /**
