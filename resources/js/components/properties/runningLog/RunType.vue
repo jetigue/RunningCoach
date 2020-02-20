@@ -107,7 +107,7 @@
 
             update() {
                 this.form
-                    .patch('/api/runTypes/' + this.data.id)
+                    .patch('/api/run-types/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
                         this.description = this.form.description;
@@ -140,7 +140,7 @@
             },
 
             destroy() {
-                axios.delete('api/runTypes/' + this.data.id);
+                axios.delete('api/run-types/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
