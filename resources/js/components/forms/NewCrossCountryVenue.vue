@@ -55,11 +55,11 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Cross Country Venue Added successfully'
+                        title: 'Cross Country Venue Added Successfully'
                     });
 
                     this.$emit('created', data),
-                    this.resetForm()
+                        this.resetForm()
                 })
 
                 .catch(errors => console.log(errors));
@@ -67,36 +67,12 @@ export default {
 
         resetForm() {
             this.form.name = '',
-            this.form.errors.clear();
+                this.form.errors.clear();
         }
     },
 
     created() {
         Event.$on('cancel', () => this.resetForm());
-
-<<<<<<< HEAD
-        Event.$on('getNames', () =>
-
-            axios.get('/api/seasons')
-                // .then(response => {
-                //     this.seasons = response.data;
-                // })
-                .catch(errors => {
-                    console.log(errors)
-                })
-        );
-=======
-        // Event.$on('getNames', () =>
-        //
-        //     axios.get('/api/seasons')
-        //         .then(response => {
-        //             this.seasons = response.data;
-        //         })
-        //         .catch(errors => {
-        //             console.log(errors)
-        //         })
-        // );
->>>>>>> feature-timeTrials
     }
 }
 </script>

@@ -67,12 +67,12 @@
                 isExpanded: false,
 
                 id: this.data.id,
-                name: this.data.name
+                name: this.data.name,
 
                 form: new Form({
-                    name: this.data.name,
+                    name: this.data.name
 
-                }),
+                })
             }
         },
 
