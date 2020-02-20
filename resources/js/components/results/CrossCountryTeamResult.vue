@@ -288,7 +288,7 @@
 
             update() {
                 this.form
-                    .patch(location.pathname + '/team-results/' +this.data.id)
+                    .patch('/api' + location.pathname + '/team-results/' +this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
                         // this.title = this.titles.find(title => title.id === this.form.race_title_id).name;
@@ -331,7 +331,7 @@
             },
 
             destroy() {
-                axios.delete(location.pathname + '/team-results/' +this.data.id);
+                axios.delete('/api' + location.pathname + '/team-results/' +this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
