@@ -3,8 +3,8 @@
 namespace App\Models\Properties\General;
 
 use App\Models\Meets\TrackMeet;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Name;
 use App\Filters\SeasonFilter;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -55,10 +55,6 @@ class Season extends Model
         return '/seasons/' . $this->slug;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> feature-timeTrials
     /**
      * @return HasMany
      */
