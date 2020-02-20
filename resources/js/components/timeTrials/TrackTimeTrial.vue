@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
                 <form action="api/track/time-trials/id" method="POST" id="editTrackMeet" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
@@ -196,7 +196,7 @@
             },
 
             destroy() {
-                axios.delete('api/track/time-trials/' + this.data.id);
+                axios.delete('/api'+ location.pathname + '/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

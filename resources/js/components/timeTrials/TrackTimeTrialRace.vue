@@ -6,7 +6,7 @@
                       method="POST"
                       id="editTrackTimeTrialRace"
                       @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                       class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
                     <div class="flex items-center mb-1">

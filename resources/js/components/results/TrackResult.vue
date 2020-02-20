@@ -1,20 +1,20 @@
 <template>
     <div>
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
+        <div v-if="editing" class="p-3 border-b border-gray-100">
             <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
                 <form action="/results" method="POST" id="editTrackResult" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div class="flex items-center mb-2">
+                      @keydown="form.errors.clear()"
+                        class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="flex items-center mb-1">
                         <div class="form-label ml-1">
                             <p>id</p>
                         </div>
-                        <div class="w-full text-grey-dark px-4">
+                        <div class="w-full text-gray-700 px-4">
                             <p v-text="id"></p>
                         </div>
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Athlete</label>
                             <span id="athleteHelp" class="form-help" v-if="form.errors.has('athlete_id')"
@@ -28,21 +28,21 @@
                         </select>
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Event</label>
-                            <span id="eventHelp" class="form-help" v-if="form.errors.has('event_id')"
-                                  v-text="form.errors.get('event_id')">
+                            <span id="eventHelp" class="form-help" v-if="form.errors.has('track_event_id')"
+                                  v-text="form.errors.get('track_event_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="event_id" v-model="form.event_id" required>
+                        <select class="form-input" name="track_event_id" v-model="form.track_event_id" required>
                             <option v-for="event in events" :key="event.id" :value="event.id">
                                 {{ event.name }}
                             </option>
                         </select>
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.place">Place</label>
                             <span id="placeHelp" class="form-help" v-if="form.errors.has('place')"
@@ -56,7 +56,7 @@
                                v-model="form.place" required>
                     </div>
 
-                    <div class="flex mb-2 w-full">
+                    <div class="flex mb-1 w-full">
                         <div class="flex flex-col flex-grow">
                             <div class="flex justify-between content-end">
                                 <label class="form-label" for="form.minutes">Minutes</label>
@@ -103,11 +103,11 @@
                                    type="number"
                                    min="0"
                                    max="99"
-                                   v-model="form.milliseconds" required>
+                                   v-model="form.milliseconds">
                         </div>
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.points">Points</label>
                             <span id="pointsHelp" class="form-help" v-if="form.errors.has('points')"
@@ -118,7 +118,21 @@
                                id="form.points"
                                type="number"
                                min="0"
-                               v-model="form.points" required>
+                               v-model="form.points">
+                    </div>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.points">Heat</label>
+                            <span id="heatHelp" class="form-help" v-if="form.errors.has('heat')"
+                                  v-text="form.errors.get('heat')">
+                            </span>
+                        </div>
+                        <input class="form-input"
+                               id="form.heat"
+                               type="number"
+                               min="0"
+                               v-model="form.heat">
                     </div>
 
                     <div class="flex items-center justify-end">
@@ -131,53 +145,47 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
-                <div class="flex flex-col hover:bg-white">
+            <div class="flex flex-col border-b border-gray-100 hover:bg-gray-100">
+                <div class="flex flex-col hover:bg-gray-100">
                     <div class="flex p-2 items-center">
-                        <div class="text-grey-darker flex flex-wrap w-9/10">
-                            <div class="flex justify-between w-full md:w-2/5 lg:w-1/4">
-                                <div>
+                        <div class="text-black flex flex-wrap w-11/12">
+
+                            <div class="w-3/4 md:w-1/3 lg:w-1/3">
+                                <a :href="url">
                                     {{ athleteName }}
-                                </div>
-                                <div class="md:hidden">
-                                    {{ place_w_suffix }}
-                                </div>
+                                </a>
                             </div>
-                            <div class="flex w-full md:hidden">
-                                <div class="w-1/3 pl-2 text-secondary">
-                                    {{ minutes }}<span>:</span>{{ seconds }}<span>.</span>{{ milliseconds }}
-                                </div>
-                                <div class="text-grey">
-                                    {{ eventName }}
-                                </div>
+                            <div class="w-1/4 md:flex md:w-1/6 lg:w-1/6">
+                                {{ event }}
                             </div>
-                            <div class="hidden lg:flex lg:w-1/4 text-grey">
-                                {{ eventName }}
+                            <div class="w-1/4 md:flex md:w-1/6 lg:w-1/6">
+                                {{ place_w_suffix }}
                             </div>
-                            <div class="hidden md:flex md:w-3/5 lg:w-1/2">
-                                <div class="md:w-1/3 text-secondary">
-                                    {{ minutes }}<span>:</span>{{ seconds }}<span>.</span>{{ milliseconds }}
-                                </div>
-                                <div class="md:w-1/3 ">
-                                    {{ place_w_suffix }}
-                                </div>
-                                <div class="md:w-1/3 ">
-                                    {{ points }}
-                                </div>
+
+                            <div class="w-1/2 pl-4 text-primary md:w-1/6 lg:w-1/6 md:pl-0 md:text-black">
+                                {{duration}}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
                             </div>
-                            <div class="hidden md:flex lg:hidden pl-2 lg:pl-0 text-grey">
-                                {{ eventName }}
+                            <div class="hidden md:flex md:w-1/6 lg:w-1/12 lg:justify-center">
+                                {{ points }}
+                            </div>
+                            <div class="hidden md:flex md:w-1/6 lg:w-1/12 lg:justify-center">
+                                {{ heat }}
                             </div>
                         </div>
-                        <div class="flex flex-grow justify-end">
+                        <div v-if="isCoach" class="flex flex-grow justify-end">
                             <expand-button @toggleRow="toggleRow" class=""></expand-button>
                         </div>
                     </div>
                     <div v-if="isExpanded" class="px-2">
                         <div class="md:hidden flex flex-col pb-4 px-4">
-                            <p class="text-grey w-full py-1">Points:
-                                <span class="text-tertiary">
+                            <p class="text-gray-600 w-full py-1">Points:
+                                <span class="text-gray-800">
                                     {{ points }}
+                                </span>
+                            </p>
+                            <p class="text-gray-600 w-full py-1">Heat:
+                                <span class="text-gray-800">
+                                    {{ heat }}
                                 </span>
                             </p>
                         </div>
@@ -193,7 +201,10 @@
 </template>
 
 <script>
+    import {authMixin} from "../../mixins/authMixin";
+
     export default {
+        mixins: [authMixin],
         props: ['data'],
 
         data() {
@@ -203,37 +214,52 @@
 
                 id: this.data.id,
                 athleteName: this.data.athlete.last_name + ', ' + this.data.athlete.first_name,
-                eventName: this.data.event.name,
-                milliseconds: (this.data.milliseconds > 9 ? this.data.milliseconds : '0' + this.data.milliseconds),
-                minutes: this.data.minutes,
-                seconds: (this.data.seconds > 9 ? this.data.seconds : '0' + this.data.seconds),
+                event: this.data.event.name,
+                ms: (this.data.milliseconds > 9 ? this.data.milliseconds : '0' + this.data.milliseconds),
+                totalSeconds: this.data.total_seconds,
+                milliseconds: this.data.milliseconds,
                 place: this.data.place,
                 points: this.data.points,
-
+                heat: this.data.heat,
+                url: '/athletes/' + this.data.athlete.id,
 
                 athlete_id: this.data.athlete_id,
-                event_id: this.data.event_id,
 
                 form: new Form({
                     athlete_id: this.data.athlete_id,
-                    event_id: this.data.event_id,
-                    minutes: this.data.minutes,
-                    seconds: this.data.seconds,
+                    track_event_id: this.data.track_event_id,
+                    minutes: ~~((this.data.total_seconds % 3600) / 60),
+                    seconds: ~~(this.data.total_seconds % 60),
                     milliseconds: this.data.milliseconds,
                     place: this.data.place,
-                    points: this.data.points
+                    points: this.data.points,
+                    heat: this.data.heat
                 }),
 
                 athletes: [],
-                events: [],
+                events: []
             }
         },
 
         computed: {
-            place_w_suffix: function ordinal_suffix_of() {
-                var i= this.place;
+            duration: function () {
+                let time = this.totalSeconds;
 
-                var j = i % 10,
+                let min = ~~((time % 3600) / 60);
+                let sec = ~~(time % 60);
+
+                let ret = "";
+
+                ret += "" + min + ":" + (sec < 10 ? "0" : "");
+                ret += "" + sec;
+
+                return ret;
+            },
+
+            place_w_suffix: function ordinal_suffix_of() {
+                let i = this.place;
+
+                let j = i % 10,
                     k = i % 100;
                 if (j == 1 && k != 11) {
                     return i + "st";
@@ -256,29 +282,33 @@
 
             update() {
                 this.form
-                    .patch(location.pathname + '/results/' +this.data.id)
+                    .patch('/api' + location.pathname + '/results/' + this.data.id)
                     .then(data => {
                         this.athleteName =
                             this.athletes.find(athlete => athlete.id === this.form.athlete_id).last_name + ', ' +
                             this.athletes.find(athlete => athlete.id === this.form.athlete_id).first_name;
-                        this.eventName = this.events.find(event => event.id === this.form.event_id).name;
-                        this.minutes = this.form.minutes,
-                        this.seconds = (this.form.seconds > 9 ? this.form.seconds : '0' + this.form.seconds),
-                        this.milliseconds = (this.form.milliseconds > 9 ? this.form.milliseconds : '0' + this.form.milliseconds),
+                        this.event = this.events.find(event => event.id === this.form.track_event_id).name;
+                        this.minutes = this.form.minutes;
+                        this.seconds = this.form.seconds;
+                        this.milliseconds = this.form.milliseconds;
+                        this.totalSeconds = (this.form.minutes * 60) + this.form.seconds;
+
                         this.place = this.form.place;
                         this.points = this.form.points;
+                        this.heat = this.form.heat;
 
                         this.editing = false;
                         this.isExpanded = false;
 
                          if (
-                            this.athlete != this.data.athlete.name ||
-                            this.event != this.data.event.name ||
+                             this.athlete != this.data.athlete.name ||
+                             this.event != this.data.event.name ||
                              this.minutes != this.data.minutes ||
                              this.seconds != this.data.seconds ||
                              this.milliseconds != this.data.milliseconds ||
                              this.place != this.data.place ||
-                            this.points != this.data.points)
+                             this.points != this.data.points ||
+                            this.heat != this.data.heat)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,
@@ -289,7 +319,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'TimeTrial Results Updated'
+                                    title: 'Result Updated'
                                 });
                             }
                     })
@@ -300,19 +330,20 @@
             },
 
             destroy() {
-                axios.delete(location.pathname+'/results/'+this.data.id);
+                axios.delete('/api' + location.pathname +'/results/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
 
             resetForm() {
                 this.form.athlete_id = this.athlete_id,
-                this.form.event_id = this.event_id,
-                this.form.minutes = this.minutes,
-                this.form.seconds = this.seconds,
-                this.form.milliseconds = this.milliseconds,
+                    this.form.track_event_id = this.track_event_id,
+                this.form.minutes = ~~((this.data.total_seconds % 3600) / 60),
+                this.form.seconds = ~~(this.data.total_seconds % 60),
+                this.form.milliseconds = this.data.milliseconds,
                 this.form.place = this.place,
                 this.form.points = this.points,
+                    this.form.heat = this.heat,
                 this.isExpanded = false;
             },
 
@@ -320,11 +351,11 @@
                 this.editing = true;
 
                 function getAthleteNames() {
-                    return axios.get('/api/athletes')
+                    return axios.get('/api/physicals-athletes')
                 }
 
                 function getEventNames() {
-                    return axios.get('/api/events')
+                    return axios.get('/api/track/events')
                 }
 
                 axios.all([

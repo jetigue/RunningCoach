@@ -3,30 +3,107 @@
   <component name="ChangeListManager">
     <list default="true" id="7e547460-d297-429a-b719-1331b18c118f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/CrossCountryVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/TrackVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Properties/Meets/TrackVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Coach/CrossCountryVenueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrossCountryVenueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/CrossCountryMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Meets/TrackMeetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/CrossCountry/TeamResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Results/Track/TeamResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/CrossCountryMeetController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Meets/TrackMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Meets/TrackMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/General/Season.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/CrossCountry/Venue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CCVenueRecords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MeetPropertiesFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000005_create_cross_country_venues_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Results/CrossCountry/TeamResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Results/Track/TeamResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Results/Track/TeamResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Meets/TrackMeet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties/Meets/Name.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/CrossCountry/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/CrossCountry/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Results/Track/TeamResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CrossCountryMeets.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CrossCountryMeets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TrackMeetFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000006_create_track_meets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_000007_create_track_team_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_000007_create_track_team_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_07_000008_create_track_results_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Athlete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Athlete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewAthlete.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryTeamResult.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewCrossCountryVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDayTime.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDistance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDistance.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewDivision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewDivision.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewGender.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewGender.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewLevel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewLevel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetHost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewMeetHost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewMeetName.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewPhysical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewPhysical.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRaceTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRaceTitle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRole.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRole.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunEffort.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunFeeling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewRunningLog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewSeason.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewSeason.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTeamAnnouncement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTeamAnnouncement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTeamEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTerrainType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTimingMethod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTimingMethod.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackSurface.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackSurface.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTeamResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrial.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrial.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrialRace.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrialRace.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrialRaceResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackTimeTrialRaceResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/NewTrackVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/NewTrackVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/CrossCountryMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/meets/TrackMeets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/physicals/Physical.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/physicals/Physical.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/division/Gender.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/division/Gender.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/division/Level.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/division/Level.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/DayTime.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Distance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Distance.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/Season.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/TerrainType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/general/TrackSurface.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/general/TrackSurface.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenue.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/CrossCountryVenues.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/crossCountry/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/boys/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/girls/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/records/crossCountry/venues/girls/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/crossCountry/teamResults/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/venues/crossCountry/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageCrossCountryVenuesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ManageTrackTimeTrialRacesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/CrossCountryVenueTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SeasonTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetHost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/MeetName.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/TimingMethod.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/meets/TrackVenue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/meets/TrackVenue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/CrossCountryEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/Division.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/RaceTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/RaceTitle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/races/TrackEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/races/TrackEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunEffort.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunFeeling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunType.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/properties/runningLog/RunType.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/CrossCountryResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/CrossCountryResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/CrossCountryTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/CrossCountryTeamResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackResults.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/results/TrackTeamResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogOriginal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/runningLog/RunningLogOriginal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/team/TeamAnnouncement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/team/TeamAnnouncement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/team/TeamEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrial.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrial.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrialRace.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrialRace.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrialRaceResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/timeTrials/TrackTimeTrialRaceResult.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/UserRole.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/UserRole.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/utilities/Errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/utilities/Errors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/meets/track/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/track/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/meets/track/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/meets/track/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/athleteTrackResults.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/athletes/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/results/track/teamResults/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +278,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/results" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -217,19 +294,19 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/js/components/Athlete.vue" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\results" />
-      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\partials" />
-      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\timeTrials\track\races" />
-      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\timeTrials" />
-      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\forms" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\timeTrials\track" />
       <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Models\TimeTrials\Track" />
       <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Http\Controllers\TimeTrials" />
       <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\properties\meets\venues\crossCountry" />
       <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Models\Properties\Meets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\app\Repositories" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\meets\track" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\meets" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\js\components\results" />
+      <recent name="C:\xampp\htdocs\laravel\RunningCoach\resources\views\partials" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.ManageTrackTimeTrialRacesTest.an_admin_can_update_a_time_trial_race">
@@ -493,7 +570,12 @@
       <workItem from="1581382513259" duration="3667000" />
       <workItem from="1581438879624" duration="4020000" />
       <workItem from="1581463474680" duration="4792000" />
-      <workItem from="1581786000819" duration="5339000" />
+      <workItem from="1581786000819" duration="23332000" />
+      <workItem from="1582050819589" duration="3068000" />
+      <workItem from="1582062871081" duration="8375000" />
+      <workItem from="1582082590961" duration="609000" />
+      <workItem from="1582129783131" duration="7797000" />
+      <workItem from="1582153890000" duration="6153000" />
     </task>
     <servers />
   </component>
@@ -531,10 +613,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="455" y="114" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581465782060" />
-    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1580233890347">
+    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1582063086784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580060717034" />
+    <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582063086784" />
     <state x="575" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1580233890347" />
     <state x="450" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575330158312">
       <screen x="0" y="0" width="1536" height="824" />
@@ -582,24 +664,32 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="605" y="332" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1575937810312" />
-    <state x="278" y="55" key="SettingsEditor" timestamp="1580347796919">
+    <state x="278" y="55" key="SettingsEditor" timestamp="1581818799457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="278" y="55" key="SettingsEditor/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347796919" />
+    <state x="278" y="55" key="SettingsEditor/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581818799457" />
     <state x="278" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575941842464" />
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1581786123524">
+    <state width="661" height="446" key="SwitcherDM" timestamp="1582081749394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581786123524" />
-    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581438885976" />
-    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-1" timestamp="1580344783433">
+    <state width="661" height="446" key="SwitcherDM/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582081749394" />
+    <state x="94" y="94" width="1349" height="637" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582082913176">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="94" y="94" width="1349" height="637" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582082913176" />
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582153894099">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582153894099" />
+    <state x="466" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582129999786" />
+    <state x="155" y="0" width="1194" height="823" key="dock-window-1" timestamp="1581905132325">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="155" y="0" width="1194" height="823" key="dock-window-1/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581905132325" />
+    <state x="1158" y="-831" width="1198" height="825" maximized="true" key="dock-window-2" timestamp="1581905132325">
       <screen x="1158" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-1/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580344783433" />
-    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-2" timestamp="1580346746867">
-      <screen x="1158" y="-1080" width="1920" height="1040" />
-    </state>
-    <state x="2112" y="-1080" width="972" height="1046" key="dock-window-2/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580346746867" />
+    <state x="1158" y="-831" width="1198" height="825" maximized="true" key="dock-window-2/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581905132325" />
     <state x="2112" y="-1080" width="972" height="1046" key="dock-window-3" timestamp="1580347158732">
       <screen x="1158" y="-1080" width="1920" height="1040" />
     </state>
@@ -612,11 +702,15 @@
       <screen x="1158" y="-1080" width="1920" height="1040" />
     </state>
     <state x="2112" y="-1080" width="972" height="1046" key="dock-window-5/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1580347452775" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581816768303">
+    <state x="512" y="39" key="refactoring.ChangeSignatureDialog" timestamp="1582079822928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1581816768303" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581440409566" />
+    <state x="512" y="39" key="refactoring.ChangeSignatureDialog/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582079822928" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582160088472">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1158.-1080.1920.1040@0.0.1536.824" timestamp="1582160088472" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582141760429" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

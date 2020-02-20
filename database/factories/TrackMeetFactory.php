@@ -46,5 +46,6 @@ $factory->define(Result::class, function (Faker $faker) {
         'total_seconds' => $faker->numberBetween($min = 600, $max = 840),
         'milliseconds' => $faker->numberBetween($min = 1, $max = 99),
         'points' => $faker->numberBetween($min = 0, $max = 10),
+        'heat' => $faker->numberBetween($min = 1, $max = 3),
     ];
 });

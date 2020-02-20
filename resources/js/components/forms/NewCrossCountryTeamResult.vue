@@ -1,7 +1,7 @@
 <template>
     <form action="/cross-country/meets/team-results" method="POST" id="newCrossCountryTeamResult"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -34,11 +34,11 @@
         <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Event</label>
-                <span id="eventHelp" class="form-help" v-if="form.errors.has('event_id')"
-                      v-text="form.errors.get('event_id')">
+                <span id="eventHelp" class="form-help" v-if="form.errors.has('cross_country_event_id')"
+                      v-text="form.errors.get('cross_country_event_id')">
                 </span>
             </div>
-            <select class="form-input" name="event_id" v-model="form.event_id" required>
+            <select class="form-input" name="cross_country_event_id" v-model="form.cross_country_event_id" required>
                 <option v-for="event in events" :key="event.id" :value="event.id">
                     {{ event.name }}
                 </option>
@@ -131,7 +131,7 @@ export default {
             form: new Form({
                 division_id: '',
                 race_title_id: '',
-                event_id: '',
+                cross_country_event_id: '',
                 place: '',
                 number_teams: '',
                 number_runners: '',
@@ -148,7 +148,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post(location.pathname + '/team-results')
+                .post('/api'+location.pathname + '/team-results')
 
                 .then(data => {
 
@@ -176,7 +176,7 @@ export default {
         resetForm() {
             this.form.division_id = '',
             this.form.race_title_id = '',
-            this.form.event_id = '',
+            this.form.cross_country_event_id = '',
             this.form.place = '',
             this.form.number_teams = '',
             this.form.number_runners = '',

@@ -5,9 +5,12 @@ namespace App\Http\Controllers\API\Results\Track;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
+use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
 class ResultController extends Controller
@@ -24,31 +27,35 @@ class ResultController extends Controller
 
 
     /**
+     * Store a newly created resource in storage.
+     *
      * @param TrackMeet $trackMeet
      * @param TeamResult $teamResult
-     * @return mixed
+     * @return Model
      */
     public function store(TrackMeet $trackMeet, TeamResult $teamResult)
     {
 
         request()->validate([
-            'athlete_id'    => 'required|integer',
-            'event_id'      => 'required|integer',
-            'place'         => 'required|integer',
-            'minutes'       => 'required|integer',
-            'seconds'       => 'required|integer',
-            'milliseconds'  => 'integer',
-            'points'        => 'nullable|integer',
+            'athlete_id'        => 'required|integer',
+            'track_event_id'    => 'required|integer',
+            'place'             => 'required|integer',
+            'milliseconds'      => 'nullable|integer',
+            'points'            => 'nullable|integer',
+            'heat'              => 'required|integer',
+            'minutes'           => 'required|integer',
+            'seconds'           => 'required|integer',
+
         ]);
 
         $result = $teamResult->addResults(request([
             'athlete_id',
-            'event_id',
+            'track_event_id',
             'place',
-            'minutes',
-            'seconds',
             'milliseconds',
-            'points'
+            'points',
+            'heat',
+            'total_seconds' => request('minutes') * 60 + request('seconds'),
         ]));
 
         return $result->load('athlete', 'event');
@@ -78,23 +85,23 @@ class ResultController extends Controller
     {
         $this->validate($request, [
             'athlete_id' => 'required|integer',
-            'event_id' => 'required|integer',
+            'track_event_id' => 'required|integer',
             'minutes'   => 'required|integer',
             'seconds' => 'required|integer',
-            'milliseconds' => 'integer',
+            'milliseconds' => 'nullable|integer',
             'place' => 'required|integer',
             'points' => 'nullable|integer',
+            'heat' => 'required|integer'
         ]);
 
         $result->update(request([
             'athlete_id',
-            'event_id',
-            'minutes',
-            'seconds',
+            'track_event_id',
             'milliseconds',
             'place',
-            'points'
-        ]));
+            'points',
+            'heat',
+            ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds')]);
 
         return response()->json($result, 200);
     }
@@ -105,7 +112,7 @@ class ResultController extends Controller
      * @param TeamResult $teamResult
      * @param Result $result
      * @return JsonResponse
-     * @throws \Exception
+     * @throws Exception
      */
     public function destroy(TrackMeet $trackMeet, TeamResult $teamResult, Result $result)
     {

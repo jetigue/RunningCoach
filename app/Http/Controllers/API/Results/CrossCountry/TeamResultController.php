@@ -5,13 +5,17 @@ namespace App\Http\Controllers\API\Results\CrossCountry;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\TeamResult;
 use App\Models\Results\CrossCountry\Result;
+use Exception;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
 class TeamResultController extends Controller
 {
@@ -22,9 +26,7 @@ class TeamResultController extends Controller
      */
     public function index()
     {
-        $teamResults = TeamResult::with('division', 'crossCountryMeet', 'title')->get();
-
-        return $teamResults;
+        return TeamResult::with('division', 'crossCountryMeet', 'title')->get();
     }
 
     /**
@@ -37,20 +39,20 @@ class TeamResultController extends Controller
     public function store(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         request()->validate([
-            'division_id'       => 'required|integer',
-            'race_title_id'     => 'integer|nullable',
-            'event_id'          => 'required|integer',
-            'place'             => 'nullable|integer',
-            'number_teams'      => 'required|integer',
-            'number_runners'    => 'required|integer',
-            'points'            => 'nullable|integer',
-            'notes'             => 'nullable|string'
+            'division_id'               => 'required|integer',
+            'race_title_id'             => 'integer|nullable',
+            'cross_country_event_id'    => 'required|integer',
+            'place'                     => 'nullable|integer',
+            'number_teams'              => 'required|integer',
+            'number_runners'            => 'required|integer',
+            'points'                    => 'nullable|integer',
+            'notes'                     => 'nullable|string'
         ]);
 
         $teamResult = $crossCountryMeet->addTeamResult(request([
             'division_id',
             'race_title_id',
-            'event_id',
+            'cross_country_event_id',
             'place',
             'number_teams',
             'number_runners',
@@ -66,7 +68,7 @@ class TeamResultController extends Controller
      *
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
-     * @return Response
+     * @return Factory|View
      */
     public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
@@ -83,26 +85,26 @@ class TeamResultController extends Controller
      * @param Request $request
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
-     * @return Response
+     * @return JsonResponse
      * @throws ValidationException
      */
     public function update(Request $request, CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {
         $this->validate($request, [
-            'division_id'       => 'required|integer',
-            'race_title_id'     => 'integer|nullable',
-            'event_id'          => 'required|integer',
-            'place'             => 'integer|nullable',
-            'number_teams'      => 'required|integer',
-            'number_runners'    => 'required|integer',
-            'points'            => 'integer|nullable',
-            'notes'             => 'nullable|string'
+            'division_id'               => 'required|integer',
+            'race_title_id'             => 'integer|nullable',
+            'cross_country_event_id'    => 'required|integer',
+            'place'                     => 'integer|nullable',
+            'number_teams'              => 'required|integer',
+            'number_runners'            => 'required|integer',
+            'points'                    => 'integer|nullable',
+            'notes'                     => 'nullable|string'
         ]);
 
         $teamResult->update(request([
             'division_id',
             'race_title_id',
-            'event_id',
+            'cross_country_event_id',
             'place',
             'number_teams',
             'number_runners',
@@ -118,8 +120,8 @@ class TeamResultController extends Controller
      *
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
-     * @return Response
-     * @throws \Exception
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult)
     {

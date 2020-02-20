@@ -17,7 +17,7 @@ class Result extends Model
     protected $table = 'cross_country_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Cross Country Result
      *
      * @var array
      */

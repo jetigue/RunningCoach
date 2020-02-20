@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Results\CrossCountry;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -39,7 +40,7 @@ class ResultController extends Controller
             'minutes'       => 'required|integer',
             'seconds'       => 'required|integer',
             'milliseconds'  => 'integer|nullable',
-            'points'        => 'nullable|integer',
+            'points'        => 'integer|nullable',
         ]);
 
         $result = $teamResult->addResults(request([
@@ -90,7 +91,7 @@ class ResultController extends Controller
             'milliseconds',
             'place',
             'points'
-        ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds'),]);
+        ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds')]);
 
         return response()->json($result, 200);
     }
@@ -101,8 +102,8 @@ class ResultController extends Controller
      * @param CrossCountryMeet $crossCountryMeet
      * @param TeamResult $teamResult
      * @param Result $result
-     * @return Response
-     * @throws \Exception
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $result)
     {

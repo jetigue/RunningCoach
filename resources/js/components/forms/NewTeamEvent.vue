@@ -1,7 +1,7 @@
 <template>
     <form action="/api/team-events" method="POST" id="newTeamEvent"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-3">
             <div class="flex justify-between content-end">

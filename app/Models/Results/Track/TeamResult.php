@@ -32,7 +32,8 @@ class TeamResult extends Model
         'division_id',
         'place',
         'number_teams',
-        'points'
+        'points',
+        'notes'
     ];
 
     /**
@@ -80,7 +81,7 @@ class TeamResult extends Model
      */
     public function results()
     {
-        return $this->hasMany(Result::class, 'track_team_result_id');
+        return $this->hasMany(\App\Models\Results\Track\Result::class, 'track_team_result_id');
     }
 
     /**
@@ -89,7 +90,7 @@ class TeamResult extends Model
      */
     public function addResults($results)
     {
-        return $this->results()->create($results);
+        return $this->results()->create($results + ['total_seconds' => request('minutes') * 60 + request('seconds')]);
     }
 
     /**

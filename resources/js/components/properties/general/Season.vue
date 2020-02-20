@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
                 <form action="api/seasons/slug" method="POST" id="editSeason" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
 

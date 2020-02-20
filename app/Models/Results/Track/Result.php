@@ -4,7 +4,6 @@ namespace App\Models\Results\Track;
 
 use App\Models\Athlete;
 use App\Filters\TrackResultFilter;
-use App\Models\Results\Track\TeamResult;
 use App\Models\Properties\Races\Track\Event;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,13 +24,14 @@ class Result extends Model
      * @var array
      */
     protected $fillable = [
-        'track_meet_result_id',
+        'track_team_result_id',
         'athlete_id',
         'track_event_id',
         'place',
         'total_seconds',
         'milliseconds',
-        'points'
+        'points',
+        'heat'
     ];
 
 //    /**
@@ -47,6 +47,39 @@ class Result extends Model
 //
 //        });
 //    }
+
+    /**
+     * @return string
+     */
+    public function getPlaceWithSuffixAttribute() {
+        $value = $this->attributes['place'];
+
+        if ($value != null) {
+            if (!in_array(($value % 100), array(11, 12, 13)))
+            {
+                switch ($value % 10)
+                {
+                    // Handle 1st, 2nd, 3rd
+                    case 1:
+                        return $value . 'st';
+                    case 2:
+                        return $value . 'nd';
+                    case 3:
+                        return $value . 'rd';
+                }
+            }
+            return $value . 'th';
+        }
+    }
+
+    /**
+     * @return false|string
+     */
+    public function getTimeAttribute() {
+        $seconds = $this->attributes['total_seconds'];
+
+                return gmdate("i:s", $seconds);
+    }
 
     /**
      * @return BelongsTo

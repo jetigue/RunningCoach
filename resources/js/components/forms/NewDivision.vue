@@ -1,7 +1,7 @@
 <template>
     <form action="/divisions" method="POST" id="newDivision"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
 
         <div class="mb-4">

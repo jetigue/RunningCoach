@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Meets;
 
-use App\Filters\TrackMeetFilter;
 use App\Models\Meets\TrackMeet;
 use App\Http\Controllers\Controller;
+use App\Repositories\TrackMeets;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -13,23 +13,42 @@ class TrackMeetController extends Controller
 {
 
     /**
-     * @param TrackMeetFilter $filters
+     * @param TrackMeets $meets
      * @return Factory|View
      */
-    public function index(TrackMeetFilter $filters)
+    public function index(TrackMeets $meets)
     {
-        $trackMeets = TrackMeet::filter($filters)
-            ->with('season', 'host', 'venue', 'timing', 'name')
-            ->orderBy('meet_date', 'desc')
-            ->get();
+        $trackMeets2020 = $meets->trackMeets2020();
+        $trackMeets2019 = $meets->trackMeets2019();
+        $trackMeets2018 = $meets->trackMeets2018();
+        $trackMeets2017 = $meets->trackMeets2017();
+        $trackMeets2016 = $meets->trackMeets2016();
+        $trackMeets2015 = $meets->trackMeets2015();
+        $trackMeets2014 = $meets->trackMeets2014();
+        $trackMeets2013 = $meets->trackMeets2013();
+        $trackMeets2012 = $meets->trackMeets2012();
+        $trackMeets2011 = $meets->trackMeets2011();
+        $trackMeets2010 = $meets->trackMeets2010();
+        $trackMeets = $meets->trackMeets();
 
-        return view('meets.track.index', compact('trackMeets'));
+        return view('meets.track.index', compact(
+            'trackMeets2020',
+            'trackMeets2019',
+            'trackMeets2018',
+            'trackMeets2017',
+            'trackMeets2016',
+            'trackMeets2015',
+            'trackMeets2014',
+            'trackMeets2013',
+            'trackMeets2012',
+            'trackMeets2011',
+            'trackMeets2010',
+            'trackMeets'
+        ));
     }
 
 
     /**
-     * Display the specified resource.
-     *
      * @param TrackMeet $trackMeet
      * @return Factory|View
      */

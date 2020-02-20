@@ -1,21 +1,7 @@
 <template>
-    <form action="/track-meets/team-results" method="POST" id="newTrackTeamResult"
+    <form action="/track/meets/team-results" method="POST" id="newTrackTeamResult"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
-
-        <!--<div class="mb-2">-->
-            <!--<div class="flex justify-between content-end">-->
-                <!--<label class="form-label">Gender</label>-->
-                <!--<span id="genderHelp" class="form-help" v-if="form.errors.has('gender_id')"-->
-                      <!--v-text="form.errors.get('gender_id')">-->
-                <!--</span>-->
-            <!--</div>-->
-            <!--<select class="form-input" name="gender_id" v-model="form.gender_id" required>-->
-                <!--<option v-for="gender in genders" :key="gender.id" :value="gender.id">-->
-                    <!--{{ gender.name }}-->
-                <!--</option>-->
-            <!--</select>-->
-        <!--</div>-->
+        @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -42,21 +28,7 @@
                     id="form.place"
                     type="number"
                     min="1"
-                    v-model="form.place" required>
-        </div>
-
-        <div class="mb-2">
-            <div class="flex justify-between content-end">
-                <label class="form-label" for="form.number_teams">Number of Teams</label>
-                <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
-                      v-text="form.errors.get('number_teams')">
-                </span>
-            </div>
-            <input class="form-input"
-                   id="form.number_teams"
-                   type="number"
-                   min="2"
-                   v-model="form.number_teams" required>
+                    v-model="form.place">
         </div>
 
         <div class="mb-2">
@@ -70,7 +42,34 @@
                    id="form.points"
                    type="number"
                    min="0"
-                   v-model="form.points" required>
+                   v-model="form.points">
+        </div>
+
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.number_teams">Number of Teams</label>
+                <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
+                      v-text="form.errors.get('number_teams')">
+                </span>
+            </div>
+            <input class="form-input"
+                   id="form.number_teams"
+                   type="number"
+                   min="2"
+                   v-model="form.number_teams">
+        </div>
+
+        <div class="mb-2">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.notes">Notes (optional)</label>
+                <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
+                      v-text="form.errors.get('notes')">
+                </span>
+            </div>
+            <textarea class="form-input"
+                      id="form.notes"
+                      v-model="form.notes">
+            </textarea>
         </div>
 
         <div class="text-right pt-2">
@@ -92,6 +91,7 @@ export default {
                 place: '',
                 number_teams: '',
                 points: '',
+                notes: ''
             }),
 
             divisions: []
@@ -101,7 +101,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post(location.pathname + '/team-results')
+                .post('/api' + location.pathname + '/team-results')
 
                 .then(data => {
 
@@ -116,7 +116,7 @@ export default {
 
                     toast({
                         type: 'success',
-                        title: 'Result Added Successfully'
+                        title: 'Team Result Added Successfully'
                     });
 
                     this.$emit('created', data),
@@ -131,27 +131,22 @@ export default {
             this.form.place = '',
             this.form.number_teams = '',
             this.form.points = '',
+                this.form.notes = '',
             this.form.errors.clear();
         },
 
         getAttributes() {
-            // function getGenderNames() {
-            //     return axios.get('/api/genders')
-            // }
 
             function getDivisionNames() {
                 return axios.get('/api/divisions')
             }
 
             axios.all([
-                // getGenderNames(),
                 getDivisionNames()
             ])
             .then(axios.spread((
-                // gendersResponse,
                 divisionsResponse
             ) => {
-                // this.genders = gendersResponse.data;
                 this.divisions = divisionsResponse.data;
             }))
             .catch(errors => {

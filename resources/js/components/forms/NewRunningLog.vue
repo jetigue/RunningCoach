@@ -1,7 +1,7 @@
 <template>
     <form action="/running-log" method="POST" id="newRunningLog"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-1">
             <div class="flex justify-between content-end">

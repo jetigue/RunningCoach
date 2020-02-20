@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Results\Track;
 
 use App\Models\Results\Track\TeamResult;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Meets\TrackMeet;
@@ -17,22 +19,20 @@ class TeamResultController extends Controller
      */
     public function index($filters)
     {
-        $teamResults = TeamResult::filter($filters)
+        return TeamResult::filter($filters)
             ->with('division', 'trackMeet')
             ->get();
-
-        return $teamResults;
     }
 
 
-    public function store(TrackMeet $trackMeet)
+    public function store(TrackMeet $trackMeet, TeamResult $teamResult)
     {
         request()->validate([
             'division_id'       => 'required|integer',
             'place'             => 'integer|lte:number_teams',
             'number_teams'      => 'required|integer|gte:place',
-            'number_runners'    => 'nullable|integer|min:1',
             'points'            => 'nullable|integer',
+            'notes'             => 'nullable|string'
         ]);
 
 
@@ -40,7 +40,8 @@ class TeamResultController extends Controller
             'division_id',
             'place',
             'number_teams',
-            'points'
+            'points',
+            'notes'
         ]));
 
         return $teamResult->load('division');
@@ -89,11 +90,12 @@ class TeamResultController extends Controller
 
 
     /**
+     * @param TrackMeet $trackMeet
      * @param TeamResult $teamResult
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Exception
+     * @return JsonResponse
+     * @throws Exception
      */
-    public function destroy(TeamResult $teamResult)
+    public function destroy(TrackMeet $trackMeet, TeamResult $teamResult)
     {
         $teamResult->delete();
 

@@ -4,31 +4,36 @@ namespace App\Http\Controllers\API\Meets;
 
 use App\Filters\TrackMeetFilter;
 use App\Models\Meets\TrackMeet;
+use Exception;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class TrackMeetController extends Controller
 {
 
-    /**
-     * @param TrackMeetFilter $filters
-     * @return mixed
-     */
-    public function index(TrackMeetFilter $filters)
+    public function __construct()
     {
-        $trackMeets = TrackMeet::filter($filters)
-            ->with('season', 'host', 'venue', 'timing', 'name')
-            ->orderBy('meet_date', 'desc')
-            ->get();
-
-        return $trackMeets;
+        $this->middleware('coach');
     }
 
+    /**
+     * @return TrackMeet[]|Builder[]|Collection
+     */
+    public function index()
+    {
+        return TrackMeet::with('season', 'host', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->get();
+    }
 
     /**
      * @param Request $request
      * @return TrackMeetController|TrackMeet
-     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
@@ -38,12 +43,12 @@ class TrackMeetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Meets\TrackMeet  $trackMeet
-     * @return \Illuminate\Http\Response
+     * @param TrackMeet $trackMeet
+     * @return TrackMeet
      */
     public function show(TrackMeet $trackMeet)
     {
-        //
+        return TrackMeet::with('host', 'name', 'venue', 'timing', 'season');
     }
 
 
@@ -52,8 +57,8 @@ class TrackMeetController extends Controller
      *
      * @param Request $request
      * @param TrackMeet $trackMeet
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return JsonResponse
+     * @throws ValidationException
      */
     public function update(Request $request, TrackMeet $trackMeet)
     {
@@ -63,8 +68,8 @@ class TrackMeetController extends Controller
 
     /**
      * @param TrackMeet $trackMeet
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Exception
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(TrackMeet $trackMeet)
     {
@@ -75,7 +80,7 @@ class TrackMeetController extends Controller
 
 
     /**
-     * Store a TimeTrial Meet in the Database
+     * Store a Track Meet in the Database
      * @return mixed
      */
     protected function storeMeet()
@@ -85,7 +90,7 @@ class TrackMeetController extends Controller
             'meet_date'        => 'required|date',
             'season_id'        => 'required|integer',
             'host_id'          => 'required|integer',
-            'venue_id'         => 'required|integer',
+            'track_venue_id'   => 'required|integer',
             'timing_method_id' => 'required|integer',
         ]);
 
@@ -97,17 +102,17 @@ class TrackMeetController extends Controller
     /**
      * @param Request $request
      * @param TrackMeet $trackMeet
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return JsonResponse
+     * @throws ValidationException
      */
-    protected function updateMeet(Request $request, TrackMeet $trackMeet): \Illuminate\Http\JsonResponse
+    protected function updateMeet(Request $request, TrackMeet $trackMeet): JsonResponse
     {
         $this->validate($request, [
             'meet_name_id'     => 'required|integer',
             'meet_date'        => 'required|date',
             'season_id'        => 'required|integer',
             'host_id'          => 'required|integer',
-            'venue_id'         => 'required|integer',
+            'track_venue_id'         => 'required|integer',
             'timing_method_id' => 'required|integer',
         ]);
 
@@ -116,7 +121,7 @@ class TrackMeetController extends Controller
             'meet_date',
             'season_id',
             'host_id',
-            'venue_id',
+            'track_venue_id',
             'timing_method_id'
         ]));
 
