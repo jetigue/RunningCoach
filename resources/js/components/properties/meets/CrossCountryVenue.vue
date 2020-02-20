@@ -2,7 +2,7 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/cross-country/venues/id" method="POST" id="editVenue" @submit.prevent="update"
+                <form action="/cross-country/venues/id" method="POST" id="editVenue" @submit.prevent="update"
                       @keydown="form.errors.clear()"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
@@ -48,11 +48,7 @@
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
-<<<<<<< HEAD
-                        <edit-button @clicked=""></edit-button>
-=======
-                        <edit-button @clicked="editing=true"></edit-button>
->>>>>>> feature-timeTrials
+                        <edit-button @clicked="getNames"></edit-button>
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -71,16 +67,12 @@
                 isExpanded: false,
 
                 id: this.data.id,
-                name: this.data.name,
+                name: this.data.name
 
                 form: new Form({
                     name: this.data.name,
-<<<<<<< HEAD
-                }),
 
-=======
-                })
->>>>>>> feature-timeTrials
+                }),
             }
         },
 
@@ -128,19 +120,11 @@
             resetForm() {
                 this.form.name = this.name
                 this.isExpanded = false;
-            }
+            },
 
-            // getSeasonNames() {
-            //     this.editing = true;
-            //
-            //     axios.get('/api/seasons')
-            //         .then(response => {
-            //             this.seasons = response.data;
-            //         })
-            //         .catch(errors => {
-            //             console.log(errors)
-            //         });
-            // }
+            getNames() {
+                this.editing = true;
+            }
         }
     }
 </script>
