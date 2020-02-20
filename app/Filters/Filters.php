@@ -15,7 +15,7 @@ abstract class Filters
     /**
      * The Eloquent builder.
      *
-     * @var \Illuminate\Database\Eloquent\Builder
+     * @var Builder
      */
     protected $builder;
 

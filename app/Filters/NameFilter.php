@@ -3,19 +3,20 @@
 namespace App\Filters;
 
 use App\Models\Properties\General\Season;
+use Illuminate\Database\Eloquent\Builder;
 
 class NameFilter extends Filters
 {
   /**
    * Registered filters to operate upon.
-   * 
+   *
    * @var array
    */
   protected $filters = ['season', 'track'];
 
   /**
    * Filter the query by a season.
-   * 
+   *
    * @param string $seasonSlug
    * @return Builder
    */
@@ -26,12 +27,11 @@ class NameFilter extends Filters
     return $this->builder->where('season_id', $season->id);
   }
 
-  /**
-   * Filter the query by a season.
-   * 
-   * @param string $seasonSlug
-   * @return Builder
-   */
+    /**
+     * Filter the query by a season.
+     *
+     * @return Builder
+     */
   protected function track()
   {
     $indoor = Season::where('slug', 'indoor-track')->firstOrFail();

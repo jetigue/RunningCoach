@@ -186,7 +186,7 @@
 
             update() {
                 this.form
-                    .patch('/api/cross-country/meets/'+ this.data.id)
+                    .patch('/api/cross-country/meets/' + this.data.id)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
                         this.meetDate = this.form.meet_date;

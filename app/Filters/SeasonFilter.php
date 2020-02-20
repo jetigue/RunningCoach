@@ -3,6 +3,7 @@
 namespace App\Filters;
 
 use App\Models\Properties\General\Season;
+use Illuminate\Database\Eloquent\Builder;
 
 class SeasonFilter extends Filters
 {
@@ -26,12 +27,11 @@ class SeasonFilter extends Filters
     return $this->builder->where('slug', $season->slug);
   }
 
-  /**
-   * Filter the query by a season.
-   *
-   * @param string $seasonSlug
-   * @return Builder
-   */
+    /**
+     * Filter the query by a season.
+     *
+     * @return Builder
+     */
   protected function track()
   {
     return $this->builder

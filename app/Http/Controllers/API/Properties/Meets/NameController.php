@@ -20,12 +20,10 @@ class NameController extends Controller
      */
     public function index(NameFilter $filters)
     {
-        $meetNames = Name::filter($filters)
+        return Name::filter($filters)
             ->with('season')
             ->orderBy('name')
             ->get();
-
-        return $meetNames;
     }
 
     /**
