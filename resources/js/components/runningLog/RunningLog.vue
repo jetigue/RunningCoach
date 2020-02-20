@@ -443,23 +443,23 @@
                 this.editing = true;
 
                 function getDayTimeNames() {
-                    return axios.get('/api/dayTimes')
+                    return axios.get('/api/day-times')
                 }
 
                 function getRunEffortNames() {
-                    return axios.get('/api/runEfforts')
+                    return axios.get('/api/run-efforts')
                 }
 
                 function getRunFeelingNames() {
-                    return axios.get('/api/runFeelings')
+                    return axios.get('/api/run-feelings')
                 }
 
                 function getRunTypeNames() {
-                    return axios.get('/api/runTypes')
+                    return axios.get('/api/run-types')
                 }
 
                 function getTerrainTypeNames() {
-                    return axios.get('/api/terrainTypes')
+                    return axios.get('/api/terrain-types')
                 }
 
                 axios.all([
