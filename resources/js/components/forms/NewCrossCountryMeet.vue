@@ -1,7 +1,7 @@
 <template>
     <form action="/cross-country/meets" method="POST" id="newCrossCountryMeet"
           @submit.prevent="onSubmit"
-          @keydown="form.errors.clear($event.target.name)">
+          @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -37,11 +37,11 @@
         <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Venue</label>
-                <span id="venueHelp" class="form-help" v-if="form.errors.has('venue_id')"
-                      v-text="form.errors.get('venue_id')">
+                <span id="venueHelp" class="form-help" v-if="form.errors.has('cross_country_venue_id')"
+                      v-text="form.errors.get('cross_country_venue_id')">
                             </span>
             </div>
-            <select class="form-input" name="venue_id" v-model="form.venue_id" required>
+            <select class="form-input" name="cross_country_venue_id" v-model="form.cross_country_venue_id" required>
                 <option v-for="venue in venues" :key="venue.id" :value="venue.id">
                     {{ venue.name }}
                 </option>
@@ -94,7 +94,7 @@
                     meet_name_id: '',
                     host_id: '',
                     meet_date: '',
-                    venue_id: '',
+                    cross_country_venue_id: '',
                     timing_method_id: ''
                 }),
 
@@ -136,7 +136,7 @@
             resetForm() {
                     this.form.meet_name_id = '',
                     this.form.meet_date = '',
-                    this.form.venue_id = '',
+                    this.form.cross_country_venue_id = '',
                     this.form.host_id = '',
                     this.form.timing_method_id = '',
                     this.form.errors.clear();

@@ -1,7 +1,7 @@
 <template>
     <form action="/api/genders" method="POST" id="newMeetGender"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-4">
             <div class="flex justify-between content-end">

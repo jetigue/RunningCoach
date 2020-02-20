@@ -2,8 +2,8 @@
     <div class="">
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
-                <form action="api/track-meets/slug" method="POST" id="editTrackMeet" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                <form action="/track/meets/" method="POST" id="editTrackMeet" @submit.prevent="update"
+                      @keydown="form.errors.clear()"
                         class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
@@ -14,7 +14,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Meet Name</label>
                             <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
@@ -28,7 +28,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.meet_date">
                                 Date
@@ -40,7 +40,7 @@
                         <input class="form-input" id="form.meet_date" type="date" v-model="form.meet_date">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Season</label>
                             <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
@@ -54,21 +54,21 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Venue</label>
-                            <span id="venueHelp" class="form-help" v-if="form.errors.has('venue_id')"
-                                v-text="form.errors.get('venue_id')">
+                            <span id="venueHelp" class="form-help" v-if="form.errors.has('track_venue_id')"
+                                v-text="form.errors.get('track_venue_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="venue_id" v-model="form.venue_id" required>
+                        <select class="form-input" name="track_venue_id" v-model="form.track_venue_id" required>
                             <option v-for="venue in venues" :key="venue.id" :value="venue.id">
                                 {{ venue.name }}
                             </option>
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Host</label>
                             <span id="hostHelp" class="form-help" v-if="form.errors.has('host_id')"
@@ -82,7 +82,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Timing Method</label>
                             <span id="timingHelp" class="form-help" v-if="form.errors.has('timing_method_id')"
@@ -109,12 +109,15 @@
             <div class="flex flex-col border-b border-primary-lightest hover:bg-white">
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
-                        <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-grey-darker w-full lg:w-1/2 font-semibold md:font-normal hover:text-blue">
-                                <a :href="'/track-meets/'+this.data.slug">{{meetName }}</a>
+                        <div class="flex md:w-11/12 flex-wrap items-center">
+                            <div class="text-black w-full md:w-1/2 lg:w-2/5 font-semibold md:font-normal hover:text-blue-700">
+                                <a :href="'/track/meets/'+this.data.slug">{{meetName }}</a>
                             </div>
-                            <div class="text-grey-darker py-1 pl-4 lg:p-0">
-                                {{ meetDate | moment("MMMM Do, YYYY") }}
+                            <div class="w-1/2 md:w-1/4 text-gray-700 py-1 pl-2 lg:p-0">
+                                {{ meetDate | moment("MMMM Do") }}
+                            </div>
+                            <div class="w-1/2 md:w-1/4 text-blue-700 font-medium">
+                                <a :href="'/track/meets/'+this.data.slug">Results</a>
                             </div>
                         </div>
                         <expand-button @toggleRow="toggleRow" class=""></expand-button>
@@ -155,7 +158,10 @@
 </template>
 
 <script>
+    import {authMixin} from "../../mixins/authMixin";
+
     export default {
+        mixins: [authMixin],
         props: ['data'],
 
         data() {
@@ -170,12 +176,12 @@
                 host: this.data.host.name,
                 venue: this.data.venue.name,
                 timing: this.data.timing.name,
-                path: '/track-meets/' +this.id,
+                path: '/track/meets/' +this.slug,
 
                 meet_name_id: this.data.meet_name_id,
                 season_id: this.data.season_id,
                 host_id: this.data.host_id,
-                venue_id: this.data.venue_id,
+                track_venue_id: this.data.track_venue_id,
                 timing_method_id: this.data.timing_method_id,
 
                 form: new Form({
@@ -183,7 +189,7 @@
                     meet_date: this.data.meet_date,
                     season_id: this.data.season_id,
                     host_id: this.data.host_id,
-                    venue_id: this.data.venue_id,
+                    track_venue_id: this.data.track_venue_id,
                     timing_method_id: this.data.timing_method_id
 
                 }),
@@ -203,12 +209,12 @@
 
             update() {
                 this.form
-                    .patch('/api/trackMeets/' + this.data.slug)
+                    .patch('/api/track/meets/'+this.data.slug)
                     .then(data => {
                         this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
                         this.meetDate = this.form.meet_date;
                         this.host = this.hosts.find(host => host.id === this.form.host_id).name;
-                        this.venue = this.venues.find(venue => venue.id === this.form.venue_id).name;
+                        this.venue = this.venues.find(venue => venue.id === this.form.track_venue_id).name;
                         this.timing = this.timings.find(timing => timing.id === this.form.timing_method_id).name;
                         this.season = this.seasons.find(season => season.id === this.form.season_id).name
 
@@ -232,7 +238,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'TimeTrial Meet Updated'
+                                    title: 'Track Meet Updated'
                                 });
                             }
                     })
@@ -243,7 +249,7 @@
             },
 
             destroy() {
-                axios.delete('api/trackMeets/' + this.data.slug);
+                axios.delete('/api/track/meets/'+this.data.slug);
 
                 this.$emit('deleted', this.data.slug);
             },
@@ -253,7 +259,7 @@
                 this.form.meet_date = this.meetDate,
                 this.form.season_id = this.season_id,
                 this.form.host_id = this.host_id,
-                this.form.venue_id = this.venue_id,
+                this.form.track_venue_id = this.track_venue_id,
                 this.form.timing_method_id = this.timing_method_id,
                 this.isExpanded = false;
             },
@@ -266,7 +272,7 @@
                 }
 
                 function getMeetNames() {
-                    return axios.get('/api/meetNames?track=1')
+                    return axios.get('/api/meet-names?track=1')
                 }
 
                 function getSeasonNames() {
@@ -278,7 +284,7 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/venues?track=1')
+                    return axios.get('/api/track/venues?track=1')
                 }
 
                 axios.all([

@@ -6,7 +6,7 @@
                       method="POST"
                       id="editCrossCountryTeamResult"
                       @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                       class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
                     <div class="flex items-center mb-1">
@@ -50,11 +50,11 @@
                     <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Event</label>
-                            <span id="eventsHelp" class="form-help" v-if="form.errors.has('event_id')"
-                                  v-text="form.errors.get('event_id')">
+                            <span id="eventsHelp" class="form-help" v-if="form.errors.has('cross_country_event_id')"
+                                  v-text="form.errors.get('cross_country_event_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="event_id" v-model="form.event_id" required>
+                        <select class="form-input" name="cross_country_event_id" v-model="form.cross_country_event_id" required>
                             <option v-for="event in events" :key="event.id" :value="event.id">
                                 {{ event.name }}
                             </option>
@@ -234,13 +234,13 @@
 
                 meet_id: this.data.meet_id,
                 division_id: this.data.division_id,
-                event_id: this.data.event_id,
+                cross_country_event_id: this.data.cross_country_event_id,
                 race_title_id: this.data.race_title_id,
 
                 form: new Form({
                     division_id: this.data.division_id,
                     race_title_id: this.data.race_title_id,
-                    event_id: this.data.event_id,
+                    cross_country_event_id: this.data.cross_country_event_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
                     number_runners: this.data.number_runners,
@@ -292,7 +292,7 @@
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
                         // this.title = this.titles.find(title => title.id === this.form.race_title_id).name;
-                        this.event = this.events.find(event => event.id === this.form.event_id).name;
+                        this.event = this.events.find(event => event.id === this.form.cross_country_event_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
                         this.number_runners = this.form.number_runners;
@@ -339,7 +339,7 @@
             resetForm() {
                 this.form.division_id = this.division_id,
                 this.form.race_title_id = this.race_title_id,
-                this.form.event_id = this.event_id,
+                this.form.cross_country_event_id = this.cross_country_event_id,
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
                 this.form.number_runners = this.number_runners,
@@ -356,7 +356,7 @@
                 }
 
                 function getEventNames() {
-                    return axios.get('/api/events')
+                    return axios.get('/api/cross-country/events')
                 }
 
                 function getRaceTitleNames() {

@@ -1,7 +1,7 @@
 <template>
     <form action="/api/track/events" method="POST" id="newTrackEvent"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">

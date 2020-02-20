@@ -55,7 +55,10 @@ class Season extends Model
         return '/seasons/' . $this->slug;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature-timeTrials
     /**
      * @return HasMany
      */

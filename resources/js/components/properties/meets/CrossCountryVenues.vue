@@ -3,7 +3,10 @@
         <div class="flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Cross Country Venues</header>
             <filter-button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature-timeTrials
             </filter-button>
         </div>
 

@@ -7,7 +7,6 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Filters\VenueFilter;
 use Illuminate\Http\Response;
 
 class CrossCountryVenueController extends Controller
@@ -20,30 +19,41 @@ class CrossCountryVenueController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param VenueFilter $filters
      * @return Response
      */
-    public function index(VenueFilter $filters)
+    public function index()
     {
+<<<<<<< HEAD
         return Venue::all()->orderBy('name')->get();
+=======
+        return Venue::orderBy('name')->get();
+>>>>>>> feature-timeTrials
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
         $venue = request()->validate([
+<<<<<<< HEAD
             'name' => 'required|string|min:3',
+=======
+            'name' => 'required|string|min:3'
+>>>>>>> feature-timeTrials
         ]);
 
         $venue = Venue::create($venue);
 
+<<<<<<< HEAD
         return $venue;
 
+=======
+        return response()->json($venue, 201);
+>>>>>>> feature-timeTrials
     }
 
     /**

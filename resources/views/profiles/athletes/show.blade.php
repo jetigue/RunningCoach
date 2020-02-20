@@ -19,6 +19,9 @@
             <tab title="Track Results" active>
                 @include('partials.athleteTrackResults')
             </tab>
+{{--            <tab title="Time Trials">--}}
+{{--                @include('partials.athleteTimeTrialResults')--}}
+{{--            </tab>--}}
             <tab title="Training Paces">
                 @if($seasonBest5k)
                 <athlete-training-paces :data="{{ $seasonBest5k }}"></athlete-training-paces>

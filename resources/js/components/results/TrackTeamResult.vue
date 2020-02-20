@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
                 <form action="/team-results/id" method="POST" id="editTrackTeamResult" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-3">
                         <div class="form-label ml-1">
@@ -14,7 +14,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Division</label>
                             <span id="divisionHelp" class="form-help" v-if="form.errors.has('division_id')"
@@ -28,7 +28,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.place">Place</label>
                             <span id="placeHelp" class="form-help" v-if="form.errors.has('place')"
@@ -42,7 +42,7 @@
                                v-model="form.place" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.number_teams">Number of Teams</label>
                             <span id="numberTeamsHelp" class="form-help" v-if="form.errors.has('number_teams')"
@@ -56,7 +56,7 @@
                                v-model="form.number_teams" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.points">Points</label>
                             <span id="pointsHelp" class="form-help" v-if="form.errors.has('points')"
@@ -68,6 +68,19 @@
                                type="number"
                                min="0"
                                v-model="form.points" required>
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="flex justify-between content-end">
+                            <label class="form-label" for="form.notes">Notes (optional)</label>
+                            <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
+                                  v-text="form.errors.get('notes')">
+                            </span>
+                        </div>
+                        <textarea class="form-input"
+                                  id="form.notes"
+                                  v-model="form.notes">
+                        </textarea>
                     </div>
 
                     <div class="flex items-center justify-end">
@@ -120,6 +133,11 @@
                                     {{ points }}
                                 </span>
                             </p>
+                            <p class="text-grey w-full py-1">Notes:
+                                <span class="text-tertiary">
+                                    {{ notes }}
+                                </span>
+                            </p>
 
                         </div>
                         <div class="flex justify-start cursor-pointer pb-2">
@@ -147,6 +165,7 @@
                 place: this.data.place,
                 number_teams: this.data.number_teams,
                 points: this.data.points,
+                notes: this.data.notes,
                 url: location.pathname + '/team-results/' +this.data.id,
 
                 meet_id: this.data.meet_id,
@@ -156,7 +175,8 @@
                     division_id: this.data.division_id,
                     place: this.data.place,
                     number_teams: this.data.number_teams,
-                    points: this.data.points
+                    points: this.data.points,
+                    notes: this.data.notes
                 }),
 
                 divisions: [],
@@ -170,12 +190,13 @@
 
             update() {
                 this.form
-                    .patch(location.pathname + '/team-results/' +this.data.id)
+                    .patch('/api' + location.pathname + '/team-results/' + this.data.id)
                     .then(data => {
                         this.division = this.divisions.find(division => division.id === this.form.division_id).name;
                         this.place = this.form.place;
                         this.number_teams = this.form.number_teams;
                         this.points = this.form.points;
+                        this.notes = this.form.notes
 
 
                         this.editing = false;
@@ -185,7 +206,8 @@
                             this.division != this.data.division.name ||
                             this.place != this.data.place ||
                             this.number_teams != this.data.number_teams ||
-                            this.points != this.data.points)
+                            this.points != this.data.points ||
+                            this.notes != this.data.notes)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,
@@ -196,7 +218,7 @@
 
                                 toast({
                                     type: 'success',
-                                    title: 'TimeTrial Results Updated'
+                                    title: 'Track Team Result Updated'
                                 });
                             }
                     })
@@ -207,7 +229,7 @@
             },
 
             destroy() {
-                axios.delete('teamResults/' + this.data.id);
+                axios.delete('/api'+ location.pathname + '/team-results/'+ this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
@@ -217,6 +239,7 @@
                 this.form.place = this.place,
                 this.form.number_teams = this.number_teams,
                 this.form.points = this.points,
+                    this.form.notes = this.notes
                 this.isExpanded = false;
             },
 

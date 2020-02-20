@@ -14,7 +14,8 @@ class CrossCountryMeetController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @param CrossCountryMeets $meets
+     * @return Factory|View
      */
     public function index(CrossCountryMeets $meets)
     {

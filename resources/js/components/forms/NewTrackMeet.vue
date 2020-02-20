@@ -1,9 +1,9 @@
 <template>
     <form action="/track/meets" method="POST" id="newTrackMeet"
           @submit.prevent="onSubmit"
-          @keydown="form.errors.clear($event.target.name)">
+          @keydown="form.errors.clear()">
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Meet Name</label>
                 <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
@@ -22,7 +22,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.meet_date">
                     Date
@@ -34,7 +34,7 @@
             <input class="form-input" name="meet_date" id="form.meet_date" type="date" v-model="form.meet_date" required>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Season</label>
                 <span id="seasonHelp" class="form-help" v-if="form.errors.has('season_id')"
@@ -48,21 +48,21 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Venue</label>
                 <span id="venueHelp" class="form-help" v-if="form.errors.has('track_venue_id')"
                       v-text="form.errors.get('track_venue_id')">
                             </span>
             </div>
-            <select class="form-input" name="venue_id" v-model="form.venue_id" required>
+            <select class="form-input" name="track_venue_id" v-model="form.track_venue_id" required>
                 <option v-for="venue in venues" :key="venue.id" :value="venue.id">
                     {{ venue.name }}
                 </option>
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Host</label>
                 <span id="hostHelp" class="form-help" v-if="form.errors.has('host_id')"
@@ -76,7 +76,7 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Timing Method</label>
                 <span id="timingHelp" class="form-help" v-if="form.errors.has('timing_method_id')"

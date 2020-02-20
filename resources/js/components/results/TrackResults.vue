@@ -10,27 +10,32 @@
         </div>
         <div class="table-container">
             <div class="table-header">
-                <div class="flex md:w-9/10 flex-wrap">
-                    <div class="hidden md:flex md:w-2/5 lg:w-1/4">
+                <div class="flex w-11/12 flex-wrap">
+                    <div class="w-3/4 md:w-1/3 lg:w-1/3">
                         <p class="text-primary font-semibold">Athlete</p>
                     </div>
 
-                    <div class="hidden lg:flex lg:w-1/4">
+                    <div class="w-1/4 md:w-1/6 lg:w-1/6">
                         <p class="text-primary font-semibold">Event</p>
                     </div>
 
-                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
+                    <div class="w-1/4 md:w-1/6 lg:w-1/6">
+                        <p class="text-primary font-semibold">Place</p>
+                    </div>
+
+                    <div class="hidden md:flex md:w-1/6 lg:w-1/6">
                         <p class="text-primary font-semibold">Time</p>
                     </div>
 
-                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
-                        <p class="text-primary font-semibold">Place</p>
-                    </div>
-                    <div class="hidden md:flex md:w-1/5 lg:w-1/6">
+                    <div class="hidden md:flex md:w-1/6 lg:w-1/12 lg:justify-center">
                         <p class="text-primary font-semibold">Points</p>
                     </div>
+
+                    <div class="hidden md:flex md:w-1/56 lg:w-1/12 lg:justify-center">
+                        <p class="text-primary font-semibold">Heat</p>
+                    </div>
                 </div>
-                <div class="flex justify-end items-center">
+                <div v-if="isCoach" class="flex justify-end items-center">
                     <create-button title="Add a Result">
                         <new-track-result @created="add"></new-track-result>
                     </create-button>
@@ -52,12 +57,14 @@
 </template>
 
 <script>
+    import {authMixin} from "../../mixins/authMixin";
     import Collection from '../../Collection';
     import TrackResult from './TrackResult';
     import CreateButton from '../buttons/CreateButton';
     import NewTrackResult from '../forms/NewTrackResult';
 
     export default Collection.extend({
+        mixins: [authMixin],
         props: ['data'],
 
         components: { TrackResult, CreateButton, NewTrackResult },

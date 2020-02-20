@@ -37,20 +37,20 @@ class TrackMeet extends Model
        'timing_method_id'
    ];
 
-    /**
-     * @return string
-     */
-    public function path()
-    {
-        return '/track-meets/' . $this->slug;
-    }
-
-    /**
+   /**
      * @return string
      */
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    /**
+     * @return string
+     */
+    public function path()
+    {
+        return '/track/meets/' . $this->slug;
     }
 
     /**

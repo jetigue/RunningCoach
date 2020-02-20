@@ -17,13 +17,13 @@
                         {{ $venue->name }}
                     </div>
                     <div class="pl-2 md:pl-0 w-1/2 lg:w-1/4 text-center">
-                        <a class="text-blue-700" href="/cross-country-venues/{{$venue->id}}/boys-records">
+                        <a class="text-blue-700" href="/cross-country/venues/{{$venue->id}}/boys-records">
                             Boys Records
                         </a>
                     </div>
                     <div class="pl-2 md:pl-0 w-1/2 lg:w-1/4 justify-right md:text-center">
                         <a class="text-blue-700"
-                           href="/cross-country-venues/{{$venue->id}}/girls-records">
+                           href="/cross-country/venues/{{$venue->id}}/girls-records">
                             Girls Records
                         </a>
                     </div>

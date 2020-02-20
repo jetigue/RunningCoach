@@ -1,7 +1,7 @@
 <template>
     <form action="/meet-names" method="POST" id="newMeetName"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-4">
             <div class="flex justify-between content-end">

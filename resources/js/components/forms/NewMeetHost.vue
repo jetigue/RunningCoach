@@ -1,7 +1,7 @@
 <template>
     <form action="/api/hosts" method="POST" id="newMeetHost"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-4">
             <div class="flex justify-between content-end">

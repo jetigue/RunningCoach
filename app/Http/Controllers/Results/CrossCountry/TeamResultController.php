@@ -48,7 +48,11 @@ class TeamResultController extends Controller
      */
     public function show(CrossCountryMeet $crossCountryMeet, TeamResult $teamResult, Result $results)
     {
+        $results = Result::where('cross_country_team_result_id', $teamResult->id)->orderBy('place')
+            ->with('teamResult', 'athlete')->get();
+
         return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
+
     }
 
     /**

@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
                 <form action="/runningLogs" method="POST" id="editRunningLog" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-2">
                         <div class="form-label ml-1">
@@ -453,7 +453,7 @@
                         this.runFeelings = runFeelingsResponse.data;
                         this.runTypes = runTypesResponse.data;
                         this.terrainTypes = terrainTypesResponse.data;
-                    }));         
+                    }));
             }
         }
     }

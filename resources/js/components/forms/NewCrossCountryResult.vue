@@ -1,7 +1,7 @@
 <template>
     <form action="/cross-country/meets/team-results/result" method="POST" id="newCrossCountryResult"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -126,7 +126,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post(location.pathname + '/results')
+                .post('/api' + location.pathname + '/results')
 
                 .then(data => {
 

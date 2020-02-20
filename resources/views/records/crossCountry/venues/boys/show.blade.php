@@ -12,11 +12,11 @@
                     Boys Records
                 </p>
                 <a class="text-xs text-blue-700"
-                   href="/cross-country-venues/{{$venue->id}}/girls-records">
+                   href="/cross-country/venues/{{$venue->id}}/girls-records">
                     See Girls Records
                 </a>
             </div>
-            <a class="flex items-center text-gray-700" href="/cross-country-venues">
+            <a class="flex items-center text-gray-700" href="/cross-country/venues">
                 <i class="text-2xl far fa-arrow-alt-circle-left"></i>
                 <span class="text-sm pl-2">All Venues</span>
             </a>

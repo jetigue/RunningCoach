@@ -20,6 +20,7 @@ class CreateTrackTeamResultsTable extends Migration
             $table->unsignedSmallInteger('place');
             $table->unsignedSmallInteger('points')->nullable();
             $table->unsignedSmallInteger('number_teams');
+            $table->text('notes')->nullable();
             $table->string('slug');
             $table->timestamps();
 

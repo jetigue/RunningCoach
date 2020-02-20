@@ -1,7 +1,7 @@
 <template>
     <form action="/cross-country/venues" method="POST" id="newCrossCountryVenue"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-4">
             <div class="flex justify-between content-end">
@@ -34,7 +34,6 @@ export default {
                 name: ''
             }),
 
-            seasons: []
         };
     },
 
@@ -75,6 +74,7 @@ export default {
     created() {
         Event.$on('cancel', () => this.resetForm());
 
+<<<<<<< HEAD
         Event.$on('getNames', () =>
 
             axios.get('/api/seasons')
@@ -85,6 +85,18 @@ export default {
                     console.log(errors)
                 })
         );
+=======
+        // Event.$on('getNames', () =>
+        //
+        //     axios.get('/api/seasons')
+        //         .then(response => {
+        //             this.seasons = response.data;
+        //         })
+        //         .catch(errors => {
+        //             console.log(errors)
+        //         })
+        // );
+>>>>>>> feature-timeTrials
     }
 }
 </script>

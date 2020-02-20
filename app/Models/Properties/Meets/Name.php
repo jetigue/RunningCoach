@@ -8,6 +8,8 @@ use App\Models\Properties\General\Season;
 use App\Filters\NameFilter;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Meets\TrackMeet;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Name extends Model
 {
@@ -37,11 +39,11 @@ class Name extends Model
 
     public function apiPath()
     {
-        return 'api/meetNames/' . $this->id;
+        return 'api/meet-names/' . $this->id;
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function season()
     {
@@ -49,19 +51,19 @@ class Name extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function trackMeets()
     {
-        return $this->hasMany(TrackMeet::class, 'meet_name_id');
+        return $this->hasMany(TrackMeet::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function crossCountryMeets()
     {
-        return $this->hasMany(CrossCountryMeet::class, 'meet_name_id');
+        return $this->hasMany(CrossCountryMeet::class);
     }
 
     /**

@@ -14,6 +14,12 @@ Route::get('/river-run', 'PageController@riverRun');
 
 Route::get('/cross-country/meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country/meets/{crossCountryMeet}', 'Meets\CrossCountryMeetController@show');
+Route::get('/cross-country/meets/{crossCountryMeet}/team-results/{teamResult}',
+    'Results\CrossCountry\TeamResultController@show');
+
+Route::get('/track/meets', 'Meets\TrackMeetController@index');
+Route::get('/track/meets/{trackMeet}', 'Meets\TrackMeetController@show');
+Route::get('/track/meets/{trackMeet}/team-results/{teamResult}', 'Results\Track\TeamResultController@show');
 
 Route::get('/cross-country-/venues', 'CrossCountryVenueController@index');
 
@@ -24,22 +30,19 @@ Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Route::resource('/track/meets', 'Meets\TrackMeetController');
+
 Route::resource('/track/time-trials', 'TimeTrials\TrackTimeTrialController');
 
 Route::get('/track/time-trials/{timeTrial}/races/{race}', 'TimeTrials\TrackTimeTrialRaceController@show');
 
-Route::get('/track/meets/{trackMeet}', 'Results\Track\TeamResultController@index');
-
 // Route::post('track-meets/{trackMeet}/team-results', 'API\Results\TimeTrial\TeamResultController@store');
 // Route::patch('track-meets/{trackMeet}/team-results/{teamResult}', 'API\Results\TimeTrial\TeamResultController@update');
 
-Route::resource('track/meets/{trackMeet}/team-results', 'API\Results\Track\TeamResultController');
-Route::resource('track/meets/{trackMeet}/team-results/{teamResult}/results', 'API\Results\Track\ResultController');
+//Route::resource('track/meets/{trackMeet}/team-results/{teamResult}/results', 'API\Results\Track\ResultController');
 
-Route::resource('cross-country/meets/{crossCountryMeet}/team-results', 'API\Results\CrossCountry\TeamResultController');
-Route::resource('cross-country/meets/{crossCountryMeet}/team-results/{teamResult}/results',
-    'API\Results\CrossCountry\ResultController');
+//Route::resource('cross-country/meets/{crossCountryMeet}/team-results', 'API\Results\CrossCountry\TeamResultController');
+//Route::resource('cross-country/meets/{crossCountryMeet}/team-results/{teamResult}/results',
+//    'API\Results\CrossCountry\ResultController');
 
 Route::apiResources([
 
@@ -57,6 +60,15 @@ Route::apiResources([
     // Meets
     'api/track/meets' => 'API\Meets\TrackMeetController',
     'api/cross-country/meets' => 'API\Meets\CrossCountryMeetController',
+
+    // TeamResults
+    'api/cross-country/meets/{crossCountryMeet}/team-results' => 'API\Results\CrossCountry\TeamResultController',
+    'api/track/meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController',
+
+    // Race Results
+    'api/cross-country/meets/{crossCountryMeet}/team-results/{teamResult}/results'
+        => 'API\Results\CrossCountry\ResultController',
+    'api/track/meets/{trackMeet}/team-results/{teamResult}/results' => 'API\Results\Track\ResultController',
 
     // General Properties
     'api/day-times'          => 'API\Properties\General\DayTimeController',
@@ -97,11 +109,6 @@ Route::apiResources([
     // Team Administration
     'api/announcements' => 'API\Team\AnnouncementController',
     'api/team-events' => 'API\Team\TeamEventController',
-
-    // Results
-//    'track-meets/{trackMeet}/team-results' => 'API\Results\TimeTrial\TeamResultController'
-//    '/api/cross-country-meets/{crossCountryMeet}/team-results' => 'API\Results\CrossCountry\TeamResultController',
-//    'track-meets/teamResults' => 'API\Results\TimeTrial\TeamResultController'
 ]);
 
 Route::group(['middleware' => 'admin'], function () {

@@ -1,9 +1,9 @@
 <template>
     <form action="/track-meets/team-results/result" method="POST" id="newTrackResult"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Athlete</label>
                 <span id="athleteHelp" class="form-help" v-if="form.errors.has('athlete_id')"
@@ -17,21 +17,21 @@
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label">Event</label>
-                <span id="eventHelp" class="form-help" v-if="form.errors.has('event_id')"
-                      v-text="form.errors.get('event_id')">
+                <span id="eventHelp" class="form-help" v-if="form.errors.has('track_event_id')"
+                      v-text="form.errors.get('track_event_id')">
                 </span>
             </div>
-            <select class="form-input" name="event_id" v-model="form.event_id" required>
+            <select class="form-input" name="track_event_id" v-model="form.track_event_id" required>
                 <option v-for="event in events" :key="event.id" :value="event.id">
                     {{ event.name }}
                 </option>
             </select>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.place">Place</label>
                 <span id="placeHelp" class="form-help" v-if="form.errors.has('place')"
@@ -45,7 +45,7 @@
                     v-model="form.place" required>
         </div>
 
-        <div class="flex mb-2 w-full">
+        <div class="flex mb-1 w-full">
             <div class="flex flex-col flex-grow">
                 <div class="flex justify-between content-end">
                     <label class="form-label" for="form.minutes">Minutes</label>
@@ -92,11 +92,11 @@
                        type="number"
                        min="0"
                        max="99"
-                       v-model="form.milliseconds" required>
+                       v-model="form.milliseconds">
             </div>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-1">
             <div class="flex justify-between content-end">
                 <label class="form-label" for="form.points">Points</label>
                 <span id="pointsHelp" class="form-help" v-if="form.errors.has('points')"
@@ -108,6 +108,20 @@
                    type="number"
                    min="0"
                    v-model="form.points" required>
+        </div>
+
+        <div class="mb-1">
+            <div class="flex justify-between content-end">
+                <label class="form-label" for="form.points">Heat</label>
+                <span id="heatHelp" class="form-help" v-if="form.errors.has('heat')"
+                      v-text="form.errors.get('heat')">
+                </span>
+            </div>
+            <input class="form-input"
+                   id="form.heat"
+                   type="number"
+                   min="0"
+                   v-model="form.heat" required>
         </div>
 
         <div class="text-right pt-2">
@@ -126,12 +140,13 @@ export default {
         return {
             form: new Form({
                 athlete_id: '',
-                event_id: '',
+                track_event_id: '',
                 place: '',
                 minutes: '',
                 seconds: '',
                 milliseconds: '',
-                points: ''
+                points: '',
+                heat: ''
             }),
 
             athletes: [],
@@ -142,7 +157,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post(location.pathname + '/results')
+                .post('/api' + location.pathname + '/results')
 
                 .then(data => {
 
@@ -169,12 +184,13 @@ export default {
 
         resetForm() {
             this.form.athlete_id = '',
-            this.form.event_id = '',
+            this.form.track_event_id = '',
             this.form.minutes = '',
             this.form.seconds = '',
             this.form.milliseconds ='',
             this.form.place = '',
             this.form.points = '',
+                this.form.heat = '',
             this.form.errors.clear();
         },
 

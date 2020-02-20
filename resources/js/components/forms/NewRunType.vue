@@ -1,7 +1,7 @@
 <template>
     <form action="/run-types" method="POST" id="newRunType"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear($event.target.name)">
+        @keydown="form.errors.clear()">
 
         <div class="mb-4">
             <div class="flex justify-between content-end">

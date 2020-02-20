@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 lg:w-1/2 mx-auto border-b border-gray-100">
             <div class="w-full">
                 <form action="api/physicals/id" method="POST" id="editAnnouncement" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-gray-100 shadow-md rounded px-4 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">

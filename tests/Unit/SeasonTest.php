@@ -36,13 +36,6 @@ class SeasonTest extends TestCase
     }
 
     /** @test */
-    function a_season_has_many_cross_country_venues()
-    {
-        $this->assertInstanceOf(
-            'Illuminate\Database\Eloquent\Collection', $this->season->crossCountryVenues);
-    }
-
-    /** @test */
     function a_season_has_many_track_meets()
     {
         $this->assertInstanceOf(

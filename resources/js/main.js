@@ -55,6 +55,7 @@ Vue.component('athletes', require('./components/Athletes').default);
 
 // Meets
 Vue.component('cross-country-meets-container', require('./components/meets/CrossCountryMeetsContainer').default);
+Vue.component('track-meets-container', require('./components/meets/TrackMeetsContainer').default);
 Vue.component('cross-country-meets', require('./components/meets/CrossCountryMeets').default);
 Vue.component('track-meets', require('./components/meets/TrackMeets').default);
 

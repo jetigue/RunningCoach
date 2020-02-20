@@ -3,7 +3,7 @@
         <div v-if="editing" class="p-3 border-b border-blue-lighter">
             <div class="w-full">
                 <form action="api/cross-country/venues/id" method="POST" id="editVenue" @submit.prevent="update"
-                      @keydown="form.errors.clear($event.target.name)"
+                      @keydown="form.errors.clear()"
                         class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
@@ -48,7 +48,11 @@
                 </div>
                 <div v-if="isExpanded" class="py-3 px-2">
                     <div class="flex justify-start cursor-pointer">
+<<<<<<< HEAD
                         <edit-button @clicked=""></edit-button>
+=======
+                        <edit-button @clicked="editing=true"></edit-button>
+>>>>>>> feature-timeTrials
                         <delete-button @clicked="destroy"></delete-button>
                     </div>
                 </div>
@@ -71,8 +75,12 @@
 
                 form: new Form({
                     name: this.data.name,
+<<<<<<< HEAD
                 }),
 
+=======
+                })
+>>>>>>> feature-timeTrials
             }
         },
 
@@ -86,7 +94,6 @@
                     .patch('/api/cross-country/venues/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
-                        this.season = this.seasons.find(season => season.id === this.form.season_id).name;
 
                         this.editing = false;
                         this.isExpanded = false;
@@ -113,7 +120,7 @@
             },
 
             destroy() {
-                axios.delete('api/cross-country/venues/' + this.data.id);
+                axios.delete('/api/cross-country/venues/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
@@ -122,6 +129,18 @@
                 this.form.name = this.name
                 this.isExpanded = false;
             }
+
+            // getSeasonNames() {
+            //     this.editing = true;
+            //
+            //     axios.get('/api/seasons')
+            //         .then(response => {
+            //             this.seasons = response.data;
+            //         })
+            //         .catch(errors => {
+            //             console.log(errors)
+            //         });
+            // }
         }
     }
 </script>
