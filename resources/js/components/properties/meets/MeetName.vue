@@ -134,7 +134,7 @@
             },
 
             destroy() {
-                axios.delete('api/meet-names' + this.data.id);
+                axios.delete('api/meet-names/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },
