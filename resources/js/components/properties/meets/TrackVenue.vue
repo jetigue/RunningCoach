@@ -145,7 +145,7 @@
             getSurfaceNames() {
                 this.editing = true;
 
-                axios.get('/api/trackSurfaces')
+                axios.get('/api/track-surfaces')
                     .then(response => {
                         this.surfaces = response.data;
                     })
