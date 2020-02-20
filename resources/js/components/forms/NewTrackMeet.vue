@@ -169,7 +169,7 @@
                 }
 
                 function getVenueNames() {
-                    return axios.get('/api/track/venues)
+                    return axios.get('/api/track/venues')
                 }
 
                 function getTimingMethods() {
