@@ -23,7 +23,7 @@ class CrossCountryVenueController extends Controller
      */
     public function index()
     {
-        return Venue::all()->orderBy('name')->get();
+        return Venue::orderBy('name')->get();
 
     }
 

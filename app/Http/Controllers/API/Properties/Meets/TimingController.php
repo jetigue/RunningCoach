@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Properties\Meets;
 
 use App\Models\Properties\Meets\Timing;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,13 +19,11 @@ class TimingController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Timing[]|Collection
      */
     public function index()
     {
-        $timing = Timing::all();
-
-        return $timing;
+        return Timing::all();
     }
 
     /**
