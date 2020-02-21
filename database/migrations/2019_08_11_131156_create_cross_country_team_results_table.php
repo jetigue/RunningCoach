@@ -32,7 +32,8 @@ class CreateCrossCountryTeamResultsTable extends Migration
                 ->on('cross_country_meets');
 
             $table->foreign('division_id')
-                ->references('id');
+                ->references('id')
+                ->on('divisions');
 
             $table->foreign('cross_country_event_id')
                 ->references('id')
