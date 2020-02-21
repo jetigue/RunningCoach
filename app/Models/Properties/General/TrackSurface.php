@@ -26,8 +26,8 @@ class TrackSurface extends Model
     /**
      * @return HasMany
      */
-    public function trackVenues()
+    public function venues()
     {
-        return $this->HasMany(Venue::class, 'track_venue_id');
+        return $this->HasMany(Venue::class);
     }
 }
