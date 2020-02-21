@@ -17,10 +17,6 @@ class CreateCrossCountryVenuesTable extends Migration
             $table->smallIncrements('id');
             $table->string('name', 150);
             $table->timestamps();
-<<<<<<< HEAD
-=======
-
->>>>>>> feature-timeTrials
         });
     }
 
