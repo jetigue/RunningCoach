@@ -21,12 +21,10 @@ class CreateDivisionsTable extends Migration
             $table->timestamps();
 
             $table->foreign('gender_id')->references('id')
-                ->on('genders')
-                ->onDelete('cascade');
+                ->on('genders');
 
             $table->foreign('level_id')->references('id')
-                ->on('levels')
-                ->onDelete('cascade');
+                ->on('levels');
         });
 
 

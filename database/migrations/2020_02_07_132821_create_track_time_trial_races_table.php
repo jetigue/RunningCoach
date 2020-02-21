@@ -42,6 +42,6 @@ class CreateTrackTimeTrialRacesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('races');
+        Schema::dropIfExists('track_time_trial_races');
     }
 }

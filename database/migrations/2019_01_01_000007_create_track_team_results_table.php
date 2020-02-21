@@ -26,8 +26,7 @@ class CreateTrackTeamResultsTable extends Migration
 
             $table->foreign('track_meet_id')
                 ->references('id')
-                ->on('track_meets')
-                ->onDelete('cascade');
+                ->on('track_meets');
 
             $table->foreign('division_id')
                 ->references('id')

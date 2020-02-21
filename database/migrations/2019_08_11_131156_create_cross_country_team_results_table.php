@@ -29,12 +29,10 @@ class CreateCrossCountryTeamResultsTable extends Migration
 
             $table->foreign('cross_country_meet_id')
                 ->references('id')
-                ->on('cross_country_meets')
-                ->onDelete('cascade');
+                ->on('cross_country_meets');
 
             $table->foreign('division_id')
-                ->references('id')
-                ->on('divisions');
+                ->references('id');
 
             $table->foreign('cross_country_event_id')
                 ->references('id')
