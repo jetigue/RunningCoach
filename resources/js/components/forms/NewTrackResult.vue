@@ -107,7 +107,7 @@
                    id="form.points"
                    type="number"
                    min="0"
-                   v-model="form.points" required>
+                   v-model="form.points">
         </div>
 
         <div class="mb-1">

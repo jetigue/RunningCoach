@@ -1,13 +1,5 @@
 <template>
     <div class="flex flex-col">
-        <div class="flex justify-between items-baseline">
-            <header class="font-light text-2xl pb-1 text-primary">
-                Individual Results
-            </header>
-            <filter-button class="">
-              <track-event-filter></track-event-filter>
-            </filter-button>
-        </div>
         <div class="table-container">
             <div class="table-header">
                 <div class="flex w-11/12 flex-wrap">
