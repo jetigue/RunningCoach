@@ -46,9 +46,52 @@
             {{ $teamResult->division->name }} Results
         </div>
     </div>
-    <div class="">
-        <track-results :data="{{ $results }}"></track-results>
-    </div>
+    <track-results-container>
+        @if(count($results400m) > 0)
+            <track-results :data="{{ $results400m }}">400m</track-results>
+        @endif
+
+        @if(count($results800m) > 0)
+            <track-results :data="{{ $results800m }}">800m</track-results>
+        @endif
+
+        @if(count($results1000m) > 0)
+            <track-results :data="{{ $results1000m }}">1000m</track-results>
+        @endif
+
+        @if(count($results1200m) > 0)
+            <track-results :data="{{ $results1200m }}">1200m</track-results>
+        @endif
+
+        @if(count($results1500m) > 0)
+            <track-results :data="{{ $results1500m }}">1500m</track-results>
+        @endif
+
+        @if(count($results1600m) > 0)
+            <track-results :data="{{ $results1600m }}">1600m</track-results>
+        @endif
+
+        @if(count($results1mile) > 0)
+            <track-results :data="{{ $results1mile }}">1 mile</track-results>
+        @endif
+
+        @if(count($results3000m) > 0)
+            <track-results :data="{{ $results3000m }}">3000m</track-results>
+        @endif
+
+        @if(count($results3200m) > 0)
+            <track-results :data="{{ $results3200m }}">3200m</track-results>
+        @endif
+
+        @if(count($results2mile) > 0)
+            <track-results :data="{{ $results2mile }}">2 mile</track-results>
+        @endif
+
+        @if(count($results5000m) > 0)
+            <track-results :data="{{ $results5000m }}">5000m</track-results>
+        @endif
+
+    </track-results-container>
 
 </div>
 

@@ -4,6 +4,7 @@ namespace App\Models\Properties\Races\Track;
 
 use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Event extends Model
 {
@@ -67,7 +68,10 @@ class Event extends Model
         return $filters->apply($query);
     }
 
-    public function trackResults()
+    /**
+     * @return HasMany
+     */
+    public function results()
     {
         return $this->hasMany(Result::class, 'track_event_id');
     }

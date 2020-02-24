@@ -156,19 +156,16 @@
                                 </a>
                             </div>
                             <div class="w-1/4 md:flex md:w-1/6 lg:w-1/6">
-                                {{ event }}
-                            </div>
-                            <div class="w-1/4 md:flex md:w-1/6 lg:w-1/6">
                                 {{ place_w_suffix }}
                             </div>
 
                             <div class="w-1/2 pl-4 text-primary md:w-1/6 lg:w-1/6 md:pl-0 md:text-black">
                                 {{duration}}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
                             </div>
-                            <div class="hidden md:flex md:w-1/6 lg:w-1/12 lg:justify-center">
+                            <div class="hidden md:flex md:w-1/6 lg:w-1/6">
                                 {{ points }}
                             </div>
-                            <div class="hidden md:flex md:w-1/6 lg:w-1/12 lg:justify-center">
+                            <div class="hidden md:flex md:w-1/6 lg:w-1/6">
                                 {{ heat }}
                             </div>
                         </div>
