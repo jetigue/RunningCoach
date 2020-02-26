@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col py-4">
-        <div class="text-xl text-gray-600 italic">
+    <div class="flex flex-col py-2">
+        <div class="font-semibold text-xl text-gray-600 text-italic">
             <slot></slot>
         </div>
         <div class="gradient-line"></div>

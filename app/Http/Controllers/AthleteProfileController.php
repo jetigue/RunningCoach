@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Athlete;
 use App\Models\Results\CrossCountry\Result;
 use App\Repositories\AthleteCCResults;
+use App\Repositories\AthleteTrackResults;
 
 
 class AthleteProfileController extends Controller
 {
-    public function show(Athlete $athlete, AthleteCCResults $crossResults)
+    public function show(Athlete $athlete, AthleteCCResults $crossResults, AthleteTrackResults $trackResults)
     {
+
         $crossResults2019 = $crossResults->crossResults2019($athlete);
         $crossResults2018 = $crossResults->crossResults2018($athlete);
         $crossResults2017 = $crossResults->crossResults2017($athlete);
@@ -22,7 +24,61 @@ class AthleteProfileController extends Controller
         $crossResults2011 = $crossResults->crossResults2011($athlete);
         $crossResults2010 = $crossResults->crossResults2010($athlete);
         $crossResults2009 = $crossResults->crossResults2009($athlete);
-
+        $track400mResults2020 = $trackResults->track400mResults2020($athlete);
+        $track800mResults2020 = $trackResults->track800mResults2020($athlete);
+        $track1000mResults2020 = $trackResults->track1000mResults2020($athlete);
+        $track1200mResults2020 = $trackResults->track1200mResults2020($athlete);
+        $track1500mResults2020 = $trackResults->track1500mResults2020($athlete);
+        $track1600mResults2020 = $trackResults->track1600mResults2020($athlete);
+        $track1mileResults2020 = $trackResults->track1mileResults2020($athlete);
+        $track3000mResults2020 = $trackResults->track3000mResults2020($athlete);
+        $track3200mResults2020 = $trackResults->track3200mResults2020($athlete);
+        $track2mileResults2020 = $trackResults->track2mileResults2020($athlete);
+        $track5000mResults2020 = $trackResults->track5000mResults2020($athlete);
+        $track400mResults2019 = $trackResults->track400mResults2019($athlete);
+        $track800mResults2019 = $trackResults->track800mResults2019($athlete);
+        $track1000mResults2019 = $trackResults->track1000mResults2019($athlete);
+        $track1200mResults2019 = $trackResults->track1200mResults2019($athlete);
+        $track1500mResults2019 = $trackResults->track1500mResults2019($athlete);
+        $track1600mResults2019 = $trackResults->track1600mResults2019($athlete);
+        $track1mileResults2019 = $trackResults->track1mileResults2019($athlete);
+        $track3000mResults2019 = $trackResults->track3000mResults2019($athlete);
+        $track3200mResults2019 = $trackResults->track3200mResults2019($athlete);
+        $track2mileResults2019 = $trackResults->track2mileResults2019($athlete);
+        $track5000mResults2019 = $trackResults->track5000mResults2019($athlete);
+        $track400mResults2018 = $trackResults->track400mResults2018($athlete);
+        $track800mResults2018 = $trackResults->track800mResults2018($athlete);
+        $track1000mResults2018 = $trackResults->track1000mResults2018($athlete);
+        $track1200mResults2018 = $trackResults->track1200mResults2018($athlete);
+        $track1500mResults2018 = $trackResults->track1500mResults2018($athlete);
+        $track1600mResults2018 = $trackResults->track1600mResults2018($athlete);
+        $track1mileResults2018 = $trackResults->track1mileResults2018($athlete);
+        $track3000mResults2018 = $trackResults->track3000mResults2018($athlete);
+        $track3200mResults2018 = $trackResults->track3200mResults2018($athlete);
+        $track2mileResults2018 = $trackResults->track2mileResults2018($athlete);
+        $track5000mResults2018 = $trackResults->track5000mResults2018($athlete);
+        $track400mResults2017 = $trackResults->track400mResults2017($athlete);
+        $track800mResults2017 = $trackResults->track800mResults2017($athlete);
+        $track1000mResults2017 = $trackResults->track1000mResults2017($athlete);
+        $track1200mResults2017 = $trackResults->track1200mResults2017($athlete);
+        $track1500mResults2017 = $trackResults->track1500mResults2017($athlete);
+        $track1600mResults2017 = $trackResults->track1600mResults2017($athlete);
+        $track1mileResults2017 = $trackResults->track1mileResults2017($athlete);
+        $track3000mResults2017 = $trackResults->track3000mResults2017($athlete);
+        $track3200mResults2017 = $trackResults->track3200mResults2017($athlete);
+        $track2mileResults2017 = $trackResults->track2mileResults2017($athlete);
+        $track5000mResults2017 = $trackResults->track5000mResults2017($athlete);
+        $trackResults2020 = $trackResults->trackResults2020($athlete);
+        $trackResults2019 = $trackResults->trackResults2019($athlete);
+        $trackResults2018 = $trackResults->trackResults2018($athlete);
+        $trackResults2017 = $trackResults->trackResults2017($athlete);
+        $trackResults2016 = $trackResults->trackResults2016($athlete);
+        $trackResults2015 = $trackResults->trackResults2015($athlete);
+        $trackResults2014 = $trackResults->trackResults2014($athlete);
+        $trackResults2013 = $trackResults->trackResults2013($athlete);
+        $trackResults2012 = $trackResults->trackResults2012($athlete);
+        $trackResults2011 = $trackResults->trackResults2011($athlete);
+        $trackResults2010 = $trackResults->trackResults2010($athlete);
 
         $fiveKResults= Result::where('athlete_id', $athlete->id)
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
@@ -48,7 +104,62 @@ class AthleteProfileController extends Controller
             'crossResults2012',
             'crossResults2011',
             'crossResults2010',
-            'crossResults2009'
+            'crossResults2009',
+            'trackResults2019',
+            'trackResults2018',
+            'trackResults2017',
+            'trackResults2016',
+            'trackResults2015',
+            'trackResults2014',
+            'trackResults2013',
+            'trackResults2012',
+            'trackResults2011',
+            'trackResults2010',
+            'trackResults2020',
+            'track400mResults2020',
+            'track800mResults2020',
+            'track1000mResults2020',
+            'track1200mResults2020',
+            'track1500mResults2020',
+            'track1600mResults2020',
+            'track1mileResults2020',
+            'track3000mResults2020',
+            'track3200mResults2020',
+            'track2mileResults2020',
+            'track5000mResults2020',
+            'track400mResults2019',
+            'track800mResults2019',
+            'track1000mResults2019',
+            'track1200mResults2019',
+            'track1500mResults2019',
+            'track1600mResults2019',
+            'track1mileResults2019',
+            'track3000mResults2019',
+            'track3200mResults2019',
+            'track2mileResults2019',
+            'track5000mResults2019',
+            'track400mResults2018',
+            'track800mResults2018',
+            'track1000mResults2018',
+            'track1200mResults2018',
+            'track1500mResults2018',
+            'track1600mResults2018',
+            'track1mileResults2018',
+            'track3000mResults2018',
+            'track3200mResults2018',
+            'track2mileResults2018',
+            'track5000mResults2018',
+            'track400mResults2017',
+            'track800mResults2017',
+            'track1000mResults2017',
+            'track1200mResults2017',
+            'track1500mResults2017',
+            'track1600mResults2017',
+            'track1mileResults2017',
+            'track3000mResults2017',
+            'track3200mResults2017',
+            'track2mileResults2017',
+            'track5000mResults2017',
         ));
     }
 }

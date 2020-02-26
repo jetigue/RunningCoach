@@ -75,6 +75,7 @@ Vue.component('track-results-container', require('./components/results/TrackResu
 Vue.component('track-results', require('./components/results/TrackResults').default);
 Vue.component('cross-country-results', require('./components/results/CrossCountryResults').default);
 Vue.component('athlete-cross-results', require('./components/results/AthleteCrossResults').default);
+Vue.component('athlete-track-results', require('./components/results/AthleteTrackResults').default);
 Vue.component('senior-cross-results', require('./components/results/SeniorCrossResults').default);
 
 
