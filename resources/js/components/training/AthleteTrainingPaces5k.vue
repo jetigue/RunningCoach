@@ -1,18 +1,18 @@
 <template>
     <div class="flex flex-col w-full">
         <header class="text-xl text-gray-700 flex justify-between">
-            <p>Season Best {{ meters }}m <span class="font-semibold text-primary">{{ duration }}</span></p>
+            <p>Season Best 5k: <span class="font-semibold text-primary">{{ duration }}</span></p>
             <p>Season best VDOT: <span class="font-semibold text-primary">{{ vDot }}</span></p>
         </header>
         <section class="flex flex-wrap md:justify-between text-base py-2">
             <div class="w-full md:w-1/2 py-1 lg:flex">
                 <p>Average Pace: &nbsp;</p>
                 <p><span class="font-semibold text-primary">{{ avgPaceMi }}</span> per mile
-                (<span class="font-semibold text-primary">{{ avgPaceKm }}</span> per km)</p>
+                (<span class="font-semibold text-primary">{{ avgPaceKm }}</span>per km)</p>
             </div>
             <div class="w-full md:w-1/2 py-1 md:flex flex-wrap md:justify-end">
                 <p>Average Speed:</p>
-                <p>&#8773; <span class="font-semibold text-primary"> {{ avgVelocity }}</span> meters a minute</p>
+                <p>&#8773;<span class="font-semibold text-primary"> {{ avgVelocity }}</span> meters a minute</p>
             </div>
         </section>
         <div class="primary-line my-2"></div>
@@ -57,15 +57,14 @@
 
         data() {
             return {
-                totals_seconds: this.data[0].seconds,
-                meters: this.data[0].meters
+                totals_seconds: this.data
             }
         },
     });
 </script>
 
 <style>
-    .grad {
+.grad {
   background-image: linear-gradient(to right,#040036,indigo,blue,green,yellow,orange,red);
 }
 </style>

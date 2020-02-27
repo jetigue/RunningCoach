@@ -55,7 +55,8 @@
 
         data() {
             return {
-                totals_seconds: this.data
+                totals_seconds: this.data.seconds,
+                meters: this.data.meters
             }
         },
 

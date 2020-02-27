@@ -95,6 +95,7 @@ Vue.component('track-time-trial-race-results', require('./components/timeTrials/
 // Training
 Vue.component('athlete-training-paces', require('./components/training/AthleteTrainingPaces').default);
 
+
 // users
 Vue.component('user-roles', require('./components/users/UserRoles').default);
 Vue.component('users', require('./components/users/Users').default);
