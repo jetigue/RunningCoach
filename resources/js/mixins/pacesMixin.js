@@ -1,9 +1,10 @@
+
 export const pacesMixin = {
     computed: {
 
         avgPaceKm() {
-            let s = this.data;
-            let d = 5;
+            let s = this.data[0].seconds;
+            let d = this.data[0].meters / 1000;
 
             let pace = s/d;
 
@@ -16,8 +17,8 @@ export const pacesMixin = {
         },
 
         avgPaceMi() {
-            let s = this.data;
-            let d = 3.1;
+            let s = this.data[0].seconds;
+            let d = this.data[0].meters / 1609;
 
             let pace = s/d;
 
@@ -30,8 +31,8 @@ export const pacesMixin = {
         },
 
         avgVelocity() {
-            let s = this.data;
-            let d = 5000;
+            let s = this.data[0].seconds;
+            let d = this.data[0].meters;
 
             let totalMinutes = s/60;
 
@@ -41,7 +42,7 @@ export const pacesMixin = {
         },
 
         duration() {
-            let time = this.data;
+            let time = this.data[0].seconds;
 
             let min = ~~((time % 3600) / 60);
             let sec = ~~(time % 60);
@@ -55,14 +56,14 @@ export const pacesMixin = {
         },
 
         vDot() {
-            let s = this.data;
-            let dis = 5000;
+            let s = this.data[0].seconds;
+            let dis = this.data[0].meters;
 
             let totalMinutes = s/60;
 
             let a = 0.182258;
             let v = (dis / totalMinutes);
-            let min = this.data / 60;
+            let min = s / 60;
             let va = v * a;
             let b = 0.000104;
             let v2 = v * v;
@@ -88,7 +89,7 @@ export const pacesMixin = {
             let b = 5.000663;
             let c = 0.007546;
 
-            let percentVO2 = .60;
+            let percentVO2 = .62;
 
             let x = percentVO2 * this.vDot;
 

@@ -83,17 +83,33 @@ class AthleteProfileController extends Controller
         $fiveKResults= Result::where('athlete_id', $athlete->id)
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
             ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
-            ->where('cross_country_events.name', '5k')
             ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
             ->where('cross_country_meets.meet_date', '>=', '2019-08-01')
-            ->select('cross_country_results.total_seconds', 'cross_country_events.meters')
-            ->get();
+            ->select('cross_country_results.total_seconds as seconds', 'cross_country_events.meters as meters')
+            ->orderBy('seconds');
 
-        $seasonBest5k = $fiveKResults->min('total_seconds');
+        $seasonBestCC5k = clone $fiveKResults->where('meters', '5000')->take(1)->get();
+
+        $seasonBestTrack = \App\Models\Results\Track\Result::where('athlete_id', $athlete->id)
+            ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
+            ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
+            ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
+            ->where('track_meets.meet_date', '>=', '2020-01-01')
+            ->select('track_results.total_seconds as seconds', 'track_events.meters as meters')
+            ->orderBy('seconds');
+
+        $seasonBestTrack2 = clone $seasonBestTrack;
+        $seasonBestTrack3 = clone $seasonBestTrack;
+
+        $seasonBest1500m = clone $seasonBestTrack->where('meters', '1500')->take(1)->get();
+        $seasonBest1600m = clone $seasonBestTrack2->where('meters', '1600')->take(1)->get();
+        $seasonBest3200m = clone $seasonBestTrack3->where('meters', '3200')->take(1)->get();
+
+
+
 
         return view('profiles.athletes.show', compact(
             'athlete',
-            'seasonBest5k',
             'crossResults2019',
             'crossResults2018',
             'crossResults2017',
@@ -160,6 +176,10 @@ class AthleteProfileController extends Controller
             'track3200mResults2017',
             'track2mileResults2017',
             'track5000mResults2017',
+            'seasonBest1600m',
+            'seasonBest1500m',
+            'seasonBest3200m',
+            'seasonBestCC5k'
         ));
     }
 }
