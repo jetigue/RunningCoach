@@ -35,13 +35,14 @@ export default {
                 {
                     id: 1,
                     label: 'Cross Country Meets',
-                    url: '/cross-country-meets'
+                    url: '/cross-country/meets'
                 },
+
                 {
                     id: 2,
-                    label: 'Cross Country Venues',
-                    url: '/cross-country-venues'
-                },
+                    label: 'Track Meets',
+                    url: '/track/meets'
+                }
             ]
         }
     },
