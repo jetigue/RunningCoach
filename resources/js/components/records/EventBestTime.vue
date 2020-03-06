@@ -88,7 +88,7 @@
                     return "Sophomore";
                 }
 
-                if (x === 2) {
+                if (x === 3) {
                     return "Freshman";
                 }
             }
