@@ -23,6 +23,7 @@
                     <div class="flex flex-col w-1/3 p-2">
                         <p class="text-xl text-primary font-semibold">Track</p>
                         <a class="pl-2" href="/track/meets">Meet Results</a>
+                        <a class="pl-2" href="/track/season-bests">Season Bests</a>
                         <a class="pl-2" href="#">School Records (coming soon)</a>
                     </div>
                 </div>

@@ -72,19 +72,30 @@ class Athlete extends Model
         return $this->hasOne(Physical::class)->latest();
     }
 
+    /**
+     * @return HasMany
+     */
     public function crossResults()
     {
-        return $this->hasMany(Result::class)->latest();
+        return $this->hasMany(Result::class);
     }
 
-    public function getLowestAttribute()
+    /**
+     * @return HasMany
+     */
+    public function trackResults()
     {
-        $fastest5k = $this->crossResults()->filter(function ($item) {
-            return !is_null($item->total_seconds);
-        });
-
-        return $fastest5k->min('total_seconds');
+        return $this->hasMany(Results\Track\Result::class);
     }
+
+//    public function getLowestAttribute()
+//    {
+//        $fastest5k = $this->crossResults()->filter(function ($item) {
+//            return !is_null($item->total_seconds);
+//        });
+//
+//        return $fastest5k->min('total_seconds');
+//    }
 
     /**
      * Apply all relevant name filters.
