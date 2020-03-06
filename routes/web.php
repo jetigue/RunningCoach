@@ -23,6 +23,8 @@ Route::get('/track/meets/{trackMeet}/team-results/{teamResult}', 'Results\Track\
 
 Route::get('/cross-country-/venues', 'CrossCountryVenueController@index');
 
+Route::get('track/season-bests', 'Track\SeasonBestController@index');
+
 Route::get('/cross-country/venues/{venue}/boys-records', 'CrossCountryVenueController@showBoysRecords');
 Route::get('/cross-country/venues/{venue}/girls-records', 'CrossCountryVenueController@showGirlsRecords');
 

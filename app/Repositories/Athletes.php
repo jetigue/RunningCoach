@@ -234,9 +234,7 @@ class Athletes
         $beginRequire = Carbon::now()->year;
         $endRequire = Carbon::now()->year + 4;
 
-        $requires = Athlete::whereBetween('grad_year', [$beginRequire, $endRequire])
+        return Athlete::whereBetween('grad_year', [$beginRequire, $endRequire])
             ->orderBy('last_name', 'asc');
-
-        return $requires;
     }
 }
