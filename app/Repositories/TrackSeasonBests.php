@@ -18,7 +18,7 @@ class TrackSeasonBests
                 'athletes.first_name as firstName',
                 'athletes.last_name as lastName',
                 'athletes.sex as sex',
-                'athletes.grad_year as class',
+                'athletes.grad_year as gradClass',
                 'track_results.total_seconds as total_seconds',
                 'track_results.milliseconds as milliseconds',
                 'track_events.name as event',

@@ -30,7 +30,8 @@
                 milliseconds: this.data.milliseconds,
                 ms: (this.data.milliseconds > 9 ? this.data.milliseconds : '0' + this.data.milliseconds),
                 meet: this.data.meetName,
-                date: this.data.meetDate
+                date: this.data.meetDate,
+                gradClass: this.data.gradClass,
             }
         },
 
@@ -71,7 +72,7 @@
             grade: function () {
                 let d = new Date();
                 let y = d.getFullYear();
-                let g = this.data.class;
+                let g = this.data.gradClass;
                 let x = y - g;
 
 
