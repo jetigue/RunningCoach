@@ -80,15 +80,15 @@
                     return "Senior";
                 }
 
-                if (x === 1) {
+                 else if (x === 1) {
                     return "Junior";
                 }
 
-                if (x === 2) {
+                 else if (x === 2) {
                     return "Sophomore";
                 }
 
-                if (x === 3) {
+                 else if (x === 3) {
                     return "Freshman";
                 }
             }
