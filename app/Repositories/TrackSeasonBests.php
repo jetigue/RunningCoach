@@ -15,6 +15,7 @@ class TrackSeasonBests
             ->join('meet_names', 'track_meets.meet_name_id', '=', 'meet_names.id')
             ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
             ->select(
+                'athletes.id as athleteID',
                 'athletes.first_name as firstName',
                 'athletes.last_name as lastName',
                 'athletes.sex as sex',

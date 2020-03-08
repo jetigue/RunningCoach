@@ -26,7 +26,7 @@
 
         <main class="flex flex-col flex-wrap w-full">
             @if($results800m)
-                <div class="flex flex-wrap my-2">
+                <div class="flex flex-wrap my-3">
                     <div class="w-2/5 text-center">
                         @if($seasonBestMale800)
                             <event-best-time :data="{{ $seasonBestMale800 }}"></event-best-time>
@@ -44,7 +44,7 @@
             @endif
 
             @if($results1200m)
-                <div class="flex flex-wrap my-2">
+                <div class="flex flex-wrap my-3">
                     <div class="w-2/5 text-center">
                         @if($seasonBestMale1200)
                             <event-best-time :data="{{ $seasonBestMale1200 }}"></event-best-time>
@@ -62,7 +62,7 @@
             @endif
 
             @if($results1500m)
-                <div class="flex flex-wrap my-2">
+                <div class="flex flex-wrap my-3">
                     <div class="w-2/5 text-center">
                         @if($seasonBestMale1500)
                             <event-best-time :data="{{ $seasonBestMale1500 }}"></event-best-time>
@@ -80,7 +80,7 @@
             @endif
 
             @if($results1600m)
-                <div class="flex flex-wrap my-2">
+                <div class="flex flex-wrap my-3">
                     <div class="w-2/5 text-center">
                         @if($seasonBestMale1600)
                             <event-best-time :data="{{ $seasonBestMale1600 }}"></event-best-time>
@@ -116,7 +116,7 @@
 {{--            @endif--}}
 
             @if($results3200m)
-                <div class="flex flex-wrap">
+                <div class="flex flex-wrap my-3">
                     <div class="w-2/5 text-center py-2">
                         @if($seasonBestMale3200)
                             <event-best-time :data="{{ $seasonBestMale3200 }}"></event-best-time>

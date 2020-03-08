@@ -4,16 +4,12 @@
             {{duration }}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
         </div>
         <div class="text-smoke-800 font-bold text-lg">
-            {{ athlete }} <span class="text-gray-400 font-normal">{{ grade }}</span>
+            <a :href="athleteURL">{{ athlete }}</a> <span class="text-gray-400 font-normal">{{ grade }}</span>
         </div>
 
         <div class="text-gray-700 text-sm">
             {{ meet }} <span class="text-gray-400 font-normal">{{ date | moment("MMM Do") }}</span>
         </div>
-
-
-
-        <slot></slot>
     </div>
 </template>
 
@@ -32,6 +28,7 @@
                 meet: this.data.meetName,
                 date: this.data.meetDate,
                 gradClass: this.data.gradClass,
+                athleteURL: '/athletes/' + this.data.athleteID
             }
         },
 
@@ -73,7 +70,7 @@
                 let d = new Date();
                 let y = d.getFullYear();
                 let g = this.data.gradClass;
-                let x = y - g;
+                let x = (g - y);
 
 
                 if (x === 0) {
@@ -90,6 +87,10 @@
 
                  else if (x === 3) {
                     return "Freshman";
+                }
+
+                 else {
+                     return "";
                 }
             }
         },
