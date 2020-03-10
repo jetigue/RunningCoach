@@ -33,7 +33,7 @@
                         @endif
                     </div>
                     <div class="flex w-1/5 text-xl text-primary font-semibold justify-center">
-                        800m Run
+                        <a href="/track/season-bests/athletes-season-bests">800m Run</a>
                     </div>
                     <div class="w-2/5 text-center">
                         @if($seasonBestFemale800)
@@ -51,7 +51,7 @@
                         @endif
                     </div>
                     <div class="flex w-1/5 text-xl text-primary font-semibold justify-center">
-                        1200m Run
+                        <a href="/track/season-bests/athletes-season-bests">1200m Run</a>
                     </div>
                     <div class="w-2/5 text-center">
                         @if($seasonBestFemale1200)
@@ -69,7 +69,7 @@
                         @endif
                     </div>
                     <div class="flex w-1/5 text-xl text-primary font-semibold justify-center">
-                        1500m Run
+                        <a href="/track/season-bests/athletes-season-bests">1500m Run</a>
                     </div>
                     <div class="w-2/5 text-center">
                         @if($seasonBestFemale1500)
@@ -87,7 +87,7 @@
                         @endif
                     </div>
                     <div class="flex w-1/5 text-xl text-primary font-semibold justify-center">
-                        1600m Run
+                        <a href="/track/season-bests/athletes-season-bests">1600m Run</a>
                     </div>
                     <div class="w-2/5 text-center">
                         @if($seasonBestFemale1600)
@@ -123,7 +123,7 @@
                         @endif
                     </div>
                     <div class="flex w-1/5 text-xl text-primary font-semibold justify-center">
-                        3200m Run
+                        <a href="/track/season-bests/athletes-season-bests">3200m Run</a>
                     </div>
                     <div class="w-2/5 text-center">
                         @if($seasonBestFemale3200)

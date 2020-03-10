@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Track;
 
 use App\Models\Athlete;
+use App\Models\Meets\TrackMeet;
 use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
+use App\Models\Results\Track\TeamResult;
 use App\Repositories\TrackSeasonBests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,5 +54,12 @@ class SeasonBestController extends Controller
             'seasonBestMale3200',
             'seasonBestFemale3200'
         ));
+    }
+
+    public function show(TrackMeet $trackMeet, TeamResult $teamResult, TrackSeasonBests $seasonBest)
+    {
+        $athleteSeasonBest1600 = $seasonBest->maleAthletesBest1600m2020();
+        dd($athleteSeasonBest1600)->json;
+        return view('records.track.seasonBests.show');
     }
 }

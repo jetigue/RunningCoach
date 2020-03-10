@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Athlete;
+use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
+use Illuminate\Support\Facades\DB;
 
 class TrackSeasonBests
 {
@@ -127,5 +129,21 @@ class TrackSeasonBests
             ->where('athletes.sex', 'f')
             ->where('track_events.meters', 3200)
             ->first();
+    }
+
+    public function maleAthletesBest1600m2020()
+    {
+        $event = Event::where('meters', 1600)->first();
+
+        return Result::select(DB::raw('min(total_seconds), athlete_id, track_event_id'))
+            ->groupBy('athlete_id', 'track_event_id')
+            ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
+            ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
+            ->join('meet_names', 'track_meets.meet_name_id', '=', 'meet_names.id')
+            ->orderBy('total_seconds')
+            ->with('athlete', 'event', 'teamResult')
+            ->having('track_event_id', $event->id)
+        ->get();
+
     }
 }
