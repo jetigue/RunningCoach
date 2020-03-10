@@ -14,7 +14,7 @@ class SeasonTest extends TestCase
 
     protected $season;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

@@ -13,7 +13,7 @@ class GenderTest extends TestCase
 
     protected $gender;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

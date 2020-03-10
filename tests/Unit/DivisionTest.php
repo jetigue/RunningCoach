@@ -15,7 +15,7 @@ class DivisionTest extends TestCase
 
     protected $division;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

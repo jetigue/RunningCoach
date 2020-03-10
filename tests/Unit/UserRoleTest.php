@@ -13,7 +13,7 @@ class UserRoleTest extends TestCase
 
     protected $role;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

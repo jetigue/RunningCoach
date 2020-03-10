@@ -12,7 +12,7 @@ class TimeTrialTest extends TestCase
 
     protected $timeTrial;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }

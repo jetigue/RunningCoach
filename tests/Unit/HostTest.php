@@ -13,7 +13,7 @@ class HostTest extends TestCase
 
     protected $host;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

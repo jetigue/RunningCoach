@@ -20,7 +20,7 @@ class TrackMeetTest extends TestCase
 
     protected $trackMeet;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

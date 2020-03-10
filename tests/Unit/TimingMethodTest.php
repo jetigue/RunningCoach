@@ -13,7 +13,7 @@ class TimingMethodTest extends TestCase
 
     protected $timing;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

@@ -14,7 +14,7 @@ class CrossCountryVenueTest extends TestCase
 
     protected $venue;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

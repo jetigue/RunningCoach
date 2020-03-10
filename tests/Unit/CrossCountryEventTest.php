@@ -15,7 +15,7 @@ class CrossCountryEventTest extends TestCase
 
     protected $event;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

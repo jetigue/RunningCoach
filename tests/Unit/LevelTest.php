@@ -13,7 +13,7 @@ class LevelTest extends TestCase
 
     protected $level;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
