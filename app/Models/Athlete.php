@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use App\Filters\AthleteFilter;
 use App\Models\Physical;
 use App\Models\Results\CrossCountry\Result;
@@ -52,7 +53,7 @@ class Athlete extends Model
         parent::boot();
 
         static::saving(function ($athlete) {
-            $athlete->slug = str_slug(
+            $athlete->slug = Str::slug(
                 $athlete->first_name.'-'.$athlete->last_name.'-'.$athlete->grad_year
             );
         });

@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Races\Track;
 
+use Illuminate\Support\Str;
 use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -52,7 +53,7 @@ class Event extends Model
         parent::boot();
 
         static::saving(function ($event) {
-            $event->slug = str_slug($event->name);
+            $event->slug = Str::slug($event->name);
         });
     }
 

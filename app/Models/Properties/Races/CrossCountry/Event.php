@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Races\CrossCountry;
 
+use Illuminate\Support\Str;
 use App\Filters\EventFilter;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
@@ -54,7 +55,7 @@ class Event extends Model
         parent::boot();
 
         static::saving(function ($event) {
-            $event->slug = str_slug($event->name);
+            $event->slug = Str::slug($event->name);
         });
     }
 

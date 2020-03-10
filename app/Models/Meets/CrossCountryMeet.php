@@ -2,6 +2,7 @@
 
 namespace App\Models\Meets;
 
+use Illuminate\Support\Str;
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
@@ -60,7 +61,7 @@ class CrossCountryMeet extends Model
         parent::boot();
 
         static::saving(function ($crossCountryMeet) {
-            $crossCountryMeet->slug = str_slug($crossCountryMeet->name->name.'-'.$crossCountryMeet->meet_date);
+            $crossCountryMeet->slug = Str::slug($crossCountryMeet->name->name.'-'.$crossCountryMeet->meet_date);
         });
     }
 

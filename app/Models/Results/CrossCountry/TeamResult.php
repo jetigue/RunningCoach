@@ -2,6 +2,7 @@
 
 namespace App\Models\Results\CrossCountry;
 
+use Illuminate\Support\Str;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Races\CrossCountry\Event;
 use App\Models\Properties\Races\Division;
@@ -44,7 +45,7 @@ class TeamResult extends Model
         parent::boot();
 
         static::saving(function ($teamResult) {
-            $teamResult->slug = str_slug(
+            $teamResult->slug = Str::slug(
                 $teamResult->division->gender->name.'-'.
                 $teamResult->division->level->name
             );
