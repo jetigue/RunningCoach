@@ -7,36 +7,35 @@ use Illuminate\Database\Eloquent\Builder;
 
 class SeasonFilter extends Filters
 {
-  /**
-   * Registered filters to operate upon.
-   *
-   * @var array
-   */
-  protected $filters = ['season', 'track'];
+    /**
+     * Registered filters to operate upon.
+     *
+     * @var array
+     */
+    protected $filters = ['season', 'track'];
 
-  /**
-   * Filter the query by a season.
-   *
-   * @param string $seasonSlug
-   * @return Builder
-   */
-  protected function season($seasonSlug)
-  {
-    $season = Season::where('slug', $seasonSlug)->firstOrFail();
+    /**
+     * Filter the query by a season.
+     *
+     * @param string $seasonSlug
+     * @return Builder
+     */
+    protected function season($seasonSlug)
+    {
+        $season = Season::where('slug', $seasonSlug)->firstOrFail();
 
-    return $this->builder->where('slug', $season->slug);
-  }
+        return $this->builder->where('slug', $season->slug);
+    }
 
     /**
      * Filter the query by a season.
      *
      * @return Builder
      */
-  protected function track()
-  {
-    return $this->builder
+    protected function track()
+    {
+        return $this->builder
       ->where('slug', 'indoor-track')
       ->orWhere('slug', 'outdoor-track');
-  }
-
+    }
 }

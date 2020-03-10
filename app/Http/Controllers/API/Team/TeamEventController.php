@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Team;
 
+use App\Http\Controllers\Controller;
 use App\Models\Team\TeamEvent;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TeamEventController extends Controller
 {
@@ -106,7 +106,7 @@ class TeamEventController extends Controller
             'location',
             'details',
             'link',
-            'link_text'
+            'link_text',
         ]));
 
         return response()->json($teamEvent, 200);

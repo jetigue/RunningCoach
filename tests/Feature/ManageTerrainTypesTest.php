@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Properties\General\TerrainType;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageTerrainTypesTest extends TestCase
 {
@@ -141,18 +141,18 @@ class ManageTerrainTypesTest extends TestCase
 
         $terrainType = factory(TerrainType::class)->create([
             'name' => 'Asphalt',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/terrain-types/' . $terrainType->id, [
+        $this->patch('api/terrain-types/'.$terrainType->id, [
             'name' => 'Grass',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('terrain_types', [
             'name' => 'Grass',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -163,12 +163,12 @@ class ManageTerrainTypesTest extends TestCase
 
         $terrainType = factory(TerrainType::class)->create([
             'name' => 'Asphalt',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/terrain-types/' . $terrainType->id, [
+        $this->patch('api/terrain-types/'.$terrainType->id, [
             'name' => 'Grass',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -182,12 +182,12 @@ class ManageTerrainTypesTest extends TestCase
 
         $terrainType = factory(TerrainType::class)->create([
             'name' => 'Asphalt',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/terrain-types/' . $terrainType->id, [
+        $this->patch('api/terrain-types/'.$terrainType->id, [
             'name' => 'Grass',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -201,12 +201,12 @@ class ManageTerrainTypesTest extends TestCase
 
         $terrainType = factory(TerrainType::class)->create([
             'name' => 'Asphalt',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/terrain-types/' . $terrainType->id, [
+        $this->patch('api/terrain-types/'.$terrainType->id, [
             'name' => 'Grass',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -218,12 +218,12 @@ class ManageTerrainTypesTest extends TestCase
     {
         $terrainType = factory(TerrainType::class)->create([
             'name' => 'Asphalt',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/terrain-types/' . $terrainType->id, [
+        $this->patch('api/terrain-types/'.$terrainType->id, [
             'name' => 'Grass',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Properties\General\Distance;
+use App\Models\Properties\General\Season;
 use App\Models\Properties\General\TrackSurface;
 use Illuminate\Database\Seeder;
-use App\Models\Properties\General\Season;
-use App\Models\Properties\General\Distance;
 
 class GeneralPropertiesSeeder extends Seeder
 {

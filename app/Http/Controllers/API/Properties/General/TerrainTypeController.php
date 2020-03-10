@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\API\Properties\General;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TerrainType;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class TerrainTypeController extends Controller
 {
-
     /**
      * GenderController constructor.
      */
@@ -53,7 +52,7 @@ class TerrainTypeController extends Controller
     {
         $terrainType = request()->validate([
             'name' => 'required|string|min:3',
-            'description' => 'required|string'
+            'description' => 'required|string',
         ]);
 
         $terrainType = TerrainType::create($terrainType);
@@ -94,7 +93,7 @@ class TerrainTypeController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'description' => 'required|min:5',
         ]);
 
         $terrainType->update(request(['name', 'description']));

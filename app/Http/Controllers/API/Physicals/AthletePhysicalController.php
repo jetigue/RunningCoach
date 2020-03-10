@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\API\Physicals;
 
-use App\Repositories\Athletes;
-use App\Models\Athlete;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Athlete;
+use App\Repositories\Athletes;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class AthletePhysicalController extends Controller
 {
-
     /**
      * AthleteController constructor.
      */

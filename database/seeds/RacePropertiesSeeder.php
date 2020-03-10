@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use App\Models\Properties\Races\Division;
-use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\CrossCountry\Event;
+use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Gender;
+use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Title;
+use Illuminate\Database\Seeder;
 
 class RacePropertiesSeeder extends Seeder
 {

@@ -19,18 +19,18 @@ class Race extends Model
     protected $table = 'track_time_trial_races';
 
     /**
-    * Fillable fields for a track time trial race.
-    *
-    *@var array
-    */
+     * Fillable fields for a track time trial race.
+     *
+     *@var array
+     */
     protected $fillable = [
         'track_time_trial_id',
         'gender_id',
         'track_event_id',
-        'notes'
+        'notes',
     ];
 
-     /**
+    /**
      * @param $results
      * @return Model
      */
@@ -39,25 +39,25 @@ class Race extends Model
         return $this->results()->create($results + ['total_seconds' => request('minutes') * 60 + request('seconds')]);
     }
 
-    public function getPlaceWithSuffixAttribute() {
-            $value = $this->attributes['place'];
+    public function getPlaceWithSuffixAttribute()
+    {
+        $value = $this->attributes['place'];
 
-            if ($value != null) {
-                if (!in_array(($value % 100), array(11, 12, 13)))
-                {
-                    switch ($value % 10)
-                    {
+        if ($value != null) {
+            if (! in_array(($value % 100), [11, 12, 13])) {
+                switch ($value % 10) {
                         // Handle 1st, 2nd, 3rd
                         case 1:
-                            return $value . 'st';
+                            return $value.'st';
                         case 2:
-                            return $value . 'nd';
+                            return $value.'nd';
                         case 3:
-                            return $value . 'rd';
+                            return $value.'rd';
                     }
-                }
-                return $value . 'th';
             }
+
+            return $value.'th';
+        }
     }
 
     /**

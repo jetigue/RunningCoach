@@ -14,7 +14,7 @@ class TerrainType extends Model
     protected $table = 'terrain_types';
 
     /**
-     * Fillable fields for a Terrain Type
+     * Fillable fields for a Terrain Type.
      *
      * @var array
      */

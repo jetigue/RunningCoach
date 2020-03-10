@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use App\Models\Properties\General\Season;
-use Tests\TestCase;
 use App\Models\Properties\Meets\CrossCountry\Venue;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class CrossCountryVenueTest extends TestCase
 {
@@ -14,7 +14,7 @@ class CrossCountryVenueTest extends TestCase
 
     protected $venue;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -25,14 +25,13 @@ class CrossCountryVenueTest extends TestCase
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/cross-country/venues/' . $this->venue->id, $this->venue->path());
+            '/cross-country/venues/'.$this->venue->id, $this->venue->path());
     }
 
     /** @test */
-    function a_venue_has_many_cross_country_meets()
+    public function a_venue_has_many_cross_country_meets()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection', $this->venue->crossCountryMeets);
     }
-
 }

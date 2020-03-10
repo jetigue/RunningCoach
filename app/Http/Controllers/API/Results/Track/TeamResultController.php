@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API\Results\Track;
 
+use App\Http\Controllers\Controller;
+use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\TeamResult;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Meets\TrackMeet;
 use Illuminate\Http\Response;
 
 class TeamResultController extends Controller
@@ -24,7 +24,6 @@ class TeamResultController extends Controller
             ->get();
     }
 
-
     public function store(TrackMeet $trackMeet, TeamResult $teamResult)
     {
         request()->validate([
@@ -32,20 +31,18 @@ class TeamResultController extends Controller
             'place'             => 'integer|lte:number_teams',
             'number_teams'      => 'required|integer|gte:place',
             'points'            => 'nullable|integer',
-            'notes'             => 'nullable|string'
+            'notes'             => 'nullable|string',
         ]);
-
 
         $teamResult = $trackMeet->addTeamResult(request([
             'division_id',
             'place',
             'number_teams',
             'points',
-            'notes'
+            'notes',
         ]));
 
         return $teamResult->load('division');
-
     }
 
     /**
@@ -57,9 +54,7 @@ class TeamResultController extends Controller
      */
     public function show(TrackMeet $trackMeet, TeamResult $teamResult)
     {
-
         return view('results.track.teamResults.show', compact('teamResult'));
-
     }
 
     /**
@@ -82,12 +77,11 @@ class TeamResultController extends Controller
             'division_id',
             'place',
             'number_teams',
-            'points'
+            'points',
         ]));
 
         return response()->json($teamResult, 200);
     }
-
 
     /**
      * @param TrackMeet $trackMeet

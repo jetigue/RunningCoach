@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Division;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class DivisionController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin');
@@ -23,8 +22,7 @@ class DivisionController extends Controller
     {
         $divisions = Division::with('gender', 'level')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $divisions;
         }
 

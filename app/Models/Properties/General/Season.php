@@ -2,12 +2,13 @@
 
 namespace App\Models\Properties\General;
 
+use App\Filters\SeasonFilter;
 use App\Models\Meets\TrackMeet;
+use App\Models\Properties\Meets\Name;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Properties\Meets\Name;
-use App\Filters\SeasonFilter;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Season extends Model
 {
@@ -19,7 +20,7 @@ class Season extends Model
     protected $table = 'seasons';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -34,14 +35,14 @@ class Season extends Model
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = str_slug($model->name);
+            $model->slug = Str::slug($model->name);
         });
     }
 
@@ -52,7 +53,7 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/' . $this->slug;
+        return '/seasons/'.$this->slug;
     }
 
     /**

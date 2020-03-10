@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Properties\General\DayTime;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageDayTimesTest extends TestCase
 {
@@ -141,18 +141,18 @@ class ManageDayTimesTest extends TestCase
 
         $dayTime = factory(DayTime::class)->create([
             'name' => 'Morning',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/day-times/' . $dayTime->id, [
+        $this->patch('api/day-times/'.$dayTime->id, [
             'name' => 'Afternoon',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('day_times', [
             'name' => 'Afternoon',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -163,12 +163,12 @@ class ManageDayTimesTest extends TestCase
 
         $dayTime = factory(DayTime::class)->create([
             'name' => 'Morning',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/day-times/' . $dayTime->id, [
+        $this->patch('api/day-times/'.$dayTime->id, [
             'name' => 'Afternoon',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -182,12 +182,12 @@ class ManageDayTimesTest extends TestCase
 
         $dayTime = factory(DayTime::class)->create([
             'name' => 'Morning',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/day-times/' . $dayTime->id, [
+        $this->patch('api/day-times/'.$dayTime->id, [
             'name' => 'Afternoon',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -201,12 +201,12 @@ class ManageDayTimesTest extends TestCase
 
         $dayTime = factory(DayTime::class)->create([
             'name' => 'Morning',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/day-times/' . $dayTime->id, [
+        $this->patch('api/day-times/'.$dayTime->id, [
             'name' => 'Afternoon',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -218,12 +218,12 @@ class ManageDayTimesTest extends TestCase
     {
         $dayTime = factory(DayTime::class)->create([
             'name' => 'Morning',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/day-times/' . $dayTime->id, [
+        $this->patch('api/day-times/'.$dayTime->id, [
             'name' => 'Afternoon',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Level;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class LevelController extends Controller
 {

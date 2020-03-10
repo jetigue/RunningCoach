@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\API\Results\CrossCountry;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meets\CrossCountryMeet;
-use App\Models\Results\CrossCountry\TeamResult;
 use App\Models\Results\CrossCountry\Result;
+use App\Models\Results\CrossCountry\TeamResult;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
@@ -12,7 +13,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
@@ -46,7 +46,7 @@ class TeamResultController extends Controller
             'number_teams'              => 'required|integer',
             'number_runners'            => 'required|integer',
             'points'                    => 'nullable|integer',
-            'notes'                     => 'nullable|string'
+            'notes'                     => 'nullable|string',
         ]);
 
         $teamResult = $crossCountryMeet->addTeamResult(request([
@@ -57,7 +57,7 @@ class TeamResultController extends Controller
             'number_teams',
             'number_runners',
             'points',
-            'notes'
+            'notes',
         ]));
 
         return $teamResult->load('division', 'event', 'title');
@@ -76,7 +76,6 @@ class TeamResultController extends Controller
             ->with('teamResult', 'athlete')->get();
 
         return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
-
     }
 
     /**
@@ -98,7 +97,7 @@ class TeamResultController extends Controller
             'number_teams'              => 'required|integer',
             'number_runners'            => 'required|integer',
             'points'                    => 'integer|nullable',
-            'notes'                     => 'nullable|string'
+            'notes'                     => 'nullable|string',
         ]);
 
         $teamResult->update(request([
@@ -109,7 +108,7 @@ class TeamResultController extends Controller
             'number_teams',
             'number_runners',
             'points',
-            'notes'
+            'notes',
         ]));
 
         return response()->json($teamResult, 200);

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Physicals;
 
+use App\Http\Controllers\Controller;
 use App\Models\Physical;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class PhysicalController extends Controller
@@ -29,14 +29,14 @@ class PhysicalController extends Controller
      */
     public function store(Request $request)
     {
-        $physical = request()->validate ([
+        $physical = request()->validate([
             'athlete_id' => 'integer|required',
             'consent_form' => 'boolean',
             'concussion_form' => 'boolean',
             'evaluation_form' =>'boolean',
             'exam_date' => 'date|required',
             'restrictions' => 'string|nullable',
-            'notes' => 'string|nullable'
+            'notes' => 'string|nullable',
         ]);
 
         $physical = Physical::create($physical)->load('athlete');

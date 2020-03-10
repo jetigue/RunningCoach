@@ -5,6 +5,7 @@ namespace App\Models\Properties\Races\Track;
 use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {
@@ -16,14 +17,14 @@ class Event extends Model
     protected $table = 'track_events';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
     protected $fillable = [
         'name',
         'meters',
-        'relay'
+        'relay',
     ];
 
     /**
@@ -41,18 +42,18 @@ class Event extends Model
      */
     public function path()
     {
-        return '/track-events/' . $this->slug;
+        return '/track-events/'.$this->slug;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($event) {
-            $event->slug = str_slug($event->name);
+            $event->slug = Str::slug($event->name);
         });
     }
 

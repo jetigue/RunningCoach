@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Meets;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meets\CrossCountryMeet;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class CrossCountryMeetController extends Controller
@@ -81,7 +81,7 @@ class CrossCountryMeetController extends Controller
             'meet_date',
             'host_id',
             'cross_country_venue_id',
-            'timing_method_id'
+            'timing_method_id',
         ]));
 
         return response()->json($crossCountryMeet, 200);

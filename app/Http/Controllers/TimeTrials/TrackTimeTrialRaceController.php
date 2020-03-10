@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\Race;
 use App\Models\TimeTrials\Track\Result;
 use App\Models\TimeTrials\Track\TimeTrial;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class TrackTimeTrialRaceController extends Controller
@@ -56,7 +56,7 @@ class TrackTimeTrialRaceController extends Controller
         $results = Result::where('track_time_trial_race_id', $race->id)->orderBy('place')
             ->with('race', 'athlete')->get();
 
-        return view('timeTrials.track.races.show', compact('race','results'));
+        return view('timeTrials.track.races.show', compact('race', 'results'));
     }
 
     /**

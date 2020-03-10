@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\Team;
 
+use App\Http\Controllers\Controller;
 use App\Models\Team\Announcement;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class AnnouncementController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -33,8 +32,6 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-
-
     }
 
     /**

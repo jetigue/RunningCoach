@@ -6,9 +6,9 @@ use App\Models\Properties\General\TrackSurface;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Track\Venue;
 use App\Models\TimeTrials\Track\TimeTrial;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageTrackTimeTrialsTest extends TestCase
 {
@@ -94,7 +94,7 @@ class ManageTrackTimeTrialsTest extends TestCase
         $this->post('/api/track/time-trials', $attributes)->assertRedirect('/');
     }
 
-        /** @test */
+    /** @test */
     public function a_guest_cannot_create_a_time_trial()
     {
         $this->signInAthlete();
@@ -204,7 +204,7 @@ class ManageTrackTimeTrialsTest extends TestCase
             'timing_method_id' => $oldTiming->id,
         ]);
 
-        $this->patch('/api/track/time-trials/' . $timeTrial->id, [
+        $this->patch('/api/track/time-trials/'.$timeTrial->id, [
             'name' => 'New Time Trial Name',
             'trial_date' => '2020-10-10',
             'track_venue_id' => $newVenue->id,
@@ -237,7 +237,7 @@ class ManageTrackTimeTrialsTest extends TestCase
             'timing_method_id' => $oldTiming->id,
         ]);
 
-        $this->patch('/api/track/time-trials/' . $timeTrial->id, [
+        $this->patch('/api/track/time-trials/'.$timeTrial->id, [
             'name' => 'New Time Trial Name',
             'trial_date' => '2020-10-10',
             'track_venue_id' => $newVenue->id,
@@ -270,13 +270,13 @@ class ManageTrackTimeTrialsTest extends TestCase
             'timing_method_id' => $oldTiming->id,
         ]);
 
-        $this->patch('/api/track/time-trials/' . $timeTrial->id, [
+        $this->patch('/api/track/time-trials/'.$timeTrial->id, [
             'name' => 'New Time Trial Name',
             'trial_date' => '2020-10-10',
             'track_venue_id' => $newVenue->id,
-            'timing_method_id' => $newTiming->id
+            'timing_method_id' => $newTiming->id,
         ])
-            ->assertRedirect('/');;
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_time_trials', [
             'name' => 'Original Time Trial Name',
@@ -286,7 +286,7 @@ class ManageTrackTimeTrialsTest extends TestCase
         ]);
     }
 
-        /** @test */
+    /** @test */
     public function an_viewer_cannot_update_a_time_trial()
     {
         $this->signInViewer();
@@ -304,13 +304,13 @@ class ManageTrackTimeTrialsTest extends TestCase
             'timing_method_id' => $oldTiming->id,
         ]);
 
-        $this->patch('/api/track/time-trials/' . $timeTrial->id, [
+        $this->patch('/api/track/time-trials/'.$timeTrial->id, [
             'name' => 'New Time Trial Name',
             'trial_date' => '2020-10-10',
             'track_venue_id' => $newVenue->id,
-            'timing_method_id' => $newTiming->id
+            'timing_method_id' => $newTiming->id,
         ])
-            ->assertRedirect('/');;
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_time_trials', [
             'name' => 'Original Time Trial Name',
@@ -320,7 +320,7 @@ class ManageTrackTimeTrialsTest extends TestCase
         ]);
     }
 
-        /** @test */
+    /** @test */
     public function a_guest_cannot_update_a_time_trial()
     {
         $surface = factory(TrackSurface::class)->create();
@@ -336,13 +336,13 @@ class ManageTrackTimeTrialsTest extends TestCase
             'timing_method_id' => $oldTiming->id,
         ]);
 
-        $this->patch('/api/track/time-trials/' . $timeTrial->id, [
+        $this->patch('/api/track/time-trials/'.$timeTrial->id, [
             'name' => 'New Time Trial Name',
             'trial_date' => '2020-10-10',
             'track_venue_id' => $newVenue->id,
-            'timing_method_id' => $newTiming->id
+            'timing_method_id' => $newTiming->id,
         ])
-            ->assertRedirect('/');;
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_time_trials', [
             'name' => 'Original Time Trial Name',

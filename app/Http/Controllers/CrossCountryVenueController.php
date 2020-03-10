@@ -15,7 +15,7 @@ use Illuminate\View\View;
 class CrossCountryVenueController extends Controller
 {
     /**
-     * List all of the cross country venues
+     * List all of the cross country venues.
      *
      * @return Factory|View
      */
@@ -27,7 +27,7 @@ class CrossCountryVenueController extends Controller
     }
 
     /**
-     * Show the Boys Records for this Venue
+     * Show the Boys Records for this Venue.
      *
      * @param CCVenueRecords $venueRecords
      * @param Venue $venue
@@ -41,8 +41,7 @@ class CrossCountryVenueController extends Controller
         $fastestSophomoreBoys = $venueRecords->fastestSophomoreBoys($venue);
         $fastestFreshmenBoys = $venueRecords->fastestFreshmenBoys($venue);
 
-
-        return view ('records.crossCountry.venues.boys.show', compact(
+        return view('records.crossCountry.venues.boys.show', compact(
             'venue',
             'fastestBoys',
             'fastestSeniorBoys',
@@ -65,8 +64,7 @@ class CrossCountryVenueController extends Controller
         $fastestSophomoreGirls = $venueRecords->fastestSophomoreGirls($venue);
         $fastestFreshmenGirls = $venueRecords->fastestFreshmenGirls($venue);
 
-
-        return view ('records.crossCountry.venues.girls.show', compact(
+        return view('records.crossCountry.venues.girls.show', compact(
             'venue',
             'fastestGirls',
             'fastestSeniorGirls',

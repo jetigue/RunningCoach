@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\Results\CrossCountry;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
@@ -9,7 +10,6 @@ use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
@@ -48,7 +48,7 @@ class ResultController extends Controller
             'place',
             'milliseconds',
             'points',
-            'total_seconds' => request('minutes') * 60 + request('seconds')
+            'total_seconds' => request('minutes') * 60 + request('seconds'),
             ]));
 
         return $result->load('athlete');
@@ -90,7 +90,7 @@ class ResultController extends Controller
             'athlete_id',
             'milliseconds',
             'place',
-            'points'
+            'points',
         ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds')]);
 
         return response()->json($result, 200);

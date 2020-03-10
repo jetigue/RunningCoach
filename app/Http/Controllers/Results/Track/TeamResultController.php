@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Results\Track;
 
+use App\Http\Controllers\Controller;
+use App\Models\Meets\TrackMeet;
 use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
-use App\Models\Meets\TrackMeet;
 use App\Repositories\TrackResults;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class TeamResultController extends Controller
@@ -24,7 +24,6 @@ class TeamResultController extends Controller
         $teamResults = TeamResult::with('division')->get();
 
         if (request()->expectsJson()) {
-
             return $teamResults;
         }
 
@@ -40,7 +39,7 @@ class TeamResultController extends Controller
      * @return Factory|View
      */
 //    public function show(TrackMeet $trackMeet, TeamResult $teamResult, Result $result)
-      public function show(TrackMeet $trackMeet, TeamResult $teamResult, TrackResults $results)
+    public function show(TrackMeet $trackMeet, TeamResult $teamResult, TrackResults $results)
     {
         $results400m = $results->results400m($teamResult);
         $results800m = $results->results800m($teamResult);
@@ -69,5 +68,4 @@ class TeamResultController extends Controller
                 'results5000m'
             ));
     }
-
 }

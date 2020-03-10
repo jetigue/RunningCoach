@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\Host;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class HostController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -23,8 +22,7 @@ class HostController extends Controller
     {
         $hosts = Host::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $hosts;
         }
 

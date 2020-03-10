@@ -2,11 +2,11 @@
 
 namespace Tests\Unit;
 
-use App\Models\Properties\Meets\CrossCountry\Venue;
-use Tests\TestCase;
 use App\Models\Properties\General\Season;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class SeasonTest extends TestCase
 {
@@ -14,7 +14,7 @@ class SeasonTest extends TestCase
 
     protected $season;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -25,18 +25,18 @@ class SeasonTest extends TestCase
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/seasons/' . $this->season->slug, $this->season->path());
+            '/seasons/'.$this->season->slug, $this->season->path());
     }
 
     /** @test */
-    function a_season_has_many_meet_names()
+    public function a_season_has_many_meet_names()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection', $this->season->meetNames);
     }
 
     /** @test */
-    function a_season_has_many_track_meets()
+    public function a_season_has_many_track_meets()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection', $this->season->trackMeets);

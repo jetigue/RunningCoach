@@ -1,27 +1,28 @@
 <?php
 
-use Faker\Generator as Faker;
-use App\Models\Properties\Races\Track\Event;
+use App\Models\Athlete;
 use App\Models\Meets\TrackMeet;
-use App\Models\Properties\Meets\Name;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Track\Venue;
+use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
-use App\Models\Results\Track\TeamResult;
+use App\Models\Properties\Meets\Track\Venue;
 use App\Models\Properties\Races\Division;
+use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
-use App\Models\Athlete;
+use App\Models\Results\Track\TeamResult;
+use Faker\Generator as Faker;
 
 $factory->define(TrackMeet::class, function (Faker $faker) {
     $season = Season::where('name', 'Outdoor Track')->firstOrFail();
+
     return [
         'meet_name_id' => Name::all()->random()->id,
         'meet_date' => $faker->date($format = 'Y-m-d'),
         'season_id' => $season->id,
         'host_id' => Host::all()->random()->id,
         'track_venue_id' => Venue::all()->random()->id,
-        'timing_method_id' => Timing::all()->random()->id
+        'timing_method_id' => Timing::all()->random()->id,
     ];
 });
 

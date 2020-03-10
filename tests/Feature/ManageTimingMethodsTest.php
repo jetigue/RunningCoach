@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Properties\Meets\Timing;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
-class ManageTimingMethodsTest extends TestCase {
-
+class ManageTimingMethodsTest extends TestCase
+{
     use WithFaker, RefreshDatabase;
 
     /** @test */
@@ -118,7 +118,7 @@ class ManageTimingMethodsTest extends TestCase {
 
         $timing = factory(Timing::class)->create(['name' => 'FAT']);
 
-        $this->patch('api/timing/' . $timing->id, ['name' => 'Hand-held'])
+        $this->patch('api/timing/'.$timing->id, ['name' => 'Hand-held'])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('timing_methods', ['name' => 'Hand-held']);
@@ -131,8 +131,8 @@ class ManageTimingMethodsTest extends TestCase {
 
         $timing = factory(Timing::class)->create(['name' => 'FAT']);
 
-        $this->patch('api/timing/' . $timing->id, ['name' => 'Hand-held'])
-            ->assertRedirect('/');;
+        $this->patch('api/timing/'.$timing->id, ['name' => 'Hand-held'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('timing_methods', ['name' => 'FAT']);
     }
@@ -144,8 +144,8 @@ class ManageTimingMethodsTest extends TestCase {
 
         $timing = factory(Timing::class)->create(['name' => 'FAT']);
 
-        $this->patch('api/timing/' . $timing->id, ['name' => 'Hand-held'])
-            ->assertRedirect('/');;
+        $this->patch('api/timing/'.$timing->id, ['name' => 'Hand-held'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('timing_methods', ['name' => 'FAT']);
     }
@@ -157,7 +157,7 @@ class ManageTimingMethodsTest extends TestCase {
 
         $timing = factory(Timing::class)->create(['name' => 'FAT']);
 
-        $this->patch('api/timing/' . $timing->id, ['name' => 'Hand-held'])
+        $this->patch('api/timing/'.$timing->id, ['name' => 'Hand-held'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('timing_methods', ['name' => 'FAT']);
@@ -168,8 +168,8 @@ class ManageTimingMethodsTest extends TestCase {
     {
         $timing = factory(Timing::class)->create(['name' => 'FAT']);
 
-        $this->patch('api/timing/' . $timing->id, ['name' => 'Hand-held'])
-            ->assertRedirect('/');;
+        $this->patch('api/timing/'.$timing->id, ['name' => 'Hand-held'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('timing_methods', ['name' => 'FAT']);
     }

@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\RunningLog\RunType;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageRunTypesTest extends TestCase
 {
@@ -141,18 +141,18 @@ class ManageRunTypesTest extends TestCase
 
         $runType = factory(RunType::class)->create([
             'name' => 'Fartlek',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-types/' . $runType->id, [
+        $this->patch('api/run-types/'.$runType->id, [
             'name' => 'Long Run',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('run_types', [
             'name' => 'Long Run',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -163,12 +163,12 @@ class ManageRunTypesTest extends TestCase
 
         $runType = factory(RunType::class)->create([
             'name' => 'Fartlek',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-types/' . $runType->id, [
+        $this->patch('api/run-types/'.$runType->id, [
             'name' => 'Long Run',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -182,12 +182,12 @@ class ManageRunTypesTest extends TestCase
 
         $runType = factory(RunType::class)->create([
             'name' => 'Fartlek',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-types/' . $runType->id, [
+        $this->patch('api/run-types/'.$runType->id, [
             'name' => 'Long Run',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -201,12 +201,12 @@ class ManageRunTypesTest extends TestCase
 
         $runType = factory(RunType::class)->create([
             'name' => 'Fartlek',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-types/' . $runType->id, [
+        $this->patch('api/run-types/'.$runType->id, [
             'name' => 'Long Run',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -218,12 +218,12 @@ class ManageRunTypesTest extends TestCase
     {
         $runType = factory(RunType::class)->create([
             'name' => 'Fartlek',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-types/' . $runType->id, [
+        $this->patch('api/run-types/'.$runType->id, [
             'name' => 'Long Run',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

@@ -33,7 +33,6 @@ class TrackSeasonBests
             ->orderBy('track_results.milliseconds');
     }
 
-
     public function trackResults2020()
     {
         return clone $this->trackResults()

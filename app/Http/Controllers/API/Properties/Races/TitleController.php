@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Title;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class TitleController extends Controller
@@ -41,7 +41,7 @@ class TitleController extends Controller
     public function store(Request $request)
     {
         $title = request()->validate([
-            'name' => 'string|min:3'
+            'name' => 'string|min:3',
         ]);
 
         $title = Title::create($title);
@@ -70,7 +70,7 @@ class TitleController extends Controller
     public function update(Request $request, Title $title)
     {
         request()->validate([
-            'name' => 'string|min:3'
+            'name' => 'string|min:3',
         ]);
 
         $title->update(request(['name']));

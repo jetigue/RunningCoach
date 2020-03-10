@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Models\Properties\Meets\Host;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageHostsTest extends TestCase
 {
@@ -40,15 +40,15 @@ class ManageHostsTest extends TestCase
         $this->get('/hosts')->assertSee($attributes['name']);
     }
 
-     /** @test */
-     public function a_host_requires_a_name()
-     {
-         $this->signInCoach();
+    /** @test */
+    public function a_host_requires_a_name()
+    {
+        $this->signInCoach();
 
         $attributes = factory(Host::class)->raw(['name' => '']);
 
         $this->post('api/hosts', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 
     /** @test */
     public function an_athlete_cannot_create_a_host()
@@ -123,11 +123,11 @@ class ManageHostsTest extends TestCase
 
         $host = factory(Host::class)->create(['name' => 'Original Meet Host']);
 
-        $this->patch('api/hosts/' . $host->id, ['name' => 'New Meet Host'])
+        $this->patch('api/hosts/'.$host->id, ['name' => 'New Meet Host'])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('hosts', [
-            'name' => 'New Meet Host'
+            'name' => 'New Meet Host',
         ]);
     }
 
@@ -138,11 +138,11 @@ class ManageHostsTest extends TestCase
 
         $host = factory(Host::class)->create(['name' => 'Original Meet Host']);
 
-        $this->patch('api/hosts/' . $host->id, ['name' => 'New Meet Host'])
+        $this->patch('api/hosts/'.$host->id, ['name' => 'New Meet Host'])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('hosts', [
-            'name' => 'New Meet Host'
+            'name' => 'New Meet Host',
         ]);
     }
 
@@ -153,8 +153,8 @@ class ManageHostsTest extends TestCase
 
         $host = factory(Host::class)->create(['name' => 'Original Meet Host']);
 
-        $this->patch('api/hosts/' . $host->id, ['name' => 'New Meet Host'])
-            ->assertRedirect('/');;
+        $this->patch('api/hosts/'.$host->id, ['name' => 'New Meet Host'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('hosts', ['name' => 'Original Meet Host']);
     }
@@ -166,8 +166,8 @@ class ManageHostsTest extends TestCase
 
         $host = factory(Host::class)->create(['name' => 'Original Meet Host']);
 
-        $this->patch('api/hosts/' . $host->id, ['name' => 'New Meet Host'])
-            ->assertRedirect('/');;
+        $this->patch('api/hosts/'.$host->id, ['name' => 'New Meet Host'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('hosts', ['name' => 'Original Meet Host']);
     }
@@ -177,10 +177,9 @@ class ManageHostsTest extends TestCase
     {
         $host = factory(Host::class)->create(['name' => 'Original Meet Host']);
 
-        $this->patch('api/hosts/' . $host->id, ['name' => 'New Meet Host'])
-            ->assertRedirect('/');;
+        $this->patch('api/hosts/'.$host->id, ['name' => 'New Meet Host'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('hosts', ['name' => 'Original Meet Host']);
     }
-
 }

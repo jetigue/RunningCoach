@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Division;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class DivisionController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin')->except('index');

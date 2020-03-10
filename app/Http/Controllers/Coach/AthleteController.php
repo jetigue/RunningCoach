@@ -24,8 +24,7 @@ class AthleteController extends Controller
     {
         $athletes = Athlete::orderBy('last_name')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $athletes;
         }
 

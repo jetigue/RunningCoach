@@ -2,10 +2,10 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Models\Users\Role;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class UserRoleTest extends TestCase
 {
@@ -13,7 +13,7 @@ class UserRoleTest extends TestCase
 
     protected $role;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -23,10 +23,7 @@ class UserRoleTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/user-roles/' . $this->role->id, $this->role->path());
+            '/user-roles/'.$this->role->id, $this->role->path());
     }
-
-
 }

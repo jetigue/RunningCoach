@@ -2,17 +2,18 @@
 
 namespace App\Models\Meets;
 
-use App\Models\Results\CrossCountry\Result;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
-use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Races\Division;
+use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Support\Str;
 
 class CrossCountryMeet extends Model
 {
@@ -33,7 +34,7 @@ class CrossCountryMeet extends Model
         'meet_date',
         'host_id',
         'cross_country_venue_id',
-        'timing_method_id'
+        'timing_method_id',
     ];
 
     /**
@@ -41,7 +42,7 @@ class CrossCountryMeet extends Model
      */
     public function path()
     {
-        return '/cross-country/meets/' . $this->slug;
+        return '/cross-country/meets/'.$this->slug;
     }
 
     /**
@@ -53,14 +54,14 @@ class CrossCountryMeet extends Model
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($crossCountryMeet) {
-            $crossCountryMeet->slug = str_slug($crossCountryMeet->name->name . '-' . $crossCountryMeet->meet_date);
+            $crossCountryMeet->slug = Str::slug($crossCountryMeet->name->name.'-'.$crossCountryMeet->meet_date);
         });
     }
 
@@ -111,7 +112,6 @@ class CrossCountryMeet extends Model
     {
         return $this->hasManyThrough(Result::class, TeamResult::class, 'cross_country_meet_id', 'cross_country_team_result_id', 'id', 'id');
     }
-
 
     /**
      * @param $teamResult

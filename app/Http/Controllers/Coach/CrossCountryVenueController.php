@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class CrossCountryVenueController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -26,8 +25,7 @@ class CrossCountryVenueController extends Controller
     {
         $venues = Venue::orderBy('name')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $venues;
         }
 

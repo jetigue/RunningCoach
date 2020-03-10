@@ -9,9 +9,9 @@ use App\Models\Properties\Races\Gender;
 use App\Models\Properties\Races\Track\Event;
 use App\Models\TimeTrials\Track\Race;
 use App\Models\TimeTrials\Track\TimeTrial;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageTrackTimeTrialRacesTest extends TestCase
 {
@@ -28,7 +28,7 @@ class ManageTrackTimeTrialRacesTest extends TestCase
         $timing = factory(Timing::class)->create();
         $timeTrial = factory(TimeTrial::class)->create([
             'track_venue_id' => $venue->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
         $gender = factory(Gender::class)->create();
         $event = factory(Event::class)->create();
@@ -55,7 +55,7 @@ class ManageTrackTimeTrialRacesTest extends TestCase
         $timing = factory(Timing::class)->create();
         $timeTrial = factory(TimeTrial::class)->create([
             'track_venue_id' => $venue->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
         $gender = factory(Gender::class)->create();
         $event = factory(Event::class)->create();
@@ -82,7 +82,7 @@ class ManageTrackTimeTrialRacesTest extends TestCase
         $timing = factory(Timing::class)->create();
         $timeTrial = factory(TimeTrial::class)->create([
             'track_venue_id' => $venue->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
         $gender = factory(Gender::class)->create();
         $event = factory(Event::class)->create();
@@ -107,7 +107,7 @@ class ManageTrackTimeTrialRacesTest extends TestCase
         $timing = factory(Timing::class)->create();
         $timeTrial = factory(TimeTrial::class)->create([
             'track_venue_id' => $venue->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
         $gender = factory(Gender::class)->create();
         $event = factory(Event::class)->create();
@@ -130,7 +130,7 @@ class ManageTrackTimeTrialRacesTest extends TestCase
         $timing = factory(Timing::class)->create();
         $timeTrial = factory(TimeTrial::class)->create([
             'track_venue_id' => $venue->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
         $gender = factory(Gender::class)->create();
         $event = factory(Event::class)->create();

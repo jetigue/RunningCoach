@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Results\CrossCountry;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
@@ -9,7 +10,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
@@ -22,21 +22,16 @@ class TeamResultController extends Controller
      */
     public function index()
     {
-
         $teamResults = TeamResult::with('division', 'event', 'raceTitle')
             ->orderBy('meet_date', 'desc')
             ->get();
 
-
-
         if (request()->expectsJson()) {
-
             return $teamResults;
         }
 
         return view('results.crossCountry.teamResults.index', compact('teamResults'));
     }
-
 
     /**
      * Display the specified resource.
@@ -52,7 +47,6 @@ class TeamResultController extends Controller
             ->with('teamResult', 'athlete')->get();
 
         return view('results.crossCountry.teamResults.show', compact('teamResult', 'results'));
-
     }
 
     /**

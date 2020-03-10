@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Properties\General\TrackSurface;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageTrackSurfacesTest extends TestCase
 {
@@ -141,18 +141,18 @@ class ManageTrackSurfacesTest extends TestCase
 
         $trackSurface = factory(TrackSurface::class)->create([
             'name' => 'Rubber',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/track-surfaces/' . $trackSurface->id, [
+        $this->patch('api/track-surfaces/'.$trackSurface->id, [
             'name' => 'Rekoten',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('track_surfaces', [
             'name' => 'Rekoten',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -163,12 +163,12 @@ class ManageTrackSurfacesTest extends TestCase
 
         $trackSurface = factory(TrackSurface::class)->create([
             'name' => 'Rubber',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/track-surfaces/' . $trackSurface->id, [
+        $this->patch('api/track-surfaces/'.$trackSurface->id, [
             'name' => 'Rekoten',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -182,12 +182,12 @@ class ManageTrackSurfacesTest extends TestCase
 
         $trackSurface = factory(TrackSurface::class)->create([
             'name' => 'Rubber',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/track-surfaces/' . $trackSurface->id, [
+        $this->patch('api/track-surfaces/'.$trackSurface->id, [
             'name' => 'Rekoten',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -201,12 +201,12 @@ class ManageTrackSurfacesTest extends TestCase
 
         $trackSurface = factory(TrackSurface::class)->create([
             'name' => 'Rubber',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/track-surfaces/' . $trackSurface->id, [
+        $this->patch('api/track-surfaces/'.$trackSurface->id, [
             'name' => 'Rekoten',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -218,12 +218,12 @@ class ManageTrackSurfacesTest extends TestCase
     {
         $trackSurface = factory(TrackSurface::class)->create([
             'name' => 'Rubber',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/track-surfaces/' . $trackSurface->id, [
+        $this->patch('api/track-surfaces/'.$trackSurface->id, [
             'name' => 'Rekoten',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

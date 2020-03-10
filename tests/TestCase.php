@@ -11,7 +11,7 @@ abstract class TestCase extends BaseTestCase
     use CreatesApplication;
 
     /**
-     * Sign in an Administrator
+     * Sign in an Administrator.
      *
      * @param null $user
      */
@@ -23,7 +23,7 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * Sign in a Coach
+     * Sign in a Coach.
      *
      * @param null $user
      */
@@ -35,7 +35,7 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * Sign in an Athlete
+     * Sign in an Athlete.
      *
      * @param null $user
      */
@@ -47,7 +47,7 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * Sign in a Viewer
+     * Sign in a Viewer.
      *
      * @param null $user
      */

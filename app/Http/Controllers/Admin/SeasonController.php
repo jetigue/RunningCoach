@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Filters\SeasonFilter;
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\Season;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Filters\SeasonFilter;
 
 class SeasonController extends Controller
 {
@@ -25,8 +25,7 @@ class SeasonController extends Controller
 
         $seasons = Season::filter($filters)->orderBy('name')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $seasons;
         }
 

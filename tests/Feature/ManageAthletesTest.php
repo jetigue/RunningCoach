@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Models\Athlete;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageAthletesTest extends TestCase
 {
@@ -80,7 +80,6 @@ class ManageAthletesTest extends TestCase
         ];
 
         $this->post('/api/athletes', $attributes)->assertRedirect('/');
-
     }
 
     /** @test */
@@ -98,13 +97,11 @@ class ManageAthletesTest extends TestCase
         ];
 
         $this->post('/api/athletes', $attributes)->assertRedirect('/');
-
     }
 
     /** @test */
     public function a_guest_cannot_create_an_athlete()
     {
-
         $attributes = [
             'first_name' => 'Roger',
             'last_name' => 'Bannister',
@@ -115,18 +112,17 @@ class ManageAthletesTest extends TestCase
         ];
 
         $this->post('/api/athletes', $attributes)->assertRedirect('/');
-
     }
 
-     /** @test */
-     public function an_athlete_requires_a_first_name()
-     {
-         $this->signInCoach();
+    /** @test */
+    public function an_athlete_requires_a_first_name()
+    {
+        $this->signInCoach();
 
-         $attributes = factory(Athlete::class)->raw(['first_name' => '']);
+        $attributes = factory(Athlete::class)->raw(['first_name' => '']);
 
-         $this->post('api/athletes', $attributes)->assertSessionHasErrors('first_name');
-     }
+        $this->post('api/athletes', $attributes)->assertSessionHasErrors('first_name');
+    }
 
     /** @test */
     public function an_athlete_requires_a_last_name()
@@ -168,14 +164,14 @@ class ManageAthletesTest extends TestCase
         $this->post('api/athletes', $attributes)->assertSessionHasErrors('status');
     }
 
-     /** @test */
-     public function an_admin_can_view_athletes()
-     {
-         $this->signInAdmin();
+    /** @test */
+    public function an_admin_can_view_athletes()
+    {
+        $this->signInAdmin();
 
-         $this->get('/athletes')
+        $this->get('/athletes')
              ->assertSee('name');
-     }
+    }
 
     /** @test */
     public function an_coach_can_view_athletes()

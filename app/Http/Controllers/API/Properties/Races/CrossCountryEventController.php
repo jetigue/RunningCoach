@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\CrossCountry\Event;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class CrossCountryEventController extends Controller
 {
-
     /**
      * CrossCountryEventController constructor.
      */
@@ -44,7 +43,7 @@ class CrossCountryEventController extends Controller
     {
         $event = request()->validate([
             'name' => 'required|string|min:2',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $event = Event::create($event);
@@ -63,7 +62,7 @@ class CrossCountryEventController extends Controller
     {
         request()->validate([
             'name' => 'required|min:2',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $event->update(request(['name', 'meters']));

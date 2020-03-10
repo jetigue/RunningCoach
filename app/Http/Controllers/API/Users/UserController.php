@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Users;
 
+use App\Http\Controllers\Controller;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -23,7 +23,6 @@ class UserController extends Controller
         $users = User::with('role')->orderBy('last_name', 'asc')->paginate(20);
 
         return $users;
-
     }
 
     /**
@@ -61,19 +60,18 @@ class UserController extends Controller
             'first_name' => 'required|min:3',
             'last_name' => 'required|min:3',
             'email' => 'required|email',
-            'user_role_id' => 'required|integer'
+            'user_role_id' => 'required|integer',
         ]);
 
         $user->update(request([
             'first_name',
             'last_name',
             'email',
-            'user_role_id'
+            'user_role_id',
         ]));
 
         return response()->json($user, 200);
     }
-
 
     /**
      * Delete the specified resource in storage.

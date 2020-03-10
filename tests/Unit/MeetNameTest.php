@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use App\Models\Properties\General\Season;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Properties\Meets\Name;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class MeetNameTest extends TestCase
 {
@@ -14,7 +14,7 @@ class MeetNameTest extends TestCase
 
     protected $name;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -27,22 +27,21 @@ class MeetNameTest extends TestCase
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/meet-names/' . $this->name->id, $this->name->path());
+            '/meet-names/'.$this->name->id, $this->name->path());
     }
 
-     /** @test */
-     function a_meet_name_belongs_to_a_season()
-     {
-         $this->assertInstanceOf(Season::class, $this->name->season);
-     }
+    /** @test */
+    public function a_meet_name_belongs_to_a_season()
+    {
+        $this->assertInstanceOf(Season::class, $this->name->season);
+    }
 
     /** @test */
-    function a_meet_name_has_many_track_meets()
+    public function a_meet_name_has_many_track_meets()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',
             $this->name->trackMeets
         );
     }
-
 }

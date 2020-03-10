@@ -2,11 +2,11 @@
 
 namespace App\Models\Results\Track;
 
-use App\Models\Athlete;
 use App\Filters\TrackResultFilter;
+use App\Models\Athlete;
 use App\Models\Properties\Races\Track\Event;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Result extends Model
@@ -19,7 +19,7 @@ class Result extends Model
     protected $table = 'track_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -31,7 +31,7 @@ class Result extends Model
         'total_seconds',
         'milliseconds',
         'points',
-        'heat'
+        'heat',
     ];
 
 //    /**
@@ -51,34 +51,35 @@ class Result extends Model
     /**
      * @return string
      */
-    public function getPlaceWithSuffixAttribute() {
+    public function getPlaceWithSuffixAttribute()
+    {
         $value = $this->attributes['place'];
 
         if ($value != null) {
-            if (!in_array(($value % 100), array(11, 12, 13)))
-            {
-                switch ($value % 10)
-                {
+            if (! in_array(($value % 100), [11, 12, 13])) {
+                switch ($value % 10) {
                     // Handle 1st, 2nd, 3rd
                     case 1:
-                        return $value . 'st';
+                        return $value.'st';
                     case 2:
-                        return $value . 'nd';
+                        return $value.'nd';
                     case 3:
-                        return $value . 'rd';
+                        return $value.'rd';
                 }
             }
-            return $value . 'th';
+
+            return $value.'th';
         }
     }
 
     /**
      * @return false|string
      */
-    public function getTimeAttribute() {
+    public function getTimeAttribute()
+    {
         $seconds = $this->attributes['total_seconds'];
 
-                return gmdate("i:s", $seconds);
+        return gmdate('i:s', $seconds);
     }
 
     /**
@@ -108,10 +109,10 @@ class Result extends Model
     /**
      * @return string
      */
-    function getMillisecondAttribute() {
-        return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    public function getMillisecondAttribute()
+    {
+        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
     }
-
 
     /**
      * Apply all relevant name filters.

@@ -5,9 +5,9 @@ namespace Tests\Feature;
 use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Gender;
 use App\Models\Properties\Races\Level;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageDivisionsTest extends TestCase
 {
@@ -23,7 +23,7 @@ class ManageDivisionsTest extends TestCase
 
         $attributes = [
             'gender_id' => $gender->id,
-            'level_id' => $level->id
+            'level_id' => $level->id,
         ];
 
         $this->post('/api/divisions', $attributes);
@@ -38,7 +38,6 @@ class ManageDivisionsTest extends TestCase
     /** @test */
     public function a_coach_cannot_create_a_division()
     {
-
         $this->signInCoach();
 
         $gender = factory(Gender::class)->create();
@@ -46,7 +45,7 @@ class ManageDivisionsTest extends TestCase
 
         $attributes = [
             'gender_id' => $gender->id,
-            'level_id' => $level->id
+            'level_id' => $level->id,
         ];
 
         $this->post('/api/divisions', $attributes)->assertRedirect('/');
@@ -68,7 +67,7 @@ class ManageDivisionsTest extends TestCase
 
         $attributes = [
             'gender_id' => $gender->id,
-            'level_id' => $level->id
+            'level_id' => $level->id,
         ];
 
         $this->post('/api/divisions', $attributes)->assertRedirect('/');
@@ -90,7 +89,7 @@ class ManageDivisionsTest extends TestCase
 
         $attributes = [
             'gender_id' => $gender->id,
-            'level_id' => $level->id
+            'level_id' => $level->id,
         ];
 
         $this->post('/api/divisions', $attributes)->assertRedirect('/');
@@ -112,7 +111,7 @@ class ManageDivisionsTest extends TestCase
 
         $attributes = [
             'gender_id' => $gender->id,
-            'level_id' => $level->id
+            'level_id' => $level->id,
         ];
 
         $this->post('/api/divisions', $attributes)->assertRedirect('/');
@@ -207,18 +206,18 @@ class ManageDivisionsTest extends TestCase
 
         $division = factory(Division::class)->create([
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
 
-        $this->patch('api/divisions/' . $division->id, [
+        $this->patch('api/divisions/'.$division->id, [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('divisions', [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ]);
     }
 
@@ -234,18 +233,18 @@ class ManageDivisionsTest extends TestCase
 
         $division = factory(Division::class)->create([
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
 
-        $this->patch('api/divisions/' . $division->id, [
+        $this->patch('api/divisions/'.$division->id, [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('divisions', [
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
     }
 
@@ -261,18 +260,18 @@ class ManageDivisionsTest extends TestCase
 
         $division = factory(Division::class)->create([
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
 
-        $this->patch('api/divisions/' . $division->id, [
+        $this->patch('api/divisions/'.$division->id, [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('divisions', [
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
     }
 
@@ -288,18 +287,18 @@ class ManageDivisionsTest extends TestCase
 
         $division = factory(Division::class)->create([
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
 
-        $this->patch('api/divisions/' . $division->id, [
+        $this->patch('api/divisions/'.$division->id, [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('divisions', [
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
     }
 
@@ -313,18 +312,18 @@ class ManageDivisionsTest extends TestCase
 
         $division = factory(Division::class)->create([
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
 
-        $this->patch('api/divisions/' . $division->id, [
+        $this->patch('api/divisions/'.$division->id, [
             'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id
+            'level_id' => $newLevel->id,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('divisions', [
             'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id
+            'level_id' => $oldLevel->id,
         ]);
     }
 }

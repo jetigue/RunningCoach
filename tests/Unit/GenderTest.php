@@ -2,10 +2,10 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Models\Properties\Races\Gender;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class GenderTest extends TestCase
 {
@@ -13,7 +13,7 @@ class GenderTest extends TestCase
 
     protected $gender;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -23,13 +23,12 @@ class GenderTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/genders/' . $this->gender->id, $this->gender->path());
+            '/genders/'.$this->gender->id, $this->gender->path());
     }
 
     /** @test */
-    function a_gender_has_many_divisions()
+    public function a_gender_has_many_divisions()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',

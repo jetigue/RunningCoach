@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
+use Illuminate\Database\Seeder;
 
 class MeetPropertiesSeeder extends Seeder
 {

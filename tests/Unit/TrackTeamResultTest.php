@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Gender;
+use App\Models\Properties\Races\Level;
 use App\Models\Results\Track\TeamResult;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 //class TrackTeamResultTest extends TestCase
 //{

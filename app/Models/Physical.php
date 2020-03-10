@@ -27,9 +27,8 @@ class Physical extends Model
         'exam_date',
         'restrictions',
         'notes',
-        'form_path'
+        'form_path',
     ];
-
 
     /**
      * @return BelongsTo

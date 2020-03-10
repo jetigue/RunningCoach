@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\Properties\Meets;
 
+use App\Filters\NameFilter;
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\Name;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Filters\NameFilter;
 
 class NameController extends Controller
 {
@@ -36,7 +36,7 @@ class NameController extends Controller
     {
         $meetName = request()->validate([
             'name' => 'required|string|min:3',
-            'season_id' => 'required|integer'
+            'season_id' => 'required|integer',
         ]);
 
         $meetName = Name::create($meetName);
@@ -67,14 +67,13 @@ class NameController extends Controller
     {
         request()->validate([
             'name' => 'required|string|min:3',
-            'season_id' => 'required|integer'
+            'season_id' => 'required|integer',
         ]);
 
         $meetName->update(request(['name', 'season_id']));
 
         return response()->json($meetName, 200);
     }
-
 
     /**
      * @param Name $meetName

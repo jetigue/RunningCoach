@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Level;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class LevelController extends Controller
 {
@@ -39,7 +39,7 @@ class LevelController extends Controller
     public function store(Request $request)
     {
         $level = request()->validate([
-            'name' => 'required|string|min:3'
+            'name' => 'required|string|min:3',
         ]);
 
         $level = Level::create($level);
@@ -68,7 +68,7 @@ class LevelController extends Controller
     public function update(Request $request, Level $level)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $level->update(request(['name']));

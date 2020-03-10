@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Properties\Meets;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class CrossCountryVenueController extends Controller
@@ -24,7 +24,6 @@ class CrossCountryVenueController extends Controller
     public function index()
     {
         return Venue::orderBy('name')->get();
-
     }
 
     /**
@@ -44,7 +43,6 @@ class CrossCountryVenueController extends Controller
         $venue = Venue::create($venue);
 
         return response()->json($venue, 201);
-
     }
 
     /**
@@ -68,7 +66,7 @@ class CrossCountryVenueController extends Controller
     public function update(Request $request, Venue $venue)
     {
         request()->validate([
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         ]);
 
         $venue->update(request(['name']));

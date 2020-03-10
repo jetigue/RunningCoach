@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\API\Properties\General;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\DayTime;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class DayTimeController extends Controller
 {
-
     /**
      * GenderController constructor.
      */
@@ -50,7 +49,7 @@ class DayTimeController extends Controller
     {
         $dayTime = request()->validate([
             'name' => 'required|string|min:3',
-            'description' => 'required|string'
+            'description' => 'required|string',
         ]);
 
         $dayTime = DayTime::create($dayTime);
@@ -91,7 +90,7 @@ class DayTimeController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'description' => 'required|min:5',
         ]);
 
         $dayTime->update(request(['name', 'description']));

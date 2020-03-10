@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TrackSurface;
 use App\Models\Properties\Meets\Track\Venue;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class TrackVenueController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -28,8 +27,7 @@ class TrackVenueController extends Controller
     {
         $venues = Venue::with('surface')->orderBy('name')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $venues;
         }
 
@@ -46,8 +44,4 @@ class TrackVenueController extends Controller
     {
         //
     }
-
-
-
-
 }

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\API\Physicals;
 
+use App\Http\Controllers\Controller;
 use App\Models\Physical;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use PDF;
 
 class PhysicalFormController extends Controller
 {
-
     /**
      * PhysicalFormController constructor.
      */
@@ -21,11 +20,11 @@ class PhysicalFormController extends Controller
     public function store(Physical $physical, Request $request)
     {
         request()->validate([
-            'physical-form' => 'required|file|max:10000'
+            'physical-form' => 'required|file|max:10000',
         ]);
 
         $physical->update([
-            'form_path' => request()->file('physical-form')->store('physicals', 'public')
+            'form_path' => request()->file('physical-form')->store('physicals', 'public'),
         ]);
 
         return response([], 204);

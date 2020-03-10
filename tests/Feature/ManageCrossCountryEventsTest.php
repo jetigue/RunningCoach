@@ -3,12 +3,12 @@
 namespace Tests\Feature;
 
 use App\Models\Properties\Races\CrossCountry\Event;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 use Throwable;
 
-class ManageTCrossCountryEventsTest extends TestCase
+class ManageCrossCountryEventsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
@@ -22,7 +22,7 @@ class ManageTCrossCountryEventsTest extends TestCase
         $name = '3200m';
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/cross-country/events', $attributes)->assertStatus(201);
@@ -42,7 +42,7 @@ class ManageTCrossCountryEventsTest extends TestCase
         $name = '3200m';
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/cross-country/events', $attributes)->assertRedirect('/');
@@ -56,7 +56,7 @@ class ManageTCrossCountryEventsTest extends TestCase
         $name = '3200m';
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/cross-country/events', $attributes)->assertRedirect('/');
@@ -70,7 +70,7 @@ class ManageTCrossCountryEventsTest extends TestCase
         $name = '3200m';
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/cross-country/events', $attributes)->assertRedirect('/');
@@ -82,7 +82,7 @@ class ManageTCrossCountryEventsTest extends TestCase
         $name = '3200m';
         $attributes = [
             'name' => $name,
-            'meters' => 3200
+            'meters' => 3200,
         ];
 
         $this->post('/api/cross-country/events', $attributes)->assertRedirect('/');
@@ -154,18 +154,18 @@ class ManageTCrossCountryEventsTest extends TestCase
 
         $event = factory(Event::class)->create([
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
 
-        $this->patch('api/cross-country/events/' . $event->slug, [
+        $this->patch('api/cross-country/events/'.$event->slug, [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => 1000
+            'meters' => 1000,
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('cross_country_events', [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => 1000
+            'meters' => 1000,
         ]);
     }
 
@@ -176,18 +176,18 @@ class ManageTCrossCountryEventsTest extends TestCase
 
         $event = factory(Event::class)->create([
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
 
-        $this->patch('api/cross-country/events/' . $event->slug, [
+        $this->patch('api/cross-country/events/'.$event->slug, [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => '1000'
+            'meters' => '1000',
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('cross_country_events', [
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
     }
 
@@ -198,18 +198,18 @@ class ManageTCrossCountryEventsTest extends TestCase
 
         $event = factory(Event::class)->create([
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
 
-        $this->patch('api/cross-country/events/' . $event->slug, [
+        $this->patch('api/cross-country/events/'.$event->slug, [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => '1000'
+            'meters' => '1000',
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('cross_country_events', [
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
     }
 
@@ -220,18 +220,18 @@ class ManageTCrossCountryEventsTest extends TestCase
 
         $event = factory(Event::class)->create([
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
 
-        $this->patch('api/cross-country/events/' . $event->slug, [
+        $this->patch('api/cross-country/events/'.$event->slug, [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => '1000'
+            'meters' => '1000',
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('cross_country_events', [
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
     }
 
@@ -240,18 +240,18 @@ class ManageTCrossCountryEventsTest extends TestCase
     {
         $event = factory(Event::class)->create([
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
 
-        $this->patch('api/cross-country/events/' . $event->slug, [
+        $this->patch('api/cross-country/events/'.$event->slug, [
             'name' => 'Changed CrossCountryEvent',
-            'meters' => '1000'
+            'meters' => '1000',
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('cross_country_events', [
             'name' => 'Original CrossCountryEvent',
-            'meters' => 800
+            'meters' => 800,
         ]);
     }
 }

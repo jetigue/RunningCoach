@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TrackSurface;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class TrackSurfaceController extends Controller
 {
-
     /**
      * TrackEventController constructor.
      */
@@ -18,7 +17,6 @@ class TrackSurfaceController extends Controller
     {
         $this->middleware('admin');
     }
-
 
     /**
      * Display a listing of the resource.

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\General;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\Distance;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class DistanceController extends Controller
 {
@@ -30,7 +30,7 @@ class DistanceController extends Controller
     {
         $distance = request()->validate([
             'name' => 'required|string|min:3',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $distance = Distance::create($distance);
@@ -60,7 +60,7 @@ class DistanceController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'meters' => 'required|integer'
+            'meters' => 'required|integer',
         ]);
 
         $distance->update(request(['name']));

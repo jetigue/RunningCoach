@@ -3,13 +3,12 @@
 namespace App\Repositories;
 
 use App\Models\Athlete;
-use App\Models\Results\CrossCountry\Result;
 use App\Models\Properties\Meets\CrossCountry\Venue;
+use App\Models\Results\CrossCountry\Result;
 use Carbon\Carbon;
 
 class CCVenueRecords
 {
-
     public function fastestBoys(Venue $venue)
     {
         return $fastestBoys = Result::orderBy('total_seconds', 'asc')->orderBy('milliseconds', 'asc')
@@ -297,5 +296,4 @@ class CCVenueRecords
             ->limit(50)
             ->get();
     }
-
 }

@@ -3,12 +3,13 @@
 namespace App\Models\Results\CrossCountry;
 
 use App\Models\Meets\CrossCountryMeet;
-use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\CrossCountry\Event;
+use App\Models\Properties\Races\Division;
 use App\Models\Properties\Races\Title;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class TeamResult extends Model
 {
@@ -20,7 +21,7 @@ class TeamResult extends Model
     protected $table = 'cross_country_team_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -33,20 +34,19 @@ class TeamResult extends Model
         'number_teams',
         'number_runners',
         'points',
-        'notes'
+        'notes',
     ];
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($teamResult) {
-
-            $teamResult->slug = str_slug(
-                $teamResult->division->gender->name . '-' .
+            $teamResult->slug = Str::slug(
+                $teamResult->division->gender->name.'-'.
                 $teamResult->division->level->name
             );
         });
@@ -75,7 +75,6 @@ class TeamResult extends Model
     {
         return $this->belongsTo(Division::class, 'division_id');
     }
-
 
     /**
      * @return BelongsTo
@@ -110,26 +109,27 @@ class TeamResult extends Model
         return $this->results()->create($results + ['total_seconds' => request('minutes') * 60 + request('seconds')]);
     }
 
-    public function getPlaceWithSuffixAttribute() {
-            $value = $this->attributes['place'];
+    public function getPlaceWithSuffixAttribute()
+    {
+        $value = $this->attributes['place'];
 
-            if ($value != null) {
-                if (!in_array(($value % 100), array(11, 12, 13)))
-                {
-                    switch ($value % 10)
-                    {
+        if ($value != null) {
+            if (! in_array(($value % 100), [11, 12, 13])) {
+                switch ($value % 10) {
                         // Handle 1st, 2nd, 3rd
                         case 1:
-                            return $value . 'st';
+                            return $value.'st';
                         case 2:
-                            return $value . 'nd';
+                            return $value.'nd';
                         case 3:
-                            return $value . 'rd';
+                            return $value.'rd';
                     }
-                }
-                return $value . 'th';
             }
+
+            return $value.'th';
+        }
     }
+
     /**
      * Apply all relevant name filters.
      *

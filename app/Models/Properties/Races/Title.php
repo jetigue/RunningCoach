@@ -16,7 +16,7 @@ class Title extends Model
     protected $table = 'race_titles';
 
     /**
-     * Fillable fields for a Division Title
+     * Fillable fields for a Division Title.
      *
      * @var array
      */

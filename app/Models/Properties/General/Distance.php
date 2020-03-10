@@ -5,7 +5,6 @@ namespace App\Models\Properties\General;
 use App\Models\Properties\Races\TrackEvent;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Distance extends Model
 {
     /**
@@ -16,13 +15,13 @@ class Distance extends Model
     protected $table = 'distances';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
     protected $fillable = [
         'name',
-        'meters'
+        'meters',
     ];
 
     /**
@@ -32,7 +31,7 @@ class Distance extends Model
      */
     public function path()
     {
-        return '/distances/' . $this->id;
+        return '/distances/'.$this->id;
     }
 
     public function event()

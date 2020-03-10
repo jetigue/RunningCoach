@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunningLog;
 use App\Repositories\RunningLogs;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class SummerRunningController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *

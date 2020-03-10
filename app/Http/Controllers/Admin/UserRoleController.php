@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Users\Role;
 use App\Http\Controllers\Controller;
+use App\Models\Users\Role;
 use Illuminate\Http\Response;
 
 class UserRoleController extends Controller
@@ -22,8 +22,7 @@ class UserRoleController extends Controller
     {
         $roles = Role::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $roles;
         }
 

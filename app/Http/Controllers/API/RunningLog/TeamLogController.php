@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunningLog;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TeamLogController extends Controller
 {

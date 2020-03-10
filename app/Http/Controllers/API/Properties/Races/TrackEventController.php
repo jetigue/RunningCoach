@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\API\Properties\Races;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Track\Event;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class TrackEventController extends Controller
 {
-
     /**
      * TrackEventController constructor.
      */
@@ -45,7 +44,7 @@ class TrackEventController extends Controller
         $event = request()->validate([
             'name' => 'required|string|min:2',
             'meters' => 'required|integer',
-            'relay' => 'required|boolean'
+            'relay' => 'required|boolean',
         ]);
 
         $event = Event::create($event);
@@ -64,7 +63,6 @@ class TrackEventController extends Controller
         //
     }
 
-
     /**
      * @param Request $request
      * @param Event $event
@@ -75,7 +73,7 @@ class TrackEventController extends Controller
         request()->validate([
             'name' => 'required|min:2',
             'meters' => 'required|integer',
-            'relay' => 'required|boolean'
+            'relay' => 'required|boolean',
         ]);
 
         $event->update(request(['name', 'meters', 'relay']));

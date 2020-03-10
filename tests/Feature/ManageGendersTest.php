@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Models\Properties\Races\Gender;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageGendersTest extends TestCase
 {
@@ -64,23 +64,23 @@ class ManageGendersTest extends TestCase
         $this->post('/api/genders', $attributes)->assertRedirect('/');
     }
 
-     /** @test */
-     public function a_gender_requires_a_name()
-     {
-         $this->signInAdmin();
+    /** @test */
+    public function a_gender_requires_a_name()
+    {
+        $this->signInAdmin();
 
-         $attributes = factory(Gender::class)->raw(['name' => '']);
+        $attributes = factory(Gender::class)->raw(['name' => '']);
 
-         $this->post('api/genders', $attributes)->assertSessionHasErrors('name');
-     }
+        $this->post('api/genders', $attributes)->assertSessionHasErrors('name');
+    }
 
-     /** @test */
-     public function an_admin_can_view_genders()
-     {
-         $this->signInAdmin();
+    /** @test */
+    public function an_admin_can_view_genders()
+    {
+        $this->signInAdmin();
 
-         $this->get('/genders')->assertSee('name');
-     }
+        $this->get('/genders')->assertSee('name');
+    }
 
     /** @test */
     public function a_coach_cannot_view_genders()
@@ -119,11 +119,11 @@ class ManageGendersTest extends TestCase
 
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
-        $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
+        $this->patch('api/genders/'.$gender->id, ['name' => 'Boys'])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('genders', [
-            'name' => 'Boys'
+            'name' => 'Boys',
         ]);
     }
 
@@ -134,7 +134,7 @@ class ManageGendersTest extends TestCase
 
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
-        $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
+        $this->patch('api/genders/'.$gender->id, ['name' => 'Boys'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('genders', ['name' => 'Girls']);
@@ -147,8 +147,8 @@ class ManageGendersTest extends TestCase
 
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
-        $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
-            ->assertRedirect('/');;
+        $this->patch('api/genders/'.$gender->id, ['name' => 'Boys'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('genders', ['name' => 'Girls']);
     }
@@ -160,8 +160,8 @@ class ManageGendersTest extends TestCase
 
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
-        $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
-            ->assertRedirect('/');;
+        $this->patch('api/genders/'.$gender->id, ['name' => 'Boys'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('genders', ['name' => 'Girls']);
     }
@@ -171,8 +171,8 @@ class ManageGendersTest extends TestCase
     {
         $gender = factory(Gender::class)->create(['name' => 'Girls']);
 
-        $this->patch('api/genders/' . $gender->id, ['name' => 'Boys'])
-            ->assertRedirect('/');;
+        $this->patch('api/genders/'.$gender->id, ['name' => 'Boys'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('genders', ['name' => 'Girls']);
     }

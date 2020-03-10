@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Auth;
 use Closure;
 
-
 class Coach
 {
     /**
@@ -20,9 +19,7 @@ class Coach
 //        if (Auth::check() && Auth::user()->role->slug === 'admin' || Auth::user()->role->slug === 'coach') {
         if (Auth::check() && Auth::user()->role->slug === 'coach') {
             return $next($request);
-        }
-
-        elseif (Auth::check() && Auth::user()->role->slug === 'admin') {
+        } elseif (Auth::check() && Auth::user()->role->slug === 'admin') {
             return $next($request);
         }
 

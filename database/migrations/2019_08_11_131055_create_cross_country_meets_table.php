@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCrossCountryMeetsTable extends Migration
 {
@@ -27,7 +27,6 @@ class CreateCrossCountryMeetsTable extends Migration
             $table->foreign('meet_name_id')->references('id')->on('meet_names');
             $table->foreign('timing_method_id')->references('id')->on('timing_methods');
             $table->foreign('cross_country_venue_id')->references('id')->on('cross_country_venues');
-
         });
     }
 

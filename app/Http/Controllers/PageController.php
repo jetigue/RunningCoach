@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\Team\Announcement;
 use App\Models\Team\TeamEvent;
-use Illuminate\Http\Request;
 use App\Repositories\Athletes;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     /**
-     * Display the Welcome page
+     * Display the Welcome page.
      *
      * @return void
      */
@@ -25,7 +25,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Booster Club page
+     * Display the Booster Club page.
      *
      * @return void
      */
@@ -35,7 +35,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Boys' Roster Page
+     * Display the Boys' Roster Page.
      *
      * @param Athletes $athletes
      * @return void
@@ -56,7 +56,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Coaches page
+     * Display the Coaches page.
      *
      * @return void
      */
@@ -66,7 +66,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Girls' Roster Page
+     * Display the Girls' Roster Page.
      *
      * @param Athletes $athletes
      * @return void
@@ -87,7 +87,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Longhorn 5k page
+     * Display the Longhorn 5k page.
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the Lambert river Run page
+     * Display the Lambert river Run page.
      *
      * @return void
      */
@@ -107,7 +107,7 @@ class PageController extends Controller
     }
 
     /**
-     * Display the team sponsors page
+     * Display the team sponsors page.
      *
      * @return void
      */

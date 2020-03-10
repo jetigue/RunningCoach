@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\Race;
 use App\Models\TimeTrials\Track\Result;
 use App\Models\TimeTrials\Track\TimeTrial;
@@ -11,7 +12,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
@@ -52,7 +52,7 @@ class TrackTimeTrialRaceResultController extends Controller
             'place',
             'milliseconds',
             'heat',
-            'total_seconds' => request('minutes') * 60 + request('seconds')
+            'total_seconds' => request('minutes') * 60 + request('seconds'),
             ]));
 
         return $result->load('athlete');
@@ -93,8 +93,8 @@ class TrackTimeTrialRaceResultController extends Controller
             'athlete_id',
             'milliseconds',
             'place',
-            'heat'
-        ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds'),]);
+            'heat',
+        ]) + ['total_seconds' => (request('minutes') * 60) + request('seconds')]);
 
         return response()->json($result, 200);
     }
