@@ -2,13 +2,13 @@
 
 namespace App\Models\Properties\Races\CrossCountry;
 
-use Illuminate\Support\Str;
 use App\Filters\EventFilter;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {

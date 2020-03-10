@@ -2,10 +2,10 @@
 
 namespace App\Models\Properties\Races\Track;
 
-use Illuminate\Support\Str;
 use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {

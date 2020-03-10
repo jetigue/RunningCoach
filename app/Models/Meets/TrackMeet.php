@@ -2,7 +2,6 @@
 
 namespace App\Models\Meets;
 
-use Illuminate\Support\Str;
 use App\Filters\TrackMeetFilter;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
@@ -14,6 +13,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class TrackMeet extends Model
 {

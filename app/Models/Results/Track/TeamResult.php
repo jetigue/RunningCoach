@@ -2,7 +2,6 @@
 
 namespace App\Models\Results\Track;
 
-use Illuminate\Support\Str;
 use App\Filters\TrackTeamResultFilter;
 use App\Models\Meets\TrackMeet;
 use App\Models\Properties\Races\Division;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class TeamResult extends Model
 {

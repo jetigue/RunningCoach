@@ -2,13 +2,13 @@
 
 namespace App\Models\Properties\General;
 
-use Illuminate\Support\Str;
 use App\Filters\SeasonFilter;
 use App\Models\Meets\TrackMeet;
 use App\Models\Properties\Meets\Name;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Season extends Model
 {

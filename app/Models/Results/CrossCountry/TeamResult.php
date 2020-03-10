@@ -2,7 +2,6 @@
 
 namespace App\Models\Results\CrossCountry;
 
-use Illuminate\Support\Str;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Races\CrossCountry\Event;
 use App\Models\Properties\Races\Division;
@@ -10,6 +9,7 @@ use App\Models\Properties\Races\Title;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class TeamResult extends Model
 {

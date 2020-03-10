@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Str;
 use App\Models\Users\Role;
 use App\Models\Users\User;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Role::class, function (Faker $faker) {
     $name = $faker

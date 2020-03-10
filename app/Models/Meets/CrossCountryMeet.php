@@ -2,7 +2,6 @@
 
 namespace App\Models\Meets;
 
-use Illuminate\Support\Str;
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
@@ -14,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Support\Str;
 
 class CrossCountryMeet extends Model
 {

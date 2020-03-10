@@ -2,8 +2,8 @@
 
 namespace App\Models\Users;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Role extends Model
 {
