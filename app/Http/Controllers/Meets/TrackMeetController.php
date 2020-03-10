@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Meets;
 
-use App\Models\Meets\TrackMeet;
 use App\Http\Controllers\Controller;
+use App\Models\Meets\TrackMeet;
 use App\Repositories\TrackMeets;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Response;
@@ -11,7 +11,6 @@ use Illuminate\View\View;
 
 class TrackMeetController extends Controller
 {
-
     /**
      * @param TrackMeets $meets
      * @return Factory|View
@@ -47,7 +46,6 @@ class TrackMeetController extends Controller
         ));
     }
 
-
     /**
      * @param TrackMeet $trackMeet
      * @return Factory|View
@@ -56,5 +54,4 @@ class TrackMeetController extends Controller
     {
         return view('meets.track.show', compact('trackMeet'));
     }
-
 }

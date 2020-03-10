@@ -3,9 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Athlete;
-use Carbon\Carbon;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use Carbon\Carbon;
 
 class AthleteCCResults
 {

@@ -16,12 +16,12 @@ class Gender extends Model
     protected $table = 'genders';
 
     /**
-     * Fillable fields for a Gender
+     * Fillable fields for a Gender.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -31,7 +31,7 @@ class Gender extends Model
      */
     public function path()
     {
-        return '/genders/' . $this->id;
+        return '/genders/'.$this->id;
     }
 
     /**

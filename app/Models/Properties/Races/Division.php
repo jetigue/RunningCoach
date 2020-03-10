@@ -17,7 +17,7 @@ class Division extends Model
     protected $table = 'divisions';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
@@ -26,7 +26,6 @@ class Division extends Model
         'level_id',
     ];
 
-
     /**
      * @return BelongsTo
      */
@@ -34,7 +33,6 @@ class Division extends Model
     {
         return $this->belongsTo(Gender::class, 'gender_id');
     }
-
 
     /**
      * @return BelongsTo
@@ -61,16 +59,14 @@ class Division extends Model
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($division) {
-
-            $division->name = $division->level->name . ' ' . $division->gender->name;
-
+            $division->name = $division->level->name.' '.$division->gender->name;
         });
     }
 }

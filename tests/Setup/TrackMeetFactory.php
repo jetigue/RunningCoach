@@ -65,14 +65,14 @@ class TrackMeetFactory
 
         $trackMeet = factory(TrackMeet::class)->create([
             'meet_name_id' => $this->withMeetName ?? factory(Name::class)->create([
-                'season_id' => $season->id
+                'season_id' => $season->id,
                 ]),
             'season_id' => $season->id,
 //            'season_id' => $this->duringSeason ?? factory(Season::class)->create(),
             'host_id' => $this->hostedBy ?? factory(Host::class)->create(),
             'venue_id' => $this->atVenue ?? factory(Venue::class)->create([
-                'season_id' => $season->id
-                ])
+                'season_id' => $season->id,
+                ]),
         ]);
 
         return $trackMeet;

@@ -14,12 +14,12 @@ class Level extends Model
     protected $table = 'levels';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -29,7 +29,7 @@ class Level extends Model
      */
     public function path()
     {
-        return '/levels/' . $this->id;
+        return '/levels/'.$this->id;
     }
 
     public function divisions()

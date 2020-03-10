@@ -17,7 +17,7 @@ class Result extends Model
     protected $table = 'cross_country_results';
 
     /**
-     * Fillable fields for a Cross Country Result
+     * Fillable fields for a Cross Country Result.
      *
      * @var array
      */
@@ -27,11 +27,11 @@ class Result extends Model
         'place',
         'total_seconds',
         'milliseconds',
-        'points'
+        'points',
     ];
 
     /**
-     * Save total seconds on create and update
+     * Save total seconds on create and update.
      */
 //    public static function boot()
 //    {
@@ -47,34 +47,35 @@ class Result extends Model
     /**
      * @return string
      */
-    public function getPlaceWithSuffixAttribute() {
+    public function getPlaceWithSuffixAttribute()
+    {
         $value = $this->attributes['place'];
 
         if ($value != null) {
-            if (!in_array(($value % 100), array(11, 12, 13)))
-            {
-                switch ($value % 10)
-                {
+            if (! in_array(($value % 100), [11, 12, 13])) {
+                switch ($value % 10) {
                     // Handle 1st, 2nd, 3rd
                     case 1:
-                        return $value . 'st';
+                        return $value.'st';
                     case 2:
-                        return $value . 'nd';
+                        return $value.'nd';
                     case 3:
-                        return $value . 'rd';
+                        return $value.'rd';
                 }
             }
-            return $value . 'th';
+
+            return $value.'th';
         }
     }
 
     /**
      * @return false|string
      */
-    public function getTimeAttribute() {
+    public function getTimeAttribute()
+    {
         $seconds = $this->attributes['total_seconds'];
 
-                return gmdate("i:s", $seconds);
+        return gmdate('i:s', $seconds);
     }
 
     /**
@@ -96,10 +97,10 @@ class Result extends Model
     /**
      * @return string
      */
-    function getMillisecondAttribute() {
-        return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    public function getMillisecondAttribute()
+    {
+        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
     }
-
 
 //    /**
 //     * Apply all relevant name filters.

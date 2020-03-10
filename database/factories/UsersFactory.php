@@ -7,33 +7,33 @@ use Faker\Generator as Faker;
 $factory->define(Role::class, function (Faker $faker) {
     $name = $faker
         ->unique()
-        ->randomElement($array = array(
+        ->randomElement($array = [
             'Viewer',
             'Athlete',
             'Coach',
-            'Admin'
-        ));
+            'Admin',
+        ]);
 
     return [
         'name' => $name,
-        'slug' => str_slug($name)
+        'slug' => str_slug($name),
     ];
 });
 
 $factory->state(Role::class, 'admin', [
-    'name' => 'admin'
+    'name' => 'admin',
 ]);
 
 $factory->state(Role::class, 'coach', [
-    'name' => 'coach'
+    'name' => 'coach',
 ]);
 
 $factory->state(Role::class, 'athlete', [
-    'name' => 'athlete'
+    'name' => 'athlete',
 ]);
 
 $factory->state(Role::class, 'viewer', [
-    'name' => 'viewer'
+    'name' => 'viewer',
 ]);
 
 $factory->define(User::class, function (Faker $faker) {
@@ -47,4 +47,3 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token'    => str_random(10),
     ];
 });
-

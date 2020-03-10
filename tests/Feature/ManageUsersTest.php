@@ -4,14 +4,13 @@ namespace Tests\Feature;
 
 use App\Models\Users\Role;
 use App\Models\Users\User;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageUsersTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
-
 
     /** @test */
     public function an_admin_can_view_users()
@@ -70,11 +69,11 @@ class ManageUsersTest extends TestCase
             'user_role_id' => $roleViewer->id,
         ]);
 
-        $this->patch('api/users/' . $user->id, [
+        $this->patch('api/users/'.$user->id, [
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleAthlete->id
+            'user_role_id' => $roleAthlete->id,
         ])
             ->assertStatus(200);
 
@@ -83,7 +82,7 @@ class ManageUsersTest extends TestCase
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleAthlete->id
+            'user_role_id' => $roleAthlete->id,
         ]);
     }
 
@@ -102,11 +101,11 @@ class ManageUsersTest extends TestCase
             'user_role_id' => $roleViewer->id,
         ]);
 
-        $this->patch('api/users/' . $user->id, [
+        $this->patch('api/users/'.$user->id, [
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleAthlete->id
+            'user_role_id' => $roleAthlete->id,
         ])
             ->assertRedirect('/');
 
@@ -134,11 +133,11 @@ class ManageUsersTest extends TestCase
             'user_role_id' => $roleViewer->id,
         ]);
 
-        $this->patch('api/users/' . $user->id, [
+        $this->patch('api/users/'.$user->id, [
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleCoach->id
+            'user_role_id' => $roleCoach->id,
         ])
             ->assertRedirect('/');
 
@@ -166,11 +165,11 @@ class ManageUsersTest extends TestCase
             'user_role_id' => $roleAthlete->id,
         ]);
 
-        $this->patch('api/users/' . $user->id, [
+        $this->patch('api/users/'.$user->id, [
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleCoach->id
+            'user_role_id' => $roleCoach->id,
         ])
             ->assertRedirect('/');
 
@@ -196,11 +195,11 @@ class ManageUsersTest extends TestCase
             'user_role_id' => $roleViewer->id,
         ]);
 
-        $this->patch('api/users/' . $user->id, [
+        $this->patch('api/users/'.$user->id, [
             'first_name' => 'Different First Name',
             'last_name' => 'Different Last Name',
             'email' => 'Different@email.com',
-            'user_role_id' => $roleCoach->id
+            'user_role_id' => $roleCoach->id,
         ])
             ->assertRedirect('/');
 

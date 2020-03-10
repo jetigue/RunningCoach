@@ -5,9 +5,9 @@ namespace App\Models\Results\Track;
 use App\Filters\TrackTeamResultFilter;
 use App\Models\Meets\TrackMeet;
 use App\Models\Properties\Races\Division;
-use App\Models\Results\Track\Result;
-use App\Models\Properties\Races\Level;
 use App\Models\Properties\Races\Gender;
+use App\Models\Properties\Races\Level;
+use App\Models\Results\Track\Result;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,7 +23,7 @@ class TeamResult extends Model
     protected $table = 'track_team_results';
 
     /**
-     * Fillable fields for a Season
+     * Fillable fields for a Season.
      *
      * @var array
      */
@@ -33,20 +33,19 @@ class TeamResult extends Model
         'place',
         'number_teams',
         'points',
-        'notes'
+        'notes',
     ];
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($teamResult) {
-
             $teamResult->slug = str_slug(
-                $teamResult->division->gender->name . '-' .
+                $teamResult->division->gender->name.'-'.
                 $teamResult->division->level->name
             );
         });

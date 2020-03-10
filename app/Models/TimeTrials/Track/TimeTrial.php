@@ -20,10 +20,10 @@ class TimeTrial extends Model
     protected $table = 'track_time_trials';
 
     /**
-    * Fillable fields for a track time trial.
-    *
-    *@var array
-    */
+     * Fillable fields for a track time trial.
+     *
+     *@var array
+     */
     protected $fillable = [
         'name',
         'trial_date',
@@ -43,7 +43,7 @@ class TimeTrial extends Model
      */
     public function path()
     {
-        return '/track/time-trials/' . $this->id;
+        return '/track/time-trials/'.$this->id;
     }
 
     /**

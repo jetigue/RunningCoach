@@ -7,7 +7,6 @@ use Carbon\Carbon;
 
 class Athletes
 {
-
     public function all()
     {
         $all = Athlete::orderBy('last_name', 'asc')->get();
@@ -22,6 +21,7 @@ class Athletes
         } else {
             $freshmen = Athlete::where('grad_year', '=', Carbon::now()->year + 3)->get();
         }
+
         return $freshmen;
     }
 
@@ -32,6 +32,7 @@ class Athletes
         } else {
             $sophomores = Athlete::where('grad_year', '=', Carbon::now()->year + 2)->get();
         }
+
         return $sophomores;
     }
 
@@ -42,6 +43,7 @@ class Athletes
         } else {
             $juniors = Athlete::where('grad_year', '=', Carbon::now()->year + 1)->get();
         }
+
         return $juniors;
     }
 
@@ -52,6 +54,7 @@ class Athletes
         } else {
             $seniors = Athlete::where('grad_year', '=', Carbon::now()->year + 0)->get();
         }
+
         return $seniors;
     }
 
@@ -62,6 +65,7 @@ class Athletes
         } else {
             $alumnus = Athlete::where('grad_year', '<', Carbon::now()->year)->get();
         }
+
         return $alumnus;
     }
 

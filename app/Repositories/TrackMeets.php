@@ -6,7 +6,6 @@ use App\Models\Meets\TrackMeet;
 
 class TrackMeets
 {
-
     public function trackMeets2020()
     {
         return $trackMeets2019 = TrackMeet::with('host', 'season', 'venue', 'timing', 'name')
@@ -101,5 +100,4 @@ class TrackMeets
             ->orderBy('meet_date', 'desc')
             ->get();
     }
-
 }

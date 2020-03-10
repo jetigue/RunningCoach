@@ -30,6 +30,6 @@ class Announcement extends Model
         'link_2',
         'link_text_2',
         'link_3',
-        'link_text_3'
+        'link_text_3',
     ];
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Meets;
 
-use App\Models\Meets\CrossCountryMeet;
 use App\Http\Controllers\Controller;
+use App\Models\Meets\CrossCountryMeet;
 use App\Repositories\CrossCountryMeets;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Response;
@@ -58,5 +58,4 @@ class CrossCountryMeetController extends Controller
     {
         return view('meets.crossCountry.show', compact('crossCountryMeet'));
     }
-
 }

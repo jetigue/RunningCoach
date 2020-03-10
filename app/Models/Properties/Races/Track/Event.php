@@ -16,14 +16,14 @@ class Event extends Model
     protected $table = 'track_events';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
     protected $fillable = [
         'name',
         'meters',
-        'relay'
+        'relay',
     ];
 
     /**
@@ -41,11 +41,11 @@ class Event extends Model
      */
     public function path()
     {
-        return '/track-events/' . $this->slug;
+        return '/track-events/'.$this->slug;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {

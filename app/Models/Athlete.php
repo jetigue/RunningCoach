@@ -2,28 +2,28 @@
 
 namespace App\Models;
 
-use App\Models\Physical;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filters\AthleteFilter;
+use App\Models\Physical;
 use App\Models\Results\CrossCountry\Result;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Athlete extends Model
 {
-	/**
+    /**
      * The table associated with the model.
      *
      * @var string
      */
     protected $table = 'athletes';
 
-  /**
-    * Fillable fields for an athlete.
-    *
-    *@var array
-    */
+    /**
+     * Fillable fields for an athlete.
+     *
+     *@var array
+     */
     protected $fillable = [
         'first_name',
         'last_name',
@@ -31,30 +31,29 @@ class Athlete extends Model
         'grad_year',
         'status',
         'dob',
-        'user_id'
+        'user_id',
         ];
 
-  /**
+    /**
      * Get a string path for the division.
      *
      * @return string
      */
     public function path()
     {
-        return '/athletes/' . $this->id;
+        return '/athletes/'.$this->id;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($athlete) {
-
             $athlete->slug = str_slug(
-                $athlete->first_name . '-' . $athlete->last_name . '-' . $athlete->grad_year
+                $athlete->first_name.'-'.$athlete->last_name.'-'.$athlete->grad_year
             );
         });
     }
@@ -108,5 +107,4 @@ class Athlete extends Model
     {
         return $filters->apply($query);
     }
-
 }

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunEffort;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunEffortController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin');

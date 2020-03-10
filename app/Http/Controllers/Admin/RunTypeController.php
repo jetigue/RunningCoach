@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunType;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunTypeController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin');

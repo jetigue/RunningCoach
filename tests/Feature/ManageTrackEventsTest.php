@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Properties\Races\Track\Event;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 use Throwable;
 
 class ManageTrackEventsTest extends TestCase
@@ -23,7 +23,7 @@ class ManageTrackEventsTest extends TestCase
         $attributes = [
             'name' => $name,
             'meters' => 3200,
-            'relay' => 0
+            'relay' => 0,
         ];
 
         $this->post('/api/track/events', $attributes)->assertStatus(201);
@@ -44,7 +44,7 @@ class ManageTrackEventsTest extends TestCase
         $attributes = [
             'name' => $name,
             'meters' => 3200,
-            'relay' => 0
+            'relay' => 0,
         ];
 
         $this->post('/api/track/events', $attributes)->assertRedirect('/');
@@ -59,7 +59,7 @@ class ManageTrackEventsTest extends TestCase
         $attributes = [
             'name' => $name,
             'meters' => 3200,
-            'relay' => 0
+            'relay' => 0,
         ];
 
         $this->post('/api/track/events', $attributes)->assertRedirect('/');
@@ -74,7 +74,7 @@ class ManageTrackEventsTest extends TestCase
         $attributes = [
             'name' => $name,
             'meters' => 3200,
-            'relay' => 0
+            'relay' => 0,
         ];
 
         $this->post('/api/track/events', $attributes)->assertRedirect('/');
@@ -87,7 +87,7 @@ class ManageTrackEventsTest extends TestCase
         $attributes = [
             'name' => $name,
             'meters' => 3200,
-            'relay' => 0
+            'relay' => 0,
         ];
 
         $this->post('/api/track/events', $attributes)->assertRedirect('/');
@@ -160,20 +160,20 @@ class ManageTrackEventsTest extends TestCase
         $event = factory(Event::class)->create([
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
 
-        $this->patch('api/track/events/' . $event->slug, [
+        $this->patch('api/track/events/'.$event->slug, [
             'name' => 'Changed TrackEvent',
             'meters' => 1000,
-            'relay' => 0
+            'relay' => 0,
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('track_events', [
             'name' => 'Changed TrackEvent',
             'meters' => 1000,
-            'relay' => 0
+            'relay' => 0,
         ]);
     }
 
@@ -185,20 +185,20 @@ class ManageTrackEventsTest extends TestCase
         $event = factory(Event::class)->create([
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
 
-        $this->patch('api/track/events/' . $event->slug, [
+        $this->patch('api/track/events/'.$event->slug, [
             'name' => 'Changed TrackEvent',
             'meters' => '1000',
-            'relay' => 0
+            'relay' => 0,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_events', [
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
     }
 
@@ -210,20 +210,20 @@ class ManageTrackEventsTest extends TestCase
         $event = factory(Event::class)->create([
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
 
-        $this->patch('api/track/events/' . $event->slug, [
+        $this->patch('api/track/events/'.$event->slug, [
             'name' => 'Changed TrackEvent',
             'meters' => '1000',
-            'relay' => 0
+            'relay' => 0,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_events', [
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
     }
 
@@ -235,20 +235,20 @@ class ManageTrackEventsTest extends TestCase
         $event = factory(Event::class)->create([
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
 
-        $this->patch('api/track/events/' . $event->slug, [
+        $this->patch('api/track/events/'.$event->slug, [
             'name' => 'Changed TrackEvent',
             'meters' => '1000',
-            'relay' => 0
+            'relay' => 0,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_events', [
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
     }
 
@@ -258,20 +258,20 @@ class ManageTrackEventsTest extends TestCase
         $event = factory(Event::class)->create([
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
 
-        $this->patch('api/track/events/' . $event->slug, [
+        $this->patch('api/track/events/'.$event->slug, [
             'name' => 'Changed TrackEvent',
             'meters' => '1000',
-            'relay' => 0
+            'relay' => 0,
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('track_events', [
             'name' => 'Original TrackEvent',
             'meters' => 800,
-            'relay' => 0
+            'relay' => 0,
         ]);
     }
 }

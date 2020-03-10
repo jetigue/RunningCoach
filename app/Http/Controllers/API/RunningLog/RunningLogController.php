@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunningLog;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunningLogController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -55,14 +54,14 @@ class RunningLogController extends Controller
             'run_type_id'       => 'integer|required',
             'run_effort_id'     => 'integer|required',
             'run_feeling_id'    => 'integer|required',
-            'notes'             => 'nullable'
+            'notes'             => 'nullable',
         ]);
 
         $runningLog = RunningLog::create($runningLog + [
             'user_id' => auth()->id(),
-            'total_seconds' => request('hours') * 3600 + request('minutes') * 60 + request('seconds')
+            'total_seconds' => request('hours') * 3600 + request('minutes') * 60 + request('seconds'),
             ])
-            ->load('dayTime', 'runEffort', 'runFeeling','runType', 'terrainType');
+            ->load('dayTime', 'runEffort', 'runFeeling', 'runType', 'terrainType');
 
         return response()->json($runningLog, 201);
     }
@@ -122,9 +121,8 @@ class RunningLogController extends Controller
             'run_type_id',
             'run_effort_id',
             'run_feeling_id',
-            'notes'
-        ]) + ['total_seconds' =>
-                    request('hours') * 3600 + request('minutes') * 60 + request('seconds')
+            'notes',
+        ]) + ['total_seconds' => request('hours') * 3600 + request('minutes') * 60 + request('seconds'),
             ]);
 
         return response()->json($runningLog, 200);

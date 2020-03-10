@@ -100,6 +100,4 @@ class CrossCountryMeets
             ->orderBy('meet_date', 'desc')
             ->get();
     }
-
-
 }

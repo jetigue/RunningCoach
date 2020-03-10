@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
+use App\Models\Properties\Races\CrossCountry\Event;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
-use Tests\TestCase;
-use App\Models\Properties\Races\CrossCountry\Event;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class CrossCountryEventTest extends TestCase
 {
@@ -26,7 +26,7 @@ class CrossCountryEventTest extends TestCase
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/cross-country-events/' . $this->event->slug, $this->event->path());
+            '/cross-country-events/'.$this->event->slug, $this->event->path());
     }
 
     /** @test */
@@ -46,5 +46,4 @@ class CrossCountryEventTest extends TestCase
             $this->event->crossCountryResults
         );
     }
-
 }

@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
+use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
-use Tests\TestCase;
-use App\Models\Properties\Races\Track\Event;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class TrackEventTest extends TestCase
 {
@@ -26,7 +26,7 @@ class TrackEventTest extends TestCase
     public function it_has_a_path()
     {
         $this->assertEquals(
-            '/track-events/' . $this->event->slug, $this->event->path());
+            '/track-events/'.$this->event->slug, $this->event->path());
     }
 
     /** @test */
@@ -37,5 +37,4 @@ class TrackEventTest extends TestCase
             $this->event->trackResults
         );
     }
-
 }

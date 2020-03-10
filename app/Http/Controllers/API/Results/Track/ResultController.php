@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\Results\Track;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meets\TrackMeet;
 use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
@@ -9,7 +10,6 @@ use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
@@ -25,7 +25,6 @@ class ResultController extends Controller
         //
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +34,6 @@ class ResultController extends Controller
      */
     public function store(TrackMeet $trackMeet, TeamResult $teamResult)
     {
-
         request()->validate([
             'athlete_id'        => 'required|integer',
             'track_event_id'    => 'required|integer',
@@ -72,7 +70,6 @@ class ResultController extends Controller
         //
     }
 
-
     /**
      * @param Request $request
      * @param TrackMeet $trackMeet
@@ -91,7 +88,7 @@ class ResultController extends Controller
             'milliseconds' => 'nullable|integer',
             'place' => 'required|integer',
             'points' => 'nullable|integer',
-            'heat' => 'required|integer'
+            'heat' => 'required|integer',
         ]);
 
         $result->update(request([
@@ -105,7 +102,6 @@ class ResultController extends Controller
 
         return response()->json($result, 200);
     }
-
 
     /**
      * @param TrackMeet $trackMeet

@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageRunningLogTest extends TestCase
 {
@@ -34,9 +34,9 @@ class ManageRunningLogTest extends TestCase
             'run_type_id'  => $this->faker->numberBetween($min = 1, $max = 5),
             'terrain_type_id'  => $this->faker->numberBetween($min = 1, $max = 5),
             'run_effort_id'  => $this->faker->numberBetween($min = 1, $max = 5),
-            'run_feeling_id'  => $this->faker->numberBetween($min = 1, $max = 5)
+            'run_feeling_id'  => $this->faker->numberBetween($min = 1, $max = 5),
         ];
-//dd($attributes);
+        //dd($attributes);
         $this->post('/api/running-log', $attributes)->assertStatus(201);
 
 //        $this->assertDatabaseHas('running_logs', $attributes);

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunningLog;
 use App\Repositories\RunningLogs;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunningLogController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -130,7 +129,7 @@ class RunningLogController extends Controller
             'run_type_id'       =>  'required|integer',
             'run_effort_id'     => 'required|integer',
             'run_feeling_id'    => 'required|integer',
-            'notes'             => 'nullable'
+            'notes'             => 'nullable',
         ]);
 
         $runningLog->update(request([
@@ -143,13 +142,11 @@ class RunningLogController extends Controller
             'milliseconds',
             'total_seconds',
             'terrain_type_id',
-            'run_type_id' ,
+            'run_type_id',
             'run_effort_id',
             'run_feeling_id',
-            'notes'
+            'notes',
         ]));
-
-
     }
 
     /**

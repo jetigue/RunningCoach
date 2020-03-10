@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\Properties\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunType;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunTypeController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin')->except('index');
@@ -89,7 +88,7 @@ class RunTypeController extends Controller
     {
         request()->validate([
             'name' => 'required|string|min:3',
-            'description' => 'required|string|min:5'
+            'description' => 'required|string|min:5',
         ]);
 
         $runType->update(request(['name', 'description']));

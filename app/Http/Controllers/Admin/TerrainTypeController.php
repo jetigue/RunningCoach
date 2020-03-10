@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TerrainType;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TerrainTypeController extends Controller
 {

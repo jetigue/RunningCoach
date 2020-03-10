@@ -183,5 +183,4 @@ class TrackResults
             ->with('teamResult', 'athlete', 'event')
             ->get();
     }
-
 }

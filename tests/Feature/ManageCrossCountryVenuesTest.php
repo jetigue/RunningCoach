@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Properties\Meets\CrossCountry\Venue;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageCrossCountryVenuesTest extends TestCase
 {
@@ -17,7 +17,7 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInAdmin();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park"
+            'name' => $this->faker->word.' '.'Park',
         ];
 
         $this->post('/api/cross-country/venues', $attributes);
@@ -35,7 +35,7 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInCoach();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park"
+            'name' => $this->faker->word.' '.'Park',
         ];
 
         $this->post('/api/cross-country/venues', $attributes);
@@ -63,7 +63,7 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInAthlete();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park"
+            'name' => $this->faker->word.' '.'Park',
         ];
 
         $this->post('/api/cross-country/venues', $attributes)->assertRedirect('/');
@@ -75,7 +75,7 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInViewer();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park"
+            'name' => $this->faker->word.' '.'Park',
         ];
 
         $this->post('/api/cross-country/venues', $attributes)->assertRedirect('/');
@@ -85,7 +85,7 @@ class ManageCrossCountryVenuesTest extends TestCase
     public function a_guest_cannot_create_a_cross_country_venue()
     {
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
+            'name' => $this->faker->word.' '.'Park',
         ];
 
         $this->post('/api/cross-country/venues', $attributes)->assertRedirect('/');
@@ -138,13 +138,13 @@ class ManageCrossCountryVenuesTest extends TestCase
             'name' => 'Original Meet Venue',
         ]);
 
-        $this->patch('api/cross-country/venues/' . $name->id, [
+        $this->patch('api/cross-country/venues/'.$name->id, [
             'name' => 'New Meet Venue',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('cross_country_venues', [
-            'name' => 'New Meet Venue'
+            'name' => 'New Meet Venue',
         ]);
     }
 
@@ -154,16 +154,16 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInCoach();
 
         $name = factory(Venue::class)->create([
-            'name' => 'Original Meet Venue'
+            'name' => 'Original Meet Venue',
         ]);
 
-        $this->patch('api/cross-country/venues/' . $name->id, [
-            'name' => 'New Meet Venue'
+        $this->patch('api/cross-country/venues/'.$name->id, [
+            'name' => 'New Meet Venue',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('cross_country_venues', [
-            'name' => 'New Meet Venue'
+            'name' => 'New Meet Venue',
         ]);
     }
 
@@ -173,10 +173,10 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInAthlete();
 
         $name = factory(Venue::class)->create([
-            'name' => 'Original Meet Venue'
+            'name' => 'Original Meet Venue',
         ]);
 
-        $this->patch('api/cross-country/venues/' . $name->id, [
+        $this->patch('api/cross-country/venues/'.$name->id, [
             'name' => 'New Meet Venue',
         ])
             ->assertRedirect('/');
@@ -190,10 +190,10 @@ class ManageCrossCountryVenuesTest extends TestCase
         $this->signInViewer();
 
         $name = factory(Venue::class)->create([
-            'name' => 'Original Meet Venue'
+            'name' => 'Original Meet Venue',
         ]);
 
-        $this->patch('api/cross-country/venues/' . $name->id, [
+        $this->patch('api/cross-country/venues/'.$name->id, [
             'name' => 'New Meet Venue',
         ])
             ->assertRedirect('/');
@@ -205,15 +205,14 @@ class ManageCrossCountryVenuesTest extends TestCase
     public function a_guest_cannot_update_a_cross_country_venue()
     {
         $name = factory(Venue::class)->create([
-            'name' => 'Original Meet Venue'
+            'name' => 'Original Meet Venue',
         ]);
 
-        $this->patch('api/cross-country/venues/' . $name->id, [
+        $this->patch('api/cross-country/venues/'.$name->id, [
             'name' => 'New Meet Venue',
         ])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('cross_country_venues', ['name' => 'Original Meet Venue']);
     }
-
 }

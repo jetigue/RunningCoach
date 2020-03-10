@@ -14,12 +14,12 @@ class Role extends Model
     protected $table = 'user_roles';
 
     /**
-     * Fillable fields for a User Role
+     * Fillable fields for a User Role.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
 //    /**
@@ -29,7 +29,6 @@ class Role extends Model
 //    {
 //        return 'slug';
 //    }
-
 
     public static function boot()
     {
@@ -47,7 +46,7 @@ class Role extends Model
      */
     public function path()
     {
-        return '/user-roles/' . $this->id;
+        return '/user-roles/'.$this->id;
     }
 
     /**

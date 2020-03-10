@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Runninglog\RunFeeling;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageRunFeelingsTest extends TestCase
 {
@@ -143,18 +143,18 @@ class ManageRunFeelingsTest extends TestCase
 
         $runFeeling = factory(RunFeeling::class)->create([
             'name' => 'Good',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-feelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/'.$runFeeling->id, [
             'name' => 'Great',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('run_feelings', [
             'name' => 'Great',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -165,12 +165,12 @@ class ManageRunFeelingsTest extends TestCase
 
         $runFeeling = factory(RunFeeling::class)->create([
             'name' => 'Good',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-feelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/'.$runFeeling->id, [
             'name' => 'Great',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -184,12 +184,12 @@ class ManageRunFeelingsTest extends TestCase
 
         $runFeeling = factory(RunFeeling::class)->create([
             'name' => 'Good',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-feelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/'.$runFeeling->id, [
             'name' => 'Great',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -203,12 +203,12 @@ class ManageRunFeelingsTest extends TestCase
 
         $runFeeling = factory(RunFeeling::class)->create([
             'name' => 'Good',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-feelings/' . $runFeeling->id, [
+        $this->patch('api/run-feelings/'.$runFeeling->id, [
             'name' => 'Great',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -220,12 +220,12 @@ class ManageRunFeelingsTest extends TestCase
     {
         $runType = factory(RunFeeling::class)->create([
             'name' => 'Good',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-feelings/' . $runType->id, [
+        $this->patch('api/run-feelings/'.$runType->id, [
             'name' => 'Great',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

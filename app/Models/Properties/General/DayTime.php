@@ -14,7 +14,7 @@ class DayTime extends Model
     protected $table = 'day_times';
 
     /**
-     * Fillable fields for a Time of Day
+     * Fillable fields for a Time of Day.
      *
      * @var array
      */

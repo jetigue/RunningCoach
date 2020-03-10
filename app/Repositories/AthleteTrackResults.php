@@ -6,7 +6,6 @@ use App\Models\Athlete;
 use App\Models\Properties\Races\Track\Event;
 use App\Models\Results\Track\Result;
 
-
 class AthleteTrackResults
 {
     public function trackResults(Athlete $athlete)
@@ -108,6 +107,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2010')
             ->get();
     }
+
     public function track400mResults2020(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -323,6 +323,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2018')
             ->get();
     }
+
     public function track1600mResults2018(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -330,6 +331,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2018')
             ->get();
     }
+
     public function track1mileResults2018(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -945,6 +947,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2011')
             ->get();
     }
+
     public function track1mileResults2011(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -1024,6 +1027,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2010')
             ->get();
     }
+
     public function track1600mResults2010(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -1031,6 +1035,7 @@ class AthleteTrackResults
             ->whereYear('track_meets.meet_date', '2010')
             ->get();
     }
+
     public function track1mileResults2010(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)

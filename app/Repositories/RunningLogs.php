@@ -10,7 +10,6 @@ use DB;
 
 class RunningLogs
 {
-
     public function all()
     {
         $all = RunningLog::orderBy('run_date', 'desc')->get();
@@ -20,7 +19,6 @@ class RunningLogs
 
     public function totalMileage()
     {
-
         $totalMileage = RunningLog::all()->where('user_id', Auth::user()->id)->sum('distance');
 
         return $totalMileage;
@@ -28,7 +26,6 @@ class RunningLogs
 
     public function totalSummerMileage()
     {
-
         $totalSummerMileage = RunningLog::all()
             ->where('user_id', Auth::user()->id)
             ->where('run_date', '>', '2019-05-12')
@@ -38,10 +35,8 @@ class RunningLogs
         return $totalSummerMileage;
     }
 
-
     public function totalSummerMileagePerRunner()
     {
-
         $totalSummerMileagePerRunner = RunningLog::select(
             DB::raw('
                 user_id,
@@ -65,6 +60,7 @@ class RunningLogs
             ->where('run_date', '>=', Carbon::today()->startOfWeek()->subDay())
             ->where('run_date', '<=', Carbon::today()->endOfWeek()->subDay())
             ->sum('distance');
+
         return $totalMileageThisWeek;
     }
 
@@ -75,6 +71,7 @@ class RunningLogs
             ->where('run_date', '>=', Carbon::today()->startOfMonth())
             ->where('run_date', '<=', Carbon::today()->endOfMonth())
             ->sum('distance');
+
         return $totalMileageThisMonth;
     }
 
@@ -85,6 +82,7 @@ class RunningLogs
             ->where('run_date', '>=', Carbon::today()->startOfYear())
             ->where('run_date', '<=', Carbon::today()->endOfYear())
             ->sum('distance');
+
         return $totalMileageThisYear;
     }
 

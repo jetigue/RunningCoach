@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\Race;
 use App\Models\TimeTrials\Track\Result;
 use App\Models\TimeTrials\Track\TimeTrial;
@@ -12,7 +13,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
@@ -23,7 +23,6 @@ class TrackTimeTrialRaceController extends Controller
     {
         $this->middleware('coach');
     }
-
 
     /**
      * Display a listing of the resource.
@@ -48,13 +47,13 @@ class TrackTimeTrialRaceController extends Controller
         request()->validate([
             'gender_id'             => 'required|integer',
             'track_event_id'        => 'required|integer',
-            'notes'                 => 'nullable|string'
+            'notes'                 => 'nullable|string',
         ]);
 
         $race = $timeTrial->addRace(request([
             'gender_id',
             'track_event_id',
-            'notes'
+            'notes',
         ]));
 
         return $race->load('gender', 'event');
@@ -89,13 +88,13 @@ class TrackTimeTrialRaceController extends Controller
         $this->validate($request, [
             'gender_id'             => 'required|integer',
             'track_event_id'        => 'required|integer',
-            'notes'                 => 'nullable|string'
+            'notes'                 => 'nullable|string',
         ]);
 
         $race->update(request([
             'gender_id',
             'track_event_id',
-            'notes'
+            'notes',
         ]));
 
         return response()->json($race, 200);

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API\Properties\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunEffort;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunEffortController extends Controller
 {
@@ -63,7 +63,6 @@ class RunEffortController extends Controller
      */
     public function show(RunEffort $runEffort)
     {
-
     }
 
     /**
@@ -88,7 +87,7 @@ class RunEffortController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'description' => 'required|min:5',
         ]);
 
         $runEffort->update(request(['name', 'description']));

@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Team\Announcement;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageAnnouncementsTest extends TestCase
 {
@@ -185,14 +185,14 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
 
-        $this->patch('api/announcements/' . $announcement->id, [
+        $this->patch('api/announcements/'.$announcement->id, [
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ])
             ->assertStatus(200);
 
@@ -200,7 +200,7 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ]);
     }
 
@@ -213,14 +213,14 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
 
-        $this->patch('api/announcements/' . $announcement->id, [
+        $this->patch('api/announcements/'.$announcement->id, [
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ])
             ->assertStatus(200);
 
@@ -228,7 +228,7 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ]);
     }
 
@@ -241,14 +241,14 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
 
-        $this->patch('api/announcements/' . $announcement->id, [
+        $this->patch('api/announcements/'.$announcement->id, [
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ])
             ->assertRedirect('/');
 
@@ -256,7 +256,7 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
     }
 
@@ -269,14 +269,14 @@ class ManageAnnouncementsTest extends TestCase
             'title'      => 'Old Title',
             'body'       => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date'   => '2019-10-10'
+            'end_date'   => '2019-10-10',
         ]);
 
-        $this->patch('api/announcements/' . $announcement->id, [
+        $this->patch('api/announcements/'.$announcement->id, [
             'title'      => 'newTitle',
             'body'       => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date'   => '1975-10-10'
+            'end_date'   => '1975-10-10',
         ])
             ->assertRedirect('/');
 
@@ -284,7 +284,7 @@ class ManageAnnouncementsTest extends TestCase
             'title'      => 'Old Title',
             'body'       => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date'   => '2019-10-10'
+            'end_date'   => '2019-10-10',
         ]);
     }
 
@@ -295,14 +295,14 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
 
-        $this->patch('api/announcements/' . $announcement->id, [
+        $this->patch('api/announcements/'.$announcement->id, [
             'title' => 'newTitle',
             'body' => 'newBody',
             'begin_date' => '1975-06-25',
-            'end_date' => '1975-10-10'
+            'end_date' => '1975-10-10',
         ])
             ->assertRedirect('/');
 
@@ -310,7 +310,7 @@ class ManageAnnouncementsTest extends TestCase
             'title' => 'Old Title',
             'body' => 'Old Body',
             'begin_date' => '2019-06-25',
-            'end_date' => '2019-10-10'
+            'end_date' => '2019-10-10',
         ]);
     }
 }

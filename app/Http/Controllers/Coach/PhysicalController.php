@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Physical;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PhysicalController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -76,7 +75,6 @@ class PhysicalController extends Controller
      */
     public function edit(Physical $physical)
     {
-
     }
 
     /**

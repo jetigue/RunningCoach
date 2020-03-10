@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Coach;
 
 use App\Filters\NameFilter;
-use App\Models\Properties\Meets\Name;
 use App\Http\Controllers\Controller;
+use App\Models\Properties\Meets\Name;
 
 class MeetNameController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');

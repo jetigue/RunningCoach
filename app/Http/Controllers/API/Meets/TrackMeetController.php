@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\API\Meets;
 
 use App\Filters\TrackMeetFilter;
+use App\Http\Controllers\Controller;
 use App\Models\Meets\TrackMeet;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
 class TrackMeetController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -51,9 +50,8 @@ class TrackMeetController extends Controller
         return TrackMeet::with('host', 'name', 'venue', 'timing', 'season');
     }
 
-
     /**
-     * Update the TimeTrial Meet in the Database
+     * Update the TimeTrial Meet in the Database.
      *
      * @param Request $request
      * @param TrackMeet $trackMeet
@@ -64,7 +62,6 @@ class TrackMeetController extends Controller
     {
         return $this->updateMeet($request, $trackMeet);
     }
-
 
     /**
      * @param TrackMeet $trackMeet
@@ -78,9 +75,8 @@ class TrackMeetController extends Controller
         return response()->json(null, 204);
     }
 
-
     /**
-     * Store a Track Meet in the Database
+     * Store a Track Meet in the Database.
      * @return mixed
      */
     protected function storeMeet()
@@ -122,7 +118,7 @@ class TrackMeetController extends Controller
             'season_id',
             'host_id',
             'track_venue_id',
-            'timing_method_id'
+            'timing_method_id',
         ]));
 
         return response()->json($trackMeet, 200);

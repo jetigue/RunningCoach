@@ -15,12 +15,12 @@ class Timing extends Model
     protected $table = 'timing_methods';
 
     /**
-     * Fillable fields for a TimeTrial Venue
+     * Fillable fields for a TimeTrial Venue.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -30,9 +30,8 @@ class Timing extends Model
      */
     public function path()
     {
-        return '/timing/' . $this->id;
+        return '/timing/'.$this->id;
     }
-
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

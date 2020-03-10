@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\TimeTrial;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class TrackTimeTrialController extends Controller
@@ -42,7 +42,7 @@ class TrackTimeTrialController extends Controller
             'name'  => 'required|string',
             'trial_date' => 'required|date',
             'track_venue_id' => 'required|integer',
-            'timing_method_id' => 'required|integer'
+            'timing_method_id' => 'required|integer',
         ]);
 
         $timeTrial = TimeTrial::create($timeTrial);

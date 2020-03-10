@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\API\Properties\General;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TrackSurface;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TrackSurfaceController extends Controller
 {
-
     /**
      * GenderController constructor.
      */
@@ -40,9 +39,9 @@ class TrackSurfaceController extends Controller
      */
     public function store(Request $request)
     {
-        $trackSurface= request()->validate([
+        $trackSurface = request()->validate([
             'name' => 'required|string|min:3',
-            'description' => 'required|string'
+            'description' => 'required|string',
         ]);
 
         $trackSurface = TrackSurface::create($trackSurface);
@@ -72,7 +71,7 @@ class TrackSurfaceController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'description' => 'required|min:5',
         ]);
 
         $trackSurface->update(request(['name', 'description']));

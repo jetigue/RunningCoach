@@ -17,7 +17,7 @@ class TrackSurface extends Model
     protected $table = 'track_surfaces';
 
     /**
-     * Fillable fields for a Track Surface
+     * Fillable fields for a Track Surface.
      *
      * @var array
      */

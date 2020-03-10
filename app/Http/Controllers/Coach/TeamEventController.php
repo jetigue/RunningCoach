@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Team\TeamEvent;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TeamEventController extends Controller
 {
@@ -22,8 +22,7 @@ class TeamEventController extends Controller
     {
         $teamEvents = TeamEvent::orderBy('event_date', 'desc')->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $teamEvents;
         }
 

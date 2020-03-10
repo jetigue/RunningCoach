@@ -5,28 +5,27 @@ use App\Models\Properties\General\TerrainType;
 use App\Models\Runninglog\RunEffort;
 use App\Models\Runninglog\RunFeeling;
 use App\Models\RunningLog\RunType;
-
 use App\Models\Users\User;
 use Faker\Generator as Faker;
 
 $factory->define(RunType::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'description' => $faker->paragraph
+        'description' => $faker->paragraph,
     ];
 });
 
 $factory->define(RunEffort::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'description' => $faker->paragraph
+        'description' => $faker->paragraph,
     ];
 });
 
 $factory->define(RunFeeling::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'description' => $faker->paragraph
+        'description' => $faker->paragraph,
     ];
 });
 
@@ -44,5 +43,3 @@ $factory->define(App\Models\RunningLog\RunningLog::class, function (Faker $faker
         'notes'            => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
     ];
 });
-
-

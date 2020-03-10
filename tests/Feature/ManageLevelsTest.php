@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Models\Properties\Races\Level;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageLevelsTest extends TestCase
 {
@@ -64,23 +64,23 @@ class ManageLevelsTest extends TestCase
         $this->post('/api/levels', $attributes)->assertRedirect('/');
     }
 
-     /** @test */
-     public function a_level_requires_a_name()
-     {
-         $this->signInAdmin();
+    /** @test */
+    public function a_level_requires_a_name()
+    {
+        $this->signInAdmin();
 
         $attributes = factory(Level::class)->raw(['name' => '']);
 
         $this->post('api/levels', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 
-     /** @test */
-     public function an_admin_can_view_levels()
-     {
-         $this->signInAdmin();
+    /** @test */
+    public function an_admin_can_view_levels()
+    {
+        $this->signInAdmin();
 
-         $this->get('/levels')->assertSee('name');
-     }
+        $this->get('/levels')->assertSee('name');
+    }
 
     /** @test */
     public function a_coach_cannot_view_levels()
@@ -119,11 +119,11 @@ class ManageLevelsTest extends TestCase
 
         $level = factory(Level::class)->create(['name' => 'Varsity']);
 
-        $this->patch('api/levels/' . $level->id, ['name' => 'Junior Varsity'])
+        $this->patch('api/levels/'.$level->id, ['name' => 'Junior Varsity'])
                 ->assertStatus(200);
 
         $this->assertDatabaseHas('levels', [
-            'name' => 'Junior Varsity'
+            'name' => 'Junior Varsity',
         ]);
     }
 
@@ -134,8 +134,8 @@ class ManageLevelsTest extends TestCase
 
         $level = factory(Level::class)->create(['name' => 'Varsity']);
 
-        $this->patch('api/levels/' . $level->id, ['name' => 'Junior Varsity'])
-            ->assertRedirect('/');;
+        $this->patch('api/levels/'.$level->id, ['name' => 'Junior Varsity'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('levels', ['name' => 'Varsity']);
     }
@@ -147,8 +147,8 @@ class ManageLevelsTest extends TestCase
 
         $level = factory(Level::class)->create(['name' => 'Varsity']);
 
-        $this->patch('api/levels/' . $level->id, ['name' => 'Junior Varsity'])
-            ->assertRedirect('/');;
+        $this->patch('api/levels/'.$level->id, ['name' => 'Junior Varsity'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('levels', ['name' => 'Varsity']);
     }
@@ -160,8 +160,8 @@ class ManageLevelsTest extends TestCase
 
         $level = factory(Level::class)->create(['name' => 'Varsity']);
 
-        $this->patch('api/levels/' . $level->id, ['name' => 'Junior Varsity'])
-            ->assertRedirect('/');;
+        $this->patch('api/levels/'.$level->id, ['name' => 'Junior Varsity'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('levels', ['name' => 'Varsity']);
     }
@@ -171,8 +171,8 @@ class ManageLevelsTest extends TestCase
     {
         $level = factory(Level::class)->create(['name' => 'Varsity']);
 
-        $this->patch('api/levels/' . $level->id, ['name' => 'Junior Varsity'])
-            ->assertRedirect('/');;
+        $this->patch('api/levels/'.$level->id, ['name' => 'Junior Varsity'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('levels', ['name' => 'Varsity']);
     }

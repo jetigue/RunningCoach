@@ -7,12 +7,10 @@ use App\Models\Results\CrossCountry\Result;
 use App\Repositories\AthleteCCResults;
 use App\Repositories\AthleteTrackResults;
 
-
 class AthleteProfileController extends Controller
 {
     public function show(Athlete $athlete, AthleteCCResults $crossResults, AthleteTrackResults $trackResults)
     {
-
         $crossResults2019 = $crossResults->crossResults2019($athlete);
         $crossResults2018 = $crossResults->crossResults2018($athlete);
         $crossResults2017 = $crossResults->crossResults2017($athlete);
@@ -80,7 +78,7 @@ class AthleteProfileController extends Controller
         $trackResults2011 = $trackResults->trackResults2011($athlete);
         $trackResults2010 = $trackResults->trackResults2010($athlete);
 
-        $fiveKResults= Result::where('athlete_id', $athlete->id)
+        $fiveKResults = Result::where('athlete_id', $athlete->id)
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
             ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
@@ -104,9 +102,6 @@ class AthleteProfileController extends Controller
         $seasonBest1500m = clone $seasonBestTrack->where('meters', '1500')->take(1)->get();
         $seasonBest1600m = clone $seasonBestTrack2->where('meters', '1600')->take(1)->get();
         $seasonBest3200m = clone $seasonBestTrack3->where('meters', '3200')->take(1)->get();
-
-
-
 
         return view('profiles.athletes.show', compact(
             'athlete',

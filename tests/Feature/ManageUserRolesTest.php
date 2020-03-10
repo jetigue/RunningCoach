@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Users\Role;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageUserRolesTest extends TestCase
 {
@@ -134,8 +134,8 @@ class ManageUserRolesTest extends TestCase
 
         $role = factory(Role::class)->create(['name' => 'Viewer']);
 
-        $this->patch('api/user-roles/' . $role->id, ['name' => 'Athlete'])
-            ->assertRedirect('/');;
+        $this->patch('api/user-roles/'.$role->id, ['name' => 'Athlete'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('user_roles', ['name' => 'Viewer']);
     }
@@ -147,8 +147,8 @@ class ManageUserRolesTest extends TestCase
 
         $role = factory(Role::class)->create(['name' => 'Viewer']);
 
-        $this->patch('api/user-roles/' . $role->id, ['name' => 'Athlete'])
-            ->assertRedirect('/');;
+        $this->patch('api/user-roles/'.$role->id, ['name' => 'Athlete'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('user_roles', ['name' => 'Viewer']);
     }
@@ -160,7 +160,7 @@ class ManageUserRolesTest extends TestCase
 
         $role = factory(Role::class)->create(['name' => 'Athlete']);
 
-        $this->patch('api/user-roles/' . $role->id, ['name' => 'Coach'])
+        $this->patch('api/user-roles/'.$role->id, ['name' => 'Coach'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('user_roles', ['name' => 'Athlete']);
@@ -171,8 +171,8 @@ class ManageUserRolesTest extends TestCase
     {
         $role = factory(Role::class)->create(['name' => 'Viewer']);
 
-        $this->patch('api/user-roles/' . $role->id, ['name' => 'Athlete'])
-            ->assertRedirect('/');;
+        $this->patch('api/user-roles/'.$role->id, ['name' => 'Athlete'])
+            ->assertRedirect('/');
 
         $this->assertDatabaseHas('user_roles', ['name' => 'Viewer']);
     }

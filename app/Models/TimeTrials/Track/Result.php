@@ -18,50 +18,51 @@ class Result extends Model
     protected $table = 'track_time_trial_race_results';
 
     /**
-    * Fillable fields for a track time trial result.
-    *
-    *@var array
-    */
+     * Fillable fields for a track time trial result.
+     *
+     *@var array
+     */
     protected $fillable = [
         'track_time_trial_race_id',
         'athlete_id',
         'heat',
         'total_seconds',
         'milliseconds',
-        'place'
+        'place',
     ];
 
     /**
      * @return string
      */
-    public function getPlaceWithSuffixAttribute() {
+    public function getPlaceWithSuffixAttribute()
+    {
         $value = $this->attributes['place'];
 
         if ($value != null) {
-            if (!in_array(($value % 100), array(11, 12, 13)))
-            {
-                switch ($value % 10)
-                {
+            if (! in_array(($value % 100), [11, 12, 13])) {
+                switch ($value % 10) {
                     // Handle 1st, 2nd, 3rd
                     case 1:
-                        return $value . 'st';
+                        return $value.'st';
                     case 2:
-                        return $value . 'nd';
+                        return $value.'nd';
                     case 3:
-                        return $value . 'rd';
+                        return $value.'rd';
                 }
             }
-            return $value . 'th';
+
+            return $value.'th';
         }
     }
 
     /**
      * @return false|string
      */
-    public function getTimeAttribute() {
+    public function getTimeAttribute()
+    {
         $seconds = $this->attributes['total_seconds'];
 
-                return gmdate("i:s", $seconds);
+        return gmdate('i:s', $seconds);
     }
 
     /**
@@ -83,7 +84,8 @@ class Result extends Model
     /**
      * @return string
      */
-    function getMillisecondAttribute() {
-        return str_pad($this->milliseconds,2,'0',STR_PAD_LEFT);
+    public function getMillisecondAttribute()
+    {
+        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
     }
 }

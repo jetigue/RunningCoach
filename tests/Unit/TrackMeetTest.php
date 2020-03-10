@@ -9,10 +9,10 @@ use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Track\Venue;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\Setup\TrackMeetFactory;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TrackMeetTest extends TestCase
 {
@@ -36,7 +36,7 @@ class TrackMeetTest extends TestCase
             'season_id' => $season->id,
             'track_venue_id' => $venue->id,
             'host_id' => $host->id,
-            'timing_method_id' => $timing->id
+            'timing_method_id' => $timing->id,
         ]);
     }
 

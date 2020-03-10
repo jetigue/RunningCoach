@@ -15,7 +15,7 @@ $factory->define(TimeTrial::class, function (Faker $faker) {
         'name' => $faker->sentence(4),
         'trial_date' => $faker->dateTimeThisYear($max = 'now', $timezone = null),
         'track_venue_id' => Venue::all()->random()->id,
-        'timing_method_id' => Timing::all()->random()->id
+        'timing_method_id' => Timing::all()->random()->id,
     ];
 });
 
@@ -24,7 +24,7 @@ $factory->define(Race::class, function (Faker $faker) {
         'track_time_trial_id' => TimeTrial::all()->random()->id,
         'gender_id' => Gender::all()->random()->id,
         'track_event_id' => Event::all()->random()->id,
-        'notes' => $faker->sentence
+        'notes' => $faker->sentence,
     ];
 });
 
@@ -35,6 +35,6 @@ $factory->define(Result::class, function (Faker $faker) {
         'heat' => $faker->numberBetween(1, 4),
         'total_seconds' => $faker->numberBetween(240, 480),
         'milliseconds' => $faker->numberBetween(0, 99),
-        'place' => $faker->numberBetween(1, 20)
+        'place' => $faker->numberBetween(1, 20),
     ];
 });

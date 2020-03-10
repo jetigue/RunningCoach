@@ -32,7 +32,6 @@ Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-
 Route::resource('/track/time-trials', 'TimeTrials\TrackTimeTrialController');
 
 Route::get('/track/time-trials/{timeTrial}/races/{race}', 'TimeTrials\TrackTimeTrialRaceController@show');
@@ -68,8 +67,7 @@ Route::apiResources([
     'api/track/meets/{trackMeet}/team-results' => 'API\Results\Track\TeamResultController',
 
     // Race Results
-    'api/cross-country/meets/{crossCountryMeet}/team-results/{teamResult}/results'
-        => 'API\Results\CrossCountry\ResultController',
+    'api/cross-country/meets/{crossCountryMeet}/team-results/{teamResult}/results' => 'API\Results\CrossCountry\ResultController',
     'api/track/meets/{trackMeet}/team-results/{teamResult}/results' => 'API\Results\Track\ResultController',
 
     // General Properties

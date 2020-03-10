@@ -2,12 +2,12 @@
 
 namespace App\Models\RunningLog;
 
-use App\Models\RunningLog\RunFeeling;
-use App\Models\RunningLog\RunType;
-use App\Models\RunningLog\RunEffort;
-use App\Models\Users\User;
 use App\Models\Properties\General\DayTime;
 use App\Models\Properties\General\TerrainType;
+use App\Models\RunningLog\RunEffort;
+use App\Models\RunningLog\RunFeeling;
+use App\Models\RunningLog\RunType;
+use App\Models\Users\User;
 use Illuminate\Database\Eloquent\Model;
 
 class RunningLog extends Model
@@ -38,7 +38,7 @@ class RunningLog extends Model
         'terrain_type_id',
         'run_effort_id',
         'run_feeling_id',
-        'notes'
+        'notes',
     ];
 
     /**

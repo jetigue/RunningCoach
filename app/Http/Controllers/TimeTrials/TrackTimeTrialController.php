@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\TimeTrial;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class TrackTimeTrialController extends Controller
@@ -21,8 +21,7 @@ class TrackTimeTrialController extends Controller
             ->orderBy('trial_date', 'desc')
             ->get();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $timeTrials;
         }
 

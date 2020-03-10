@@ -4,11 +4,11 @@ namespace Tests\Feature;
 
 use App\Models\Athlete;
 use App\Models\Physical;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ManagePhysicalsTest extends TestCase
 {
@@ -17,7 +17,6 @@ class ManagePhysicalsTest extends TestCase
     /** @test */
     public function a_coach_can_enter_a_physical()
     {
-
         $this->withExceptionHandling();
         $this->signInCoach();
         $athlete = factory(Athlete::class)->create();
@@ -27,7 +26,7 @@ class ManagePhysicalsTest extends TestCase
             'consent_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
             'concussion_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
             'evaluation_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
-            'exam_date' => $this->faker->date($format = 'Y-m-d', $max = 'now') ,
+            'exam_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
         ];
 
         $this->post('/api/physicals', $attributes);
@@ -72,5 +71,4 @@ class ManagePhysicalsTest extends TestCase
 //
 //        Storage::disk('public')->assertExists('physicals/' . $file->hashName());
 //    }
-
 }

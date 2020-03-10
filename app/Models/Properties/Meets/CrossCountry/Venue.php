@@ -16,7 +16,7 @@ class Venue extends Model
     protected $table = 'cross_country_venues';
 
     /**
-     * Fillable fields for a Cross Country Venue
+     * Fillable fields for a Cross Country Venue.
      *
      * @var array
      */
@@ -29,7 +29,7 @@ class Venue extends Model
      */
     public function path()
     {
-        return '/cross-country/venues/' . $this->id;
+        return '/cross-country/venues/'.$this->id;
     }
 
     /**

@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Team\TeamEvent;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageTeamEventsTest extends TestCase
 {
@@ -20,7 +20,7 @@ class ManageTeamEventsTest extends TestCase
             'name'       => $this->faker->sentence($nbWords = 3, $variableBbWords = true),
             'event_date' => $this->faker->date($format = 'Y-m-d'),
             'event_time' => $this->faker->time($format = 'H:i:s'),
-            'location'   => $this->faker->city . ', ' . 'GA',
+            'location'   => $this->faker->city.', '.'GA',
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
@@ -42,7 +42,7 @@ class ManageTeamEventsTest extends TestCase
             'name'       => $this->faker->sentence($nbWords = 3, $variableBbWords = true),
             'event_date' => $this->faker->date($format = 'Y-m-d'),
             'event_time' => $this->faker->time($format = 'H:i:s'),
-            'location'   => $this->faker->city . ', ' . 'GA',
+            'location'   => $this->faker->city.', '.'GA',
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
@@ -64,7 +64,7 @@ class ManageTeamEventsTest extends TestCase
             'name'       => $this->faker->sentence($nbWords = 3, $variableBbWords = true),
             'event_date' => $this->faker->date($format = 'Y-m-d'),
             'event_time' => $this->faker->time($format = 'H:i:s'),
-            'location'   => $this->faker->city . ', ' . 'GA',
+            'location'   => $this->faker->city.', '.'GA',
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
@@ -80,7 +80,7 @@ class ManageTeamEventsTest extends TestCase
             'name'       => $this->faker->sentence($nbWords = 3, $variableBbWords = true),
             'event_date' => $this->faker->date($format = 'Y-m-d'),
             'event_time' => $this->faker->time($format = 'H:i:s'),
-            'location'   => $this->faker->city . ', ' . 'GA',
+            'location'   => $this->faker->city.', '.'GA',
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
@@ -94,7 +94,7 @@ class ManageTeamEventsTest extends TestCase
             'name'       => $this->faker->sentence($nbWords = 3, $variableBbWords = true),
             'event_date' => $this->faker->date($format = 'Y-m-d'),
             'event_time' => $this->faker->time($format = 'H:i:s'),
-            'location'   => $this->faker->city . ', ' . 'GA',
+            'location'   => $this->faker->city.', '.'GA',
             'details'    => $this->faker->sentence($nbWords = 5, $variableBbWords = true),
         ];
 
@@ -190,7 +190,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ];
 
         $revisedTeamEvent = [
@@ -198,12 +198,12 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
-            'details' => 'Revised Details'
+            'details' => 'Revised Details',
         ];
 
         $this->post('/api/team-events', $originalTeamEvent);
 
-        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/'. 1, $revisedTeamEvent)
             ->assertStatus(200);
 
         $this->assertDatabaseHas('team_events', $revisedTeamEvent);
@@ -220,7 +220,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ];
 
         $revisedTeamEvent = [
@@ -228,12 +228,12 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
-            'details' => 'Revised Details'
+            'details' => 'Revised Details',
         ];
 
         $this->post('/api/team-events', $originalTeamEvent);
 
-        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/'. 1, $revisedTeamEvent)
             ->assertStatus(200);
 
         $this->assertDatabaseHas('team_events', $revisedTeamEvent);
@@ -250,7 +250,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
 
         $revisedTeamEvent = [
@@ -258,10 +258,10 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
-            'details' => 'Revised Details'
+            'details' => 'Revised Details',
         ];
 
-        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/'. 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [
@@ -270,7 +270,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
     }
 
@@ -285,7 +285,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
 
         $revisedTeamEvent = [
@@ -293,10 +293,10 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
-            'details' => 'Revised Details'
+            'details' => 'Revised Details',
         ];
 
-        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/'. 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [
@@ -305,7 +305,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
     }
 
@@ -318,7 +318,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
 
         $revisedTeamEvent = [
@@ -326,10 +326,10 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '2020-10-10',
             'event_time' => 'Revised Time',
             'location' => 'Revised Location',
-            'details' => 'Revised Details'
+            'details' => 'Revised Details',
         ];
 
-        $this->patch('api/team-events/' . 1, $revisedTeamEvent)
+        $this->patch('api/team-events/'. 1, $revisedTeamEvent)
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('team_events', [
@@ -338,8 +338,7 @@ class ManageTeamEventsTest extends TestCase
             'event_date' => '1975-10-10',
             'event_time' => 'Original Time',
             'location' => 'Original Location',
-            'details' => 'Original Details'
+            'details' => 'Original Details',
         ]);
     }
-
 }

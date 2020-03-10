@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Runninglog\RunEffort;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageRunEffortsTest extends TestCase
 {
@@ -141,18 +141,18 @@ class ManageRunEffortsTest extends TestCase
 
         $runEffort = factory(RunEffort::class)->create([
             'name' => 'Easy',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-efforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/'.$runEffort->id, [
             'name' => 'Hard',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('run_efforts', [
             'name' => 'Hard',
-            'description' =>'New Description'
+            'description' =>'New Description',
         ]);
     }
 
@@ -163,12 +163,12 @@ class ManageRunEffortsTest extends TestCase
 
         $runEffort = factory(RunEffort::class)->create([
             'name' => 'Easy',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-efforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/'.$runEffort->id, [
             'name' => 'Hard',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -182,12 +182,12 @@ class ManageRunEffortsTest extends TestCase
 
         $runEffort = factory(RunEffort::class)->create([
             'name' => 'Easy',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-efforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/'.$runEffort->id, [
             'name' => 'Hard',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -201,12 +201,12 @@ class ManageRunEffortsTest extends TestCase
 
         $runEffort = factory(RunEffort::class)->create([
             'name' => 'Easy',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-efforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/'.$runEffort->id, [
             'name' => 'Hard',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 
@@ -218,12 +218,12 @@ class ManageRunEffortsTest extends TestCase
     {
         $runEffort = factory(RunEffort::class)->create([
             'name' => 'Easy',
-            'description' => 'Original Description'
+            'description' => 'Original Description',
         ]);
 
-        $this->patch('api/run-efforts/' . $runEffort->id, [
+        $this->patch('api/run-efforts/'.$runEffort->id, [
             'name' => 'Hard',
-            'description' => 'New Description'
+            'description' => 'New Description',
         ])
             ->assertRedirect('/');
 

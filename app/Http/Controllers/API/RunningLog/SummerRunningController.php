@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Repositories\RunningLogs;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class SummerRunningController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');

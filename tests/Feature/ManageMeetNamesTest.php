@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use App\Models\Properties\Meets\Name;
 use App\Models\Properties\General\Season;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\Properties\Meets\Name;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class ManageMeetNamesTest extends TestCase
 {
@@ -20,8 +20,8 @@ class ManageMeetNamesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meet-names', $attributes);
@@ -41,8 +41,8 @@ class ManageMeetNamesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meet-names', $attributes);
@@ -54,15 +54,15 @@ class ManageMeetNamesTest extends TestCase
             ->assertSee($attributes['season_id']);
     }
 
-     /** @test */
-     public function a_meet_name_requires_a_name()
-     {
-         $this->signInCoach();
+    /** @test */
+    public function a_meet_name_requires_a_name()
+    {
+        $this->signInCoach();
 
         $attributes = factory(Name::class)->raw(['name' => '']);
 
         $this->post('api/meet-names', $attributes)->assertSessionHasErrors('name');
-     }
+    }
 
     /** @test */
     public function a_meet_name_requires_a_season_id()
@@ -82,8 +82,8 @@ class ManageMeetNamesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meet-names', $attributes)->assertRedirect('/');
@@ -97,8 +97,8 @@ class ManageMeetNamesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meet-names', $attributes)->assertRedirect('/');
@@ -110,8 +110,8 @@ class ManageMeetNamesTest extends TestCase
         $season = factory(Season::class)->create();
 
         $attributes = [
-            'name' => $this->faker->word . " " . "Park",
-            'season_id' => $season->id
+            'name' => $this->faker->word.' '.'Park',
+            'season_id' => $season->id,
         ];
 
         $this->post('/api/meet-names', $attributes)->assertRedirect('/');
@@ -164,17 +164,17 @@ class ManageMeetNamesTest extends TestCase
 
         $name = factory(Name::class)->create([
             'name' => 'Original Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ]);
 
-        $this->patch('api/meet-names/' . $name->id, [
+        $this->patch('api/meet-names/'.$name->id, [
             'name' => 'New Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('meet_names', [
-            'name' => 'New Meet Name'
+            'name' => 'New Meet Name',
         ]);
     }
 
@@ -187,17 +187,17 @@ class ManageMeetNamesTest extends TestCase
 
         $name = factory(Name::class)->create([
             'name' => 'Original Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ]);
 
-        $this->patch('api/meet-names/' . $name->id, [
+        $this->patch('api/meet-names/'.$name->id, [
             'name' => 'New Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('meet_names', [
-            'name' => 'New Meet Name'
+            'name' => 'New Meet Name',
         ]);
     }
 
@@ -210,12 +210,12 @@ class ManageMeetNamesTest extends TestCase
 
         $name = factory(Name::class)->create([
             'name' => 'Original Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ]);
 
-        $this->patch('api/meet-names/' . $name->id, [
+        $this->patch('api/meet-names/'.$name->id, [
             'name' => 'New Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ])
             ->assertRedirect('/');
 
@@ -231,12 +231,12 @@ class ManageMeetNamesTest extends TestCase
 
         $name = factory(Name::class)->create([
             'name' => 'Original Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ]);
 
-        $this->patch('api/meet-names/' . $name->id, [
+        $this->patch('api/meet-names/'.$name->id, [
             'name' => 'New Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ])
             ->assertRedirect('/');
 
@@ -250,12 +250,12 @@ class ManageMeetNamesTest extends TestCase
 
         $name = factory(Name::class)->create([
             'name' => 'Original Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ]);
 
-        $this->patch('api/meet-names/' . $name->id, [
+        $this->patch('api/meet-names/'.$name->id, [
             'name' => 'New Meet Name',
-            'season_id' => $season->id
+            'season_id' => $season->id,
         ])
             ->assertRedirect('/');
 

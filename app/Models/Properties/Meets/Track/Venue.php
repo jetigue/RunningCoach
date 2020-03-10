@@ -17,9 +17,8 @@ class Venue extends Model
      */
     protected $table = 'track_venues';
 
-
     /**
-     * Fillable fields for a Track Venue
+     * Fillable fields for a Track Venue.
      *
      * @var array
      */
@@ -32,7 +31,7 @@ class Venue extends Model
      */
     public function path()
     {
-        return '/track-venues/' . $this->id;
+        return '/track-venues/'.$this->id;
     }
 
     /**

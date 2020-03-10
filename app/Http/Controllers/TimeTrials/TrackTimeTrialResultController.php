@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\TimeTrials;
 
+use App\Http\Controllers\Controller;
 use App\Models\TimeTrials\Track\Result;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TrackTimeTrialResultController extends Controller
 {

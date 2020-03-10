@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\General\DayTime;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class DayTimeController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin');

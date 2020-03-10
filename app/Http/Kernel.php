@@ -64,7 +64,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'coach' => \App\Http\Middleware\Coach::class,
         'athlete' => \App\Http\Middleware\Athlete::class,
-        'user' => User::class
+        'user' => User::class,
     ];
 
     /**

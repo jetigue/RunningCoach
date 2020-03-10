@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\Timing;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TimingController extends Controller
 {
@@ -22,13 +22,10 @@ class TimingController extends Controller
     {
         $timing = Timing::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $timing;
         }
 
         return view('properties.meets.timing.index', compact('timing'));
     }
 }
-
-    

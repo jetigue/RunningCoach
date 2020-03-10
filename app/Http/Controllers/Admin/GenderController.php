@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Gender;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class GenderController extends Controller
 {
@@ -39,5 +39,4 @@ class GenderController extends Controller
     {
         //
     }
-
 }

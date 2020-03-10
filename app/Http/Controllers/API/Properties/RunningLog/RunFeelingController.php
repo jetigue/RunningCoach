@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\Properties\RunningLog;
 
+use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunFeeling;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class RunFeelingController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin')->except('index');
@@ -89,7 +88,7 @@ class RunFeelingController extends Controller
     {
         request()->validate([
             'name' => 'required|min:3',
-            'description' => 'required|min:5'
+            'description' => 'required|min:5',
         ]);
 
         $runFeeling->update(request(['name', 'description']));

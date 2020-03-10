@@ -2,10 +2,10 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Models\Properties\Races\Level;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class LevelTest extends TestCase
 {
@@ -23,13 +23,12 @@ class LevelTest extends TestCase
     /** @test */
     public function it_has_a_path()
     {
-
         $this->assertEquals(
-            '/levels/' . $this->level->id, $this->level->path());
+            '/levels/'.$this->level->id, $this->level->path());
     }
 
     /** @test */
-    function a_level_has_many_divisions()
+    public function a_level_has_many_divisions()
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',

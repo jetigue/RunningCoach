@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Coach;
 
+use App\Http\Controllers\Controller;
 use App\Models\Team\Announcement;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class AnnouncementController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('coach');
@@ -23,8 +22,7 @@ class AnnouncementController extends Controller
     {
         $announcements = Announcement::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $announcements;
         }
 

@@ -17,27 +17,27 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class TrackMeet extends Model
 {
     /**
-    * The table associated with the model.
-    *
-    * @var string
-    */
-   protected $table = 'track_meets';
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'track_meets';
 
-   /**
-    * Fillable fields for a TimeTrial Meet.
-    *
-    * @var array
-    */
-   protected $fillable = [
+    /**
+     * Fillable fields for a TimeTrial Meet.
+     *
+     * @var array
+     */
+    protected $fillable = [
        'meet_name_id',
        'meet_date',
        'season_id',
        'host_id',
        'track_venue_id',
-       'timing_method_id'
+       'timing_method_id',
    ];
 
-   /**
+    /**
      * @return string
      */
     public function getRouteKeyName()
@@ -50,18 +50,18 @@ class TrackMeet extends Model
      */
     public function path()
     {
-        return '/track/meets/' . $this->slug;
+        return '/track/meets/'.$this->slug;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
         parent::boot();
 
         static::saving(function ($trackMeet) {
-            $trackMeet->slug = str_slug($trackMeet->name->name . '-' . $trackMeet->meet_date);
+            $trackMeet->slug = str_slug($trackMeet->name->name.'-'.$trackMeet->meet_date);
         });
     }
 
@@ -112,7 +112,6 @@ class TrackMeet extends Model
     {
         return $this->hasMany(TeamResult::class);
     }
-
 
     /**
      * @param $teamResult

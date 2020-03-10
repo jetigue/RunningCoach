@@ -16,5 +16,4 @@ class TeamAdministrationSeeder extends Seeder
         factory(Announcement::class, 5)->create();
         factory(TeamEvent::class, 5)->create();
     }
-
 }

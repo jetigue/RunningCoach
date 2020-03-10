@@ -2,10 +2,10 @@
 
 namespace App\Models\Properties\Races\CrossCountry;
 
+use App\Filters\EventFilter;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
 use Illuminate\Database\Eloquent\Model;
-use App\Filters\EventFilter;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
@@ -19,13 +19,13 @@ class Event extends Model
     protected $table = 'cross_country_events';
 
     /**
-     * Fillable fields for a Cross Country Event
+     * Fillable fields for a Cross Country Event.
      *
      * @var array
      */
     protected $fillable = [
         'name',
-        'meters'
+        'meters',
     ];
 
     /**
@@ -36,7 +36,6 @@ class Event extends Model
         return 'slug';
     }
 
-
     /**
      * Get a string path for the event.
      *
@@ -44,11 +43,11 @@ class Event extends Model
      */
     public function path()
     {
-        return '/cross-country-events/' . $this->slug;
+        return '/cross-country-events/'.$this->slug;
     }
 
     /**
-     * Save a slug on store and update
+     * Save a slug on store and update.
      */
     public static function boot()
     {
@@ -79,7 +78,7 @@ class Event extends Model
         return $this->hasMany(TeamResult::class, 'cross_country_event_id');
     }
 
-        /**
+    /**
      * @return HasManyThrough
      */
     public function crossCountryResults()
@@ -90,5 +89,4 @@ class Event extends Model
             'cross_country_event_id',
             'cross_country_team_result_id');
     }
-
 }

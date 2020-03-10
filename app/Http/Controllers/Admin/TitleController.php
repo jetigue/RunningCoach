@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Title;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TitleController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('admin');
@@ -23,8 +22,7 @@ class TitleController extends Controller
     {
         $titles = Title::all();
 
-        if (request()->expectsJson())
-        {
+        if (request()->expectsJson()) {
             return $titles;
         }
 
