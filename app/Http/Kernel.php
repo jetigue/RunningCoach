@@ -68,7 +68,7 @@ class Kernel extends HttpKernel
         'user' => User::class,
     ];
 
-/**
+    /**
      * The priority-sorted list of middleware.
      *
      * This forces non-global middleware to always be in the given order.
