@@ -55,7 +55,7 @@ class Name extends Model
      */
     public function trackMeets()
     {
-        return $this->hasMany(TrackMeet::class, 'meet_name_id');
+        return $this->hasMany(TrackMeet::class);
     }
 
     /**
