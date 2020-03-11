@@ -56,6 +56,7 @@ class SeasonBestController extends Controller
     {
         $athleteSeasonBest1600 = $seasonBest->maleAthletesBest1600m2020();
         dd($athleteSeasonBest1600)->json;
+
         return view('records.track.seasonBests.show');
     }
 }
