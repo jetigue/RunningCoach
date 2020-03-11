@@ -143,6 +143,5 @@ class TrackSeasonBests
             ->with('athlete', 'event', 'teamResult')
             ->having('track_event_id', $event->id)
         ->get();
-
     }
 }
