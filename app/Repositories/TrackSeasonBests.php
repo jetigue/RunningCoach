@@ -147,16 +147,19 @@ class TrackSeasonBests
                 meet_names.name as meetName,
                 track_meets.slug as meet,
                 track_meets.meet_date as meetDate
+                seasons.name
             '))
             ->join('athletes', 'track_results.athlete_id', '=', 'athletes.id')
             ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
             ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
             ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
             ->join('meet_names', 'track_meets.meet_name_id', '=', 'meet_names.id')
+            ->join('seasons', 'track_meets.season_id', '=', 'seasons.id')
             ->groupBy('athlete_id', 'track_event_id')
             ->orderBy('total_seconds')
             ->orderBy('milliseconds')
-            ->whereYear('track_meets.meet_date', '2020');
+            ->whereYear('track_meets.meet_date', '2020')
+            ->where('seasons.name', 'Outdoor Track');
     }
 
     public function femaleAthletesBest800m2020()
