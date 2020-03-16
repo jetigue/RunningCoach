@@ -24,7 +24,13 @@ Route::get('/track/meets/{trackMeet}/team-results/{teamResult}', 'Results\Track\
 Route::get('/cross-country-/venues', 'CrossCountryVenueController@index');
 
 Route::get('track/season-bests', 'Track\SeasonBestController@index');
-Route::get('track/season-bests/athletes-season-bests', 'Track\SeasonBestController@show');
+Route::get('track/season-bests/athletes-season-bests/800m', 'Track\SeasonBestController@best800m');
+Route::get('track/season-bests/athletes-season-bests/1200m', 'Track\SeasonBestController@best1200m');
+Route::get('track/season-bests/athletes-season-bests/1500m', 'Track\SeasonBestController@best1500m');
+Route::get('track/season-bests/athletes-season-bests/1600m', 'Track\SeasonBestController@best1600m');
+Route::get('track/season-bests/athletes-season-bests/3200m', 'Track\SeasonBestController@best3200m');
+
+
 
 Route::get('/cross-country/venues/{venue}/boys-records', 'CrossCountryVenueController@showBoysRecords');
 Route::get('/cross-country/venues/{venue}/girls-records', 'CrossCountryVenueController@showGirlsRecords');

@@ -68,6 +68,8 @@ Vue.component('physicals', require('./components/physicals/Physicals').default);
 //Records
 Vue.component('venue-records', require('./components/records/VenueRecords').default);
 Vue.component('event-best-time', require('./components/records/EventBestTime').default);
+Vue.component('athlete-season-bests', require('./components/records/AthleteSeasonBests').default);
+Vue.component('season-bests', require('./components/records/SeasonBests').default);
 
 // Results
 Vue.component('track-team-results', require('./components/results/TrackTeamResults').default);

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="p-0 m-0">
         <div class="text-primary font-bold text-xl">
             {{duration }}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
         </div>

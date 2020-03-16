@@ -52,11 +52,53 @@ class SeasonBestController extends Controller
         ));
     }
 
-    public function show(TrackMeet $trackMeet, TeamResult $teamResult, TrackSeasonBests $seasonBest)
+    public function best800m(TrackSeasonBests $seasonBest)
     {
-        $athleteSeasonBest1600 = $seasonBest->maleAthletesBest1600m2020();
-        dd($athleteSeasonBest1600)->json;
+        $femaleAthleteSeasonBest = $seasonBest->femaleAthletesBest800m2020();
+        $maleAthleteSeasonBest = $seasonBest->maleAthletesBest800m2020();
 
-        return view('records.track.seasonBests.show');
+        return view('records.track.seasonBests.show', compact(
+            'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
+        ));
+    }
+
+    public function best1200m(TrackSeasonBests $seasonBest)
+    {
+        $femaleAthleteSeasonBest= $seasonBest->femaleAthletesBest1200m2020();
+        $maleAthleteSeasonBest = $seasonBest->maleAthletesBest1200m2020();
+
+        return view('records.track.seasonBests.show', compact(
+            'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
+        ));
+    }
+
+    public function best1500m(TrackSeasonBests $seasonBest)
+    {
+        $femaleAthleteSeasonBest = $seasonBest->femaleAthletesBest1500m2020();
+        $maleAthleteSeasonBest = $seasonBest->maleAthletesBest1500m2020();
+
+        return view('records.track.seasonBests.show', compact(
+            'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
+        ));
+    }
+
+    public function best1600m(TrackSeasonBests $seasonBest)
+    {
+        $femaleAthleteSeasonBest = $seasonBest->femaleAthletesBest1600m2020();
+        $maleAthleteSeasonBest = $seasonBest->maleAthletesBest1600m2020();
+
+        return view('records.track.seasonBests.show', compact(
+            'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
+        ));
+    }
+
+    public function best3200m(TrackSeasonBests $seasonBest)
+    {
+        $femaleAthleteSeasonBest= $seasonBest->femaleAthletesBest3200m2020();
+        $maleAthleteSeasonBest = $seasonBest->maleAthletesBest3200m2020();
+
+        return view('records.track.seasonBests.show', compact(
+            'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
+        ));
     }
 }
