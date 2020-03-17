@@ -146,7 +146,7 @@ class TrackSeasonBests
                 track_events.name as event,
                 meet_names.name as meetName,
                 track_meets.slug as meet,
-                track_meets.meet_date as meetDate
+                track_meets.meet_date as meetDate,
                 seasons.name
             '))
             ->join('athletes', 'track_results.athlete_id', '=', 'athletes.id')
