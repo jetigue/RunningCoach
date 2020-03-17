@@ -159,8 +159,7 @@ class TrackSeasonBests
             ->groupBy('athlete_id', 'track_event_id')
             ->orderBy('total_seconds')
             ->orderBy('milliseconds')
-            ->whereYear('track_meets.meet_date', '2020')
-            ->where('seasons.name', 'Outdoor Track');
+            ->whereYear('track_meets.meet_date', '2020');
     }
 
     public function femaleAthletesBest800m2020()
