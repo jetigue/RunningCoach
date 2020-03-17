@@ -145,17 +145,14 @@ class TrackSeasonBests
                 track_event_id,
                 track_events.name as event,
                 meet_names.name as meetName,
-                track_meets.id as meet,
                 track_meets.slug as meetSlug,
-                track_meets.meet_date as meetDate,
-                seasons.name as season
+                track_meets.meet_date as meetDate
             '))
             ->join('athletes', 'track_results.athlete_id', '=', 'athletes.id')
             ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
             ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
             ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
             ->join('meet_names', 'track_meets.meet_name_id', '=', 'meet_names.id')
-            ->join('seasons', 'track_meets.season_id', '=', 'seasons.id')
             ->groupBy('athlete_id', 'track_event_id')
             ->orderBy('total_seconds')
             ->orderBy('milliseconds')
