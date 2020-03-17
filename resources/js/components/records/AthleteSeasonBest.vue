@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="w-full text-sm">
-                    <a class="hover:text-blue-700" :href="'/track/meets/' + this.data.meet">{{ meetName }}</a>
+                    <a class="hover:text-blue-700" :href="'/track/meets/' + this.data.meetSlug">{{ meetName }}</a>
                     <span class="hidden lg:inline text-xs text-gray-400">{{ meetDate | moment("MMM Do") }}</span>
                     <span class="lg:hidden text-xs text-gray-400">{{ meetDate | moment("MMM d") }}</span>
                 </div>
