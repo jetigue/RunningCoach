@@ -8,11 +8,13 @@ use App\Models\Properties\Meets\Host;
 use App\Models\Properties\Meets\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Track\Venue;
+use App\Models\Results\Track\Result;
 use App\Models\Results\Track\TeamResult;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Str;
 
 class TrackMeet extends Model
@@ -112,6 +114,15 @@ class TrackMeet extends Model
     public function teamResults()
     {
         return $this->hasMany(TeamResult::class);
+    }
+
+    /**
+     * @return HasManyThrough
+     *
+     */
+    public function results()
+    {
+        return $this->hasManyThrough(Result::class, TeamResult::class);
     }
 
     /**

@@ -56,7 +56,8 @@ class SeasonBestController extends Controller
     {
         $femaleAthleteSeasonBest = $seasonBest->femaleAthletesBest800m2020();
         $maleAthleteSeasonBest = $seasonBest->maleAthletesBest800m2020();
-
+//        $maleAthleteSeasonBest = $seasonBest->athleteSeasonBest2020();
+//dd($maleAthleteSeasonBest->toArray());
         return view('records.track.seasonBests.show', compact(
             'maleAthleteSeasonBest', 'femaleAthleteSeasonBest'
         ));
