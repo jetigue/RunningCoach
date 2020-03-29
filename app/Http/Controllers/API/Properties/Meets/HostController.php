@@ -23,7 +23,7 @@ class HostController extends Controller
      */
     public function index()
     {
-        return Host::all();
+        return Host::orderBy('name')->get();
     }
 
     /**
