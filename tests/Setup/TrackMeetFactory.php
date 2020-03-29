@@ -5,8 +5,8 @@ namespace Tests\Setup;
 use App\Models\Meets\TrackMeet;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Name;
-use App\Models\Properties\Meets\Venue;
+use App\Models\Properties\Meets\Track\Name;
+use App\Models\Properties\Meets\Track\Venue;
 
 class TrackMeetFactory
 {
@@ -64,13 +64,13 @@ class TrackMeetFactory
         $season = factory(Season::class)->states('outdoor')->create();
 
         $trackMeet = factory(TrackMeet::class)->create([
-            'meet_name_id' => $this->withMeetName ?? factory(Name::class)->create([
+            'track_meet_name_id' => $this->withMeetName ?? factory(Name::class)->create([
                 'season_id' => $season->id,
                 ]),
             'season_id' => $season->id,
 //            'season_id' => $this->duringSeason ?? factory(Season::class)->create(),
             'host_id' => $this->hostedBy ?? factory(Host::class)->create(),
-            'venue_id' => $this->atVenue ?? factory(Venue::class)->create([
+            'track_venue_id' => $this->atVenue ?? factory(Venue::class)->create([
                 'season_id' => $season->id,
                 ]),
         ]);

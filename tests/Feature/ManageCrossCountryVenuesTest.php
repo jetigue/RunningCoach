@@ -139,8 +139,8 @@ class ManageCrossCountryVenuesTest extends TestCase
         ]);
 
         $this->patch('api/cross-country/venues/'.$name->id, [
-            'name' => 'New Meet Venue',
-        ])
+        'name' => 'New Meet Venue',
+    ])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('cross_country_venues', [

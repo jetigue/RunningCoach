@@ -34,7 +34,7 @@ class TrackEventTest extends TestCase
     {
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',
-            $this->event->trackResults
+            $this->event->results
         );
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Properties\General\TrackSurface;
 use App\Models\TimeTrials\Track\TimeTrial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Venue extends Model
 {
@@ -40,5 +41,13 @@ class Venue extends Model
     public function surface()
     {
         return $this->belongsTo(TrackSurface::class, 'track_surface_id');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function trackMeets()
+    {
+        return $this->hasMany(TrackMeet::class);
     }
 }

@@ -4,7 +4,7 @@ use App\Models\Athlete;
 use App\Models\Meets\CrossCountryMeet;
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\CrossCountry\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Races\CrossCountry\Event;
 use App\Models\Properties\Races\Division;
@@ -18,7 +18,7 @@ $factory->define(CrossCountryMeet::class, function (Faker $faker) {
     $d = $faker->numberBetween($min = 10, $max = 30);
 
     return [
-        'meet_name_id' => Name::all()->random()->id,
+        'cross_country_meet_name_id' => Name::all()->random()->id,
         'meet_date' => $y.'-'.$m.'-'.$d,
         'cross_country_venue_id' => Venue::all()->random()->id,
         'host_id' => Host::all()->random()->id,

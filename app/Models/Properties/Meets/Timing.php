@@ -2,8 +2,10 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Models\Meets\CrossCountryMeet;
 use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Timing extends Model
 {
@@ -34,7 +36,15 @@ class Timing extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
+     */
+    public function crossCountryMeets()
+    {
+        return $this->hasMany(CrossCountryMeet::class, 'timing_method_id');
+    }
+
+    /**
+     * @return HasMany
      */
     public function trackMeets()
     {

@@ -15,7 +15,7 @@ class CreateCrossCountryMeetsTable extends Migration
     {
         Schema::create('cross_country_meets', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedSmallInteger('meet_name_id');
+            $table->unsignedSmallInteger('cross_country_meet_name_id');
             $table->date('meet_date');
             $table->unsignedSmallInteger('cross_country_venue_id');
             $table->unsignedSmallInteger('host_id');
@@ -24,7 +24,7 @@ class CreateCrossCountryMeetsTable extends Migration
             $table->timestamps();
 
             $table->foreign('host_id')->references('id')->on('hosts');
-            $table->foreign('meet_name_id')->references('id')->on('meet_names');
+            $table->foreign('cross_country_meet_name_id')->references('id')->on('cross_country_meet_names');
             $table->foreign('timing_method_id')->references('id')->on('timing_methods');
             $table->foreign('cross_country_venue_id')->references('id')->on('cross_country_venues');
         });

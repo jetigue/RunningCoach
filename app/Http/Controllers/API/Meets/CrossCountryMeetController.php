@@ -36,7 +36,7 @@ class CrossCountryMeetController extends Controller
     public function store(Request $request)
     {
         $crossCountryMeet = request()->validate([
-            'meet_name_id'              => 'required|integer',
+            'cross_country_meet_name_id'              => 'required|integer',
             'meet_date'                 => 'required|date',
             'host_id'                   => 'required|integer',
             'cross_country_venue_id'    => 'required|integer',
@@ -69,7 +69,7 @@ class CrossCountryMeetController extends Controller
     public function update(Request $request, CrossCountryMeet $crossCountryMeet)
     {
         request()->validate([
-            'meet_name_id'              => 'required|integer',
+            'cross_country_meet_name_id' => 'required|integer',
             'meet_date'                 => 'required|date',
             'host_id'                   => 'required|integer',
             'cross_country_venue_id'    => 'required|integer',
@@ -77,7 +77,7 @@ class CrossCountryMeetController extends Controller
         ]);
 
         $crossCountryMeet->update(request([
-            'meet_name_id',
+            'cross_country_meet_name_id',
             'meet_date',
             'host_id',
             'cross_country_venue_id',

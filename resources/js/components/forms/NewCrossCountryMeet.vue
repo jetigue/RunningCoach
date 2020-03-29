@@ -6,14 +6,14 @@
         <div class="mb-2">
             <div class="flex justify-between content-end">
                 <label class="form-label">Meet Name</label>
-                <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
-                      v-text="form.errors.get('meet_name_id')">
+                <span id="meetNameHelp" class="form-help" v-if="form.errors.has('cross_country_meet_name_id')"
+                      v-text="form.errors.get('cross_country_meet_name_id')">
                 </span>
             </div>
             <select
                 class="form-input"
-                name="meet_name_id"
-                v-model="form.meet_name_id"
+                name="cross_country_meet_name_id"
+                v-model="form.cross_country_meet_name_id"
                 required>
                     <option
                         v-for="name in names" :key="name.id" :value="name.id">
@@ -91,7 +91,7 @@
         data() {
             return {
                 form: new Form({
-                    meet_name_id: '',
+                    cross_country_meet_name_id: '',
                     host_id: '',
                     meet_date: '',
                     cross_country_venue_id: '',
@@ -134,7 +134,7 @@
             },
 
             resetForm() {
-                    this.form.meet_name_id = '',
+                    this.form.cross_country_meet_name_id = '',
                     this.form.meet_date = '',
                     this.form.cross_country_venue_id = '',
                     this.form.host_id = '',
@@ -144,7 +144,7 @@
 
             getAttributes() {
                 function getMeetNames() {
-                    return axios.get('/api/meet-names?season=cross-country')
+                    return axios.get('/api/cross-country/meet-names')
                 }
 
                 function getHostNames() {

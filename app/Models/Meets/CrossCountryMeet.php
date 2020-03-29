@@ -4,7 +4,7 @@ namespace App\Models\Meets;
 
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\CrossCountry\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Races\Division;
 use App\Models\Results\CrossCountry\Result;
@@ -30,7 +30,7 @@ class CrossCountryMeet extends Model
      * @var array
      */
     protected $fillable = [
-        'meet_name_id',
+        'cross_country_meet_name_id',
         'meet_date',
         'host_id',
         'cross_country_venue_id',
@@ -43,14 +43,6 @@ class CrossCountryMeet extends Model
     public function path()
     {
         return '/cross-country/meets/'.$this->slug;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
     }
 
     /**
@@ -70,7 +62,7 @@ class CrossCountryMeet extends Model
      */
     public function name()
     {
-        return $this->belongsTo(Name::class, 'meet_name_id');
+        return $this->belongsTo(Name::class, 'cross_country_meet_name_id');
     }
 
     /**

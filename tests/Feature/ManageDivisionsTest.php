@@ -13,26 +13,48 @@ class ManageDivisionsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
+    protected $gender;
+    protected $level;
+    protected $newGender;
+    protected $newLevel;
+    protected $attributes;
+    protected $newAttributes;
+    protected $division;
+
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->gender = factory(Gender::class)->create(['name' => 'Girls']);
+        $this->level = factory(Level::class)->create(['name' => 'Varsity']);
+
+        $this->newGender = factory(Gender::class)->create(['name' => 'Boys']);
+        $this->newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+
+        $this->attributes = [
+            'gender_id' => $this->gender->id,
+            'level_id' => $this->level->id,
+        ];
+
+        $this->newAttributes = [
+            'gender_id' => $this->newGender->id,
+            'level_id' => $this->newLevel->id,
+        ];
+    }
+
     /** @test */
     public function an_admin_can_create_a_division()
     {
         $this->signInAdmin();
 
-        $gender = factory(Gender::class)->create();
-        $level = factory(Level::class)->create();
+        $this->post('/api/divisions', $this->attributes);
 
-        $attributes = [
-            'gender_id' => $gender->id,
-            'level_id' => $level->id,
-        ];
-
-        $this->post('/api/divisions', $attributes);
-
-        $this->assertDatabaseHas('divisions', $attributes);
+        $this->assertDatabaseHas('divisions', $this->attributes);
 
         $this->get('/divisions')
-            ->assertSee($attributes['gender_id'])
-            ->assertSee($attributes['level_id']);
+            ->assertSee($this->attributes['gender_id'])
+            ->assertSee($this->attributes['level_id']);
     }
 
     /** @test */
@@ -40,21 +62,15 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInCoach();
 
-        $gender = factory(Gender::class)->create();
-        $level = factory(Level::class)->create();
+        $this->post('/api/divisions', $this->attributes);
 
-        $attributes = [
-            'gender_id' => $gender->id,
-            'level_id' => $level->id,
-        ];
+        $this->post('/api/divisions', $this->attributes)->assertRedirect('/');
 
-        $this->post('/api/divisions', $attributes)->assertRedirect('/');
-
-        $this->assertDatabaseMissing('divisions', $attributes);
+        $this->assertDatabaseMissing('divisions', $this->attributes);
 
         $this->get('/divisions')
-            ->assertDontSee($attributes['gender_id'])
-            ->assertDontSee($attributes['level_id']);
+            ->assertDontSee($this->attributes['gender_id'])
+            ->assertDontSee($this->attributes['level_id']);
     }
 
     /** @test */
@@ -62,21 +78,15 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $gender = factory(Gender::class)->create();
-        $level = factory(Level::class)->create();
+        $this->post('/api/divisions', $this->attributes);
 
-        $attributes = [
-            'gender_id' => $gender->id,
-            'level_id' => $level->id,
-        ];
+        $this->post('/api/divisions', $this->attributes)->assertRedirect('/');
 
-        $this->post('/api/divisions', $attributes)->assertRedirect('/');
-
-        $this->assertDatabaseMissing('divisions', $attributes);
+        $this->assertDatabaseMissing('divisions', $this->attributes);
 
         $this->get('/divisions')
-            ->assertDontSee($attributes['gender_id'])
-            ->assertDontSee($attributes['level_id']);
+            ->assertDontSee($this->attributes['gender_id'])
+            ->assertDontSee($this->attributes['level_id']);
     }
 
     /** @test */
@@ -84,43 +94,29 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInViewer();
 
-        $gender = factory(Gender::class)->create();
-        $level = factory(Level::class)->create();
+        $this->post('/api/divisions', $this->attributes);
 
-        $attributes = [
-            'gender_id' => $gender->id,
-            'level_id' => $level->id,
-        ];
+        $this->post('/api/divisions', $this->attributes)->assertRedirect('/');
 
-        $this->post('/api/divisions', $attributes)->assertRedirect('/');
-
-        $this->assertDatabaseMissing('divisions', $attributes);
+        $this->assertDatabaseMissing('divisions', $this->attributes);
 
         $this->get('/divisions')
-            ->assertDontSee($attributes['gender_id'])
-            ->assertDontSee($attributes['level_id']);
+            ->assertDontSee($this->attributes['gender_id'])
+            ->assertDontSee($this->attributes['level_id']);
     }
 
     /** @test */
     public function a_guest_cannot_create_a_division()
     {
-        $this->signInViewer();
+        $this->post('/api/divisions', $this->attributes);
 
-        $gender = factory(Gender::class)->create();
-        $level = factory(Level::class)->create();
+        $this->post('/api/divisions', $this->attributes)->assertRedirect('/');
 
-        $attributes = [
-            'gender_id' => $gender->id,
-            'level_id' => $level->id,
-        ];
-
-        $this->post('/api/divisions', $attributes)->assertRedirect('/');
-
-        $this->assertDatabaseMissing('divisions', $attributes);
+        $this->assertDatabaseMissing('divisions', $this->attributes);
 
         $this->get('/divisions')
-            ->assertDontSee($attributes['gender_id'])
-            ->assertDontSee($attributes['level_id']);
+            ->assertDontSee($this->attributes['gender_id'])
+            ->assertDontSee($this->attributes['level_id']);
     }
 
     /** @test */
@@ -157,9 +153,6 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInCoach();
 
-        Factory(Gender::class)->create(['name' => 'Girls']);
-        Factory(Level::class)->create(['name' => 'Varsity']);
-
         $this->get('/divisions')->assertRedirect('/');
     }
 
@@ -167,9 +160,6 @@ class ManageDivisionsTest extends TestCase
     public function an_athlete_cannot_view_divisions()
     {
         $this->signInAthlete();
-
-        Factory(Gender::class)->create(['name' => 'Girls']);
-        Factory(Level::class)->create(['name' => 'Varsity']);
 
         $this->get('/divisions')->assertRedirect('/');
     }
@@ -179,18 +169,12 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInViewer();
 
-        Factory(Gender::class)->create(['name' => 'Girls']);
-        Factory(Level::class)->create(['name' => 'Varsity']);
-
         $this->get('/divisions')->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_view_divisions()
     {
-        Factory(Gender::class)->create(['name' => 'Girls']);
-        Factory(Level::class)->create(['name' => 'Varsity']);
-
         $this->get('/divisions')->assertRedirect('/');
     }
 
@@ -199,26 +183,12 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInAdmin();
 
-        $oldGender = factory(Gender::class)->create(['name' => 'Girls']);
-        $oldLevel = factory(Level::class)->create(['name' => 'Varsity']);
-        $newGender = factory(Gender::class)->create(['name' => 'Boys']);
-        $newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+        $division = factory(Division::class)->create($this->attributes);
 
-        $division = factory(Division::class)->create([
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
-
-        $this->patch('api/divisions/'.$division->id, [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ])
+        $this->patch('/api/divisions/'. $division->id, $this->newAttributes)
             ->assertStatus(200);
 
-        $this->assertDatabaseHas('divisions', [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ]);
+        $this->assertDatabaseHas('divisions', $this->newAttributes);
     }
 
     /** @test */
@@ -226,26 +196,12 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInCoach();
 
-        $oldGender = factory(Gender::class)->create(['name' => 'Girls']);
-        $oldLevel = factory(Level::class)->create(['name' => 'Varsity']);
-        $newGender = factory(Gender::class)->create(['name' => 'Boys']);
-        $newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+        $division = factory(Division::class)->create($this->attributes);
 
-        $division = factory(Division::class)->create([
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
-
-        $this->patch('api/divisions/'.$division->id, [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ])
+        $this->patch('/api/divisions/'. $division->id, $this->newAttributes)
             ->assertRedirect('/');
 
-        $this->assertDatabaseHas('divisions', [
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
+        $this->assertDatabaseHas('divisions', $this->attributes);
     }
 
     /** @test */
@@ -253,26 +209,12 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInAthlete();
 
-        $oldGender = factory(Gender::class)->create(['name' => 'Girls']);
-        $oldLevel = factory(Level::class)->create(['name' => 'Varsity']);
-        $newGender = factory(Gender::class)->create(['name' => 'Boys']);
-        $newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+        $division = factory(Division::class)->create($this->attributes);
 
-        $division = factory(Division::class)->create([
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
-
-        $this->patch('api/divisions/'.$division->id, [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ])
+        $this->patch('/api/divisions/' . $division->id, $this->newAttributes)
             ->assertRedirect('/');
 
-        $this->assertDatabaseHas('divisions', [
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
+        $this->assertDatabaseHas('divisions', $this->attributes);
     }
 
     /** @test */
@@ -280,50 +222,22 @@ class ManageDivisionsTest extends TestCase
     {
         $this->signInViewer();
 
-        $oldGender = factory(Gender::class)->create(['name' => 'Girls']);
-        $oldLevel = factory(Level::class)->create(['name' => 'Varsity']);
-        $newGender = factory(Gender::class)->create(['name' => 'Boys']);
-        $newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+        $division = factory(Division::class)->create($this->attributes);
 
-        $division = factory(Division::class)->create([
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
-
-        $this->patch('api/divisions/'.$division->id, [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ])
+        $this->patch('/api/divisions/'. $division->id, $this->newAttributes)
             ->assertRedirect('/');
 
-        $this->assertDatabaseHas('divisions', [
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
+        $this->assertDatabaseHas('divisions', $this->attributes);
     }
 
     /** @test */
     public function a_guest_cannot_update_a_division()
     {
-        $oldGender = factory(Gender::class)->create(['name' => 'Girls']);
-        $oldLevel = factory(Level::class)->create(['name' => 'Varsity']);
-        $newGender = factory(Gender::class)->create(['name' => 'Boys']);
-        $newLevel = factory(Level::class)->create(['name' => 'Junior Varsity']);
+        $division = factory(Division::class)->create($this->attributes);
 
-        $division = factory(Division::class)->create([
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
-
-        $this->patch('api/divisions/'.$division->id, [
-            'gender_id' => $newGender->id,
-            'level_id' => $newLevel->id,
-        ])
+        $this->patch('/api/divisions/'. $division->id, $this->newAttributes)
             ->assertRedirect('/');
 
-        $this->assertDatabaseHas('divisions', [
-            'gender_id' => $oldGender->id,
-            'level_id' => $oldLevel->id,
-        ]);
+        $this->assertDatabaseHas('divisions', $this->attributes);
     }
 }

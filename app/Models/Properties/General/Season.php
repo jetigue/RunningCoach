@@ -3,8 +3,8 @@
 namespace App\Models\Properties\General;
 
 use App\Filters\SeasonFilter;
+use App\Models\Meets\CrossCountryMeet;
 use App\Models\Meets\TrackMeet;
-use App\Models\Properties\Meets\Name;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -26,13 +26,6 @@ class Season extends Model
      */
     protected $fillable = ['name'];
 
-    /**
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     /**
      * Save a slug on store and update.
@@ -53,15 +46,7 @@ class Season extends Model
      */
     public function path()
     {
-        return '/seasons/'.$this->slug;
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function meetNames()
-    {
-        return $this->hasMany(Name::class);
+        return '/seasons/'.$this->id;
     }
 
     /**
