@@ -17,11 +17,11 @@
                     <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label">Meet Name</label>
-                            <span id="meetNameHelp" class="form-help" v-if="form.errors.has('meet_name_id')"
-                                v-text="form.errors.get('meet_name_id')">
+                            <span id="meetNameHelp" class="form-help" v-if="form.errors.has('cross_country_meet_name_id')"
+                                v-text="form.errors.get('cross_country_meet_name_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="meet_name_id" v-model="form.meet_name_id" required>
+                        <select class="form-input" name="cross_country_meet_name_id" v-model="form.cross_country_meet_name_id" required>
                             <option v-for="name in names" :key="name.id" :value="name.id">
                                 {{ name.name }}
                             </option>
@@ -158,13 +158,13 @@
                 timing: this.data.timing.name,
                 path: '/cross-country/meets/' +this.slug,
 
-                meet_name_id: this.data.meet_name_id,
+                cross_country_meet_name_id: this.data.cross_country_meet_name_id,
                 host_id: this.data.host_id,
                 cross_country_venue_id: this.data.cross_country_venue_id,
                 timing_method_id: this.data.timing_method_id,
 
                 form: new Form({
-                    meet_name_id: this.data.meet_name_id,
+                    cross_country_meet_name_id: this.data.cross_country_meet_name_id,
                     meet_date: this.data.meet_date,
                     host_id: this.data.host_id,
                     cross_country_venue_id: this.data.cross_country_venue_id,
@@ -188,7 +188,7 @@
                 this.form
                     .patch('/api/cross-country/meets/' + this.data.id)
                     .then(data => {
-                        this.meetName = this.names.find(name => name.id === this.form.meet_name_id).name;
+                        this.meetName = this.names.find(name => name.id === this.form.cross_country_meet_name_id).name;
                         this.meetDate = this.form.meet_date;
                         this.host = this.hosts.find(host => host.id === this.form.host_id).name;
                         this.venue = this.venues.find(venue => venue.id === this.form.cross_country_venue_id).name;
@@ -230,7 +230,7 @@
             },
 
             resetForm() {
-                this.form.meet_name_id = this.meet_name_id,
+                this.form.cross_country_meet_name_id = this.cross_country_meet_name_id,
                 this.form.meet_date = this.meetDate,
                 this.form.host_id = this.host_id,
                 this.form.cross_country_venue_id = this.cross_country_venue_id,
@@ -246,7 +246,7 @@
                 }
 
                 function getMeetNames() {
-                    return axios.get('/api/meet-names?season=cross-country')
+                    return axios.get('/api/cross-country/meet-names')
                 }
 
                 function getTimingMethods() {

@@ -29,7 +29,8 @@ Vue.component('track-surfaces', require('./components/properties/general/TrackSu
 
 // Meet Properties
 Vue.component('meet-hosts', require('./components/properties/meets/MeetHosts').default);
-Vue.component('meet-names', require('./components/properties/meets/MeetNames').default);
+Vue.component('track-meet-names', require('./components/properties/meets/TrackMeetNames').default);
+Vue.component('cross-country-meet-names', require('./components/properties/meets/CrossCountryMeetNames').default);
 Vue.component('cross-country-venues', require('./components/properties/meets/CrossCountryVenues.vue').default);
 Vue.component('track-venues', require('./components/properties/meets/TrackVenues.vue').default);
 Vue.component('timing-methods', require('./components/properties/meets/TimingMethods').default);

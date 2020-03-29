@@ -2,6 +2,7 @@
 
 namespace App\Models\Properties\Meets;
 
+use App\Models\Meets\CrossCountryMeet;
 use App\Models\Meets\TrackMeet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -32,6 +33,14 @@ class Host extends Model
     public function path()
     {
         return '/hosts/'.$this->id;
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function crossCountryMeets()
+    {
+        return $this->hasMany(CrossCountryMeet::class);
     }
 
     /**

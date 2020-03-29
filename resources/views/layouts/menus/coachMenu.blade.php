@@ -40,8 +40,9 @@
         <div class="flex flex-col pl-2">
             <a class="text-gray-700 hover:text-gray-900" href="/divisions">Meet Divisions</a>
             <a class="text-gray-700 hover:text-gray-900" href="/hosts">Meet Hosts</a>
-            <a class="text-gray-700 hover:text-gray-900" href="/meet-names">Meet Names</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/cross-country/meet-names">XC Meet Names</a>
             <a class="text-gray-700 hover:text-gray-900" href="/cross-country/venues">XC Venues</a>
+            <a class="text-gray-700 hover:text-gray-900" href="/track/meet-names">Track Meet Names</a>
             <a class="text-gray-700 hover:text-gray-900" href="/track/venues">Track Venues</a>
         </div>
     </div>

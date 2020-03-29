@@ -5,7 +5,7 @@ namespace App\Models\Meets;
 use App\Filters\TrackMeetFilter;
 use App\Models\Properties\General\Season;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\Track\Name;
 use App\Models\Properties\Meets\Timing;
 use App\Models\Properties\Meets\Track\Venue;
 use App\Models\Results\Track\Result;
@@ -32,28 +32,20 @@ class TrackMeet extends Model
      * @var array
      */
     protected $fillable = [
-       'meet_name_id',
+       'host_id',
        'meet_date',
        'season_id',
-       'host_id',
-       'track_venue_id',
        'timing_method_id',
+       'track_meet_name_id',
+       'track_venue_id'
    ];
-
-    /**
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     /**
      * @return string
      */
     public function path()
     {
-        return '/track/meets/'.$this->slug;
+        return '/track/meets/'. $this->slug;
     }
 
     /**
@@ -73,7 +65,7 @@ class TrackMeet extends Model
      */
     public function name()
     {
-        return $this->belongsTo(Name::class, 'meet_name_id');
+        return $this->belongsTo(Name::class, 'track_meet_name_id');
     }
 
     /**

@@ -28,6 +28,13 @@ class TimingMethodTest extends TestCase
     }
 
     /** @test */
+    public function a_timing_method_has_many_cross_country_meets()
+    {
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection', $this->timing->crossCountryMeets);
+    }
+
+    /** @test */
     public function a_timing_method_has_many_track_meets()
     {
         $this->assertInstanceOf(

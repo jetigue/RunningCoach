@@ -118,7 +118,7 @@ class ManageSeasonsTest extends TestCase
 
         $season = factory(Season::class)->create(['name' => 'Original Season']);
 
-        $this->patch('api/seasons/'.$season->slug, ['name' => 'Changed Season'])
+        $this->patch('api/seasons/'.$season->id, ['name' => 'Changed Season'])
             ->assertStatus(200);
 
         $this->assertDatabaseHas('seasons', ['name' => 'Changed Season']);
@@ -131,7 +131,7 @@ class ManageSeasonsTest extends TestCase
 
         $season = factory(Season::class)->create(['name' => 'Original Season']);
 
-        $this->patch('api/seasons/'.$season->slug, ['name' => 'Changed Season'])
+        $this->patch('api/seasons/'.$season->id, ['name' => 'Changed Season'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('seasons', ['name' => 'Original Season']);
@@ -144,7 +144,7 @@ class ManageSeasonsTest extends TestCase
 
         $season = factory(Season::class)->create(['name' => 'Original Season']);
 
-        $this->patch('api/seasons/'.$season->slug, ['name' => 'Changed Season'])
+        $this->patch('api/seasons/'.$season->id, ['name' => 'Changed Season'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('seasons', ['name' => 'Original Season']);
@@ -157,7 +157,7 @@ class ManageSeasonsTest extends TestCase
 
         $season = factory(Season::class)->create(['name' => 'Original Season']);
 
-        $this->patch('api/seasons/'.$season->slug, ['name' => 'Changed Season'])
+        $this->patch('api/seasons/'.$season->id, ['name' => 'Changed Season'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('seasons', ['name' => 'Original Season']);
@@ -168,7 +168,7 @@ class ManageSeasonsTest extends TestCase
     {
         $season = factory(Season::class)->create(['name' => 'Original Season']);
 
-        $this->patch('api/seasons/'.$season->slug, ['name' => 'Changed Season'])
+        $this->patch('api/seasons/'.$season->id, ['name' => 'Changed Season'])
             ->assertRedirect('/');
 
         $this->assertDatabaseHas('seasons', ['name' => 'Original Season']);

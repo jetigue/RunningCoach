@@ -7,8 +7,8 @@
             <div class="table-header-no-border border-b-2 border-gray-400"></div>
 
             <div v-if="records">
-                <div v-for="(meet, index) in items" :key="meet.id">
-                    <track-meet :data="meet" @deleted="remove(index)"></track-meet>
+                <div v-for="(trackMeet, index) in items" :key="trackMeet.id">
+                    <track-meet :data="trackMeet" @deleted="remove(index)"></track-meet>
                 </div>
             </div>
 

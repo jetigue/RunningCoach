@@ -2,7 +2,7 @@
 
 use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Properties\Meets\Host;
-use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\CrossCountry\Name;
 use App\Models\Properties\Meets\Timing;
 use Faker\Generator as Faker;
 
@@ -28,8 +28,13 @@ $factory->define(Venue::class, function (Faker $faker) {
 
 $factory->define(Name::class, function (Faker $faker) {
     return [
-        'name' => $faker->name.' '.'Invitational',
-        'season_id' => $faker->numberBetween($min = 1, $max = 3),
+        'name' => $faker->name.' '.'Invitational'
+    ];
+});
+
+$factory->define(\App\Models\Properties\Meets\Track\Name::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name.' '.'Invitational'
     ];
 });
 

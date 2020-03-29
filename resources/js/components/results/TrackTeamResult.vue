@@ -166,7 +166,7 @@
                 number_teams: this.data.number_teams,
                 points: this.data.points,
                 notes: this.data.notes,
-                url: location.pathname + '/team-results/' +this.data.id,
+                url: location.pathname + '/team-results/' + this.data.slug,
 
                 meet_id: this.data.meet_id,
                 division_id: this.data.division_id,

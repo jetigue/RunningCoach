@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class TeamResultController extends Controller
 {
@@ -60,9 +61,11 @@ class TeamResultController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
+     * @param TrackMeet $trackMeet
      * @param TeamResult $teamResult
-     * @return Response
+     * @return JsonResponse
+     * @throws ValidationException
      */
     public function update(Request $request, TrackMeet $trackMeet, TeamResult $teamResult)
     {
