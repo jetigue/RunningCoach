@@ -75,8 +75,8 @@ Route::apiResources([
     'api/track/meets/{trackMeet:slug}/team-results' => 'API\Results\Track\TeamResultController',
 
     // Race Results
-    'api/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult}/results' => 'API\Results\CrossCountry\ResultController',
-    'api/track/meets/{trackMeet:slug}/team-results/{teamResult}/results' => 'API\Results\Track\ResultController',
+    'api/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult:slug}/results' => 'API\Results\CrossCountry\ResultController',
+    'api/track/meets/{trackMeet:slug}/team-results/{teamResult:slug}/results' => 'API\Results\Track\ResultController',
 
     // General Properties
     'api/day-times'          => 'API\Properties\General\DayTimeController',
