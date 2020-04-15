@@ -14,7 +14,7 @@ class AthleteTrackResults
             ->join('athletes', 'track_results.athlete_id', '=', 'athletes.id')
             ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
             ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
-            ->join('meet_names', 'track_meets.meet_name_id', '=', 'meet_names.id')
+            ->join('track_meet_names', 'track_meets.track_meet_name_id', '=', 'track_meet_names.id')
             ->join('divisions', 'track_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
             ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
@@ -23,7 +23,7 @@ class AthleteTrackResults
                 'track_meets.meet_date as date',
                 'track_meets.slug as slug',
                 'track_team_results.id as teamResultId',
-                'meet_names.name',
+                'track_meet_names.name',
                 'levels.name as level',
                 'track_events.meters as meters',
                 'track_events.id'

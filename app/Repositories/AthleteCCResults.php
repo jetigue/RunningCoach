@@ -19,7 +19,7 @@ class AthleteCCResults
             ->join('athletes', 'cross_country_results.athlete_id', '=', 'athletes.id')
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
             ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
-            ->join('meet_names', 'cross_country_meets.meet_name_id', '=', 'meet_names.id')
+            ->join('cross_country_meet_names', 'cross_country_meets.cross_country_meet_name_id', '=', 'cross_country_meet_names.id')
             ->join('divisions', 'cross_country_team_results.division_id', '=', 'divisions.id')
             ->join('levels', 'divisions.level_id', '=', 'levels.id')
             ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
@@ -28,7 +28,7 @@ class AthleteCCResults
                 'cross_country_meets.meet_date as date',
                 'cross_country_meets.slug as slug',
                 'cross_country_team_results.id as teamResultId',
-                'meet_names.name',
+                'cross_country_meet_names.name',
                 'levels.name as level',
                 'cross_country_events.name as event'
             )
