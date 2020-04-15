@@ -66,6 +66,83 @@ class AthleteProfileController extends Controller
         $track3200mResults2017 = $trackResults->track3200mResults2017($athlete);
         $track2mileResults2017 = $trackResults->track2mileResults2017($athlete);
         $track5000mResults2017 = $trackResults->track5000mResults2017($athlete);
+        $track400mResults2016 = $trackResults->track400mResults2016($athlete);
+        $track800mResults2016 = $trackResults->track800mResults2016($athlete);
+        $track1000mResults2016 = $trackResults->track1000mResults2016($athlete);
+        $track1200mResults2016 = $trackResults->track1200mResults2016($athlete);
+        $track1500mResults2016 = $trackResults->track1500mResults2016($athlete);
+        $track1600mResults2016 = $trackResults->track1600mResults2016($athlete);
+        $track1mileResults2016 = $trackResults->track1mileResults2016($athlete);
+        $track3000mResults2016 = $trackResults->track3000mResults2016($athlete);
+        $track3200mResults2016 = $trackResults->track3200mResults2016($athlete);
+        $track2mileResults2016 = $trackResults->track2mileResults2016($athlete);
+        $track5000mResults2016 = $trackResults->track5000mResults2016($athlete);
+        $track400mResults2015 = $trackResults->track400mResults2015($athlete);
+        $track800mResults2015 = $trackResults->track800mResults2015($athlete);
+        $track1000mResults2015 = $trackResults->track1000mResults2015($athlete);
+        $track1200mResults2015 = $trackResults->track1200mResults2015($athlete);
+        $track1500mResults2015 = $trackResults->track1500mResults2015($athlete);
+        $track1600mResults2015 = $trackResults->track1600mResults2015($athlete);
+        $track1mileResults2015 = $trackResults->track1mileResults2015($athlete);
+        $track3000mResults2015 = $trackResults->track3000mResults2015($athlete);
+        $track3200mResults2015 = $trackResults->track3200mResults2015($athlete);
+        $track2mileResults2015 = $trackResults->track2mileResults2015($athlete);
+        $track5000mResults2015 = $trackResults->track5000mResults2015($athlete);
+        $track400mResults2014 = $trackResults->track400mResults2014($athlete);
+        $track800mResults2014 = $trackResults->track800mResults2014($athlete);
+        $track1000mResults2014 = $trackResults->track1000mResults2014($athlete);
+        $track1200mResults2014 = $trackResults->track1200mResults2014($athlete);
+        $track1500mResults2014 = $trackResults->track1500mResults2014($athlete);
+        $track1600mResults2014 = $trackResults->track1600mResults2014($athlete);
+        $track1mileResults2014 = $trackResults->track1mileResults2014($athlete);
+        $track3000mResults2014 = $trackResults->track3000mResults2014($athlete);
+        $track3200mResults2014 = $trackResults->track3200mResults2014($athlete);
+        $track2mileResults2014 = $trackResults->track2mileResults2014($athlete);
+        $track5000mResults2014 = $trackResults->track5000mResults2014($athlete);
+        $track400mResults2013 = $trackResults->track400mResults2013($athlete);
+        $track800mResults2013 = $trackResults->track800mResults2013($athlete);
+        $track1000mResults2013 = $trackResults->track1000mResults2013($athlete);
+        $track1200mResults2013 = $trackResults->track1200mResults2013($athlete);
+        $track1500mResults2013 = $trackResults->track1500mResults2013($athlete);
+        $track1600mResults2013 = $trackResults->track1600mResults2013($athlete);
+        $track1mileResults2013 = $trackResults->track1mileResults2013($athlete);
+        $track3000mResults2013 = $trackResults->track3000mResults2013($athlete);
+        $track3200mResults2013 = $trackResults->track3200mResults2013($athlete);
+        $track2mileResults2013 = $trackResults->track2mileResults2013($athlete);
+        $track5000mResults2013 = $trackResults->track5000mResults2013($athlete);
+        $track400mResults2012 = $trackResults->track400mResults2012($athlete);
+        $track800mResults2012 = $trackResults->track800mResults2012($athlete);
+        $track1000mResults2012 = $trackResults->track1000mResults2012($athlete);
+        $track1200mResults2012 = $trackResults->track1200mResults2012($athlete);
+        $track1500mResults2012 = $trackResults->track1500mResults2012($athlete);
+        $track1600mResults2012 = $trackResults->track1600mResults2012($athlete);
+        $track1mileResults2012 = $trackResults->track1mileResults2012($athlete);
+        $track3000mResults2012 = $trackResults->track3000mResults2012($athlete);
+        $track3200mResults2012 = $trackResults->track3200mResults2012($athlete);
+        $track2mileResults2012 = $trackResults->track2mileResults2012($athlete);
+        $track5000mResults2012 = $trackResults->track5000mResults2012($athlete);
+        $track400mResults2011 = $trackResults->track400mResults2011($athlete);
+        $track800mResults2011 = $trackResults->track800mResults2011($athlete);
+        $track1000mResults2011 = $trackResults->track1000mResults2011($athlete);
+        $track1200mResults2011 = $trackResults->track1200mResults2011($athlete);
+        $track1500mResults2011 = $trackResults->track1500mResults2011($athlete);
+        $track1600mResults2011 = $trackResults->track1600mResults2011($athlete);
+        $track1mileResults2011 = $trackResults->track1mileResults2011($athlete);
+        $track3000mResults2011 = $trackResults->track3000mResults2011($athlete);
+        $track3200mResults2011 = $trackResults->track3200mResults2011($athlete);
+        $track2mileResults2011 = $trackResults->track2mileResults2011($athlete);
+        $track5000mResults2011 = $trackResults->track5000mResults2011($athlete);
+        $track400mResults2010 = $trackResults->track400mResults2010($athlete);
+        $track800mResults2010 = $trackResults->track800mResults2010($athlete);
+        $track1000mResults2010 = $trackResults->track1000mResults2010($athlete);
+        $track1200mResults2010 = $trackResults->track1200mResults2010($athlete);
+        $track1500mResults2010 = $trackResults->track1500mResults2010($athlete);
+        $track1600mResults2010 = $trackResults->track1600mResults2010($athlete);
+        $track1mileResults2010 = $trackResults->track1mileResults2010($athlete);
+        $track3000mResults2010 = $trackResults->track3000mResults2010($athlete);
+        $track3200mResults2010 = $trackResults->track3200mResults2010($athlete);
+        $track2mileResults2010 = $trackResults->track2mileResults2010($athlete);
+        $track5000mResults2010 = $trackResults->track5000mResults2010($athlete);
         $trackResults2020 = $trackResults->trackResults2020($athlete);
         $trackResults2019 = $trackResults->trackResults2019($athlete);
         $trackResults2018 = $trackResults->trackResults2018($athlete);
@@ -171,6 +248,83 @@ class AthleteProfileController extends Controller
             'track3200mResults2017',
             'track2mileResults2017',
             'track5000mResults2017',
+            'track400mResults2016',
+            'track800mResults2016',
+            'track1000mResults2016',
+            'track1200mResults2016',
+            'track1500mResults2016',
+            'track1600mResults2016',
+            'track1mileResults2016',
+            'track3000mResults2016',
+            'track3200mResults2016',
+            'track2mileResults2016',
+            'track5000mResults2016',
+            'track400mResults2015',
+            'track800mResults2015',
+            'track1000mResults2015',
+            'track1200mResults2015',
+            'track1500mResults2015',
+            'track1600mResults2015',
+            'track1mileResults2015',
+            'track3000mResults2015',
+            'track3200mResults2015',
+            'track2mileResults2015',
+            'track5000mResults2015',
+            'track400mResults2014',
+            'track800mResults2014',
+            'track1000mResults2014',
+            'track1200mResults2014',
+            'track1500mResults2014',
+            'track1600mResults2014',
+            'track1mileResults2014',
+            'track3000mResults2014',
+            'track3200mResults2014',
+            'track2mileResults2014',
+            'track5000mResults2014',
+            'track400mResults2013',
+            'track800mResults2013',
+            'track1000mResults2013',
+            'track1200mResults2013',
+            'track1500mResults2013',
+            'track1600mResults2013',
+            'track1mileResults2013',
+            'track3000mResults2013',
+            'track3200mResults2013',
+            'track2mileResults2013',
+            'track5000mResults2013',
+            'track400mResults2012',
+            'track800mResults2012',
+            'track1000mResults2012',
+            'track1200mResults2012',
+            'track1500mResults2012',
+            'track1600mResults2012',
+            'track1mileResults2012',
+            'track3000mResults2012',
+            'track3200mResults2012',
+            'track2mileResults2012',
+            'track5000mResults2012',
+            'track400mResults2011',
+            'track800mResults2011',
+            'track1000mResults2011',
+            'track1200mResults2011',
+            'track1500mResults2011',
+            'track1600mResults2011',
+            'track1mileResults2011',
+            'track3000mResults2011',
+            'track3200mResults2011',
+            'track2mileResults2011',
+            'track5000mResults2011',
+            'track400mResults2010',
+            'track800mResults2010',
+            'track1000mResults2010',
+            'track1200mResults2010',
+            'track1500mResults2010',
+            'track1600mResults2010',
+            'track1mileResults2010',
+            'track3000mResults2010',
+            'track3200mResults2010',
+            'track2mileResults2010',
+            'track5000mResults2010',
             'seasonBest1600m',
             'seasonBest1500m',
             'seasonBest3200m',
