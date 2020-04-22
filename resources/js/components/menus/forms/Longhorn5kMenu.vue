@@ -32,12 +32,12 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
-                    label: 'Longhorn 5k Registration',
+                    label: '2019 Longhorn 5k Registration',
                     url: '/forms/longhorn5k/Longhorn5kRegistration2019.pdf'
                 }
-            ] 
+            ]
         }
     },
 

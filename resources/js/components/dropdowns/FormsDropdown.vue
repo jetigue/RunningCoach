@@ -16,18 +16,18 @@
 
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">General Information</p>
-                        <a class="text-sm" href="/forms/information/Information_Packet_2019.pdf">
-                            Informational Packet
+                        <a class="text-sm" href="/forms/information/Information_Packet_2020.pdf">
+                            2020 Informational Packet
                         </a>
                     </div>
 
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">Longhorn 5k</p>
                         <a class="text-sm" href="https://runsignup.com/Race/GA/Suwanee/Longhorn5K">
-                            Online Registration
+                            2019 Online Registration
                         </a>
                         <a class="text-sm" href="/forms/longhorn5k/Longhorn5kRegistration2019.pdf">
-                            Registration Form
+                            2019 Registration Form
                         </a>
                     </div>
 
@@ -47,24 +47,24 @@
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">Schedules</p>
                         <a class="text-sm" href="/forms/schedules/MeetSchedule2019.pdf">
-                            Meet Schedule
+                            2019 Meet Schedule
                         </a>
                     </div>
 
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">Spirit Wear</p>
                         <a class="text-sm" href="/forms/spiritwear/SpiritWearFlyer2019.pdf">
-                            Spirit Wear Flyer
+                            2019 Spirit Wear Flyer
                         </a>
                         <a class="text-sm" href="/forms/spiritwear/OrderForm2019.pdf">
-                            Spirit Wear Order Form
+                            2019 Spirit Wear Order Form
                         </a>
                     </div>
 
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">Sponsorships</p>
                         <a class="text-sm" href="/forms/sponsors/SponsorshipForm2019.pdf">
-                            Sponsorship Form
+                            2019 Sponsorship Form
                         </a>
                     </div>
 

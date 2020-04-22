@@ -32,12 +32,12 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
-                    label: 'Information Packet',
-                    url: '/forms/information/Information_Packet_2019.pdf'
+                    label: '2020 Information Packet',
+                    url: '/forms/information/Information_Packet_2012.pdf'
                 }
-            ] 
+            ]
         }
     },
 

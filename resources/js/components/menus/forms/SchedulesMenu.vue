@@ -32,14 +32,14 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
-                    label: 'Meet Schedule',
+                    label: '2019 Meet Schedule',
                     url: '/forms/schedules/MeetSchedule2019.pdf'
                 },
 
 
-            ] 
+            ]
         }
     },
 

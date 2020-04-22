@@ -32,12 +32,12 @@ export default {
             isExpanded: false,
 
             items: [
-                { 
+                {
                     id: 1,
-                    label: 'Sponsorship Form',
+                    label: '2019 Sponsorship Form',
                     url: '/forms/sponsors/SponsorshipForm2019.pdf'
                 }
-            ] 
+            ]
         }
     },
 
