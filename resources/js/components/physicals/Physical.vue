@@ -88,7 +88,7 @@
                                 <span v-else><i class="fas fa-times"></i></span>
                             </div>
 
-                            <div class="w-full md:w-1/2 pl-4 lg:w-1/5 lg:pl-0 py-1 text-sm"
+                            <div class="w-full md:w-1/2 pl-4 lg:w-1/5 lg:pl-0 text-sm"
                                  :style="{color: expirationColor}">
                                 {{ expiration }}
 
@@ -356,7 +356,7 @@
                     concussion_form: this.concussion_form = '0'
                 });
 
-                this.$emit('formChange');
+                // this.$emit('formChange');
                 this.confirmedConcussionForm = false;
             },
 

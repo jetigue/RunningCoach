@@ -116,8 +116,8 @@
                         this.isExpanded = false;
 
                         if (
-                            this.name != this.data.name ||
-                            this.description != this.data.description
+                            this.name !== this.data.name ||
+                            this.description !== this.data.description
                         ) {
 
                             const toast = Vue.swal.mixin({

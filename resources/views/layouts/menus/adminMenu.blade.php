@@ -1,8 +1,8 @@
-<div class="my-2">
-    <header class="font-thin md:text-xl lg:text-3xl text-secondary">Admin Menu</header>
+<div class="my-1 text-sm">
+    <header class="font-thin md:text-xl lg:text-2xl text-secondary">Admin Menu</header>
 
 {{--    <p class="text-tertiary hover:text-blue-700 mb-2 pl-2"><a href="/dashboard">Dashboard</a></p>--}}
-    <div class="py-2">
+    <div class="py-1">
         <p class="text-primary text-lg md:text-base lg:text-lg">Division Properties</p>
         <div class="flex flex-col pl-2">
             <a class="text-gray-800 hover:text-blue-700" href="/genders">Genders</a>
@@ -20,17 +20,12 @@
     <div class="py-1">
         <p class="text-primary text-lg md:text-base lg:text-lg">Meet Properties</p>
         <div class="flex flex-col pl-2">
+            <a class="text-gray-700 hover:text-gray-900" href="/divisions">Meet Divisions</a>
             <a class="text-gray-800 hover:text-blue-700" href="/race-titles">Race Titles</a>
             <a class="text-gray-800 hover:text-blue-700" href="/seasons">Seasons</a>
             <a class="text-gray-800 hover:text-blue-700" href="/timing">Timing Methods</a>
             <a class="text-gray-800 hover:text-blue-700" href="/cross-country/events">XC Events</a>
             <a class="text-gray-800 hover:text-blue-700" href="/track/events">Track Events</a>
-        </div>
-    </div>
-    <div class="py-1">
-        <p class="text-primary text-xl md:text-base lg:text-xl">Results</p>
-        <div class="flex flex-col pl-2">
-            <a class="text-gray-800 hover:text-gray-900" href="/cross-country/meets">Cross Country</a>
         </div>
     </div>
     <div class="py-1">

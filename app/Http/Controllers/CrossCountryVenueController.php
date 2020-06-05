@@ -7,6 +7,7 @@ use App\Models\Properties\Meets\CrossCountry\Venue;
 use App\Models\Results\CrossCountry\Result;
 use App\Repositories\CCVenueRecords;
 use Carbon\Carbon;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,7 +32,7 @@ class CrossCountryVenueController extends Controller
      *
      * @param CCVenueRecords $venueRecords
      * @param Venue $venue
-     * @return void
+     * @return Application|Factory|View
      */
     public function showBoysRecords(CCVenueRecords $venueRecords, Venue $venue)
     {

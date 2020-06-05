@@ -1,6 +1,6 @@
 <template>
-    <div class="text-gray-800 px-2 cursor-pointer" @click="deleteRecord">
-        <span>Delete</span>
+    <div class="text-gray-800 px-2 cursor-pointer flex items-center" @click="deleteRecord">
+        <span class="hidden mr-1">Delete</span>
         <i class="fas fa-trash"></i>
     </div>
 </template>

@@ -57,7 +57,7 @@ class ManageHostsTest extends TestCase
 
         $attributes = ['name' => 'The Host with the Most'];
 
-        $this->post('/api/levels', $attributes)->assertRedirect('/');
+        $this->post('/api/hosts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -67,7 +67,7 @@ class ManageHostsTest extends TestCase
 
         $attributes = ['name' => 'The Host with the Most'];
 
-        $this->post('/api/levels', $attributes)->assertRedirect('/');
+        $this->post('/api/hosts', $attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -75,7 +75,7 @@ class ManageHostsTest extends TestCase
     {
         $attributes = ['name' => 'The Host with the Most'];
 
-        $this->post('/api/levels', $attributes)->assertRedirect('/');
+        $this->post('/api/hosts', $attributes)->assertRedirect('/');
     }
 
     /** @test */

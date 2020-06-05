@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Properties\Races;
 
 use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Level;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -21,13 +22,11 @@ class LevelController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Level[]|Collection
      */
     public function index()
     {
-        $levels = Level::all();
-
-        return $levels;
+        return Level::all();
     }
 
     /**

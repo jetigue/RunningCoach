@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Coach;
 use App\Filters\AthleteFilter;
 use App\Http\Controllers\Controller;
 use App\Models\Athlete;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class AthleteController extends Controller
 {
@@ -18,11 +21,11 @@ class AthleteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        $athletes = Athlete::orderBy('last_name')->get();
+        $athletes = Athlete::orderBy('last_name')->with('trainingGroup')->get();
 
         if (request()->expectsJson()) {
             return $athletes;

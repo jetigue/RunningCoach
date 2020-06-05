@@ -22,10 +22,12 @@ class CreateAthletesTable extends Migration
             $table->unsignedSmallInteger('grad_year');
             $table->char('status', 1);
             $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedTinyInteger('training_group_id')->default(1);
             $table->string('slug')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('training_group_id')->references('id')->on('training_groups');
         });
     }
 

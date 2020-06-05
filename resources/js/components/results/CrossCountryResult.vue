@@ -242,8 +242,8 @@
                     .patch('/api' + location.pathname + '/results/' +this.data.id)
                     .then(data => {
                         this.athleteName =
-                            this.athletes.find(athlete => athlete.id === this.form.athlete_id).last_name + ', ' +
-                            this.athletes.find(athlete => athlete.id === this.form.athlete_id).first_name;
+                        this.athletes.find(athlete => athlete.id === this.form.athlete_id).last_name + ', ' +
+                        this.athletes.find(athlete => athlete.id === this.form.athlete_id).first_name;
                         this.minutes = this.form.minutes;
                         this.seconds = this.form.seconds;
                         this.milliseconds = this.form.milliseconds;
@@ -256,12 +256,12 @@
                         this.isExpanded = false;
 
                          if (
-                             this.athlete != this.data.athlete.name ||
-                             this.minutes != this.data.minutes ||
-                             this.seconds != this.data.seconds ||
-                             this.milliseconds != this.data.milliseconds ||
-                             this.place != this.data.place ||
-                             this.points != this.data.points)
+                             this.athlete !== this.data.athlete.name ||
+                             this.minutes !== this.data.minutes ||
+                             this.seconds !== this.data.seconds ||
+                             this.milliseconds !== this.data.milliseconds ||
+                             this.place !== this.data.place ||
+                             this.points !== this.data.points)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,

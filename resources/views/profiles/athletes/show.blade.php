@@ -2,13 +2,22 @@
 
 @section('content')
 <div class="flex flex-col w-full">
-    <header>
-        <p class="text-primary text-2xl lg:text-5xl">
-            {{ $athlete->first_name }} {{ $athlete->last_name }}
-        </p>
-        <p class="text-gray-700 text-lg lg:text-xl">
-            Class of {{ $athlete->grad_year }}
-        </p>
+    <header class="flex justify-between flex-wrap">
+        <div class="flex flex-col w-full md:w-3/4">
+            <p class="text-primary text-2xl lg:text-5xl">
+                {{ $athlete->first_name }} {{ $athlete->last_name }}
+            </p>
+            <p class="text-gray-700 text-lg lg:text-xl">
+                Class of {{ $athlete->grad_year }}
+            </p>
+        </div>
+        @if($athlete->trainingGroup->name !== 'None')
+            <div class="flex justify-center items-center w-full md:w-1/4 p-4">
+                <profile-training-group :data="{{ $athlete->load('trainingGroup') }}"></profile-training-group>
+            </div>
+
+        @endif
+
     </header>
 
     <section class="my-10">
@@ -16,33 +25,18 @@
             <tab title="Cross Country Results">
                 @include('partials.athleteCCResults')
             </tab>
-            <tab title="Track Results" active>
+            <tab title="Track Results">
                 @include('partials.athleteTrackResults')
             </tab>
 {{--            <tab title="Time Trials">--}}
 {{--                @include('partials.athleteTimeTrialResults')--}}
 {{--            </tab>--}}
-
-            @if(count($seasonBestCC5k) > 0)
-                <tab title="5k Training Paces">
-                    <athlete-training-paces :data="{{ $seasonBestCC5k }}"></athlete-training-paces>
-                </tab>
-            @endif
-            @if(count($seasonBest1500m) > 0)
-                <tab title="1500m Training Paces">
-                    <athlete-training-paces :data="{{ $seasonBest1500m }}"></athlete-training-paces>
-                </tab>
-            @endif
-            @if(count($seasonBest1600m) > 0)
-                <tab title="1600m Training Paces">
-                    <athlete-training-paces :data="{{ $seasonBest1600m }}"></athlete-training-paces>
-                </tab>
-            @endif
-            @if(count($seasonBest3200m) > 0)
-                <tab title="3200m Training Paces">
-                    <athlete-training-paces :data="{{ $seasonBest3200m }}"></athlete-training-paces>
-                </tab>
-            @endif
+{{--            @if(Auth::user() && Auth::user()->role->slug === 'coach')--}}
+{{--                @include('partials.trainingPaces')--}}
+{{--            @endif--}}
+            @auth
+                @include('partials.trainingPaces')
+            @endauth
 
         </tabs>
     </section>

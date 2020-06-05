@@ -105,7 +105,7 @@ export default {
                     console.log(errors)
                 }),
 
-            axios.get('/api/levels')
+            axios.get('/api/groups')
                 .then(response => {
                     this.levels = response.data;
                 })

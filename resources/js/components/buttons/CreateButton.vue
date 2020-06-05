@@ -1,7 +1,7 @@
 <template>
     <div>
         <button type="button" @click="loadSelects">
-            <i class="fas fa-plus text-lg text-primary pt-1"></i>
+            <i class="fas fa-plus text-primary pt-1"></i>
         </button>
         <portal to="create-modal">
             <div v-show="active" class="fixed inset-0 overflow-auto z-50 bg-smoke-600 flex">

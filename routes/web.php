@@ -31,8 +31,6 @@ Route::get('track/season-bests/athletes-season-bests/1500m', 'Track\SeasonBestCo
 Route::get('track/season-bests/athletes-season-bests/1600m', 'Track\SeasonBestController@best1600m');
 Route::get('track/season-bests/athletes-season-bests/3200m', 'Track\SeasonBestController@best3200m');
 
-
-
 Route::get('/cross-country/venues/{venue}/boys-records', 'CrossCountryVenueController@showBoysRecords');
 Route::get('/cross-country/venues/{venue}/girls-records', 'CrossCountryVenueController@showGirlsRecords');
 
@@ -41,6 +39,10 @@ Route::get('/athletes/{athlete}', 'AthleteProfileController@show');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::resource('/track/time-trials', 'TimeTrials\TrackTimeTrialController');
+
+Route::get('training-calendar/{calendar:month_name}/2020', 'Training\TrainingCalendar2020Controller@index');
+Route::get('training-calendar/{calendar:calendar_date}', 'Training\TrainingCalendar2020Controller@show');
+Route::get('training-calendar', 'Training\TrainingCalendar2020Controller@index');
 
 Route::get('/track/time-trials/{timeTrial}/races/{race}', 'TimeTrials\TrackTimeTrialRaceController@show');
 
@@ -56,8 +58,72 @@ Route::post('api/track/meets', 'API\Meets\TrackMeetController@store');
 Route::patch('api/track/meets/{trackMeet}', 'API\Meets\TrackMeetController@update');
 Route::delete('api/track/meets/{trackMeet}', 'API\Meets\TrackMeetController@destroy');
 
-Route::apiResources([
+// Training
+Route::get('api/interval-run-types', 'API\Training\IntervalRunTypeController@index');
+Route::post('api/interval-run-types', 'API\Training\IntervalRunTypeController@store');
+Route::patch('api/interval-run-types/{interval}', 'API\Training\IntervalRunTypeController@update');
+Route::delete('api/interval-run-types/{interval}', 'API\Training\IntervalRunTypeController@destroy');
 
+Route::get('api/steady-run-types', 'API\Training\SteadyRunTypeController@index');
+Route::post('api/steady-run-types', 'API\Training\SteadyRunTypeController@store');
+Route::patch('api/steady-run-types/{steady}', 'API\Training\SteadyRunTypeController@update');
+Route::delete('api/steady-run-types/{steady}', 'API\Training\SteadyRunTypeController@destroy');
+
+Route::get('api/training-intensities', 'API\Training\TrainingIntensityController@index');
+Route::post('api/training-intensities', 'API\Training\TrainingIntensityController@store');
+Route::patch('api/training-intensities/{intensity}', 'API\Training\TrainingIntensityController@update');
+Route::delete('api/training-intensities/{intensity}', 'API\Training\TrainingIntensityController@destroy');
+
+Route::get('api/training-periods', 'API\Training\TrainingPeriodController@index');
+Route::post('api/training-periods', 'API\Training\TrainingPeriodController@store');
+Route::patch('api/training-periods/{trainingPeriod}', 'API\Training\TrainingPeriodController@update');
+Route::delete('api/training-periods/{trainingPeriod}', 'API\Training\TrainingPeriodController@destroy');
+
+Route::get('api/training-phases', 'API\Training\TrainingPhaseController@index');
+Route::post('api/training-phases', 'API\Training\TrainingPhaseController@store');
+Route::patch('api/training-phases/{trainingPhase}', 'API\Training\TrainingPhaseController@update');
+Route::delete('api/training-phases/{trainingPhase}', 'API\Training\TrainingPhaseController@destroy');
+
+Route::get('api/training-days', 'API\Training\TrainingDayController@index');
+Route::post('api/training-days', 'API\Training\TrainingDayController@store');
+Route::patch('api/training-days/{trainingDay}', 'API\Training\TrainingDayController@update');
+Route::delete('api/training-days/{trainingDay}', 'API\Training\TrainingDayController@destroy');
+
+Route::get('api/training-groups', 'API\Training\TrainingGroupController@index');
+Route::post('api/training-groups', 'API\Training\TrainingGroupController@store');
+Route::patch('api/training-groups/{group}', 'API\Training\TrainingGroupController@update');
+Route::delete('api/training-groups/{group}', 'API\Training\TrainingGroupController@destroy');
+
+Route::get('api/training-calendar/{calendar:calendar_date}/steady-runs', 'API\Training\SteadyRunController@index');
+Route::post('api/training-calendar/{calendar:calendar_date}/steady-runs', 'API\Training\SteadyRunController@store');
+Route::patch('api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
+    'API\Training\SteadyRunController@update');
+Route::delete('api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
+    'API\Training\SteadyRunController@destroy');
+
+Route::get('api/training-calendar/{calendar:calendar_date}/interval-runs', 'API\Training\IntervalRunController@index');
+Route::post('api/training-calendar/{calendar:calendar_date}/interval-runs', 'API\Training\IntervalRunController@store');
+Route::patch('api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
+    'API\Training\IntervalRunController@update');
+Route::delete('api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
+    'API\Training\IntervalRunController@destroy');
+
+Route::get('api/training-calendar/steady-runs', 'API\Training\TrainingDayController@steadyRuns');
+Route::get('api/training-calendar/interval-runs', 'API\Training\TrainingDayController@intervalRuns');
+
+// Workout Cards
+Route::get('api/training-calendar/{calendar:calendar_date}/warm-ups', 'API\Training\WorkoutCardController@warmUps');
+Route::get('api/training-calendar/{calendar:calendar_date}/steady-runs', 'API\Training\WorkoutCardController@steadyRuns');
+Route::get('api/training-calendar/{calendar:calendar_date}/interval-runs', 'API\Training\WorkoutCardController@intervalRuns');
+Route::get('api/training-calendar/{calendar:calendar_date}/cool-downs', 'API\Training\WorkoutCardController@coolDowns');
+
+// Workouts
+Route::get('api/training-calendar/{calendar:calendar_date}/workouts', 'API\Training\TrainingCalendarWorkoutController@index');
+Route::post('api/training-calendar/{calendar:calendar_date}/workouts', 'API\Training\TrainingCalendarWorkoutController@store');
+Route::patch('api/training-calendar/{calendar:calendar_date}/workouts/{workout}', 'API\Training\TrainingCalendarWorkoutController@update');
+Route::delete('api/training-calendar/{calendar:calendar_date}/workouts/{workout}', 'API\Training\TrainingCalendarWorkoutController@destroy');
+
+Route::apiResources([
     'api/athletes' => 'API\AthleteController',
     'api/active-athletes' => 'API\ActiveAthleteController',
 
@@ -121,37 +187,45 @@ Route::apiResources([
 ]);
 
 Route::group(['middleware' => 'admin'], function () {
+    Route::get('cross-country/events', 'Admin\CrossCountryEventController@index');
+    Route::get('day-times', 'Admin\DayTimeController@index');
     Route::get('distances', 'Admin\DistanceController@index');
     Route::get('divisions', 'Coach\DivisionController@index');
-    Route::get('levels', 'Admin\LevelController@index');
-    Route::get('track/events', 'Admin\TrackEventController@index');
-    Route::get('cross-country/events', 'Admin\CrossCountryEventController@index');
     Route::get('genders', 'Admin\GenderController@index');
-    Route::get('seasons', 'Admin\SeasonController@index');
-    Route::get('timing', 'Admin\TimingController@index');
-    Route::get('user-roles', 'Admin\UserRoleController@index');
-    Route::get('users', 'Admin\UserController@index');
-    Route::get('day-times', 'Admin\DayTimeController@index');
+    Route::get('levels', 'Admin\LevelController@index');
     Route::get('race-titles', 'Admin\TitleController@index');
     Route::get('run-efforts', 'Admin\RunEffortController@index');
     Route::get('run-feelings', 'Admin\RunFeelingController@index');
     Route::get('run-types', 'Admin\RunTypeController@index');
+    Route::get('seasons', 'Admin\SeasonController@index');
     Route::get('terrain-types', 'Admin\TerrainTypeController@index');
+    Route::get('timing', 'Admin\TimingController@index');
     Route::get('track-surfaces', 'Admin\TrackSurfaceController@index');
+    Route::get('track/events', 'Admin\TrackEventController@index');
+    Route::get('training-intensities', 'Admin\TrainingIntensityController@index');
+    Route::get('training-periods', 'Admin\TrainingPeriodController@index');
+    Route::get('training-phases', 'Admin\TrainingPhaseController@index');
+    Route::get('training/interval-run-types', 'Admin\Training\IntervalRunTypeController@index');
+    Route::get('training/steady-run-types', 'Admin\Training\SteadyRunTypeController@index');
+    Route::get('user-roles', 'Admin\UserRoleController@index');
+    Route::get('users', 'Admin\UserController@index');
+
 });
 
 Route::group(['middleware' => 'coach'], function () {
-    Route::get('athletes', 'Coach\AthleteController@index');
     Route::get('active-athletes', 'Coach\AthleteController@index');
-    Route::get('hosts', 'Coach\HostController@index');
-    Route::get('track/meet-names', 'Coach\TrackMeetNameController@index');
+    Route::get('announcements', 'Coach\AnnouncementController@index');
+    Route::get('athletes', 'Coach\AthleteController@index');
     Route::get('cross-country/meet-names', 'Coach\CrossCountryMeetNameController@index');
     Route::get('cross-country/venues', 'Coach\CrossCountryVenueController@index');
-    Route::get('announcements', 'Coach\AnnouncementController@index');
-    Route::get('team-events', 'Coach\TeamEventController@index');
+    Route::get('divisions', 'Coach\DivisionController@index');
+    Route::get('hosts', 'Coach\HostController@index');
     Route::get('physicals', 'Coach\PhysicalController@index');
     Route::get('physicals/{physical}', 'Coach\PhysicalController@show');
+    Route::get('team-events', 'Coach\TeamEventController@index');
+    Route::get('track/meet-names', 'Coach\TrackMeetNameController@index');
     Route::get('track/venues', 'Coach\TrackVenueController@index');
+    Route::get('training/groups', 'Training\TrainingGroupController@index');
 });
 
 Route::group(['middleware' => 'user'], function () {

@@ -14,6 +14,7 @@ class ActiveAthleteController extends Controller
             ->with('latestPhysical')
             ->where('status', 'a')
             ->orderBy('last_name', 'asc')
-            ->paginate(20);
+            ->with('trainingGroup')
+            ->paginate(50);
     }
 }

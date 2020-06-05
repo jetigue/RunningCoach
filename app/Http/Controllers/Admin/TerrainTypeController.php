@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Properties\General\TerrainType;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class TerrainTypeController extends Controller
 {
@@ -16,7 +19,7 @@ class TerrainTypeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Factory|View
      */
     public function index()
     {
@@ -27,71 +30,5 @@ class TerrainTypeController extends Controller
         }
 
         return view('properties.general.terrains.index', compact('terrainTypes'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
-     */
-    public function show(TerrainType $terrainType)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TerrainType $terrainType)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TerrainType $terrainType)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Properties\General\TerrainType  $terrainType
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TerrainType $terrainType)
-    {
-        //
     }
 }

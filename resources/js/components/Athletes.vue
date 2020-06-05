@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="flex justify-between items-baseline">
+        <div class="md:flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Athletes</header>
             <p class="text-gray-600 py-1">Show Physical Status:
                 <a v-if="displayPhysicals" @click="hidePhysicals">
@@ -17,13 +17,13 @@
         </div>
 
         <div class="table-container">
-            <div class="table-header">
-                <div class="flex md:w-4/5">
-                    <div class="w-full md:w-1/2">
+            <div class="table-header ">
+                <div class="flex md:w-11/12">
+                    <div class="w-full md:w-2/5">
                         <p class="text-primary font-semibold">Name</p>
                     </div>
-                    <div class="hidden md:block md:w-1/2">
-                        <p class="text-primary font-semibold">Physical</p>
+                    <div class="hidden md:block md:w-1/2 lg:px-8">
+                        <p class="text-primary font-semibold">Training Group</p>
                     </div>
                 </div>
                 <div class="">
@@ -64,7 +64,6 @@
                 dataSet: false,
                 items: [],
                 displayPhysicals: '',
-
             }
         },
 

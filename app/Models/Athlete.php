@@ -5,9 +5,11 @@ namespace App\Models;
 use App\Filters\AthleteFilter;
 use App\Models\Physical;
 use App\Models\Results\CrossCountry\Result;
+use App\Models\Training\Group;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
@@ -33,6 +35,7 @@ class Athlete extends Model
         'status',
         'dob',
         'user_id',
+        'training_group_id'
         ];
 
     /**
@@ -70,6 +73,14 @@ class Athlete extends Model
     public function latestPhysical()
     {
         return $this->hasOne(Physical::class)->latest();
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function trainingGroup()
+    {
+        return $this->belongsTo(Group::class,'training_group_id');
     }
 
     /**

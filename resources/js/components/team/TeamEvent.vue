@@ -1,10 +1,10 @@
 <template>
     <div class="">
-        <div v-if="editing" class="p-3 border-b border-blue-lighter">
+        <div v-if="editing" class="p-3 border-b">
             <div class="w-full">
                 <form action="api/team-events/id" method="POST" id="editTeamEvent" @submit.prevent="update"
                       @keydown="form.errors.clear()"
-                        class="bg-blue-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        class="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div class="flex items-center mb-4">
                         <div class="form-label ml-1">
                             <p>id</p>
@@ -14,7 +14,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.name">
                                 Name
@@ -26,7 +26,7 @@
                         <input class="form-input" id="form.name" type="text" v-model="form.name">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.event_date">Event Date</label>
                             <span id="event_dateHelp" class="form-help" v-if="form.errors.has('event_date')"
@@ -36,7 +36,7 @@
                         <input class="form-input" id="form.event_date" type="date" v-model="form.event_date">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.event_time">
                                 Event Time
@@ -48,7 +48,7 @@
                         <input class="form-input" id="form.event_time" type="text" v-model="form.event_time">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.location">
                                 Location
@@ -60,7 +60,7 @@
                         <input class="form-input" id="form.location" type="text" v-model="form.location">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.details">
                                 Details
@@ -72,7 +72,7 @@
                         <input class="form-input" id="form.details" type="text" v-model="form.details">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.link">
                                 Link
@@ -84,7 +84,7 @@
                         <input class="form-input" id="form.link" type="text" v-model="form.link">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="flex justify-between content-end">
                             <label class="form-label" for="form.link_text">
                                 Link Text
@@ -106,13 +106,13 @@
             </div>
         </div>
         <div v-else class="table-body">
-            <div class="flex flex-col border-b border-blue-lightest hover:bg-white">
+            <div class="flex flex-col border-b hover:bg-white">
                 <div class="flex flex-col hover:bg-white">
                     <div class="flex justify-between p-2 items-center">
                         <div class="flex md:w-4/5 flex-wrap">
-                            <div class="text-grey-darker w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
+                            <div class="text-gray-800 w-full md:w-1/2 font-semibold md:font-normal" v-text="name">
                             </div>
-                            <div class="text-grey-dark md:1/2 pl-4 md:pl-0 flex-1">
+                            <div class="text-gray-600 md:1/2 pl-4 md:pl-0 flex-1">
                                 {{ event_date | moment("MM.DD.YYYY") }}
                             </div>
                         </div>
@@ -121,25 +121,25 @@
                     <div v-if="isExpanded" class="px-2">
                         <div class="flex flex-col pb-4 px-4">
 
-                            <p class="text-grey w-full py-1">Time:
-                                <span class="text-tertiary">
-                                        {{ event_time }}
-                                    </span>
+                            <p class="text-gray-500 w-full py-1">Time:
+                                <span class="text-gray-800">
+                                    {{ event_time }}
+                                </span>
                             </p>
 
-                            <p class="text-grey w-full py-1">Location:
-                                <span class="text-tertiary">
-                                        {{ location }}
-                                    </span>
+                            <p class="text-gray-500 w-full py-1">Location:
+                                <span class="text-gray-800">
+                                    {{ location }}
+                                </span>
                             </p>
 
-                            <p class="text-grey w-full py-1">Details:
-                                <span class="text-tertiary">
-                                        {{ details }}
-                                    </span>
+                            <p class="text-gray-500 w-full py-1">Details:
+                                <span class="text-gray-800">
+                                    {{ details }}
+                                </span>
                             </p>
 
-                            <p class="text-blue w-full py-1">
+                            <p class="text-blue-600 w-full py-1">
                                 <a :href="link">{{ link_text}}</a>
                             </p>
 
@@ -205,22 +205,33 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                        const toast = Vue.swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
-                        });
+                        if (
+                        this.details !== this.form.details ||
+                        this.event_date !== this.form.event_date ||
+                        this.event_time !== this.form.event_time ||
+                        this.location !== this.form.location ||
+                        this.link !== this.form.link ||
+                        this.link_text !== this.form.link_text
+                        ) {
 
-                        toast({
-                            type: 'success',
-                            title: 'TrackEvent Updated'
-                        });
+                            const toast = Vue.swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+
+                            toast({
+                                type: 'success',
+                                title: 'TrackEvent Updated'
+                            });
+                        }
                     })
 
                     .catch(errors => {
                         console.log(errors);
                     });
+                window.scrollTo(0,0)
             },
 
             destroy() {
@@ -230,14 +241,15 @@
             },
 
             resetForm() {
-                this.form.name = this.name,
-                this.form.details = this.details,
-                this.form.event_date = this.event_date,
-                this.form.event_time = this.event_time,
-                this.form.link = this.link,
-                this.form.link_text = this.link_text,
-                this.form.location = this.location,
-                this.isExpanded = false;
+                this.form.name = this.name
+                this.form.details = this.details
+                this.form.event_date = this.event_date
+                this.form.event_time = this.event_time
+                this.form.link = this.link
+                this.form.link_text = this.link_text
+                this.form.location = this.location
+                this.isExpanded = false
+                window.scrollTo(0,0)
             },
         }
     }

@@ -98,6 +98,19 @@ Vue.component('track-time-trial-race-results', require('./components/timeTrials/
 
 // Training
 Vue.component('athlete-training-paces', require('./components/training/AthleteTrainingPaces').default);
+Vue.component('training-intensities', require('./components/training/TrainingIntensities').default);
+Vue.component('training-periods', require('./components/training/TrainingPeriods').default);
+Vue.component('training-phases', require('./components/training/TrainingPhases').default);
+Vue.component('training-calendar', require('./components/training/TrainingCalendar').default);
+Vue.component('interval-runs', require('./components/training/IntervalRunTypes').default);
+Vue.component('steady-run-types', require('./components/training/SteadyRunTypes').default);
+Vue.component('training-day-workouts', require('./components/training/TrainingDayWorkout').default);
+Vue.component('training-groups', require('./components/training/TrainingGroups').default);
+Vue.component('primary-workout', require('./components/training/PrimaryWorkout').default);
+Vue.component('secondary-workout', require('./components/training/SecondaryWorkout').default);
+Vue.component('supplement-workouts', require('./components/training/SupplementWorkouts').default);
+Vue.component('training-calendar-workouts', require('./components/training/TrainingCalendarWorkouts').default);
+Vue.component('profile-training-group', require('./components/training/ProfileTrainingGroup').default);
 
 
 // users

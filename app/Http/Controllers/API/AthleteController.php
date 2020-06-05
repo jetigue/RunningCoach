@@ -4,8 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Filters\AthleteFilter;
 use App\Http\Controllers\Controller;
-use App\Mail\AthleteAdded;
 use App\Models\Athlete;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,18 +30,15 @@ class AthleteController extends Controller
         return $athletes
             ->with('latestPhysical')
             ->orderBy('last_name', 'asc')
+            ->with('trainingGroup')
             ->paginate(50);
-
-        $allAthletes = Athlete::orderBy('last_name', 'asc');
-
-        return $athletes;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -52,6 +50,7 @@ class AthleteController extends Controller
             'grad_year'  => 'required|integer',
             'status'     => 'required',
             'user_id'    => 'nullable|integer',
+            'training_group_id' => 'nullable|integer'
         ]);
 
         $athlete = Athlete::create($athlete);
@@ -62,7 +61,7 @@ class AthleteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Athlete  $athlete
+     * @param Athlete $athlete
      * @return \Illuminate\Http\Response
      */
     public function show(Athlete $athlete)
@@ -73,9 +72,9 @@ class AthleteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Athlete  $athlete
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Athlete $athlete
+     * @return JsonResponse
      */
     public function update(Request $request, Athlete $athlete)
     {
@@ -87,6 +86,7 @@ class AthleteController extends Controller
             'grad_year'     => 'integer',
             'status'        => '',
             'user_id'       => 'nullable|integer',
+            'training_group_id' => 'nullable|integer'
         ]);
 
         $athlete->update(request([
@@ -97,6 +97,7 @@ class AthleteController extends Controller
             'grad_year',
             'status',
             'user_id',
+            'training_group_id'
         ]));
 
         return response()->json($athlete, 200);
@@ -105,8 +106,9 @@ class AthleteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Athlete  $athlete
-     * @return \Illuminate\Http\Response
+     * @param Athlete $athlete
+     * @return JsonResponse
+     * @throws Exception
      */
     public function destroy(Athlete $athlete)
     {

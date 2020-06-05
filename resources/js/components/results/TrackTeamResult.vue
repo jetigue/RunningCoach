@@ -203,11 +203,11 @@
                         this.isExpanded = false;
 
                          if (
-                            this.division != this.data.division.name ||
-                            this.place != this.data.place ||
-                            this.number_teams != this.data.number_teams ||
-                            this.points != this.data.points ||
-                            this.notes != this.data.notes)
+                            this.division !== this.data.division.name ||
+                            this.place !== this.data.place ||
+                            this.number_teams !== this.data.number_teams ||
+                            this.points !== this.data.points ||
+                            this.notes !== this.data.notes)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,

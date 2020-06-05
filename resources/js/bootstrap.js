@@ -5,7 +5,6 @@ import Form from './utilities/Form';
 import Errors from './utilities/Errors';
 import PortalVue from 'portal-vue';
 
-
 Vue.use(PortalVue);
 Vue.use(VueSweetalert2);
 Vue.use(require('vue-moment'));
