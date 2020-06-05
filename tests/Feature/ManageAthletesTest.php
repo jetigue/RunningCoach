@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Athlete;
+use App\Models\Training\Group;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -11,31 +12,47 @@ class ManageAthletesTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
-    /** @test */
-    public function an_admin_can_create_an_athlete()
-    {
-        $this->signInAdmin();
+    protected $group;
+    protected $attributes;
+    protected $newAttributes;
 
-        $attributes = [
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->group = factory(Group::class)->create();
+
+        $this->attributes = [
             'first_name' => 'Roger',
             'last_name' => 'Bannister',
             'sex' => 'm',
             'dob' => $this->faker->date($format = 'Y-m-d'),
             'grad_year' => 2020,
             'status' => 'a',
+            'training_group_id' => $this->group->id
         ];
 
-        $this->post('/api/athletes', $attributes)->assertStatus(201);
+        $this->newAttributes = [
+            'first_name' => 'Jane',
+            'last_name' => 'Doe',
+            'sex' => 'f',
+            'dob' => $this->faker->date($format = 'Y-m-d'),
+            'grad_year' => 2016,
+            'status' => 'i',
+            'training_group_id' => $this->group->id
+        ];
+    }
 
-        $this->assertDatabaseHas('athletes', $attributes);
+    /** @test */
+    public function an_admin_can_create_an_athlete()
+    {
+        $this->signInAdmin();
+        $this->withoutExceptionHandling();
 
-        $this->get('/athletes')
-        ->assertSee($attributes['first_name'])
-        ->assertSee($attributes['last_name'])
-        ->assertSee($attributes['sex'])
-        ->assertSee($attributes['dob'])
-        ->assertSee($attributes['grad_year'])
-        ->assertSee($attributes['status']);
+        $this->post('/api/athletes', $this->attributes)->assertStatus(201);
+
+        $this->assertDatabaseHas('athletes', $this->attributes);
+
     }
 
     /** @test */
@@ -43,26 +60,9 @@ class ManageAthletesTest extends TestCase
     {
         $this->signInCoach();
 
-        $attributes = [
-            'first_name' => 'Roger',
-            'last_name' => 'Bannister',
-            'sex' => 'm',
-            'dob' => $this->faker->date($format = 'Y-m-d'),
-            'grad_year' => 2020,
-            'status' => 'a',
-        ];
+        $this->post('/api/athletes', $this->attributes)->assertStatus(201);
 
-        $this->post('/api/athletes', $attributes)->assertStatus(201);
-
-        $this->assertDatabaseHas('athletes', $attributes);
-
-        $this->get('/athletes')
-            ->assertSee($attributes['first_name'])
-            ->assertSee($attributes['last_name'])
-            ->assertSee($attributes['sex'])
-            ->assertSee($attributes['dob'])
-            ->assertSee($attributes['grad_year'])
-            ->assertSee($attributes['status']);
+        $this->assertDatabaseHas('athletes', $this->attributes);
     }
 
     /** @test */
@@ -70,16 +70,7 @@ class ManageAthletesTest extends TestCase
     {
         $this->signInAthlete();
 
-        $attributes = [
-            'first_name' => 'Roger',
-            'last_name' => 'Bannister',
-            'sex' => 'm',
-            'dob' => $this->faker->date($format = 'Y-m-d'),
-            'grad_year' => 2020,
-            'status' => 'a',
-        ];
-
-        $this->post('/api/athletes', $attributes)->assertRedirect('/');
+        $this->post('/api/athletes', $this->attributes)->assertRedirect('/');
     }
 
     /** @test */
@@ -87,31 +78,13 @@ class ManageAthletesTest extends TestCase
     {
         $this->signInViewer();
 
-        $attributes = [
-            'first_name' => 'Roger',
-            'last_name' => 'Bannister',
-            'sex' => 'm',
-            'dob' => $this->faker->date($format = 'Y-m-d'),
-            'grad_year' => 2020,
-            'status' => 'a',
-        ];
-
-        $this->post('/api/athletes', $attributes)->assertRedirect('/');
+        $this->post('/api/athletes', $this->attributes)->assertRedirect('/');
     }
 
     /** @test */
     public function a_guest_cannot_create_an_athlete()
     {
-        $attributes = [
-            'first_name' => 'Roger',
-            'last_name' => 'Bannister',
-            'sex' => 'm',
-            'dob' => $this->faker->date($format = 'Y-m-d'),
-            'grad_year' => 2020,
-            'status' => 'a',
-        ];
-
-        $this->post('/api/athletes', $attributes)->assertRedirect('/');
+        $this->post('/api/athletes', $this->attributes)->assertRedirect('/');
     }
 
     /** @test */

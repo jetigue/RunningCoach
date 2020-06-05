@@ -17,7 +17,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'm')
@@ -31,7 +31,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -45,7 +45,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'f')
@@ -59,7 +59,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -73,7 +73,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'm')
@@ -88,7 +88,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -102,7 +102,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'f')
@@ -117,7 +117,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -131,7 +131,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'm')
@@ -146,7 +146,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -160,7 +160,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'f')
@@ -175,7 +175,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -189,7 +189,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'm')
@@ -204,7 +204,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -218,7 +218,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'f')
@@ -233,7 +233,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -247,7 +247,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'm')
@@ -262,7 +262,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();
@@ -276,7 +276,7 @@ class CCVenueRecords
             ->join('cross_country_meets', 'cross_country_meets.id', '=', 'cross_country_team_results.cross_country_meet_id')
             ->join('cross_country_venues', 'cross_country_venues.id', '=', 'cross_country_meets.cross_country_venue_id')
             ->join('cross_country_events', 'cross_country_events.id', '=', 'cross_country_team_results.cross_country_event_id')
-            ->join('meet_names', 'meet_names.id', '=', 'cross_country_meets.meet_name_id')
+            ->join('cross_country_meet_names', 'cross_country_meet_names.id', '=', 'cross_country_meets.cross_country_meet_name_id')
             ->where('cross_country_venues.id', $venue->id)
             ->where('cross_country_events.meters', 5000)
             ->where('athletes.sex', 'f')
@@ -291,7 +291,7 @@ class CCVenueRecords
                 'athletes.id as athlete_id',
                 'cross_country_meets.id as meet_id',
                 'cross_country_meets.meet_date as date',
-                'meet_names.name as meet'
+                'cross_country_meet_names.name as meet'
             )
             ->limit(50)
             ->get();

@@ -33,7 +33,7 @@ export default {
                 {
                     id: 1,
                     label: 'Divisions',
-                    url:   '/levels'
+                    url:   '/divisions'
                 },
                 {
                     id: 2,

@@ -14,12 +14,13 @@ class DatabaseSeeder extends Seeder
         $this->call(GeneralPropertiesSeeder::class);
         $this->call(MeetPropertiesSeeder::class);
         $this->call(RacePropertiesSeeder::class);
-        $this->call(AthletesTableSeeder::class);
-        $this->call(CrossCountryMeetSeeder::class);
-        $this->call(TrackMeetsSeeder::class);
         $this->call(UsersSeeder::class);
         $this->call(TeamAdministrationSeeder::class);
         $this->call(RunningLogSeeder::class);
+        $this->call(WorkoutSeeder::class);
+        $this->call(AthletesTableSeeder::class);
+        $this->call(CrossCountryMeetSeeder::class);
+        $this->call(TrackMeetsSeeder::class);
         $this->call(TimeTrialSeeder::class);
     }
 }

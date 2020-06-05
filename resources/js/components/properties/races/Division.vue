@@ -115,9 +115,9 @@
                         this.editing = false;
                         this.isExpanded = false;
 
-                        if (this.gender_id != this.data.gender_id ||
-                            this.level_id != this.data.level_id ||
-                            this.name != this.data.name) {
+                        if (this.gender_id !== this.data.gender_id ||
+                            this.level_id !== this.data.level_id ||
+                            this.name !== this.data.name) {
 
                             const toast = Vue.swal.mixin({
                             toast: true,
@@ -158,7 +158,7 @@
                 }
 
                 function getLevelNames() {
-                    return axios.get('/api/levels')
+                    return axios.get('/api/groups')
                 }
 
                 axios.all([

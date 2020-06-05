@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\CrossCountry\Event;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -56,7 +57,7 @@ class CrossCountryEventController extends Controller
      *
      * @param Request $request
      * @param Event $event
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, Event $event)
     {

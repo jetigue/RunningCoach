@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Athlete;
 use App\Models\Physical;
+use App\Models\Training\Group;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
@@ -14,28 +15,40 @@ class ManagePhysicalsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
+        protected $group;
+        protected $athlete;
+        protected $attributes;
+        protected $newAttributes;
+
+        public function setUp(): void
+        {
+            parent::setUp();
+
+            $this->group = factory(Group::class)->create();
+            $this->athlete = factory(Athlete::class)->create(['training_group_id' => $this->group->id]);
+
+            $this->attributes = [
+                'athlete_id' => $this->athlete->id,
+                'consent_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
+                'concussion_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
+                'evaluation_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
+                'exam_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+                ];
+        }
+
     /** @test */
     public function a_coach_can_enter_a_physical()
     {
         $this->withExceptionHandling();
         $this->signInCoach();
-        $athlete = factory(Athlete::class)->create();
 
-        $attributes = [
-            'athlete_id' => $athlete->id,
-            'consent_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
-            'concussion_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
-            'evaluation_form' => $this->faker->boolean($chanceOfGettingTrue = 80),
-            'exam_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-        ];
+        $this->post('/api/physicals', $this->attributes);
 
-        $this->post('/api/physicals', $attributes);
-
-        $this->assertDatabaseHas('physicals', $attributes);
+        $this->assertDatabaseHas('physicals', $this->attributes);
 
         $this->get('/physicals')
-            ->assertSee($attributes['athlete_id'])
-            ->assertSee($attributes['exam_date']);
+            ->assertSee($this->attributes['athlete_id'])
+            ->assertSee($this->attributes['exam_date']);
     }
 
     /** @test */

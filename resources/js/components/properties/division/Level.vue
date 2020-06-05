@@ -80,14 +80,14 @@
 
             update() {
                 this.form
-                    .patch('/api/levels/' + this.data.id)
+                    .patch('/api/groups/' + this.data.id)
                     .then(data => {
                         this.name = this.form.name;
 
                         this.editing = false;
                         this.isExpanded = false;
 
-                        if (this.name != this.data.name) {
+                        if (this.name !== this.data.name) {
 
                             const toast = Vue.swal.mixin({
                             toast: true,
@@ -110,7 +110,7 @@
             },
 
             destroy() {
-                axios.delete('api/levels/' + this.data.id);
+                axios.delete('api/groups/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
             },

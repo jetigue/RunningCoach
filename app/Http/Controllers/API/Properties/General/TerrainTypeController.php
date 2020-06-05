@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 class TerrainTypeController extends Controller
 {
     /**
-     * GenderController constructor.
+     * TerrainTypeController constructor.
      */
     public function __construct()
     {
@@ -33,20 +33,10 @@ class TerrainTypeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -72,22 +62,11 @@ class TerrainTypeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param TerrainType $terrainType
-     * @return Response
-     */
-    public function edit(TerrainType $terrainType)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param TerrainType $terrainType
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, TerrainType $terrainType)
     {

@@ -258,13 +258,13 @@
 
                 let j = i % 10,
                     k = i % 100;
-                if (j == 1 && k != 11) {
+                if (j === 1 && k !== 11) {
                     return i + "st";
                 }
-                if (j == 2 && k != 12) {
+                if (j === 2 && k !== 12) {
                     return i + "nd";
                 }
-                if (j == 3 && k != 13) {
+                if (j === 3 && k !== 13) {
                     return i + "rd";
                 }
                 return i + "th";
@@ -298,14 +298,14 @@
                         this.isExpanded = false;
 
                          if (
-                             this.athlete != this.data.athlete.name ||
-                             this.event != this.data.event.name ||
-                             this.minutes != this.data.minutes ||
-                             this.seconds != this.data.seconds ||
-                             this.milliseconds != this.data.milliseconds ||
-                             this.place != this.data.place ||
-                             this.points != this.data.points ||
-                            this.heat != this.data.heat)
+                             this.athlete !== this.data.athlete.name ||
+                             this.event !== this.data.event.name ||
+                             this.minutes !== this.data.minutes ||
+                             this.seconds !== this.data.seconds ||
+                             this.milliseconds !== this.data.milliseconds ||
+                             this.place !== this.data.place ||
+                             this.points !== this.data.points ||
+                            this.heat !== this.data.heat)
                             {
                                 const toast = Vue.swal.mixin({
                                 toast: true,

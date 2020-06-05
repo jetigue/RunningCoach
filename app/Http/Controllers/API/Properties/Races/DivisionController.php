@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API\Properties\Races;
 
 use App\Http\Controllers\Controller;
 use App\Models\Properties\Races\Division;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
@@ -17,13 +19,11 @@ class DivisionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Builder[]|Collection
      */
     public function index()
     {
-        $divisions = Division::with('gender', 'level')->get();
-
-        return $divisions;
+        return Division::with('gender', 'level')->get();
     }
 
     /**

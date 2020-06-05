@@ -39,7 +39,7 @@ export default {
     methods: {
         onSubmit() {
             this.form
-                .post('/api/levels')
+                .post('/api/groups')
 
                 .then(data => {
 

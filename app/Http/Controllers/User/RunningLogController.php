@@ -5,7 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\RunningLog\RunningLog;
 use App\Repositories\RunningLogs;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RunningLogController extends Controller
 {
@@ -17,7 +20,8 @@ class RunningLogController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param RunningLogs $runningLogs
+     * @return Application|Factory|View
      */
     public function index(RunningLogs $runningLogs)
     {
