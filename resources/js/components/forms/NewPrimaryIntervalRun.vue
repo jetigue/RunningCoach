@@ -284,6 +284,7 @@
                     name="recovery_type"
                     v-model="form.recovery_type"
                     required>
+                    <option value="Easy">Easy</option>
                     <option value="jog">Jog</option>
                     <option value="walk">Walk</option>
                     <option value="rest">Rest</option>

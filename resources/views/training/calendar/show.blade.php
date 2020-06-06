@@ -7,7 +7,7 @@
                 <a href="/training-calendar"
                    class="hover:no-underline hover:font-bold hover:text-green-500">
                     View Calendar
-                    <i class="fas fa-calendar-alt "></i>
+                    <i class="fas fa-calendar-alt"></i>
                 </a>
             </div>
             <div class="flex w-full justify-between items-center">

@@ -86,7 +86,7 @@ class TrainingCalendar2020Controller extends Controller
     public function show(Calendar $calendar)
     {
         $primarySteadyRuns = SteadyRun::where('training_date', $calendar->calendar_date)
-            ->whereNotIn('steady_run_type_id', [1, 4])
+            ->whereNotIn('steady_run_type_id', [1, 2])
             ->where('workout', 'primary')
             ->get();
 
@@ -96,7 +96,7 @@ class TrainingCalendar2020Controller extends Controller
             ->get();
 
         $primaryCoolDown = SteadyRun::where('training_date', $calendar->calendar_date)
-            ->where('steady_run_type_id', 4)
+            ->where('steady_run_type_id', 2)
             ->where('workout', 'primary')
             ->get();
 
@@ -105,7 +105,7 @@ class TrainingCalendar2020Controller extends Controller
             ->get();
 
         $secondarySteadyRuns = SteadyRun::where('training_date', $calendar->calendar_date)
-            ->whereNotIn('steady_run_type_id', [1, 4])
+            ->whereNotIn('steady_run_type_id', [1, 2])
             ->where('workout', 'secondary')
             ->get();
 
@@ -115,7 +115,7 @@ class TrainingCalendar2020Controller extends Controller
             ->get();
 
         $secondaryCoolDown = SteadyRun::where('training_date', $calendar->calendar_date)
-            ->where('steady_run_type_id', 4)
+            ->where('steady_run_type_id', 2)
             ->where('workout', 'secondary')
             ->get();
 

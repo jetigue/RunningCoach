@@ -237,11 +237,11 @@
             },
 
             resetForm() {
-                this.form.name = this.name,
-                this.form.description = this.description,
-                this.form.percentVO2Max = this.percentVO2Max,
-                this.form.percentHRMax = this.percentHRMax,
-                this.form.purpose = this.purpose,
+                this.form.name = this.name
+                this.form.description = this.description
+                this.form.percentVO2Max = this.percentVO2Max
+                this.form.percentHRMax = this.percentHRMax
+                this.form.purpose = this.purpose
                 this.form.sources = this.sources
                 this.isExpanded = false;
             }

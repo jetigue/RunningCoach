@@ -61,28 +61,28 @@ class WorkoutCardController extends Controller
     {
         if ($request->varsity) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->whereNotIn('steady_run_type_id', [1, 4])
+                ->whereNotIn('steady_run_type_id', [1, 2])
                 ->where('workout', $request->workout)
                 ->where('varsity', $request->varsity)
                 ->with('intensity', 'runType')
                 ->get();
         } else if ($request->junior_varsity) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->whereNotIn('steady_run_type_id', [1, 4])
+                ->whereNotIn('steady_run_type_id', [1, 2])
                 ->where('workout', $request->workout)
                 ->where('junior_varsity', $request->junior_varsity)
                 ->with('intensity', 'runType')
                 ->get();
         } else if ($request->open) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->whereNotIn('steady_run_type_id', [1, 4])
+                ->whereNotIn('steady_run_type_id', [1, 2])
                 ->where('workout', $request->workout)
                 ->where('open', $request->open)
                 ->with('intensity', 'runType')
                 ->get();
         } else {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->whereNotIn('steady_run_type_id', [1, 4])
+                ->whereNotIn('steady_run_type_id', [1, 2])
                 ->where('workout', $request->workout)
                 ->where('beginner', $request->beginner)
                 ->with('intensity', 'runType')
@@ -136,28 +136,28 @@ class WorkoutCardController extends Controller
     {
         if ($request->varsity) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->where('steady_run_type_id', 4)
+                ->where('steady_run_type_id', 2)
                 ->where('workout', $request->workout)
                 ->where('varsity', $request->varsity)
                 ->with('intensity', 'runType')
                 ->get();
         } else if ($request->junior_varsity) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->where('steady_run_type_id', 4)
+                ->where('steady_run_type_id', 2)
                 ->where('workout', $request->workout)
                 ->where('junior_varsity', $request->junior_varsity)
                 ->with('intensity', 'runType')
                 ->get();
         } else if ($request->open) {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->where('steady_run_type_id', 4)
+                ->where('steady_run_type_id', 2)
                 ->where('workout', $request->workout)
                 ->where('open', $request->open)
                 ->with('intensity', 'runType')
                 ->get();
         } else {
             return SteadyRun::where('training_date', $calendar->calendar_date)
-                ->where('steady_run_type_id', 4)
+                ->where('steady_run_type_id', 2)
                 ->where('workout', $request->workout)
                 ->where('beginner', $request->beginner)
                 ->with('intensity', 'runType')

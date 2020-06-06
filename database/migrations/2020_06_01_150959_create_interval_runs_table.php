@@ -24,7 +24,7 @@ class CreateIntervalRunsTable extends Migration
             $table->enum('duration_unit', ['meters', 'miles', 'minutes', 'seconds']);
             $table->unsignedSmallInteger('recovery');
             $table->enum('recovery_unit', ['meters', 'miles', 'minutes', 'seconds']);
-            $table->enum('recovery_type', ['jog', 'walk', 'rest']);
+            $table->enum('recovery_type', ['Easy', 'jog', 'walk', 'rest']);
             $table->enum('workout', ['primary', 'secondary']);
             $table->enum('varsity', ['yes', 'no'])->default('no');
             $table->enum('junior_varsity', ['yes', 'no'])->default('no');

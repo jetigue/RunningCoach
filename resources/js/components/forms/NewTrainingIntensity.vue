@@ -135,10 +135,11 @@ export default {
         },
 
         resetForm() {
-            this.form.name = '',
-            this.form.description = '',
-            this.form.percentVO2Max = '',
-            this.form.percentHRMax = '',
+            this.form.name = ''
+            this.form.description = ''
+            this.form.percentVO2Max = ''
+            this.form.percentHRMax = ''
+            this.form.purpose = ''
             this.form.sources = ''
             this.form.errors.clear();
         }
