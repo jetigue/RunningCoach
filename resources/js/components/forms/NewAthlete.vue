@@ -91,7 +91,8 @@ export default {
                 sex: '',
                 dob: '',
                 grad_year: '',
-                status: ''
+                status: '',
+                training_group_id: 1
             }),
         };
     },
@@ -125,12 +126,13 @@ export default {
         },
 
         resetForm() {
-            this.form.first_name = '',
-            this.form.last_name = '',
-            this.form.sex = '',
-            this.form.dob = '',
-            this.form.grad_year = '',
-            this.form.status = '',
+            this.form.first_name = ''
+            this.form.last_name = ''
+            this.form.sex = ''
+            this.form.dob = ''
+            this.form.grad_year = ''
+            this.form.status = ''
+            this.form.training_group_id = 1
             this.form.errors.clear();
         }
     },

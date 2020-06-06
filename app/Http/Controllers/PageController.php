@@ -6,7 +6,10 @@ use App\Models\Team\Announcement;
 use App\Models\Team\TeamEvent;
 use App\Repositories\Athletes;
 use Carbon\Carbon;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
@@ -38,7 +41,7 @@ class PageController extends Controller
      * Display the Boys' Roster Page.
      *
      * @param Athletes $athletes
-     * @return void
+     * @return Application|Factory|View
      */
     public function boysRoster(Athletes $athletes)
     {

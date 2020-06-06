@@ -16,7 +16,7 @@ class Athletes
 
     public function freshmen()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $freshmen = Athlete::where('grad_year', '=', Carbon::now()->year + 4)->get();
         } else {
             $freshmen = Athlete::where('grad_year', '=', Carbon::now()->year + 3)->get();
@@ -27,7 +27,7 @@ class Athletes
 
     public function sophomores()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $sophomores = Athlete::where('grad_year', '=', Carbon::now()->year + 3)->get();
         } else {
             $sophomores = Athlete::where('grad_year', '=', Carbon::now()->year + 2)->get();
@@ -38,7 +38,7 @@ class Athletes
 
     public function juniors()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $juniors = Athlete::where('grad_year', '=', Carbon::now()->year + 2)->get();
         } else {
             $juniors = Athlete::where('grad_year', '=', Carbon::now()->year + 1)->get();
@@ -49,7 +49,7 @@ class Athletes
 
     public function seniors()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $seniors = Athlete::where('grad_year', '=', Carbon::now()->year + 1)->get();
         } else {
             $seniors = Athlete::where('grad_year', '=', Carbon::now()->year + 0)->get();
@@ -60,7 +60,7 @@ class Athletes
 
     public function alumnus()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $alumnus = Athlete::where('grad_year', '=', Carbon::now()->year + 0)->get();
         } else {
             $alumnus = Athlete::where('grad_year', '<', Carbon::now()->year)->get();
@@ -99,7 +99,7 @@ class Athletes
 
     public function activeFreshmenBoys()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $freshmen = Athlete::where('grad_year', '=', Carbon::now()->year + 4)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'm')
@@ -116,7 +116,7 @@ class Athletes
 
     public function activeSophomoreBoys()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $sophomores = Athlete::where('grad_year', '=', Carbon::now()->year + 3)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'm')
@@ -133,7 +133,7 @@ class Athletes
 
     public function activeJuniorBoys()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $juniors = Athlete::where('grad_year', '=', Carbon::now()->year + 2)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'm')
@@ -150,7 +150,7 @@ class Athletes
 
     public function activeSeniorBoys()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $seniors = Athlete::where('grad_year', '=', Carbon::now()->year + 1)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'm')
@@ -167,7 +167,7 @@ class Athletes
 
     public function activeFreshmenGirls()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $freshmen = Athlete::where('grad_year', '=', Carbon::now()->year + 4)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'f')
@@ -184,7 +184,7 @@ class Athletes
 
     public function activeSophomoreGirls()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $sophomores = Athlete::where('grad_year', '=', Carbon::now()->year + 3)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'f')
@@ -201,7 +201,7 @@ class Athletes
 
     public function activeJuniorGirls()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $juniors = Athlete::where('grad_year', '=', Carbon::now()->year + 2)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'f')
@@ -218,7 +218,7 @@ class Athletes
 
     public function activeSeniorGirls()
     {
-        if (Carbon::now()->month >= 7) {
+        if (Carbon::now()->month >= 6) {
             $seniors = Athlete::where('grad_year', '=', Carbon::now()->year + 1)
                 ->where('status', '=', 'a')
                 ->where('sex', '=', 'f')
