@@ -50,7 +50,7 @@ class AthleteController extends Controller
             'grad_year'  => 'required|integer',
             'status'     => 'required',
             'user_id'    => 'nullable|integer',
-            'training_group_id' => 'nullable|integer'
+            'training_group_id' => 'integer'
         ]);
 
         $athlete = Athlete::create($athlete);
@@ -86,7 +86,7 @@ class AthleteController extends Controller
             'grad_year'     => 'integer',
             'status'        => '',
             'user_id'       => 'nullable|integer',
-            'training_group_id' => 'nullable|integer'
+            'training_group_id' => 'integer'
         ]);
 
         $athlete->update(request([
