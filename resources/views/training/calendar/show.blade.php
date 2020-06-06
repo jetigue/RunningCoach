@@ -4,7 +4,7 @@
     <div class="flex flex-col w-full -mt-8 md:mt-0">
         <header class="w-full">
             <div class="text-sm text-smoke-600 text-right mb-4">
-                <a href="/training-calendar"
+                <a href="/training-calendar/{{$calendar->month_name}}/{{$calendar->year}}"
                    class="hover:no-underline hover:font-bold hover:text-green-500">
                     View Calendar
                     <i class="fas fa-calendar-alt"></i>

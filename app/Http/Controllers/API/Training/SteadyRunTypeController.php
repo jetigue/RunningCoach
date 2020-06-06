@@ -28,7 +28,7 @@ class SteadyRunTypeController extends Controller
      */
     public function index()
     {
-        return Steady::orderBy('id')->WhereNotIn('id', [1,4])->get();
+        return Steady::orderBy('id')->WhereNotIn('id', [1,2])->get();
     }
 
     /**
