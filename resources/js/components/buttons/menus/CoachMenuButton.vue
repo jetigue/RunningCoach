@@ -16,6 +16,7 @@
                         <main-menu></main-menu>
                         <coach-menu class="py-2"></coach-menu>
                         <running-log-menu></running-log-menu>
+                        <workouts-menu class="py-2"></workouts-menu>
                     </div>
                 </div>
             </div>
@@ -28,11 +29,12 @@
     import CoachMenu from '../../menus/CoachMenu';
     import RunningLogMenu from "../../menus/runningLog/RunningLogMenu";
     import MenuHeader from "./MenuHeader";
+    import WorkoutsMenu from "../../menus/WorkoutsMenu";
 
     export default {
         name: "CoachMenuButton",
 
-        components: {MenuHeader, RunningLogMenu, CoachMenu, MainMenu },
+        components: {WorkoutsMenu, MenuHeader, RunningLogMenu, CoachMenu, MainMenu },
 
         data() {
             return {
