@@ -29,8 +29,8 @@ class AthleteController extends Controller
     {
         return $athletes
             ->with('latestPhysical')
-            ->orderBy('first_name', 'asc')
             ->orderBy('last_name', 'asc')
+            ->orderBy('first_name', 'asc')
             ->with('trainingGroup')
             ->paginate(50);
     }
