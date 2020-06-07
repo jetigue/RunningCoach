@@ -372,7 +372,6 @@
 
             groupColor() {
                 if (this.trainingGroupId === 1) {
-                    this.borderColor = '#ffffff00'
                     return '#'+this.color+'00'
                 }
                 return '#'+this.color
@@ -380,12 +379,9 @@
 
             borderColor() {
                 if (this.trainingGroupId === 1) {
-                    this.borderColor = '#ffffff00'
-                    return '#'+this.color+'00'
-                } else if (this.color === 'ffffff') {
-                    return '#000'
+                    return '#ffffff00'
                 }
-                return '#'+this.color
+                return '#000'
             },
 
             isInactive: function () {
