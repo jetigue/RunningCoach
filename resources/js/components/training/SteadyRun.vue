@@ -154,7 +154,7 @@
                 <div class="w-5/6 flex items-center">
                     <div class="flex md:w-3/4">
                         <p class="px-4 justify-start">
-                            <span class="font-bold">{{ length }}</span>
+                            <span class="font-bold">{{ length }} {{runType }}</span>
                             at
                             <span class="font-bold">{{ intensity }}</span> pace
                         </p>
@@ -206,9 +206,9 @@
 
         <div
             v-if="isExpanded"
-            class="flex pl-4 py-2 border-b justify-start cursor-pointer pb-2 hover:bg-gray-100">
-
-            <div class="flex w-2/5">
+            class="flex flex-col pl-4 py-2 border-b justify-start cursor-pointer pb-2 hover:bg-gray-100">
+            <div class="text-smoke-400 py-2">Notes: <span class="text-smoke-800">{{notes}}</span></div>
+            <div class="flex w-2/5 py-2">
                 <edit-button @clicked="editing=true"></edit-button>
                 <delete-button @clicked="destroy"></delete-button>
             </div>

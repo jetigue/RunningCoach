@@ -203,7 +203,6 @@
                 url: '/athletes/'+this.data.id,
                 trainingGroupId: this.data.training_group_id,
                 color: this.data.training_group.color,
-                borderColor: '#000',
 
 
                 physicals: false,
@@ -375,6 +374,16 @@
                 if (this.trainingGroupId === 1) {
                     this.borderColor = '#ffffff00'
                     return '#'+this.color+'00'
+                }
+                return '#'+this.color
+            },
+
+            borderColor() {
+                if (this.trainingGroupId === 1) {
+                    this.borderColor = '#ffffff00'
+                    return '#'+this.color+'00'
+                } else if (this.color === 'ffffff') {
+                    return '#000'
                 }
                 return '#'+this.color
             },

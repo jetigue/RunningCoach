@@ -1,7 +1,8 @@
 <template>
     <div class="flex flex-col text-sm">
         <p>{{ runType }}</p>
-        <p class="px-2">{{ numberSets}} set of</p>
+        <p class="px-2">{{ numberSets }} set of</p>
+        <p class="px-2">{{ numberIntervals }} x</p>
         <p class="px-2">
             <span class="">{{ length }}</span>
             at
@@ -10,8 +11,9 @@
         <p class="px-4">with a</p>
         <p class="px-2">
             <span class="">{{ recoveryLength }}</span>
-            <span class="">{{ recoveryType }}</span> recovery
+            <span class="">{{ recoveryType }}</span> pace recovery
         </p>
+        <p class="p-2 italic">{{ notes }}</p>
 
     </div>
 
@@ -33,7 +35,7 @@
                 intensity: this.data.intensity.name,
                 intervalId: this.data.interval_run_type_id,
                 junior_varsity: this.data.junior_varsity,
-                numberIntervals: this.data.number_intervals,
+                numberIntervals: this.data.number_repetitions,
                 numberSets: this.data.number_sets,
                 open: this.data.open,
                 recovery: this.data.recovery,
@@ -42,6 +44,7 @@
                 runType: this.data.run_type.name,
                 varsity: this.data.varsity,
                 workout: this.data.workout,
+                notes: this.data.notes
             }
         },
     }

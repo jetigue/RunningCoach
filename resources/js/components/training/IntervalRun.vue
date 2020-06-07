@@ -342,6 +342,8 @@
                         <p class="px-4 justify-start">
                             <span class="font-semibold">{{ numberSets }} set</span>
                             of
+                            <span class="font-semibold">{{ numberReps }} set</span>
+                            x
                             <span class="font-semibold">{{ length }}</span>
                             at
                             <span class="font-semibold">{{ intensity }}</span>
@@ -397,9 +399,10 @@
 
         <div
             v-if="isExpanded"
-            class="flex pl-4 py-2 border-b justify-start cursor-pointer pb-2 hover:bg-gray-100">
+            class="flex flex-col pl-4 py-2 border-b justify-start cursor-pointer pb-2 hover:bg-gray-100">
+            <div class="text-smoke-400">Notes: <span class="text-smoke-800">{{notes}}</span></div>
 
-            <div class="flex w-2/5">
+            <div class="flex w-2/5 py-2">
                 <edit-button @clicked="editing=true"></edit-button>
                 <delete-button @clicked="destroy"></delete-button>
             </div>
@@ -476,6 +479,7 @@
                 junior_varsity: this.data.junior_varsity,
                 numberReps: this.data.number_repetitions,
                 numberSets: this.data.number_sets,
+                notes: this.data.notes,
                 open: this.data.open,
                 recovery: this.data.recovery,
                 recoveryType: this.data.recovery_type,

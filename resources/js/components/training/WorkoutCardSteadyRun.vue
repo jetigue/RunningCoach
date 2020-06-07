@@ -2,18 +2,20 @@
     <div class="flex flex-col text-sm">
         <div v-if="mainWorkout" class="flex flex-col  py-2">
             <p>{{ runType }}</p>
-            <p class="px-4">
+            <p class="px-2">
                 <span class="">{{ length }}</span>
                 at
                 <span class="">{{ intensity }}</span> pace
             </p>
+            <p class="p-2 italic">{{ notes }}</p>
         </div>
         <div v-else>
-            <p class="px-4">
+            <p class="px-2">
                 <span class="">{{ length }}</span>
                 at
                 <span class="">{{ intensity }}</span> pace
             </p>
+            <p class="p-2 italic">{{ notes }}</p>
         </div>
     </div>
 
@@ -38,13 +40,14 @@
                 varsity: this.data.varsity,
                 junior_varsity: this.data.junior_varsity,
                 open: this.data.open,
+                notes: this.data.notes,
                 beginner: this.data.beginner,
             }
         },
 
         computed: {
             mainWorkout() {
-                return !(this.steadyId === 1 || this.steadyId === 4);
+                return !(this.steadyId === 1 || this.steadyId === 2);
             }
         }
     }
