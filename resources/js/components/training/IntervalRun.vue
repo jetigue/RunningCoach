@@ -340,7 +340,7 @@
                 <div class="w-5/6 flex items-center">
                     <div class="flex md:w-3/4">
                         <p class="px-4 justify-start">
-                            <span class="font-semibold">{{ numberSets }} set</span>
+                            <span class="font-semibold">{{ numberSets }} set(s)</span>
                             of
                             <span class="font-semibold">{{ numberReps }}</span>
                             x
