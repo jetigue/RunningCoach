@@ -342,7 +342,7 @@
                         <p class="px-4 justify-start">
                             <span class="font-semibold">{{ numberSets }} set</span>
                             of
-                            <span class="font-semibold">{{ numberReps }} set</span>
+                            <span class="font-semibold">{{ numberReps }}</span>
                             x
                             <span class="font-semibold">{{ length }}</span>
                             at
