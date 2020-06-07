@@ -252,7 +252,7 @@
                 this.form
                     .patch(this.url)
                     .then(data => {
-                        this.steady_run_type_id = 1;
+                        this.steady_run_type_id = 2;
                         this.duration = this.form.duration;
                         this.durationUnit = this.form.duration_unit;
                         this.training_intensity_id = 1;
@@ -287,7 +287,7 @@
             },
 
             resetForm() {
-                this.form.steady_run_type_id = 1
+                this.form.steady_run_type_id = 2
                 this.form.duration = this.data.duration
                 this.form.training_intensity_id = 1
                 this.form.duration_unit = this.data.duration_unit

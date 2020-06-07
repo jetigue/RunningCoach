@@ -109,7 +109,7 @@ export default {
             milesSelected: false,
 
             form: new Form({
-                steady_run_type_id: 4,
+                steady_run_type_id: 2,
                 training_intensity_id: 1,
                 duration: '',
                 duration_unit: 'minutes',
@@ -169,7 +169,7 @@ export default {
         },
 
         resetForm() {
-            this.form.steady_run_type_id = 4
+            this.form.steady_run_type_id = 2
             this.form.duration = ''
             this.form.training_intensity_id = 1
             this.form.duration_unit = 'minutes'
