@@ -18,15 +18,15 @@
 
         computed: {
             groupColor() {
-                let x = this.data.name;
+                let x = this.group;
 
-                if (x === 'Crimson') {
+                if (x === 2) {
                     return "#73000a";
-                } else if (x === 'Black') {
+                } else if (x === 3) {
                     return "#000";
-                } else if (x === 'White') {
+                } else if (x === 4) {
                     return "#888";
-                } else if (x === 'Green') {
+                } else if (x === 5) {
                     return "#008000";
                 } else {
                     return "#444";
