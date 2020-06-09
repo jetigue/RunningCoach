@@ -408,10 +408,10 @@
             },
 
             resetForm() {
-                this.form.athlete_id = this.athlete_id,
-                this.form.exam_date = this.exam_date,
-                this.form.restrictions = this.restrictions,
-                this.form.notes = this.notes,
+                this.form.athlete_id = this.athlete_id
+                this.form.exam_date = this.exam_date
+                this.form.restrictions = this.restrictions
+                this.form.notes = this.notes
                 this.isExpanded = false;
             },
 

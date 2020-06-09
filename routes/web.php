@@ -58,6 +58,9 @@ Route::post('api/track/meets', 'API\Meets\TrackMeetController@store');
 Route::patch('api/track/meets/{trackMeet}', 'API\Meets\TrackMeetController@update');
 Route::delete('api/track/meets/{trackMeet}', 'API\Meets\TrackMeetController@destroy');
 
+// Physicals
+Route::get('api/physicals-athletes',  'API\Physicals\AthletePhysicalController@index');
+
 // Training
 Route::get('api/interval-run-types', 'API\Training\IntervalRunTypeController@index');
 Route::post('api/interval-run-types', 'API\Training\IntervalRunTypeController@store');
@@ -128,7 +131,6 @@ Route::apiResources([
     'api/active-athletes' => 'API\ActiveAthleteController',
 
     'api/physicals' => 'API\Physicals\PhysicalController',
-    'api/physicals-athletes' => 'API\Physicals\AthletePhysicalController',
     'api/physicals/{physical}/physical-form' =>'API\Physicals\PhysicalFormController',
 
     'api/running-log' => 'API\RunningLog\RunningLogController',
