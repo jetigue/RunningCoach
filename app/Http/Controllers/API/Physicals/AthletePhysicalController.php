@@ -21,11 +21,12 @@ class AthletePhysicalController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return void
      */
     public function index()
     {
         return Athlete::whereBetween('grad_year', [2021, 2025])->get();
+
     }
 
     /**
