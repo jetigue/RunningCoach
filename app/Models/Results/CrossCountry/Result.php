@@ -3,12 +3,14 @@
 namespace App\Models\Results\CrossCountry;
 
 use App\Models\Athlete;
-use http\Env\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Laravel\Scout\Searchable;
 
 class Result extends Model
 {
+    use Searchable;
+
     /**
      * The table associated with the model.
      *

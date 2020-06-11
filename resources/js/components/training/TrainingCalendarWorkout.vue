@@ -1,7 +1,13 @@
 <template>
-    <div class="">
-        <span :style="{color: groupColor}">{{ name }}</span>
+    <div>
+        <div class="lg:hidden">
+            <span :style="{color: groupColor}">{{ name_abbrev }}</span>
+        </div>
+        <div class="hidden lg:flex">
+            <span :style="{color: groupColor}">{{ name }}</span>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -31,6 +37,12 @@
                 } else {
                     return "#444";
                 }
+            },
+
+            name_abbrev() {
+                let x = this.name;
+
+                return x.charAt(0).toUpperCase();
             }
         },
     }

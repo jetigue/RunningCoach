@@ -131,6 +131,13 @@ export const workoutMixin = {
     },
 
     computed: {
+        totalWarmUpPoints() {
+            if (this.data.run_type.name === 'Warm-up' && this.data.intensity.name === 'Threshold') {
+                return Number(this.data.duration * .2).toFixed(1);
+            }
+            return Number(this.data.duration * .6).toFixed(1);
+        },
+
         length() {
             if (this.durationUnit === 'seconds') {
 
