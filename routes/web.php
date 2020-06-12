@@ -12,8 +12,6 @@ Route::get('/team-camp', 'PageController@teamCamp');
 Route::get('/longhorn-5k', 'PageController@longhorn5k');
 Route::get('/river-run', 'PageController@riverRun');
 
-Route::get('athletes/search', 'AthleteSearchController@show');
-
 Route::get('/cross-country/meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country/meets/{crossCountryMeet:slug}', 'Meets\CrossCountryMeetController@show');
 Route::get('/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult}',
