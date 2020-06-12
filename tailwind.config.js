@@ -1,6 +1,12 @@
 const { colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {
+    purge: [
+        './resources/**/*.html',
+        './resources/**/*.vue',
+        './resources/**/*.jsx',
+    ],
+
     theme: {
         screens: {
           sm: '640px',

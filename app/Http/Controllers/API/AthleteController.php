@@ -22,7 +22,6 @@ class AthleteController extends Controller
 
     /**
      * @param Athlete $athletes
-     * @param AthleteFilter $filters
      * @return mixed
      */
     public function index(Athlete $athletes)
