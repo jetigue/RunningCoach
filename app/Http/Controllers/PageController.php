@@ -16,7 +16,7 @@ class PageController extends Controller
     /**
      * Display the Welcome page.
      *
-     * @return void
+     * @return Application|Factory|View
      */
     public function welcome()
     {

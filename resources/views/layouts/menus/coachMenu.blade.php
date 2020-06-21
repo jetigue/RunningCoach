@@ -53,10 +53,16 @@
                href="/training-calendar/{{ Carbon\Carbon::now()->format('Y-m-d') }}">
                 Today's Workout
             </a>
+            <a class="text-gray-700 hover:text-gray-900" href="/training-pace-calculator">
+                Pace Calculator
+            </a>
         </div>
     </div>
     <div class="py-1">
         <p class="text-primary text-xl md:text-base lg:text-xl">Time Trials</p>
+        <div class="flex flex-col pl-2">
+            <a class="text-gray-700 hover:text-gray-900" href="/cross-country/time-trials">Cross Country</a>
+        </div>
         <div class="flex flex-col pl-2">
             <a class="text-gray-700 hover:text-gray-900" href="/track/time-trials">Track</a>
         </div>

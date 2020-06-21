@@ -11,12 +11,14 @@
                 Class of {{ $athlete->grad_year }}
             </p>
         </div>
-        @if($athlete->trainingGroup->name !== 'None')
-            <div class="flex justify-center items-center w-full md:w-1/4 p-4">
-                <profile-training-group :data="{{ $athlete->load('trainingGroup') }}"></profile-training-group>
-            </div>
+        @auth
+            @if($athlete->trainingGroup->name !== 'None')
+                <div class="flex justify-center items-center w-full md:w-1/4 p-4">
+                    <profile-training-group :data="{{ $athlete->load('trainingGroup') }}"></profile-training-group>
+                </div>
 
-        @endif
+            @endif
+        @endauth
 
     </header>
 
@@ -35,7 +37,9 @@
 {{--                @include('partials.trainingPaces')--}}
 {{--            @endif--}}
             @auth
-                @include('partials.trainingPaces')
+            <tab title="Training Paces" active>
+                <athlete-training-paces></athlete-training-paces>
+            </tab>
             @endauth
 
         </tabs>

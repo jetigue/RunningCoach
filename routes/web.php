@@ -12,6 +12,10 @@ Route::get('/team-camp', 'PageController@teamCamp');
 Route::get('/longhorn-5k', 'PageController@longhorn5k');
 Route::get('/river-run', 'PageController@riverRun');
 
+Route::get('/training-pace-calculator', function () {
+    return view('training.paceCalculator.show');
+});
+
 Route::get('/cross-country/meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country/meets/{crossCountryMeet:slug}', 'Meets\CrossCountryMeetController@show');
 Route::get('/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult}',
@@ -44,6 +48,12 @@ Route::get('training-calendar/{calendar:month_name}/2020', 'Training\TrainingCal
 Route::get('training-calendar/{calendar:calendar_date}', 'Training\TrainingCalendar2020Controller@show');
 Route::get('training-calendar', 'Training\TrainingCalendar2020Controller@index');
 
+//Time Trials
+Route::get('/cross-country/time-trials', 'TimeTrials\CrossCountryTimeTrialController@index');
+Route::get('/cross-country/time-trials/{timeTrial}', 'TimeTrials\CrossCountryTimeTrialController@show');
+
+Route::get('/cross-country/time-trials/{timeTrial}/races/{race}', 'TimeTrials\CrossCountryTimeTrialRaceController@show');
+Route::get('/track/time-trials', 'TimeTrials\TrackTimeTrialController@index');
 Route::get('/track/time-trials/{timeTrial}/races/{race}', 'TimeTrials\TrackTimeTrialRaceController@show');
 
 //Cross Country Meets
@@ -62,6 +72,13 @@ Route::delete('api/track/meets/{trackMeet}', 'API\Meets\TrackMeetController@dest
 Route::get('api/physicals-athletes',  'API\Physicals\AthletePhysicalController@index');
 
 // Training
+
+Route::get('api/athletes/{athlete}/track-training-paces', 'API\Training\TrackTrainingPaceController@show');
+Route::get('api/athletes/{athlete}/track-tt-training-paces', 'API\Training\TrackTrialTrainingPaceController@show');
+Route::get('api/athletes/{athlete}/xc-training-paces', 'API\Training\XCTrainingPaceController@show');
+Route::get('api/athletes/{athlete}/xc-tt-training-paces', 'API\Training\XCTrialTrainingPaceController@show');
+
+
 Route::get('api/interval-run-types', 'API\Training\IntervalRunTypeController@index');
 Route::post('api/interval-run-types', 'API\Training\IntervalRunTypeController@store');
 Route::patch('api/interval-run-types/{interval}', 'API\Training\IntervalRunTypeController@update');
@@ -143,7 +160,7 @@ Route::apiResources([
     'api/track/meets/{trackMeet:slug}/team-results' => 'API\Results\Track\TeamResultController',
 
     // Race Results
-    'api/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult:slug}/results' => 'API\Results\CrossCountry\ResultController',
+    'api/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult:id}/results' => 'API\Results\CrossCountry\ResultController',
     'api/track/meets/{trackMeet:slug}/team-results/{teamResult:slug}/results' => 'API\Results\Track\ResultController',
 
     // General Properties
@@ -175,6 +192,9 @@ Route::apiResources([
     'api/run-types' => 'API\Properties\RunningLog\RunTypeController',
 
     // Time Trials
+    'api/cross-country/time-trials' => 'API\TimeTrials\CrossCountryTimeTrialController',
+    'api/cross-country/time-trials/{timeTrial}/races' => 'API\TimeTrials\CrossCountryTimeTrialRaceController',
+    'api/cross-country/time-trials/{timeTrial}/races/{race}/results' => 'API\TimeTrials\CrossCountryTimeTrialRaceResultController',
     'api/track/time-trials' => 'API\TimeTrials\TrackTimeTrialController',
     'api/track/time-trials/{timeTrial}/races' => 'API\TimeTrials\TrackTimeTrialRaceController',
     'api/track/time-trials/{timeTrial}/races/{race}/results' => 'API\TimeTrials\TrackTimeTrialRaceResultController',

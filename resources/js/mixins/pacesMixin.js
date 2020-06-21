@@ -2,47 +2,53 @@
 export const pacesMixin = {
     computed: {
 
+        raceEvent() {
+            return this.data.event
+        },
+
+        meetName() {
+            return this.data.meet_name
+        },
+
+        meetDate() {
+            return this.$moment(this.data.meet_date).format("MMMM Do, YYYY");
+        },
+
         avgPaceKm() {
-            let s = this.data[0].seconds;
-            let d = this.data[0].meters / 1000;
+            let s = this.data.seconds;
+            let d = this.data.meters / 1000;
 
             let pace = s/d;
 
             let minutes = Math.floor(pace / 60);
             let seconds = Math.floor(pace % 60);
 
-            let averagePace = minutes + ':' + (seconds > 9 ? seconds : '0' + seconds );
-
-            return averagePace;
+            return minutes + ':' + (seconds > 9 ? seconds : '0' + seconds);
         },
 
         avgPaceMi() {
-            let s = this.data[0].seconds;
-            let d = this.data[0].meters / 1609;
+            let s = this.data.seconds;
+            let d = this.data.meters / 1609;
 
             let pace = s/d;
 
             let minutes = Math.floor(pace / 60);
             let seconds = Math.floor(pace % 60);
 
-            let averagePace = minutes + ':' + (seconds > 9 ? seconds : '0' + seconds );
-
-            return averagePace;
+            return minutes + ':' + (seconds > 9 ? seconds : '0' + seconds);
         },
 
         avgVelocity() {
-            let s = this.data[0].seconds;
-            let d = this.data[0].meters;
+            let s = this.data.seconds;
+            let d = this.data.meters;
 
             let totalMinutes = s/60;
 
-            let averageVelocity = Math.round(d / totalMinutes);
-
-            return averageVelocity;
+            return Math.round(d / totalMinutes);
         },
 
         duration() {
-            let time = this.data[0].seconds;
+            let time = this.data.seconds;
 
             let min = ~~((time % 3600) / 60);
             let sec = ~~(time % 60);
@@ -56,8 +62,8 @@ export const pacesMixin = {
         },
 
         vDot() {
-            let s = this.data[0].seconds;
-            let dis = this.data[0].meters;
+            let s = this.data.seconds;
+            let dis = this.data.meters;
 
             let totalMinutes = s/60;
 
@@ -78,9 +84,7 @@ export const pacesMixin = {
             let k = -0.1932605;
             let m = j * Math.exp(k * min);
             let vO2max = i + m;
-            let vDot = Math.round(10*(va + c + d)/vO2max)/10;
-
-            return vDot;
+            return Math.round(10 * (va + c + d) / vO2max) / 10;
         },
 
         lowEasyPace() {

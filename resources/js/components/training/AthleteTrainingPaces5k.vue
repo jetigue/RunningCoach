@@ -44,15 +44,15 @@
     import Collection from '../../Collection';
     import EasyPaces from './EasyPaces';
     import TempoPaces from './TempoPaces';
-    import CvPaces from './CVPaces';
+    import CriticalVelocityPaces from './CriticalVelocityPaces';
     import IntervalPaces from './IntervalPaces';
     import RepetitionPaces from './RepetitionPaces';
-    import SsPaces from "./SsPaces";
+    import SteadyStatePaces from "./SteadyStatePaces";
 
 
     export default Collection.extend({
         mixins: [pacesMixin],
-        components: { EasyPaces, TempoPaces, CvPaces, IntervalPaces, RepetitionPaces, SsPaces },
+        components: { EasyPaces, TempoPaces, CriticalVelocityPaces, IntervalPaces, RepetitionPaces, SteadyStatePaces },
         props: ['data'],
 
         data() {

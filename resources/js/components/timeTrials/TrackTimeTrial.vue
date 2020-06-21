@@ -48,7 +48,7 @@
                                 v-text="form.errors.get('track_venue_id')">
                             </span>
                         </div>
-                        <select class="form-input" name="season_id" v-model="form.track_venue_id" required>
+                        <select class="form-input" name="track_venue_id" v-model="form.track_venue_id" required>
                             <option v-for="venue in venues" :key="venue.id" :value="venue.id">
                                 {{ venue.name }}
                             </option>

@@ -4,7 +4,7 @@
             <slot></slot>
         </div>
         <div v-if="records">
-            <div v-for="(result, index) in items" :key="result.id">
+            <div v-for="(result, index) in items" :key="result.id + Math.random()">
                 <athlete-track-result :data="result" @deleted="remove(index)"></athlete-track-result>
             </div>
         </div>

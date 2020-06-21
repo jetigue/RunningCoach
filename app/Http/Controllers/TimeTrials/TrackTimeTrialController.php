@@ -21,32 +21,7 @@ class TrackTimeTrialController extends Controller
             ->orderBy('trial_date', 'desc')
             ->get();
 
-        if (request()->expectsJson()) {
-            return $timeTrials;
-        }
-
         return view('timeTrials.track.index', compact('timeTrials'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -58,39 +33,5 @@ class TrackTimeTrialController extends Controller
     public function show(TimeTrial $timeTrial)
     {
         return view('timeTrials.track.show', compact('timeTrial'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param TimeTrial $timeTrial
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TimeTrial $timeTrial)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param TimeTrial $timeTrial
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TimeTrial $timeTrial)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param TimeTrial $timeTrial
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TimeTrial $timeTrial)
-    {
-        //
     }
 }

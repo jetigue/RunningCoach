@@ -34,6 +34,9 @@
                href="/training-calendar/{{ Carbon\Carbon::now()->format('Y-m-d') }}">
                 Today's Workout
             </a>
+            <a class="text-gray-700 hover:text-gray-900" href="/training-pace-calculator">
+                Pace Calculator
+            </a>
         </div>
     </div>
 </div>

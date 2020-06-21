@@ -92,6 +92,9 @@ Vue.component('team-announcements', require('./components/team/TeamAnnouncements
 Vue.component('team-events', require('./components/team/TeamEvents').default);
 
 // Time Trials
+Vue.component('cross-country-time-trials', require('./components/timeTrials/CrossCountryTimeTrials').default);
+Vue.component('cross-country-time-trial-races', require('./components/timeTrials/CrossCountryTimeTrialRaces').default);
+Vue.component('cross-country-time-trial-race-results', require('./components/timeTrials/CrossCountryTimeTrialRaceResults').default);
 Vue.component('track-time-trials', require('./components/timeTrials/TrackTimeTrials').default);
 Vue.component('track-time-trial-races', require('./components/timeTrials/TrackTimeTrialRaces').default);
 Vue.component('track-time-trial-race-results', require('./components/timeTrials/TrackTimeTrialRaceResults').default);
@@ -111,6 +114,7 @@ Vue.component('secondary-workout', require('./components/training/SecondaryWorko
 Vue.component('supplement-workouts', require('./components/training/SupplementWorkouts').default);
 Vue.component('training-calendar-workouts', require('./components/training/TrainingCalendarWorkouts').default);
 Vue.component('profile-training-group', require('./components/training/ProfileTrainingGroup').default);
+Vue.component('training-calculator-paces', require('./components/training/TrainingCalculatorPaces').default);
 
 
 // users

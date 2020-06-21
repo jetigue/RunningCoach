@@ -51,17 +51,6 @@ class TrackTimeTrialController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param TimeTrial $timeTrial
-     * @return void
-     */
-    public function show(TimeTrial $timeTrial)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param Request $request

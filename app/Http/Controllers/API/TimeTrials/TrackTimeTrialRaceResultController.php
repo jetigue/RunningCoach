@@ -59,17 +59,6 @@ class TrackTimeTrialRaceResultController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param Result $result
-     * @return Response
-     */
-    public function show(Result $result)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param Request $request
