@@ -42,6 +42,11 @@ export default {
                     label: 'Today\'s Workout',
                     url: '/training-calendar/'+this.$moment().format('YYYY-MM-DD')
                 },
+                {
+                    id: 3,
+                    label: 'Pace Calculator',
+                    url: '/training-pace-calculator'
+                }
             ]
         }
     },

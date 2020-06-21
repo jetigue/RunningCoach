@@ -24,7 +24,7 @@
 
     <section class="my-10">
         <tabs class="">
-            <tab title="Cross Country Results">
+            <tab title="Cross Country Results" active>
                 @include('partials.athleteCCResults')
             </tab>
             <tab title="Track Results">
@@ -37,7 +37,7 @@
 {{--                @include('partials.trainingPaces')--}}
 {{--            @endif--}}
             @auth
-            <tab title="Training Paces" active>
+            <tab title="Training Paces">
                 <athlete-training-paces></athlete-training-paces>
             </tab>
             @endauth

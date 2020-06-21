@@ -39,7 +39,7 @@
 
         watch: {
             activeTab(activeTab) {
-                this.tabs.map(tab => (tab.isActive = tab == activeTab));
+                this.tabs.map(tab => (tab.isActive = tab === activeTab));
             }
         },
 
