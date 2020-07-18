@@ -30,7 +30,7 @@ class TrainingGroupVDOTController extends Controller
      * Display the specified resource.
      *
      * @param Request $request
-     * @return void
+     * @return float
      */
     public function average(Request $request)
     {
@@ -170,13 +170,13 @@ class TrainingGroupVDOTController extends Controller
 
         switch($currentDate) {
             case ($currentDate >= $beginSummer && $currentDate <= $endSummer):
-                return $athletesLatestXCTTResults->avg('vdot');
+                return round($athletesLatestXCTTResults->avg('vdot'),1);
             case ($currentDate >= $beginXC && $currentDate <= $endXC):
-                return $athletesLatestXCResults->avg('vdot');
+                return round($athletesLatestXCResults->avg('vdot'), 1);
             case ($currentDate >= $beginWinter && $currentDate <= $endWinter):
-                return $athletesLatestTrackTTResults->avg('vdot');
+                return round($athletesLatestTrackTTResults->avg('vdot'), 1);
             case ($currentDate >= $beginTrack && $currentDate <= $endTrack):
-                return $athletesLatestTrackResults->avg('vdot');
+                return round($athletesLatestTrackResults->avg('vdot'), 1);
         }
 
     }
