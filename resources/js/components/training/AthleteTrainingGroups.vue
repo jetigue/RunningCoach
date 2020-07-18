@@ -321,120 +321,123 @@
         },
 
         created() {
-            Event.$on('athleteUpdated', () => this.refreshAthletes());
+            Event.$on('athleteUpdated', () => this.refreshPage());
         },
 
         methods: {
-            refreshAthletes() {
-                function getCrimsonMales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Crimson', sex: 'm'}
-                    })
-                }
-
-                function getCrimsonFemales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Crimson', sex: 'f'}
-                    })
-                }
-
-                function getBlackMales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Black', sex: 'm'}
-                    })
-                }
-
-                function getBlackFemales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Black', sex: 'f'}
-                    })
-                }
-
-                function getWhiteMales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'White', sex: 'm'}
-                    })
-                }
-
-                function getWhiteFemales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'White', sex: 'f'}
-                    })
-                }
-
-                function getGreenMales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Green', sex: 'm'}
-                    })
-                }
-
-                function getGreenFemales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'Green', sex: 'f'}
-                    })
-                }
-
-                function getNoneMales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'None', sex: 'm'}
-                    })
-                }
-
-                function getNoneFemales() {
-                    return axios.get('/api/training-groups/rosters', {
-                        params: { group: 'None', sex: 'f'}
-                    })
-                }
-
-                axios.all([
-                    getCrimsonMales(),
-                    getCrimsonFemales(),
-                    getBlackMales(),
-                    getBlackFemales(),
-                    getWhiteMales(),
-                    getWhiteFemales(),
-                    getGreenMales(),
-                    getGreenFemales(),
-                    getNoneMales(),
-                    getNoneFemales()
-                ])
-                    .then(axios.spread((
-                        CrimsonMalesResponse,
-                        CrimsonFemalesResponse,
-                        BlackMalesResponse,
-                        BlackFemalesResponse,
-                        WhiteMalesResponse,
-                        WhiteFemalesResponse,
-                        GreenMalesResponse,
-                        GreenFemalesResponse,
-                        NoneMalesResponse,
-                        NoneFemalesResponse
-                    ) => {
-                        this.crimsonMales = CrimsonMalesResponse.data;
-                        this.crimsonMalesCount = CrimsonMalesResponse.data.length
-                        this.crimsonFemales = CrimsonFemalesResponse.data;
-                        this.crimsonFemalesCount = CrimsonFemalesResponse.data.length
-                        this.blackMales = BlackMalesResponse.data;
-                        this.blackMalesCount = BlackMalesResponse.data.length
-                        this.blackFemales = BlackFemalesResponse.data;
-                        this.blackFemalesCount = BlackFemalesResponse.data.length
-                        this.whiteMales = WhiteMalesResponse.data;
-                        this.whiteMalesCount = WhiteMalesResponse.data.length
-                        this.whiteFemales = WhiteFemalesResponse.data;
-                        this.whiteFemalesCount = WhiteFemalesResponse.data.length
-                        this.greenMales = GreenMalesResponse.data;
-                        this.greenMalesCount = GreenMalesResponse.data.length
-                        this.greenFemales = GreenFemalesResponse.data;
-                        this.greenFemalesCount = GreenFemalesResponse.data.length
-                        this.noneMales = NoneMalesResponse.data;
-                        this.noneMalesCount = NoneMalesResponse.data.length
-                        this.noneFemales = NoneFemalesResponse.data;
-                        this.noneFemalesCount = NoneFemalesResponse.data.length
-                    }))
-                    .catch(errors => {
-                        console.log(errors)
-                    });
+            refreshPage() {
+                this.$forceUpdate();
             }
+            // refreshAthletes() {
+            //     function getCrimsonMales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Crimson', sex: 'm'}
+            //         })
+            //     }
+            //
+            //     function getCrimsonFemales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Crimson', sex: 'f'}
+            //         })
+            //     }
+            //
+            //     function getBlackMales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Black', sex: 'm'}
+            //         })
+            //     }
+            //
+            //     function getBlackFemales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Black', sex: 'f'}
+            //         })
+            //     }
+            //
+            //     function getWhiteMales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'White', sex: 'm'}
+            //         })
+            //     }
+            //
+            //     function getWhiteFemales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'White', sex: 'f'}
+            //         })
+            //     }
+            //
+            //     function getGreenMales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Green', sex: 'm'}
+            //         })
+            //     }
+            //
+            //     function getGreenFemales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'Green', sex: 'f'}
+            //         })
+            //     }
+            //
+            //     function getNoneMales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'None', sex: 'm'}
+            //         })
+            //     }
+            //
+            //     function getNoneFemales() {
+            //         return axios.get('/api/training-groups/rosters', {
+            //             params: { group: 'None', sex: 'f'}
+            //         })
+            //     }
+            //
+            //     axios.all([
+            //         getCrimsonMales(),
+            //         getCrimsonFemales(),
+            //         getBlackMales(),
+            //         getBlackFemales(),
+            //         getWhiteMales(),
+            //         getWhiteFemales(),
+            //         getGreenMales(),
+            //         getGreenFemales(),
+            //         getNoneMales(),
+            //         getNoneFemales()
+            //     ])
+            //         .then(axios.spread((
+            //             CrimsonMalesResponse,
+            //             CrimsonFemalesResponse,
+            //             BlackMalesResponse,
+            //             BlackFemalesResponse,
+            //             WhiteMalesResponse,
+            //             WhiteFemalesResponse,
+            //             GreenMalesResponse,
+            //             GreenFemalesResponse,
+            //             NoneMalesResponse,
+            //             NoneFemalesResponse
+            //         ) => {
+            //             this.crimsonMales = CrimsonMalesResponse.data;
+            //             this.crimsonMalesCount = CrimsonMalesResponse.data.length
+            //             this.crimsonFemales = CrimsonFemalesResponse.data;
+            //             this.crimsonFemalesCount = CrimsonFemalesResponse.data.length
+            //             this.blackMales = BlackMalesResponse.data;
+            //             this.blackMalesCount = BlackMalesResponse.data.length
+            //             this.blackFemales = BlackFemalesResponse.data;
+            //             this.blackFemalesCount = BlackFemalesResponse.data.length
+            //             this.whiteMales = WhiteMalesResponse.data;
+            //             this.whiteMalesCount = WhiteMalesResponse.data.length
+            //             this.whiteFemales = WhiteFemalesResponse.data;
+            //             this.whiteFemalesCount = WhiteFemalesResponse.data.length
+            //             this.greenMales = GreenMalesResponse.data;
+            //             this.greenMalesCount = GreenMalesResponse.data.length
+            //             this.greenFemales = GreenFemalesResponse.data;
+            //             this.greenFemalesCount = GreenFemalesResponse.data.length
+            //             this.noneMales = NoneMalesResponse.data;
+            //             this.noneMalesCount = NoneMalesResponse.data.length
+            //             this.noneFemales = NoneFemalesResponse.data;
+            //             this.noneFemalesCount = NoneFemalesResponse.data.length
+            //         }))
+            //         .catch(errors => {
+            //             console.log(errors)
+            //         });
+            // }
         }
     }
 </script>

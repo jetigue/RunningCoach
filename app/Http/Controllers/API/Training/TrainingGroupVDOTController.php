@@ -15,7 +15,7 @@ class TrainingGroupVDOTController extends Controller
     {
         $this->middleware('coach');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
