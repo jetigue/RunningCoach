@@ -118,7 +118,7 @@ export default {
                         title: 'Athlete Added successfully'
                     });
 
-                    this.$emit('created', data),
+                    this.$emit('created', data)
                     this.resetForm()
                 })
 

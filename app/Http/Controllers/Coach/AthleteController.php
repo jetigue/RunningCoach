@@ -25,7 +25,7 @@ class AthleteController extends Controller
      */
     public function index()
     {
-        $athletes = Athlete::orderBy('last_name')->with('trainingGroup')->get();
+        $athletes = Athlete::orderBy('last_name')->orderBy('first_name')->with('trainingGroup')->get();
 
         if (request()->expectsJson()) {
             return $athletes;

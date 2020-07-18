@@ -1,16 +1,16 @@
 <template>
     <a :href="url" class="hover:no-underline hover:font-bold">
-    <div class="flex flex-col h-12 md:h-24 lg:h-36 bg-gray-100 border hover:bg-gray-300"
-         :class="{'border-black': today}">
-        <div class="px-1 text-xs">
-            {{ trainingDate | moment("D") }}
-        </div>
-        <div class="flex flex-col h-28 justify-around items-center text-sm font-semibold">
-            <div v-for="(workout, index) in workouts" :key="workout.id">
-                <training-calendar-workout :data="workout"></training-calendar-workout>
+        <div class="flex flex-col h-12 md:h-24 lg:h-36 bg-gray-100 border hover:bg-gray-300"
+             :class="{'border-black': today}">
+            <div class="px-1 text-xs">
+                {{ trainingDate | moment("D") }}
+            </div>
+            <div class="flex flex-col h-28 justify-around items-center text-sm font-semibold">
+                <div v-for="(workout, index) in workouts" :key="workout.id">
+                    <training-calendar-workout :data="workout"></training-calendar-workout>
+                </div>
             </div>
         </div>
-    </div>
     </a>
 </template>
 

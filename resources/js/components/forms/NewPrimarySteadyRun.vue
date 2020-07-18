@@ -1,10 +1,7 @@
 <template>
     <form action="/training-calendar/date/steady-runs" method="POST" id="newPrimarySteadyRun"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear()"
-        class="p-4 bg-gray-100">
-        <header class="text-2xl text-primary font-thin mb-2">Add a Steady Run</header>
-        <div class="mb-2 flex flex-col">
+        @keydown="form.errors.clear()">
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
@@ -28,13 +25,13 @@
         <div class="mb-2 flex justify-between">
             <div class="flex flex-col w-5/12">
                 <div class="flex content-end">
-                    <label class="form-label" for="form.duration">Duration</label>
+                    <label class="form-label" for="form.primarySteadyRunDuration">Duration</label>
                     <span id="durationHelp" class="form-help" v-if="form.errors.has('duration')"
                           v-text="form.errors.get('duration')">
                 </span>
                     </div>
                     <input class="form-input"
-                           id="form.duration"
+                           id="form.primarySteadyRunDuration"
                            type="number"
                            min="1"
                            v-model="form.duration">
@@ -125,23 +122,17 @@
 
         <div class="mb-2">
             <div class="flex justify-between content-end">
-                <label class="form-label" for="form.notes">Notes (optional)</label>
+                <label class="form-label" for="form.steadyRunNotes">Notes (optional)</label>
                 <span id="notesHelp" class="form-help" v-if="form.errors.has('notes')"
                       v-text="form.errors.get('notes')">
                 </span>
             </div>
             <textarea class="form-input"
-                      id="form.notes"
+                      id="form.steadyRunNotes"
                       v-model="form.notes">
             </textarea>
         </div>
-        </div>
         <div class="text-right pt-2">
-            <button class="py-2 text-grey-darker text-sm focus:outline-none px-2"
-                    type="button"
-                    @click="close">
-                Cancel
-            </button>
             <button type="submit"
                     class="submit-button"
                     :disabled="form.errors.any()">

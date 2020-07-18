@@ -3,13 +3,13 @@
 namespace App\Models\Results\CrossCountry;
 
 use App\Models\Athlete;
+use App\Traits\VDOTTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Laravel\Scout\Searchable;
 
 class Result extends Model
 {
-    use Searchable;
+    use VDOTTrait;
 
     /**
      * The table associated with the model.
@@ -33,51 +33,11 @@ class Result extends Model
     ];
 
     /**
-     * Save total seconds on create and update.
+     * @return mixed
      */
-//    public static function boot()
-//    {
-//        parent::boot();
-//
-//        static::saving(function ($result) {
-//
-//            $result->total_seconds = $result->minutes * 60 + $result->seconds;
-//
-//        });
-//    }
-
-    /**
-     * @return string
-     */
-    public function getPlaceWithSuffixAttribute()
+    public function distance()
     {
-        $value = $this->attributes['place'];
-
-        if ($value != null) {
-            if (! in_array(($value % 100), [11, 12, 13])) {
-                switch ($value % 10) {
-                    // Handle 1st, 2nd, 3rd
-                    case 1:
-                        return $value.'st';
-                    case 2:
-                        return $value.'nd';
-                    case 3:
-                        return $value.'rd';
-                }
-            }
-
-            return $value.'th';
-        }
-    }
-
-    /**
-     * @return false|string
-     */
-    public function getTimeAttribute()
-    {
-        $seconds = $this->attributes['total_seconds'];
-
-        return gmdate('i:s', $seconds);
+        return $this->teamResult->event->meters;
     }
 
     /**
@@ -85,7 +45,8 @@ class Result extends Model
      */
     public function teamResult()
     {
-        return $this->belongsTo(TeamResult::class, 'cross_country_team_result_id');
+        return $this->belongsTo(TeamResult::class, 'cross_country_team_result_id')
+            ->with('crossCountryMeet');
     }
 
     /**
@@ -96,23 +57,4 @@ class Result extends Model
         return $this->belongsTo(Athlete::class, 'athlete_id');
     }
 
-    /**
-     * @return string
-     */
-    public function getMillisecondAttribute()
-    {
-        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
-    }
-
-//    /**
-//     * Apply all relevant name filters.
-//     *
-//     * @param Builder $query
-//     * @param CrossCountryResultFilter $filters
-//     * @return Builder
-//     */
-//    public function scopeFilter($query, CrossCountryResultFilter $filters)
-//    {
-//        return $filters->apply($query);
-//    }
 }

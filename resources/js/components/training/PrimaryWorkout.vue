@@ -37,22 +37,37 @@
                     <i class="fas fa-sync-alt"></i>
                 </div>
             </div>
-
+        </div>
+        <div class="flex flex-col w-full">
+            <div class="flex flex-wrap justify-between py-4 w-full">
+                <div class="justify-center flex w-1/2 md:w-1/4 lg:w-1/6">
+                    <portal-target name="warmUp-button"></portal-target>
+                </div>
+                <div class="justify-center flex w-1/2 md:w-1/4 lg:w-1/6">
+                    <portal-target name="steadyRun-button"></portal-target>
+                </div>
+                <div class="justify-center flex w-1/2 md:w-1/4 lg:w-1/6">
+                    <portal-target name="intervalRun-button"></portal-target>
+                </div>
+                <div class="justify-center flex w-1/2 md:w-1/4 lg:w-1/6">
+                    <portal-target name="coolDown-button"></portal-target>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <primary-warm-up-runs :data="warmUp"></primary-warm-up-runs>
+                <primary-steady-runs :data="steady"></primary-steady-runs>
+                <primary-interval-runs :data="intervalRun"></primary-interval-runs>
+                <primary-cool-down-runs :data="coolDown"></primary-cool-down-runs>
             </div>
 
-        <div class="flex flex-col">
-            <primary-warm-up-runs :data="warmUp"></primary-warm-up-runs>
-            <primary-steady-runs :data="steady" class="py-2"></primary-steady-runs>
-            <primary-interval-runs :data="intervalRun" class="py-2"></primary-interval-runs>
-            <primary-cool-down-runs :data="coolDown"></primary-cool-down-runs>
+            <workout-cards>
+                <workout-card group="crimson" workout="primary"></workout-card>
+                <workout-card group="black" workout="primary"></workout-card>
+                <workout-card group="white" workout="primary"></workout-card>
+                <workout-card group="green" workout="primary"></workout-card>
+            </workout-cards>
         </div>
 
-        <workout-cards>
-            <workout-card group="crimson" workout="primary"></workout-card>
-            <workout-card group="black" workout="primary"></workout-card>
-            <workout-card group="white" workout="primary"></workout-card>
-            <workout-card group="green" workout="primary"></workout-card>
-        </workout-cards>
     </div>
 </template>
 

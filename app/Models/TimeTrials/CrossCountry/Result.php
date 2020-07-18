@@ -3,11 +3,17 @@
 namespace App\Models\TimeTrials\CrossCountry;
 
 use App\Models\Athlete;
+use App\Models\Properties\Races\CrossCountry\Event;
+use App\Traits\ResultsTrait;
+use App\Traits\VDOTTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\DB;
 
 class Result extends Model
 {
+    use VDOTTrait;
+
     /**
      * The table associated with the model.
      *
@@ -29,44 +35,11 @@ class Result extends Model
     ];
 
     /**
-     * @return string
-     */
-    public function getPlaceWithSuffixAttribute()
-    {
-        $value = $this->attributes['place'];
-
-        if ($value != null) {
-            if (! in_array(($value % 100), [11, 12, 13])) {
-                switch ($value % 10) {
-                    // Handle 1st, 2nd, 3rd
-                    case 1:
-                        return $value.'st';
-                    case 2:
-                        return $value.'nd';
-                    case 3:
-                        return $value.'rd';
-                }
-            }
-            return $value.'th';
-        }
-    }
-
-    /**
-     * @return false|string
-     */
-    public function getTimeAttribute()
-    {
-        $seconds = $this->attributes['total_seconds'];
-
-        return gmdate('i:s', $seconds);
-    }
-
-    /**
      * @return BelongsTo
      */
     public function race()
     {
-        return $this->belongsTo(TimeTrial::class, 'xc_time_trial_race_id');
+        return $this->belongsTo(Race::class, 'xc_time_trial_race_id');
     }
 
     /**
@@ -77,11 +50,8 @@ class Result extends Model
         return $this->belongsTo(Athlete::class, 'athlete_id');
     }
 
-    /**
-     * @return string
-     */
-    public function getMillisecondAttribute()
+    public function distance()
     {
-        return str_pad($this->milliseconds, 2, '0', STR_PAD_LEFT);
+        return $this->race->event->meters;
     }
 }

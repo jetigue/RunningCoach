@@ -10,12 +10,13 @@
                 </create-button>
             </div>
         </div>
-            <div v-if="records" class="">
-                <div v-for="(workout, index) in items" :key="workout.id">
-                    <training-day-workout :data="workout" @deleted="remove(index)"></training-day-workout>
-                </div>
+        <div v-if="records" class="">
+            <div v-for="(workout, index) in items" :key="workout.id">
+                <training-day-workout :data="workout" @deleted="remove(index)"></training-day-workout>
             </div>
         </div>
+    </div>
+
 </template>
 
 <script>

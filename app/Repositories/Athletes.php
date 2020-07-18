@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Athlete;
+use App\Models\Training\Group;
 use Carbon\Carbon;
 
 class Athletes
@@ -85,9 +86,10 @@ class Athletes
 
     public function active()
     {
-        $active = Athlete::where('status', '=', 'a')->get();
-
-        return $active;
+        return Athlete::where('status', '=', 'a')
+            ->orderBy('last_name')
+            ->orderBy('first_name')
+            ->get();
     }
 
     public function inactive()

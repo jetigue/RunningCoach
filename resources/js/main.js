@@ -100,6 +100,7 @@ Vue.component('track-time-trial-races', require('./components/timeTrials/TrackTi
 Vue.component('track-time-trial-race-results', require('./components/timeTrials/TrackTimeTrialRaceResults').default);
 
 // Training
+Vue.component('athlete-training-groups', require('./components/training/AthleteTrainingGroups').default);
 Vue.component('athlete-training-paces', require('./components/training/AthleteTrainingPaces').default);
 Vue.component('training-intensities', require('./components/training/TrainingIntensities').default);
 Vue.component('training-periods', require('./components/training/TrainingPeriods').default);

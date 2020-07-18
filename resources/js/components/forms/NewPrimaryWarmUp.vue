@@ -1,9 +1,8 @@
 <template>
     <form action="/training-calendar/date/steady-runs" method="POST" id="newPrimaryWarmUpRun"
         @submit.prevent="onSubmit"
-        @keydown="form.errors.clear()"
-        class="p-4 bg-gray-100">
-        <header class="text-2xl text-primary font-thin mb-2">Add a Warm-up</header>
+        @keydown="form.errors.clear()">
+
         <div class="mb-2 flex flex-col md:flex-row md:justify-between lg:justify-around">
             <div class="flex flex-col w-full md:w-1/2 md:mr-2">
                 <div class="flex content-end">
@@ -83,14 +82,8 @@
                         </a>
                 </div>
             </div>
-
         </div>
         <div class="text-right pt-2">
-            <button class="py-2 text-grey-darker text-sm focus:outline-none px-2"
-                    type="button"
-                    @click="close">
-                Cancel
-            </button>
             <button type="submit"
                     class="submit-button"
                     :disabled="form.errors.any()">

@@ -143,9 +143,16 @@ Route::post('api/training-calendar/{calendar:calendar_date}/workouts', 'API\Trai
 Route::patch('api/training-calendar/{calendar:calendar_date}/workouts/{workout}', 'API\Training\TrainingCalendarWorkoutController@update');
 Route::delete('api/training-calendar/{calendar:calendar_date}/workouts/{workout}', 'API\Training\TrainingCalendarWorkoutController@destroy');
 
+// VDOT Values
+Route::get('api/athlete-vdot/latest', 'API\Training\AthleteVDOTController@show');
+Route::get('api/training-group-vdot/average', 'API\Training\TrainingGroupVDOTController@average');
+
+Route::get('api/training-groups/rosters', 'API\Training\TrainingGroupRosterController@index');
+
 Route::apiResources([
     'api/athletes' => 'API\AthleteController',
     'api/active-athletes' => 'API\ActiveAthleteController',
+    'api/training-groups/athletes' => 'API\Athletes\AthleteTrainingGroupController',
 
     'api/physicals' => 'API\Physicals\PhysicalController',
     'api/physicals/{physical}/physical-form' =>'API\Physicals\PhysicalFormController',
@@ -247,7 +254,9 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('team-events', 'Coach\TeamEventController@index');
     Route::get('track/meet-names', 'Coach\TrackMeetNameController@index');
     Route::get('track/venues', 'Coach\TrackVenueController@index');
-    Route::get('training/groups', 'Training\TrainingGroupController@index');
+    Route::get('training-groups', 'Training\TrainingGroupController@index');
+    Route::get('training-groups/athletes', 'Training\TrainingGroupAthleteController@index');
+
 });
 
 Route::group(['middleware' => 'user'], function () {

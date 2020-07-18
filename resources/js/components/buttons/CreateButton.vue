@@ -1,6 +1,7 @@
 <template>
     <div>
-        <button type="button" @click="loadSelects">
+        <button type="button" @click="loadSelects" class="flex">
+            {{ label }} &nbsp
             <i class="fas fa-plus text-primary pt-1"></i>
         </button>
         <portal to="create-modal">
@@ -34,7 +35,7 @@
     export default {
         name: "CreateButton",
 
-        props: ['title'],
+        props: ['title', 'label'],
 
         data() {
             return {
@@ -44,13 +45,13 @@
 
         methods: {
             close() {
-                Event.$emit('cancel'),
-                    this.active = false
+                Event.$emit('cancel')
+                this.active = false
             },
 
             loadSelects() {
-                this.active = true,
-                    Event.$emit('getNames');
+                this.active = true
+                Event.$emit('getNames');
             },
         },
 

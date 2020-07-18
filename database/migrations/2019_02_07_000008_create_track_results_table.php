@@ -23,6 +23,7 @@ class CreateTrackResultsTable extends Migration
             $table->unsignedTinyInteger('milliseconds')->nullable();
             $table->unsignedTinyInteger('points')->nullable();
             $table->unsignedTinyInteger('heat')->default(1);
+            $table->float('vdot', 3,1)->nullable();
             $table->timestamps();
 
             $table->foreign('track_team_result_id')

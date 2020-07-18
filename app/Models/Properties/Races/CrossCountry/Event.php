@@ -5,6 +5,7 @@ namespace App\Models\Properties\Races\CrossCountry;
 use App\Filters\EventFilter;
 use App\Models\Results\CrossCountry\Result;
 use App\Models\Results\CrossCountry\TeamResult;
+use App\Models\TimeTrials\CrossCountry\Race;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -77,6 +78,14 @@ class Event extends Model
     public function crossCountryTeamResults()
     {
         return $this->hasMany(TeamResult::class, 'cross_country_event_id');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function timeTrialRace()
+    {
+        return $this->hasMany(Race::class);
     }
 
     /**

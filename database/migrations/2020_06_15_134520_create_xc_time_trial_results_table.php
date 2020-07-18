@@ -20,6 +20,7 @@ class CreateXCTimeTrialResultsTable extends Migration
             $table->unsignedSmallInteger('place');
             $table->unsignedInteger('total_seconds');
             $table->unsignedTinyInteger('milliseconds')->nullable();
+            $table->float('vdot', 3,1)->nullable();
             $table->timestamps();
 
             $table->foreign('athlete_id')

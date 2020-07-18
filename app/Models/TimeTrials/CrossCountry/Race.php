@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Race extends Model
 {
+    protected $appends = ['race_distance'];
+    protected $casts = ['race_distance'=>'integer'];
     /**
      * The table associated with the model.
      *
@@ -59,6 +61,18 @@ class Race extends Model
     public function results()
     {
         return $this->hasMany(Result::class, 'xc_time_trial_race_id');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRaceDistanceAttribute()
+    {
+        $meters = $this->event->meters;
+        if ($meters === null) {
+            die("No Meters Found");
+        }
+        return $meters;
     }
 
     /**
