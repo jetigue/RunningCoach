@@ -7,8 +7,11 @@ use App\Models\Athlete;
 use App\Models\Training\Group;
 use App\Repositories\Athletes;
 use Carbon\Carbon;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class TrainingGroupAthleteController extends Controller
 {
@@ -17,6 +20,9 @@ class TrainingGroupAthleteController extends Controller
         $this->middleware('coach');
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function index()
     {
         $crimson = Group::firstWhere('name', 'Crimson');
@@ -43,7 +49,6 @@ class TrainingGroupAthleteController extends Controller
                 DB::raw('MAX(xc_time_trials.trial_date) as date',)
             )
             ->groupBy('athlete_id');
-
 
 
         $latestTrackTTResults = DB::table('track_time_trial_race_results')
@@ -136,7 +141,7 @@ class TrainingGroupAthleteController extends Controller
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
 
         $athletesLatestTrackResults = DB::table('athletes')
-            ->leftJoinSub($latestXCResults, 'latest_track_results', function ($join) {
+            ->leftJoinSub($latestTrackResults, 'latest_track_results', function ($join) {
                 $join->on('athletes.id', '=', 'latest_track_results.athlete_id');
         })
         ->where('status', 'a')
@@ -145,10 +150,11 @@ class TrainingGroupAthleteController extends Controller
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
 
         $athletesLatestTrackTTResults = DB::table('athletes')
-            ->leftJoinSub($latestXCResults, 'latest_track_tt_results', function ($join) {
+            ->leftJoinSub($latestTrackTTResults, 'latest_track_tt_results', function ($join) {
                 $join->on('athletes.id', '=', 'latest_track_tt_results.athlete_id');
         })
         ->where('status', 'a')
+        ->orderBy('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
@@ -177,12 +183,6 @@ class TrainingGroupAthleteController extends Controller
             case ($currentDate >= $beginTrack && $currentDate <= $endTrack):
                 $athletes = $athletesLatestTrackResults;
         }
-
-//        $athletes = DB::table('athletes')
-//            ->where('status', 'a')
-//            ->orderBy('last_name')
-//            ->orderBy('first_name')
-//            ->select('id', 'first_name', 'last_name', 'sex', 'training_group_id');
 
         $athletes2 = clone $athletes;
         $athletes3 = clone $athletes;
