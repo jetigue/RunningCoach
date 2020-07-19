@@ -127,6 +127,7 @@ class TrainingGroupAthleteController extends Controller
                 $join->on('athletes.id', '=', 'latest_xc_tt_results.athlete_id');
         })
         ->where('status', 'a')
+        ->orderBy('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
@@ -136,6 +137,7 @@ class TrainingGroupAthleteController extends Controller
                 $join->on('athletes.id', '=', 'latest_xc_results.athlete_id');
         })
         ->where('status', 'a')
+        ->orderBy('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
@@ -145,6 +147,7 @@ class TrainingGroupAthleteController extends Controller
                 $join->on('athletes.id', '=', 'latest_track_results.athlete_id');
         })
         ->where('status', 'a')
+        ->orderBy('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
         ->select('id', 'first_name', 'last_name', 'sex', 'grad_year', 'vdot', 'date');
