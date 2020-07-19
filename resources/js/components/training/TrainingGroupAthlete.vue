@@ -10,11 +10,11 @@
             </div>
             <div v-show="showVDOT" class="flex">
                 <athlete-vdot-tooltip>
-                    <div v-if="vdotRecords">
+                    <div v-if="latestVdot !== null">
                         <div>Latest XC VDOT: &nbsp; {{ latestVdot }}</div>
-                        <span>({{ latestVdotDate | moment("from", "now") }})</span>
+                        <span>({{ vdotDate | moment("from", "now") }})</span>
                     </div>
-                    <div v-else>No Results</div>
+                    <div v-else>No Recent Results</div>
 
                 </athlete-vdot-tooltip>
             </div>
@@ -63,36 +63,38 @@
                 id: this.data.id,
                 name: this.data.last_name + ", " + this.data.first_name,
                 training_group_id: this.data.training_group_id,
+                latestVdot: this.data.vdot,
+                vdotDate: this.data.date
             }
         },
 
         computed: {
-            sortedVdotValues() {
-                let x = this.vdotValues
+            // sortedVdotValues() {
+            //     let x = this.vdotValues
+            //
+            //     return x.sort((a, b) =>
+            //         (a.date < b.date) ? 1 : (a.date === b.date) ? ((a.vdot > b.vdot) ? 1 : -1) : -1 );
+            // },
+            //
+            // vdotRecords: {
+            //     get: function () {
+            //         return this.vdotRecordsCount
+            //     },
+            //     set: function () {
+            //         if (this.vdotRecordsCount !== 0) {
+            //             return this.vdotRecords = true;
+            //         }
+            //         return this.vdotRecords = false;
+            //     }
+            // },
 
-                return x.sort((a, b) =>
-                    (a.date < b.date) ? 1 : (a.date === b.date) ? ((a.vdot > b.vdot) ? 1 : -1) : -1 );
-            },
-
-            vdotRecords: {
-                get: function () {
-                    return this.vdotRecordsCount
-                },
-                set: function () {
-                    if (this.vdotRecordsCount !== 0) {
-                        return this.vdotRecords = true;
-                    }
-                    return this.vdotRecords = false;
-                }
-            },
-
-            latestVdot() {
-                return this.sortedVdotValues[0].vdot;
-            },
-
-            latestVdotDate() {
-                return this.sortedVdotValues[0].date;
-            },
+            // latestVdot() {
+            //     return this.sortedVdotValues[0].vdot;
+            // },
+            //
+            // latestVdotDate() {
+            //     return this.sortedVdotValues[0].date;
+            // },
 
             // currentSeason() {
             //     let today = this.$moment();
@@ -118,9 +120,9 @@
             // }
         },
 
-        created() {
-            return this.getVDOTValues();
-        },
+        // created() {
+        //     return this.getVDOTValues();
+        // },
 
         methods: {
             athleteSelected() {
@@ -139,20 +141,20 @@
                 this.showVDOT = false
             },
 
-            getVDOTValues() {
-                let athlete = this.id;
-
-                axios.get('/api/athlete-vdot/latest', {
-                    params: {athlete: athlete}
-                })
-                    .then(response => {
-                        this.vdotValues = response.data
-                        this.vdotRecordsCount = response.data.length
-                    })
-                    .catch(errors => {
-                        console.log(errors)
-                    })
-            },
+        //     getVDOTValues() {
+        //         let athlete = this.id;
+        //
+        //         axios.get('/api/athlete-vdot/latest', {
+        //             params: {athlete: athlete}
+        //         })
+        //             .then(response => {
+        //                 this.vdotValues = response.data
+        //                 this.vdotRecordsCount = response.data.length
+        //             })
+        //             .catch(errors => {
+        //                 console.log(errors)
+        //             })
+        //     },
         }
     }
 </script>
