@@ -54,10 +54,10 @@
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">Spirit Wear</p>
                         <a class="text-sm" href="/forms/spiritwear/SpiritWearFlyer2019.pdf">
-                            2019 Spirit Wear Flyer
+                            2020 Spirit Wear Flyer
                         </a>
-                        <a class="text-sm" href="/forms/spiritwear/OrderForm2019.pdf">
-                            2019 Spirit Wear Order Form
+                        <a class="text-sm" href="/forms/spiritwear/OrderForm2020.pdf">
+                            2020 Spirit Wear Order Form
                         </a>
                     </div>
 

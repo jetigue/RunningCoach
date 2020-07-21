@@ -34,13 +34,13 @@ export default {
             items: [
                 {
                     id: 1,
-                    label: '2019 Spirit Wear Flyer',
-                    url: '/forms/spiritwear/SpiritWearFlyer2019.pdf'
+                    label: '2020 Spirit Wear Flyer',
+                    url: '/forms/spiritwear/SpiritWearFlyer2020.pdf'
                 },
                 {
                     id: 2,
-                    label: ' 2019 Spirit Wear Order form',
-                    url: '/forms/spiritwear/OrderForm2019.pdf'
+                    label: ' 2020 Spirit Wear Order form',
+                    url: '/forms/spiritwear/OrderForm2020.pdf'
                 },
 
 
