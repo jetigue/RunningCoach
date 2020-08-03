@@ -19,7 +19,8 @@
         "laravel/scout": "^8.0",
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.4",
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^2.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

@@ -28,6 +28,7 @@ class AthleteController extends Controller
     {
         return $athletes
             ->with('latestPhysical')
+            ->whereBetween('grad_year', [2000, 2025])
             ->orderBy('last_name', 'asc')
             ->orderBy('first_name', 'asc')
             ->with('trainingGroup')
@@ -53,7 +54,7 @@ class AthleteController extends Controller
             'training_group_id' => 'integer'
         ]);
 
-        $athlete = Athlete::create($athlete);
+        $athlete = Athlete::create($athlete)->load('trainingGroup');
 
         return response()->json($athlete, 201);
     }
