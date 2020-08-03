@@ -28,7 +28,7 @@ class AthleteController extends Controller
     {
         return $athletes
             ->with('latestPhysical')
-            ->whereBetween('grad_year', [2000, 2025])
+            ->whereBetween('grad_year', [2021, 2025])
             ->orderBy('last_name', 'asc')
             ->orderBy('first_name', 'asc')
             ->with('trainingGroup')

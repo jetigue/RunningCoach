@@ -1,5 +1,18 @@
 <template>
     <div class="flex flex-col">
+        <div class="flex justify-end w-full">
+            <div class="flex md:w-1/2 lg:w-1/3">
+                <input type="text"
+                       v-model="search"
+                       placeholder="Find an athlete..."
+                       class="flex w-full rounded-md border px-3 py-2 text-lg border shadow"
+                />
+                <button @click="clearSearch"
+                        class="w-20 py-2 ml-2 bg-green-500 text-white text-sm font-bold rounded-md border-2 border-green-400">
+                    Clear
+                </button>
+            </div>
+        </div>
         <div class="md:flex justify-between items-baseline">
             <header class="font-light text-2xl pb-1 text-primary">Athletes</header>
             <p class="text-gray-600 py-1">Show Physical Status:
@@ -33,7 +46,7 @@
                 </div>
             </div>
             <div v-if="records">
-                <div v-for="(athlete, index) in items" :key="athlete.id">
+                <div v-for="(athlete, index) in filteredAthletes" :key="athlete.id">
                     <athlete :data="athlete" @deleted="remove(index)" :displayPhysicals="displayPhysicals"></athlete>
                 </div>
             </div>
@@ -62,8 +75,9 @@
         data() {
             return {
                 dataSet: false,
-                items: [],
+                // items: [],
                 displayPhysicals: '',
+                search: '',
             }
         },
 
@@ -71,7 +85,22 @@
             this.fetch();
         },
 
+        computed: {
+            filteredAthletes() {
+                return this.items.filter((athlete) => {
+                    return (
+                        athlete.last_name.toLowerCase().match(this.search.toLowerCase()) ||
+                        athlete.first_name.toLowerCase().match(this.search.toLowerCase())
+                    )
+                });
+            }
+        },
+
         methods: {
+            clearSearch() {
+                this.search = ''
+            },
+            
             fetch(page) {
                 axios.get(this.url(page)).then(this.refresh);
             },
