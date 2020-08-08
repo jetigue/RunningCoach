@@ -256,6 +256,7 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('track/venues', 'Coach\TrackVenueController@index');
     Route::get('training-groups', 'Training\TrainingGroupController@index');
     Route::get('training-groups/athletes', 'Training\TrainingGroupAthleteController@index');
+    Route::get('/reports', function () {return view('reports.index');});
 
 });
 
@@ -265,3 +266,6 @@ Route::group(['middleware' => 'user'], function () {
 });
 
 Route::resource('/running-log', 'User\RunningLogController');
+
+//Reports
+Route::get('/reports/active-roster', 'Reports\RosterController@activeRoster')->name('activeRoster');
