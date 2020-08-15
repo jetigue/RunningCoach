@@ -162,8 +162,8 @@ class TrainingGroupVDOTController extends Controller
         $beginTrack = Carbon::createFromFormat('m-d', '02-01');
         $endTrack = Carbon::createFromFormat('m-d', '05-31');
         $beginSummer = Carbon::createFromFormat('m-d', '06-01');
-        $endSummer = Carbon::createFromFormat('m-d', '08-15');
-        $beginXC = Carbon::createFromFormat('m-d', '08-16');
+        $endSummer = Carbon::createFromFormat('m-d', '08-14');
+        $beginXC = Carbon::createFromFormat('m-d', '08-15');
         $endXC = Carbon::createFromFormat('m-d', '11-30');
         $beginWinter = Carbon::createFromFormat('m-d', '12-01');
         $endWinter = Carbon::createFromFormat('m-d', '01-31');
