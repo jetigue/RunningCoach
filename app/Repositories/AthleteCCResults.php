@@ -39,6 +39,17 @@ class AthleteCCResults
      * @param Athlete $athlete
      * @return mixed
      */
+    public function crossResults2020(Athlete $athlete)
+    {
+        return clone $this->crossResults($athlete)
+            ->whereYear('cross_country_meets.meet_date', '2020')
+            ->get();
+    }
+
+    /**
+     * @param Athlete $athlete
+     * @return mixed
+     */
     public function crossResults2019(Athlete $athlete)
     {
         return clone $this->crossResults($athlete)

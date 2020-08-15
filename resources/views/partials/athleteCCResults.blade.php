@@ -1,4 +1,4 @@
-@if($athlete->grad_year == '2023')
+@if($athlete->grad_year == '2024')
     <div class="flex flex-col w-full">
         {{--                        @if($crossResults2022->count() > 0)--}}
         {{--                            <athlete-cross-results :data="{{ $crossResults2022 }}">--}}
@@ -18,6 +18,33 @@
         {{--                            </athlete-cross-results>--}}
         {{--                        @endif--}}
 
+        @if($crossResults2020->count() > 0)
+            <athlete-cross-results :data="{{ $crossResults2020 }}">
+                Freshman Season
+            </athlete-cross-results>
+        @endif
+    </div>
+
+@elseif($athlete->grad_year == '2023')
+    <div class="flex flex-col w-full">
+        {{--                        @if($crossResults2022->count() > 0)--}}
+        {{--                            <athlete-cross-results :data="{{ $crossResults2022 }}">--}}
+        {{--                                Senior Season--}}
+        {{--                            </athlete-cross-results>--}}
+        {{--                        @endif--}}
+
+        {{--                        @if($crossResults2021->count() > 0)--}}
+        {{--                            <athlete-cross-results :data="{{ $crossResults2021 }}">--}}
+        {{--                                Junior Season--}}
+        {{--                            </athlete-cross-results>--}}
+        {{--                        @endif--}}
+
+        @if($crossResults2020->count() > 0)
+            <athlete-cross-results :data="{{ $crossResults2020 }}">
+                Sophomore Season
+            </athlete-cross-results>
+        @endif
+
         @if($crossResults2019->count() > 0)
             <athlete-cross-results :data="{{ $crossResults2019 }}">
                 Freshman Season
@@ -32,11 +59,11 @@
         {{--                            </athlete-cross-results>--}}
         {{--                        @endif--}}
 
-        {{--                        @if($crossResults2020->count() > 0)--}}
-        {{--                            <athlete-cross-results :data="{{ $crossResults2020 }}">--}}
-        {{--                                Junior Season--}}
-        {{--                            </athlete-cross-results>--}}
-        {{--                        @endif--}}
+        @if($crossResults2020->count() > 0)
+            <athlete-cross-results :data="{{ $crossResults2020 }}">
+                Junior Season
+            </athlete-cross-results>
+        @endif
 
         @if($crossResults2019->count() > 0)
             <athlete-cross-results :data="{{ $crossResults2019 }}">
@@ -52,11 +79,11 @@
     </div>
 @elseif($athlete->grad_year == '2021')
     <div class="flex flex-col w-full">
-        {{--                        @if($crossResults2020->count() > 0)--}}
-        {{--                            <athlete-cross-results :data="{{ $crossResults2020 }}">--}}
-        {{--                                Senior Season--}}
-        {{--                            </athlete-cross-results>--}}
-        {{--                        @endif--}}
+        @if($crossResults2020->count() > 0)
+            <athlete-cross-results :data="{{ $crossResults2020 }}">
+                Senior Season
+            </athlete-cross-results>
+        @endif
 
         @if($crossResults2019->count() > 0)
             <athlete-cross-results :data="{{ $crossResults2019 }}">

@@ -21,7 +21,7 @@
                                 </a>
 
                             </div>
-                            <div class="w-full md:w-1/4 lg:w-1/6 md:text-center">
+                            <div class="w-full md:w-1/4 lg:w-1/12 md:text-center">
                                 <span class="pl-2 text-gray-600 md:hidden">Place: </span>
                                 {{ place_w_suffix }}
                             </div>
@@ -29,6 +29,11 @@
                             <div class="w-full md:w-1/4 lg:w-1/6 md:text-center">
                                 <span class="pl-2 text-gray-600 md:hidden">Time: </span>
                                 {{duration}}<span v-if="milliseconds != null" class="text-xs">.{{ ms }}</span>
+                            </div>
+
+                            <div class="w-full md:w-1/4 lg:w-1/12 md:text-center">
+                                <span class="pl-2 text-gray-600 md:hidden">VDOT: </span>
+                                {{ vdot }}
                             </div>
                         </div>
                     </div>
@@ -59,7 +64,8 @@
                 place: this.data.place,
                 total_seconds: this.data.total_seconds,
                 meetUrl: '/cross-country/meets/' + this.data.slug,
-                teamResultId: this.data.teamResultId
+                teamResultId: this.data.teamResultId,
+                vdot: this.data.vdot
 
             }
         },

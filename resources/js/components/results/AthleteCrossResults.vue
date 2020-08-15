@@ -18,11 +18,14 @@
                     <p class="text-primary font-semibold">Division</p>
                 </div>
 
-                <div class="hidden md:block md:w-1/4 lg:w-1/6 text-center">
+                <div class="hidden md:block md:w-1/4 lg:w-1/12 text-center">
                     <p class="text-primary font-semibold">Place</p>
                 </div>
                 <div class="hidden md:block md:w-1/4 lg:w-1/6 text-center">
                     <p class="text-primary font-semibold">Time</p>
+                </div>
+                <div class="hidden md:block md:w-1/4 lg:w-1/12 text-center">
+                    <p class="text-primary font-semibold">VDOT</p>
                 </div>
             </div>
         </div>

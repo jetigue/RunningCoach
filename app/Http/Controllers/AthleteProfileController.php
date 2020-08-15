@@ -11,6 +11,7 @@ class AthleteProfileController extends Controller
 {
     public function show(Athlete $athlete, AthleteCCResults $crossResults, AthleteTrackResults $trackResults)
     {
+        $crossResults2020 = $crossResults->crossResults2020($athlete);
         $crossResults2019 = $crossResults->crossResults2019($athlete);
         $crossResults2018 = $crossResults->crossResults2018($athlete);
         $crossResults2017 = $crossResults->crossResults2017($athlete);
@@ -182,6 +183,7 @@ class AthleteProfileController extends Controller
 
         return view('profiles.athletes.show', compact(
             'athlete',
+            'crossResults2020',
             'crossResults2019',
             'crossResults2018',
             'crossResults2017',

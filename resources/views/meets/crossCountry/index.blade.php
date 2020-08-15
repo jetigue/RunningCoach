@@ -3,6 +3,7 @@
 @section('content')
 
     <cross-country-meets-container :data="{{ $crossCountryMeets }}">
+        <cross-country-meets :data="{{ $crossCountryMeets2020 }}" class="py-4">2020</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2019 }}" class="py-4">2019</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2018 }}" class="py-4">2018</cross-country-meets>
         <cross-country-meets :data="{{ $crossCountryMeets2017 }}" class="py-4">2017</cross-country-meets>

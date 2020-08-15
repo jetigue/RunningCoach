@@ -20,11 +20,9 @@ class CrossCountryMeetController extends Controller
      */
     public function index()
     {
-        $crossCountryMeets = CrossCountryMeet::with('host', 'venue', 'timing', 'name')
+        return CrossCountryMeet::with('host', 'venue', 'timing', 'name')
             ->orderBy('meet_date', 'desc')
             ->get();
-
-        return $crossCountryMeets;
     }
 
     /**
