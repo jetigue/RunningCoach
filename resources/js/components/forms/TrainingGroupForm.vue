@@ -58,7 +58,7 @@
             }
         },
 
-        mounted() {
+        created() {
             this.getTrainingGroups();
         },
 

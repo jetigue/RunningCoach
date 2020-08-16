@@ -164,14 +164,14 @@ class TrainingGroupAthleteController extends Controller
 
 
         $currentDate = Carbon::now();
-        $beginTrack = Carbon::createFromFormat('m-d', '02-01');
-        $endTrack = Carbon::createFromFormat('m-d', '05-31');
-        $beginSummer = Carbon::createFromFormat('m-d', '06-01');
-        $endSummer = Carbon::createFromFormat('m-d', '08-14');
-        $beginXC = Carbon::createFromFormat('m-d', '08-15');
-        $endXC = Carbon::createFromFormat('m-d', '11-30');
-        $beginWinter = Carbon::createFromFormat('m-d', '12-01');
-        $endWinter = Carbon::createFromFormat('m-d', '01-31');
+        $beginTrack = Carbon::createFromFormat('m-d-Y', '02-01-2021');
+        $endTrack = Carbon::createFromFormat('m-d-Y', '05-31-2021');
+        $beginSummer = Carbon::createFromFormat('m-d-Y', '06-01-2020');
+        $endSummer = Carbon::createFromFormat('m-d-Y', '08-14-2020');
+        $beginXC = Carbon::createFromFormat('m-d-Y', '08-15-2020');
+        $endXC = Carbon::createFromFormat('m-d-Y', '11-30-2020');
+        $beginWinter = Carbon::createFromFormat('m-d-Y', '12-01-2020');
+        $endWinter = Carbon::createFromFormat('m-d-Y', '01-31-2021');
 
         switch($currentDate) {
             case ($currentDate >= $beginSummer && $currentDate <= $endSummer):
