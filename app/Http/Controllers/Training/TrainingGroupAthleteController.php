@@ -120,6 +120,7 @@ class TrainingGroupAthleteController extends Controller
                 'vdot',
                 DB::raw('MAX(cross_country_meets.meet_date) as date',)
             )
+            ->whereYear('date', 2020)
             ->groupBy('athlete_id');
 
         $athletesLatestXCTTResults = DB::table('athletes')
@@ -137,7 +138,6 @@ class TrainingGroupAthleteController extends Controller
                 $join->on('athletes.id', '=', 'latest_xc_results.athlete_id');
         })
         ->where('status', 'a')
-            ->whereYear('date', 2020)
         ->orderByDesc('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
