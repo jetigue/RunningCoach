@@ -120,7 +120,7 @@ class TrainingGroupAthleteController extends Controller
                 'vdot',
                 DB::raw('MAX(cross_country_meets.meet_date) as date',)
             )
-            ->whereYear('date', 2020)
+            ->whereYear('cross_country_meets.meet_date', 2020)
             ->groupBy('athlete_id');
 
         $athletesLatestXCTTResults = DB::table('athletes')
