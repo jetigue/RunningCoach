@@ -137,6 +137,7 @@ class TrainingGroupAthleteController extends Controller
                 $join->on('athletes.id', '=', 'latest_xc_results.athlete_id');
         })
         ->where('status', 'a')
+            ->whereYear('date', 2020)
         ->orderByDesc('vdot')
         ->orderBy('last_name')
         ->orderBy('first_name')
