@@ -133,7 +133,7 @@ class TrainingCalendar2020Controller extends Controller
                 $month = $date['mon'];
 
                 $calendar = Calendar::whereMonth('calendar_date', $month)
-                    ->whereYear('calendar_date', 2020)
+                    ->whereYear('calendar_date', 2021)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
