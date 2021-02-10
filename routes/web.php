@@ -18,13 +18,17 @@ Route::get('/training-pace-calculator', function () {
 
 Route::get('/cross-country/meets', 'Meets\CrossCountryMeetController@index');
 Route::get('/cross-country/meets/{crossCountryMeet:slug}', 'Meets\CrossCountryMeetController@show');
-Route::get('/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult}',
-    'Results\CrossCountry\TeamResultController@show');
+Route::get(
+    '/cross-country/meets/{crossCountryMeet:slug}/team-results/{teamResult}',
+    'Results\CrossCountry\TeamResultController@show'
+);
 
 Route::get('/track/meets', 'Meets\TrackMeetController@index');
 Route::get('/track/meets/{trackMeet:slug}', 'Meets\TrackMeetController@show');
-Route::get('/track/meets/{trackMeet:slug}/team-results/{teamResult:slug}',
-    'Results\Track\TeamResultController@show');
+Route::get(
+    '/track/meets/{trackMeet:slug}/team-results/{teamResult:slug}',
+    'Results\Track\TeamResultController@show'
+);
 
 Route::get('/cross-country-/venues', 'CrossCountryVenueController@index');
 
@@ -45,6 +49,7 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('/track/time-trials', 'TimeTrials\TrackTimeTrialController');
 
 Route::get('training-calendar/{calendar:month_name}/2020', 'Training\TrainingCalendar2020Controller@index');
+Route::get('training-calendar/{calendar:month_name}/2021', 'Training\TrainingCalendar2020Controller@index');
 Route::get('training-calendar/{calendar:calendar_date}', 'Training\TrainingCalendar2020Controller@show');
 Route::get('training-calendar', 'Training\TrainingCalendar2020Controller@index');
 
@@ -116,17 +121,25 @@ Route::delete('api/training-groups/{group}', 'API\Training\TrainingGroupControll
 
 Route::get('api/training-calendar/{calendar:calendar_date}/steady-runs', 'API\Training\SteadyRunController@index');
 Route::post('api/training-calendar/{calendar:calendar_date}/steady-runs', 'API\Training\SteadyRunController@store');
-Route::patch('api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
-    'API\Training\SteadyRunController@update');
-Route::delete('api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
-    'API\Training\SteadyRunController@destroy');
+Route::patch(
+    'api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
+    'API\Training\SteadyRunController@update'
+);
+Route::delete(
+    'api/training-calendar/{calendar:calendar_date}/steady-runs/{steadyRun}',
+    'API\Training\SteadyRunController@destroy'
+);
 
 Route::get('api/training-calendar/{calendar:calendar_date}/interval-runs', 'API\Training\IntervalRunController@index');
 Route::post('api/training-calendar/{calendar:calendar_date}/interval-runs', 'API\Training\IntervalRunController@store');
-Route::patch('api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
-    'API\Training\IntervalRunController@update');
-Route::delete('api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
-    'API\Training\IntervalRunController@destroy');
+Route::patch(
+    'api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
+    'API\Training\IntervalRunController@update'
+);
+Route::delete(
+    'api/training-calendar/{calendar:calendar_date}/interval-runs/{intervalRun}',
+    'API\Training\IntervalRunController@destroy'
+);
 
 Route::get('api/training-calendar/steady-runs', 'API\Training\TrainingDayController@steadyRuns');
 Route::get('api/training-calendar/interval-runs', 'API\Training\TrainingDayController@intervalRuns');
@@ -155,7 +168,7 @@ Route::apiResources([
     'api/training-groups/athletes' => 'API\Athletes\AthleteTrainingGroupController',
 
     'api/physicals' => 'API\Physicals\PhysicalController',
-    'api/physicals/{physical}/physical-form' =>'API\Physicals\PhysicalFormController',
+    'api/physicals/{physical}/physical-form' => 'API\Physicals\PhysicalFormController',
 
     'api/running-log' => 'API\RunningLog\RunningLogController',
     'api/team-log' => 'API\RunningLog\TeamLogController',
@@ -185,7 +198,7 @@ Route::apiResources([
     'api/cross-country/venues'   => 'API\Properties\Meets\CrossCountryVenueController',
     'api/track/venues'          => 'API\Properties\Meets\TrackVenueController',
 
-     // Race Properties
+    // Race Properties
     'api/levels'                    => 'API\Properties\Races\LevelController',
     'api/cross-country/events'      => 'API\Properties\Races\CrossCountryEventController',
     'api/genders'                   => 'API\Properties\Races\GenderController',
@@ -238,7 +251,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('training/steady-run-types', 'Admin\Training\SteadyRunTypeController@index');
     Route::get('user-roles', 'Admin\UserRoleController@index');
     Route::get('users', 'Admin\UserController@index');
-
 });
 
 Route::group(['middleware' => 'coach'], function () {
@@ -256,8 +268,9 @@ Route::group(['middleware' => 'coach'], function () {
     Route::get('track/venues', 'Coach\TrackVenueController@index');
     Route::get('training-groups', 'Training\TrainingGroupController@index');
     Route::get('training-groups/athletes', 'Training\TrainingGroupAthleteController@index');
-    Route::get('/reports', function () {return view('reports.index');});
-
+    Route::get('/reports', function () {
+        return view('reports.index');
+    });
 });
 
 Route::group(['middleware' => 'user'], function () {
