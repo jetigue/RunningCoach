@@ -202,7 +202,7 @@
                 status: this.data.status,
                 url: '/athletes/'+this.data.id,
                 trainingGroupId: this.data.training_group_id,
-                color: this.data.training_group.color,
+                color: this.data.groupColor,
 
 
                 physicals: false,

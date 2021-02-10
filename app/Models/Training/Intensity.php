@@ -14,7 +14,7 @@ class Intensity extends Model
     protected $table = 'training_intensities';
 
     /**
-     * Fillable fields for an athlete.
+     * Fillable fields for an intensity.
      *
      *@var array
      */

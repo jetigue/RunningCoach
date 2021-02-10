@@ -60,6 +60,7 @@ class ManageDivisionsTest extends TestCase
     /** @test */
     public function a_coach_cannot_create_a_division()
     {
+    
         $this->signInCoach();
 
         $this->post('/api/divisions', $this->attributes);

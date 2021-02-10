@@ -26,78 +26,118 @@ class TrainingCalendar2020Controller extends Controller
         switch ($uri) {
             case 'training-calendar/May/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 5)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/June/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 6)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/July/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 7)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/August/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 8)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/September/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 9)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/October/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 10)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/November/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 11)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
             case 'training-calendar/December/2020':
                 $calendar = Calendar::whereMonth('calendar_date', 12)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
                 break;
-            default :
+            case 'training-calendar/January/2021':
+                $calendar = Calendar::whereMonth('calendar_date', 1)
+                    ->whereYear('calendar_date', 2021)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
+                break;
+            case 'training-calendar/February/2021':
+                $calendar = Calendar::whereMonth('calendar_date', 2)
+                    ->whereYear('calendar_date', 2021)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
+                break;
+            case 'training-calendar/March/2021':
+                $calendar = Calendar::whereMonth('calendar_date', 3)
+                    ->whereYear('calendar_date', 2021)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
+                break;
+            case 'training-calendar/April/2021':
+                $calendar = Calendar::whereMonth('calendar_date', 4)
+                    ->whereYear('calendar_date', 2021)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
+                break;
+            case 'training-calendar/May/2021':
+                $calendar = Calendar::whereMonth('calendar_date', 5)
+                    ->whereYear('calendar_date', 2021)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
+                break;
+            default:
                 $date = getDate();
                 $month = $date['mon'];
 
                 $calendar = Calendar::whereMonth('calendar_date', $month)
-                ->whereYear('calendar_date', 2020)
-                ->with(['workouts' => function ($q) {
-                    $q->orderBy('training_group_id');
-                }])
-                ->orderBy('calendar_date')->get();
+                    ->whereYear('calendar_date', 2020)
+                    ->with(['workouts' => function ($q) {
+                        $q->orderBy('training_group_id');
+                    }])
+                    ->orderBy('calendar_date')->get();
         }
 
         return view('training.calendar.index', compact('calendar'));
