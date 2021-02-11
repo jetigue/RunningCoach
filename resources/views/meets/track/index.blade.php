@@ -3,6 +3,7 @@
 @section('content')
     <div class="flex flex-col w-full">
         <track-meets-container :data="{{ $trackMeets }}">
+            <track-meets :data="{{ $trackMeets2021 }}" class="py-4">2021</track-meets>
             <track-meets :data="{{ $trackMeets2020 }}" class="py-4">2020</track-meets>
             <track-meets :data="{{ $trackMeets2019 }}" class="py-4">2019</track-meets>
             <track-meets :data="{{ $trackMeets2018 }}" class="py-4">2018</track-meets>
