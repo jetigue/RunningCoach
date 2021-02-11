@@ -17,6 +17,7 @@ class TrackMeetController extends Controller
      */
     public function index(TrackMeets $meets)
     {
+        $trackMeets2021 = $meets->trackMeets2021();
         $trackMeets2020 = $meets->trackMeets2020();
         $trackMeets2019 = $meets->trackMeets2019();
         $trackMeets2018 = $meets->trackMeets2018();
@@ -31,6 +32,7 @@ class TrackMeetController extends Controller
         $trackMeets = $meets->trackMeets();
 
         return view('meets.track.index', compact(
+            'trackMeets2021',
             'trackMeets2020',
             'trackMeets2019',
             'trackMeets2018',

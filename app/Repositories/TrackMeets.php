@@ -6,9 +6,18 @@ use App\Models\Meets\TrackMeet;
 
 class TrackMeets
 {
+
+    public function trackMeets2021()
+    {
+        return $trackMeets2021 = TrackMeet::with('host', 'season', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->whereYear('meet_date', '2020')
+            ->get();
+    }
+
     public function trackMeets2020()
     {
-        return $trackMeets2019 = TrackMeet::with('host', 'season', 'venue', 'timing', 'name')
+        return $trackMeets2020 = TrackMeet::with('host', 'season', 'venue', 'timing', 'name')
             ->orderBy('meet_date', 'desc')
             ->whereYear('meet_date', '2020')
             ->get();
