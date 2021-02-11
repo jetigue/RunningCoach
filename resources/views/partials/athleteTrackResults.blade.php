@@ -1,6 +1,27 @@
+@if($athlete->grad_year == '2024')
+    @if($trackResults2021->count() > 0)
+        <div class="text-xl font-semibold text-gray-600 text-italic">
+            Freshman Season
+        </div>
+        <div class="flex flex-col w-full">
+            @include('partials.athleteResultsTableHeader')
+            @include('partials.trackResults.athlete2021TrackResults')
+        </div>
+    @endif
+@endif
+
 @if($athlete->grad_year == '2023')
+    @if($trackResults2021->count() > 0)
+        <div class="text-xl font-semibold text-gray-600 text-italic">
+            Sophomore Season
+        </div>
+        <div class="flex flex-col w-full">
+            @include('partials.athleteResultsTableHeader')
+            @include('partials.trackResults.athlete2021TrackResults')
+        </div>
+    @endif
     @if($trackResults2020->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -9,9 +30,19 @@
         </div>
     @endif
 @endif
+
 @if($athlete->grad_year == '2022')
+    @if($trackResults2021->count() > 0)
+        <div class="text-xl font-semibold text-gray-600 text-italic">
+            Junior Season
+        </div>
+        <div class="flex flex-col w-full">
+            @include('partials.athleteResultsTableHeader')
+            @include('partials.trackResults.athlete2021TrackResults')
+        </div>
+    @endif
     @if($trackResults2020->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -21,7 +52,7 @@
     @endif
 
     @if($trackResults2019->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -33,7 +64,16 @@
 
 @if($athlete->grad_year == '2021')
     @if($trackResults2020->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
+            Senior Season
+        </div>
+        <div class="flex flex-col w-full">
+            @include('partials.athleteResultsTableHeader')
+            @include('partials.trackResults.athlete2021TrackResults')
+        </div>
+    @endif
+    @if($trackResults2020->count() > 0)
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -43,7 +83,7 @@
     @endif
 
     @if($trackResults2019->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -53,7 +93,7 @@
     @endif
 
     @if($trackResults2018->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -65,7 +105,7 @@
 
 @if($athlete->grad_year == '2020')
     @if($trackResults2020->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -75,7 +115,7 @@
     @endif
 
     @if($trackResults2019->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -85,7 +125,7 @@
     @endif
 
     @if($trackResults2018->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -95,7 +135,7 @@
     @endif
 
     @if($trackResults2017->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -107,7 +147,7 @@
 
 @if($athlete->grad_year == '2019')
     @if($trackResults2019->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -117,7 +157,7 @@
     @endif
 
     @if($trackResults2018->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -127,7 +167,7 @@
     @endif
 
     @if($trackResults2017->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -137,7 +177,7 @@
     @endif
 
     @if($trackResults2016->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -149,7 +189,7 @@
 
 @if($athlete->grad_year == '2018')
     @if($trackResults2018->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -159,7 +199,7 @@
     @endif
 
     @if($trackResults2017->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -169,7 +209,7 @@
     @endif
 
     @if($trackResults2016->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -179,7 +219,7 @@
     @endif
 
     @if($trackResults2015->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -191,7 +231,7 @@
 
 @if($athlete->grad_year == '2017')
     @if($trackResults2017->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -201,7 +241,7 @@
     @endif
 
     @if($trackResults2016->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -211,7 +251,7 @@
     @endif
 
     @if($trackResults2015->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -221,7 +261,7 @@
     @endif
 
     @if($trackResults2014->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -233,7 +273,7 @@
 
 @if($athlete->grad_year == '2016')
     @if($trackResults2016->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -243,7 +283,7 @@
     @endif
 
     @if($trackResults2015->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -253,7 +293,7 @@
     @endif
 
     @if($trackResults2014->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -263,7 +303,7 @@
     @endif
 
     @if($trackResults2013->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -275,7 +315,7 @@
 
 @if($athlete->grad_year == '2015')
     @if($trackResults2015->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -285,7 +325,7 @@
     @endif
 
     @if($trackResults2014->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -295,7 +335,7 @@
     @endif
 
     @if($trackResults2013->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -305,7 +345,7 @@
     @endif
 
     @if($trackResults2012->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -317,7 +357,7 @@
 
 @if($athlete->grad_year == '2014')
     @if($trackResults2014->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -327,7 +367,7 @@
     @endif
 
     @if($trackResults2013->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -337,7 +377,7 @@
     @endif
 
     @if($trackResults2012->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -347,7 +387,7 @@
     @endif
 
     @if($trackResults2011->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -359,7 +399,7 @@
 
 @if($athlete->grad_year == '2013')
     @if($trackResults2013->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -369,7 +409,7 @@
     @endif
 
     @if($trackResults2012->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -379,7 +419,7 @@
     @endif
 
     @if($trackResults2011->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -389,7 +429,7 @@
     @endif
 
     @if($trackResults2010->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Freshman Season
         </div>
         <div class="flex flex-col w-full">
@@ -401,7 +441,7 @@
 
 @if($athlete->grad_year == '2012')
     @if($trackResults2012->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -411,7 +451,7 @@
     @endif
 
     @if($trackResults2011->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -421,7 +461,7 @@
     @endif
 
     @if($trackResults2010->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Sophomore Season
         </div>
         <div class="flex flex-col w-full">
@@ -433,7 +473,7 @@
 
 @if($athlete->grad_year == '2011')
     @if($trackResults2011->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
@@ -443,7 +483,7 @@
     @endif
 
     @if($trackResults2010->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Junior Season
         </div>
         <div class="flex flex-col w-full">
@@ -455,7 +495,7 @@
 
 @if($athlete->grad_year == '2010')
     @if($trackResults2010->count() > 0)
-        <div class="font-semibold text-xl text-gray-600 text-italic">
+        <div class="text-xl font-semibold text-gray-600 text-italic">
             Senior Season
         </div>
         <div class="flex flex-col w-full">
