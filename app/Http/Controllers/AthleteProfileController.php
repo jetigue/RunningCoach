@@ -23,6 +23,17 @@ class AthleteProfileController extends Controller
         $crossResults2011 = $crossResults->crossResults2011($athlete);
         $crossResults2010 = $crossResults->crossResults2010($athlete);
         $crossResults2009 = $crossResults->crossResults2009($athlete);
+        $track400mResults2021 = $trackResults->track400mResults2021($athlete);
+        $track800mResults2021 = $trackResults->track800mResults2021($athlete);
+        $track1000mResults2021 = $trackResults->track1000mResults2021($athlete);
+        $track1200mResults2021 = $trackResults->track1200mResults2021($athlete);
+        $track1500mResults2021 = $trackResults->track1500mResults2021($athlete);
+        $track1600mResults2021 = $trackResults->track1600mResults2021($athlete);
+        $track1mileResults2021 = $trackResults->track1mileResults2021($athlete);
+        $track3000mResults2021 = $trackResults->track3000mResults2021($athlete);
+        $track3200mResults2021 = $trackResults->track3200mResults2021($athlete);
+        $track2mileResults2021 = $trackResults->track2mileResults2021($athlete);
+        $track5000mResults2021 = $trackResults->track5000mResults2021($athlete);
         $track400mResults2020 = $trackResults->track400mResults2020($athlete);
         $track800mResults2020 = $trackResults->track800mResults2020($athlete);
         $track1000mResults2020 = $trackResults->track1000mResults2020($athlete);

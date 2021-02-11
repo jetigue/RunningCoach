@@ -31,6 +31,13 @@ class AthleteTrackResults
             ->orderBy('date', 'desc');
     }
 
+    public function trackResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
     public function trackResults2020(Athlete $athlete)
     {
         return clone $this->trackResults($athlete)
@@ -105,6 +112,94 @@ class AthleteTrackResults
     {
         return clone $this->trackResults($athlete)
             ->whereYear('track_meets.meet_date', '2010')
+            ->get();
+    }
+
+    public function track400mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '400')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track800mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '800')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track1000mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '1000')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track1200mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '1200')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track1500mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '1500')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track1600mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '1600')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track1mileResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '1609')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track3000mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '3000')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track3200mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '3200')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track2mileResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '3218')
+            ->whereYear('track_meets.meet_date', '2021')
+            ->get();
+    }
+
+    public function track5000mResults2021(Athlete $athlete)
+    {
+        return clone $this->trackResults($athlete)
+            ->where('meters', '5000')
+            ->whereYear('track_meets.meet_date', '2021')
             ->get();
     }
 
