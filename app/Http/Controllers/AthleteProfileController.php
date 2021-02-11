@@ -155,6 +155,7 @@ class AthleteProfileController extends Controller
         $track3200mResults2010 = $trackResults->track3200mResults2010($athlete);
         $track2mileResults2010 = $trackResults->track2mileResults2010($athlete);
         $track5000mResults2010 = $trackResults->track5000mResults2010($athlete);
+        $trackResults2021 = $trackResults->trackResults2021($athlete);
         $trackResults2020 = $trackResults->trackResults2020($athlete);
         $trackResults2019 = $trackResults->trackResults2019($athlete);
         $trackResults2018 = $trackResults->trackResults2018($athlete);
@@ -181,7 +182,7 @@ class AthleteProfileController extends Controller
             ->join('track_team_results', 'track_results.track_team_result_id', '=', 'track_team_results.id')
             ->join('track_events', 'track_results.track_event_id', '=', 'track_events.id')
             ->join('track_meets', 'track_team_results.track_meet_id', '=', 'track_meets.id')
-            ->where('track_meets.meet_date', '>=', '2020-01-01')
+            ->where('track_meets.meet_date', '>=', '2021-01-01')
             ->select('track_results.total_seconds as seconds', 'track_events.meters as meters')
             ->orderBy('seconds');
 
