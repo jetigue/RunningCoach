@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Coach;
 use App\Filters\NameFilter;
 use App\Http\Controllers\Controller;
 use App\Models\Properties\Meets\Name;
+use App\Models\Properties\Meets\Track\Name as TrackName;
 
 class MeetNameController extends Controller
 {
@@ -18,24 +19,13 @@ class MeetNameController extends Controller
      * @param \App\Filters\NameFilter $filters
      * @return \Illuminate\Http\Response
      */
-    public function index(NameFilter $filters)
+    public function index()
     {
-        $meetNames = Name::filter($filters)
+        $meetNames = TrackName::query()
             ->with('season')
             ->orderBy('name')
             ->get();
 
         return view('properties.meets.names.index', compact('meetNames'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Properties\Meets\Name  $name
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Name $name)
-    {
-        //
     }
 }
