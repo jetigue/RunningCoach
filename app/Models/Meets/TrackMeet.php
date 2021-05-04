@@ -126,15 +126,4 @@ class TrackMeet extends Model
         return $this->teamResults()->create($teamResult);
     }
 
-    /**
-     * Apply all relevant name filters.
-     *
-     * @param Builder $query
-     * @param TrackMeetFilter $filters
-     * @return Builder
-     */
-    public function scopeFilter($query, TrackMeetFilter $filters)
-    {
-        return $filters->apply($query);
-    }
 }

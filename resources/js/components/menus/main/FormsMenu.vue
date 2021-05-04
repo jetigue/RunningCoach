@@ -5,14 +5,18 @@
             <i :class="{ 'fas fa-plus': !isExpanded, 'fas fa-minus': isExpanded }"
                 class="text-white text-sm"></i>
         </div>
-        <ul v-show="isExpanded" class="pl-2">
-            <information-menu></information-menu>
-            <longhorn5k-menu></longhorn5k-menu>
-            <physical-forms-menu></physical-forms-menu>
-            <schedules-menu></schedules-menu>
-            <spirit-wear-menu></spirit-wear-menu>
-            <sponsors-menu></sponsors-menu>
-        </ul>
+
+        <div class="flex items center justify-center">
+            Will be updated soon.
+        </div>
+<!--        <ul v-show="isExpanded" class="pl-2">-->
+<!--            <information-menu></information-menu>-->
+<!--            <longhorn5k-menu></longhorn5k-menu>-->
+<!--            <physical-forms-menu></physical-forms-menu>-->
+<!--            <schedules-menu></schedules-menu>-->
+<!--            <spirit-wear-menu></spirit-wear-menu>-->
+<!--            <sponsors-menu></sponsors-menu>-->
+<!--        </ul>-->
 
     </div>
 </template>

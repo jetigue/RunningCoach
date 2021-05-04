@@ -17,7 +17,7 @@
                     <div class="flex flex-col p-2">
                         <p class="text-primary font-semibold">General Information</p>
                         <a class="text-sm" href="/forms/information/Information_Packet_2020.pdf">
-                            2020 Informational Packet
+                            2020 Information Packet
                         </a>
                     </div>
 
