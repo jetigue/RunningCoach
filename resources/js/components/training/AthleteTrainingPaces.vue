@@ -382,8 +382,7 @@
     import SteadyStatePaces from "./SteadyStatePaces";
     import TrainingPacesHeader from "./TrainingPacesHeader";
     import PaceCalculator from "./PaceCalculator";
-
-
+    
     export default {
         mixins: [pacesMixin],
         components: {
@@ -592,9 +591,9 @@
                     } else if (this.XCTT5kRecordsCount === 1) {
                         return this.getBestXCTT5k();
                     } else if (this.XCTT3mileRecordsCount >= 2) {
-                        return this.getLatestXCTT5k();
+                        return this.getLatestXCTT3Mile();
                     } else if (this.XCTT3mileRecordsCount === 1) {
-                        return this.getBestXCTT5k();
+                        return this.getBestXCTT3Mile();
                     } else if (this.XCTT2mileRecordsCount >= 2) {
                         return this.getLatestXCTT2Mile();
                     } else if (this.XCTT2mileRecordsCount === 1) {
