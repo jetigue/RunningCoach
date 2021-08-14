@@ -138,6 +138,35 @@
                                 <div class="text-sm">Latest 2-Mile</div>
                             </div>
 
+                            <div v-show="XCTT3mileRecordsCount >= 1" class="flex items-center w-full">
+                                <a v-if="selectedRace === 'bestXCTT3Mile'" class="">
+                                    <span class="text-green-500 px-3">
+                                        <i class="fas fa-check-square"></i>
+                                    </span>
+                                </a>
+                                <a v-else
+                                   @click="getBestXCTT3Mile">
+                                    <span class="px-3 text-gray-600">
+                                        <i class="far fa-square"></i>
+                                    </span>
+                                </a>
+                                <div class="text-sm">Best 3-Mile</div>
+                            </div>
+                            <div v-show="XCTT3mileRecordsCount >= 2" class="flex items-center w-full">
+                                <a v-if="selectedRace === 'latestXCTT3Mile'" class="">
+                                    <span class="text-green-500 px-3">
+                                        <i class="fas fa-check-square"></i>
+                                    </span>
+                                </a>
+                                <a v-else
+                                   @click="getLatestXCTT3Mile">
+                                    <span class="px-3 text-gray-600">
+                                        <i class="far fa-square"></i>
+                                    </span>
+                                </a>
+                                <div class="text-sm">Latest 3-Mile</div>
+                            </div>
+
                             <div v-show="XCTT5kRecordsCount === 1" class="flex items-center w-full">
                                 <a v-if="selectedRace === 'bestXCTT5k'" class="">
                                     <span class="text-green-500 px-3">
@@ -383,6 +412,7 @@
                 trackTT1600RecordsCount: '',
                 trackTT3200RecordsCount: '',
                 XCTT2mileRecordsCount: '',
+                XCTT3mileRecordsCount: '',
                 XCTT5kRecordsCount: '',
 
                 bestSelected: '',
@@ -434,6 +464,10 @@
                     return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=5k')
                 }
 
+                function getXCTT3mileResults() {
+                    return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=3-mile')
+                }
+
                 function getXCTT2mileResults() {
                     return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=2-mile')
                 }
@@ -448,17 +482,20 @@
 
                 axios.all([
                     getXCTT5kResults(),
+                    getXCTT3mileResults(),
                     getXCTT2mileResults(),
                     getTrack1600Results(),
                     getTrack3200Results()
                 ])
                 .then(axios.spread((
                     responseXCTT5k,
+                    responseXCTT3mile,
                     responseXCTT2mile,
                     responseTrack1600,
                     responseTrack3200
                 ) => {
                     this.XCTT5kRecordsCount = responseXCTT5k.data.length
+                    this.XCTT3mileRecordsCount = responseXCTT3mile.data.length
                     this.XCTT2mileRecordsCount = responseXCTT2mile.data.length
                     this.track1600RecordsCount = responseTrack1600.data.length
                     this.track3200RecordsCount = responseTrack3200.data.length
@@ -467,6 +504,10 @@
                         return this.getLatestXCTT5k();
                     } else if (this.XCTT5kRecordsCount === 1) {
                         return this.getBestXCTT5k()
+                    } else if (this.XCTT3mileRecordsCount >= 2) {
+                        return this.getLatestXCTT3Mile()
+                    } else if (this.XCTT3mileRecordsCount === 1) {
+                        return this.getBestXCTT3Mile()
                     } else if (this.XCTT2mileRecordsCount >= 2) {
                         return this.getLatestXCTT2Mile()
                     } else if (this.XCTT2mileRecordsCount === 1) {
@@ -503,6 +544,10 @@
                     return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=5k')
                 }
 
+                function getXCTT3mileResults() {
+                    return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=3-mile')
+                }
+
                 function getXCTT2mileResults() {
                     return axios.get('/api'+location.pathname+'/xc-tt-training-paces?event=2-mile')
                 }
@@ -512,6 +557,7 @@
                     getXC3mileResults(),
                     getXC2mileResults(),
                     getXCTT5kResults(),
+                    getXCTT3mileResults(),
                     getXCTT2mileResults(),
                 ])
                 .then(axios.spread((
@@ -519,12 +565,14 @@
                     responseXC3mile,
                     responseXC2mile,
                     responseXCTT5k,
+                    responseXCTT3mile,
                     responseXCTT2mile,
                 ) => {
                     this.XC5kRecordsCount = responseXC5k.data.length
                     this.XC3mileRecordsCount = responseXC3mile.data.length
                     this.XC2mileRecordsCount = responseXC2mile.data.length
                     this.XCTT5kRecordsCount = responseXCTT5k.data.length
+                    this.XCTT3mileRecordsCount = responseXCTT3mile.data.length
                     this.XCTT2mileRecordsCount = responseXCTT2mile.data.length
 
                     if (this.XC5kRecordsCount >= 2) {
@@ -542,6 +590,10 @@
                     } else if (this.XCTT5kRecordsCount >= 2) {
                         return this.getLatestXCTT5k();
                     } else if (this.XCTT5kRecordsCount === 1) {
+                        return this.getBestXCTT5k();
+                    } else if (this.XCTT3mileRecordsCount >= 2) {
+                        return this.getLatestXCTT5k();
+                    } else if (this.XCTT3mileRecordsCount === 1) {
                         return this.getBestXCTT5k();
                     } else if (this.XCTT2mileRecordsCount >= 2) {
                         return this.getLatestXCTT2Mile();
@@ -820,6 +872,44 @@
                 axios.get('/api'+location.pathname+'/xc-tt-training-paces', {
                     params: {
                         event: '5k',
+                        result: 'latest'
+                    }
+                })
+                    .then(response => {
+                        this.data = response.data
+                        this.showPaces = true
+                    })
+                    .catch(errors => {
+                        console.log(errors)
+                    })
+                Event.$emit('latestSelected');
+            },
+
+            getBestXCTT3Mile() {
+                this.selectedRace = 'bestXCTT3Mile';
+
+                axios.get('/api'+location.pathname+'/xc-tt-training-paces', {
+                    params: {
+                        event: '3-mile',
+                        result: 'best'
+                    }
+                })
+                    .then(response => {
+                        this.data = response.data
+                        this.showPaces = true
+                    })
+                    .catch(errors => {
+                        console.log(errors)
+                    })
+                Event.$emit('bestSelected');
+            },
+
+            getLatestXCTT3Mile() {
+                this.selectedRace = 'latestXCTT3Mile';
+
+                axios.get('/api'+location.pathname+'/xc-tt-training-paces', {
+                    params: {
+                        event: '3-mile',
                         result: 'latest'
                     }
                 })
