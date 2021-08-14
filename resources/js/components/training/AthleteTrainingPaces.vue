@@ -417,7 +417,6 @@
                 bestSelected: '',
                 latestSelected: '',
                 calculatorUsed: false
-
             }
         },
 
@@ -427,7 +426,7 @@
                 let year = this.$moment().year();
                 let beginSummer = this.$moment('6/1/' + year, "MM-DD-YYYY");
                 let endSummer = this.$moment('7/31/' + year, "MM-DD-YYYY");
-                let beginXC = this.$moment('8/20/' + year, "MM-DD-YYYY");
+                let beginXC = this.$moment('8/1/' + year, "MM-DD-YYYY");
                 let endXC = this.$moment('11/30/' + year, "MM-DD-YYYY");
                 let beginWinter = this.$moment('12/1/' + year, "MM-DD-YYYY");
                 let endWinter = this.$moment('1/30/' + year, "MM-DD-YYYY");
