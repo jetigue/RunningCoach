@@ -6,6 +6,13 @@ use App\Models\Meets\CrossCountryMeet;
 
 class CrossCountryMeets
 {
+    public function crossCountryMeets2021()
+    {
+        return $crossCountryMeets2020 = CrossCountryMeet::with('host', 'venue', 'timing', 'name')
+            ->orderBy('meet_date', 'desc')
+            ->whereYear('meet_date', '2021')
+            ->get();
+    }
 
     public function crossCountryMeets2020()
     {

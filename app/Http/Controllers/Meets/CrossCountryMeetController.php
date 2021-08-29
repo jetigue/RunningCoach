@@ -19,6 +19,7 @@ class CrossCountryMeetController extends Controller
      */
     public function index(CrossCountryMeets $meets)
     {
+        $crossCountryMeets2021 = $meets->crossCountryMeets2021();
         $crossCountryMeets2020 = $meets->crossCountryMeets2020();
         $crossCountryMeets2019 = $meets->crossCountryMeets2019();
         $crossCountryMeets2018 = $meets->crossCountryMeets2018();
