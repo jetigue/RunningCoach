@@ -34,6 +34,16 @@ class AthleteCCResults
             )
             ->orderBy('date', 'desc');
     }
+        /**
+     * @param Athlete $athlete
+     * @return mixed
+     */
+    public function crossResults2021(Athlete $athlete)
+    {
+        return clone $this->crossResults($athlete)
+            ->whereYear('cross_country_meets.meet_date', '2021')
+            ->get();
+    }
 
     /**
      * @param Athlete $athlete

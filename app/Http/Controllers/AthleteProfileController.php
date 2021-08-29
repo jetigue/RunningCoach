@@ -11,6 +11,7 @@ class AthleteProfileController extends Controller
 {
     public function show(Athlete $athlete, AthleteCCResults $crossResults, AthleteTrackResults $trackResults)
     {
+        $crossResults2021 = $crossResults->crossResults2021($athlete);
         $crossResults2020 = $crossResults->crossResults2020($athlete);
         $crossResults2019 = $crossResults->crossResults2019($athlete);
         $crossResults2018 = $crossResults->crossResults2018($athlete);
@@ -172,7 +173,7 @@ class AthleteProfileController extends Controller
             ->join('cross_country_team_results', 'cross_country_results.cross_country_team_result_id', '=', 'cross_country_team_results.id')
             ->join('cross_country_events', 'cross_country_team_results.cross_country_event_id', '=', 'cross_country_events.id')
             ->join('cross_country_meets', 'cross_country_team_results.cross_country_meet_id', '=', 'cross_country_meets.id')
-            ->where('cross_country_meets.meet_date', '>=', '2019-08-01')
+            ->where('cross_country_meets.meet_date', '>=', '2021-08-01')
             ->select('cross_country_results.total_seconds as seconds', 'cross_country_events.meters as meters')
             ->orderBy('seconds');
 
@@ -195,6 +196,7 @@ class AthleteProfileController extends Controller
 
         return view('profiles.athletes.show', compact(
             'athlete',
+            'crossResults2021',
             'crossResults2020',
             'crossResults2019',
             'crossResults2018',
