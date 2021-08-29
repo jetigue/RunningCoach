@@ -20,7 +20,7 @@
         {{--                            </athlete-cross-results>--}}
         {{--                        @endif--}}
 
-        @if($crossResults2020->count() > 0)--}}
+        @if($crossResults2020->count() > 0)
             <athlete-cross-results :data="{{ $crossResults2021 }}">
                 Sophomore Season
             </athlete-cross-results>
