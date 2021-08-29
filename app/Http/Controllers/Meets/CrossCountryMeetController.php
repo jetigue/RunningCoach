@@ -35,6 +35,7 @@ class CrossCountryMeetController extends Controller
         $crossCountryMeets = $meets->crossCountryMeets();
 
         return view('meets.crossCountry.index', compact(
+            'crossCountryMeets2021',
             'crossCountryMeets2020',
             'crossCountryMeets2019',
             'crossCountryMeets2018',
