@@ -7,23 +7,23 @@
 
                             <div class="flex flex-col items-center content-center w-2/3 md:w-1/3 lg:w-1/12 py-2 lg:order-1 order-4">
                                 <figure class="">
-                                    <a href="http://www.theblackdiamondgrill.com/">
-                                        <img src="{{url('images/sponsors/Black_Diamond_Final_tiny.jpg')}}"
-                                             alt="Black Diamond Grill">
+                                    <a href="https://alliancesportsmedicine.com/">
+                                        <img src="{{url('images/sponsors/AllianceSportsMedicine.PNG')}}"
+                                             alt="Alliance Sports Medicine">
                                     </a>
                                 </figure>
-                                <p class="">Bronze</p>
+                                <p class="py-1">Bronze</p>
                             </div>
 
                             <div class="flex flex-col items-center content-center w-4/5 md:w-2/5 lg:w-1/5 mx-auto order-2 py-2">
                                 <figure class="">
-                                    <a href="https://clarityvg.com/">
-                                        <img src="{{url('images/sponsors/ClarityVision.png')}}"
-                                             alt="Clarity Vision"
+                                    <a href="https://www.instagram.com/alohacarwash/?hl=en">
+                                        <img src="{{url('images/sponsors/AlohaCarwash_Logo.jpg')}}"
+                                             alt="Aloha Car Wash"
                                              width="250">
                                     </a>
                                 </figure>
-                                <p class="">Silver</p>
+                                <p class="py-1">Gold</p>
                             </div>
 
                             <div class="flex flex-col items-center content-center order-1 lg:order-3 w-full lg:w-1/4 mx-auto py-2">
@@ -39,22 +39,22 @@
 
                             <div class="flex flex-col items-center content-center w-4/5 md:w-2/5 lg:w-1/5 lg:order-4 mx-auto order-3 py-2">
                                 <figure class="">
-                                    <a href="https://myrosatis.com/cumming/">
-                                        <img src="{{url('images/sponsors/rosati.png')}}"
-                                             alt="Clarity Vision">
+                                    <a href="https://blackdogsigncompany.com/">
+                                        <img src="{{url('images/sponsors/BlackDogSignCompany.PNG')}}"
+                                             alt="Black Dog Sign Company">
                                     </a>
                                 </figure>
-                                <p class="">Silver</p>
+                                <p class="">Gold</p>
                             </div>
 
                             <div class="flex flex-col items-center content-center w-2/3 md:w-1/3 lg:w-1/12 order-5 py-2">
                                 <figure class="">
-                                    <a href="https://www.masterpiecesmilesbraces.com/">
-                                        <img src="{{url('images/sponsors/Glenn_Lewis_Orthodontics.jpg')}}"
-                                             alt="Masterpiece Smiles">
+                                    <a href="https://www.yelp.com/biz/scoopjoy-ice-creamery-suwanee">
+                                        <img src="{{url('images/sponsors/scoop_joy.jpg')}}"
+                                             alt="Scoop Joy">
                                     </a>
                                 </figure>
-                                <p class="">Bronze</p>
+                                <p class="py-1">Bronze</p>
                             </div>
 
                         </div>
