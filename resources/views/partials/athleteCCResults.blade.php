@@ -1,6 +1,6 @@
 @if($athlete->grad_year == '2025')
     <div class="flex flex-col w-full">
-        @if($crossResults2020->count() > 0)
+        @if($crossResults2021->count() > 0)
         <athlete-cross-results :data="{{ $crossResults2021 }}">
             Freshman Season
         </athlete-cross-results>
