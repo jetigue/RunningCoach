@@ -9,17 +9,18 @@
 
     <div class="flex flex-wrap py-2 justify-between items-center">
         <div class="flex w-full lg:w-7/12">
-            <div class="flex flex-col leading-normal space-y-1">
-                <p>
+            <div class="flex flex-col leading-normal">
+                <a href="https://runsignup.com/Race/GA/Cumming/Longhorn5K" type="button" class="py-2 px-2 bg-crimson-600 text-white">Click to Register!</a>
+                <p class="py-2">
                    Join us to Run with the Horns on Sunday, November 14, 2021.  This is the 13th annual 5K with proceeds benefiting the Longhorn Cross Country team!  This year we have changed our name, changed our venue, and upped our game as we will be running a certified USATF Course so that you can use our race as your Official AJC Peachtree Road Race Qualifying Event.
                 </p>
-                <p>
+                <p class="py-1">
                     Race T-shirts are guaranteed to all runners and ghost runners registering by October 28th, so register early!  Registration is $30 per registrant by October 28th, $35 per registrant from October 29th to November 11th, and $40 after that.
                 </p>
-                <p>
+                <p class="py-1">
                     We will be collecting gently used sneakers on the day of the race for those less fortunate in on-site collection boxes. Recycling and reusing sneakers keeps sneakers out of landfills, reduces the need for manufacturing new shoes and sneakers, and supports a growing circular economy.
                 </p>
-                <p>
+                <p class="py-1">
                     For more information, please e-mail Stacey Mumford at french_mumford@hotmail.com. Thanks in advance for supporting Lambert Cross Country!
                 </p>
 
