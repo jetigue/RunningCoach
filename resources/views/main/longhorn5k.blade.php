@@ -10,8 +10,8 @@
     <div class="flex flex-wrap py-2 justify-between items-center">
         <div class="flex w-full lg:w-7/12">
             <div class="flex flex-col leading-normal">
-                <a href="https://runsignup.com/Race/GA/Cumming/Longhorn5K" type="button" class="py-2 px-2 bg-crimson-600 text-white">Click to Register!</a>
-                <p class="py-2">
+                <a href="https://runsignup.com/Race/GA/Cumming/Longhorn5K" type="button" class="py-2 px-2 bg-crimson-600 text-white rounded-md text-center font-semibold text-lg mb-4">Click to Register!</a>
+                <p class="py-1">
                    Join us to Run with the Horns on Sunday, November 14, 2021.  This is the 13th annual 5K with proceeds benefiting the Longhorn Cross Country team!  This year we have changed our name, changed our venue, and upped our game as we will be running a certified USATF Course so that you can use our race as your Official AJC Peachtree Road Race Qualifying Event.
                 </p>
                 <p class="py-1">
