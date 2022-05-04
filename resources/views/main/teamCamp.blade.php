@@ -22,7 +22,7 @@
 
         <div class="flex w-full md:py-2 lg:w-5/12">
             <div class="bg-white rounded shadow-md w-full">
-                <header class="bg-smoke-800 text-white text-xl py-2 px-4 rounded-t text-center md:text-left">2021 Team Camp</header>
+                <header class="bg-smoke-800 text-white text-xl py-2 px-4 rounded-t text-center md:text-left">2022 Team Camp</header>
                 <section >
                     <p class="text-sm md:text-base py-2 px-4">
                         <span class="text-black font-semibold">
