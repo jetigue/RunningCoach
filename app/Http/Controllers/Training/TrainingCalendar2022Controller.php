@@ -32,47 +32,47 @@ class TrainingCalendar2022Controller extends Controller
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/June/2021':
+            case 'training-calendar/June/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 6)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/July/2021':
+            case 'training-calendar/July/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 7)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/August/2021':
+            case 'training-calendar/August/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 8)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/September/2021':
+            case 'training-calendar/September/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 9)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/October/2021':
+            case 'training-calendar/October/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 10)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/November/2021':
+            case 'training-calendar/November/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 11)
                     ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
@@ -80,49 +80,49 @@ class TrainingCalendar2022Controller extends Controller
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/December/2021':
+            case 'training-calendar/December/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 12)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/January/2022':
+            case 'training-calendar/January/2023':
                 $calendar = Calendar::whereMonth('calendar_date', 1)
-                    ->whereYear('calendar_date', 2022)
+                    ->whereYear('calendar_date', 2023)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/February/2022':
+            case 'training-calendar/February/2023':
                 $calendar = Calendar::whereMonth('calendar_date', 2)
-                    ->whereYear('calendar_date', 2022)
+                    ->whereYear('calendar_date', 2023)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/March/2022':
+            case 'training-calendar/March/2023':
                 $calendar = Calendar::whereMonth('calendar_date', 3)
-                    ->whereYear('calendar_date', 2022)
+                    ->whereYear('calendar_date', 2023)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/April/2022':
+            case 'training-calendar/April/2023':
                 $calendar = Calendar::whereMonth('calendar_date', 4)
-                    ->whereYear('calendar_date', 2022)
+                    ->whereYear('calendar_date', 2023)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
                     ->orderBy('calendar_date')->get();
                 break;
-            case 'training-calendar/May/2022':
+            case 'training-calendar/May/2023':
                 $calendar = Calendar::whereMonth('calendar_date', 5)
-                    ->whereYear('calendar_date', 2022)
+                    ->whereYear('calendar_date', 2023)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
