@@ -7,6 +7,7 @@ use App\Models\Calendar;
 use App\Models\Training\RunningActivities\IntervalRun;
 use App\Models\Training\RunningActivities\SteadyRun;
 use App\Models\Training\Workout;
+use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -129,8 +130,8 @@ class TrainingCalendar2022Controller extends Controller
                     ->orderBy('calendar_date')->get();
                 break;
             default:
-                $date = getDate();
-                $month = $date['mon'];
+                $date = Carbon::now();
+                $month = $date->month;
 
                 $calendar = Calendar::whereMonth('calendar_date', $month)
                     ->whereYear('calendar_date', 2022)
