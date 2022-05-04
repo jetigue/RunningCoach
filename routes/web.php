@@ -51,7 +51,7 @@ Route::resource('/track/time-trials', 'TimeTrials\TrackTimeTrialController');
 //Route::get('training-calendar/{calendar:month_name}/2020', 'Training\TrainingCalendar2020Controller@index');
 //Route::get('training-calendar/{calendar:month_name}/2021', 'Training\TrainingCalendar2020Controller@index');
 Route::get('training-calendar/{calendar:month_name}/2022', 'Training\TrainingCalendar2022Controller@index');
-Route::get('training-calendar/{calendar:calendar_date}', 'Training\TrainingCalendar2020Controller@show');
+//Route::get('training-calendar/{calendar:calendar_date}', 'Training\TrainingCalendar2020Controller@show');
 Route::get('training-calendar', 'Training\TrainingCalendar2022Controller@index');
 
 //Time Trials
