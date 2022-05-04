@@ -27,7 +27,7 @@ class TrainingCalendar2022Controller extends Controller
         switch ($uri) {
             case 'training-calendar/May/2022':
                 $calendar = Calendar::whereMonth('calendar_date', 5)
-                    ->whereYear('calendar_date', 2021)
+                    ->whereYear('calendar_date', 2022)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
