@@ -28,8 +28,8 @@ class RunningLogs
     {
         $totalSummerMileage = RunningLog::all()
             ->where('user_id', Auth::user()->id)
-            ->where('run_date', '>', '2020-05-04')
-            ->where('run_date', '<', '2020-08-03')
+            ->where('run_date', '>', '2022-05-15')
+            ->where('run_date', '<', '2022-08-06')
             ->sum('distance');
 
         return $totalSummerMileage;
@@ -45,8 +45,8 @@ class RunningLogs
                 avg(distance) as average
                 '))
             ->groupBy('user_id')
-            ->where('run_date', '>', '2020-05-04')
-            ->where('run_date', '<', '2020-08-03')
+            ->where('run_date', '>', '2022-05-15')
+            ->where('run_date', '<', '2022-08-06')
             ->orderBy('distance', 'desc')
             ->get();
     }
@@ -86,7 +86,7 @@ class RunningLogs
                 $join->on('run_date', '=', 'calendar.calendar_date')
                     ->where('user_id', Auth::user()->id);
             })
-            ->whereBetween('calendar.calendar_date', ['2019-05-12', '2019-08-03'])
+            ->whereBetween('calendar.calendar_date', ['2022-05-15', '2022-08-06'])
             ->pluck('distance', 'week');
     }
 
@@ -98,7 +98,7 @@ class RunningLogs
                 $join->on('run_date', '=', 'calendar.calendar_date')
                     ->where('user_id', Auth::user()->id);
             })
-            ->whereBetween('calendar.calendar_date', ['2019-05-12', '2019-08-03'])
+            ->whereBetween('calendar.calendar_date', ['2022-05-15', '2022-08-06'])
             ->pluck('distance', 'week');
     }
 
