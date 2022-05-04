@@ -24,7 +24,9 @@
                     For more information, please e-mail Stacey Mumford at french_mumford@hotmail.com. Thanks in advance for supporting Lambert Cross Country!
                 </p>
                 <a class="py-1 font-semibold"
-                    href="https://drive.google.com/file/d/1j5lA2xQITyNVkvOBSaXf_jgpMglBr3QT/view?usp=sharing">Course Map</a>
+                    href="https://drive.google.com/file/d/1j5lA2xQITyNVkvOBSaXf_jgpMglBr3QT/view?usp=sharing">
+                    Course Map
+                </a>
 
             </div>
         </div>

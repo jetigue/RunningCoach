@@ -8,7 +8,7 @@
         <div class="flex w-full lg:w-7/12">
             <div class="flex flex-col leading-normal">
                 <p class="">
-                    Come help us kick off another great season by joining us for our 5th annual team camp! The goal of the camp is to make us a better team -- by making everyone a better distance runner through training and education, while at the same time bringing us closer as a group.
+                    Come help us kick off another great season by joining us for our 6th annual team camp! The goal of the camp is to make us a better team -- by making everyone a better distance runner through training and education, while at the same time bringing us closer as a group.
                 </p>
                 <p class="py-2">The camp will take place on the beautiful Berry College campus, which boasts miles of soft running
                         trails on one of the safest and largest college campuses in the world.
@@ -28,7 +28,7 @@
                         <span class="text-black font-semibold">
                             Dates:
                         </span>
-                            Monday, June 21 - Friday, June 25
+                            Monday, July 18 - Friday, July 22
                     </p>
 
                     <p class="text-sm md:text-base py-2 px-4">
@@ -42,7 +42,7 @@
                         <span class="text-black font-semibold">
                             Cost:
                         </span>
-                            $375 per runner. Please make checks out to LHSXC Booster Club and turn in to Coach Tigue by Thursday, June 17th.
+                            $375 per runner. Please make checks out to LHSXC Booster Club and turn in to Coach Tigue by Thursday, July 14th.
                     </p>
 
                     <p class="text-sm md:text-base py-2 px-4">
@@ -50,8 +50,8 @@
                             Sign Up:
                         </span>
                              <a class="text-blue-600"
-                                href="https://forms.gle/qPjUhVw9vatQdLTo8">
-                                2021 Team Camp Registration
+                                href="https://forms.gle/iq3zs7knPZVi4vzi9">
+                                2022 Team Camp Registration
                              </a>
                     </p>
                 </section>
@@ -67,8 +67,8 @@
         </div>
         <div class="flex flex-col w-full md:w-2/3 leading-normal pl-4">
             <p class="">
-                The team camp will begin on the morning of Monday, June 21st and conclude on the morning of Friday, July
-                25th. This year we will be providing bus transportation to and from the camp. While on campus, the
+                The team camp will begin on the morning of Monday, July 18th and conclude on the morning of Friday, July
+                22nd. This year we will be providing bus transportation to and from the camp. While on campus, the
                 runners and coaches (and any parents who wish to join us) will be staying in one of the dorms on Berry's main campus.
                 Each dorm room is equipped with two twin beds and dressers. Linens are not provided.
             </p>
