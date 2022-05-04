@@ -58,7 +58,7 @@ class TrainingCalendar2022Controller extends Controller
                 break;
             case 'training-calendar/September/2021':
                 $calendar = Calendar::whereMonth('calendar_date', 9)
-                    ->whereYear('calendar_date', 2021)2021
+                    ->whereYear('calendar_date', 2021)
                     ->with(['workouts' => function ($q) {
                         $q->orderBy('training_group_id');
                     }])
